@@ -1,0 +1,9 @@
+*.elf
+*.gba
+*.map
+asm/*.o
+checksum.sha1
+ldscript.txt
+Makefile
+src/*.o
+src/*.s

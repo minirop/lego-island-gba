@@ -1,0 +1,29 @@
+name: lego
+sha1: 00fe8d6f16a8381d25b12cd0b5a45d54fca6ad0e
+entry: Init
+rom:
+  address: 0x08000000
+  size: 8M
+  segments:
+    - name: crt0
+      format: asm
+      address: 0x000000
+      size: 0x134
+    - name: code_0004dc
+      format: c
+      address: 0x0004dc
+      size: 0x394
+    - name: code_0496e8
+      format: c
+      address: 0x0496e8
+    - name: code_0004dc
+      format: c
+      section: rodata
+      address: 0x049700
+      size: 0x5c
+ewram:
+  address: 0x02000000
+  size: 32K
+  symbols:
+    - name: DAT_02005210
+      address: 0x005210
