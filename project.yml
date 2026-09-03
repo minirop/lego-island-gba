@@ -27,3 +27,30 @@ ewram:
   symbols:
     - name: DAT_02005210
       address: 0x005210
+build:
+  files:
+    ofiles:
+      - src/*.o
+      - asm/*.o
+  constants:
+    agbcc: /home/minirop/git/fireemblem8u/tools/agbcc
+    as: $(DEVKITARM)/bin/arm-none-eabi-as
+    cc1: $(AGBCC)/bin/old_agbcc
+    cc1flags: -mthumb-interwork -Wimplicit -Wparentheses -O2 -fhex-asm
+    asflags: -mcpu=arm7tdmi -mthumb-interwork -I asminclude
+    symbols: symbols.txt
+    ldscript: ldscript.txt
+    ld: $(DEVKITARM)/bin/arm-none-eabi-ld
+    objcopy: $(DEVKITARM)/bin/arm-none-eabi-objcopy
+  commands:
+    - folder: asm
+      extension: s
+      exec:
+        - $(AS) $(ASFLAGS) $(NAME).s -o $(NAME).o
+    - folder: src
+      extension: c
+      exec:
+        - $(CC1) $(CC1FLAGS) $(NAME).c -o $(NAME).s
+        - $(AS) $(ASFLAGS) $(NAME).s -o $(NAME).o
+    - $(LD) -T $(SYMBOLS) -T $(LDSCRIPT) -Map $(ROM).map $(OFILES) $(AGBCC)/lib/libgcc.a -o $(ROM).elf
+    - $(OBJCOPY) -O binary --pad-to 0x8000000 $(ROM).elf $(ROM).gba

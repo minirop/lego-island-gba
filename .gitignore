@@ -2,6 +2,7 @@
 *.gba
 *.map
 asm/*.o
+asm/rom_*.s
 checksum.sha1
 ldscript.txt
 Makefile
