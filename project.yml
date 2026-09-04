@@ -21,12 +21,6 @@ rom:
       section: rodata
       address: 0x049700
       size: 0x5c
-ewram:
-  address: 0x02000000
-  size: 32K
-  symbols:
-    - name: DAT_02005210
-      address: 0x005210
 build:
   files:
     ofiles:
