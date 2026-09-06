@@ -8,11 +8,19 @@ rom:
     - name: crt0
       format: asm
       address: 0x000000
-      size: 0x134
+      size: 0x240
+    - name: code_000300
+      format: c
+      address: 0x000300
+      size: 0x8c
     - name: code_0004dc
       format: c
       address: 0x0004dc
       size: 0x394
+    - name: code_002160
+      format: c
+      address: 0x002160
+      size: 0x28
     - name: code_0496e8
       format: c
       address: 0x0496e8
@@ -21,6 +29,11 @@ rom:
       section: rodata
       address: 0x049700
       size: 0x5c
+    - name: code_002160
+      format: c
+      section: rodata
+      address: 0x04978c
+      size: 0x4
 build:
   files:
     ofiles:
