@@ -1,4 +1,4 @@
-__attribute__((naked)) void fun_000300()
+__attribute__((naked)) void fun_08000300()
 {
     asm("\n\
     push        {lr}\n\

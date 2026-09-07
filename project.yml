@@ -13,23 +13,83 @@ rom:
       format: c
       address: 0x000300
       size: 0x8c
-    - name: code_0004dc
+    - name: code_0003e0
       format: c
-      address: 0x0004dc
-      size: 0x394
-    - name: code_002160
+      address: 0x0003e0
+      size: 0x7c
+    - name: code_0004ac
       format: c
-      address: 0x002160
-      size: 0x28
+      address: 0x0004ac
+      size: 0x3C4
+    - name: code_0008b4
+      format: c
+      address: 0x0008b4
+      size: 0x960
+    - name: code_00122c
+      format: c
+      address: 0x00122c
+      size: 0xbc
+    - name: code_00132c
+      format: c
+      address: 0x00132c
+      size: 0xf8
+    - name: code_001454
+      format: c
+      address: 0x001454
+      size: 0xb0
+    - name: code_001534
+      format: c
+      address: 0x001534
+      size: 0x1dc
+    - name: code_001744
+      format: c
+      address: 0x001744
+      size: 0x30
+    - name: code_0017ac
+      format: c
+      address: 0x0017ac
+      size: 0xb4
+    - name: code_001894
+      format: c
+      address: 0x001894
+      size: 0x1c8
+    - name: code_001aa8
+      format: c
+      address: 0x001aa8
+      size: 0x6f8
+    - name: code_0021c0
+      format: c
+      address: 0x0021c0
+      size: 0x7b4
+    - name: code_0029c8
+      format: c
+      address: 0x0029c8
+      size: 0x1b4
+    - name: code_002c04
+      format: c
+      address: 0x002c04
+      size: 0x11c
+    - name: code_002d34
+      format: c
+      address: 0x002d34
+      size: 0x728
+    - name: code_00353c
+      format: c
+      address: 0x00353c
+      size: 0x54
+    - name: code_0035b4
+      format: c
+      address: 0x0035b4
+      size: 0xcc
     - name: code_0496e8
       format: c
       address: 0x0496e8
-    - name: code_0004dc
+    - name: code_0004ac
       format: c
       section: rodata
       address: 0x049700
       size: 0x5c
-    - name: code_002160
+    - name: code_001aa8
       format: c
       section: rodata
       address: 0x04978c

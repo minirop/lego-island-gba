@@ -2,6 +2,36 @@ extern char DAT_02005210;
 void fun_08044fdc(char*, int, int);
 void fun_080457b4();
 
+__attribute__((naked)) void fun_080004ac()
+{
+    asm("\n\
+    push        {r4,lr}\n\
+    str         r1,[r0,#0x0]\n\
+    ldrh        r2,[r1,#0x0]\n\
+    mov         r4,#0x0\n\
+    mov         r3,#0x0\n\
+    strh        r2,[r0,#0x4]\n\
+    ldrh        r2,[r1,#0x2]\n\
+    strh        r2,[r0,#0x6]\n\
+    ldr         r2,[r1,#0x8]\n\
+    str         r2,[r0,#0x8]\n\
+    str         r3,[r0,#0xc]\n\
+    ldrh        r2,[r1,#0x1c]\n\
+    strh        r2,[r0,#0x12]\n\
+    ldrb        r2,[r1,#0x1e]\n\
+    strb        r2,[r0,#0x14]\n\
+    ldrh        r2,[r1,#0x20]\n\
+    strh        r2,[r0,#0x16]\n\
+    ldrh        r1,[r1,#0x10]\n\
+    strh        r1,[r0,#0x10]\n\
+    strb        r4,[r0,#0x18]\n\
+    str         r3,[r0,#0x1c]\n\
+    pop         {r4}\n\
+    pop         {r0}\n\
+    bx          r0\n\
+    ");
+}
+
 __attribute__((naked)) void fun_080004dc(int a, int b, char* c)
 {
     asm("\n\
