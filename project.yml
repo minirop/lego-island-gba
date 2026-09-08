@@ -81,6 +81,38 @@ rom:
       format: c
       address: 0x0035b4
       size: 0xcc
+    - name: code_0036b0
+      format: c
+      address: 0x0036b0
+      size: 0x168
+    - name: code_0038c8
+      format: c
+      address: 0x0038c8
+      size: 0xcd0
+    - name: code_0045d8
+      format: c
+      address: 0x0045d8
+      size: 0xc
+    - name: code_0045f0
+      format: c
+      address: 0x0045f0
+      size: 0x40
+    - name: code_004670
+      format: c
+      address: 0x004670
+      size: 0x18
+    - name: code_004694
+      format: c
+      address: 0x004694
+      size: 0x7c
+    - name: code_00471c
+      format: c
+      address: 0x00471c
+      size: 0x3d4
+    - name: code_043504
+      format: c
+      address: 0x043504
+      size: 0x20bc
     - name: code_0496e8
       format: c
       address: 0x0496e8
@@ -104,7 +136,7 @@ build:
     as: $(DEVKITARM)/bin/arm-none-eabi-as
     cc1: $(AGBCC)/bin/old_agbcc
     cc1flags: -mthumb-interwork -Wimplicit -Wparentheses -O2 -fhex-asm
-    asflags: -mcpu=arm7tdmi -mthumb-interwork -I asminclude
+    asflags: -mcpu=arm7tdmi -mthumb-interwork
     symbols: symbols.txt
     ldscript: ldscript.txt
     ld: $(DEVKITARM)/bin/arm-none-eabi-ld
