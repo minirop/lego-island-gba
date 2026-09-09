@@ -109,10 +109,18 @@ rom:
       format: c
       address: 0x00471c
       size: 0x3d4
+    - name: code_004b74
+      format: c
+      address: 0x004b74
+      size: 0x1c
     - name: code_043504
       format: c
       address: 0x043504
       size: 0x20bc
+    - name: code_0455fc
+      format: c
+      address: 0x0455fc
+      size: 0x3d98
     - name: code_0496e8
       format: c
       address: 0x0496e8
