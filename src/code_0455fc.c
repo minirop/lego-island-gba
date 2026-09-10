@@ -593,7 +593,7 @@ LAB_080459b6:\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
     beq         LAB_080459e6\n\
-    bl          fun_08046808\n\
+    bl          LAB_08046808\n\
 LAB_080459e6:\n\
     add         r5,sp,#0x28\n\
 LAB_080459e8:\n\
@@ -603,7 +603,7 @@ LAB_080459e8:\n\
 LAB_080459ee:\n\
     cmp         r4,#0x0\n\
     bgt         LAB_080459f6\n\
-    bl          fun_080467f0\n\
+    bl          LAB_080467f0\n\
 LAB_080459f6:\n\
     ldr         r4,[sp,#0x1f4]\n\
     add         r4,#0x1\n\
@@ -1183,7 +1183,7 @@ switchD_08045a30_caseD_6e:\n\
     ldr         r0,[r0,#0x0]\n\
     ldr         r1,[sp,#0x1f0]\n\
     str         r1,[r0,#0x0]\n\
-    b           fun_08045984\n\
+    b           LAB_08045984\n\
 LAB_08045e96:\n\
     mov         r0,#0x40\n\
     ldr         r2,[sp,#0x1ec]\n\
@@ -1198,7 +1198,7 @@ LAB_08045e96:\n\
     add         r1,sp,#0x1f0\n\
     ldrh        r1,[r1,#0x0]\n\
     strh        r1,[r0,#0x0]\n\
-    b           fun_08045984\n\
+    b           LAB_08045984\n\
 LAB_08045eb2:\n\
     mov         r2,#0x4\n\
     add         r10,r2\n\
@@ -1207,7 +1207,7 @@ LAB_08045eb2:\n\
     ldr         r0,[r0,#0x0]\n\
     ldr         r4,[sp,#0x1f0]\n\
     str         r4,[r0,#0x0]\n\
-    b           fun_08045984\n\
+    b           LAB_08045984\n\
 switchD_08045a30_caseD_4f:\n\
     mov         r0,#0x10\n\
     ldr         r1,[sp,#0x1ec]\n\
@@ -1521,7 +1521,7 @@ switchD_08045a30_caseD_21:\n\
     ldr         r4,[sp,#0x1e8]\n\
     cmp         r4,#0x0\n\
     bne         LAB_080460e2\n\
-    b           fun_080467f0\n\
+    b           LAB_080467f0\n\
 LAB_080460e2:\n\
     add         r0,sp,#0x68\n\
     mov         r8,r0\n\
@@ -1601,7 +1601,7 @@ LAB_08046144:\n\
     ldr         r3,[sp,#0x21c]\n\
     cmp         r0,#0x0\n\
     beq         LAB_0804616e\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_0804616e:\n\
     add         r5,sp,#0x28\n\
     ldr         r1,DAT_080461d4\n\
@@ -1631,7 +1631,7 @@ LAB_0804617c:\n\
     ldr         r3,[sp,#0x21c]\n\
     cmp         r0,#0x0\n\
     beq         LAB_080461a6\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_080461a6:\n\
     add         r5,sp,#0x28\n\
 LAB_080461a8:\n\
@@ -1694,7 +1694,7 @@ LAB_0804620c:\n\
     ldr         r3,[sp,#0x21c]\n\
     cmp         r0,#0x0\n\
     beq         LAB_0804621a\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_0804621a:\n\
     add         r5,sp,#0x28\n\
 LAB_0804621c:\n\
@@ -1732,7 +1732,7 @@ LAB_08046238:\n\
     ldr         r3,[sp,#0x21c]\n\
     cmp         r0,#0x0\n\
     beq         LAB_08046262\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_08046262:\n\
     add         r5,sp,#0x28\n\
     ldr         r1,DAT_08046334\n\
@@ -1760,7 +1760,7 @@ LAB_0804626c:\n\
     ldr         r3,[sp,#0x21c]\n\
     cmp         r0,#0x0\n\
     beq         LAB_08046296\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_08046296:\n\
     add         r5,sp,#0x28\n\
 LAB_08046298:\n\
@@ -1792,7 +1792,7 @@ LAB_080462a8:\n\
     ldr         r3,[sp,#0x21c]\n\
     cmp         r0,#0x0\n\
     beq         LAB_080462d2\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_080462d2:\n\
     add         r5,sp,#0x28\n\
     ldr         r1,DAT_08046334\n\
@@ -1819,7 +1819,7 @@ LAB_080462dc:\n\
     ldr         r3,[sp,#0x21c]\n\
     cmp         r0,#0x0\n\
     beq         LAB_08046304\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_08046304:\n\
     add         r5,sp,#0x28\n\
 LAB_08046306:\n\
@@ -1883,7 +1883,7 @@ LAB_08046340:\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
     beq         LAB_0804637a\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_0804637a:\n\
     add         r5,sp,#0x28\n\
 LAB_0804637c:\n\
@@ -1916,7 +1916,7 @@ LAB_08046392:\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
     beq         LAB_080463b8\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_080463b8:\n\
     add         r5,sp,#0x28\n\
 LAB_080463ba:\n\
@@ -1948,7 +1948,7 @@ LAB_080463cc:\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
     beq         LAB_080463f2\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_080463f2:\n\
     add         r5,sp,#0x28\n\
     ldr         r1,DAT_08046414\n\
@@ -1994,7 +1994,7 @@ LAB_08046418:\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
     beq         LAB_08046448\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_08046448:\n\
     add         r5,sp,#0x28\n\
 LAB_0804644a:\n\
@@ -2016,7 +2016,7 @@ LAB_0804644a:\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
     beq         LAB_08046472\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_08046472:\n\
     add         r5,sp,#0x28\n\
 LAB_08046474:\n\
@@ -2048,7 +2048,7 @@ LAB_08046484:\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
     beq         LAB_080464aa\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_080464aa:\n\
     add         r5,sp,#0x28\n\
     ldr         r1,DAT_080464fc\n\
@@ -2073,7 +2073,7 @@ LAB_080464b4:\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
     beq         LAB_080464d8\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_080464d8:\n\
     add         r5,sp,#0x28\n\
 LAB_080464da:\n\
@@ -2119,7 +2119,7 @@ LAB_08046500:\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
     beq         LAB_08046530\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_08046530:\n\
     add         r5,sp,#0x28\n\
 LAB_08046532:\n\
@@ -2150,7 +2150,7 @@ LAB_08046544:\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
     beq         LAB_0804656a\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_0804656a:\n\
     add         r5,sp,#0x28\n\
     ldr         r1,DAT_080465b4\n\
@@ -2175,7 +2175,7 @@ LAB_08046574:\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
     beq         LAB_08046598\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_08046598:\n\
     add         r5,sp,#0x28\n\
 LAB_0804659a:\n\
@@ -2215,7 +2215,7 @@ LAB_080465bc:\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
     beq         LAB_080465e2\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_080465e2:\n\
     add         r5,sp,#0x28\n\
 LAB_080465e4:\n\
@@ -2240,7 +2240,7 @@ LAB_080465e4:\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
     beq         LAB_08046612\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_08046612:\n\
     add         r5,sp,#0x28\n\
 LAB_08046614:\n\
@@ -2288,7 +2288,7 @@ LAB_08046636:\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
     beq         LAB_0804666c\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_0804666c:\n\
     add         r5,sp,#0x28\n\
 LAB_0804666e:\n\
@@ -2341,7 +2341,7 @@ LAB_080466ac:\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
     beq         LAB_080466d2\n\
-    b           fun_08046808\n\
+    b           LAB_08046808\n\
 LAB_080466d2:\n\
     add         r5,sp,#0x28\n\
     ldr         r1,DAT_080466f8\n\
@@ -2386,7 +2386,7 @@ LAB_08046708:\n\
 LAB_0804671a:\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
-    bne         fun_08046808\n\
+    bne         LAB_08046808\n\
     add         r5,sp,#0x28\n\
 LAB_08046724:\n\
     add         r0,sp,#0x14\n\
@@ -2411,7 +2411,7 @@ LAB_0804673c:\n\
 LAB_08046744:\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
-    bne         fun_08046808\n\
+    bne         LAB_08046808\n\
     add         r5,sp,#0x28\n\
 LAB_0804674e:\n\
     mov         r0,#0x4\n\
@@ -2445,7 +2445,7 @@ LAB_0804676a:\n\
     mov         r1,r9\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
-    bne         fun_08046808\n\
+    bne         LAB_08046808\n\
     add         r5,sp,#0x28\n\
     ldr         r1,LAB_080467ec\n\
 LAB_08046792:\n\
@@ -2468,7 +2468,7 @@ LAB_08046798:\n\
     mov         r1,r9\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
-    bne         fun_08046808\n\
+    bne         LAB_08046808\n\
 LAB_080467ba:\n\
     ldr         r0,[sp,#0x20c]\n\
     ldr         r4,[sp,#0x1f4]\n\
@@ -2487,17 +2487,18 @@ LAB_080467c4:\n\
     mov         r1,r9\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
-    bne         fun_08046808\n\
+    bne         LAB_08046808\n\
 LAB_080467de:\n\
     mov         r0,#0x0\n\
     mov         r4,r9\n\
     str         r0,[r4,#0x4]\n\
     add         r5,sp,#0x28\n\
-    bl          fun_08045984\n\
+    bl          LAB_08045984\n\
     mov         r0,r0\n\
 LAB_080467ec:\n\
     ldmia       r4!,{r2,r6,r7}\n\
     lsr         r4,r5,#0x1\n\
+LAB_080467f0:\n\
     mov         r1,r9\n\
     ldr         r0,[r1,#0x8]\n\
     cmp         r0,#0x0\n\
@@ -2505,11 +2506,12 @@ LAB_080467ec:\n\
     ldr         r0,[sp,#0x1e0]\n\
     bl          fun_08045824\n\
     cmp         r0,#0x0\n\
-    bne         fun_08046808\n\
+    bne         LAB_08046808\n\
 LAB_08046802:\n\
     mov         r0,#0x0\n\
     mov         r1,r9\n\
     str         r0,[r1,#0x4]\n\
+LAB_08046808:\n\
     mov         r0,#0x40\n\
     ldr         r2,[sp,#0x1e0]\n\
     ldrh        r2,[r2,#0xc]\n\
@@ -2526,11 +2528,11 @@ LAB_0804681a:\n\
     mov         r3,#0x88\n\
     lsl         r3,r3,#0x2\n\
     add         sp,r3\n\
-    pop         {r3, r4, r5}\n\
+    pop         {r3,r4,r5}\n\
     mov         r8,r3\n\
     mov         r9,r4\n\
     mov         r10,r5\n\
-    pop         {r4, r5, r6, r7, pc}\n\
+    pop         {r4,r5,r6,r7,pc}\n\
     ");
 }
 __attribute__((naked)) void fun_0804682c()

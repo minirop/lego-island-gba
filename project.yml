@@ -113,6 +113,10 @@ rom:
       format: c
       address: 0x004b74
       size: 0x1c
+    - name: code_004bb0
+      format: c
+      address: 0x004bb0
+      size: 0xfe4
     - name: code_043504
       format: c
       address: 0x043504
