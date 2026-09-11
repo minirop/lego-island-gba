@@ -137,6 +137,30 @@ rom:
       format: c
       address: 0x007de0
       size: 0x18cc
+    - name: code_0096fc
+      format: c
+      address: 0x0096fc
+      size: 0x24
+    - name: code_009748
+      format: c
+      address: 0x009748
+      size: 0x1d60
+    - name: code_00c5c8
+      format: c
+      address: 0x00c5c8
+      size: 0x960
+    - name: code_00cfcc
+      format: c
+      address: 0x00cfcc
+      size: 0x12a0
+    - name: code_00e6e0
+      format: c
+      address: 0x00e6e0
+      size: 0xe8
+    - name: code_00e85c
+      format: c
+      address: 0x00e85c
+      size: 0x4c4
     - name: code_043504
       format: c
       address: 0x043504
