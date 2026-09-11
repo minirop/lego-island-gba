@@ -161,6 +161,21 @@ rom:
       format: c
       address: 0x00e85c
       size: 0x4c4
+    - name: code_00ed40
+      format: c
+      address: 0x00ed40
+      size: 0xcf0
+    - name: code_00fb04
+      format: c
+      address: 0x00fb04
+      size: 0x8e0
+    - name: code_010528
+      format: c
+      address: 0x010528
+    - name: code_010a4c
+      format: c
+      address: 0x010a4c
+      size: 0xc60
     - name: code_043504
       format: c
       address: 0x043504
