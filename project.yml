@@ -215,6 +215,38 @@ rom:
       format: c
       address: 0x01b5d8
       size: 0x3ff4
+    - name: code_01f684
+      format: c
+      address: 0x01f684
+      size: 0x24c8
+    - name: code_021bb0
+      format: c
+      address: 0x021bb0
+      size: 0x1cc4
+    - name: code_023910
+      format: c
+      address: 0x023910
+      size: 0x2c58
+    - name: code_02699c
+      format: c
+      address: 0x02699c
+      size: 0x7b8
+    - name: code_027414
+      format: c
+      address: 0x027414
+      size: 0xe8
+    - name: code_0279a0
+      format: c
+      address: 0x0279a0
+      size: 0x7098
+    - name: code_02f850
+      format: c
+      address: 0x02f850
+      size: 0x34d0
+    - name: code_032d70
+      format: c
+      address: 0x032d70
+      size: 0x42a0
     - name: code_043504
       format: c
       address: 0x043504
