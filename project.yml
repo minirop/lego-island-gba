@@ -195,6 +195,26 @@ rom:
       format: c
       address: 0x017920
       size: 0xa1c
+    - name: code_018370
+      format: c
+      address: 0x018370
+      size: 0x113c
+    - name: code_01968c
+      format: c
+      address: 0x01968c
+      size: 0x234
+    - name: code_0199bc
+      format: c
+      address: 0x0199bc
+      size: 0x128
+    - name: code_019b38
+      format: c
+      address: 0x019b38
+      size: 0xc9c
+    - name: code_01b5d8
+      format: c
+      address: 0x01b5d8
+      size: 0x3ff4
     - name: code_043504
       format: c
       address: 0x043504
