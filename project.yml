@@ -176,6 +176,14 @@ rom:
       format: c
       address: 0x010a4c
       size: 0xc60
+    - name: code_0116d0
+      format: c
+      address: 0x0116d0
+      size: 0xc4
+    - name: code_0117c4
+      format: c
+      address: 0x0117c4
+      size: 0x7c
     - name: code_043504
       format: c
       address: 0x043504
@@ -197,6 +205,11 @@ rom:
       section: rodata
       address: 0x04978c
       size: 0x4
+    - name: code_77ef7c
+      format: c
+      section: rodata
+      address: 0x77ef7c
+      size: 0x9a0
 build:
   files:
     ofiles:
