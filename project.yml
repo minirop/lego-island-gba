@@ -183,7 +183,18 @@ rom:
     - name: code_0117c4
       format: c
       address: 0x0117c4
-      size: 0x7c
+    - name: code_012068
+      format: c
+      address: 0x012068
+      size: 0x5118
+    - name: code_0171fc
+      format: c
+      address: 0x0171fc
+      size: 0x6fc
+    - name: code_017920
+      format: c
+      address: 0x017920
+      size: 0xa1c
     - name: code_043504
       format: c
       address: 0x043504
