@@ -31,7 +31,7 @@ LAB_0800124c:\n\
     ldr         r0,[r0,#0x0]\n\
     cmp         r0,#0x0\n\
     beq         LAB_08001270\n\
-    bl          fun_080434c8\n\
+    bl          _call_via_r0\n\
 LAB_08001270:\n\
     ldr         r0,DAT_080012b4\n\
     ldrh        r0,[r0,#0x0]\n\
@@ -39,7 +39,7 @@ LAB_08001270:\n\
     add         r0,r0,r5\n\
     ldr         r0,[r0,#0x0]\n\
     ldr         r0,[r0,#0x2c]\n\
-    bl          fun_080434c8\n\
+    bl          _call_via_r0\n\
     ldr         r0,DAT_080012b8\n\
     ldrh        r0,[r0,#0x0]\n\
     cmp         r0,#0x0\n\

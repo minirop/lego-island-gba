@@ -607,7 +607,7 @@ LAB_0803793c:\n\
      mov        r0,#0xc8\n\
      mul        r0,r1\n\
      ldrh       r1,[r2,#0x0]\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      strh       r0,[r4,#0x0]\n\
 LAB_08037950:\n\
      ldr        r0,PTR_DAT_080379b8\n\

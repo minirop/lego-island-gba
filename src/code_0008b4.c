@@ -131,7 +131,7 @@ LAB_080009aa:\n\
     add         r0,r0,r1\n\
     ldr         r0,[r0,#0x0]\n\
     ldr         r0,[r0,#0x2c]\n\
-    bl          fun_080434c8\n\
+    bl          _call_via_r0\n\
     ldr         r1,DAT_08000a68\n\
     ldrh        r0,[r1,#0x0]\n\
     add         r0,#0x1\n\
@@ -320,7 +320,7 @@ LAB_08000b2a:\n\
     bne         LAB_08000b34\n\
     b           LAB_08000988\n\
 LAB_08000b34:\n\
-    bl          fun_080434c8\n\
+    bl          _call_via_r0\n\
     b           LAB_08000988\n\
 \n\
 .space 2\n\
@@ -393,7 +393,7 @@ LAB_08000b9e:\n\
     add         r0,r0,r1\n\
     ldr         r0,[r0,#0x0]\n\
     ldr         r0,[r0,#0x28]\n\
-    bl          fun_080434c8\n\
+    bl          _call_via_r0\n\
     b           LAB_08000bca\n\
 DAT_08000bb8:\n\
     .4byte 0x020025B0\n\
@@ -529,7 +529,7 @@ LAB_08000c8a:\n\
     add         r0,r0,r1\n\
     ldr         r0,[r0,#0x0]\n\
     ldr         r0,[r0,#0x24]\n\
-    bl          fun_080434c8\n\
+    bl          _call_via_r0\n\
     ldr         r0,DAT_08000ce8\n\
     strh        r5,[r0,#0x0]\n\
     ldrh        r0,[r4,#0x0]\n\
@@ -630,7 +630,7 @@ LAB_08000d40:\n\
     ldr         r0,[r0,#0x34]\n\
     cmp         r0,#0x0\n\
     beq         LAB_08000d64\n\
-    bl          fun_080434c8\n\
+    bl          _call_via_r0\n\
 LAB_08000d64:\n\
     ldr         r0,DAT_08000db4\n\
     ldrh        r1,[r0,#0x0]\n\
@@ -725,7 +725,7 @@ LAB_08000dfa:\n\
     add         r4,r5,r4\n\
     ldr         r0,[r4,#0x0]\n\
     ldr         r0,[r0,#0x24]\n\
-    bl          fun_080434c8\n\
+    bl          _call_via_r0\n\
     add         r7,r5,#0x0\n\
     ldr         r5,DAT_08000e64\n\
     add         r6,r4,#0x0\n\
@@ -743,7 +743,7 @@ LAB_08000e18:\n\
 LAB_08000e34:\n\
     ldr         r0,[r6,#0x0]\n\
     ldr         r0,[r0,#0x2c]\n\
-    bl          fun_080434c8\n\
+    bl          _call_via_r0\n\
     add         r4,r0,#0x0\n\
     bl          fun_08003cfc\n\
     bl          fun_08002bcc\n\
@@ -754,7 +754,7 @@ LAB_08000e34:\n\
     add         r0,r7,r0\n\
     ldr         r0,[r0,#0x0]\n\
     ldr         r0,[r0,#0x28]\n\
-    bl          fun_080434c8\n\
+    bl          _call_via_r0\n\
 LAB_08000e5a:\n\
     pop         {r4,r5,r6,r7}\n\
     pop         {r0}\n\
@@ -1364,7 +1364,7 @@ LAB_080011e6:\n\
     ldr         r0,[r0,#0x38]\n\
     cmp         r0,#0x0\n\
     beq         LAB_080011f6\n\
-    bl          fun_080434c8\n\
+    bl          _call_via_r0\n\
 LAB_080011f6:\n\
     add         r0,r4,#0x1\n\
     lsl         r0,r0,#0x10\n\

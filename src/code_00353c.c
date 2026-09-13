@@ -19,7 +19,7 @@ __attribute__((naked)) void fun_0800354c()
     asm("\n\
     push        {lr}\n\
     lsl         r0,r0,#0x8\n\
-    bl          fun_08043504\n\
+    bl          __divsi3\n\
     pop         {r1}\n\
     bx          r1\n\
     ");

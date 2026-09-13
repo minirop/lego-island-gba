@@ -17,7 +17,7 @@ DAT_080003f8:\n\
 LAB_080003fc:\n\
     add         r0,r4,#0x1\n\
     mov         r1,#0x28\n\
-    bl          fun_080435d0\n\
+    bl          __modsi3\n\
     lsl         r0,r0,#0x18\n\
     lsr         r4,r0,#0x18\n\
 LAB_08000408:\n\

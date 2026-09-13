@@ -2237,7 +2237,7 @@ LAB_080193fa:\n\
      lsl        r1,r4,#0x1\n\
      add        r1,r1,r4\n\
      add        r1,#0xa\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      cmp        r0,#0x0\n\
      bne        LAB_08019420\n\
      ldr        r1,DAT_08019434\n\

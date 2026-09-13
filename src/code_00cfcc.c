@@ -784,7 +784,7 @@ LAB_0800d58c:\n\
     add         r0,#0x1\n\
     add         r0,r5,r0\n\
     mov         r1,#0x22\n\
-    bl          fun_08043718\n\
+    bl          __umodsi3\n\
     lsl         r0,r0,#0x18\n\
     lsr         r5,r0,#0x18\n\
     add         r0,r6,#0x1\n\

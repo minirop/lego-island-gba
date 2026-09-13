@@ -119,7 +119,7 @@ LAB_08002a70:\n\
     ldr         r1,DAT_08002ab4\n\
     ldrh        r0,[r3,#0x2]\n\
     ldr         r1,[r1,#0x0]\n\
-    bl          fun_080434cc\n\
+    bl          _call_via_r1\n\
 LAB_08002aa2:\n\
     add         r0,r4,#0x1\n\
     lsl         r0,r0,#0x10\n\

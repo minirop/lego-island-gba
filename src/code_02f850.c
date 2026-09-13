@@ -1189,7 +1189,7 @@ LAB_0803010c:\n\
      ble        LAB_0803015e\n\
      add        r0,r4,#0x0\n\
      mov        r1,#0x1e\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      cmp        r0,#0x0\n\
      bne        LAB_0803015e\n\
      ldr        r1,PTR_DAT_080301a8\n\
@@ -3466,7 +3466,7 @@ LAB_08031194:\n\
      mov        r2,#0x0\n\
      ldrsh      r1,[r0,r2]\n\
      add        r0,r3,#0x0\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      cmp        r0,#0x0\n\
      bne        LAB_08031274\n\
      ldrh       r1,[r4,#0xc]\n\
@@ -5445,7 +5445,7 @@ LAB_08031fec:\n\
      ldr        r0,DAT_0803201c\n\
      ldr        r0,[r0,#0x0]\n\
      mov        r1,#0x5\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      cmp        r0,#0x0\n\
      beq        LAB_0803200c\n\
      b          LAB_0803210c\n\
@@ -5501,12 +5501,12 @@ LAB_0803204c:\n\
      ldr        r1,DAT_0803209c\n\
      ldr        r0,[r0,#0x0]\n\
      ldr        r1,[r1,#0x0]\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      cmp        r0,#0x0\n\
      bne        LAB_0803207a\n\
      ldrh       r0,[r4,#0x10]\n\
      mov        r1,#0x6\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      add        r0,#0x1\n\
      strh       r0,[r4,#0x10]\n\
 LAB_0803207a:\n\
@@ -5545,12 +5545,12 @@ LAB_080320a4:\n\
      ldr        r1,DAT_080320e8\n\
      ldr        r0,[r0,#0x0]\n\
      ldr        r1,[r1,#0x0]\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      cmp        r0,#0x0\n\
      bne        LAB_080320ce\n\
      ldrh       r0,[r4,#0x10]\n\
      mov        r1,#0x6\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      add        r0,#0x1\n\
      strh       r0,[r4,#0x10]\n\
 LAB_080320ce:\n\
@@ -6925,7 +6925,7 @@ LAB_08032a84:\n\
      mov        r0,#0x64\n\
      mul        r0,r1\n\
      add        r1,r2,#0x0\n\
-     bl         fun_080436a0\n\
+     bl         __udivsi3\n\
      lsl        r1,r0,#0x3\n\
      sub        r1,r1,r0\n\
      str        r1,[r4,#0x0]\n\

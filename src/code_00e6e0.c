@@ -79,7 +79,7 @@ LAB_0800e76a:\n\
     bl          fun_08002c04\n\
     add         r0,r4,r0\n\
     mov         r1,#0xa\n\
-    bl          fun_08043718\n\
+    bl          __umodsi3\n\
     lsl         r0,r0,#0x18\n\
     lsr         r4,r0,#0x18\n\
     lsl         r5,r4,#0x1\n\

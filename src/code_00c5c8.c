@@ -965,7 +965,7 @@ __attribute__((naked)) void fun_0800cd48()
     add         r0,r0,r4\n\
     ldrb        r0,[r0,#0x0]\n\
     mov         r1,#0x3\n\
-    bl          fun_08043718\n\
+    bl          __umodsi3\n\
     lsl         r0,r0,#0x18\n\
     cmp         r0,#0x0\n\
     bne         LAB_0800cdc2\n\
@@ -978,7 +978,7 @@ __attribute__((naked)) void fun_0800cd48()
     add         r0,r0,r4\n\
     ldrb        r0,[r0,#0x0]\n\
     mov         r1,#0x3\n\
-    bl          fun_080436a0\n\
+    bl          __udivsi3\n\
     lsl         r0,r0,#0x18\n\
     lsr         r0,r0,#0x8\n\
     mov         r1,#0x94\n\
@@ -993,7 +993,7 @@ __attribute__((naked)) void fun_0800cd48()
     add         r0,r0,r4\n\
     ldrb        r0,[r0,#0x0]\n\
     mov         r1,#0x3\n\
-    bl          fun_080436a0\n\
+    bl          __udivsi3\n\
     lsl         r0,r0,#0x18\n\
     lsr         r0,r0,#0x8\n\
     mov         r2,#0x94\n\

@@ -283,7 +283,7 @@ __attribute__((naked)) void fun_08019d24()
      ldrsh      r0,[r4,r1]\n\
      add        r0,#0x1\n\
      mov        r1,#0x25\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      strh       r0,[r4,#0x0]\n\
      lsl        r0,r0,#0x18\n\
      lsr        r1,r0,#0x18\n\
@@ -312,7 +312,7 @@ LAB_08019d80:\n\
      add        r0,r1,#0x1\n\
 LAB_08019d82:\n\
      mov        r1,#0x25\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      lsl        r0,r0,#0x18\n\
      lsr        r1,r0,#0x18\n\
      add        r0,r4,#0x1\n\
@@ -387,7 +387,7 @@ LAB_08019e08:\n\
      add        r0,r1,#0x1\n\
 LAB_08019e0a:\n\
      mov        r1,#0x25\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      lsl        r0,r0,#0x18\n\
      lsr        r1,r0,#0x18\n\
      add        r0,r4,#0x1\n\
@@ -540,7 +540,7 @@ __attribute__((naked)) void fun_08019ee4()
      lsl        r4,r4,#0x1\n\
      add        r0,r4,#0x0\n\
      mov        r1,r9\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      str        r0,[sp,#0x14]\n\
      mov        r2,r10\n\
      sub        r4,r4,r2\n\
@@ -1527,7 +1527,7 @@ __attribute__((naked)) void fun_0801a630()
      ldrsh      r0,[r2,r3]\n\
      mov        r1,#0xc8\n\
      lsl        r1,r1,#0x3\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      mov        r1,r8\n\
      strb       r0,[r1,#0x0]\n\
      mov        r5,#0x80\n\
@@ -1588,22 +1588,22 @@ __attribute__((naked)) void fun_0801a630()
      mov        r0,r9\n\
      strh       r0,[r6,#0x2]\n\
      mov        r0,#0x12\n\
-     bl         fun_080443f0\n\
+     bl         __floatsidf\n\
      add        r5,r1,#0x0\n\
      add        r4,r0,#0x0\n\
      ldr        r1,DAT_0801a790\n\
      mov        r2,#0x4\n\
      ldrsh      r0,[r1,r2]\n\
-     bl         fun_080443f0\n\
+     bl         __floatsidf\n\
      ldr        r2,DAT_0801a7bc\n\
      ldr        r3,DAT_0801a7c0\n\
-     bl         fun_08043f74\n\
+     bl         __divdf3\n\
      add        r3,r1,#0x0\n\
      add        r2,r0,#0x0\n\
      add        r1,r5,#0x0\n\
      add        r0,r4,#0x0\n\
-     bl         fun_08043c64\n\
-     bl         fun_0804446c\n\
+     bl         __adddf3\n\
+     bl         __fixdfsi\n\
      strh       r0,[r6,#0x2]\n\
      mov        r3,r9\n\
      strh       r3,[r6,#0x4]\n\
@@ -1611,7 +1611,7 @@ __attribute__((naked)) void fun_0801a630()
      mov        r2,#0x6\n\
      ldrsh      r0,[r1,r2]\n\
      mov        r1,#0x11\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      mov        r1,#0x5e\n\
      mov        r3,r8\n\
      ldrb       r3,[r3,#0x0]\n\

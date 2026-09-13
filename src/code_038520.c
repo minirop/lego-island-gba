@@ -792,7 +792,7 @@ LAB_08038ad2:\n\
      ldrb       r0,[r4,#0x0]\n\
      add        r0,#0x1\n\
      mov        r1,#0xa\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      strb       r0,[r4,#0x0]\n\
      mov        r0,#0xa\n\
      bl         fun_08002c04\n\
@@ -990,7 +990,7 @@ LAB_08038c60:\n\
      mov        r1,#0x2\n\
      ldrsh      r0,[r0,r1]\n\
      mov        r1,#0xb\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      lsl        r0,r0,#0x10\n\
      asr        r0,r0,#0x10\n\
      lsl        r1,r0,#0x2\n\
@@ -1897,7 +1897,7 @@ LAB_080392ee:\n\
      add        r0,r7,#0x1\n\
      mov        r1,#0x3\n\
      str        r2,[sp,#0x18]\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      lsl        r0,r0,#0x18\n\
      lsr        r7,r0,#0x18\n\
      mov        r1,r8\n\
@@ -1986,7 +1986,7 @@ __attribute__((naked)) void fun_08039370()
      lsl        r4,r4,#0x1\n\
      add        r0,r4,#0x0\n\
      mov        r1,r10\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      str        r0,[sp,#0x14]\n\
      sub        r4,r4,r7\n\
      lsl        r4,r4,#0x10\n\
@@ -2753,7 +2753,7 @@ __attribute__((naked)) void fun_0803989c()
      ldr        r2,PTR_DAT_08039a84\n\
      mov        r3,#0x0\n\
      ldrsh      r1,[r2,r3]\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      strh       r0,[r5,#0x0]\n\
      ldr        r1,PTR_DAT_08039a88\n\
      strh       r0,[r1,#0x0]\n\
@@ -3088,7 +3088,7 @@ LAB_08039b5a:\n\
      sub        r0,r0,r1\n\
      mov        r3,#0x0\n\
      ldrsh      r1,[r2,r3]\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      ldrh       r4,[r4,#0x0]\n\
      add        r0,r4,r0\n\
      ldr        r2,[sp,#0x8]\n\
@@ -3311,7 +3311,7 @@ __attribute__((naked)) void fun_08039cd0()
      beq        LAB_08039d10\n\
      mov        r0,#0x3c\n\
      add        r1,r2,#0x0\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      lsl        r0,r0,#0x10\n\
      lsr        r6,r0,#0x10\n\
      ldr        r5,DAT_08039d14\n\
@@ -3320,7 +3320,7 @@ __attribute__((naked)) void fun_08039cd0()
      add        r0,r4,r0\n\
      ldr        r0,[r0,#0x0]\n\
      mov        r1,#0x3c\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      cmp        r0,r6\n\
      bcs        LAB_08039d1c\n\
      add        r0,r4,r5\n\
@@ -4104,7 +4104,7 @@ LAB_0803a266:\n\
      ldr        r2,[r1,#0x0]\n\
      add        r0,r6,#0x0\n\
      add        r1,r4,#0x0\n\
-     bl         fun_080434d0\n\
+     bl         _call_via_r2\n\
      lsl        r0,r0,#0x10\n\
      lsr        r0,r0,#0x10\n\
      str        r0,[sp,#0x18]\n\
@@ -4119,7 +4119,7 @@ LAB_0803a266:\n\
      ldr        r2,[r3,#0x0]\n\
      add        r0,r5,#0x0\n\
      add        r1,r4,#0x0\n\
-     bl         fun_080434d0\n\
+     bl         _call_via_r2\n\
      lsl        r0,r0,#0x10\n\
      lsr        r0,r0,#0x10\n\
      mov        r9,r0\n\
@@ -4134,14 +4134,14 @@ LAB_0803a266:\n\
      ldr        r3,DAT_0803a34c\n\
      ldr        r2,[r3,#0x0]\n\
      add        r0,r6,#0x0\n\
-     bl         fun_080434d0\n\
+     bl         _call_via_r2\n\
      lsl        r0,r0,#0x10\n\
      lsr        r7,r0,#0x10\n\
      ldr        r0,DAT_0803a34c\n\
      ldr        r2,[r0,#0x0]\n\
      add        r0,r5,#0x0\n\
      mov        r1,r8\n\
-     bl         fun_080434d0\n\
+     bl         _call_via_r2\n\
      lsl        r0,r0,#0x10\n\
      lsr        r1,r0,#0x10\n\
      ldr        r5,[sp,#0x24]\n\
@@ -4182,7 +4182,7 @@ LAB_0803a328:\n\
      asr        r4,r2,#0x10\n\
      add        r0,r0,r4\n\
      mov        r1,#0x8\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      mov        r3,#0x8\n\
      mul        r0,r3\n\
      sub        r0,r0,r4\n\
@@ -4210,7 +4210,7 @@ LAB_0803a35e:\n\
      asr        r4,r5,#0x10\n\
      add        r0,r0,r4\n\
      mov        r1,#0x8\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      mov        r1,#0x8\n\
      mul        r0,r1\n\
      sub        r0,r0,r4\n\
@@ -4262,7 +4262,7 @@ LAB_0803a39a:\n\
      add        r0,r2,#0x0\n\
      add        r1,r4,#0x0\n\
      str        r2,[sp,#0x3c]\n\
-     bl         fun_080434d4\n\
+     bl         _call_via_r3\n\
      lsl        r0,r0,#0x10\n\
      lsr        r0,r0,#0x10\n\
      str        r0,[sp,#0x18]\n\
@@ -4275,7 +4275,7 @@ LAB_0803a39a:\n\
      ldr        r3,[r0,#0x0]\n\
      add        r0,r6,#0x0\n\
      add        r1,r4,#0x0\n\
-     bl         fun_080434d4\n\
+     bl         _call_via_r3\n\
      lsl        r0,r0,#0x10\n\
      lsr        r0,r0,#0x10\n\
      mov        r9,r0\n\
@@ -4289,14 +4289,14 @@ LAB_0803a39a:\n\
      ldr        r2,[sp,#0x3c]\n\
      add        r0,r2,#0x0\n\
      add        r1,r5,#0x0\n\
-     bl         fun_080434d4\n\
+     bl         _call_via_r3\n\
      lsl        r0,r0,#0x10\n\
      lsr        r7,r0,#0x10\n\
      mov        r1,r8\n\
      ldr        r2,[r1,#0x0]\n\
      add        r0,r6,#0x0\n\
      add        r1,r5,#0x0\n\
-     bl         fun_080434d0\n\
+     bl         _call_via_r2\n\
      lsl        r0,r0,#0x10\n\
      lsr        r1,r0,#0x10\n\
      ldr        r2,[sp,#0x18]\n\
@@ -4329,7 +4329,7 @@ LAB_0803a446:\n\
      asr        r4,r5,#0x10\n\
      add        r0,r0,r4\n\
      mov        r1,#0x8\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      mov        r1,#0x8\n\
      mul        r0,r1\n\
      sub        r0,r0,r4\n\
@@ -4357,7 +4357,7 @@ LAB_0803a47c:\n\
      asr        r4,r2,#0x10\n\
      add        r0,r0,r4\n\
      mov        r1,#0x8\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      mov        r3,#0x8\n\
      mul        r0,r3\n\
      sub        r0,r0,r4\n\
@@ -4466,7 +4466,7 @@ LAB_0803a522:\n\
      ldr        r2,[r3,#0x0]\n\
      add        r0,r6,#0x0\n\
      add        r1,r4,#0x0\n\
-     bl         fun_080434d0\n\
+     bl         _call_via_r2\n\
      lsl        r0,r0,#0x10\n\
      lsr        r0,r0,#0x10\n\
      str        r0,[sp,#0x24]\n\
@@ -4481,7 +4481,7 @@ LAB_0803a522:\n\
      ldr        r2,[r3,#0x0]\n\
      add        r0,r5,#0x0\n\
      add        r1,r4,#0x0\n\
-     bl         fun_080434d0\n\
+     bl         _call_via_r2\n\
      lsl        r0,r0,#0x10\n\
      lsr        r0,r0,#0x10\n\
      mov        r9,r0\n\
@@ -4496,14 +4496,14 @@ LAB_0803a522:\n\
      ldr        r3,DAT_0803a5ec\n\
      ldr        r2,[r3,#0x0]\n\
      add        r0,r6,#0x0\n\
-     bl         fun_080434d0\n\
+     bl         _call_via_r2\n\
      lsl        r0,r0,#0x10\n\
      lsr        r7,r0,#0x10\n\
      ldr        r0,DAT_0803a5ec\n\
      ldr        r2,[r0,#0x0]\n\
      add        r0,r5,#0x0\n\
      mov        r1,r8\n\
-     bl         fun_080434d0\n\
+     bl         _call_via_r2\n\
      lsl        r0,r0,#0x10\n\
      lsr        r2,r0,#0x10\n\
      ldr        r5,[sp,#0x38]\n\
@@ -4589,7 +4589,7 @@ LAB_0803a630:\n\
      asr        r4,r3,#0x10\n\
      add        r0,r0,r4\n\
      mov        r1,#0x8\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      mov        r1,#0x8\n\
      mul        r0,r1\n\
      sub        r0,r0,r4\n\
@@ -4613,7 +4613,7 @@ LAB_0803a660:\n\
      asr        r4,r5,#0x10\n\
      add        r0,r0,r4\n\
      mov        r1,#0x8\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      mov        r2,#0x8\n\
      mul        r0,r2\n\
      sub        r0,r0,r4\n\
@@ -4665,7 +4665,7 @@ LAB_0803a69c:\n\
      add        r0,r2,#0x0\n\
      add        r1,r4,#0x0\n\
      str        r2,[sp,#0x4c]\n\
-     bl         fun_080434d4\n\
+     bl         _call_via_r3\n\
      lsl        r0,r0,#0x10\n\
      lsr        r0,r0,#0x10\n\
      str        r0,[sp,#0x24]\n\
@@ -4678,7 +4678,7 @@ LAB_0803a69c:\n\
      ldr        r3,[r0,#0x0]\n\
      add        r0,r6,#0x0\n\
      add        r1,r4,#0x0\n\
-     bl         fun_080434d4\n\
+     bl         _call_via_r3\n\
      lsl        r0,r0,#0x10\n\
      lsr        r0,r0,#0x10\n\
      mov        r9,r0\n\
@@ -4692,14 +4692,14 @@ LAB_0803a69c:\n\
      ldr        r2,[sp,#0x4c]\n\
      add        r0,r2,#0x0\n\
      add        r1,r5,#0x0\n\
-     bl         fun_080434d4\n\
+     bl         _call_via_r3\n\
      lsl        r0,r0,#0x10\n\
      lsr        r7,r0,#0x10\n\
      mov        r1,r8\n\
      ldr        r2,[r1,#0x0]\n\
      add        r0,r6,#0x0\n\
      add        r1,r5,#0x0\n\
-     bl         fun_080434d0\n\
+     bl         _call_via_r2\n\
      lsl        r0,r0,#0x10\n\
      lsr        r2,r0,#0x10\n\
      ldr        r3,[sp,#0x24]\n\
@@ -4777,7 +4777,7 @@ LAB_0803a796:\n\
      asr        r4,r1,#0x10\n\
      add        r0,r0,r4\n\
      mov        r1,#0x8\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      mov        r2,#0x8\n\
      mul        r0,r2\n\
      sub        r0,r0,r4\n\
@@ -4803,7 +4803,7 @@ LAB_0803a7c8:\n\
      asr        r4,r2,#0x10\n\
      add        r0,r0,r4\n\
      mov        r1,#0x8\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      mov        r3,#0x8\n\
      mul        r0,r3\n\
      sub        r0,r0,r4\n\
@@ -5343,7 +5343,7 @@ LAB_0803ab56:\n\
      ldr        r2,[r1,#0x8]\n\
      ldr        r1,[r1,#0x4]\n\
      add        r0,r3,#0x0\n\
-     bl         fun_080434d0\n\
+     bl         _call_via_r2\n\
 LAB_0803ab60:\n\
      add        r0,r4,#0x1\n\
      lsl        r0,r0,#0x10\n\

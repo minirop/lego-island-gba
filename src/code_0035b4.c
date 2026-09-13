@@ -123,15 +123,15 @@ __attribute__((naked)) void fun_08003660()
     add         r4,r0,#0x0\n\
     add         r5,r1,#0x0\n\
     ldr         r0,[r4,#0x0]\n\
-    bl          fun_08044884\n\
+    bl          __mulsf3\n\
     str         r0,[r4,#0x0]\n\
     ldr         r0,[r4,#0x4]\n\
     add         r1,r5,#0x0\n\
-    bl          fun_08044884\n\
+    bl          __mulsf3\n\
     str         r0,[r4,#0x4]\n\
     ldr         r0,[r4,#0x8]\n\
     add         r1,r5,#0x0\n\
-    bl          fun_08044884\n\
+    bl          __mulsf3\n\
     str         r0,[r4,#0x8]\n\
     pop         {r4,r5}\n\
     pop         {r0}\n\

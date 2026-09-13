@@ -88,7 +88,7 @@ LAB_080408fa:\n\
      sub        r0,r1,#0x1\n\
      lsl        r0,r0,#0x10\n\
      mov        r1,#0x7f\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      mul        r0,r4\n\
      asr        r0,r0,#0x10\n\
      mov        r2,r8\n\
@@ -98,7 +98,7 @@ LAB_08040920:\n\
      add        r0,r1,#0x1\n\
      lsl        r0,r0,#0x10\n\
      mov        r1,#0x7f\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      mul        r0,r4\n\
      asr        r0,r0,#0x10\n\
      add        r1,r7,r0\n\
@@ -1377,7 +1377,7 @@ LAB_08041218:\n\
      add        r0,r0,r7\n\
      ldr        r2,[r0,#0x0]\n\
      add        r0,r5,#0x0\n\
-     bl         fun_080434d0\n\
+     bl         _call_via_r2\n\
      cmp        r0,#0x0\n\
      bne        LAB_08041218\n\
 LAB_0804123a:\n\
@@ -2596,7 +2596,7 @@ __attribute__((naked)) void fun_080419dc()
      lsl        r0,r0,#0x5\n\
      mov        r1,#0xe1\n\
      lsl        r1,r1,#0x4\n\
-     bl         fun_080436a0\n\
+     bl         __udivsi3\n\
      mov        r1,#0xa4\n\
      lsl        r1,r1,#0x1\n\
      add        r5,r7,r1\n\
@@ -2614,10 +2614,10 @@ __attribute__((naked)) void fun_080419dc()
      ldrh       r2,[r4,#0x2]\n\
      lsl        r1,r2,#0x2\n\
      add        r1,r1,r2\n\
-     bl         fun_080436a0\n\
+     bl         __udivsi3\n\
      lsl        r0,r0,#0xc\n\
      ldrh       r1,[r5,#0x0]\n\
-     bl         fun_080436a0\n\
+     bl         __udivsi3\n\
      mov        r2,#0xa7\n\
      lsl        r2,r2,#0x1\n\
      add        r1,r7,r2\n\
@@ -2706,7 +2706,7 @@ LAB_08041a9c:\n\
      lsl        r0,r0,#0x5\n\
      mov        r1,#0xe1\n\
      lsl        r1,r1,#0x4\n\
-     bl         fun_080436a0\n\
+     bl         __udivsi3\n\
      mov        r3,#0xa6\n\
      lsl        r3,r3,#0x1\n\
      add        r1,r7,r3\n\
@@ -2720,7 +2720,7 @@ LAB_08041a9c:\n\
      ldrh       r4,[r2,#0x2]\n\
      lsl        r1,r4,#0x2\n\
      add        r1,r1,r4\n\
-     bl         fun_080436a0\n\
+     bl         __udivsi3\n\
      mov        r2,#0xa7\n\
      lsl        r2,r2,#0x1\n\
      add        r1,r7,r2\n\

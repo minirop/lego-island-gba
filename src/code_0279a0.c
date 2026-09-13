@@ -94,7 +94,7 @@ LAB_08027a3e:\n\
      lsl        r1,r1,#0x18\n\
      asr        r1,r1,#0x18\n\
      lsl        r1,r1,#0x2\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      str        r0,[r4,#0x0]\n\
      add        r0,r5,#0x1\n\
      lsl        r0,r0,#0x10\n\
@@ -9858,7 +9858,7 @@ LAB_0802c2be:\n\
      ldr        r5,[r0,#0x0]\n\
      add        r0,r5,#0x0\n\
      mov        r1,#0x3c\n\
-     bl         fun_080436a0\n\
+     bl         __udivsi3\n\
      add        r4,r0,#0x0\n\
      lsl        r4,r4,#0x18\n\
      lsr        r4,r4,#0x18\n\
@@ -12388,7 +12388,7 @@ LAB_0802d578:\n\
      mov        r2,#0x0\n\
      ldrsh      r0,[r5,r2]\n\
      mov        r1,#0x14\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_0802d5dc\n\
@@ -12431,7 +12431,7 @@ LAB_0802d5dc:\n\
      mov        r4,#0x0\n\
      ldrsh      r0,[r5,r4]\n\
      mov        r1,#0x1e\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_0802d61a\n\
@@ -12462,7 +12462,7 @@ LAB_0802d61a:\n\
      mov        r1,#0x0\n\
      ldrsh      r0,[r5,r1]\n\
      mov        r1,#0xa\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_0802d658\n\
@@ -14477,7 +14477,7 @@ LAB_0802e480:\n\
      lsr        r5,r0,#0x10\n\
      asr        r0,r0,#0x13\n\
      mov        r1,#0x6\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      mov        r2,r10\n\
      strh       r0,[r2,#0x24]\n\
 LAB_0802e4f6:\n\
@@ -14533,7 +14533,7 @@ LAB_0802e4f6:\n\
      asr        r4,r4,#0x13\n\
      add        r0,r4,#0x0\n\
      mov        r1,#0x6\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      add        r0,#0xe\n\
      mov        r2,r10\n\
      strh       r0,[r2,#0x24]\n\
@@ -14590,7 +14590,7 @@ LAB_0802e56e:\n\
      asr        r4,r4,#0x13\n\
      add        r0,r4,#0x0\n\
      mov        r1,#0x5\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      add        r0,#0xf5\n\
      mov        r2,r10\n\
      strh       r0,[r2,#0x24]\n\

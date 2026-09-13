@@ -91,7 +91,7 @@ LAB_08019734:\n\
      add        r0,r6,#0x1\n\
 LAB_08019736:\n\
      mov        r1,#0x46\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      lsl        r0,r0,#0x18\n\
      lsr        r6,r0,#0x18\n\
      add        r0,r7,#0x1\n\
@@ -165,7 +165,7 @@ __attribute__((naked)) void fun_08019778()
      mov        r4,#0x80\n\
      lsl        r4,r4,#0x1\n\
      add        r0,r4,#0x0\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      str        r0,[sp,#0x18]\n\
      mov        r1,r10\n\
      sub        r4,r4,r1\n\

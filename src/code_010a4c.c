@@ -287,7 +287,7 @@ LAB_08010c6c:\n\
     ldr         r0,DAT_08010ca0\n\
     ldr         r0,[r0,#0x0]\n\
     mov         r1,#0x5\n\
-    bl          fun_08043718\n\
+    bl          __umodsi3\n\
     cmp         r0,#0x0\n\
     bne         LAB_08010cac\n\
     ldr         r0,DAT_08010ca4\n\
@@ -446,7 +446,7 @@ LAB_08010d9c:\n\
     ldr         r0,DAT_08010dbc\n\
     ldr         r0,[r0,#0x0]\n\
     mov         r1,#0x5\n\
-    bl          fun_08043718\n\
+    bl          __umodsi3\n\
     cmp         r0,#0x0\n\
     bne         LAB_08010dc8\n\
     ldr         r0,DAT_08010dc0\n\

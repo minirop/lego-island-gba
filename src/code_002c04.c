@@ -13,7 +13,7 @@ LAB_08002c06:\n\
     add         r0,#0x9\n\
     str         r0,[r1,#0x0]\n\
     add         r1,r4,#0x1\n\
-    bl          fun_08043718\n\
+    bl          __umodsi3\n\
     cmp         r0,r4\n\
     bne         LAB_08002c2a\n\
     b           LAB_08002c06\n\
@@ -105,7 +105,7 @@ __attribute__((naked)) void fun_08002c9c()
     asr         r0,r0,#0x8\n\
     lsl         r1,r1,#0x10\n\
     asr         r1,r1,#0x10\n\
-    bl          fun_08043504\n\
+    bl          __divsi3\n\
     lsl         r0,r0,#0x10\n\
     asr         r0,r0,#0x10\n\
     pop         {r1}\n\
@@ -124,7 +124,7 @@ __attribute__((naked)) void fun_08002cb4()
     lsl         r0,r0,#0x9\n\
     lsl         r1,r1,#0x10\n\
     asr         r1,r1,#0x10\n\
-    bl          fun_08043504\n\
+    bl          __divsi3\n\
     lsl         r0,r0,#0x10\n\
     asr         r0,r0,#0x10\n\
     pop         {r1}\n\

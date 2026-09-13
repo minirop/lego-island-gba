@@ -1335,7 +1335,7 @@ LAB_08024304:\n\
      strh       r1,[r0,#0x0]\n\
      ldrh       r0,[r0,#0x0]\n\
      mov        r1,#0x3\n\
-     bl         fun_080436a0\n\
+     bl         __udivsi3\n\
      add        r0,#0x1\n\
      lsl        r0,r0,#0x10\n\
      lsr        r5,r0,#0x10\n\
@@ -1401,7 +1401,7 @@ LAB_08024382:\n\
      strh       r1,[r0,#0x0]\n\
      ldrh       r0,[r0,#0x0]\n\
      mov        r1,#0x6\n\
-     bl         fun_080436a0\n\
+     bl         __udivsi3\n\
      add        r0,#0xf\n\
      lsl        r0,r0,#0x10\n\
      lsr        r5,r0,#0x10\n\
@@ -4153,7 +4153,7 @@ LAB_080257a2:\n\
      lsl        r0,r1,#0x1\n\
      mul        r0,r4\n\
      add        r1,r7,#0x0\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      sub        r0,r0,r4\n\
      lsl        r2,r6,#0x1\n\
      add        r1,r5,#0x0\n\
@@ -4451,7 +4451,7 @@ LAB_080259aa:\n\
      add        r0,r4,r1\n\
      mov        r1,#0x96\n\
      lsl        r1,r1,#0x1\n\
-     bl         fun_080436a0\n\
+     bl         __udivsi3\n\
      lsl        r1,r0,#0x2\n\
      add        r1,r1,r0\n\
      mov        r0,#0xc8\n\

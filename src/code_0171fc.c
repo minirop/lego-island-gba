@@ -650,7 +650,7 @@ __attribute__((naked)) void fun_080176bc()
      cmp        r0,#0x0\n\
      ble        LAB_08017794\n\
      mov        r1,#0x19\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_08017756\n\

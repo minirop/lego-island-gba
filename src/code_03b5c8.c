@@ -622,9 +622,9 @@ LAB_0803b9da:\n\
 .syntax unified\n\
     rsbs        r0,r0,#0\n\
 .syntax divided\n\
-     bl         fun_08044d90\n\
+     bl         __floatsisf\n\
      ldr        r1,DAT_0803bcb4\n\
-     bl         fun_08044884\n\
+     bl         __mulsf3\n\
      str        r0,[sp,#0xc8]\n\
      mov        r1,sp\n\
      add        r0,r5,#0x0\n\
@@ -645,46 +645,46 @@ LAB_0803b9da:\n\
      stmia      r1!,{r3,r4,r5}\n\
      ldr        r0,[sp,#0x18]\n\
      ldr        r1,[sp,#0x0]\n\
-     bl         fun_08044850\n\
+     bl         __subsf3\n\
      ldr        r4,DAT_0803bcb8\n\
      add        r1,r4,#0x0\n\
-     bl         fun_080449e8\n\
+     bl         __divsf3\n\
      str        r0,[sp,#0x60]\n\
      mov        r6,r10\n\
      ldr        r0,[r6,#0x4]\n\
      ldr        r1,[sp,#0x4]\n\
-     bl         fun_08044850\n\
+     bl         __subsf3\n\
      add        r1,r4,#0x0\n\
-     bl         fun_080449e8\n\
+     bl         __divsf3\n\
      ldr        r1,[sp,#0xec]\n\
      str        r0,[r1,#0x4]\n\
      ldr        r0,[r6,#0x8]\n\
      ldr        r1,[sp,#0x8]\n\
-     bl         fun_08044850\n\
+     bl         __subsf3\n\
      add        r1,r4,#0x0\n\
-     bl         fun_080449e8\n\
+     bl         __divsf3\n\
      ldr        r2,[sp,#0xec]\n\
      str        r0,[r2,#0x8]\n\
      ldr        r0,[sp,#0x24]\n\
      ldr        r1,[sp,#0xc]\n\
-     bl         fun_08044850\n\
+     bl         __subsf3\n\
      add        r1,r4,#0x0\n\
-     bl         fun_080449e8\n\
+     bl         __divsf3\n\
      str        r0,[sp,#0x6c]\n\
      ldr        r3,[sp,#0xd8]\n\
      ldr        r0,[r3,#0x4]\n\
      ldr        r1,[r7,#0x4]\n\
-     bl         fun_08044850\n\
+     bl         __subsf3\n\
      add        r1,r4,#0x0\n\
-     bl         fun_080449e8\n\
+     bl         __divsf3\n\
      ldr        r5,[sp,#0xf0]\n\
      str        r0,[r5,#0x4]\n\
      ldr        r6,[sp,#0xd8]\n\
      ldr        r0,[r6,#0x8]\n\
      ldr        r1,[r7,#0x8]\n\
-     bl         fun_08044850\n\
+     bl         __subsf3\n\
      add        r1,r4,#0x0\n\
-     bl         fun_080449e8\n\
+     bl         __divsf3\n\
      str        r0,[r5,#0x8]\n\
      ldr        r0,[sp,#0x0]\n\
      str        r0,[sp,#0x78]\n\
@@ -719,41 +719,41 @@ LAB_0803b9da:\n\
      ldr        r5,[sp,#0xdc]\n\
      ldr        r1,[r5,#0x4]\n\
      ldr        r0,[sp,#0xc8]\n\
-     bl         fun_080449e8\n\
+     bl         __divsf3\n\
      add        r1,r0,#0x0\n\
      ldr        r0,[sp,#0xdc]\n\
      bl         fun_08003660\n\
      ldr        r6,[sp,#0xe0]\n\
      ldr        r1,[r6,#0x4]\n\
      ldr        r0,[sp,#0xc8]\n\
-     bl         fun_080449e8\n\
+     bl         __divsf3\n\
      add        r1,r0,#0x0\n\
      ldr        r0,[sp,#0xe0]\n\
      bl         fun_08003660\n\
      ldr        r0,[sp,#0xe4]\n\
      ldr        r1,[r0,#0x4]\n\
      ldr        r0,[sp,#0xc8]\n\
-     bl         fun_080449e8\n\
+     bl         __divsf3\n\
      add        r1,r0,#0x0\n\
      ldr        r0,[sp,#0xe4]\n\
      bl         fun_08003660\n\
      ldr        r2,[sp,#0xe8]\n\
      ldr        r1,[r2,#0x4]\n\
      ldr        r0,[sp,#0xc8]\n\
-     bl         fun_080449e8\n\
+     bl         __divsf3\n\
      add        r1,r0,#0x0\n\
      ldr        r0,[sp,#0xe8]\n\
      bl         fun_08003660\n\
      ldr        r0,[sp,#0x3c]\n\
      ldr        r1,[sp,#0x30]\n\
-     bl         fun_08044850\n\
+     bl         __subsf3\n\
      ldr        r1,DAT_0803bcbc\n\
-     bl         fun_08044884\n\
-     bl         fun_08044df0\n\
+     bl         __mulsf3\n\
+     bl         __fixsfsi\n\
      ldr        r3,[sp,#0xc0]\n\
      strh       r0,[r3,#0x0]\n\
      ldr        r0,[r5,#0x8]\n\
-     bl         fun_08044df0\n\
+     bl         __fixsfsi\n\
      ldr        r4,[sp,#0xc4]\n\
      strh       r0,[r4,#0x0]\n\
      ldr        r4,DAT_0803bcc0\n\
@@ -772,7 +772,7 @@ LAB_0803bb50:\n\
      ldr        r6,[sp,#0xcc]\n\
      ldr        r1,[r6,#0x4]\n\
      ldr        r0,[sp,#0xc8]\n\
-     bl         fun_080449e8\n\
+     bl         __divsf3\n\
      add        r1,r0,#0x0\n\
      ldr        r0,[sp,#0xcc]\n\
      bl         fun_08003660\n\
@@ -783,7 +783,7 @@ LAB_0803bb50:\n\
      ldr        r6,[sp,#0xd0]\n\
      ldr        r1,[r6,#0x4]\n\
      ldr        r0,[sp,#0xc8]\n\
-     bl         fun_080449e8\n\
+     bl         __divsf3\n\
      add        r1,r0,#0x0\n\
      ldr        r0,[sp,#0xd0]\n\
      bl         fun_08003660\n\
@@ -797,14 +797,14 @@ LAB_0803bb50:\n\
      str        r0,[sp,#0x10c]\n\
      ldr        r2,[sp,#0xfc]\n\
      ldr        r1,[r2,#0x8]\n\
-     bl         fun_08044850\n\
+     bl         __subsf3\n\
      add        r5,r0,#0x0\n\
      ldr        r3,[sp,#0xf8]\n\
      ldr        r6,[r3,#0x0]\n\
      ldr        r4,[sp,#0xfc]\n\
      ldr        r1,[r4,#0x0]\n\
      add        r0,r6,#0x0\n\
-     bl         fun_08044850\n\
+     bl         __subsf3\n\
      ldr        r1,[sp,#0x104]\n\
      ldr        r1,[r1,#0x8]\n\
      str        r1,[sp,#0x110]\n\
@@ -818,44 +818,44 @@ LAB_0803bb50:\n\
      add        r4,#0x4\n\
      add        r4,r8\n\
      ldr        r1,DAT_0803bcc4\n\
-     bl         fun_08044884\n\
-     bl         fun_08044df0\n\
+     bl         __mulsf3\n\
+     bl         __fixsfsi\n\
      str        r0,[r4,#0x0]\n\
      ldr        r4,DAT_0803bcac\n\
      add        r4,#0xc\n\
      add        r4,r8\n\
      add        r0,r5,#0x0\n\
-     bl         fun_08044e58\n\
+     bl         __negsf2\n\
      ldr        r1,DAT_0803bcc4\n\
-     bl         fun_08044884\n\
-     bl         fun_08044df0\n\
+     bl         __mulsf3\n\
+     bl         __fixsfsi\n\
      str        r0,[r4,#0x0]\n\
      mov        r0,r9\n\
      add        r1,r6,#0x0\n\
-     bl         fun_08044850\n\
+     bl         __subsf3\n\
      ldr        r4,DAT_0803bcc8\n\
      add        r1,r4,#0x0\n\
-     bl         fun_080449e8\n\
+     bl         __divsf3\n\
      add        r5,r0,#0x0\n\
      ldr        r0,[sp,#0x110]\n\
      ldr        r1,[sp,#0x10c]\n\
-     bl         fun_08044850\n\
+     bl         __subsf3\n\
      add        r1,r4,#0x0\n\
-     bl         fun_080449e8\n\
+     bl         __divsf3\n\
      add        r6,r0,#0x0\n\
      ldr        r4,DAT_0803bcac\n\
      add        r4,r8\n\
      add        r0,r5,#0x0\n\
      ldr        r1,DAT_0803bcc4\n\
-     bl         fun_08044884\n\
-     bl         fun_08044df0\n\
+     bl         __mulsf3\n\
+     bl         __fixsfsi\n\
      str        r0,[r4,#0x0]\n\
      ldr        r4,DAT_0803bcb0\n\
      add        r8,r4\n\
      add        r0,r6,#0x0\n\
      ldr        r1,DAT_0803bcc4\n\
-     bl         fun_08044884\n\
-     bl         fun_08044df0\n\
+     bl         __mulsf3\n\
+     bl         __fixsfsi\n\
      mov        r5,r8\n\
      str        r0,[r5,#0x0]\n\
 LAB_0803bc30:\n\
@@ -869,33 +869,33 @@ LAB_0803bc30:\n\
      stmia      r1!,{r4,r5,r6}\n\
      ldr        r0,[sp,#0x78]\n\
      ldr        r1,[sp,#0x60]\n\
-     bl         fun_08044824\n\
+     bl         __addsf3\n\
      str        r0,[sp,#0x78]\n\
      mov        r1,r10\n\
      ldr        r0,[r1,#0x4]\n\
      ldr        r2,[sp,#0xec]\n\
      ldr        r1,[r2,#0x4]\n\
-     bl         fun_08044824\n\
+     bl         __addsf3\n\
      mov        r3,r10\n\
      str        r0,[r3,#0x4]\n\
      ldr        r0,[r3,#0x8]\n\
      ldr        r4,[sp,#0xec]\n\
      ldr        r1,[r4,#0x8]\n\
-     bl         fun_08044824\n\
+     bl         __addsf3\n\
      mov        r5,r10\n\
      str        r0,[r5,#0x8]\n\
      ldr        r0,[r7,#0x0]\n\
      ldr        r1,[sp,#0x6c]\n\
-     bl         fun_08044824\n\
+     bl         __addsf3\n\
      str        r0,[r7,#0x0]\n\
      ldr        r0,[r7,#0x4]\n\
      ldr        r6,[sp,#0xf0]\n\
      ldr        r1,[r6,#0x4]\n\
-     bl         fun_08044824\n\
+     bl         __addsf3\n\
      str        r0,[r7,#0x4]\n\
      ldr        r0,[r7,#0x8]\n\
      ldr        r1,[r6,#0x8]\n\
-     bl         fun_08044824\n\
+     bl         __addsf3\n\
      str        r0,[r7,#0x8]\n\
      ldr        r0,[sp,#0xd4]\n\
      add        r0,#0x1\n\
@@ -1012,7 +1012,7 @@ __attribute__((naked)) void fun_0803bd38()
      ldr        r3,DAT_0803bd48\n\
      ldr        r2,DAT_0803bd4c\n\
      ldr        r3,[r3,#0x0]\n\
-     bl         fun_080434d4\n\
+     bl         _call_via_r3\n\
      pop        {r0}\n\
      bx         r0\n\
 DAT_0803bd48:\n\

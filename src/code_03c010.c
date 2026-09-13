@@ -539,7 +539,7 @@ LAB_0803c3b2:\n\
      mov        r1,r10\n\
      mov        r2,sp\n\
      add        r3,r6,#0x0\n\
-     bl         fun_080434d8\n\
+     bl         _call_via_r4\n\
 LAB_0803c3cc:\n\
      mov        r1,#0x6\n\
      ldrsh      r0,[r5,r1]\n\
@@ -1003,7 +1003,7 @@ LAB_0803c738:\n\
      mov        r0,#0x64\n\
      bl         fun_08002c04\n\
      mov        r1,#0x3\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      lsl        r0,r0,#0x18\n\
      lsr        r0,r0,#0x18\n\
      cmp        r0,#0x1\n\
@@ -1095,7 +1095,7 @@ LAB_0803c7d8:\n\
      ldrh       r0,[r4,#0x10]\n\
      add        r0,#0x1\n\
      mov        r1,#0x6\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      strh       r0,[r4,#0x10]\n\
 LAB_0803c7e4:\n\
      ldr        r2,DAT_0803c800\n\
@@ -1245,7 +1245,7 @@ __attribute__((naked)) void fun_0803c8b4()
      add        r1,r6,#0x0\n\
      mov        r2,sp\n\
      mov        r3,r8\n\
-     bl         fun_080434dc\n\
+     bl         _call_via_r5\n\
 LAB_0803c8f0:\n\
      mov        r0,sp\n\
      ldrh       r1,[r0,#0x0]\n\
@@ -1516,7 +1516,7 @@ __attribute__((naked)) void fun_0803ca64()
      mov        r1,r8\n\
      mov        r2,sp\n\
      mov        r3,r9\n\
-     bl         fun_080434d8\n\
+     bl         _call_via_r4\n\
 LAB_0803caa6:\n\
      ldr        r0,DAT_0803cb34\n\
      cmp        r5,r0\n\
@@ -2158,7 +2158,7 @@ __attribute__((naked)) void fun_0803cef8()
      add        r1,r6,#0x0\n\
      mov        r2,sp\n\
      add        r3,r7,#0x0\n\
-     bl         fun_080434dc\n\
+     bl         _call_via_r5\n\
 LAB_0803cf2e:\n\
      mov        r0,sp\n\
      ldrh       r1,[r0,#0x0]\n\
@@ -2269,7 +2269,7 @@ __attribute__((naked)) void fun_0803cfb0()
      add        r1,r3,#0x0\n\
      mov        r2,sp\n\
      add        r3,r6,#0x0\n\
-     bl         fun_080434d8\n\
+     bl         _call_via_r4\n\
 LAB_0803cfe6:\n\
      mov        r0,sp\n\
      ldrh       r0,[r0,#0x0]\n\
@@ -2457,7 +2457,7 @@ LAB_0803d0e4:\n\
      add        r0,r4,#0x0\n\
      add        r1,r5,#0x0\n\
      add        r2,r6,#0x0\n\
-     bl         fun_080434d4\n\
+     bl         _call_via_r3\n\
      add        sp,#0x80\n\
      pop        {r4,r5,r6}\n\
      pop        {r0}\n\
@@ -2592,7 +2592,7 @@ LAB_0803d1b8:\n\
      add        r0,r4,#0x0\n\
      add        r1,r5,#0x0\n\
      add        r2,r6,#0x0\n\
-     bl         fun_080434d4\n\
+     bl         _call_via_r3\n\
      add        sp,#0xc0\n\
      pop        {r4,r5,r6}\n\
      pop        {r1}\n\
@@ -3965,7 +3965,7 @@ __attribute__((naked)) void fun_0803dabc()
      ldr        r2,[sp,#0x14]\n\
      lsl        r0,r2,#0xc\n\
      ldrh       r1,[r1,#0x2]\n\
-     bl         fun_080436a0\n\
+     bl         __udivsi3\n\
      lsl        r0,r0,#0x10\n\
      lsr        r5,r0,#0x10\n\
      lsr        r0,r0,#0x15\n\
@@ -3976,7 +3976,7 @@ __attribute__((naked)) void fun_0803dabc()
      str        r1,[sp,#0x0]\n\
      ldr        r4,[r7,#0x0]\n\
      add        r1,sp,#0x4\n\
-     bl         fun_080434d8\n\
+     bl         _call_via_r4\n\
      add        r4,r0,#0x0\n\
      ldr        r2,DAT_0803db9c\n\
      ldr        r3,[r2,#0x0]\n\

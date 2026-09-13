@@ -1248,7 +1248,7 @@ __attribute__((naked)) void fun_08007c68()
     add         r0,#0x1\n\
     ldr         r1,DAT_08007cdc\n\
     ldrh        r1,[r1,#0x0]\n\
-    bl          fun_080435d0\n\
+    bl          __modsi3\n\
     strb        r0,[r4,#0x0]\n\
 LAB_08007c86:\n\
     bl          fun_0800135c\n\

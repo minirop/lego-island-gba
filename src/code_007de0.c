@@ -1518,7 +1518,7 @@ LAB_080088c0:\n\
     ldr         r0,DAT_08008998\n\
     ldr         r0,[r0,#0x0]\n\
     mov         r1,#0x7\n\
-    bl          fun_08043718\n\
+    bl          __umodsi3\n\
     cmp         r0,#0x0\n\
     bne         LAB_080088ee\n\
     add         r0,r7,r6\n\
@@ -1532,7 +1532,7 @@ LAB_080088c0:\n\
     ldr         r1,DAT_080089a0\n\
     add         r1,r7,r1\n\
     ldr         r1,[r1,#0x0]\n\
-    bl          fun_08043718\n\
+    bl          __umodsi3\n\
     add         r4,r4,r0\n\
     strh        r4,[r5,#0x0]\n\
 LAB_080088ee:\n\
@@ -1582,7 +1582,7 @@ LAB_08008918:\n\
     add         r0,#0x1\n\
     str         r0,[r1,#0x0]\n\
     mov         r1,#0xa\n\
-    bl          fun_08043718\n\
+    bl          __umodsi3\n\
     bl          fun_08008630\n\
     ldr         r0,DAT_080089bc\n\
     add         r0,r7,r0\n\

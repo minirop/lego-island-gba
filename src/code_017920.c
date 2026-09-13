@@ -422,7 +422,7 @@ LAB_08017c5e:\n\
      ldr        r0,DAT_08017ca4\n\
      ldrb       r0,[r0,#0x0]\n\
      mov        r1,#0xa\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      lsl        r0,r0,#0x18\n\
      cmp        r0,#0x0\n\
      bne        LAB_08017cc8\n\

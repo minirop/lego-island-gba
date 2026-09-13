@@ -403,7 +403,7 @@ __attribute__((naked)) void fun_0800eb28()
     mov         r0,#0x64\n\
     bl          fun_08002c04\n\
     mov         r1,#0x16\n\
-    bl          fun_08043718\n\
+    bl          __umodsi3\n\
     lsl         r0,r0,#0x1\n\
     add         r0,sp\n\
     ldrh        r1,[r0,#0x0]\n\

@@ -822,7 +822,7 @@ __attribute__((naked)) void fun_08022178()
      add        r1,r0,#0x0\n\
      ldrh       r0,[r4,#0x0]\n\
      add        r0,#0x1\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      strh       r0,[r4,#0x0]\n\
      ldr        r4,DAT_08022200\n\
      mov        r2,#0x3\n\
@@ -2672,7 +2672,7 @@ LAB_08022f5a:\n\
      mov        r3,#0x4\n\
      ldrsh      r0,[r0,r3]\n\
      mov        r1,#0x14\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      add        r0,#0x4\n\
      strh       r0,[r6,#0x2]\n\
      ldrh       r4,[r4,#0x0]\n\
@@ -2681,7 +2681,7 @@ LAB_08022f5a:\n\
      mov        r1,#0x6\n\
      ldrsh      r0,[r0,r1]\n\
      mov        r1,#0x14\n\
-     bl         fun_08043504\n\
+     bl         __divsi3\n\
      add        r0,#0x4\n\
      strh       r0,[r6,#0x4]\n\
      mov        r0,#0x0\n\
@@ -3057,7 +3057,7 @@ LAB_0802326a:\n\
      ldr        r0,DAT_080232d4\n\
      ldr        r0,[r0,#0x0]\n\
      mov        r1,#0xa\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      cmp        r0,#0x0\n\
      bne        LAB_08023282\n\
      ldrh       r0,[r7,#0x10]\n\
@@ -3123,7 +3123,7 @@ LAB_080232ee:\n\
      ldr        r0,DAT_08023390\n\
      ldr        r0,[r0,#0x0]\n\
      mov        r1,#0xa\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      cmp        r0,#0x0\n\
      bne        LAB_08023306\n\
      ldrh       r0,[r7,#0x10]\n\
@@ -3143,7 +3143,7 @@ LAB_08023306:\n\
      ldr        r0,DAT_08023390\n\
      ldr        r0,[r0,#0x0]\n\
      mov        r1,#0xa\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      cmp        r0,#0x0\n\
      bne        LAB_0802333c\n\
      ldrh       r0,[r7,#0x10]\n\
@@ -3240,7 +3240,7 @@ LAB_080233c0:\n\
      add        r0,#0x2\n\
 LAB_080233c6:\n\
      mov        r1,#0x3\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      lsl        r0,r0,#0x18\n\
      lsr        r0,r0,#0x18\n\
      ldrb       r1,[r4,#0x0]\n\
@@ -3249,7 +3249,7 @@ LAB_080233c6:\n\
      add        r0,r1,#0x0\n\
      add        r0,#0x1\n\
      mov        r1,#0x3\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
 LAB_080233e0:\n\
      strb       r0,[r4,#0x0]\n\
      ldr        r0,DAT_08023410\n\

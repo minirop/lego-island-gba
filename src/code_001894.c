@@ -118,7 +118,7 @@ __attribute__((naked)) void fun_0800193c()
     mov         r0,#0x64\n\
     bl          fun_08002c04\n\
     mov         r1,#0x16\n\
-    bl          fun_08043718\n\
+    bl          __umodsi3\n\
     lsl         r0,r0,#0x1\n\
     add         r0,sp\n\
     ldrh        r0,[r0,#0x0]\n\
@@ -185,7 +185,7 @@ LAB_080019dc:\n\
     ldrh        r0,[r6,#0x0]\n\
     add         r0,#0x1\n\
     mov         r1,#0x46\n\
-    bl          fun_080435d0\n\
+    bl          __modsi3\n\
     strh        r0,[r6,#0x0]\n\
     add         r0,r7,#0x1\n\
     lsl         r0,r0,#0x10\n\

@@ -219,7 +219,7 @@ LAB_080450d2:\n\
     add         r0,r4,#0x0\n\
     add         r1,r6,#0x0\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     add         r5,r4,#0x0\n\
     cmp         r0,#0x0\n\
     bgt         LAB_0804508c\n\
@@ -264,19 +264,19 @@ LAB_08045120:\n\
     ldr         r0,[sp,#0x0]\n\
     add         r1,r4,#0x0\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     cmp         r0,#0x0\n\
     bge         LAB_0804515e\n\
     add         r0,r4,#0x0\n\
     add         r1,r6,#0x0\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     cmp         r0,#0x0\n\
     blt         LAB_08045180\n\
     ldr         r0,[sp,#0x0]\n\
     add         r1,r6,#0x0\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     ldr         r1,[sp,#0x0]\n\
     cmp         r0,#0x0\n\
     bge         LAB_08045182\n\
@@ -286,13 +286,13 @@ LAB_0804515e:\n\
     add         r0,r4,#0x0\n\
     add         r1,r6,#0x0\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     cmp         r0,#0x0\n\
     bgt         LAB_08045180\n\
     ldr         r0,[sp,#0x0]\n\
     add         r1,r6,#0x0\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     add         r1,r6,#0x0\n\
     cmp         r0,#0x0\n\
     bge         LAB_08045182\n\
@@ -309,19 +309,19 @@ LAB_08045182:\n\
     add         r4,r5,r1\n\
     add         r1,r5,#0x0\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     cmp         r0,#0x0\n\
     bge         LAB_080451bc\n\
     add         r0,r5,#0x0\n\
     add         r1,r4,#0x0\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     cmp         r0,#0x0\n\
     blt         LAB_080451de\n\
     mov         r0,r8\n\
     add         r1,r4,#0x0\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     mov         r1,r8\n\
     cmp         r0,#0x0\n\
     bge         LAB_080451e0\n\
@@ -331,13 +331,13 @@ LAB_080451bc:\n\
     add         r0,r5,#0x0\n\
     add         r1,r4,#0x0\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     cmp         r0,#0x0\n\
     bgt         LAB_080451de\n\
     mov         r0,r8\n\
     add         r1,r4,#0x0\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     add         r1,r4,#0x0\n\
     cmp         r0,#0x0\n\
     bge         LAB_080451e0\n\
@@ -357,19 +357,19 @@ LAB_080451e0:\n\
     mov         r0,r8\n\
     add         r1,r4,#0x0\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     cmp         r0,#0x0\n\
     bge         LAB_08045220\n\
     add         r0,r4,#0x0\n\
     mov         r1,r10\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     cmp         r0,#0x0\n\
     blt         LAB_08045242\n\
     mov         r0,r8\n\
     mov         r1,r10\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     mov         r1,r8\n\
     cmp         r0,#0x0\n\
     bge         LAB_08045244\n\
@@ -379,13 +379,13 @@ LAB_08045220:\n\
     add         r0,r4,#0x0\n\
     mov         r1,r10\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     cmp         r0,#0x0\n\
     bgt         LAB_08045242\n\
     mov         r0,r8\n\
     mov         r1,r10\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     mov         r1,r10\n\
     cmp         r0,#0x0\n\
     bge         LAB_08045244\n\
@@ -399,19 +399,19 @@ LAB_08045246:\n\
     add         r0,r6,#0x0\n\
     add         r1,r5,#0x0\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     cmp         r0,#0x0\n\
     bge         LAB_08045276\n\
     add         r0,r5,#0x0\n\
     mov         r1,r10\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     cmp         r0,#0x0\n\
     blt         LAB_08045298\n\
     add         r0,r6,#0x0\n\
     mov         r1,r10\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     add         r1,r6,#0x0\n\
     cmp         r0,#0x0\n\
     bge         LAB_0804529a\n\
@@ -421,13 +421,13 @@ LAB_08045276:\n\
     add         r0,r5,#0x0\n\
     mov         r1,r10\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     cmp         r0,#0x0\n\
     bgt         LAB_08045298\n\
     add         r0,r6,#0x0\n\
     mov         r1,r10\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     mov         r1,r10\n\
     cmp         r0,#0x0\n\
     bge         LAB_0804529a\n\
@@ -616,7 +616,7 @@ LAB_080453d0:\n\
     add         r0,r6,#0x0\n\
     ldr         r1,[sp,#0x0]\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     cmp         r0,#0x0\n\
     ble         LAB_08045374\n\
     b           LAB_08045440\n\
@@ -679,7 +679,7 @@ LAB_08045440:\n\
     add         r0,r5,#0x0\n\
     ldr         r1,[sp,#0x0]\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     cmp         r0,#0x0\n\
     bge         LAB_080453e4\n\
     ldr         r0,[sp,#0xc]\n\
@@ -753,7 +753,7 @@ LAB_080454be:\n\
     add         r0,r4,#0x0\n\
     add         r1,r6,#0x0\n\
     ldr         r2,[sp,#0x4]\n\
-    bl          fun_080434d0\n\
+    bl          _call_via_r2\n\
     add         r5,r4,#0x0\n\
     cmp         r0,#0x0\n\
     bgt         LAB_08045478\n\
@@ -861,7 +861,7 @@ LAB_08045586:\n\
     cmp         r0,r7\n\
     bls         LAB_0804559e\n\
     add         r1,r7,#0x0\n\
-    bl          fun_080436a0\n\
+    bl          __udivsi3\n\
     add         r1,r0,#0x0\n\
     ldr         r0,[sp,#0x0]\n\
     add         r2,r7,#0x0\n\
@@ -875,7 +875,7 @@ LAB_0804559e:\n\
     str         r0,[sp,#0x0]\n\
     add         r0,r5,#0x0\n\
     add         r1,r7,#0x0\n\
-    bl          fun_080436a0\n\
+    bl          __udivsi3\n\
     mov         r9,r0\n\
     b           LAB_08045044\n\
 LAB_080455b4:\n\

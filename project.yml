@@ -268,14 +268,38 @@ rom:
     - name: code_04086c
       format: c
       address: 0x04086c
-      size: 0x21d0
-    - name: code_043504
-      format: c
+    - name: code_042a3c
+      format: asm
+      address: 0x042a3c
+      size: 0x1e8
+    - name: _call_via_rX
+      library: libgcc.a
+      address: 0x0434c8
+    - name: _divsi3
+      library: libgcc.a
       address: 0x043504
-    - name: code_043504
-      format: c
-      address: 0x043504
-    - name: _ashldi3
+    - name: _dvmd_tls
+      library: libgcc.a
+      address: 0x043598
+    - name: _fixunssfsi
+      library: libgcc.a
+      address: 0x04359c
+    - name: _modsi3
+      library: libgcc.a
+      address: 0x0435d0
+    - name: _udivsi3
+      library: libgcc.a
+      address: 0x0436a0
+    - name: _umodsi3
+      library: libgcc.a
+      address: 0x043718
+    - name: dp-bit
+      library: libgcc.a
+      address: 0x0437d8
+    - name: fp-bit
+      library: libgcc.a
+      address: 0x044574
+    - name: _lshrdi3
       library: libgcc.a
       address: 0x044ec0
     - name: _muldi3
@@ -310,6 +334,14 @@ rom:
       section: rodata
       address: 0x77ef7c
       size: 0x9a0
+ewram:
+  address: 0x02000000
+  size: 256K
+  symbols:
+    - name: dp-bit
+      address: 0x0005b8
+    - name: fp-bit
+      address: 0x0005d0
 build:
   files:
     ofiles:
@@ -320,7 +352,7 @@ build:
     as: $(DEVKITARM)/bin/arm-none-eabi-as
     cc1: $(AGBCC)/bin/old_agbcc
     cc1flags: -mthumb-interwork -Wimplicit -Wparentheses -O2 -fhex-asm
-    asflags: -mcpu=arm7tdmi -mthumb-interwork
+    asflags: -mcpu=arm7tdmi -mthumb-interwork -I include
     symbols: symbols.txt
     ldscript: ldscript.txt
     ld: $(DEVKITARM)/bin/arm-none-eabi-ld

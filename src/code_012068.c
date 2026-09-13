@@ -255,7 +255,7 @@ __attribute__((naked)) void fun_080121f4()
      ldrb       r0,[r0,#0x0]\n\
      add        r0,#0x1\n\
      mov        r1,#0x6\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      add        r4,r4,r5\n\
      strb       r0,[r4,#0x0]\n\
 LAB_08012252:\n\
@@ -285,7 +285,7 @@ LAB_08012252:\n\
      ldrb       r0,[r0,#0x0]\n\
      add        r0,#0x1\n\
      mov        r1,#0x6\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      add        r4,r4,r5\n\
      strb       r0,[r4,#0x0]\n\
 LAB_08012298:\n\
@@ -362,7 +362,7 @@ __attribute__((naked)) void fun_080122c8()
      ldrb       r0,[r0,#0x0]\n\
      add        r0,#0x1\n\
      mov        r1,#0xa\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      add        r4,r4,r5\n\
      strb       r0,[r4,#0x0]\n\
 LAB_08012326:\n\
@@ -392,7 +392,7 @@ LAB_08012326:\n\
      ldrb       r0,[r0,#0x0]\n\
      add        r0,#0x1\n\
      mov        r1,#0xa\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      add        r4,r4,r5\n\
      strb       r0,[r4,#0x0]\n\
 LAB_0801236c:\n\
@@ -614,7 +614,7 @@ __attribute__((naked)) void fun_0801247c()
      ldrb       r0,[r0,#0x0]\n\
      add        r0,#0x1\n\
      mov        r1,#0x6\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      add        r4,r4,r5\n\
      strb       r0,[r4,#0x0]\n\
 LAB_080124da:\n\
@@ -644,7 +644,7 @@ LAB_080124da:\n\
      ldrb       r0,[r0,#0x0]\n\
      add        r0,#0x1\n\
      mov        r1,#0x6\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      add        r4,r4,r5\n\
      strb       r0,[r4,#0x0]\n\
 LAB_08012520:\n\
@@ -3544,7 +3544,7 @@ LAB_08013802:\n\
      ldrh       r0,[r0,#0x0]\n\
      sub        r0,#0xd0\n\
      mov        r1,#0x7\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      add        r0,#0xd1\n\
      add        r4,r4,r5\n\
      strh       r0,[r4,#0x0]\n\
@@ -3582,7 +3582,7 @@ LAB_08013862:\n\
      ldrh       r0,[r0,#0x0]\n\
      sub        r0,#0xd0\n\
      mov        r1,#0x7\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      add        r0,#0xd1\n\
      add        r4,r4,r5\n\
      strh       r0,[r4,#0x0]\n\
@@ -3620,7 +3620,7 @@ LAB_080138b8:\n\
      ldrh       r0,[r0,#0x0]\n\
      sub        r0,#0xd0\n\
      mov        r1,#0x7\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      add        r0,#0xd1\n\
      add        r4,r4,r5\n\
      strh       r0,[r4,#0x0]\n\
@@ -3658,7 +3658,7 @@ LAB_0801390e:\n\
      ldrh       r0,[r0,#0x0]\n\
      sub        r0,#0xd0\n\
      mov        r1,#0x7\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      add        r0,#0xd1\n\
      add        r4,r4,r5\n\
      strh       r0,[r4,#0x0]\n\
@@ -3756,7 +3756,7 @@ LAB_080139e0:\n\
      ldrh       r0,[r0,#0x0]\n\
      sub        r0,#0xd0\n\
      mov        r1,#0x7\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      add        r0,#0xd1\n\
      add        r4,r4,r5\n\
      strh       r0,[r4,#0x0]\n\
@@ -3794,7 +3794,7 @@ LAB_08013a36:\n\
      ldrh       r0,[r0,#0x0]\n\
      sub        r0,#0xd0\n\
      mov        r1,#0x7\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      add        r0,#0xd1\n\
      add        r4,r4,r5\n\
      strh       r0,[r4,#0x0]\n\
@@ -4033,7 +4033,7 @@ LAB_08013be6:\n\
      ldrh       r0,[r0,#0x0]\n\
      sub        r0,#0xd0\n\
      mov        r1,#0x7\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      add        r0,#0xd1\n\
      add        r4,r4,r5\n\
      strh       r0,[r4,#0x0]\n\
@@ -4071,7 +4071,7 @@ LAB_08013c52:\n\
      ldrh       r0,[r0,#0x0]\n\
      sub        r0,#0xd0\n\
      mov        r1,#0x7\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      add        r0,#0xd1\n\
      add        r4,r4,r5\n\
      strh       r0,[r4,#0x0]\n\
@@ -4109,7 +4109,7 @@ LAB_08013ca8:\n\
      ldrh       r0,[r0,#0x0]\n\
      sub        r0,#0xd0\n\
      mov        r1,#0x7\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      add        r0,#0xd1\n\
      add        r4,r4,r5\n\
      strh       r0,[r4,#0x0]\n\
@@ -4147,7 +4147,7 @@ LAB_08013cfe:\n\
      ldrh       r0,[r0,#0x0]\n\
      sub        r0,#0xd0\n\
      mov        r1,#0x7\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      add        r0,#0xd1\n\
      add        r4,r4,r5\n\
      strh       r0,[r4,#0x0]\n\
@@ -4747,7 +4747,7 @@ __attribute__((naked)) void fun_0801410c()
      ldrb       r0,[r0,#0x0]\n\
      add        r0,#0x1\n\
      mov        r1,#0x6\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      add        r4,r4,r5\n\
      strb       r0,[r4,#0x0]\n\
 LAB_08014178:\n\
@@ -4777,7 +4777,7 @@ LAB_08014178:\n\
      ldrb       r0,[r0,#0x0]\n\
      add        r0,#0x1\n\
      mov        r1,#0x6\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      add        r4,r4,r5\n\
      strb       r0,[r4,#0x0]\n\
 LAB_080141be:\n\
@@ -7006,7 +7006,7 @@ __attribute__((naked)) void fun_08015010()
      add        r1,r1,r0\n\
      ldrh       r1,[r1,#0x0]\n\
      add        r0,r2,#0x0\n\
-     bl         fun_080435d0\n\
+     bl         __modsi3\n\
      add        r4,r0,#0x0\n\
      lsl        r4,r4,#0x10\n\
      lsr        r4,r4,#0x10\n\
@@ -9533,7 +9533,7 @@ __attribute__((naked)) void fun_080160b0()
      ldrb       r0,[r0,#0x0]\n\
      add        r0,#0x1\n\
      mov        r1,#0x9\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      add        r4,r4,r5\n\
      strb       r0,[r4,#0x0]\n\
 LAB_0801610a:\n\
@@ -9563,7 +9563,7 @@ LAB_0801610a:\n\
      ldrb       r0,[r0,#0x0]\n\
      add        r0,#0x1\n\
      mov        r1,#0x9\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      add        r4,r4,r5\n\
      strb       r0,[r4,#0x0]\n\
 LAB_08016150:\n\
@@ -11349,7 +11349,7 @@ __attribute__((naked)) void fun_08016c54()
      ldr        r0,DAT_08016c94\n\
      ldrh       r0,[r0,#0x0]\n\
      mov        r1,#0xa\n\
-     bl         fun_08043718\n\
+     bl         __umodsi3\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_08016cc6\n\

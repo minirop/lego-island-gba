@@ -1444,7 +1444,7 @@ LAB_0800a214:\n\
     ldrh        r0,[r4,#0x0]\n\
     add         r0,#0x1\n\
     mov         r1,#0xc\n\
-    bl          fun_080435d0\n\
+    bl          __modsi3\n\
     strh        r0,[r4,#0x0]\n\
     ldr         r4,[r5,#0x0]\n\
     ldr         r0,DAT_0800a320\n\
@@ -1887,7 +1887,7 @@ LAB_0800a5ae:\n\
     bl          fun_080020a4\n\
     ldrb        r0,[r0,#0x1c]\n\
     mov         r1,#0x3\n\
-    bl          fun_08043718\n\
+    bl          __umodsi3\n\
     lsl         r0,r0,#0x18\n\
     cmp         r0,#0x0\n\
     bne         LAB_0800a5ca\n\
@@ -2165,7 +2165,7 @@ LAB_0800a95c:\n\
     b           LAB_0800a980\n\
 LAB_0800a970:\n\
     add         r0,r2,#0x0\n\
-    bl          fun_080435d0\n\
+    bl          __modsi3\n\
     add         r1,r0,#0x0\n\
     lsl         r1,r1,#0x10\n\
     lsr         r1,r1,#0x10\n\
