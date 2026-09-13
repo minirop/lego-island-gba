@@ -144,6 +144,68 @@ DAT_08002abc:\n\
 __attribute__((naked)) void fun_08002ac0()
 {
     asm("\n\
+     push       {r4,r5,r6,lr}\n\
+     add        r6,r1,#0x0\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r5,r0,#0x10\n\
+     ldr        r0,DAT_08002b28\n\
+     ldr        r0,[r0,#0x0]\n\
+     cmp        r0,#0x0\n\
+     beq        LAB_08002b20\n\
+     mov        r4,#0x0\n\
+     ldr        r2,DAT_08002b2c\n\
+     ldrh       r0,[r2,#0x0]\n\
+     ldr        r1,DAT_08002b30\n\
+     cmp        r0,#0x0\n\
+     beq        LAB_08002af4\n\
+LAB_08002adc:\n\
+     add        r0,r4,#0x1\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r4,r0,#0x10\n\
+     cmp        r4,#0x7\n\
+     bhi        LAB_08002af4\n\
+     lsl        r0,r4,#0x1\n\
+     add        r0,r0,r4\n\
+     lsl        r0,r0,#0x2\n\
+     add        r0,r0,r2\n\
+     ldrh       r0,[r0,#0x0]\n\
+     cmp        r0,#0x0\n\
+     bne        LAB_08002adc\n\
+LAB_08002af4:\n\
+     mov        r0,#0x0\n\
+     cmp        r4,#0x7\n\
+     bhi        LAB_08002afc\n\
+     mov        r0,#0x1\n\
+LAB_08002afc:\n\
+     bl         fun_080032b4\n\
+     ldr        r2,DAT_08002b2c\n\
+     lsl        r1,r4,#0x1\n\
+     add        r1,r1,r4\n\
+     lsl        r1,r1,#0x2\n\
+     add        r4,r1,r2\n\
+     mov        r3,#0x0\n\
+     mov        r0,#0x1\n\
+     strh       r0,[r4,#0x0]\n\
+     add        r0,r2,#0x0\n\
+     add        r0,#0x8\n\
+     add        r0,r1,r0\n\
+     str        r3,[r0,#0x0]\n\
+     add        r2,#0x4\n\
+     add        r1,r1,r2\n\
+     str        r6,[r1,#0x0]\n\
+     strh       r5,[r4,#0x2]\n\
+LAB_08002b20:\n\
+     pop        {r4,r5,r6}\n\
+     pop        {r0}\n\
+     bx         r0\n\
+.space 1\n\
+.space 1\n\
+DAT_08002b28:\n\
+     .4byte 0x02005834\n\
+DAT_08002b2c:\n\
+     .4byte 0x02005780\n\
+DAT_08002b30:\n\
+     .4byte 0x08049C34\n\
     ");
 }
 __attribute__((naked)) void fun_08002b34()

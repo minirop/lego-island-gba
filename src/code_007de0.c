@@ -305,31 +305,31 @@ LAB_08007fec:\n\
 LAB_08007ff0:\n\
     pop         {r0}\n\
     bx          r0\n\
-    ldr         r2,DAT_0800800c\n\
-    ldr         r0,DAT_08008010\n\
-    str         r0,[r2,#0x0]\n\
-    ldr         r1,DAT_08008014\n\
-    str         r1,[r2,#0x4]\n\
-    ldr         r0,DAT_08008018\n\
-    str         r0,[r1,#0x0]\n\
-    mov         r0,#0x0\n\
-    str         r0,[r1,#0x4]\n\
-    str         r0,[r1,#0x8]\n\
-    mov         r0,#0x1\n\
-    bx          lr\n\
-DAT_0800800c:\n\
-    .4byte 0x0200C630\n\
-DAT_08008010:\n\
-    .4byte 0x08107C9C\n\
-DAT_08008014:\n\
-    .4byte 0x0200C620\n\
-DAT_08008018:\n\
-    .4byte 0x08107C38\n\
     ");
 }
 __attribute__((naked)) void fun_08007ff4()
 {
     asm("\n\
+     ldr        r2,DAT_0800800c\n\
+     ldr        r0,DAT_08008010\n\
+     str        r0,[r2,#0x0]\n\
+     ldr        r1,DAT_08008014\n\
+     str        r1,[r2,#0x4]\n\
+     ldr        r0,DAT_08008018\n\
+     str        r0,[r1,#0x0]\n\
+     mov        r0,#0x0\n\
+     str        r0,[r1,#0x4]\n\
+     str        r0,[r1,#0x8]\n\
+     mov        r0,#0x1\n\
+     bx         lr\n\
+DAT_0800800c:\n\
+     .4byte 0x0200C630\n\
+DAT_08008010:\n\
+     .4byte 0x08107C9C\n\
+DAT_08008014:\n\
+     .4byte 0x0200C620\n\
+DAT_08008018:\n\
+     .4byte 0x08107C38\n\
     ");
 }
 __attribute__((naked)) void fun_0800801c()
@@ -1729,16 +1729,16 @@ DAT_08008a48:\n\
     .4byte 0x0200C808\n\
 DAT_08008a4c:\n\
     .4byte 0x0200C838\n\
-    push        {lr}\n\
-    bl          fun_0800457c\n\
-    mov         r0,#0x0\n\
-    pop         {r1}\n\
-    bx          r1\n\
     ");
 }
 __attribute__((naked)) void fun_08008a50()
 {
     asm("\n\
+     push       {lr}\n\
+     bl         fun_0800457c\n\
+     mov        r0,#0x0\n\
+     pop        {r1}\n\
+     bx         r1\n\
     ");
 }
 __attribute__((naked)) void fun_08008a5c()
@@ -1764,15 +1764,13 @@ DAT_08008a7c:\n\
     bx          lr\n\
     ");
 }
-__attribute__((naked)) void fun_08008a80()
+int fun_08008a80()
 {
-    asm("\n\
-    ");
+    return 1;
 }
-__attribute__((naked)) void fun_08008a84()
+int fun_08008a84()
 {
-    asm("\n\
-    ");
+    return 1;
 }
 __attribute__((naked)) void fun_08008a88()
 {

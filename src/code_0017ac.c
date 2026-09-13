@@ -1,7 +1,8 @@
-__attribute__((naked)) void fun_080017ac()
+void fun_0803fbf8();
+
+void fun_080017ac()
 {
-    asm("\n\
-    ");
+    fun_0803fbf8();
 }
 __attribute__((naked)) void fun_080017b8()
 {

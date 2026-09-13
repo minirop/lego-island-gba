@@ -114,6 +114,10 @@ LAB_08003656:\n\
 __attribute__((naked)) void fun_08003658()
 {
     asm("\n\
+     str        r1,[r0,#0x0]\n\
+     str        r2,[r0,#0x4]\n\
+     str        r3,[r0,#0x8]\n\
+     bx         lr\n\
     ");
 }
 __attribute__((naked)) void fun_08003660()

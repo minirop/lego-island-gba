@@ -2134,6 +2134,226 @@ DAT_0800a7a4:\n\
 __attribute__((naked)) void fun_0800a7a8()
 {
     asm("\n\
+     push       {r4,r5,r6,r7,lr}\n\
+     mov        r7,r10\n\
+     mov        r6,r9\n\
+     mov        r5,r8\n\
+     push       {r5,r6,r7}\n\
+     sub        sp,#0xc\n\
+     ldr        r1,[sp,#0x2c]\n\
+     lsl        r1,r1,#0x10\n\
+     lsr        r1,r1,#0x10\n\
+     str        r1,[sp,#0x0]\n\
+     mov        r1,#0x3\n\
+     mov        r10,r1\n\
+     str        r1,[sp,#0x4]\n\
+     ldrh       r1,[r0,#0x6]\n\
+     lsr        r7,r1,#0x3\n\
+     ldrh       r0,[r0,#0x4]\n\
+     lsr        r6,r0,#0x3\n\
+     ldr        r0,DAT_0800a7dc\n\
+     ldrb       r0,[r0,#0x0]\n\
+     cmp        r0,#0x7\n\
+     bhi        switchD_0800a7da_caseD_8\n\
+     lsl        r0,r0,#0x2\n\
+     ldr        r1,DAT_0800a7e0\n\
+     add        r0,r0,r1\n\
+     ldr        r0,[r0,#0x0]\n\
+     mov        pc,r0\n\
+DAT_0800a7dc:\n\
+     .4byte 0x020117E0\n\
+DAT_0800a7e0:\n\
+     .4byte 0x0800A7E4\n\
+switchD_0800a7da_switchdataD_0800a7e4:\n\
+     .4byte       switchD_0800a7da_caseD_0\n\
+     .4byte       switchD_0800a7da_caseD_1\n\
+     .4byte       switchD_0800a7da_caseD_2\n\
+     .4byte       switchD_0800a7da_caseD_3\n\
+     .4byte       switchD_0800a7da_caseD_4\n\
+     .4byte       switchD_0800a7da_caseD_5\n\
+     .4byte       switchD_0800a7da_caseD_6\n\
+     .4byte       switchD_0800a7da_caseD_7\n\
+switchD_0800a7da_caseD_1:\n\
+     sub        r0,r6,#0x3\n\
+     b          LAB_0800a844\n\
+switchD_0800a7da_caseD_0:\n\
+     sub        r0,r6,#0x1\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r6,r0,#0x10\n\
+     add        r0,r7,#0x1\n\
+     b          LAB_0800a832\n\
+switchD_0800a7da_caseD_3:\n\
+     sub        r0,r6,#0x3\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r6,r0,#0x10\n\
+     sub        r0,r7,#0x3\n\
+     b          LAB_0800a84a\n\
+switchD_0800a7da_caseD_2:\n\
+     sub        r0,r6,#0x4\n\
+     b          LAB_0800a852\n\
+switchD_0800a7da_caseD_5:\n\
+     add        r0,r6,#0x1\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r6,r0,#0x10\n\
+     sub        r0,r7,#0x3\n\
+     b          LAB_0800a84a\n\
+switchD_0800a7da_caseD_4:\n\
+     sub        r0,r6,#0x1\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r6,r0,#0x10\n\
+     sub        r0,r7,#0x4\n\
+LAB_0800a832:\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r7,r0,#0x10\n\
+     ldr        r0,[sp,#0x4]\n\
+     add        r0,#0x1\n\
+     lsl        r0,r0,#0x18\n\
+     lsr        r0,r0,#0x18\n\
+     str        r0,[sp,#0x4]\n\
+     b          switchD_0800a7da_caseD_8\n\
+switchD_0800a7da_caseD_7:\n\
+     add        r0,r6,#0x1\n\
+LAB_0800a844:\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r6,r0,#0x10\n\
+     add        r0,r7,#0x1\n\
+LAB_0800a84a:\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r7,r0,#0x10\n\
+     b          switchD_0800a7da_caseD_8\n\
+switchD_0800a7da_caseD_6:\n\
+     add        r0,r6,#0x1\n\
+LAB_0800a852:\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r6,r0,#0x10\n\
+     sub        r0,r7,#0x1\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r7,r0,#0x10\n\
+     mov        r0,r10\n\
+     add        r0,#0x1\n\
+     lsl        r0,r0,#0x18\n\
+     lsr        r0,r0,#0x18\n\
+     mov        r10,r0\n\
+switchD_0800a7da_caseD_8:\n\
+     mov        r0,#0x0\n\
+     mov        r8,r0\n\
+     ldr        r1,[sp,#0x4]\n\
+     cmp        r8,r1\n\
+     bcs        LAB_0800a92e\n\
+LAB_0800a870:\n\
+     mov        r5,#0x0\n\
+     cmp        r5,r10\n\
+     bcs        LAB_0800a91e\n\
+     mov        r0,#0x1\n\
+.syntax unified\n\
+    rsbs        r0,r0,#0\n\
+.syntax divided\n\
+     mov        r9,r0\n\
+     mov        r1,r8\n\
+     add        r0,r7,r1\n\
+     lsl        r3,r0,#0x10\n\
+LAB_0800a882:\n\
+     add        r0,r6,r5\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r0,r0,#0x10\n\
+     lsr        r1,r3,#0x10\n\
+     str        r3,[sp,#0x8]\n\
+     bl         fun_08003438\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r2,r0,#0x10\n\
+     lsl        r0,r2,#0x10\n\
+     asr        r4,r0,#0x10\n\
+     ldr        r3,[sp,#0x8]\n\
+     cmp        r4,r9\n\
+     beq        LAB_0800a914\n\
+     cmp        r4,#0x7f\n\
+     bgt        LAB_0800a8b4\n\
+     cmp        r4,#0x63\n\
+     bge        LAB_0800a92e\n\
+     cmp        r4,#0x58\n\
+     bgt        LAB_0800a8d0\n\
+     cmp        r4,#0x57\n\
+     bge        LAB_0800a92e\n\
+     cmp        r4,#0x10\n\
+     beq        LAB_0800a92e\n\
+     b          LAB_0800a8f8\n\
+LAB_0800a8b4:\n\
+     cmp        r4,#0xfd\n\
+     blt        LAB_0800a8f8\n\
+     ldr        r0,DAT_0800a8cc\n\
+     cmp        r4,r0\n\
+     ble        LAB_0800a92e\n\
+     add        r0,#0x37\n\
+     cmp        r4,r0\n\
+     bgt        LAB_0800a8f8\n\
+     sub        r0,#0xa\n\
+     cmp        r4,r0\n\
+     blt        LAB_0800a8f8\n\
+     b          LAB_0800a92e\n\
+DAT_0800a8cc:\n\
+     .4byte 0x00000119\n\
+LAB_0800a8d0:\n\
+     lsr        r0,r0,#0x10\n\
+     bl         fun_080034c0\n\
+     ldrh       r0,[r0,#0x4]\n\
+     cmp        r0,#0x0\n\
+     bne        LAB_0800a8e4\n\
+     ldr        r0,DAT_0800a8f4\n\
+     ldr        r1,[r0,#0x0]\n\
+     mov        r0,#0x6\n\
+     strh       r0,[r1,#0x0]\n\
+LAB_0800a8e4:\n\
+     ldr        r0,[sp,#0x0]\n\
+     cmp        r0,#0x0\n\
+     beq        LAB_0800a90c\n\
+     add        r0,r4,#0x0\n\
+     bl         fun_0800e85c\n\
+     b          LAB_0800a90c\n\
+.space 1\n\
+.space 1\n\
+DAT_0800a8f4:\n\
+     .4byte 0x0200D370\n\
+LAB_0800a8f8:\n\
+     ldr        r0,DAT_0800a910\n\
+     ldr        r1,[r0,#0x0]\n\
+     mov        r0,#0x3\n\
+     strh       r0,[r1,#0x0]\n\
+     ldr        r1,[sp,#0x0]\n\
+     cmp        r1,#0x0\n\
+     beq        LAB_0800a90c\n\
+     add        r0,r2,#0x0\n\
+     bl         fun_0800a940\n\
+LAB_0800a90c:\n\
+     mov        r0,#0x1\n\
+     b          LAB_0800a930\n\
+DAT_0800a910:\n\
+     .4byte 0x0200D370\n\
+LAB_0800a914:\n\
+     add        r0,r5,#0x1\n\
+     lsl        r0,r0,#0x18\n\
+     lsr        r5,r0,#0x18\n\
+     cmp        r5,r10\n\
+     bcc        LAB_0800a882\n\
+LAB_0800a91e:\n\
+     mov        r0,r8\n\
+     add        r0,#0x1\n\
+     lsl        r0,r0,#0x18\n\
+     lsr        r0,r0,#0x18\n\
+     mov        r8,r0\n\
+     ldr        r0,[sp,#0x4]\n\
+     cmp        r8,r0\n\
+     bcc        LAB_0800a870\n\
+LAB_0800a92e:\n\
+     mov        r0,#0x0\n\
+LAB_0800a930:\n\
+     add        sp,#0xc\n\
+     pop        {r3,r4,r5}\n\
+     mov        r8,r3\n\
+     mov        r9,r4\n\
+     mov        r10,r5\n\
+     pop        {r4,r5,r6,r7}\n\
+     pop        {r1}\n\
+     bx         r1\n\
     ");
 }
 __attribute__((naked)) void fun_0800a940()

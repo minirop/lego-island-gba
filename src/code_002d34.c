@@ -752,6 +752,81 @@ DAT_080031e4:\n\
 __attribute__((naked)) void fun_080031e8()
 {
     asm("\n\
+     push       {r4,r5,r6,r7,lr}\n\
+     mov        r7,r10\n\
+     mov        r6,r9\n\
+     mov        r5,r8\n\
+     push       {r5,r6,r7}\n\
+     ldr        r4,[sp,#0x20]\n\
+     mov        r10,r4\n\
+     ldr        r4,[sp,#0x24]\n\
+     ldr        r5,[sp,#0x28]\n\
+     ldr        r6,[sp,#0x2c]\n\
+     mov        r8,r6\n\
+     ldr        r6,[sp,#0x30]\n\
+     ldr        r7,[sp,#0x3c]\n\
+     mov        r9,r7\n\
+     lsl        r2,r2,#0x10\n\
+     lsr        r2,r2,#0x10\n\
+     lsl        r3,r3,#0x10\n\
+     lsr        r3,r3,#0x10\n\
+     mov        r7,r10\n\
+     lsl        r7,r7,#0x10\n\
+     mov        r12,r7\n\
+     lsl        r4,r4,#0x10\n\
+     lsr        r4,r4,#0x10\n\
+     mov        r10,r4\n\
+     lsl        r5,r5,#0x10\n\
+     lsr        r7,r5,#0x10\n\
+     mov        r4,r8\n\
+     lsl        r4,r4,#0x10\n\
+     lsr        r4,r4,#0x10\n\
+     mov        r8,r4\n\
+     lsl        r6,r6,#0x10\n\
+     lsr        r6,r6,#0x10\n\
+     mov        r4,r9\n\
+     lsl        r4,r4,#0x10\n\
+     lsr        r5,r4,#0x10\n\
+     mul        r3,r7\n\
+     add        r3,r3,r2\n\
+     add        r4,r0,r3\n\
+     add        r0,r6,#0x0\n\
+     mul        r0,r5\n\
+     add        r0,r8\n\
+     add        r1,r1,r0\n\
+     mov        r6,#0x0\n\
+     cmp        r6,r10\n\
+     bcs        LAB_08003264\n\
+     ldr        r2,DAT_08003274\n\
+     mov        r0,r12\n\
+     lsr        r3,r0,#0x11\n\
+     mov        r0,#0x80\n\
+     lsl        r0,r0,#0x18\n\
+     orr        r3,r0\n\
+LAB_0800324e:\n\
+     str        r4,[r2,#0x0]\n\
+     str        r1,[r2,#0x4]\n\
+     str        r3,[r2,#0x8]\n\
+     ldr        r0,[r2,#0x8]\n\
+     add        r4,r4,r7\n\
+     add        r1,r1,r5\n\
+     add        r0,r6,#0x1\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r6,r0,#0x10\n\
+     cmp        r6,r10\n\
+     bcc        LAB_0800324e\n\
+LAB_08003264:\n\
+     pop        {r3,r4,r5}\n\
+     mov        r8,r3\n\
+     mov        r9,r4\n\
+     mov        r10,r5\n\
+     pop        {r4,r5,r6,r7}\n\
+     pop        {r0}\n\
+     bx         r0\n\
+.space 1\n\
+.space 1\n\
+DAT_08003274:\n\
+     .4byte 0x040000D4\n\
     ");
 }
 __attribute__((naked)) void fun_08003278()
@@ -780,50 +855,34 @@ DAT_08003298:\n\
 \n\
     ");
 }
-__attribute__((naked)) void fun_0800329c()
+void FUN_0800329c()
 {
-    asm("\n\
-    ");
 }
 __attribute__((naked)) void fun_080032a0()
 {
     asm("\n\
-    ");
-}
-__attribute__((naked)) void fun_080032b4()
-{
-    asm("\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-    bx          lr\n\
+     push       {r2,r3}\n\
+     add        sp,#0x8\n\
+     bx         lr\n\
 \n\
 .space 2\n\
 \n\
     ");
 }
-__attribute__((naked)) void fun_080032bc()
+void fun_080032b4()
 {
-    asm("\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-    ");
 }
-__attribute__((naked)) void fun_080032c4()
+void fun_080032b8()
 {
-    asm("\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-    ");
+}
+void fun_080032bc()
+{
+}
+void fun_080032c0()
+{
+}
+void fun_080032c4()
+{
 }
 __attribute__((naked)) void fun_080032c8()
 {
