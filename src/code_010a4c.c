@@ -1492,25 +1492,6 @@ DAT_08011598:\n\
     .4byte 0x020025E0\n\
 DAT_0801159c:\n\
     .4byte 0x00000E04\n\
-    ldr         r2,DAT_080115bc\n\
-    mov         r3,#0xae\n\
-    lsl         r3,r3,#0x2\n\
-    add         r1,r2,r3\n\
-    mov         r3,#0x1\n\
-    strb        r3,[r1,#0x0]\n\
-    mov         r1,#0xaa\n\
-    lsl         r1,r1,#0x2\n\
-    add         r2,r2,r1\n\
-    mov         r1,#0x2\n\
-    str         r1,[r2,#0x0]\n\
-    strb        r3,[r0,#0x18]\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_080115bc:\n\
-    .4byte 0x020006A0\n\
-    bx          lr\n\
 \n\
 .space 2\n\
 \n\

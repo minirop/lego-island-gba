@@ -148,7 +148,7 @@ rom:
     - name: code_00c5c8
       format: c
       address: 0x00c5c8
-      size: 0x960
+      size: 0x95c
     - name: code_00cfcc
       format: c
       address: 0x00cfcc
@@ -272,7 +272,22 @@ rom:
     - name: code_043504
       format: c
       address: 0x043504
-      size: 0x20bc
+    - name: code_043504
+      format: c
+      address: 0x043504
+    - name: _ashldi3
+      library: libgcc.a
+      address: 0x044ec0
+    - name: _muldi3
+      library: libgcc.a
+      address: 0x044ef4
+    - name: _negdi2
+      library: libgcc.a
+      address: 0x044f64
+    - name: code_044f7c
+      format: c
+      address: 0x044f7c
+      size: 0x644
     - name: code_0455fc
       format: c
       address: 0x0455fc
