@@ -797,6 +797,9 @@ DAT_08011044:\n\
 \n\
     ");
 }
+void fun_08011048()
+{
+}
 __attribute__((naked)) void fun_0801104c()
 {
     asm("\n\
@@ -1492,8 +1495,5 @@ DAT_08011598:\n\
     .4byte 0x020025E0\n\
 DAT_0801159c:\n\
     .4byte 0x00000E04\n\
-\n\
-.space 2\n\
-\n\
     ");
 }

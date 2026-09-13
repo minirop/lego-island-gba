@@ -2678,67 +2678,67 @@ DAT_0804691c:\n\
 __attribute__((naked)) void fun_08046920()
 {
     asm("\n\
-    push        {r4,r5,r6,r7,lr}\n\
-    sub         sp,#0x134\n\
-    add         r7,r0,#0x0\n\
-    add         r6,r1,#0x0\n\
-    strb        r2,[r7,#0x0]\n\
-    add         r5,r7,#0x1\n\
-    cmp         r6,#0x0\n\
-    bge         LAB_08046936\n\
+     push       {r4,r5,r6,r7,lr}\n\
+     sub        sp,#0x134\n\
+     add        r7,r0,#0x0\n\
+     add        r6,r1,#0x0\n\
+     strb       r2,[r7,#0x0]\n\
+     add        r5,r7,#0x1\n\
+     cmp        r6,#0x0\n\
+     bge        LAB_08046936\n\
 .syntax unified\n\
     rsbs        r6,r6,#0\n\
 .syntax divided\n\
-    mov         r0,#0x2d\n\
+     mov        r0,#0x2d\n\
+     b          LAB_08046938\n\
 LAB_08046936:\n\
-    strb        r0,[r7,#0x1]\n\
-    add         r5,#0x1\n\
-    add         r4,sp,#0x134\n\
-    cmp         r6,#0x9\n\
-    ble         LAB_0804697a\n\
+     mov        r0,#0x2b\n\
+LAB_08046938:\n\
+     strb       r0,[r7,#0x1]\n\
+     add        r5,#0x1\n\
+     add        r4,sp,#0x134\n\
+     cmp        r6,#0x9\n\
+     ble        LAB_0804697a\n\
 LAB_08046942:\n\
-    sub         r4,#0x1\n\
-    add         r0,r6,#0x0\n\
-    mov         r1,#0xa\n\
-    bl          __modsi3\n\
-    add         r0,#0x30\n\
-    strb        r0,[r4,#0x0]\n\
-    add         r0,r6,#0x0\n\
-    mov         r1,#0xa\n\
-    bl          __divsi3\n\
-    add         r6,r0,#0x0\n\
-    cmp         r6,#0x9\n\
-    bgt         LAB_08046942\n\
-    sub         r4,#0x1\n\
-    add         r0,#0x30\n\
-    strb        r0,[r4,#0x0]\n\
-    add         r0,sp,#0x134\n\
-    cmp         r4,r0\n\
-    bcs         LAB_08046988\n\
-    add         r1,r0,#0x0\n\
+     sub        r4,#0x1\n\
+     add        r0,r6,#0x0\n\
+     mov        r1,#0xa\n\
+     bl         __modsi3\n\
+     add        r0,#0x30\n\
+     strb       r0,[r4,#0x0]\n\
+     add        r0,r6,#0x0\n\
+     mov        r1,#0xa\n\
+     bl         __divsi3\n\
+     add        r6,r0,#0x0\n\
+     cmp        r6,#0x9\n\
+     bgt        LAB_08046942\n\
+     sub        r4,#0x1\n\
+     add        r0,#0x30\n\
+     strb       r0,[r4,#0x0]\n\
+     add        r0,sp,#0x134\n\
+     cmp        r4,r0\n\
+     bcs        LAB_08046988\n\
+     add        r1,r0,#0x0\n\
 LAB_0804696c:\n\
-    ldrb        r0,[r4,#0x0]\n\
-    strb        r0,[r5,#0x0]\n\
-    add         r4,#0x1\n\
-    add         r5,#0x1\n\
-    cmp         r4,r1\n\
-    bcc         LAB_0804696c\n\
-    b           LAB_08046988\n\
+     ldrb       r0,[r4,#0x0]\n\
+     strb       r0,[r5,#0x0]\n\
+     add        r4,#0x1\n\
+     add        r5,#0x1\n\
+     cmp        r4,r1\n\
+     bcc        LAB_0804696c\n\
+     b          LAB_08046988\n\
 LAB_0804697a:\n\
-    mov         r0,#0x30\n\
-    strb        r0,[r5,#0x0]\n\
-    add         r5,#0x1\n\
-    add         r0,r6,#0x0\n\
-    add         r0,#0x30\n\
-    strb        r0,[r5,#0x0]\n\
-    add         r5,#0x1\n\
+     mov        r0,#0x30\n\
+     strb       r0,[r5,#0x0]\n\
+     add        r5,#0x1\n\
+     add        r0,r6,#0x0\n\
+     add        r0,#0x30\n\
+     strb       r0,[r5,#0x0]\n\
+     add        r5,#0x1\n\
 LAB_08046988:\n\
-    sub         r0,r5,r7\n\
-    add         sp,#0x134\n\
-    pop         {r4,r5,r6,r7,pc}\n\
-\n\
-.space 2\n\
-\n\
+     sub        r0,r5,r7\n\
+     add        sp,#0x134\n\
+     pop        {r4,r5,r6,r7,pc}\n\
     ");
 }
 __attribute__((naked)) void fun_08046990()

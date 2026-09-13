@@ -1758,10 +1758,6 @@ __attribute__((naked)) void fun_08008a5c()
     bx          r1\n\
 DAT_08008a7c:\n\
     .4byte 0x0200C6B8\n\
-    mov         r0,#0x1\n\
-    bx          lr\n\
-    mov         r0,#0x1\n\
-    bx          lr\n\
     ");
 }
 int fun_08008a80()

@@ -6522,7 +6522,7 @@ DAT_08035d74:\n\
      .4byte 0x0861F98C\n\
     ");
 }
-__attribute__((naked)) void fun_08035d78()
+void fun_08035d78()
 {
 }
 __attribute__((naked)) void fun_08035d7c()

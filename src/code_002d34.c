@@ -849,13 +849,9 @@ DAT_08003294:\n\
     .4byte 0x04000202\n\
 DAT_08003298:\n\
     .4byte 0x02005CD8\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
     ");
 }
-void FUN_0800329c()
+void fun_0800329c()
 {
 }
 __attribute__((naked)) void fun_080032a0()
@@ -868,6 +864,17 @@ __attribute__((naked)) void fun_080032a0()
 .space 2\n\
 \n\
     ");
+}
+void fun_080032a8()
+{
+    asm("\n\
+     push       {r3}\n\
+     add        sp,#0x4\n\
+     bx         lr\n\
+    ");
+}
+void fun_080032b0()
+{
 }
 void fun_080032b4()
 {

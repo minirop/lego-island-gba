@@ -1225,11 +1225,7 @@ LAB_0803014e:\n\
 LAB_0803015e:\n\
      mov        r6,#0x0\n\
      str        r6,[sp,#0x0]\n\
-    ");
-}
-__attribute__((naked)) void fun_08030162()
-{
-    asm("\n\
+fun_08030162:\n\
      ldr        r0,[sp,#0x0]\n\
      lsl        r1,r0,#0x4\n\
      ldr        r2,PTR_DAT_080301bc\n\
@@ -1265,6 +1261,7 @@ LAB_0803019a:\n\
      ldr        r0,[sp,#0x0]\n\
      bl         fun_0803104c\n\
      b          LAB_080302a6\n\
+.space 2\n\
 PTR_DAT_080301a4:\n\
      .4byte       DAT_02010790\n\
 PTR_DAT_080301a8:\n\

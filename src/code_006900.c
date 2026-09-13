@@ -833,20 +833,6 @@ DAT_08006ee4:\n\
     .4byte 0x02009B58\n\
 DAT_08006ee8:\n\
     .4byte 0x02009B38\n\
-    push        {lr}\n\
-    bl          fun_0800457c\n\
-    mov         r0,#0x0\n\
-    pop         {r1}\n\
-    bx          r1\n\
-    push        {lr}\n\
-    bl          fun_08006ba4\n\
-    mov         r0,#0x0\n\
-    pop         {r1}\n\
-    bx          r1\n\
-    mov         r0,#0x1\n\
-    bx          lr\n\
-    mov         r0,#0x1\n\
-    bx          lr\n\
     ");
 }
 __attribute__((naked)) void fun_08006eec()

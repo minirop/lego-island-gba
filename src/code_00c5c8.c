@@ -1024,7 +1024,7 @@ DAT_0800cdd4:\n\
     .4byte 0x000001E1\n\
     ");
 }
-__attribute__((naked)) void fun_0800cdd8()
+void fun_0800cdd8()
 {
 }
 __attribute__((naked)) void fun_0800cddc()
