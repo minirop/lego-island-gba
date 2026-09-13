@@ -175,11 +175,9 @@ rom:
     - name: code_010a4c
       format: c
       address: 0x010a4c
-      size: 0xc60
-    - name: code_0116d0
+    - name: code_0115a0
       format: c
-      address: 0x0116d0
-      size: 0xc4
+      address: 0x0115a0
     - name: code_0117c4
       format: c
       address: 0x0117c4
@@ -247,6 +245,30 @@ rom:
       format: c
       address: 0x032d70
       size: 0x42a0
+    - name: code_037490
+      format: c
+      address: 0x037490
+      size: 0x1090
+    - name: code_038520
+      format: c
+      address: 0x038520
+      size: 0x30a8
+    - name: code_03b5c8
+      format: c
+      address: 0x03b5c8
+      size: 0x834
+    - name: code_03c010
+      format: c
+      address: 0x03c010
+      size: 0x1bcc
+    - name: code_03dbdc
+      format: c
+      address: 0x03dbdc
+      size: 0x2c90
+    - name: code_04086c
+      format: c
+      address: 0x04086c
+      size: 0x21d0
     - name: code_043504
       format: c
       address: 0x043504

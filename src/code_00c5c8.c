@@ -1022,11 +1022,10 @@ DAT_0800cdd0:\n\
     .4byte 0x0200DC90\n\
 DAT_0800cdd4:\n\
     .4byte 0x000001E1\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
     ");
+}
+__attribute__((naked)) void fun_0800cdd8()
+{
 }
 __attribute__((naked)) void fun_0800cddc()
 {
@@ -1167,13 +1166,20 @@ LAB_0800cece:\n\
     bx          r0\n\
 DAT_0800ced4:\n\
     .4byte 0x02005750\n\
+    ");
+}
+__attribute__((naked)) void fun_0800ced8()
+{
+    asm("\n\
     push        {lr}\n\
     bl          fun_08010c1c\n\
     pop         {r0}\n\
     bx          r0\n\
-\n\
-.space 2\n\
-\n\
+    ");
+}
+__attribute__((naked)) void fun_0800cee4()
+{
+    asm("\n\
     push        {lr}\n\
     bl          fun_0800fc10\n\
     pop         {r0}\n\
