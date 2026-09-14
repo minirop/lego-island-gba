@@ -235,7 +235,7 @@ __attribute__((naked)) void fun_0802f9d8()
      ldr        r0,DAT_0802fa14\n\
      ldrh       r2,[r0,#0x0]\n\
      mov        r0,sp\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      ldr        r3,DAT_0802fa18\n\
      mov        r0,sp\n\
      mov        r1,#0x0\n\
@@ -4190,7 +4190,7 @@ __attribute__((naked)) void fun_080316d4()
      ldr        r0,DAT_08031700\n\
      ldr        r2,[r0,#0x0]\n\
      mov        r0,sp\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      ldr        r3,DAT_08031704\n\
      mov        r0,sp\n\
      mov        r1,#0x6e\n\

@@ -156,7 +156,7 @@ __attribute__((naked)) void fun_08017a38()
      add        r0,r6,#0x4\n\
      add        r1,r1,r0\n\
      ldr        r0,[r1,#0x0]\n\
-     bl         fun_08045770\n\
+     bl         strlen\n\
      cmp        r4,r0\n\
      bne        LAB_08017b06\n\
      ldrh       r1,[r5,#0x0]\n\

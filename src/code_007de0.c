@@ -1076,7 +1076,7 @@ LAB_08008562:\n\
     add         r2,r10\n\
     ldr         r0,[r2,#0x0]\n\
     str         r3,[sp,#0x0]\n\
-    bl          fun_08045770\n\
+    bl          strlen\n\
     str         r0,[r4,#0x0]\n\
     ldr         r0,PTR_DAT_08008624\n\
     add         r0,r5,r0\n\
@@ -2214,9 +2214,9 @@ __attribute__((naked)) void fun_08008d6c()
     lsr         r2,r2,#0x10\n\
     add         r0,sp,#0x20\n\
     add         r1,r4,#0x0\n\
-    bl          fun_080455fc\n\
+    bl          sprintf\n\
     add         r0,sp,#0x20\n\
-    bl          fun_08045770\n\
+    bl          strlen\n\
     lsl         r0,r0,#0x2\n\
     mov         r1,#0x66\n\
     sub         r1,r1,r0\n\
@@ -2244,7 +2244,7 @@ LAB_08008e34:\n\
     ldr         r1,DAT_08008e50\n\
     add         r2,r4,#0x1\n\
     add         r0,sp,#0x20\n\
-    bl          fun_080455fc\n\
+    bl          sprintf\n\
     cmp         r6,#0x4\n\
     bhi         LAB_08008e58\n\
     ldr         r3,DAT_08008e54\n\
@@ -2313,9 +2313,9 @@ LAB_08008e64:\n\
     lsr         r2,r2,#0x10\n\
     add         r0,sp,#0x20\n\
     add         r1,r4,#0x0\n\
-    bl          fun_080455fc\n\
+    bl          sprintf\n\
     add         r0,sp,#0x20\n\
-    bl          fun_08045770\n\
+    bl          strlen\n\
     lsl         r0,r0,#0x2\n\
     mov         r1,#0x89\n\
     sub         r1,r1,r0\n\
@@ -2339,7 +2339,7 @@ LAB_08008f00:\n\
     lsl         r2,r6,#0x1\n\
     add         r2,#0x2\n\
     add         r0,sp,#0x20\n\
-    bl          fun_080455fc\n\
+    bl          sprintf\n\
     cmp         r6,#0x3\n\
     bhi         LAB_08008f28\n\
     ldr         r3,DAT_08008f24\n\

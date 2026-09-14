@@ -221,13 +221,13 @@ __attribute__((naked)) void fun_080062fc()
     ldr         r0,DAT_08006338\n\
     ldrh        r6,[r0,#0x0]\n\
     add         r0,r7,#0x0\n\
-    bl          fun_08045770\n\
+    bl          strlen\n\
     lsl         r0,r0,#0x10\n\
     lsr         r0,r0,#0x10\n\
     mov         r10,r0\n\
     ldr         r1,DAT_0800633c\n\
     mov         r0,sp\n\
-    bl          fun_08045724\n\
+    bl          strcpy\n\
     mov         r0,#0x0\n\
     mov         r9,r0\n\
     add         r5,r4,#0x0\n\

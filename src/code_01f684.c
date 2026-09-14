@@ -4925,7 +4925,7 @@ LAB_08021aec:\n\
      mov        r0,sp\n\
      ldr        r1,DAT_08021b38\n\
      add        r2,r5,#0x0\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      lsl        r1,r4,#0x4\n\
      sub        r1,r1,r4\n\
      lsl        r1,r1,#0x12\n\

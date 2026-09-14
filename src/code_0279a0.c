@@ -9873,7 +9873,7 @@ LAB_0802c2be:\n\
      mov        r0,sp\n\
      add        r2,r4,#0x0\n\
      add        r3,r5,#0x0\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      ldr        r2,DAT_0802c314\n\
      mov        r0,sp\n\
      mov        r1,#0x89\n\
@@ -9991,7 +9991,7 @@ LAB_0802c360:\n\
      ldrh       r2,[r0,#0x0]\n\
      mov        r0,sp\n\
      add        r1,r6,#0x0\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      ldr        r5,DAT_0802c3e0\n\
      mov        r0,sp\n\
      mov        r1,#0x50\n\
@@ -10049,7 +10049,7 @@ LAB_0802c400:\n\
      ldrh       r2,[r0,#0x0]\n\
      mov        r0,sp\n\
      add        r1,r6,#0x0\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      ldr        r5,DAT_0802c4d4\n\
      mov        r0,sp\n\
      mov        r1,#0x50\n\
@@ -10061,7 +10061,7 @@ LAB_0802c444:\n\
      ldrh       r2,[r4,#0x0]\n\
      mov        r0,sp\n\
      add        r1,r6,#0x0\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      mov        r0,sp\n\
      mov        r1,#0x4f\n\
      mov        r2,#0x84\n\
@@ -10094,7 +10094,7 @@ LAB_0802c444:\n\
      ldr        r0,DAT_0802c4e0\n\
      ldrh       r2,[r0,#0x0]\n\
      mov        r0,sp\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      ldr        r3,DAT_0802c4d4\n\
      mov        r0,sp\n\
      mov        r1,#0x4f\n\
@@ -13608,7 +13608,7 @@ __attribute__((naked)) void fun_0802de80()
      mov        r3,#0x0\n\
      ldrsh      r2,[r0,r3]\n\
      mov        r0,sp\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      ldr        r3,DAT_0802deb8\n\
      mov        r0,sp\n\
      mov        r1,#0x4b\n\
@@ -14886,7 +14886,7 @@ LAB_0802e80c:\n\
      ldr        r4,DAT_0802e858\n\
      ldrh       r2,[r4,#0x10]\n\
      mov        r0,sp\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      bl         fun_0803c1a4\n\
      ldr        r5,DAT_0802e85c\n\
      mov        r0,sp\n\

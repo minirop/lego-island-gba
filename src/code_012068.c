@@ -11635,7 +11635,7 @@ LAB_08016e66:\n\
      add        r1,r1,r6\n\
      ldr        r0,[r1,#0x0]\n\
      str        r3,[sp,#0x38]\n\
-     bl         fun_08045770\n\
+     bl         strlen\n\
      ldr        r3,[sp,#0x38]\n\
      cmp        r4,r0\n\
      beq        LAB_08016df0\n\
@@ -11728,9 +11728,9 @@ LAB_08016f26:\n\
      add        r0,r0,r3\n\
      ldrb       r3,[r0,#0x0]\n\
      add        r0,sp,#0x4\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      add        r0,sp,#0x4\n\
-     bl         fun_08045770\n\
+     bl         strlen\n\
      lsl        r0,r0,#0x3\n\
      mov        r1,#0xe8\n\
      sub        r1,r1,r0\n\
@@ -11924,7 +11924,7 @@ __attribute__((naked)) void fun_08017078()
      mov        r0,#0x0\n\
      mov        r9,r0\n\
      mov        r0,r10\n\
-     bl         fun_08045770\n\
+     bl         strlen\n\
      lsl        r0,r0,#0x10\n\
      lsr        r0,r0,#0x10\n\
      str        r0,[sp,#0xc]\n\

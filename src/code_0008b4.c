@@ -18,7 +18,7 @@ __attribute__((naked)) void fun_080008b4()
     add         r2,r2,r4\n\
     add         r1,r1,r2\n\
     mov         r0,sp\n\
-    bl          fun_08045724\n\
+    bl          strcpy\n\
     add         r1,r5,#0x0\n\
     mov         r0,sp\n\
     ldmia       r0!,{r2,r3}\n\
@@ -611,7 +611,7 @@ LAB_08000d2a:\n\
     str         r0,[r4,#0x0]\n\
     cmp         r1,#0x0\n\
     bne         LAB_08000d40\n\
-    bl          thunk_fun_080000fc\n\
+    bl          fun_080496e8\n\
     bl          fun_0803f0d0\n\
 LAB_08000d40:\n\
     ldr         r0,[r4,#0x0]\n\

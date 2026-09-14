@@ -716,7 +716,7 @@ __attribute__((naked)) void fun_0803e018()
      lsl        r1,r1,#0x18\n\
      cmp        r1,#0x0\n\
      bne        LAB_0803e030\n\
-     bl         thunk_fun_08042a3c\n\
+     bl         fun_080496f8\n\
 LAB_0803e030:\n\
      pop        {r0}\n\
      bx         r0\n\
@@ -738,7 +738,7 @@ __attribute__((naked)) void fun_0803e038()
      lsr        r0,r0,#0x18\n\
      cmp        r0,#0x1\n\
      bne        LAB_0803e052\n\
-     bl         thunk_fun_08042a58\n\
+     bl         fun_080496f0\n\
 LAB_0803e052:\n\
      pop        {r0}\n\
      bx         r0\n\

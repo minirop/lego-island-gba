@@ -302,7 +302,7 @@ LAB_08002f0a:\n\
     lsl         r3,r4,#0x10\n\
     lsr         r3,r3,#0x10\n\
     add         r0,r5,#0x0\n\
-    bl          fun_080455fc\n\
+    bl          sprintf\n\
     b           LAB_08002f4c\n\
 DAT_08002f38:\n\
     .4byte 0x08049C24\n\
@@ -313,7 +313,7 @@ LAB_08002f3c:\n\
     lsl         r3,r4,#0x10\n\
     lsr         r3,r3,#0x10\n\
     add         r0,r5,#0x0\n\
-    bl          fun_080455fc\n\
+    bl          sprintf\n\
 LAB_08002f4c:\n\
     pop         {r4,r5}\n\
     pop         {r0}\n\

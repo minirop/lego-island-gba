@@ -1,6 +1,6 @@
 extern char DAT_02005210;
 void fun_08044fdc(char*, int, int);
-void fun_080457b4();
+void strncpy();
 
 __attribute__((naked)) void fun_080004ac()
 {
@@ -72,13 +72,13 @@ __attribute__((naked)) void fun_080004dc(int a, int b, char* c)
     add        r0,r1,r0\n\
     add        r1,r5,#0x0\n\
     mov        r2,#0x3\n\
-    bl         fun_080457b4\n\
+    bl         strncpy\n\
     mov        r3,r10\n\
     str        r3,[r7,#0x0]\n\
     add        r0,r5,#0x0\n\
     mov        r1,r8\n\
     mov        r2,#0x3\n\
-    bl         fun_080457b4\n\
+    bl         strncpy\n\
     ldr        r0,[sp,#0x0]\n\
     str        r6,[r0,#0x0]\n\
     mov        r0,r8\n\
@@ -91,13 +91,13 @@ LAB_08000544:\n\
     add        r0,r1,r0\n\
     add        r1,r5,#0x0\n\
     mov        r2,#0x3\n\
-    bl         fun_080457b4\n\
+    bl         strncpy\n\
     str        r6,[r7,#0x0]\n\
     add        r0,r5,#0x0\n\
 LAB_08000558:\n\
     mov        r1,r9\n\
     mov        r2,#0x3\n\
-    bl         fun_080457b4\n\
+    bl         strncpy\n\
     b          LAB_08000572\n\
 LAB_08000562:\n\
     cmp        r6,r12\n\
@@ -106,7 +106,7 @@ LAB_08000562:\n\
     add        r0,r1,r0\n\
     mov        r1,r9\n\
     mov        r2,#0x3\n\
-    bl         fun_080457b4\n\
+    bl         strncpy\n\
 LAB_08000572:\n\
     add        sp,#0x4\n\
     pop        {r3,r4,r5}\n\

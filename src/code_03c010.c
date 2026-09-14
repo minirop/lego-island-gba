@@ -11,7 +11,7 @@ __attribute__((naked)) void fun_0803c010()
      add        r7,r2,#0x0\n\
      lsl        r4,r4,#0x10\n\
      lsr        r4,r4,#0x10\n\
-     bl         fun_08045770\n\
+     bl         strlen\n\
      lsl        r0,r0,#0x10\n\
      lsr        r0,r0,#0x11\n\
      ldr        r3,DAT_0803c0a0\n\
@@ -92,7 +92,7 @@ __attribute__((naked)) void fun_0803c0a4()
      add        r7,r2,#0x0\n\
      lsl        r4,r4,#0x10\n\
      lsr        r4,r4,#0x10\n\
-     bl         fun_08045770\n\
+     bl         strlen\n\
      lsl        r0,r0,#0x10\n\
      lsr        r0,r0,#0x10\n\
      ldr        r2,DAT_0803c134\n\
@@ -3038,7 +3038,7 @@ __attribute__((naked)) void fun_0803d4b0()
      lsr        r1,r1,#0x18\n\
      cmp        r1,#0x1\n\
      bne        LAB_0803d4de\n\
-     bl         thunk_fun_08042a58\n\
+     bl         fun_080496f0\n\
 LAB_0803d4de:\n\
      ldr        r1,[r4,#0x0]\n\
      mov        r2,#0x84\n\
@@ -3059,7 +3059,7 @@ LAB_0803d4de:\n\
      and        r0,r5\n\
      cmp        r0,#0x0\n\
      bne        LAB_0803d508\n\
-     bl         thunk_fun_08042a3c\n\
+     bl         fun_080496f8\n\
 LAB_0803d508:\n\
      pop        {r3}\n\
      mov        r8,r3\n\
@@ -3176,7 +3176,7 @@ __attribute__((naked)) void fun_0803d5bc()
      lsr        r0,r0,#0x18\n\
      cmp        r0,#0x1\n\
      bne        LAB_0803d5d6\n\
-     bl         thunk_fun_08042a58\n\
+     bl         fun_080496f0\n\
 LAB_0803d5d6:\n\
      bl         fun_0803d518\n\
      mov        r2,#0x0\n\

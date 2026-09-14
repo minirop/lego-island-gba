@@ -437,7 +437,7 @@ __attribute__((naked)) void fun_0800d30c()
     lsr         r2,r0,#0x6\n\
     mov         r0,sp\n\
     add         r1,r4,#0x0\n\
-    bl          fun_080455fc\n\
+    bl          sprintf\n\
     ldr         r3,DAT_0800d3cc\n\
     mov         r0,sp\n\
     mov         r1,#0x5\n\
@@ -1014,7 +1014,7 @@ LAB_0800d796:\n\
     mov         r0,sp\n\
     add         r1,r5,#0x0\n\
     add         r2,r4,#0x0\n\
-    bl          fun_080455fc\n\
+    bl          sprintf\n\
     ldr         r3,DAT_0800d910\n\
     mov         r0,sp\n\
     mov         r1,#0x5\n\

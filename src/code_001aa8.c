@@ -1,5 +1,5 @@
 void fun_08001aa8();
-int fun_080456c8(const char*, int*);
+int strcmp(const char*, int*);
 void fun_08000584();
 void fun_08001b9c();
 
@@ -278,7 +278,7 @@ __attribute__((naked)) void fun_08001c8c()
     add         r0,#0x8\n\
     ldr         r4,DAT_08001cf4\n\
     add         r1,r4,#0x0\n\
-    bl          fun_080456c8\n\
+    bl          strcmp\n\
     cmp         r0,#0x0\n\
     beq         LAB_08001cd6\n\
     bl          fun_080020a4\n\
@@ -751,7 +751,7 @@ __attribute__((naked)) void fun_08002038()
     add         r0,#0x8\n\
     ldr         r4,DAT_08002070\n\
     add         r1,r4,#0x0\n\
-    bl          fun_080456c8\n\
+    bl          strcmp\n\
     cmp         r0,#0x0\n\
     beq         LAB_0800206a\n\
     bl          fun_080020a4\n\
@@ -786,7 +786,7 @@ __attribute__((naked)) void fun_08002074()
     ldr         r1,DAT_0800209c\n\
     add         r0,r0,r1\n\
     ldr         r1,DAT_080020a0\n\
-    bl          fun_080456c8\n\
+    bl          strcmp\n\
     cmp         r0,#0x0\n\
     bne         LAB_08002092\n\
     mov         r4,#0x1\n\
@@ -925,7 +925,7 @@ void fun_08002160()
     int iVar1;
 
     fun_08001aa8();
-    iVar1 = fun_080456c8("SWD", &DAT_02005200);
+    iVar1 = strcmp("SWD", &DAT_02005200);
     if (iVar1 != 0) {
         fun_08000584();
         fun_08001b9c();

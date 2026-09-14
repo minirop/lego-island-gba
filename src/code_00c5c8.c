@@ -921,7 +921,7 @@ LAB_0800cd00:\n\
     add         r2,r2,r3\n\
     add         r1,r1,r2\n\
     ldr         r1,[r1,#0x0]\n\
-    bl          fun_08045724\n\
+    bl          strcpy\n\
     b           switchD_0800cafc_caseD_6d\n\
 DAT_0800cd0c:\n\
     .4byte 0x0200C5F0\n\
@@ -941,7 +941,7 @@ switchD_0800cafc_caseD_65:\n\
     add         r2,r2,r3\n\
     add         r1,r1,r2\n\
     ldr         r1,[r1,#0x0]\n\
-    bl          fun_08045724\n\
+    bl          strcpy\n\
 switchD_0800cafc_caseD_6d:\n\
     pop         {r4,r5}\n\
     pop         {r0}\n\

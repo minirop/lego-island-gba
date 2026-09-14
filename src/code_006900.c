@@ -1169,7 +1169,7 @@ LAB_08007126:\n\
     add         r3,r3,r5\n\
     ldr         r2,[r3,#0x0]\n\
     mov         r0,sp\n\
-    bl          fun_080455fc\n\
+    bl          sprintf\n\
     ldr         r2,DAT_0800718c\n\
     mov         r0,sp\n\
     mov         r1,#0x85\n\

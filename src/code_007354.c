@@ -196,7 +196,7 @@ __attribute__((naked)) void fun_080074bc()
     lsr         r2,r2,#0x10\n\
     mov         r0,sp\n\
     add         r1,r4,#0x0\n\
-    bl          fun_080455fc\n\
+    bl          sprintf\n\
     ldr         r6,DAT_08007510\n\
     mov         r0,sp\n\
     mov         r1,#0x0\n\
@@ -450,7 +450,7 @@ LAB_080076ac:\n\
     ldr         r0,DAT_0800770c\n\
     ldrb        r2,[r0,#0x0]\n\
     mov         r0,sp\n\
-    bl          fun_080455fc\n\
+    bl          sprintf\n\
     ldr         r4,DAT_08007704\n\
     mov         r0,sp\n\
     mov         r1,#0x0\n\
@@ -467,7 +467,7 @@ LAB_080076ac:\n\
     mov         r5,#0x4\n\
     ldrsh       r3,[r0,r5]\n\
     mov         r0,sp\n\
-    bl          fun_080455fc\n\
+    bl          sprintf\n\
     mov         r0,sp\n\
     mov         r1,#0x0\n\
     mov         r2,#0x42\n\
@@ -1037,7 +1037,7 @@ LAB_08007ac0:\n\
     add         r3,r3,r4\n\
     ldr         r2,[r3,#0x0]\n\
     mov         r0,sp\n\
-    bl          fun_080455fc\n\
+    bl          sprintf\n\
     b           LAB_08007b3c\n\
 \n\
 .space 2\n\
@@ -1075,7 +1075,7 @@ LAB_08007b10:\n\
     add         r3,r3,r4\n\
     ldr         r2,[r3,#0x0]\n\
     mov         r0,sp\n\
-    bl          fun_080455fc\n\
+    bl          sprintf\n\
 LAB_08007b3c:\n\
     bl          fun_0803c1a4\n\
     ldr         r2,DAT_08007b88\n\

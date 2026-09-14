@@ -629,7 +629,7 @@ LAB_08021fe6:\n\
      ldr        r2,[r0,#0x0]\n\
      lsr        r3,r3,#0x16\n\
      mov        r0,sp\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      ldr        r2,DAT_0802204c\n\
      mov        r0,sp\n\
      mov        r1,#0xa\n\
@@ -669,7 +669,7 @@ LAB_08022050:\n\
      ldr        r2,[r0,#0x0]\n\
      lsr        r3,r3,#0x16\n\
      mov        r0,sp\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      ldr        r2,DAT_080220c4\n\
      mov        r0,sp\n\
      mov        r1,#0xa\n\
@@ -699,7 +699,7 @@ LAB_08022074:\n\
      ldr        r2,[r0,#0x0]\n\
      lsr        r3,r3,#0x16\n\
      mov        r0,sp\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      ldr        r2,DAT_080220c4\n\
      mov        r0,sp\n\
      mov        r1,#0xa\n\
@@ -733,7 +733,7 @@ LAB_080220d4:\n\
      ldr        r2,[r0,#0x0]\n\
      lsr        r3,r3,#0x16\n\
      mov        r0,sp\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      ldr        r2,DAT_08022110\n\
      mov        r0,sp\n\
      mov        r1,#0xa\n\
@@ -3309,7 +3309,7 @@ LAB_08023430:\n\
      mov        r0,sp\n\
      ldr        r1,DAT_080234dc\n\
      add        r2,r6,#0x0\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      lsl        r1,r4,#0x4\n\
      sub        r1,r1,r4\n\
      lsl        r1,r1,#0x12\n\

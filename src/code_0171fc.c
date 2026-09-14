@@ -422,7 +422,7 @@ LAB_080174fa:\n\
      ldr        r4,PTR_DAT_08017594\n\
      ldr        r2,[r4,#0x0]\n\
      mov        r0,sp\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      ldr        r2,PTR_DAT_08017598\n\
      ldr        r1,PTR_DAT_0801759c\n\
      ldrh       r3,[r1,#0x0]\n\
@@ -664,7 +664,7 @@ __attribute__((naked)) void fun_080176bc()
      ldr        r0,DAT_08017770\n\
      ldr        r2,[r0,#0x0]\n\
      mov        r0,sp\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      ldr        r7,DAT_08017774\n\
      ldr        r5,DAT_08017778\n\
      ldr        r0,[r5,#0x0]\n\

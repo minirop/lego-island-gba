@@ -660,7 +660,7 @@ LAB_08026e74:\n\
      ldr        r1,DAT_08026ef0\n\
      ldrh       r2,[r5,#0x0]\n\
      mov        r0,sp\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      ldr        r4,DAT_08026ef4\n\
      mov        r0,sp\n\
      mov        r1,#0x10\n\

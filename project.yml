@@ -311,11 +311,63 @@ rom:
     - name: code_044f7c
       format: c
       address: 0x044f7c
-      size: 0x644
-    - name: code_0455fc
+    - name: sprintf
+      library: libc.a
+      address: 0x0455c0
+    - name: strchr
+      library: libc.a
+      address: 0x04563c
+    - name: strcmp
+      library: libc.a
+      address: 0x0456c8
+    - name: strcpy
+      library: libc.a
+      address: 0x045724
+    - name: strlen
+      library: libc.a
+      address: 0x045770
+    - name: strncpy
+      library: libc.a
+      address: 0x0457b4
+    - name: vfprintf
+      library: libc.a
+      address: 0x045824
+    - name: wsetup
+      library: libc.a
+      address: 0x046990
+    - name: dtoa
+      library: libc.a
+      address: 0x046a3c
+    - name: fflush
+      library: libc.a
+      address: 0x047890
+    - name: findfp
+      library: libc.a
+      address: 0x047924
+    - name: freer
+      library: libc.a
+      address: 0x047a80
+    - name: fvwrite
+      library: libc.a
+      address: 0x047d00
+    - name: fwalk
+      library: libc.a
+      address: 0x047f2c
+    - name: code_047d00
       format: c
-      address: 0x0455fc
-      size: 0x3d9c
+      address: 0x047f6c
+      size: 0x10b4
+    - name: sbrkr
+      library: libc.a
+      address: 0x049020
+    - name: code_04904c
+      format: c
+      address: 0x04904c
+      size: 0x34c
+    - name: syscalls
+      library: libc.a
+      address: 0x049110
+      size: 0x464
     - name: code_0496e8
       format: c
       address: 0x0496e8

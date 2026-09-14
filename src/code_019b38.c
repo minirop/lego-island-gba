@@ -1356,7 +1356,7 @@ LAB_0801a538:\n\
      add        r0,r4,r2\n\
      add        r1,r1,r0\n\
      mov        r0,sp\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      mov        r0,sp\n\
      mov        r1,#0x3c\n\
      add        r2,r7,#0x0\n\
@@ -1371,7 +1371,7 @@ LAB_0801a538:\n\
      ldr        r2,[r0,#0x0]\n\
      mov        r0,sp\n\
      ldr        r1,DAT_0801a5b8\n\
-     bl         fun_080455fc\n\
+     bl         sprintf\n\
      mov        r0,sp\n\
      mov        r1,#0x64\n\
      add        r2,r7,#0x0\n\
