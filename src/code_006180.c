@@ -242,7 +242,7 @@ DAT_0800633c:\n\
 LAB_08006340:\n\
     add         r0,r4,#0x0\n\
     mov         r1,#0x20\n\
-    bl          fun_0804563c\n\
+    bl          strchr\n\
     cmp         r0,#0x0\n\
     bne         LAB_08006350\n\
     mov         r0,r10\n\
@@ -250,7 +250,7 @@ LAB_08006340:\n\
 LAB_08006350:\n\
     add         r0,r4,#0x0\n\
     mov         r1,#0x20\n\
-    bl          fun_0804563c\n\
+    bl          strchr\n\
     sub         r0,r0,r7\n\
     lsl         r0,r0,#0x10\n\
     lsr         r0,r0,#0x10\n\

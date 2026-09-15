@@ -11946,7 +11946,7 @@ LAB_080170c0:\n\
      beq        LAB_0801716e\n\
      add        r0,r5,#0x0\n\
      mov        r1,#0x20\n\
-     bl         fun_0804563c\n\
+     bl         strchr\n\
      cmp        r0,#0x0\n\
      bne        LAB_080170dc\n\
      ldr        r0,[sp,#0xc]\n\
@@ -11954,7 +11954,7 @@ LAB_080170c0:\n\
 LAB_080170dc:\n\
      add        r0,r5,#0x0\n\
      mov        r1,#0x20\n\
-     bl         fun_0804563c\n\
+     bl         strchr\n\
      mov        r1,r10\n\
      sub        r0,r0,r1\n\
      lsl        r0,r0,#0x10\n\
