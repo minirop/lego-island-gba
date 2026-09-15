@@ -36,7 +36,7 @@ __attribute__((naked)) void fun_080115c4()
      ldr        r1,DAT_080115f4\n\
      mov        r0,sp\n\
      mov        r2,#0xe\n\
-     bl         fun_08044f7c\n\
+     bl         memcpy\n\
      mov        r4,#0x0\n\
      mov        r5,#0x1\n\
 LAB_080115d6:\n\

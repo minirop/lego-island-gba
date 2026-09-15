@@ -78,7 +78,7 @@ LAB_0802399c:\n\
      ldr        r2,DAT_08023a20\n\
      add        r0,r5,#0x0\n\
      mov        r1,#0x0\n\
-     bl         fun_08044fdc\n\
+     bl         memset\n\
      mov        r0,#0x0\n\
      bl         fun_08002ccc\n\
      bl         fun_08025da0\n\

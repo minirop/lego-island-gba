@@ -221,7 +221,7 @@ LAB_0801f80c:\n\
      ldr        r0,DAT_0801fa68\n\
      mov        r1,#0x0\n\
      mov        r2,#0x10\n\
-     bl         fun_08044fdc\n\
+     bl         memset\n\
      add        r0,sp,#0x8\n\
      mov        r4,#0x0\n\
      strh       r4,[r0,#0x0]\n\

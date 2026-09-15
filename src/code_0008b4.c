@@ -48,7 +48,7 @@ __attribute__((naked)) void fun_080008f0()
     ldr         r0,DAT_08000a00\n\
     ldr         r1,DAT_08000a04\n\
     mov         r2,#0x4\n\
-    bl          fun_08044f7c\n\
+    bl          memcpy\n\
     ldr         r1,DAT_08000a08\n\
     mov         r0,#0x0\n\
     strb        r0,[r1,#0x0]\n\

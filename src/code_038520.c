@@ -1597,7 +1597,7 @@ __attribute__((naked)) void fun_080390d0()
      ldr        r1,DAT_08039148\n\
      mov        r0,sp\n\
      mov        r2,#0x10\n\
-     bl         fun_08044f7c\n\
+     bl         memcpy\n\
      ldr        r7,PTR_DAT_0803914c\n\
      ldrb       r0,[r7,#0x0]\n\
      sub        r0,#0x1\n\
@@ -1874,7 +1874,7 @@ __attribute__((naked)) void fun_080392d0()
      ldr        r1,DAT_08039360\n\
      add        r0,sp,#0x10\n\
      mov        r2,#0x6\n\
-     bl         fun_08044f7c\n\
+     bl         memcpy\n\
      mov        r7,#0x0\n\
      mov        r6,#0x0\n\
      mov        r9,r6\n\

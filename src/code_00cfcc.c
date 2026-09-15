@@ -183,12 +183,12 @@ __attribute__((naked)) void fun_0800d120()
     ldr         r1,DAT_0800d194\n\
     mov         r0,sp\n\
     mov         r2,#0xe\n\
-    bl          fun_08044f7c\n\
+    bl          memcpy\n\
     add         r4,sp,#0x10\n\
     ldr         r1,DAT_0800d198\n\
     add         r0,r4,#0x0\n\
     mov         r2,#0xe\n\
-    bl          fun_08044f7c\n\
+    bl          memcpy\n\
     mov         r7,#0x0\n\
     mov         r8,r4\n\
 LAB_0800d142:\n\

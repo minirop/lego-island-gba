@@ -92,16 +92,16 @@ LAB_08001b44:\n\
     ldr         r0,DAT_08001b80\n\
     ldr         r2,DAT_08001b84\n\
     mov         r1,#0x0\n\
-    bl          fun_08044fdc\n\
+    bl          memset\n\
     ldr         r0,DAT_08001b8c\n\
     mov         r1,#0x0\n\
     mov         r2,#0x4\n\
-    bl          fun_08044fdc\n\
+    bl          memset\n\
     ldr         r0,DAT_08001b94\n\
     mov         r2,#0xd8\n\
     lsl         r2,r2,#0x2\n\
     mov         r1,#0x0\n\
-    bl          fun_08044fdc\n\
+    bl          memset\n\
     bl          fun_08000584\n\
 LAB_08001b68:\n\
     ldr         r1,DAT_08001b7c\n\
@@ -142,7 +142,7 @@ __attribute__((naked)) void fun_08001b9c()
     ldr         r1,DAT_08001c60\n\
     mov         r0,sp\n\
     mov         r2,#0x4\n\
-    bl          fun_08044f7c\n\
+    bl          memcpy\n\
     ldr         r1,DAT_08001c64\n\
     mov         r0,#0x0\n\
     strh        r0,[r1,#0x0]\n\
@@ -285,7 +285,7 @@ __attribute__((naked)) void fun_08001c8c()
     mov         r1,#0x0\n\
     mov         r2,#0xea\n\
     lsl         r2,r2,#0x4\n\
-    bl          fun_08044fdc\n\
+    bl          memset\n\
     bl          fun_080020a4\n\
     add         r0,#0x8\n\
     add         r1,r4,#0x0\n\
@@ -726,7 +726,7 @@ __attribute__((naked)) void fun_0800200c()
     mov         r2,#0xea\n\
     lsl         r2,r2,#0x4\n\
     mov         r1,#0x0\n\
-    bl          fun_08044fdc\n\
+    bl          memset\n\
     bl          fun_080020a4\n\
     add         r0,#0x8\n\
     ldr         r1,DAT_08002034\n\
@@ -758,7 +758,7 @@ __attribute__((naked)) void fun_08002038()
     mov         r1,#0x0\n\
     mov         r2,#0xea\n\
     lsl         r2,r2,#0x4\n\
-    bl          fun_08044fdc\n\
+    bl          memset\n\
     bl          fun_080020a4\n\
     add         r0,#0x8\n\
     add         r1,r4,#0x0\n\

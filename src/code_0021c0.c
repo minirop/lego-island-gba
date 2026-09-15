@@ -695,14 +695,14 @@ LAB_08002672:\n\
     ldr         r0,DAT_080026e8\n\
     mov         r1,#0x0\n\
     mov         r2,#0x10\n\
-    bl          fun_08044fdc\n\
+    bl          memset\n\
     ldr         r5,DAT_080026ec\n\
     mov         r4,#0x3\n\
 LAB_0800268e:\n\
     add         r0,r5,#0x0\n\
     mov         r1,#0x0\n\
     mov         r2,#0x10\n\
-    bl          fun_08044fdc\n\
+    bl          memset\n\
     add         r5,#0x10\n\
     sub         r4,#0x1\n\
     cmp         r4,#0x0\n\

@@ -890,7 +890,7 @@ __attribute__((naked)) void fun_0801a1cc()
      ldr        r1,DAT_0801a214\n\
      mov        r0,sp\n\
      mov        r2,#0x2\n\
-     bl         fun_08044f7c\n\
+     bl         memcpy\n\
      bl         fun_0803c1a4\n\
      mov        r4,#0x0\n\
      mov        r5,sp\n\

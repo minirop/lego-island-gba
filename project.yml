@@ -308,9 +308,15 @@ rom:
     - name: _negdi2
       library: libgcc.a
       address: 0x044f64
-    - name: code_044f7c
-      format: c
+    - name: memcpy
+      library: libc.a
       address: 0x044f7c
+    - name: memset
+      library: libc.a
+      address: 0x044fdc
+    - name: code_045030
+      format: c
+      address: 0x045030
     - name: sprintf
       library: libc.a
       address: 0x0455c0
@@ -332,6 +338,9 @@ rom:
     - name: vfprintf
       library: libc.a
       address: 0x045824
+    - name: s_isnan
+      library: libc.a
+      address: 0x045d7c
     - name: wsetup
       library: libc.a
       address: 0x046990
@@ -353,21 +362,68 @@ rom:
     - name: fwalk
       library: libc.a
       address: 0x047f2c
-    - name: code_047d00
-      format: c
+    - name: makebuf
+      library: libc.a
+      address: 0x047fd8
+    - name: locale
+      library: libc.a
       address: 0x047f6c
-      size: 0x10b4
+    - name: mallocr
+      library: libc.a
+      address: 0x048210
+    - name: mbtowc_r
+      library: libc.a
+      address: 0x0485d0
+    - name: memchr
+      library: libc.a
+      address: 0x0485fc
+    - name: memmove
+      library: libc.a
+      address: 0x04867c
+    - name: mlock
+      library: libc.a
+      address: 0x048704
+    - name: mprec
+      library: libc.a
+      address: 0x04870c
+    - name: s_isinf
+      library: libc.a
+      address: 0x048fdc
     - name: sbrkr
       library: libc.a
       address: 0x049020
-    - name: code_04904c
-      format: c
+    - name: stdio
+      library: libc.a
       address: 0x04904c
-      size: 0x34c
+      size: 0xc4
     - name: syscalls
       library: libc.a
       address: 0x049110
       size: 0x464
+    - name: writer
+      library: libc.a
+      address: 0x049574
+    - name: callocr
+      library: libc.a
+      address: 0x0495a4
+    - name: closer
+      library: libc.a
+      address: 0x0495fc
+    - name: errno
+      library: libc.a
+      address: 0x049628
+    - name: fstatr
+      library: libc.a
+      address: 0x049634
+    - name: libcfunc
+      library: libc.a
+      address: 0x049660
+    - name: lseekr
+      library: libc.a
+      address: 0x049688
+    - name: readr
+      library: libc.a
+      address: 0x0496b8
     - name: code_0496e8
       format: c
       address: 0x0496e8
@@ -381,11 +437,51 @@ rom:
       section: rodata
       address: 0x04978c
       size: 0x4
+    - name: vfprintf
+      library: libc.a
+      section: rodata
+      address: 0x6cccc4
+      size: 0x7a
+    - name: dtoa
+      library: libc.a
+      section: rodata
+      address: 0x6ccd40
+    - name: impure
+      library: libc.a
+      section: rodata
+      address: 0x6ccd54
+    - name: locale
+      library: libc.a
+      section: rodata
+      address: 0x6ccd58
+    - name: mprec
+      library: libc.a
+      section: rodata
+      address: 0x6ccd94
+    - name: syscalls
+      library: libc.a
+      section: rodata
+      address: 0x6cceb8
+      size: 0x25
     - name: code_77ef7c
       format: c
       section: rodata
       address: 0x77ef7c
       size: 0x9a0
+    - name: impure
+      library: libc.a
+      section: data
+      address: 0x7d6268
+    - name: locale
+      library: libc.a
+      section: data
+      address: 0x7d6558
+      size: 0x14
+    - name: mallocr
+      library: libc.a
+      section: data
+      address: 0x7d656c
+      size: 0x444
 ewram:
   address: 0x02000000
   size: 256K
@@ -394,6 +490,8 @@ ewram:
       address: 0x0005b8
     - name: fp-bit
       address: 0x0005d0
+    - name: syscalls
+      address: 0x0005e0
 build:
   files:
     ofiles:
@@ -419,5 +517,5 @@ build:
       exec:
         - $(CC1) $(CC1FLAGS) $(NAME).c -o $(NAME).s
         - $(AS) $(ASFLAGS) $(NAME).s -o $(NAME).o
-    - $(LD) -T $(SYMBOLS) -T $(LDSCRIPT) -Map $(ROM).map $(OFILES) $(AGBCC)/lib/libgcc.a -o $(ROM).elf
+    - $(LD) -T $(SYMBOLS) -T $(LDSCRIPT) -Map $(ROM).map $(OFILES) -L $(AGBCC)/lib -lc -lgcc -o $(ROM).elf
     - $(OBJCOPY) -O binary --pad-to 0x8000000 $(ROM).elf $(ROM).gba

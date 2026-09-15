@@ -399,7 +399,7 @@ __attribute__((naked)) void fun_0800eb28()
     ldr         r1,DAT_0800eb58\n\
     mov         r0,sp\n\
     mov         r2,#0x2c\n\
-    bl          fun_08044f7c\n\
+    bl          memcpy\n\
     mov         r0,#0x64\n\
     bl          fun_08002c04\n\
     mov         r1,#0x16\n\

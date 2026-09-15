@@ -15001,7 +15001,7 @@ __attribute__((naked)) void fun_0802e8ec()
      ldr        r0,DAT_0802e940\n\
      mov        r1,#0x0\n\
      mov        r2,#0x34\n\
-     bl         fun_08044fdc\n\
+     bl         memset\n\
      mov        r0,sp\n\
      mov        r2,#0x0\n\
      strh       r2,[r0,#0x0]\n\

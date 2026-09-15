@@ -1,5 +1,5 @@
 extern char DAT_02005210;
-void fun_08044fdc(char*, int, int);
+void memset(char*, int, int);
 void strncpy();
 
 __attribute__((naked)) void fun_080004ac()
@@ -121,7 +121,7 @@ LAB_08000572:\n\
 
 void fun_08000584()
 {
-    fun_08044fdc(&DAT_02005210, 0, 0x360);
+    memset(&DAT_02005210, 0, 0x360);
     fun_080004dc(0x1a, 300, "NOR");
     fun_080004dc(0x1a, 0x96, "KTS");
     fun_080004dc(0x1a, 0x46, "PIH");
