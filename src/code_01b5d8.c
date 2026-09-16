@@ -3173,12 +3173,12 @@ LAB_0801cdbc:\n\
      mov        r1,#0xc5\n\
      bl         fun_080047d0\n\
      ldr        r1,[r4,#0x0]\n\
-     ldr        r0,PTR_LAB_0801ce20\n\
+     ldr        r0,PTR_DAT_0801ce20\n\
      add        r0,r5,r0\n\
      ldrb       r0,[r0,#0x0]\n\
      strh       r0,[r1,#0x2]\n\
      ldr        r1,[r4,#0x0]\n\
-     ldr        r0,PTR_LAB_08786976_0801ce24\n\
+     ldr        r0,PTR_DAT_0801ce24\n\
      ldrb       r0,[r0,#0x0]\n\
      strh       r0,[r1,#0x4]\n\
      ldr        r1,[r4,#0x0]\n\
@@ -3213,10 +3213,10 @@ PTR_DAT_0801ce18:\n\
      .4byte       DAT_08786973\n\
 PTR_DAT_0801ce1c:\n\
      .4byte       DAT_08786975\n\
-PTR_LAB_0801ce20:\n\
-     .4byte       LAB_08786976\n\
-PTR_LAB_08786976_0801ce24:\n\
-     .4byte       LAB_08786976\n\
+PTR_DAT_0801ce20:\n\
+     .4byte       DAT_08786976\n\
+PTR_DAT_0801ce24:\n\
+     .4byte       DAT_08786977\n\
     ");
 }
 __attribute__((naked)) void fun_0801ce28()

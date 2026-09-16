@@ -15206,5 +15206,6 @@ __attribute__((naked)) void fun_0802ea2c()
      bl         fun_0800457c\n\
      pop        {r0}\n\
      bx         r0\n\
+.space 2\n\
     ");
 }

@@ -359,12 +359,12 @@ rom:
     - name: fwalk
       library: libc.a
       address: 0x047f2c
-    - name: makebuf
-      library: libc.a
-      address: 0x047fd8
     - name: locale
       library: libc.a
       address: 0x047f6c
+    - name: makebuf
+      library: libc.a
+      address: 0x047fd8
     - name: mallocr
       library: libc.a
       address: 0x048210

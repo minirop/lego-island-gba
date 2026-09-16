@@ -668,6 +668,6 @@ LAB_0800ed02:\n\
     pop         {r4,r5,r6,r7}\n\
     pop         {r0}\n\
     bx          r0\n\
-\n\
+.space 2\n\
     ");
 }

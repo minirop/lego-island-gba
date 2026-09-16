@@ -921,5 +921,6 @@ LAB_080178ec:\n\
      pop        {r4,r5,r6,r7}\n\
      pop        {r1}\n\
      bx         r1\n\
+.space 2\n\
     ");
 }

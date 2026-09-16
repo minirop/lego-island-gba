@@ -2339,5 +2339,6 @@ LAB_080194a0:\n\
 LAB_080194a6:\n\
      pop        {r1}\n\
      bx         r1\n\
+.space 2\n\
     ");
 }

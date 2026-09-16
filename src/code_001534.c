@@ -288,6 +288,6 @@ __attribute__((naked)) void fun_08001704()
     bl          fun_0803dd20\n\
     pop         {r0}\n\
     bx          r0\n\
-\n\
+.space 2\n\
     ");
 }
