@@ -43,8 +43,6 @@ LAB_08017224:\n\
      pop        {r4,r5,r6,r7}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_08017250()

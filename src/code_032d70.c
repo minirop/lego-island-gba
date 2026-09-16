@@ -6746,8 +6746,6 @@ LAB_08035ee0:\n\
      pop        {r4}\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_08035ee8()

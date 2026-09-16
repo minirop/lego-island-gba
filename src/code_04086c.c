@@ -276,8 +276,6 @@ LAB_08040a62:\n\
      pop        {r4,r5,r6,r7}\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_08040a70()
@@ -1076,8 +1074,6 @@ LAB_0804100c:\n\
      pop        {r4,r5}\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0804101c()
@@ -1259,8 +1255,6 @@ LAB_08041150:\n\
      pop        {r4,r5,r6,r7}\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_08041160()
@@ -1491,8 +1485,6 @@ LAB_080412ec:\n\
      pop        {r4,r5,r6}\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_080412fc()
@@ -1558,8 +1550,6 @@ __attribute__((naked)) void fun_08041340()
      pop        {r4,r5}\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_08041368()
@@ -1574,8 +1564,6 @@ __attribute__((naked)) void fun_08041368()
      str        r2,[r1,#0x0]\n\
      mov        r0,#0x1\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0804137c()
@@ -1627,8 +1615,6 @@ __attribute__((naked)) void fun_080413b8()
      str        r2,[r1,#0x0]\n\
      mov        r0,#0x1\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_080413d0()
@@ -1641,8 +1627,6 @@ __attribute__((naked)) void fun_080413d0()
      str        r0,[r1,#0x0]\n\
      mov        r0,#0x1\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_080413e0()
@@ -1662,8 +1646,6 @@ __attribute__((naked)) void fun_080413e0()
      pop        {r4}\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_08041400()
@@ -1777,8 +1759,6 @@ LAB_080414b0:\n\
      pop        {r4,r5}\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_080414bc()
@@ -1789,8 +1769,6 @@ __attribute__((naked)) void fun_080414bc()
      str        r0,[r1,#0x0]\n\
      mov        r0,#0x1\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_080414c8()
@@ -1853,8 +1831,6 @@ LAB_08041520:\n\
      pop        {r4}\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_08041530()
@@ -1961,8 +1937,6 @@ LAB_080415d0:\n\
      pop        {r4}\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_080415e0()
@@ -2108,8 +2082,6 @@ LAB_080416b6:\n\
      pop        {r4,r5}\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_080416d4()
@@ -4069,8 +4041,6 @@ LAB_080424a2:\n\
      pop        {r4,r5,r6,r7}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_080424b4()
@@ -4293,8 +4263,6 @@ LAB_08042634:\n\
      mov        r0,#0x1\n\
 LAB_0804263c:\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_08042640()
@@ -4328,8 +4296,6 @@ LAB_08042664:\n\
      mov        r0,#0x1\n\
 LAB_08042670:\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_08042674()
@@ -4369,8 +4335,6 @@ LAB_080426b0:\n\
 LAB_080426b2:\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_080426b8()
@@ -4379,8 +4343,6 @@ __attribute__((naked)) void fun_080426b8()
      mov        r0,#0xa8\n\
      lsl        r0,r0,#0x1\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_080426c0()
@@ -4901,7 +4863,6 @@ __attribute__((naked)) void fun_08042a24()
      add        r1,r1,r0\n\
      str        r1,[r2,#0xc]\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
+.space 2\n\
     ");
 }

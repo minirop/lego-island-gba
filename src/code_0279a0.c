@@ -1598,8 +1598,6 @@ __attribute__((naked)) void fun_080285dc()
      bl         fun_0803a9dc\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_080285e8()
@@ -4295,8 +4293,6 @@ LAB_08029ac4:\n\
      pop        {r4,r5,r6,r7}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_08029ad4()
@@ -6938,8 +6934,6 @@ LAB_0802ae28:\n\
      pop        {r4}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0802ae30()
@@ -7115,8 +7109,6 @@ __attribute__((naked)) void fun_0802af38()
      pop        {r4}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0802af60()
@@ -7228,8 +7220,6 @@ __attribute__((naked)) void fun_0802aff8()
      pop        {r4}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0802b00c()
@@ -7263,8 +7253,6 @@ LAB_0802b02c:\n\
      pop        {r4}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0802b044()
@@ -7325,8 +7313,6 @@ LAB_0802b09c:\n\
 LAB_0802b09e:\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0802b0a4()
@@ -7375,8 +7361,6 @@ LAB_0802b0cc:\n\
      pop        {r4,r5,r6,r7}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0802b0fc()
@@ -7491,8 +7475,6 @@ LAB_0802b19c:\n\
      pop        {r4,r5,r6,r7}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0802b1bc()
@@ -7561,8 +7543,6 @@ __attribute__((naked)) void fun_0802b224()
      str        r1,[r0,#0x4]\n\
      str        r2,[r0,#0x8]\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0802b230()
@@ -7571,8 +7551,6 @@ __attribute__((naked)) void fun_0802b230()
      mov        r1,#0x1\n\
      strh       r1,[r0,#0x2]\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0802b238()
@@ -7806,8 +7784,6 @@ LAB_0802b3c2:\n\
      mov        r0,#0x0\n\
 LAB_0802b3c4:\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0802b3c8()
@@ -14333,8 +14309,6 @@ LAB_0802e3d4:\n\
 LAB_0802e3e2:\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0802e3e8()
@@ -15144,8 +15118,6 @@ __attribute__((naked)) void fun_0802e9e0()
 {
     asm("\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0802e9e4()

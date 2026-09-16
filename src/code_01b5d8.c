@@ -428,8 +428,6 @@ LAB_0801b93a:\n\
      add        sp,#0x64\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0801b944()
@@ -539,8 +537,6 @@ LAB_0801b9fe:\n\
      mov        r0,#0x0\n\
 LAB_0801ba00:\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0801ba04()
@@ -1373,8 +1369,6 @@ LAB_0801c034:\n\
 LAB_0801c03a:\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0801c040()
@@ -1739,8 +1733,6 @@ LAB_0801c2d8:\n\
 LAB_0801c2e2:\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0801c2e8()

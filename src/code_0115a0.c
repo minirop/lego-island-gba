@@ -24,8 +24,6 @@ __attribute__((naked)) void fun_080115c0()
 {
     asm("\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_080115c4()
@@ -156,8 +154,6 @@ __attribute__((naked)) void fun_080116b0()
      mov        r1,#0x2\n\
      strb       r1,[r0,#0x18]\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_080116b8()
@@ -178,8 +174,6 @@ __attribute__((naked)) void fun_080116c8()
      mov        r1,#0x2\n\
      strb       r1,[r0,#0x18]\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_080116d0()
@@ -266,8 +260,6 @@ __attribute__((naked)) void fun_08011758()
      mov        r1,#0x2\n\
      strb       r1,[r0,#0x18]\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_08011760()
@@ -308,8 +300,6 @@ __attribute__((naked)) void fun_08011794()
      mov        r1,#0x2\n\
      strb       r1,[r0,#0x18]\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0801179c()
@@ -339,7 +329,6 @@ __attribute__((naked)) void fun_080117bc()
      mov        r1,#0x2\n\
      strb       r1,[r0,#0x18]\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
+.space 2\n\
     ");
 }

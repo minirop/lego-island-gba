@@ -141,8 +141,6 @@ LAB_0803dcd2:\n\
      pop        {r4,r5,r6,r7}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0803dcdc()
@@ -182,8 +180,6 @@ LAB_0803dd18:\n\
      pop        {r4}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0803dd20()
@@ -220,8 +216,6 @@ LAB_0803dd54:\n\
 LAB_0803dd56:\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0803dd5c()
@@ -363,8 +357,6 @@ LAB_0803de38:\n\
      pop        {r4}\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0803de40()
@@ -630,8 +622,6 @@ LAB_0803dfa6:\n\
      bne        LAB_0803dfa6\n\
 LAB_0803dfb0:\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0803dfb4()
@@ -650,8 +640,6 @@ LAB_0803dfba:\n\
      bne        LAB_0803dfba\n\
 LAB_0803dfc8:\n\
      bx         lr\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0803dfcc()
@@ -893,8 +881,6 @@ LAB_0803e140:\n\
      pop        {r4}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0803e148()
@@ -1483,8 +1469,6 @@ LAB_0803e54c:\n\
      pop        {r4,r5}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0803e554()
@@ -1628,8 +1612,6 @@ LAB_0803e632:\n\
      pop        {r4,r5,r6,r7}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0803e64c()
@@ -1784,8 +1766,6 @@ LAB_0803e742:\n\
      pop        {r4,r5,r6,r7}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0803e754()
@@ -1893,8 +1873,6 @@ LAB_0803e80c:\n\
      pop        {r4,r5,r6,r7}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0803e818()
@@ -2183,8 +2161,6 @@ LAB_0803ea08:\n\
      pop        {r4,r5,r6,r7}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0803ea10()
@@ -3194,8 +3170,6 @@ LAB_0803f0c4:\n\
      pop        {r4,r5,r6,r7}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0803f0d0()
@@ -4008,8 +3982,6 @@ LAB_0803f678:\n\
      pop        {r4}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0803f680()
@@ -4971,8 +4943,6 @@ LAB_0803fd66:\n\
      pop        {r4,r5,r6,r7}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0803fd78()
@@ -5292,8 +5262,6 @@ LAB_0803ffa2:\n\
      pop        {r4,r5,r6}\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_0803ffac()
@@ -5885,8 +5853,6 @@ LAB_080403b0:\n\
      pop        {r4,r5,r6,r7}\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_080403bc()
@@ -6046,8 +6012,6 @@ LAB_080404c0:\n\
      pop        {r4,r5,r6}\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_080404d0()
@@ -6179,8 +6143,6 @@ LAB_080405b0:\n\
      pop        {r4,r5,r6,r7}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_080405c0()
@@ -6406,8 +6368,6 @@ LAB_0804073c:\n\
      pop        {r4,r5,r6,r7}\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_08040754()

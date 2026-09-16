@@ -3635,8 +3635,6 @@ LAB_080211ac:\n\
      pop        {r4,r5}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_080211b4()

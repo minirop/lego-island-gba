@@ -472,8 +472,6 @@ LAB_08017cc8:\n\
      pop        {r4,r5}\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_08017cd0()
@@ -538,8 +536,6 @@ LAB_08017d40:\n\
      mov        r0,#0x0\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_08017d48()
@@ -592,8 +588,6 @@ __attribute__((naked)) void fun_08017d74()
      bl         fun_080034d4\n\
      pop        {r0}\n\
      bx         r0\n\
-.space 1\n\
-.space 1\n\
     ");
 }
 __attribute__((naked)) void fun_08017d90()
