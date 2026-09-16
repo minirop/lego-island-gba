@@ -1030,7 +1030,7 @@ LAB_0802ffbc:\n\
      mov        r0,#0x10\n\
      bl         fun_08001070\n\
      bl         fun_08030ba0\n\
-     mov        r0,r0\n\
+.space 2\n\
 PTR_DAT_0802ffec:\n\
      .4byte       DAT_02010840\n\
 PTR_DAT_0802fff0:\n\
@@ -1164,7 +1164,7 @@ LAB_080300da:\n\
      mov        r0,#0x14\n\
      bl         fun_08002c04\n\
      bl         fun_08030ba0\n\
-     mov        r0,r0\n\
+.space 2\n\
 PTR_DAT_080300ec:\n\
      .4byte       DAT_0200ecc0\n\
 PTR_DAT_080300f0:\n\

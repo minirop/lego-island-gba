@@ -35,6 +35,6 @@ __attribute__((naked)) void fun_08001764()
     lsr         r0,r0,#0x10\n\
     pop         {r1}\n\
     bx          r1\n\
-\n\
+.space 2\n\
     ");
 }

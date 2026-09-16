@@ -865,12 +865,15 @@ __attribute__((naked)) void fun_080032a0()
 \n\
     ");
 }
-void fun_080032a8()
+__attribute__((naked)) void fun_080032a8()
 {
     asm("\n\
      push       {r3}\n\
      add        sp,#0x4\n\
      bx         lr\n\
+\n\
+.space 2\n\
+\n\
     ");
 }
 void fun_080032b0()

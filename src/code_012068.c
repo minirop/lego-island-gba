@@ -11595,11 +11595,11 @@ LAB_08016e28:\n\
 .syntax unified\n\
      rsbs       r0,r0,#0\n\
 .syntax divided\n\
+     cmp        r1,r0\n\
      bne        LAB_08016f0c\n\
      bl         fun_0800117c\n\
      bl         fun_080010d8\n\
      b          LAB_08016f64\n\
-.space 2\n\
 DAT_08016e48:\n\
      .4byte 0x0200252C\n\
 DAT_08016e4c:\n\

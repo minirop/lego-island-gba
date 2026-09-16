@@ -1115,10 +1115,10 @@ LAB_080335d8:\n\
      bne        LAB_08033604\n\
      bl         fun_0803446c\n\
      bl         fun_080340f0\n\
-     mov        r0,r0\n\
+.space 2\n\
 LAB_080335f8:\n\
      lsl        r4,r3,#0x17\n\
-     mov        r0,r0\n\
+.space 2\n\
 LAB_080335fc:\n\
      lsr        r4,r6,#0x9\n\
      lsl        r1,r0,#0x8\n\
@@ -1518,7 +1518,7 @@ LAB_080338e4:\n\
      mov        r1,#0x3\n\
      bl         fun_08035828\n\
      bl         fun_080340e8\n\
-     mov        r0,r0\n\
+.space 2\n\
 LAB_080338f8:\n\
      ldrsh      r4,[r7,r1]\n\
      lsr        r1,r4,#0x1\n\

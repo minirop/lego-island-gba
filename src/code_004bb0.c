@@ -644,7 +644,7 @@ LAB_08004fce:\n\
     add         r0,r0,r1\n\
     ldrh        r0,[r0,#0x0]\n\
     and         r0,r3\n\
-    strh        r0,[r7,#0x0]\n\
+    strh        r0,[r7,#0x2]\n\
 LAB_08004fdc:\n\
     ldr         r0,[r6,#0x18]\n\
     cmp         r0,#0x0\n\
@@ -652,7 +652,7 @@ LAB_08004fdc:\n\
     add         r0,r0,r1\n\
     ldrh        r0,[r0,#0x0]\n\
     and         r0,r3\n\
-    strh        r0,[r7,#0x2]\n\
+    strh        r0,[r7,#0x4]\n\
 LAB_08004fea:\n\
     ldr         r0,[r6,#0x1c]\n\
     cmp         r0,#0x0\n\
@@ -1217,7 +1217,7 @@ LAB_080053fc:\n\
 LAB_08005436:\n\
     ldr         r5,[sp,#0x28]\n\
     lsr         r0,r5,#0x10\n\
-    ldr         r2,[sp,#0x1c]\n\
+    ldr         r2,[sp,#0x2c]\n\
     lsr         r1,r2,#0x10\n\
     bl          fun_08005ce0\n\
     b           LAB_08005458\n\
@@ -1260,7 +1260,7 @@ __attribute__((naked)) void fun_08005468()
     ldr         r0,[r1,#0x2c]\n\
     str         r0,[sp,#0x20]\n\
     ldr         r1,[r1,#0x30]\n\
-    str         r1,[sp,#0x30]\n\
+    str         r1,[sp,#0x24]\n\
     mov         r2,r8\n\
     ldr         r2,[r2,#0x34]\n\
     str         r2,[sp,#0x28]\n\
@@ -1354,7 +1354,7 @@ LAB_0800551a:\n\
     and         r0,r1\n\
     ldr         r2,[sp,#0x28]\n\
     add         r0,r0,r2\n\
-    ldr         r2,[sp,#0x2cc]\n\
+    ldr         r2,[sp,#0x2c]\n\
     add         r1,r7,r2\n\
     add         r2,r5,#0x0\n\
     mov         r3,sp\n\
@@ -1370,7 +1370,7 @@ LAB_0800551a:\n\
     add         r0,r6,#0x1\n\
     lsl         r0,r0,#0x10\n\
     lsr         r6,r0,#0x10\n\
-    ldr         r0,[sp,#0x2c]\n\
+    ldr         r0,[sp,#0x30]\n\
     cmp         r6,r0\n\
     bcc         LAB_0800551a\n\
 LAB_08005562:\n\

@@ -1152,7 +1152,7 @@ __attribute__((naked)) void fun_0801be9c()
 {
     asm("\n\
      push       {r4,r5,lr}\n\
-switchD_0801bee8_caseD_c:\n\
+switchD_0801bee8_caseD_c_start:\n\
      bl         fun_080020a4\n\
      add        r5,r0,#0x0\n\
      bl         fun_080020a4\n\
@@ -1181,7 +1181,7 @@ LAB_0801bed2:\n\
      ldrb       r0,[r0,#0x0]\n\
      sub        r0,#0x4\n\
      cmp        r0,#0xb\n\
-     bhi        switchD_0801bee8_caseD_c\n\
+     bhi        switchD_0801bee8_caseD_c_start\n\
      lsl        r0,r0,#0x2\n\
      ldr        r1,PTR_switchdataD_0801bef4_0801bef0\n\
      add        r0,r0,r1\n\
@@ -1284,7 +1284,7 @@ switchD_0801bee8_caseD_b:\n\
 .space 1\n\
 DAT_0801bfb4:\n\
      .4byte 0x000007D1\n\
-switchD_0801bee8_caseD_c_2:\n\
+switchD_0801bee8_caseD_c:\n\
      ldr        r0,DAT_0801bfbc\n\
      b          LAB_0801bfc2\n\
 DAT_0801bfbc:\n\
@@ -1296,7 +1296,7 @@ LAB_0801bfc2:\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        switchD_0801bee8_caseD_a\n\
-     b          switchD_0801bee8_caseD_c\n\
+     b          switchD_0801bee8_caseD_c_start\n\
 .space 1\n\
 .space 1\n\
 DAT_0801bfd0:\n\
@@ -1307,7 +1307,7 @@ switchD_0801bee8_caseD_e:\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        switchD_0801bee8_caseD_a\n\
-     b          switchD_0801bee8_caseD_c\n\
+     b          switchD_0801bee8_caseD_c_start\n\
 switchD_0801bee8_caseD_a:\n\
      pop        {r4,r5}\n\
      pop        {r0}\n\

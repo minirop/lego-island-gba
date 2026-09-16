@@ -338,9 +338,6 @@ rom:
     - name: vfprintf
       library: libc.a
       address: 0x045824
-    - name: s_isnan
-      library: libc.a
-      address: 0x045d7c
     - name: wsetup
       library: libc.a
       address: 0x046990
@@ -389,6 +386,9 @@ rom:
     - name: s_isinf
       library: libc.a
       address: 0x048fdc
+    - name: s_isnan
+      library: libc.a
+      address: 0x049000
     - name: sbrkr
       library: libc.a
       address: 0x049020
