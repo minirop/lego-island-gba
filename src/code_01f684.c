@@ -4959,3 +4959,5 @@ void fun_08021b40()
 {
     fun_0803a9ec();
 }
+
+asm(".space 2");

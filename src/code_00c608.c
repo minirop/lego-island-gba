@@ -1,39 +1,3 @@
-__attribute__((naked)) void fun_0800c5c8()
-{
-    asm("\n\
-    bl         fun_080020a4\n\
-    ldr        r3,DAT_0800c604\n\
-    add        r0,r0,r3\n\
-    mov        r1,#0x0\n\
-    strh       r1,[r0,#0x0]\n\
-    ldr        r0,[sp,#0x0]\n\
-    ldr        r1,[sp,#0x4]\n\
-    mov        r2,r10\n\
-    mov        r3,r8\n\
-    bl         fun_0800d090\n\
-    ldr        r0,[sp,#0x0]\n\
-    ldr        r1,[sp,#0x4]\n\
-    mov        r2,r10\n\
-    mov        r3,r8\n\
-    bl         fun_0800d120\n\
-    mov        r0,#0x0\n\
-    add        sp,#0x8\n\
-    pop        {r3,r4,r5}\n\
-    mov        r8,r3\n\
-    mov        r9,r4\n\
-    mov        r10,r5\n\
-    pop        {r4,r5,r6,r7}\n\
-    pop        {r1}\n\
-    bx         r1\n\
-\n\
-.space 2\n\
-\n\
-DAT_0800c600:\n\
-    .4byte 0x0200D370\n\
-DAT_0800c604:\n\
-    .4byte 0x00000DE8\n\
-    ");
-}
 __attribute__((naked)) void fun_0800c608()
 {
     asm("\n\

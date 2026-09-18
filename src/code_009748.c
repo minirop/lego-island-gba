@@ -3549,7 +3549,7 @@ LAB_0800b334:\n\
     asr         r0,r0,#0x10\n\
     cmp         r0,#0xb8\n\
     bls         LAB_0800b34e\n\
-    bl          fun_0800c5c8\n\
+    bl          LAB_0800c5c8\n\
 LAB_0800b34e:\n\
     lsl         r0,r0,#0x2\n\
     ldr         r1,DAT_0800b358\n\
@@ -3559,191 +3559,282 @@ LAB_0800b34e:\n\
 DAT_0800b358:\n\
     .4byte 0x0800B35C\n\
 PTR_DAT_0800b35c:\n\
-    .4byte DAT_0800bd3c\n\
-    .4byte DAT_0800bd70\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte DAT_0800be44\n\
-    .4byte DAT_0800be44\n\
-    .4byte fun_0800c5c8\n\
-    .4byte DAT_0800bef2\n\
-    .4byte DAT_0800bef2\n\
-    .4byte DAT_0800bd90\n\
-    .4byte DAT_0800c000\n\
-    .4byte DAT_0800c0f0\n\
-    .4byte DAT_0800bf4e\n\
-    .4byte DAT_0800bfa8\n\
-    .4byte DAT_0800c390\n\
-    .4byte DAT_0800c3c8\n\
-    .4byte DAT_0800c3e6\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte DAT_0800bf28\n\
-    .4byte DAT_0800bf28\n\
-    .4byte DAT_0800c1d0\n\
-    .4byte DAT_0800c480\n\
-    .4byte DAT_0800c480\n\
-    .4byte DAT_0800c194\n\
-    .4byte DAT_0800c194\n\
-    .4byte DAT_0800c292\n\
-    .4byte DAT_0800c292\n\
-    .4byte DAT_0800c264\n\
-    .4byte DAT_0800c264\n\
-    .4byte DAT_0800c43c\n\
-    .4byte DAT_0800c43c\n\
-    .4byte DAT_0800bf28\n\
-    .4byte DAT_0800c3e6\n\
-    .4byte DAT_0800c3e6\n\
-    .4byte DAT_0800c4ec\n\
-    .4byte DAT_0800c4ec\n\
-    .4byte DAT_0800c318\n\
-    .4byte DAT_0800c406\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte DAT_0800bd56\n\
-    .4byte DAT_0800b6f8\n\
-    .4byte DAT_0800b710\n\
-    .4byte DAT_0800b728\n\
-    .4byte DAT_0800b740\n\
-    .4byte DAT_0800b758\n\
-    .4byte DAT_0800b770\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte DAT_0800b8c4\n\
-    .4byte fun_0800c5c8\n\
-    .4byte DAT_0800ba54\n\
-    .4byte DAT_0800bad8\n\
-    .4byte DAT_0800bc00\n\
-    .4byte DAT_0800bcb4\n\
-    .4byte DAT_0800b8d4\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte DAT_0800b7f0\n\
-    .4byte fun_0800c5c8\n\
-    .4byte DAT_0800b7a4\n\
-    .4byte DAT_0800b7a4\n\
-    .4byte DAT_0800b7a4\n\
-    .4byte DAT_0800b7a4\n\
-    .4byte DAT_0800b7a4\n\
-    .4byte DAT_0800b7a4\n\
-    .4byte DAT_0800b7a4\n\
-    .4byte DAT_0800b7f0\n\
-    .4byte DAT_0800b7f0\n\
-    .4byte fun_0800c5c8\n\
-    .4byte DAT_0800bef2\n\
-    .4byte DAT_0800c5c0\n\
-    .4byte DAT_0800c5c0\n\
-    .4byte DAT_0800c5c0\n\
-    .4byte DAT_0800c5c0\n\
-    .4byte DAT_0800c5c0\n\
-    .4byte DAT_0800c5c0\n\
-    .4byte DAT_0800c5c0\n\
-    .4byte DAT_0800c5c0\n\
-    .4byte DAT_0800c5c0\n\
-    .4byte DAT_0800c5c0\n\
-    .4byte DAT_0800c5c0\n\
-    .4byte DAT_0800c5c0\n\
-    .4byte fun_0800c5c8\n\
-    .4byte DAT_0800b640\n\
-    .4byte DAT_0800b7f0\n\
-    .4byte DAT_0800b7a4\n\
-    .4byte DAT_0800b7a4\n\
-    .4byte DAT_0800b7a4\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte DAT_0800b9fc\n\
-    .4byte DAT_0800b8da\n\
-    .4byte fun_0800c5c8\n\
-    .4byte DAT_0800bd5c\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte fun_0800c5c8\n\
-    .4byte DAT_0800b788\n\
-    .4byte DAT_0800b83c\n\
-    .4byte DAT_0800b83c\n\
-    .4byte DAT_0800b83c\n\
-    .4byte DAT_0800b880\n\
-    .4byte DAT_0800b880\n\
-    .4byte DAT_0800b880\n\
-    .4byte DAT_0800b880\n\
-\n\
+    .4byte LAB_0800bd3c\n\
+    .4byte LAB_0800bd70\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800be44\n\
+    .4byte LAB_0800be44\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800bef2\n\
+    .4byte LAB_0800bef2\n\
+    .4byte LAB_0800bd90\n\
+    .4byte LAB_0800c000\n\
+    .4byte LAB_0800c0f0\n\
+    .4byte LAB_0800bf4e\n\
+    .4byte LAB_0800bfa8\n\
+    .4byte LAB_0800c390\n\
+    .4byte LAB_0800c3c8\n\
+    .4byte LAB_0800c3e6\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800bf28\n\
+    .4byte LAB_0800bf28\n\
+    .4byte LAB_0800c1d0\n\
+    .4byte LAB_0800c480\n\
+    .4byte LAB_0800c480\n\
+    .4byte LAB_0800c194\n\
+    .4byte LAB_0800c194\n\
+    .4byte LAB_0800c292\n\
+    .4byte LAB_0800c292\n\
+    .4byte LAB_0800c264\n\
+    .4byte LAB_0800c264\n\
+    .4byte LAB_0800c43c\n\
+    .4byte LAB_0800c43c\n\
+    .4byte LAB_0800bf28\n\
+    .4byte LAB_0800c3e6\n\
+    .4byte LAB_0800c3e6\n\
+    .4byte LAB_0800c4ec\n\
+    .4byte LAB_0800c4ec\n\
+    .4byte LAB_0800c318\n\
+    .4byte LAB_0800c406\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800bd56\n\
+    .4byte LAB_0800b6f8\n\
+    .4byte LAB_0800b710\n\
+    .4byte LAB_0800b728\n\
+    .4byte LAB_0800b740\n\
+    .4byte LAB_0800b758\n\
+    .4byte LAB_0800b770\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800b8c4\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800ba54\n\
+    .4byte LAB_0800bad8\n\
+    .4byte LAB_0800bc00\n\
+    .4byte LAB_0800bcb4\n\
+    .4byte LAB_0800b8d4\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800b7f0\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800b7a4\n\
+    .4byte LAB_0800b7a4\n\
+    .4byte LAB_0800b7a4\n\
+    .4byte LAB_0800b7a4\n\
+    .4byte LAB_0800b7a4\n\
+    .4byte LAB_0800b7a4\n\
+    .4byte LAB_0800b7a4\n\
+    .4byte LAB_0800b7f0\n\
+    .4byte LAB_0800b7f0\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800bef2\n\
+    .4byte LAB_0800c5c0\n\
+    .4byte LAB_0800c5c0\n\
+    .4byte LAB_0800c5c0\n\
+    .4byte LAB_0800c5c0\n\
+    .4byte LAB_0800c5c0\n\
+    .4byte LAB_0800c5c0\n\
+    .4byte LAB_0800c5c0\n\
+    .4byte LAB_0800c5c0\n\
+    .4byte LAB_0800c5c0\n\
+    .4byte LAB_0800c5c0\n\
+    .4byte LAB_0800c5c0\n\
+    .4byte LAB_0800c5c0\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800b640\n\
+    .4byte LAB_0800b7f0\n\
+    .4byte LAB_0800b7a4\n\
+    .4byte LAB_0800b7a4\n\
+    .4byte LAB_0800b7a4\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800b9fc\n\
+    .4byte LAB_0800b8da\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800bd5c\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800c5c8\n\
+    .4byte LAB_0800b788\n\
+    .4byte LAB_0800b83c\n\
+    .4byte LAB_0800b83c\n\
+    .4byte LAB_0800b83c\n\
+    .4byte LAB_0800b880\n\
+    .4byte LAB_0800b880\n\
+    .4byte LAB_0800b880\n\
+    .4byte LAB_0800b880\n\
+LAB_0800b640:\n\
+.incbin \"baserom.gba\", 0x00b640, 0x00b6f8 - 0x00b640\n\
+LAB_0800b6f8:\n\
+.incbin \"baserom.gba\", 0x00b6f8, 0x00b710 - 0x00b6f8\n\
+LAB_0800b710:\n\
+.incbin \"baserom.gba\", 0x00b710, 0x00b728 - 0x00b710\n\
+LAB_0800b728:\n\
+.incbin \"baserom.gba\", 0x00b728, 0x00b740 - 0x00b728\n\
+LAB_0800b740:\n\
+.incbin \"baserom.gba\", 0x00b740, 0x00b758 - 0x00b740\n\
+LAB_0800b758:\n\
+.incbin \"baserom.gba\", 0x00b758, 0x00b770 - 0x00b758\n\
+LAB_0800b770:\n\
+.incbin \"baserom.gba\", 0x00b770, 0x00b788 - 0x00b770\n\
+LAB_0800b788:\n\
+.incbin \"baserom.gba\", 0x00b788, 0x00b7a4 - 0x00b788\n\
+LAB_0800b7a4:\n\
+.incbin \"baserom.gba\", 0x00b7a4, 0x00b7f0 - 0x00b7a4\n\
+LAB_0800b7f0:\n\
+.incbin \"baserom.gba\", 0x00b7f0, 0x00b83c - 0x00b7f0\n\
+LAB_0800b83c:\n\
+.incbin \"baserom.gba\", 0x00b83c, 0x00b880 - 0x00b83c\n\
+LAB_0800b880:\n\
+.incbin \"baserom.gba\", 0x00b880, 0x00b8c4 - 0x00b880\n\
+LAB_0800b8c4:\n\
+.incbin \"baserom.gba\", 0x00b8c4, 0x00b8d4 - 0x00b8c4\n\
+LAB_0800b8d4:\n\
+.incbin \"baserom.gba\", 0x00b8d4, 0x00b8da - 0x00b8d4\n\
+LAB_0800b8da:\n\
+.incbin \"baserom.gba\", 0x00b8da, 0x00b9fc - 0x00b8da\n\
+LAB_0800b9fc:\n\
+.incbin \"baserom.gba\", 0x00b9fc, 0x00ba54 - 0x00b9fc\n\
+LAB_0800ba54:\n\
+.incbin \"baserom.gba\", 0x00ba54, 0x00bad8 - 0x00ba54\n\
+LAB_0800bad8:\n\
+.incbin \"baserom.gba\", 0x00bad8, 0x00bc00 - 0x00bad8\n\
+LAB_0800bc00:\n\
+.incbin \"baserom.gba\", 0x00bc00, 0x00bcb4 - 0x00bc00\n\
+LAB_0800bcb4:\n\
+.incbin \"baserom.gba\", 0x00bcb4, 0x00bd3c - 0x00bcb4\n\
+LAB_0800bd3c:\n\
+.incbin \"baserom.gba\", 0x00bd3c, 0x00bd56 - 0x00bd3c\n\
+LAB_0800bd56:\n\
+.incbin \"baserom.gba\", 0x00bd56, 0x00bd5c - 0x00bd56\n\
+LAB_0800bd5c:\n\
+.incbin \"baserom.gba\", 0x00bd5c, 0x00bd70 - 0x00bd5c\n\
+LAB_0800bd70:\n\
+.incbin \"baserom.gba\", 0x00bd70, 0x00bd90 - 0x00bd70\n\
+LAB_0800bd90:\n\
+.incbin \"baserom.gba\", 0x00bd90, 0x00be44 - 0x00bd90\n\
+LAB_0800be44:\n\
+.incbin \"baserom.gba\", 0x00be44, 0x00bef2 - 0x00be44\n\
+LAB_0800bef2:\n\
+.incbin \"baserom.gba\", 0x00bef2, 0x00bf28 - 0x00bef2\n\
+LAB_0800bf28:\n\
+.incbin \"baserom.gba\", 0x00bf28, 0x00bf4e - 0x00bf28\n\
+LAB_0800bf4e:\n\
+.incbin \"baserom.gba\", 0x00bf4e, 0x00bfa8 - 0x00bf4e\n\
+LAB_0800bfa8:\n\
+.incbin \"baserom.gba\", 0x00bfa8, 0x00c000 - 0x00bfa8\n\
+LAB_0800c000:\n\
+.incbin \"baserom.gba\", 0x00c000, 0x00c0f0 - 0x00c000\n\
+LAB_0800c0f0:\n\
+.incbin \"baserom.gba\", 0x00c0f0, 0x00c194 - 0x00c0f0\n\
+LAB_0800c194:\n\
+.incbin \"baserom.gba\", 0x00c194, 0x00c1d0 - 0x00c194\n\
+LAB_0800c1d0:\n\
+.incbin \"baserom.gba\", 0x00c1d0, 0x00c264 - 0x00c1d0\n\
+LAB_0800c264:\n\
+.incbin \"baserom.gba\", 0x00c264, 0x00c292 - 0x00c264\n\
+LAB_0800c292:\n\
+.incbin \"baserom.gba\", 0x00c292, 0x00c318 - 0x00c292\n\
+LAB_0800c318:\n\
+.incbin \"baserom.gba\", 0x00c318, 0x00c390 - 0x00c318\n\
+LAB_0800c390:\n\
+.incbin \"baserom.gba\", 0x00c390, 0x00c3c8 - 0x00c390\n\
+LAB_0800c3c8:\n\
+.incbin \"baserom.gba\", 0x00c3c8, 0x00c3e6 - 0x00c3c8\n\
+LAB_0800c3e6:\n\
+.incbin \"baserom.gba\", 0x00c3e6, 0x00c406 - 0x00c3e6\n\
+LAB_0800c406:\n\
+.incbin \"baserom.gba\", 0x00c406, 0x00c43c - 0x00c406\n\
+LAB_0800c43c:\n\
+.incbin \"baserom.gba\", 0x00c43c, 0x00c480 - 0x00c43c\n\
+LAB_0800c480:\n\
+.incbin \"baserom.gba\", 0x00c480, 0x00c4ec - 0x00c480\n\
+LAB_0800c4ec:\n\
+.incbin \"baserom.gba\", 0x00c4ec, 0x00c5c0 - 0x00c4ec\n\
+LAB_0800c5c0:\n\
+.incbin \"baserom.gba\", 0x00c5c0, 0x00c5c8 - 0x00c5c0\n\
+LAB_0800c5c8:\n\
+.incbin \"baserom.gba\", 0x00c5c8, 0x00c608 - 0x00c5c8\n\
     ");
 }

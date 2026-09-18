@@ -1763,7 +1763,7 @@ LAB_0800454e:\n\
     mov         r0,r12\n\
     mov         r2,#0x4\n\
     mov         r3,r8\n\
-    bl          fun_08045030\n\
+    bl          qsort\n\
 LAB_0800455a:\n\
     pop         {r3,r4}\n\
     mov         r8,r3\n\

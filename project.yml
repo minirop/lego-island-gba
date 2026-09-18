@@ -144,11 +144,11 @@ rom:
     - name: code_009748
       format: c
       address: 0x009748
-      size: 0x1ef8
-    - name: code_00c5c8
+      size: 0x2ec0
+    - name: code_00c608
       format: c
-      address: 0x00c5c8
-      size: 0x960
+      address: 0x00c608
+      size: 0x920
     - name: code_00cfcc
       format: c
       address: 0x00cfcc
@@ -271,7 +271,7 @@ rom:
     - name: code_042a3c
       format: asm
       address: 0x042a3c
-      size: 0x1e8
+      size: 0xa8c
     - name: _call_via_rX
       library: libgcc.a
       address: 0x0434c8
@@ -314,8 +314,8 @@ rom:
     - name: memset
       library: libc.a
       address: 0x044fdc
-    - name: code_045030
-      format: c
+    - name: qsort
+      library: libc.a
       address: 0x045030
     - name: sprintf
       library: libc.a

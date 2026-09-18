@@ -3,7 +3,7 @@
     ARM_FUNC_START fun_08042a3c
 fun_08042a3c: @ 0x08042a3c
      stmdb      sp!,{r0,r1}
-     ldr        r0,=DAT_080434c4
+     ldr        r0,=0x04000200
      ldrh       r1,[r0,#0x0]
      orr        r1,r1,#0x10
      strh       r1,[r0,#0x0]
@@ -14,7 +14,7 @@ fun_08042a3c: @ 0x08042a3c
     ARM_FUNC_START fun_08042a58
 fun_08042a58: @ 0x08042a58
      stmdb      sp!,{r0,r1}
-     ldr        r0,=DAT_080434c4
+     ldr        r0,=0x04000200
      ldrh       r1,[r0,#0x0]
      bic        r1,r1,#0x10
      strh       r1,[r0,#0x0]
@@ -139,3 +139,5 @@ LAB_08042b94:
      ldmia      sp!,{r0,r1,r4,r5,r6,r7,r8,r9,lr}
      bx         lr
     ARM_FUNC_END fun_08042b88
+
+.incbin "baserom.gba", 0x042c20, 0x0434c4 - 0x042c20
