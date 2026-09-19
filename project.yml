@@ -500,8 +500,8 @@ build:
   constants:
     agbcc: /home/minirop/git/fireemblem8u/tools/agbcc
     as: $(DEVKITARM)/bin/arm-none-eabi-as
-    cc1: $(AGBCC)/bin/old_agbcc
-    cc1flags: -mthumb-interwork -Wimplicit -Wparentheses -O2 -fhex-asm
+    cc1: $(AGBCC)/bin/agbcc
+    cc1flags: -mthumb-interwork -Wimplicit -Wparentheses -O2 -fhex-asm -fprologue-bugfix
     asflags: -mcpu=arm7tdmi -mthumb-interwork -I include
     symbols: symbols.txt
     ldscript: ldscript.txt

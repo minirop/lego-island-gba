@@ -1,13 +1,13 @@
-extern short DAT_02007f60;
-extern short DAT_02005cf8;
+extern unsigned short DAT_02007f60;
+extern unsigned short DAT_02005cf8;
 
-void fun_08004670(short param_1)
+void fun_08004670(unsigned short param_1)
 {
     DAT_02007f60 = param_1;
     return;
 }
 
-short fun_0800467c()
+unsigned short int fun_0800467c()
 {
     return DAT_02005cf8;
 }
