@@ -476,12 +476,10 @@ rom:
       library: libc.a
       section: data
       address: 0x7d6558
-      size: 0x14
     - name: mallocr
       library: libc.a
       section: data
       address: 0x7d656c
-      size: 0x444
 ewram:
   address: 0x02000000
   size: 256K
@@ -518,4 +516,4 @@ build:
         - $(CC1) $(CC1FLAGS) $(NAME).c -o $(NAME).s
         - $(AS) $(ASFLAGS) $(NAME).s -o $(NAME).o
     - $(LD) -T $(SYMBOLS) -T $(LDSCRIPT) -Map $(ROM).map $(OFILES) -L $(AGBCC)/lib -lc -lgcc -o $(ROM).elf
-    - $(OBJCOPY) -O binary --pad-to 0x8000000 $(ROM).elf $(ROM).gba
+    - $(OBJCOPY) -O binary $(ROM).elf $(ROM).gba
