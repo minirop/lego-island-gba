@@ -12,7 +12,6 @@ rom:
     - name: code_000300
       format: c
       address: 0x000300
-      size: 0x8c
     - name: code_0003e0
       format: c
       address: 0x0003e0
@@ -32,11 +31,9 @@ rom:
     - name: code_00132c
       format: c
       address: 0x00132c
-      size: 0xf8
-    - name: code_001454
+    - name: code_001424
       format: c
-      address: 0x001454
-      size: 0xb0
+      address: 0x001424
     - name: code_001534
       format: c
       address: 0x001534
@@ -467,7 +464,11 @@ rom:
       format: c
       section: rodata
       address: 0x77ef7c
-      size: 0x9a0
+    - name: code_77ef7c
+      format: c
+      section: data
+      address: 0x77f91c
+      size: 0x29c
     - name: impure
       library: libc.a
       section: data
