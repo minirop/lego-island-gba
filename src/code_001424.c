@@ -83,8 +83,8 @@ __attribute__((naked))void fun_0800151c()
     bx         lr\n\
 .space 2\n\
 DAT_0800152c:\n\
-    .4byte     DAT_02005830\n\
+    .word     DAT_02005830\n\
 DAT_08001530:\n\
-    .4byte     DAT_02005ce0\n\
+    .word     DAT_02005ce0\n\
     ");
 }

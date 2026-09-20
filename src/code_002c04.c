@@ -18,7 +18,7 @@ LAB_08002c06:\n\
     bne         LAB_08002c2a\n\
     b           LAB_08002c06\n\
 DAT_08002c24:\n\
-    .4byte 0x02005CD4\n\
+    .word 0x02005CD4\n\
 LAB_08002c28:\n\
     mov         r0,#0x0\n\
 LAB_08002c2a:\n\
@@ -37,9 +37,9 @@ __attribute__((naked)) void fun_08002c30()
     strh        r1,[r0,#0x0]\n\
     bx          lr\n\
 DAT_08002c3c:\n\
-    .4byte 0x02005830\n\
+    .word 0x02005830\n\
 DAT_08002c40:\n\
-    .4byte 0x02005CE0\n\
+    .word 0x02005CE0\n\
     ");
 }
 __attribute__((naked)) void fun_08002c44()
@@ -70,13 +70,13 @@ __attribute__((naked)) void fun_08002c44()
     pop         {r0}\n\
     bx          r0\n\
 DAT_08002c74:\n\
-    .4byte 0x04000130\n\
+    .word 0x04000130\n\
 DAT_08002c78:\n\
-    .4byte 0x02005CE0\n\
+    .word 0x02005CE0\n\
 DAT_08002c7c:\n\
-    .4byte 0x02005830\n\
+    .word 0x02005830\n\
 DAT_08002c80:\n\
-    .4byte 0x000003FF\n\
+    .word 0x000003FF\n\
     ");
 }
 __attribute__((naked)) void fun_08002c84()
@@ -159,7 +159,7 @@ LAB_08002ce6:\n\
 .space 2\n\
 \n\
 DAT_08002cf4:\n\
-    .4byte 0x04000050\n\
+    .word 0x04000050\n\
 LAB_08002cf8:\n\
     ldr         r1,DAT_08002d00\n\
     mov         r0,#0xff\n\
@@ -168,7 +168,7 @@ LAB_08002cf8:\n\
 .space 2\n\
 \n\
 DAT_08002d00:\n\
-    .4byte 0x04000050\n\
+    .word 0x04000050\n\
 LAB_08002d04:\n\
     ldr         r1,DAT_08002d18\n\
     mov         r0,#0xbf\n\
@@ -183,9 +183,9 @@ LAB_08002d10:\n\
     strh        r0,[r1,#0x0]\n\
     bx          lr\n\
 DAT_08002d18:\n\
-    .4byte 0x04000050\n\
+    .word 0x04000050\n\
 DAT_08002d1c:\n\
-    .4byte 0x02005770\n\
+    .word 0x02005770\n\
 \n\
     ");
 }

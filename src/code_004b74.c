@@ -14,9 +14,9 @@ __attribute__((naked)) void fun_08004b74()
 .space 2\n\
 \n\
 DAT_08004b88:\n\
-    .4byte 0x040000D4\n\
+    .word 0x040000D4\n\
 DAT_08004b8c:\n\
-    .4byte 0x80000100\n\
+    .word 0x80000100\n\
 \n\
     ");
 }

@@ -37,9 +37,9 @@ LAB_080061ac:\n\
 .space 2\n\
 \n\
 DAT_080061b8:\n\
-    .4byte 0x02009AE8\n\
+    .word 0x02009AE8\n\
 DAT_080061bc:\n\
-    .4byte 0x02009AD0\n\
+    .word 0x02009AD0\n\
 LAB_080061c0:\n\
     mov         r0,#0x3c\n\
     strh        r0,[r2,#0x0]\n\
@@ -76,13 +76,13 @@ LAB_080061c0:\n\
     strh        r0,[r6,#0x0]\n\
     b           LAB_0800625a\n\
 DAT_08006208:\n\
-    .4byte 0x02009AE4\n\
+    .word 0x02009AE4\n\
 DAT_0800620c:\n\
-    .4byte 0x02009ADC\n\
+    .word 0x02009ADC\n\
 DAT_08006210:\n\
-    .4byte 0x08669620\n\
+    .word 0x08669620\n\
 DAT_08006214:\n\
-    .4byte 0x020025B4\n\
+    .word 0x020025B4\n\
 LAB_08006218:\n\
     add         r0,r3,#0x1\n\
     strb        r0,[r5,#0x0]\n\
@@ -125,7 +125,7 @@ LAB_0800625a:\n\
 .space 2\n\
 \n\
 DAT_08006264:\n\
-    .4byte 0x02005CE0\n\
+    .word 0x02005CE0\n\
 LAB_08006268:\n\
     ldr         r2,DAT_08006288\n\
     ldr         r1,DAT_0800628c\n\
@@ -143,9 +143,9 @@ LAB_08006268:\n\
     bl          fun_0803c1ec\n\
     b           LAB_0800629a\n\
 DAT_08006288:\n\
-    .4byte 0x08669620\n\
+    .word 0x08669620\n\
 DAT_0800628c:\n\
-    .4byte 0x02009AE4\n\
+    .word 0x02009AE4\n\
 LAB_08006290:\n\
     ldr         r2,DAT_080062e4\n\
     add         r0,r2,#0x0\n\
@@ -189,17 +189,17 @@ LAB_080062dc:\n\
     pop         {r1}\n\
     bx          r1\n\
 DAT_080062e4:\n\
-    .4byte 0x00007CC2\n\
+    .word 0x00007CC2\n\
 DAT_080062e8:\n\
-    .4byte 0x02009ADC\n\
+    .word 0x02009ADC\n\
 DAT_080062ec:\n\
-    .4byte 0x08669620\n\
+    .word 0x08669620\n\
 DAT_080062f0:\n\
-    .4byte 0x020025B4\n\
+    .word 0x020025B4\n\
 DAT_080062f4:\n\
-    .4byte 0x02009AE4\n\
+    .word 0x02009AE4\n\
 DAT_080062f8:\n\
-    .4byte 0x02009AE8\n\
+    .word 0x02009AE8\n\
     ");
 }
 __attribute__((naked)) void fun_080062fc()
@@ -236,9 +236,9 @@ __attribute__((naked)) void fun_080062fc()
 .space 2\n\
 \n\
 DAT_08006338:\n\
-    .4byte 0x02009ADC\n\
+    .word 0x02009ADC\n\
 DAT_0800633c:\n\
-    .4byte 0x08067050\n\
+    .word 0x08067050\n\
 LAB_08006340:\n\
     add         r0,r4,#0x0\n\
     mov         r1,#0x20\n\
@@ -297,7 +297,7 @@ LAB_08006392:\n\
 .space 2\n\
 \n\
 DAT_080063ac:\n\
-    .4byte 0x0865FD94\n\
+    .word 0x0865FD94\n\
 LAB_080063b0:\n\
     lsl         r0,r6,#0x10\n\
     asr         r0,r0,#0x10\n\
@@ -325,7 +325,7 @@ LAB_080063ce:\n\
 .space 2\n\
 \n\
 DAT_080063e0:\n\
-    .4byte 0x0865FD94\n\
+    .word 0x0865FD94\n\
     ");
 }
 __attribute__((naked)) void fun_080063e4()
@@ -360,17 +360,17 @@ __attribute__((naked)) void fun_080063e4()
     ldr         r2,DAT_08006434\n\
     b           LAB_08006466\n\
 DAT_08006420:\n\
-    .4byte 0x0875E8A4\n\
+    .word 0x0875E8A4\n\
 DAT_08006424:\n\
-    .4byte 0x0600A000\n\
+    .word 0x0600A000\n\
 DAT_08006428:\n\
-    .4byte 0x040000D4\n\
+    .word 0x040000D4\n\
 DAT_0800642c:\n\
-    .4byte 0x0875E8D8\n\
+    .word 0x0875E8D8\n\
 DAT_08006430:\n\
-    .4byte 0x80000100\n\
+    .word 0x80000100\n\
 DAT_08006434:\n\
-    .4byte 0x00001F14\n\
+    .word 0x00001F14\n\
 LAB_08006438:\n\
     ldr         r0,DAT_08006470\n\
     lsl         r4,r4,#0x2\n\
@@ -400,15 +400,15 @@ LAB_08006466:\n\
     pop         {r0}\n\
     bx          r0\n\
 DAT_08006470:\n\
-    .4byte 0x0875E8A4\n\
+    .word 0x0875E8A4\n\
 DAT_08006474:\n\
-    .4byte 0x040000D4\n\
+    .word 0x040000D4\n\
 DAT_08006478:\n\
-    .4byte 0x0875E8D8\n\
+    .word 0x0875E8D8\n\
 DAT_0800647c:\n\
-    .4byte 0x80000100\n\
+    .word 0x80000100\n\
 DAT_08006480:\n\
-    .4byte 0x00001F04\n\
+    .word 0x00001F04\n\
     ");
 }
 __attribute__((naked)) void fun_08006484()
@@ -462,19 +462,19 @@ __attribute__((naked)) void fun_08006484()
 .space 2\n\
 \n\
 DAT_080064e4:\n\
-    .4byte 0x040000D4\n\
+    .word 0x040000D4\n\
 DAT_080064e8:\n\
-    .4byte 0x8100C000\n\
+    .word 0x8100C000\n\
 DAT_080064ec:\n\
-    .4byte 0x81000200\n\
+    .word 0x81000200\n\
 DAT_080064f0:\n\
-    .4byte 0x00001F04\n\
+    .word 0x00001F04\n\
 DAT_080064f4:\n\
-    .4byte 0x02009AE8\n\
+    .word 0x02009AE8\n\
 DAT_080064f8:\n\
-    .4byte 0x02009AD0\n\
+    .word 0x02009AD0\n\
 DAT_080064fc:\n\
-    .4byte 0x02009ADC\n\
+    .word 0x02009ADC\n\
 \n\
     ");
 }

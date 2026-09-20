@@ -49,21 +49,21 @@ __attribute__((naked)) void fun_08000300()
     bx          r0\n\
 .space 2\n\
 DAT_0800036c:\n\
-    .4byte 0x040000D4\n\
+    .word 0x040000D4\n\
 DAT_08000370:\n\
-    .4byte 0x85010000\n\
+    .word 0x85010000\n\
 DAT_08000374:\n\
-    .4byte 0x85001F80\n\
+    .word 0x85001F80\n\
 DAT_08000378:\n\
-    .4byte 0x04000200\n\
+    .word 0x04000200\n\
 DAT_0800037c:\n\
-    .4byte 0x00002001\n\
+    .word 0x00002001\n\
 DAT_08000380:\n\
-    .4byte 0x04000004\n\
+    .word 0x04000004\n\
 DAT_08000384:\n\
-    .4byte 0x04000208\n\
+    .word 0x04000208\n\
 DAT_08000388:\n\
-    .4byte 0x00004014\n\
+    .word 0x00004014\n\
     ");
 }
 

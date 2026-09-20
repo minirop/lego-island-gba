@@ -19,7 +19,7 @@ LAB_08009716:\n\
     pop         {r1}\n\
     bx          r1\n\
 DAT_0800971c:\n\
-    .4byte 0x00000E5A\n\
+    .word 0x00000E5A\n\
 \n\
     ");
 }

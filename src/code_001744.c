@@ -59,7 +59,7 @@ LAB_08001780:\n\
     ldrsh      r0,[r0,r1]\n\
     b          LAB_080017a6\n\
 DAT_08001794:\n\
-    .4byte     DAT_0875678c\n\
+    .word     DAT_0875678c\n\
 LAB_08001798:\n\
     add        r0,r2,#0x1\n\
     lsl        r0,r0,#0x10\n\

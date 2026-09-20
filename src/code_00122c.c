@@ -16,7 +16,7 @@ __attribute__((naked)) void fun_0800122c()
 .space 2\n\
 \n\
 DAT_08001248:\n\
-    .4byte 0x08756AEC\n\
+    .word 0x08756AEC\n\
 LAB_0800124c:\n\
     bl          fun_08002bcc\n\
     bl          fun_08002df8\n\
@@ -65,15 +65,15 @@ LAB_0800129a:\n\
 .space 2\n\
 \n\
 DAT_080012ac:\n\
-    .4byte 0x020025E0\n\
+    .word 0x020025E0\n\
 DAT_080012b0:\n\
-    .4byte 0x020025F0\n\
+    .word 0x020025F0\n\
 DAT_080012b4:\n\
-    .4byte 0x02002560\n\
+    .word 0x02002560\n\
 DAT_080012b8:\n\
-    .4byte 0x020025D8\n\
+    .word 0x020025D8\n\
 DAT_080012bc:\n\
-    .4byte 0x020025C4\n\
+    .word 0x020025C4\n\
     ");
 }
 __attribute__((naked)) void fun_080012c0()
@@ -122,9 +122,9 @@ LAB_080012fc:\n\
         add        r0,r1,#0x0\n\
         b          LAB_08001326\n\
 DAT_0800130c:\n\
-        .4byte       DAT_08756bc0\n\
+        .word       DAT_08756bc0\n\
 DAT_08001310:\n\
-        .4byte       levels_table\n\
+        .word       levels_table\n\
 LAB_08001314:\n\
         add        r0,r1,#0x1\n\
         lsl        r0,r0,#0x10\n\

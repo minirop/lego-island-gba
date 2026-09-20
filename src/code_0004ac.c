@@ -83,7 +83,7 @@ __attribute__((naked)) void fun_080004dc(int a, int b, char* c)
     str        r6,[r0,#0x0]\n\
     mov        r0,r8\n\
     b          LAB_08000558\n\
-DAT_08000540: .4byte 0x02005210\n\
+DAT_08000540: .word 0x02005210\n\
 LAB_08000544:\n\
     cmp        r6,r4\n\
     bcc        LAB_08000562\n\
@@ -197,7 +197,7 @@ __attribute__((naked)) void fun_08000870(int a, int b, char* c)
     mov        r0,#0x0\n\
     b          LAB_080008b0\n\
 DAT_08000888:\n\
-    .4byte 0x02005210\n\
+    .word 0x02005210\n\
 LAB_0800088c:\n\
     add        r0,r3,#0x0\n\
     add        r0,#0xc\n\

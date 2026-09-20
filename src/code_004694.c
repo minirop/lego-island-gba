@@ -8,7 +8,7 @@ __attribute__((naked)) void fun_08004694()
     ldr         r0,[r0,#0x0]\n\
     bx          lr\n\
 DAT_080046a0:\n\
-    .4byte 0x03001800\n\
+    .word 0x03001800\n\
     ");
 }
 __attribute__((naked)) void fun_080046a4()
@@ -61,15 +61,15 @@ LAB_080046f2:\n\
     pop         {r0}\n\
     bx          r0\n\
 DAT_080046fc:\n\
-    .4byte 0x040000D4\n\
+    .word 0x040000D4\n\
 DAT_08004700:\n\
-    .4byte 0x03002000\n\
+    .word 0x03002000\n\
 DAT_08004704:\n\
-    .4byte 0x84000100\n\
+    .word 0x84000100\n\
 DAT_08004708:\n\
-    .4byte 0x02006D50\n\
+    .word 0x02006D50\n\
 DAT_0800470c:\n\
-    .4byte 0x03001A00\n\
+    .word 0x03001A00\n\
 \n\
     ");
 }

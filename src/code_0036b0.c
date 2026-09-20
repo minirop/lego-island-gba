@@ -18,7 +18,7 @@ __attribute__((naked)) void fun_080036b0()
 .space 2\n\
 \n\
 DAT_080036cc:\n\
-    .4byte 0x02005CF0\n\
+    .word 0x02005CF0\n\
 LAB_080036d0:\n\
     ldr         r1,DAT_080036dc\n\
     mov         r2,#0x80\n\
@@ -29,7 +29,7 @@ LAB_080036d0:\n\
 .space 2\n\
 \n\
 DAT_080036dc:\n\
-    .4byte 0x02005CF0\n\
+    .word 0x02005CF0\n\
 LAB_080036e0:\n\
     ldr         r1,DAT_080037c4\n\
     mov         r0,#0x0\n\
@@ -152,47 +152,47 @@ LAB_08003772:\n\
     pop         {r0}\n\
     bx          r0\n\
 DAT_080037c4:\n\
-    .4byte 0x02005CF0\n\
+    .word 0x02005CF0\n\
 DAT_080037c8:\n\
-    .4byte 0x02006D50\n\
+    .word 0x02006D50\n\
 DAT_080037cc:\n\
-    .4byte 0x02005CF4\n\
+    .word 0x02005CF4\n\
 DAT_080037d0:\n\
-    .4byte 0x02005D04\n\
+    .word 0x02005D04\n\
 DAT_080037d4:\n\
-    .4byte 0x02005CF8\n\
+    .word 0x02005CF8\n\
 DAT_080037d8:\n\
-    .4byte 0x02005CFC\n\
+    .word 0x02005CFC\n\
 DAT_080037dc:\n\
-    .4byte 0x02005D10\n\
+    .word 0x02005D10\n\
 DAT_080037e0:\n\
-    .4byte 0x02000148\n\
+    .word 0x02000148\n\
 DAT_080037e4:\n\
-    .4byte 0x020001B0\n\
+    .word 0x020001B0\n\
 DAT_080037e8:\n\
-    .4byte 0x020001A8\n\
+    .word 0x020001A8\n\
 DAT_080037ec:\n\
-    .4byte 0x03001800\n\
+    .word 0x03001800\n\
 DAT_080037f0:\n\
-    .4byte 0x02006D60\n\
+    .word 0x02006D60\n\
 DAT_080037f4:\n\
-    .4byte 0x02006D10\n\
+    .word 0x02006D10\n\
 DAT_080037f8:\n\
-    .4byte 0x02000028\n\
+    .word 0x02000028\n\
 DAT_080037fc:\n\
-    .4byte 0x02000088\n\
+    .word 0x02000088\n\
 DAT_08003800:\n\
-    .4byte 0x020000E8\n\
+    .word 0x020000E8\n\
 DAT_08003804:\n\
-    .4byte 0x02000210\n\
+    .word 0x02000210\n\
 DAT_08003808:\n\
-    .4byte 0x02007F60\n\
+    .word 0x02007F60\n\
 DAT_0800380c:\n\
-    .4byte 0x02000270\n\
+    .word 0x02000270\n\
 DAT_08003810:\n\
-    .4byte 0x02005D00\n\
+    .word 0x02005D00\n\
 DAT_08003814:\n\
-    .4byte 0x02000272\n\
+    .word 0x02000272\n\
 \n\
     ");
 }

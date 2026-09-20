@@ -90,15 +90,15 @@ LAB_08027486:\n\
      ldr        r0,DAT_080274cc\n\
      b          LAB_080274d2\n\
 DAT_080274bc:\n\
-     .4byte 0x0200F5F0\n\
+     .word 0x0200F5F0\n\
 DAT_080274c0:\n\
-     .4byte 0xFFFE5A20\n\
+     .word 0xFFFE5A20\n\
 DAT_080274c4:\n\
-     .4byte 0xFFFF5A1F\n\
+     .word 0xFFFF5A1F\n\
 DAT_080274c8:\n\
-     .4byte 0x0000FFFF\n\
+     .word 0x0000FFFF\n\
 DAT_080274cc:\n\
-     .4byte 0x0854FCB0\n\
+     .word 0x0854FCB0\n\
 LAB_080274d0:\n\
      ldr        r0,DAT_080274f8\n\
 LAB_080274d2:\n\
@@ -122,6 +122,6 @@ LAB_080274d8:\n\
      pop        {r0}\n\
      bx         r0\n\
 DAT_080274f8:\n\
-     .4byte 0x0854FCE0\n\
+     .word 0x0854FCE0\n\
     ");
 }

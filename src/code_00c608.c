@@ -76,89 +76,89 @@ LAB_0800c682:\n\
     ldr         r0,[r0,#0x0]\n\
     mov         pc,r0\n\
 DAT_0800c68c:\n\
-    .4byte 0x02000690\n\
+    .word 0x02000690\n\
 DAT_0800c690:\n\
-    .4byte 0x020006A0\n\
+    .word 0x020006A0\n\
 DAT_0800c694:\n\
-    .4byte 0x0800C698\n\
+    .word 0x0800C698\n\
 switchD_0800c68a_switchdataD_0800c698:\n\
-    .4byte switchD_0800c68a_caseD_0\n\
-    .4byte switchD_0800c68a_caseD_1\n\
-    .4byte switchD_0800c68a_caseD_1\n\
-    .4byte switchD_0800c68a_caseD_1\n\
-    .4byte switchD_0800c68a_caseD_1\n\
-    .4byte switchD_0800c68a_caseD_1\n\
-    .4byte switchD_0800c68a_caseD_1\n\
-    .4byte switchD_0800c68a_caseD_1\n\
-    .4byte switchD_0800c68a_caseD_1\n\
-    .4byte switchD_0800c68a_caseD_1\n\
-    .4byte switchD_0800c68a_caseD_1\n\
-    .4byte switchD_0800c68a_caseD_1\n\
-    .4byte switchD_0800c68a_caseD_1\n\
-    .4byte switchD_0800c68a_caseD_1\n\
-    .4byte switchD_0800c68a_caseD_1\n\
-    .4byte switchD_0800c68a_caseD_1\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_1b\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_1d\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_25\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_10\n\
-    .4byte switchD_0800c68a_caseD_43\n\
-    .4byte switchD_0800c68a_caseD_43\n\
-    .4byte switchD_0800c68a_caseD_43\n\
-    .4byte switchD_0800c68a_caseD_43\n\
-    .4byte switchD_0800c68a_caseD_43\n\
-    .4byte switchD_0800c68a_caseD_48\n\
-    .4byte switchD_0800c68a_caseD_48\n\
-    .4byte switchD_0800c68a_caseD_48\n\
-    .4byte switchD_0800c68a_caseD_48\n\
-    .4byte switchD_0800c68a_caseD_48\n\
+    .word switchD_0800c68a_caseD_0\n\
+    .word switchD_0800c68a_caseD_1\n\
+    .word switchD_0800c68a_caseD_1\n\
+    .word switchD_0800c68a_caseD_1\n\
+    .word switchD_0800c68a_caseD_1\n\
+    .word switchD_0800c68a_caseD_1\n\
+    .word switchD_0800c68a_caseD_1\n\
+    .word switchD_0800c68a_caseD_1\n\
+    .word switchD_0800c68a_caseD_1\n\
+    .word switchD_0800c68a_caseD_1\n\
+    .word switchD_0800c68a_caseD_1\n\
+    .word switchD_0800c68a_caseD_1\n\
+    .word switchD_0800c68a_caseD_1\n\
+    .word switchD_0800c68a_caseD_1\n\
+    .word switchD_0800c68a_caseD_1\n\
+    .word switchD_0800c68a_caseD_1\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_1b\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_1d\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_25\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_10\n\
+    .word switchD_0800c68a_caseD_43\n\
+    .word switchD_0800c68a_caseD_43\n\
+    .word switchD_0800c68a_caseD_43\n\
+    .word switchD_0800c68a_caseD_43\n\
+    .word switchD_0800c68a_caseD_43\n\
+    .word switchD_0800c68a_caseD_48\n\
+    .word switchD_0800c68a_caseD_48\n\
+    .word switchD_0800c68a_caseD_48\n\
+    .word switchD_0800c68a_caseD_48\n\
+    .word switchD_0800c68a_caseD_48\n\
 switchD_0800c68a_caseD_0:\n\
     mov         r0,#0xd\n\
     mov         r1,#0x1\n\
@@ -180,11 +180,11 @@ switchD_0800c68a_caseD_0:\n\
 .space 2\n\
 \n\
 DAT_0800c7f4:\n\
-    .4byte 0x0200DCA0\n\
+    .word 0x0200DCA0\n\
 DAT_0800c7f8:\n\
-    .4byte 0x0200DC90\n\
+    .word 0x0200DC90\n\
 DAT_0800c7fc:\n\
-    .4byte 0x00000147\n\
+    .word 0x00000147\n\
 switchD_0800c68a_caseD_1d:\n\
     mov         r0,#0x1\n\
     str         r0,[r3,#0x28]\n\
@@ -227,7 +227,7 @@ LAB_0800c840:\n\
     bl          fun_0800d97c\n\
     b           LAB_0800c8b2\n\
 DAT_0800c850:\n\
-    .4byte 0x02000690\n\
+    .word 0x02000690\n\
 switchD_0800c68a_caseD_48:\n\
     mov         r0,#0x64\n\
     bl          fun_08002c04\n\
@@ -252,7 +252,7 @@ LAB_0800c874:\n\
     bl          fun_0800d97c\n\
     b           LAB_0800c8b2\n\
 DAT_0800c884:\n\
-    .4byte 0x02000690\n\
+    .word 0x02000690\n\
 switchD_0800c68a_caseD_25:\n\
     mov         r0,#0x11\n\
     mov         r1,#0x0\n\
@@ -282,7 +282,7 @@ LAB_0800c8b4:\n\
     mov         r0,#0x1\n\
     b           LAB_0800c8d4\n\
 DAT_0800c8bc:\n\
-    .4byte 0x02000690\n\
+    .word 0x02000690\n\
 LAB_0800c8c0:\n\
     add         r0,r4,#0x1\n\
     lsl         r0,r0,#0x10\n\
@@ -352,9 +352,9 @@ LAB_0800c91e:\n\
 .space 2\n\
 \n\
 DAT_0800c924:\n\
-    .4byte 0x02000690\n\
+    .word 0x02000690\n\
 DAT_0800c928:\n\
-    .4byte 0x020006A0\n\
+    .word 0x020006A0\n\
 LAB_0800c92c:\n\
     mov         r2,#0x24\n\
 LAB_0800c92e:\n\
@@ -475,9 +475,9 @@ LAB_0800c9e8:\n\
 .space 2\n\
 \n\
 DAT_0800ca00:\n\
-    .4byte 0x020006A0\n\
+    .word 0x020006A0\n\
 DAT_0800ca04:\n\
-    .4byte 0x020117E0\n\
+    .word 0x020117E0\n\
 LAB_0800ca08:\n\
     cmp         r4,#0x47\n\
     beq         LAB_0800ca90\n\
@@ -519,13 +519,13 @@ LAB_0800ca2a:\n\
     mov         r0,#0x1\n\
     b           LAB_0800caa2\n\
 DAT_0800ca54:\n\
-    .4byte 0x0200D370\n\
+    .word 0x0200D370\n\
 DAT_0800ca58:\n\
-    .4byte 0x0200DCA0\n\
+    .word 0x0200DCA0\n\
 DAT_0800ca5c:\n\
-    .4byte 0x0200DC90\n\
+    .word 0x0200DC90\n\
 DAT_0800ca60:\n\
-    .4byte 0x00000645\n\
+    .word 0x00000645\n\
 LAB_0800ca64:\n\
     ldr         r0,DAT_0800ca88\n\
     ldr         r1,[r0,#0x0]\n\
@@ -545,9 +545,9 @@ LAB_0800ca64:\n\
     mov         r0,#0x1\n\
     b           LAB_0800caa2\n\
 DAT_0800ca88:\n\
-    .4byte 0x0200D370\n\
+    .word 0x0200D370\n\
 DAT_0800ca8c:\n\
-    .4byte 0x020006A0\n\
+    .word 0x020006A0\n\
 LAB_0800ca90:\n\
     add         r0,r4,#0x1\n\
     lsl         r0,r0,#0x10\n\
@@ -568,7 +568,7 @@ LAB_0800caa2:\n\
     pop         {r1}\n\
     bx          r1\n\
 DAT_0800cab0:\n\
-    .4byte 0x02000690\n\
+    .word 0x02000690\n\
     ");
 }
 __attribute__((naked)) void fun_0800cab4()
@@ -614,38 +614,38 @@ LAB_0800caf4:\n\
 .space 2\n\
 \n\
 DAT_0800cb00:\n\
-    .4byte 0x00000DE6\n\
+    .word 0x00000DE6\n\
 DAT_0800cb04:\n\
-    .4byte 0x0200254C\n\
+    .word 0x0200254C\n\
 DAT_0800cb08:\n\
-    .4byte 0x0800CB0C\n\
+    .word 0x0800CB0C\n\
 switchD_0800c68a_switchdataD_0800cb0c:\n\
-    .4byte switchD_0800cafc_caseD_63\n\
-    .4byte switchD_0800cafc_caseD_64\n\
-    .4byte switchD_0800cafc_caseD_65\n\
-    .4byte switchD_0800cafc_caseD_66\n\
-    .4byte switchD_0800cafc_caseD_67\n\
-    .4byte switchD_0800cafc_caseD_68\n\
-    .4byte switchD_0800cafc_caseD_64\n\
-    .4byte switchD_0800cafc_caseD_6a\n\
-    .4byte switchD_0800cafc_caseD_6b\n\
-    .4byte switchD_0800cafc_caseD_6c\n\
-    .4byte switchD_0800cafc_caseD_6d\n\
-    .4byte switchD_0800cafc_caseD_6e\n\
-    .4byte switchD_0800cafc_caseD_6f\n\
-    .4byte switchD_0800cafc_caseD_64\n\
-    .4byte switchD_0800cafc_caseD_71\n\
-    .4byte switchD_0800cafc_caseD_72\n\
-    .4byte switchD_0800cafc_caseD_6d\n\
-    .4byte switchD_0800cafc_caseD_6d\n\
-    .4byte switchD_0800cafc_caseD_6d\n\
-    .4byte switchD_0800cafc_caseD_6d\n\
-    .4byte switchD_0800cafc_caseD_6d\n\
-    .4byte switchD_0800cafc_caseD_6d\n\
-    .4byte switchD_0800cafc_caseD_6d\n\
-    .4byte switchD_0800cafc_caseD_6d\n\
-    .4byte switchD_0800cafc_caseD_6d\n\
-    .4byte switchD_0800cafc_caseD_7c\n\
+    .word switchD_0800cafc_caseD_63\n\
+    .word switchD_0800cafc_caseD_64\n\
+    .word switchD_0800cafc_caseD_65\n\
+    .word switchD_0800cafc_caseD_66\n\
+    .word switchD_0800cafc_caseD_67\n\
+    .word switchD_0800cafc_caseD_68\n\
+    .word switchD_0800cafc_caseD_64\n\
+    .word switchD_0800cafc_caseD_6a\n\
+    .word switchD_0800cafc_caseD_6b\n\
+    .word switchD_0800cafc_caseD_6c\n\
+    .word switchD_0800cafc_caseD_6d\n\
+    .word switchD_0800cafc_caseD_6e\n\
+    .word switchD_0800cafc_caseD_6f\n\
+    .word switchD_0800cafc_caseD_64\n\
+    .word switchD_0800cafc_caseD_71\n\
+    .word switchD_0800cafc_caseD_72\n\
+    .word switchD_0800cafc_caseD_6d\n\
+    .word switchD_0800cafc_caseD_6d\n\
+    .word switchD_0800cafc_caseD_6d\n\
+    .word switchD_0800cafc_caseD_6d\n\
+    .word switchD_0800cafc_caseD_6d\n\
+    .word switchD_0800cafc_caseD_6d\n\
+    .word switchD_0800cafc_caseD_6d\n\
+    .word switchD_0800cafc_caseD_6d\n\
+    .word switchD_0800cafc_caseD_6d\n\
+    .word switchD_0800cafc_caseD_7c\n\
 switchD_0800cafc_caseD_6a:\n\
     ldr         r0,DAT_0800cb84\n\
     ldr         r2,DAT_0800cb88\n\
@@ -658,13 +658,13 @@ switchD_0800cafc_caseD_6a:\n\
 .space 2\n\
 \n\
 DAT_0800cb84:\n\
-    .4byte 0x0200C5F0\n\
+    .word 0x0200C5F0\n\
 DAT_0800cb88:\n\
-    .4byte 0x08669620\n\
+    .word 0x08669620\n\
 DAT_0800cb8c:\n\
-    .4byte 0x020025B4\n\
+    .word 0x020025B4\n\
 DAT_0800cb90:\n\
-    .4byte 0x00002CD4\n\
+    .word 0x00002CD4\n\
 switchD_0800cafc_caseD_6e:\n\
     ldr         r0,DAT_0800cba4\n\
     ldr         r2,DAT_0800cba8\n\
@@ -677,13 +677,13 @@ switchD_0800cafc_caseD_6e:\n\
 .space 2\n\
 \n\
 DAT_0800cba4:\n\
-    .4byte 0x0200C5F0\n\
+    .word 0x0200C5F0\n\
 DAT_0800cba8:\n\
-    .4byte 0x08669620\n\
+    .word 0x08669620\n\
 DAT_0800cbac:\n\
-    .4byte 0x020025B4\n\
+    .word 0x020025B4\n\
 DAT_0800cbb0:\n\
-    .4byte 0x00002D04\n\
+    .word 0x00002D04\n\
 switchD_0800cafc_caseD_67:\n\
     ldr         r0,DAT_0800cbc4\n\
     ldr         r2,DAT_0800cbc8\n\
@@ -696,13 +696,13 @@ switchD_0800cafc_caseD_67:\n\
 .space 2\n\
 \n\
 DAT_0800cbc4:\n\
-    .4byte 0x0200C5F0\n\
+    .word 0x0200C5F0\n\
 DAT_0800cbc8:\n\
-    .4byte 0x08669620\n\
+    .word 0x08669620\n\
 DAT_0800cbcc:\n\
-    .4byte 0x020025B4\n\
+    .word 0x020025B4\n\
 DAT_0800cbd0:\n\
-    .4byte 0x00002D34\n\
+    .word 0x00002D34\n\
 switchD_0800cafc_caseD_68:\n\
     ldr         r0,DAT_0800cbe4\n\
     ldr         r2,DAT_0800cbe8\n\
@@ -715,13 +715,13 @@ switchD_0800cafc_caseD_68:\n\
 .space 2\n\
 \n\
 DAT_0800cbe4:\n\
-    .4byte 0x0200C5F0\n\
+    .word 0x0200C5F0\n\
 DAT_0800cbe8:\n\
-    .4byte 0x08669620\n\
+    .word 0x08669620\n\
 DAT_0800cbec:\n\
-    .4byte 0x020025B4\n\
+    .word 0x020025B4\n\
 DAT_0800cbf0:\n\
-    .4byte 0x00002D64\n\
+    .word 0x00002D64\n\
 switchD_0800cafc_caseD_7c:\n\
     ldr         r0,DAT_0800cc04\n\
     ldr         r2,DAT_0800cc08\n\
@@ -734,13 +734,13 @@ switchD_0800cafc_caseD_7c:\n\
 .space 2\n\
 \n\
 DAT_0800cc04:\n\
-    .4byte 0x0200C5F0\n\
+    .word 0x0200C5F0\n\
 DAT_0800cc08:\n\
-    .4byte 0x08669620\n\
+    .word 0x08669620\n\
 DAT_0800cc0c:\n\
-    .4byte 0x020025B4\n\
+    .word 0x020025B4\n\
 DAT_0800cc10:\n\
-    .4byte 0x00002D94\n\
+    .word 0x00002D94\n\
 switchD_0800cafc_caseD_63:\n\
     ldr         r0,DAT_0800cc24\n\
     ldr         r2,DAT_0800cc28\n\
@@ -753,13 +753,13 @@ switchD_0800cafc_caseD_63:\n\
 .space 2\n\
 \n\
 DAT_0800cc24:\n\
-    .4byte 0x0200C5F0\n\
+    .word 0x0200C5F0\n\
 DAT_0800cc28:\n\
-    .4byte 0x08669620\n\
+    .word 0x08669620\n\
 DAT_0800cc2c:\n\
-    .4byte 0x020025B4\n\
+    .word 0x020025B4\n\
 DAT_0800cc30:\n\
-    .4byte 0x00002DC4\n\
+    .word 0x00002DC4\n\
 switchD_0800cafc_caseD_66:\n\
     ldr         r0,DAT_0800cc44\n\
     ldr         r2,DAT_0800cc48\n\
@@ -772,13 +772,13 @@ switchD_0800cafc_caseD_66:\n\
 .space 2\n\
 \n\
 DAT_0800cc44:\n\
-    .4byte 0x0200C5F0\n\
+    .word 0x0200C5F0\n\
 DAT_0800cc48:\n\
-    .4byte 0x08669620\n\
+    .word 0x08669620\n\
 DAT_0800cc4c:\n\
-    .4byte 0x020025B4\n\
+    .word 0x020025B4\n\
 DAT_0800cc50:\n\
-    .4byte 0x00002DF4\n\
+    .word 0x00002DF4\n\
 switchD_0800cafc_caseD_6c:\n\
     ldr         r0,DAT_0800cc64\n\
     ldr         r2,DAT_0800cc68\n\
@@ -791,13 +791,13 @@ switchD_0800cafc_caseD_6c:\n\
 .space 2\n\
 \n\
 DAT_0800cc64:\n\
-    .4byte 0x0200C5F0\n\
+    .word 0x0200C5F0\n\
 DAT_0800cc68:\n\
-    .4byte 0x08669620\n\
+    .word 0x08669620\n\
 DAT_0800cc6c:\n\
-    .4byte 0x020025B4\n\
+    .word 0x020025B4\n\
 DAT_0800cc70:\n\
-    .4byte 0x00002E24\n\
+    .word 0x00002E24\n\
 switchD_0800cafc_caseD_6f:\n\
     ldr         r0,DAT_0800cc84\n\
     ldr         r2,DAT_0800cc88\n\
@@ -810,13 +810,13 @@ switchD_0800cafc_caseD_6f:\n\
 .space 2\n\
 \n\
 DAT_0800cc84:\n\
-    .4byte 0x0200C5F0\n\
+    .word 0x0200C5F0\n\
 DAT_0800cc88:\n\
-    .4byte 0x08669620\n\
+    .word 0x08669620\n\
 DAT_0800cc8c:\n\
-    .4byte 0x020025B4\n\
+    .word 0x020025B4\n\
 DAT_0800cc90:\n\
-    .4byte 0x00002E84\n\
+    .word 0x00002E84\n\
 switchD_0800cafc_caseD_6b:\n\
     ldr         r0,DAT_0800cca4\n\
     ldr         r2,DAT_0800cca8\n\
@@ -829,13 +829,13 @@ switchD_0800cafc_caseD_6b:\n\
 .space 2\n\
 \n\
 DAT_0800cca4:\n\
-    .4byte 0x0200C5F0\n\
+    .word 0x0200C5F0\n\
 DAT_0800cca8:\n\
-    .4byte 0x08669620\n\
+    .word 0x08669620\n\
 DAT_0800ccac:\n\
-    .4byte 0x020025B4\n\
+    .word 0x020025B4\n\
 DAT_0800ccb0:\n\
-    .4byte 0x00002EB4\n\
+    .word 0x00002EB4\n\
 switchD_0800cafc_caseD_72:\n\
     ldr         r0,DAT_0800ccc4\n\
     ldr         r2,DAT_0800ccc8\n\
@@ -848,13 +848,13 @@ switchD_0800cafc_caseD_72:\n\
 .space 2\n\
 \n\
 DAT_0800ccc4:\n\
-    .4byte 0x0200C5F0\n\
+    .word 0x0200C5F0\n\
 DAT_0800ccc8:\n\
-    .4byte 0x08669620\n\
+    .word 0x08669620\n\
 DAT_0800cccc:\n\
-    .4byte 0x020025B4\n\
+    .word 0x020025B4\n\
 DAT_0800ccd0:\n\
-    .4byte 0x00002EE4\n\
+    .word 0x00002EE4\n\
 switchD_0800cafc_caseD_64:\n\
     ldr         r0,DAT_0800cce4\n\
     ldr         r2,DAT_0800cce8\n\
@@ -867,13 +867,13 @@ switchD_0800cafc_caseD_64:\n\
 .space 2\n\
 \n\
 DAT_0800cce4:\n\
-    .4byte 0x0200C5F0\n\
+    .word 0x0200C5F0\n\
 DAT_0800cce8:\n\
-    .4byte 0x08669620\n\
+    .word 0x08669620\n\
 DAT_0800ccec:\n\
-    .4byte 0x020025B4\n\
+    .word 0x020025B4\n\
 DAT_0800ccf0:\n\
-    .4byte 0x00002F14\n\
+    .word 0x00002F14\n\
 switchD_0800cafc_caseD_71:\n\
     ldr         r0,DAT_0800cd0c\n\
     ldr         r2,DAT_0800cd10\n\
@@ -888,13 +888,13 @@ LAB_0800cd00:\n\
     bl          strcpy\n\
     b           switchD_0800cafc_caseD_6d\n\
 DAT_0800cd0c:\n\
-    .4byte 0x0200C5F0\n\
+    .word 0x0200C5F0\n\
 DAT_0800cd10:\n\
-    .4byte 0x08669620\n\
+    .word 0x08669620\n\
 DAT_0800cd14:\n\
-    .4byte 0x020025B4\n\
+    .word 0x020025B4\n\
 DAT_0800cd18:\n\
-    .4byte 0x00002F44\n\
+    .word 0x00002F44\n\
 switchD_0800cafc_caseD_65:\n\
     ldr         r0,DAT_0800cd38\n\
     ldr         r2,DAT_0800cd3c\n\
@@ -911,13 +911,13 @@ switchD_0800cafc_caseD_6d:\n\
     pop         {r0}\n\
     bx          r0\n\
 DAT_0800cd38:\n\
-    .4byte 0x0200C5F0\n\
+    .word 0x0200C5F0\n\
 DAT_0800cd3c:\n\
-    .4byte 0x08669620\n\
+    .word 0x08669620\n\
 DAT_0800cd40:\n\
-    .4byte 0x020025B4\n\
+    .word 0x020025B4\n\
 DAT_0800cd44:\n\
-    .4byte 0x00002F74\n\
+    .word 0x00002F74\n\
     ");
 }
 __attribute__((naked)) void fun_0800cd48()
@@ -979,13 +979,13 @@ LAB_0800cdc2:\n\
     pop         {r0}\n\
     bx          r0\n\
 DAT_0800cdc8:\n\
-    .4byte 0x00000DE6\n\
+    .word 0x00000DE6\n\
 DAT_0800cdcc:\n\
-    .4byte 0x0200DCA0\n\
+    .word 0x0200DCA0\n\
 DAT_0800cdd0:\n\
-    .4byte 0x0200DC90\n\
+    .word 0x0200DC90\n\
 DAT_0800cdd4:\n\
-    .4byte 0x000001E1\n\
+    .word 0x000001E1\n\
     ");
 }
 void fun_0800cdd8()
@@ -1016,9 +1016,9 @@ __attribute__((naked)) void fun_0800cddc()
 .space 2\n\
 \n\
 DAT_0800ce08:\n\
-    .4byte 0x00000DDC\n\
+    .word 0x00000DDC\n\
 DAT_0800ce0c:\n\
-    .4byte 0x00000DDE\n\
+    .word 0x00000DDE\n\
     ");
 }
 __attribute__((naked)) void fun_0800ce10()
@@ -1043,29 +1043,29 @@ __attribute__((naked)) void fun_0800ce10()
 .space 2\n\
 \n\
 DAT_0800ce30:\n\
-    .4byte 0x0200D370\n\
+    .word 0x0200D370\n\
 DAT_0800ce34:\n\
-    .4byte 0x020117E0\n\
+    .word 0x020117E0\n\
 DAT_0800ce38:\n\
-    .4byte 0x0800CE3C\n\
+    .word 0x0800CE3C\n\
 PTR_DAT_0800ce3c:\n\
-    .4byte DAT_0800ce5c\n\
-    .4byte DAT_0800ce5c\n\
-    .4byte DAT_0800ce68\n\
-    .4byte DAT_0800ce60\n\
-    .4byte DAT_0800ce60\n\
-    .4byte DAT_0800ce60\n\
-    .4byte DAT_0800ce64\n\
-    .4byte DAT_0800ce5c\n\
+    .word DAT_0800ce5c\n\
+    .word DAT_0800ce5c\n\
+    .word DAT_0800ce68\n\
+    .word DAT_0800ce60\n\
+    .word DAT_0800ce60\n\
+    .word DAT_0800ce60\n\
+    .word DAT_0800ce64\n\
+    .word DAT_0800ce5c\n\
 \n\
 DAT_0800ce5c:\n\
-    .4byte 0xE0042038\n\
+    .word 0xE0042038\n\
 DAT_0800ce60:\n\
-    .4byte 0xE002203A\n\
+    .word 0xE002203A\n\
 DAT_0800ce64:\n\
-    .4byte 0xE000203B\n\
+    .word 0xE000203B\n\
 DAT_0800ce68:\n\
-    .4byte 0x82202039\n\
+    .word 0x82202039\n\
 \n\
 \n\
 LAB_0800ce6c:\n\
@@ -1129,7 +1129,7 @@ LAB_0800cece:\n\
     pop         {r0}\n\
     bx          r0\n\
 DAT_0800ced4:\n\
-    .4byte 0x02005750\n\
+    .word 0x02005750\n\
     ");
 }
 __attribute__((naked)) void fun_0800ced8()
@@ -1184,9 +1184,9 @@ LAB_0800cf08:\n\
 .space 2\n\
 \n\
 DAT_0800cf20:\n\
-    .4byte 0x0200D3D0\n\
+    .word 0x0200D3D0\n\
 DAT_0800cf24:\n\
-    .4byte 0x0200D394\n\
+    .word 0x0200D394\n\
 \n\
     ");
 }

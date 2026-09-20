@@ -10,11 +10,11 @@ __attribute__((naked)) void fun_080045f0()
     ldr         r0,[r1,#0x8]\n\
     bx          lr\n\
 DAT_08004600:\n\
-    .4byte 0x040000D4\n\
+    .word 0x040000D4\n\
 DAT_08004604:\n\
-    .4byte 0x05000200\n\
+    .word 0x05000200\n\
 DAT_08004608:\n\
-    .4byte 0x80000100\n\
+    .word 0x80000100\n\
     ");
 }
 __attribute__((naked)) void fun_0800460c()
@@ -35,11 +35,11 @@ __attribute__((naked)) void fun_0800460c()
 .space 2\n\
 \n\
 DAT_08004624:\n\
-    .4byte 0x040000D4\n\
+    .word 0x040000D4\n\
 DAT_08004628:\n\
-    .4byte 0x05000200\n\
+    .word 0x05000200\n\
 DAT_0800462c:\n\
-    .4byte 0x80000010\n\
+    .word 0x80000010\n\
 \n\
     ");
 }

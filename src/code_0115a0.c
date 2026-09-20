@@ -17,7 +17,7 @@ __attribute__((naked)) void fun_080115a0()
 .space 1\n\
 .space 1\n\
 DAT_080115bc:\n\
-     .4byte 0x020006A0\n\
+     .word 0x020006A0\n\
     ");
 }
 __attribute__((naked)) void fun_080115c0()
@@ -53,7 +53,7 @@ LAB_080115d6:\n\
      pop        {r0}\n\
      bx         r0\n\
 DAT_080115f4:\n\
-     .4byte 0x0844D968\n\
+     .word 0x0844D968\n\
     ");
 }
 __attribute__((naked)) void fun_080115f8()
@@ -105,19 +105,19 @@ __attribute__((naked)) void fun_080115f8()
 .space 1\n\
 .space 1\n\
 DAT_0801165c:\n\
-     .4byte 0x00000DFA\n\
+     .word 0x00000DFA\n\
 DAT_08011660:\n\
-     .4byte 0x00000DFC\n\
+     .word 0x00000DFC\n\
 DAT_08011664:\n\
-     .4byte 0x00000ADF\n\
+     .word 0x00000ADF\n\
 DAT_08011668:\n\
-     .4byte 0x0200DCA0\n\
+     .word 0x0200DCA0\n\
 DAT_0801166c:\n\
-     .4byte 0x0200DC90\n\
+     .word 0x0200DC90\n\
 DAT_08011670:\n\
-     .4byte 0x00000693\n\
+     .word 0x00000693\n\
 DAT_08011674:\n\
-     .4byte 0x00000A9A\n\
+     .word 0x00000A9A\n\
 LAB_08011678:\n\
      bl         fun_080020a4\n\
      ldr        r1,DAT_080116a8\n\
@@ -143,9 +143,9 @@ LAB_0801169e:\n\
      pop        {r0}\n\
      bx         r0\n\
 DAT_080116a8:\n\
-     .4byte 0x00000DFA\n\
+     .word 0x00000DFA\n\
 DAT_080116ac:\n\
-     .4byte 0x00000DFC\n\
+     .word 0x00000DFC\n\
     ");
 }
 __attribute__((naked)) void fun_080116b0()
@@ -165,7 +165,7 @@ __attribute__((naked)) void fun_080116b8()
      pop        {r0}\n\
      bx         r0\n\
 DAT_080116c4:\n\
-     .4byte 0x00000505\n\
+     .word 0x00000505\n\
     ");
 }
 __attribute__((naked)) void fun_080116c8()
@@ -193,9 +193,9 @@ __attribute__((naked)) void fun_080116d0()
      ldr        r1,DAT_080116f0\n\
      b          LAB_080116f6\n\
 DAT_080116ec:\n\
-     .4byte 0x00000E84\n\
+     .word 0x00000E84\n\
 DAT_080116f0:\n\
-     .4byte 0x00000502\n\
+     .word 0x00000502\n\
 LAB_080116f4:\n\
      ldr        r1,DAT_0801170c\n\
 LAB_080116f6:\n\
@@ -211,7 +211,7 @@ LAB_08011706:\n\
      pop        {r0}\n\
      bx         r0\n\
 DAT_0801170c:\n\
-     .4byte 0x0000031D\n\
+     .word 0x0000031D\n\
     ");
 }
 __attribute__((naked)) void fun_08011710()
@@ -241,17 +241,17 @@ __attribute__((naked)) void fun_08011710()
      pop        {r0}\n\
      bx         r0\n\
 DAT_08011740:\n\
-     .4byte 0x0200E030\n\
+     .word 0x0200E030\n\
 DAT_08011744:\n\
-     .4byte 0x020006A0\n\
+     .word 0x020006A0\n\
 DAT_08011748:\n\
-     .4byte 0x0200DD70\n\
+     .word 0x0200DD70\n\
 DAT_0801174c:\n\
-     .4byte 0x020025E8\n\
+     .word 0x020025E8\n\
 DAT_08011750:\n\
-     .4byte 0x00000285\n\
+     .word 0x00000285\n\
 DAT_08011754:\n\
-     .4byte 0x02002520\n\
+     .word 0x02002520\n\
     ");
 }
 __attribute__((naked)) void fun_08011758()
@@ -279,7 +279,7 @@ __attribute__((naked)) void fun_08011760()
 .space 1\n\
 .space 1\n\
 DAT_0801177c:\n\
-     .4byte 0x00000305\n\
+     .word 0x00000305\n\
 LAB_08011780:\n\
      ldr        r1,DAT_08011790\n\
      add        r0,r4,#0x0\n\
@@ -291,7 +291,7 @@ LAB_08011788:\n\
 .space 1\n\
 .space 1\n\
 DAT_08011790:\n\
-     .4byte 0x000002FF\n\
+     .word 0x000002FF\n\
     ");
 }
 __attribute__((naked)) void fun_08011794()
@@ -318,9 +318,9 @@ LAB_080117b0:\n\
      pop        {r0}\n\
      bx         r0\n\
 DAT_080117b4:\n\
-     .4byte 0x00000325\n\
+     .word 0x00000325\n\
 DAT_080117b8:\n\
-     .4byte 0x0200DC54\n\
+     .word 0x0200DC54\n\
     ");
 }
 __attribute__((naked)) void fun_080117bc()

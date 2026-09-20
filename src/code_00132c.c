@@ -10,7 +10,7 @@ __attribute__((naked)) void fun_0800132c()
     mov         r0,#0x0\n\
     b           LAB_08001342\n\
 DAT_0800133c:\n\
-    .4byte 0x02005CE0\n\
+    .word 0x02005CE0\n\
 LAB_08001340:\n\
     mov         r0,#0x1\n\
 LAB_08001342:\n\
@@ -29,7 +29,7 @@ __attribute__((naked)) void fun_08001344()
     mov         r0,#0x0\n\
     b           LAB_0800135a\n\
 DAT_08001354:\n\
-    .4byte 0x02005CE0\n\
+    .word 0x02005CE0\n\
 LAB_08001358:\n\
     mov         r0,#0x1\n\
 LAB_0800135a:\n\
@@ -48,7 +48,7 @@ __attribute__((naked)) void fun_0800135c()
     mov         r0,#0x0\n\
     b           LAB_08001372\n\
 DAT_0800136c:\n\
-    .4byte 0x02005CE0\n\
+    .word 0x02005CE0\n\
 LAB_08001370:\n\
     mov         r0,#0x1\n\
 LAB_08001372:\n\
@@ -67,7 +67,7 @@ __attribute__((naked)) void fun_08001374()
     mov         r0,#0x0\n\
     b           LAB_0800138a\n\
 DAT_08001384:\n\
-    .4byte 0x02005CE0\n\
+    .word 0x02005CE0\n\
 LAB_08001388:\n\
     mov         r0,#0x1\n\
 LAB_0800138a:\n\
@@ -90,7 +90,7 @@ __attribute__((naked)) void fun_0800138c()
 .space 2\n\
 \n\
 DAT_080013a0:\n\
-    .4byte 0x02005CE0\n\
+    .word 0x02005CE0\n\
 LAB_080013a4:\n\
     mov         r0,#0x1\n\
 LAB_080013a6:\n\
@@ -113,7 +113,7 @@ __attribute__((naked)) void fun_080013a8()
 .space 2\n\
 \n\
 DAT_080013bc:\n\
-    .4byte 0x02005CE0\n\
+    .word 0x02005CE0\n\
 LAB_080013c0:\n\
     mov         r0,#0x1\n\
 LAB_080013c2:\n\
@@ -132,7 +132,7 @@ __attribute__((naked)) void fun_080013c4()
     mov         r0,#0x0\n\
     b           LAB_080013da\n\
 DAT_080013d4:\n\
-    .4byte 0x02005CE0\n\
+    .word 0x02005CE0\n\
 LAB_080013d8:\n\
     mov         r0,#0x1\n\
 LAB_080013da:\n\
@@ -151,7 +151,7 @@ __attribute__((naked)) void fun_080013dc()
     mov         r0,#0x0\n\
     b           LAB_080013f2\n\
 DAT_080013ec:\n\
-    .4byte 0x02005CE0\n\
+    .word 0x02005CE0\n\
 LAB_080013f0:\n\
     mov         r0,#0x1\n\
 LAB_080013f2:\n\
@@ -170,7 +170,7 @@ __attribute__((naked)) void fun_080013f4()
     mov         r0,#0x0\n\
     b           LAB_0800140a\n\
 DAT_08001404:\n\
-    .4byte 0x02005CE0\n\
+    .word 0x02005CE0\n\
 LAB_08001408:\n\
     mov         r0,#0x1\n\
 LAB_0800140a:\n\
@@ -189,7 +189,7 @@ __attribute__((naked)) void fun_0800140c()
     mov         r0,#0x0\n\
     b           LAB_08001422\n\
 DAT_0800141c:\n\
-    .4byte 0x02005CE0\n\
+    .word 0x02005CE0\n\
 LAB_08001420:\n\
     mov         r0,#0x1\n\
 LAB_08001422:\n\
