@@ -180,3 +180,49 @@ void fun_08000584()
     fun_080004dc(0x20, 0x96, "NYI");
     fun_080004dc(0x20, 0x4b, "JTS");
 }
+
+__attribute__((naked)) void fun_08000870(int a, int b, char* c)
+{
+    asm("\n\
+    add        r2,r1,#0x0\n\
+    ldr        r3,DAT_08000888\n\
+    lsl        r1,r0,#0x1\n\
+    add        r1,r1,r0\n\
+    lsl        r1,r1,#0x3\n\
+    add        r0,r3,#0x4\n\
+    add        r0,r1,r0\n\
+    ldr        r0,[r0,#0x0]\n\
+    cmp        r0,r2\n\
+    bne        LAB_0800088c\n\
+    mov        r0,#0x0\n\
+    b          LAB_080008b0\n\
+DAT_08000888:\n\
+    .4byte 0x02005210\n\
+LAB_0800088c:\n\
+    add        r0,r3,#0x0\n\
+    add        r0,#0xc\n\
+    add        r0,r1,r0\n\
+    ldr        r0,[r0,#0x0]\n\
+    cmp        r0,r2\n\
+    bne        LAB_0800089c\n\
+    mov        r0,#0x1\n\
+    b          LAB_080008b0\n\
+LAB_0800089c:\n\
+    add        r0,r3,#0x0\n\
+    add        r0,#0x14\n\
+    add        r0,r1,r0\n\
+    ldr        r0,[r0,#0x0]\n\
+    cmp        r0,r2\n\
+    beq        LAB_080008ae\n\
+    mov        r0,#0x1\n\
+.syntax unified\n\
+    rsbs       r0,r0,#0\n\
+.syntax divided\n\
+    b          LAB_080008b0\n\
+LAB_080008ae:\n\
+    mov        r0,#0x2\n\
+LAB_080008b0:\n\
+    bx         lr\n\
+.space 2\n\
+    ");
+}

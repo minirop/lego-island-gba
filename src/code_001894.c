@@ -250,6 +250,52 @@ LAB_08001a54:\n\
     pop         {r4,r5}\n\
     pop         {r0}\n\
     bx          r0\n\
-\n\
+    ");
+}
+__attribute__((naked)) void fun_08001a5c()
+{
+    asm("\n\
+    push       {lr}\n\
+    bl         fun_080020a4\n\
+    mov        r1,#0xe4\n\
+    lsl        r1,r1,#0x4\n\
+    add        r0,r0,r1\n\
+    mov        r1,#0x0\n\
+    mov        r2,#0x9\n\
+    bl         memset\n\
+    pop        {r0}\n\
+    bx         r0\n\
+    ");
+}
+__attribute__((naked)) void fun_08001a74()
+{
+    asm("\n\
+    push       {r4,r5,lr}\n\
+    lsl        r0,r0,#0x10\n\
+    lsr        r5,r0,#0x13\n\
+    mov        r1,#0xe0\n\
+    lsl        r1,r1,#0xb\n\
+    and        r1,r0\n\
+    lsr        r1,r1,#0x10\n\
+    mov        r4,#0x80\n\
+    lsl        r4,r4,#0x11\n\
+    lsl        r4,r1\n\
+    lsr        r4,r4,#0x18\n\
+    bl         fun_080020a4\n\
+    mov        r1,#0xe4\n\
+    lsl        r1,r1,#0x4\n\
+    add        r0,r0,r1\n\
+    add        r0,r0,r5\n\
+    ldrb       r1,[r0,#0x0]\n\
+    and        r1,r4\n\
+.syntax unified\n\
+    rsbs        r0,r1,#0\n\
+.syntax divided\n\
+    orr        r0,r1\n\
+    lsr        r0,r0,#0x1f\n\
+    pop        {r4,r5}\n\
+    pop        {r1}\n\
+    bx         r1\n\
+.space 2\n\
     ");
 }

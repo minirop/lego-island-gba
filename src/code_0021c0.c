@@ -1143,11 +1143,63 @@ __attribute__((naked)) void fun_08002968()
     ldr         r0,DAT_08002970\n\
     ldrh        r0,[r0,#0x0]\n\
     bx          lr\n\
-\n\
 .space 2\n\
-\n\
 DAT_08002970:\n\
     .4byte 0x02000008\n\
-\n\
     ");
 }
+
+__attribute__((naked)) void fun_08002974()
+{
+    asm("\n\
+    ldr        r0,PTR_DAT_08002988\n\
+    ldr        r2,[r0,#0x0]\n\
+    mov        r0,#0x80\n\
+    and        r0,r2\n\
+    cmp        r0,#0x0\n\
+    beq        LAB_08002990\n\
+    ldr        r1,PTR_DAT_0800298c\n\
+    mov        r0,#0x0\n\
+    b          LAB_080029a4\n\
+.space 2\n\
+PTR_DAT_08002988:\n\
+    .4byte     DAT_0200000c\n\
+PTR_DAT_0800298c:\n\
+    .4byte     DAT_0200001a\n\
+LAB_08002990:\n\
+    mov        r0,#0x80\n\
+    lsl        r0,r0,#0x1\n\
+    and        r2,r0\n\
+    ldr        r1,PTR_DAT_080029b4\n\
+    cmp        r2,#0x0\n\
+    beq        LAB_080029a6\n\
+    ldr        r0,PTR_SIOCNT_080029b8\n\
+    ldr        r0,[r0,#0x0]\n\
+    lsl        r0,r0,#0x1a\n\
+    lsr        r0,r0,#0x1e\n\
+LAB_080029a4:\n\
+    strh       r0,[r1,#0x0]\n\
+LAB_080029a6:\n\
+    mov        r0,#0x0\n\
+    ldrsh      r1,[r1,r0]\n\
+    mvn        r1,r1\n\
+.syntax unified\n\
+    rsbs       r0,r1,#0\n\
+.syntax divided\n\
+    orr        r0,r1\n\
+    lsr        r0,r0,#0x1f\n\
+    bx         lr\n\
+PTR_DAT_080029b4:\n\
+    .4byte     DAT_0200001a\n\
+PTR_SIOCNT_080029b8:\n\
+    .4byte     SIOCNT\n\
+    ");
+}
+
+
+void fun_080029bc()
+{
+    fun_080025a8();
+}
+
+asm(".space 2");

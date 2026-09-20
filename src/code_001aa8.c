@@ -947,6 +947,29 @@ LAB_08002198:\n\
 LAB_0800219a:\n\
     pop         {r1}\n\
     bx          r1\n\
+    ");
+}
+
+__attribute__((naked)) void fun_080021a0()
+{
+    asm("\n\
+    push       {r4,lr}\n\
+    mov        r3,#0x0\n\
+    mov        r2,#0x0\n\
+    cmp        r3,r1\n\
+    bcs        LAB_080021b6\n\
+LAB_080021aa:\n\
+    ldrb       r4,[r0,#0x0]\n\
+    add        r3,r4,r3\n\
+    add        r0,#0x1\n\
+    add        r2,#0x1\n\
+    cmp        r2,r1\n\
+    bcc        LAB_080021aa\n\
+LAB_080021b6:\n\
+    add        r0,r3,#0x0\n\
+    pop        {r4}\n\
+    pop        {r1}\n\
+    bx         r1\n\
 .space 2\n\
     ");
 }

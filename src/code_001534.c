@@ -281,13 +281,36 @@ __attribute__((naked)) void fun_080016f0()
     bx          r1\n\
     ");
 }
-__attribute__((naked)) void fun_08001704()
+void fun_0803dd20();
+void fun_08001704()
+{
+    fun_0803dd20();
+}
+
+void fun_0803d518();
+void fun_0803d5bc();
+void fun_08001710()
+{
+    fun_0803d518();
+    fun_0803d5bc();
+}
+__attribute__((naked)) void FUN_08001720()
 {
     asm("\n\
-    push        {lr}\n\
-    bl          fun_0803dd20\n\
-    pop         {r0}\n\
-    bx          r0\n\
-.space 2\n\
+    push       {r4,r5,lr}\n\
+    ldr        r5,DAT_08001740\n\
+    ldrh       r4,[r5,#0x0]\n\
+    bl         fun_08001534\n\
+    lsl        r4,r4,#0x18\n\
+    lsr        r4,r4,#0x18\n\
+    add        r0,r4,#0x0\n\
+    bl         fun_08041a44\n\
+    bl         fun_08042614\n\
+    strh       r4,[r5,#0x0]\n\
+    pop        {r4,r5}\n\
+    pop        {r0}\n\
+    bx         r0\n\
+DAT_08001740:\n\
+    .4byte     DAT_020025d0\n\
     ");
 }

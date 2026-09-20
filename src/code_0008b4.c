@@ -1384,6 +1384,24 @@ DAT_0800120c:\n\
     .4byte 0x08756BC0\n\
 DAT_08001210:\n\
     .4byte 0x08756AEC\n\
-\n\
+    ");
+}
+
+__attribute__((naked)) void fun_08001214()
+{
+    asm("\n\
+    lsl        r0,r0,#0x10\n\
+    mov        r1,#0x0\n\
+    ldr        r2,DAT_08001228\n\
+    add        r0,r0,r2\n\
+    lsr        r0,r0,#0x10\n\
+    cmp        r0,#0x1b\n\
+    bhi        LAB_08001224\n\
+    mov        r1,#0x1\n\
+LAB_08001224:\n\
+    add        r0,r1,#0x0\n\
+    bx         lr\n\
+DAT_08001228:\n\
+    .4byte 0xF8300000\n\
     ");
 }

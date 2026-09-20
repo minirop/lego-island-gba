@@ -15,19 +15,15 @@ rom:
     - name: code_0003e0
       format: c
       address: 0x0003e0
-      size: 0x7c
     - name: code_0004ac
       format: c
       address: 0x0004ac
-      size: 0x3C4
     - name: code_0008b4
       format: c
       address: 0x0008b4
-      size: 0x960
     - name: code_00122c
       format: c
       address: 0x00122c
-      size: 0xbc
     - name: code_00132c
       format: c
       address: 0x00132c
@@ -37,27 +33,21 @@ rom:
     - name: code_001534
       format: c
       address: 0x001534
-      size: 0x1dc
     - name: code_001744
       format: c
       address: 0x001744
-      size: 0x30
     - name: code_0017ac
       format: c
       address: 0x0017ac
-      size: 0xc0
     - name: code_001894
       format: c
       address: 0x001894
-      size: 0x1c8
     - name: code_001aa8
       format: c
       address: 0x001aa8
-      size: 0x6f8
     - name: code_0021c0
       format: c
       address: 0x0021c0
-      size: 0x7b4
     - name: code_0029c8
       format: c
       address: 0x0029c8
@@ -392,11 +382,9 @@ rom:
     - name: stdio
       library: libc.a
       address: 0x04904c
-      size: 0xc4
     - name: syscalls
       library: libc.a
       address: 0x049110
-      size: 0x464
     - name: writer
       library: libc.a
       address: 0x049574
@@ -438,7 +426,6 @@ rom:
       library: libc.a
       section: rodata
       address: 0x6cccc4
-      size: 0x7a
     - name: dtoa
       library: libc.a
       section: rodata
@@ -469,6 +456,10 @@ rom:
       section: data
       address: 0x77f91c
       size: 0x29c
+    - name: code_7d6190
+      format: c
+      section: data
+      address: 0x7d6190
     - name: impure
       library: libc.a
       section: data

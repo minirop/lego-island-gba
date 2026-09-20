@@ -97,6 +97,48 @@ LAB_080012da:\n\
     bne         LAB_080012d2\n\
     pop         {r0}\n\
     bx          r0\n\
-\n\
+    ");
+}
+__attribute__((naked)) void fun_080012e8()
+{
+    asm("\n\
+        push       {r4,r5,lr}\n\
+        lsl        r0,r0,#0x10\n\
+        lsr        r3,r0,#0x10\n\
+        mov        r1,#0x0\n\
+        ldr        r0,DAT_0800130c\n\
+        ldrh       r2,[r0,#0x0]\n\
+        add        r5,r0,#0x0\n\
+        cmp        r1,r2\n\
+        bcs        LAB_0800131e\n\
+        ldr        r4,DAT_08001310\n\
+LAB_080012fc:\n\
+        lsl        r0,r1,#0x2\n\
+        add        r0,r0,r4\n\
+        ldr        r0,[r0,#0x0]\n\
+        ldr        r0,[r0,#0x8]\n\
+        cmp        r0,r3\n\
+        bne        LAB_08001314\n\
+        add        r0,r1,#0x0\n\
+        b          LAB_08001326\n\
+DAT_0800130c:\n\
+        .4byte       DAT_08756bc0\n\
+DAT_08001310:\n\
+        .4byte       levels_table\n\
+LAB_08001314:\n\
+        add        r0,r1,#0x1\n\
+        lsl        r0,r0,#0x10\n\
+        lsr        r1,r0,#0x10\n\
+        cmp        r1,r2\n\
+        bcc        LAB_080012fc\n\
+LAB_0800131e:\n\
+        ldrh       r0,[r5,#0x0]\n\
+        add        r0,#0x1\n\
+        lsl        r0,r0,#0x10\n\
+        lsr        r0,r0,#0x10\n\
+LAB_08001326:\n\
+        pop        {r4,r5}\n\
+        pop        {r1}\n\
+        bx         r1\n\
     ");
 }

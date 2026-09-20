@@ -97,6 +97,30 @@ DAT_08001864:\n\
     .4byte 0x02002600\n\
 DAT_08001868:\n\
     .4byte 0x08756942\n\
-\n\
+    ");
+}
+__attribute__((naked)) void fun_0800186c()
+{
+    asm("\n\
+        push       {r4,r5,lr}\n\
+        mov        r4,#0x0\n\
+        mov        r5,#0x0\n\
+LAB_08001872:\n\
+        bl         fun_080020a4\n\
+        lsl        r1,r4,#0x1\n\
+        ldr        r2,DAT_08001890\n\
+        add        r0,r0,r2\n\
+        add        r0,r0,r1\n\
+        strh       r5,[r0,#0x0]\n\
+        add        r0,r4,#0x1\n\
+        lsl        r0,r0,#0x10\n\
+        lsr        r4,r0,#0x10\n\
+        cmp        r4,#0x45\n\
+        bls        LAB_08001872\n\
+        pop        {r4,r5}\n\
+        pop        {r0}\n\
+        bx         r0\n\
+DAT_08001890:\n\
+        .4byte 0x00000D2A\n\
     ");
 }
