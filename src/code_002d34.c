@@ -1261,11 +1261,43 @@ __attribute__((naked)) void fun_080034d4()
     pop         {r4}\n\
     pop         {r0}\n\
     bx          r0\n\
-\n\
 .space 2\n\
-\n\
 DAT_080034fc:\n\
     .word 0x02005CEC\n\
-\n\
+    ");
+}
+__attribute__((naked)) void fun_08003500()
+{
+    asm("\n\
+    push       {r4,lr}\n\
+    lsl        r0,r0,#0x10\n\
+    ldr        r1,PTR_DAT_08003530\n\
+    ldr        r1,[r1,#0x0]\n\
+    lsr        r0,r0,#0xb\n\
+    ldr        r1,[r1,#0x44]\n\
+    add        r1,r1,r0\n\
+    ldr        r2,PTR_DMA3SAD_08003534\n\
+    ldr        r0,[r1,#0x10]\n\
+    str        r0,[r2,#0x0]\n\
+    ldrh       r3,[r1,#0x14]\n\
+    ldr        r4,PTR_DAT_08003538\n\
+    add        r0,r3,r4\n\
+    str        r0,[r2,#0x4]\n\
+    ldrh       r1,[r1,#0x16]\n\
+    lsr        r0,r1,#0x1\n\
+    mov        r1,#0x80\n\
+    lsl        r1,r1,#0x18\n\
+    orr        r0,r1\n\
+    str        r0,[r2,#0x8]\n\
+    ldr        r0,[r2,#0x8]\n\
+    pop        {r4}\n\
+    pop        {r0}\n\
+    bx         r0\n\
+PTR_DAT_08003530:\n\
+    .word      DAT_02005ce8\n\
+PTR_DMA3SAD_08003534:\n\
+    .word      DMA3SAD\n\
+PTR_DAT_08003538:\n\
+    .word      DAT_06004000\n\
     ");
 }

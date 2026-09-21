@@ -71,6 +71,30 @@ __attribute__((naked)) void fun_08003584()
     str         r1,[r0,#0x0]\n\
     str         r2,[r0,#0x4]\n\
     bx          lr\n\
-\n\
+    ");
+}
+__attribute__((naked)) void fun_08003590()
+{
+    asm("\n\
+        ldr        r2,[r0,#0x0]\n\
+        mul        r2,r1\n\
+        add        r3,r2,#0x0\n\
+        cmp        r2,#0x0\n\
+        bge        LAB_0800359c\n\
+        add        r3,#0xff\n\
+LAB_0800359c:\n\
+        asr        r2,r3,#0x8\n\
+        str        r2,[r0,#0x0]\n\
+        ldr        r2,[r0,#0x4]\n\
+        mul        r2,r1\n\
+        add        r1,r2,#0x0\n\
+        cmp        r2,#0x0\n\
+        bge        LAB_080035ac\n\
+        add        r1,#0xff\n\
+LAB_080035ac:\n\
+        asr        r2,r1,#0x8\n\
+        str        r2,[r0,#0x4]\n\
+        bx         lr\n\
+.space 2\n\
     ");
 }

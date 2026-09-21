@@ -51,59 +51,45 @@ rom:
     - name: code_0029c8
       format: c
       address: 0x0029c8
-      size: 0x228
     - name: code_002c04
       format: c
       address: 0x002c04
-      size: 0x11c
     - name: code_002d34
       format: c
       address: 0x002d34
-      size: 0x7cc
     - name: code_00353c
       format: c
       address: 0x00353c
-      size: 0x54
     - name: code_0035b4
       format: c
       address: 0x0035b4
-      size: 0xd4
     - name: code_0036b0
       format: c
       address: 0x0036b0
-      size: 0x168
     - name: code_0038c8
       format: c
       address: 0x0038c8
-      size: 0xcd0
     - name: code_0045d8
       format: c
       address: 0x0045d8
-      size: 0xc
     - name: code_0045f0
       format: c
       address: 0x0045f0
-      size: 0x40
     - name: code_004670
       format: c
       address: 0x004670
-      size: 0x18
     - name: code_004694
       format: c
       address: 0x004694
-      size: 0x7c
     - name: code_00471c
       format: c
       address: 0x00471c
-      size: 0x440
     - name: code_004b74
       format: c
       address: 0x004b74
-      size: 0x1c
     - name: code_004bb0
       format: c
       address: 0x004bb0
-      size: 0xfe4
     - name: code_005bbc
       format: c
       address: 0x005bbc

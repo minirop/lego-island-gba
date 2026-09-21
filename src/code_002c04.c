@@ -186,6 +186,10 @@ DAT_08002d18:\n\
     .word 0x04000050\n\
 DAT_08002d1c:\n\
     .word 0x02005770\n\
-\n\
     ");
+}
+void fun_08002d34(unsigned short a, unsigned short b, int c);
+void fun_08002d20(unsigned short a, unsigned short b)
+{
+    fun_08002d34(a, b, 0x10);
 }

@@ -140,6 +140,31 @@ __attribute__((naked)) void fun_08003660()
     pop         {r4,r5}\n\
     pop         {r0}\n\
     bx          r0\n\
-\n\
+    ");
+}
+__attribute__((naked)) void fun_08003688()
+{
+    asm("\n\
+    push       {lr}\n\
+    bl         __floatsisf\n\
+    ldr        r1,DAT_08003698\n\
+    bl         __mulsf3\n\
+    pop        {r1}\n\
+    bx         r1\n\
+DAT_08003698:\n\
+    .word 0x3B800000\n\
+    ");
+}
+__attribute__((naked)) void fun_0800369c()
+{
+    asm("\n\
+    push       {lr}\n\
+    ldr        r1,DAT_080036ac\n\
+    bl         __mulsf3\n\
+    bl         __fixsfsi\n\
+    pop        {r1}\n\
+    bx         r1\n\
+DAT_080036ac:\n\
+    .word 0x43800000\n\
     ");
 }

@@ -332,6 +332,20 @@ DAT_08002be8:\n\
     .word 0x02005CD8\n\
 DAT_08002bec:\n\
     .word 0x0000FFFE\n\
-\n\
+    ");
+}
+__attribute__((naked)) void fun_08002bf0()
+{
+    asm("\n\
+    ldr        r0,PTR_IF_08002bfc
+    mov        r1,#0x1
+    strh       r1,[r0,#0x0]
+    ldr        r0,PTR_DAT_08002c00
+    strh       r1,[r0,#0x0]
+    bx         lr
+PTR_IF_08002bfc:
+    .word      IF
+PTR_DAT_08002c00:
+    .word      DAT_02005cd8\n\
     ");
 }

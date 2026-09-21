@@ -193,6 +193,97 @@ DAT_08003810:\n\
     .word 0x02005D00\n\
 DAT_08003814:\n\
     .word 0x02000272\n\
-\n\
+    ");
+}
+__attribute__((naked)) void fun_08003818()
+{
+    asm("\n\
+    push       {r4,r5,r6,lr}\n\
+    bl         fun_0800467c\n\
+    lsl        r0,r0,#0x10\n\
+    lsr        r6,r0,#0x10\n\
+    mov        r5,#0x0\n\
+    cmp        r0,#0x0\n\
+    ble        LAB_08003862\n\
+LAB_08003828:\n\
+    lsl        r4,r5,#0x10\n\
+    lsr        r0,r4,#0x10\n\
+    bl         fun_08004694\n\
+    add        r1,r0,#0x0\n\
+    mov        r2,#0x80\n\
+    lsl        r2,r2,#0x3\n\
+    add        r0,r2,#0x0\n\
+    ldrh       r2,[r1,#0x12]\n\
+    and        r0,r2\n\
+    cmp        r0,#0x0\n\
+    beq        LAB_08003852\n\
+    add        r0,r1,#0x0\n\
+    bl         fun_08003b00\n\
+    lsl        r0,r6,#0x10\n\
+    ldr        r1,DAT_080038ac\n\
+    add        r0,r0,r1\n\
+    lsr        r6,r0,#0x10\n\
+    add        r0,r4,r1\n\
+    lsr        r5,r0,#0x10\n\
+LAB_08003852:\n\
+    lsl        r1,r5,#0x10\n\
+    mov        r2,#0x80\n\
+    lsl        r2,r2,#0x9\n\
+    add        r1,r1,r2\n\
+    lsr        r5,r1,#0x10\n\
+    lsl        r0,r6,#0x10\n\
+    cmp        r1,r0\n\
+    blt        LAB_08003828\n\
+LAB_08003862:\n\
+    bl         fun_0800467c\n\
+    mov        r5,#0x0\n\
+    lsl        r0,r0,#0x10\n\
+    asr        r0,r0,#0x10\n\
+    cmp        r5,r0\n\
+    bge        LAB_0800388c\n\
+    add        r6,r0,#0x0\n\
+LAB_08003872:\n\
+    lsl        r4,r5,#0x10\n\
+    lsr        r0,r4,#0x10\n\
+    bl         fun_08004694\n\
+    add        r1,r0,#0x0\n\
+    ldr        r0,DAT_080038b0\n\
+    strh       r0,[r1,#0x18]\n\
+    add        r0,#0x1\n\
+    add        r4,r4,r0\n\
+    lsr        r5,r4,#0x10\n\
+    asr        r4,r4,#0x10\n\
+    cmp        r4,r6\n\
+    blt        LAB_08003872\n\
+LAB_0800388c:\n\
+    ldr        r1,PTR_DAT_080038b4\n\
+    ldr        r0,PTR_DAT_080038b8\n\
+    ldrh       r0,[r0,#0x0]\n\
+    strh       r0,[r1,#0x0]\n\
+    ldr        r1,PTR_DAT_080038bc\n\
+    ldr        r0,PTR_DAT_080038c0\n\
+    ldrh       r0,[r0,#0x0]\n\
+    strh       r0,[r1,#0x0]\n\
+    ldr        r1,PTR_DAT_080038c4\n\
+    mov        r0,#0x0\n\
+    strh       r0,[r1,#0x0]\n\
+    bl         fun_08003bf8\n\
+    pop        {r4,r5,r6}\n\
+    pop        {r0}\n\
+    bx         r0\n\
+DAT_080038ac:\n\
+    .word 0xFFFF0000\n\
+DAT_080038b0:\n\
+    .word 0x0000FFFF\n\
+PTR_DAT_080038b4:\n\
+    .word DAT_02005cf4\n\
+PTR_DAT_080038b8:\n\
+    .word DAT_02007f64\n\
+PTR_DAT_080038bc:\n\
+    .word DAT_02005d04\n\
+PTR_DAT_080038c0:\n\
+    .word DAT_02005d08\n\
+PTR_DAT_080038c4:\n\
+    .word DAT_02005d00\n\
     ");
 }
