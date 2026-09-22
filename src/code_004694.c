@@ -74,7 +74,7 @@ DAT_0800470c:\n\
     ");
 }
 extern unsigned short DAT_02005cf8;
-void FUN_08004710()
+void fun_08004710()
 {
     DAT_02005cf8 = 0;
 }

@@ -294,7 +294,7 @@ void fun_08001710()
     fun_0803d518();
     fun_0803d5bc();
 }
-__attribute__((naked)) void FUN_08001720()
+__attribute__((naked)) void fun_08001720()
 {
     asm("\n\
     push       {r4,r5,lr}\n\

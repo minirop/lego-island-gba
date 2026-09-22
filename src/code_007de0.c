@@ -3372,6 +3372,58 @@ DAT_080096a4:\n\
     .word 0x0600A000\n\
 DAT_080096a8:\n\
     .word 0x0877BC44\n\
-\n\
+    ");
+}
+
+__attribute__((naked)) void fun_080096ac()
+{
+    asm("\n\
+    push       {r4,r5,lr}\n\
+    mov        r5,#0x0\n\
+    mov        r4,#0x0\n\
+LAB_080096b2:\n\
+    bl         fun_080020a4\n\
+    ldr        r1,DAT_080096dc\n\
+    add        r0,r0,r1\n\
+    add        r0,r0,r4\n\
+    ldrb       r0,[r0,#0x0]\n\
+    cmp        r0,#0x0\n\
+    beq        LAB_080096c8\n\
+    add        r0,r5,#0x1\n\
+    lsl        r0,r0,#0x10\n\
+    lsr        r5,r0,#0x10\n\
+LAB_080096c8:\n\
+    add        r0,r4,#0x1\n\
+    lsl        r0,r0,#0x10\n\
+    lsr        r4,r0,#0x10\n\
+    cmp        r4,#0x27\n\
+    bls        LAB_080096b2\n\
+    add        r0,r5,#0x0\n\
+    pop        {r4,r5}\n\
+    pop        {r1}\n\
+    bx         r1\n\
+.space 2\n\
+DAT_080096dc:\n\
+    .word 0x00000E5A\n\
+    ");
+}
+
+__attribute__((naked)) void fun_080096e0()
+{
+    asm("\n\
+    push       {r4,lr}\n\
+    mov        r4,#0x0\n\
+LAB_080096e4:\n\
+    bl         fun_080020a4\n\
+    add        r0,r4,#0x1\n\
+    lsl        r0,r0,#0x10\n\
+    lsr        r4,r0,#0x10\n\
+    cmp        r4,#0x27\n\
+    bls        LAB_080096e4\n\
+    mov        r0,#0x0\n\
+    pop        {r4}\n\
+    pop        {r1}\n\
+    bx         r1\n\
+.space 2\n\
     ");
 }

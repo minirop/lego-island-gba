@@ -1349,3 +1349,37 @@ LAB_08018322:\n\
      bx         r0\n\
     ");
 }
+__attribute__((naked)) void fun_0801833c()
+{
+    asm("\n\
+    lsl        r0,r0,#0x10\n\
+    lsr        r2,r0,#0x10\n\
+    mov        r1,#0x0\n\
+    ldr        r3,DAT_08018358\n\
+LAB_08018344:\n\
+    lsl        r0,r1,#0x2\n\
+    add        r0,r0,r1\n\
+    lsl        r0,r0,#0x2\n\
+    add        r0,r0,r3\n\
+    ldrh       r0,[r0,#0x0]\n\
+    cmp        r2,r0\n\
+    bne        LAB_0801835c\n\
+    add        r0,r1,#0x0\n\
+    b          LAB_08018368\n\
+.space 2\n\
+DAT_08018358:\n\
+    .word 0x0878022C\n\
+LAB_0801835c:\n\
+    add        r0,r1,#0x1\n\
+    lsl        r0,r0,#0x18\n\
+    lsr        r1,r0,#0x18\n\
+    cmp        r1,#0x14\n\
+    bls        LAB_08018344\n\
+    ldr        r0,DAT_0801836c\n\
+LAB_08018368:\n\
+    bx         lr\n\
+.space 2\n\
+DAT_0801836c:\n\
+    .word 0x0000FFFF\n\
+    ");
+}

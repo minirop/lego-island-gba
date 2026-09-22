@@ -158,3 +158,54 @@ DAT_08019ae0:\n\
      .word 0x0200E5B4\n\
     ");
 }
+
+__attribute__((naked)) void fun_08019ae4()
+{
+    asm("\n\
+    push       {r4,r5,r6,r7,lr}\n\
+    lsl        r0,r0,#0x10\n\
+    lsr        r2,r0,#0x10\n\
+    mov        r1,#0x0\n\
+    ldr        r4,DAT_08019b18\n\
+    add        r6,r4,#0x0\n\
+    ldr        r7,DAT_08019b1c\n\
+    ldr        r5,DAT_08019b20\n\
+LAB_08019af4:\n\
+    lsl        r3,r1,#0x2\n\
+    add        r0,r3,r6\n\
+    ldrh       r0,[r0,#0x0]\n\
+    cmp        r0,r2\n\
+    bne        LAB_08019b24\n\
+    ldr        r2,[r5,#0x0]\n\
+    lsl        r2,r2,#0x2\n\
+    add        r1,r4,#0x2\n\
+    add        r1,r3,r1\n\
+    ldrh       r3,[r1,#0x0]\n\
+    lsl        r0,r3,#0x1\n\
+    add        r0,r0,r3\n\
+    lsl        r0,r0,#0x4\n\
+    add        r2,r2,r0\n\
+    add        r2,r2,r7\n\
+    ldr        r0,[r2,#0x0]\n\
+    b          LAB_08019b30\n\
+.space 2\n\
+DAT_08019b18:\n\
+    .word 0x08780430\n\
+DAT_08019b1c:\n\
+    .word 0x08669624\n\
+DAT_08019b20:\n\
+    .word 0x020025B4\n\
+LAB_08019b24:\n\
+    add        r0,r1,#0x1\n\
+    lsl        r0,r0,#0x10\n\
+    lsr        r1,r0,#0x10\n\
+    cmp        r1,#0x42\n\
+    bls        LAB_08019af4\n\
+    mov        r0,#0x0\n\
+LAB_08019b30:\n\
+    pop        {r4,r5,r6,r7}\n\
+    pop        {r1}\n\
+    bx         r1\n\
+.space 2\n\
+    ");
+}

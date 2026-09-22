@@ -1724,6 +1724,134 @@ DAT_0800fa28:\n\
     .word 0x0200DC08\n\
 DAT_0800fa2c:\n\
     .word 0x020006A0\n\
-\n\
+    ");
+}
+__attribute__((naked)) void fun_0800fa30()
+{
+    asm("\n\
+    push       {r4,r5,r6,r7,lr}\n\
+    lsl        r0,r0,#0x10\n\
+    lsr        r5,r0,#0x10\n\
+    lsl        r1,r1,#0x10\n\
+    lsr        r4,r1,#0x10\n\
+    mov        r3,#0x0\n\
+    ldr        r1,DAT_0800fa70\n\
+    add        r6,r1,#0x0\n\
+LAB_0800fa40:\n\
+    lsl        r0,r3,#0x1\n\
+    add        r0,r0,r3\n\
+    lsl        r2,r0,#0x2\n\
+    add        r0,r2,r6\n\
+    mov        r7,#0x0\n\
+    ldrsh      r0,[r0,r7]\n\
+    sub        r0,r5,r0\n\
+    add        r0,#0x9\n\
+    cmp        r0,#0x12\n\
+    bhi        LAB_0800fa74\n\
+    add        r0,r1,#0x2\n\
+    add        r0,r2,r0\n\
+    mov        r2,#0x0\n\
+    ldrsh      r0,[r0,r2]\n\
+    sub        r2,r4,r0\n\
+    mov        r0,#0xa\n\
+.syntax unified\n\
+    rsbs       r0,r0,#0\n\
+.syntax divided\n\
+    cmp        r2,r0\n\
+    ble        LAB_0800fa74\n\
+    cmp        r2,#0x9\n\
+    bgt        LAB_0800fa74\n\
+    lsl        r0,r3,#0x10\n\
+    asr        r0,r0,#0x10\n\
+    b          LAB_0800fa82\n\
+DAT_0800fa70:\n\
+    .word 0x0877CC10\n\
+LAB_0800fa74:\n\
+    add        r0,r3,#0x1\n\
+    lsl        r0,r0,#0x10\n\
+    lsr        r3,r0,#0x10\n\
+    cmp        r3,#0x21\n\
+    bls        LAB_0800fa40\n\
+    mov        r0,#0x1\n\
+.syntax unified\n\
+    rsbs       r0,r0,#0\n\
+.syntax divided\n\
+LAB_0800fa82:\n\
+    pop        {r4,r5,r6,r7}\n\
+    pop        {r1}\n\
+    bx         r1\n\
+    ");
+}
+
+__attribute__((naked)) void fun_0800fa88()
+{
+    asm("\n\
+    push       {r4,r5,r6,r7,lr}\n\
+    bl         fun_080020a4\n\
+    ldr        r1,DAT_0800fae0\n\
+    add        r0,r0,r1\n\
+    ldr        r4,[r0,#0x0]\n\
+    lsr        r4,r4,#0x8\n\
+    bl         fun_080020a4\n\
+    ldr        r7,DAT_0800fae4\n\
+    add        r0,r0,r7\n\
+    ldr        r0,[r0,#0x0]\n\
+    lsl        r4,r4,#0x10\n\
+    lsl        r0,r0,#0x8\n\
+    lsr        r5,r4,#0x10\n\
+    lsr        r4,r0,#0x10\n\
+    mov        r2,#0x0\n\
+    ldr        r3,DAT_0800fae8\n\
+    add        r0,r3,#0x2\n\
+    mov        r12,r0\n\
+    mov        r6,#0xa\n\
+.syntax unified\n\
+    rsbs       r6,r6,#0\n\
+.syntax divided\n\
+LAB_0800fab4:\n\
+    lsl        r0,r2,#0x1\n\
+    add        r0,r0,r2\n\
+    lsl        r1,r0,#0x2\n\
+    add        r0,r1,r3\n\
+    mov        r7,#0x0\n\
+    ldrsh      r0,[r0,r7]\n\
+    sub        r0,r5,r0\n\
+    add        r0,#0x9\n\
+    cmp        r0,#0x12\n\
+    bhi        LAB_0800faec\n\
+    mov        r7,r12\n\
+    add        r0,r1,r7\n\
+    mov        r1,#0x0\n\
+    ldrsh      r0,[r0,r1]\n\
+    sub        r0,r4,r0\n\
+    cmp        r0,r6\n\
+    ble        LAB_0800faec\n\
+    cmp        r0,#0x9\n\
+    bgt        LAB_0800faec\n\
+    add        r0,r2,#0x0\n\
+    b          LAB_0800fafa\n\
+.space 2\n\
+DAT_0800fae0:\n\
+    .word 0x00000E14\n\
+DAT_0800fae4:\n\
+    .word 0x00000E18\n\
+DAT_0800fae8:\n\
+    .word 0x0877CC10\n\
+LAB_0800faec:\n\
+    add        r0,r2,#0x1\n\
+    lsl        r0,r0,#0x10\n\
+    lsr        r2,r0,#0x10\n\
+    cmp        r2,#0x21\n\
+    bls        LAB_0800fab4\n\
+    mov        r0,#0x1\n\
+.syntax unified\n\
+    rsbs       r0,r0,#0\n\
+.syntax divided\n\
+LAB_0800fafa:\n\
+    lsl        r0,r0,#0x10\n\
+    asr        r0,r0,#0x10\n\
+    pop        {r4,r5,r6,r7}\n\
+    pop        {r1}\n\
+    bx         r1\n\
     ");
 }

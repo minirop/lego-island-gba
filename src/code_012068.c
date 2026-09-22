@@ -11700,3 +11700,64 @@ LAB_0801716e:\n\
      bx         r1\n\
     ");
 }
+
+__attribute__((naked)) void fun_08017180()
+{
+    asm("\n\
+    push       {r4,r5,lr}\n\
+    bl         fun_080171fc\n\
+    ldr        r0,PTR_DAT_080171e4\n\
+    mov        r5,#0x0\n\
+    strh       r5,[r0,#0x0]\n\
+    ldr        r0,PTR_DAT_080171e8\n\
+    ldrh       r0,[r0,#0x0]\n\
+    bl         fun_08004c04\n\
+    ldr        r0,PTR_DAT_080171ec\n\
+    ldrh       r0,[r0,#0x0]\n\
+    bl         fun_08004c1c\n\
+    ldr        r0,PTR_DAT_080171f0\n\
+    ldr        r0,[r0,#0x0]\n\
+    bl         fun_08003b00\n\
+    ldr        r4,PTR_DAT_080171f4\n\
+    ldrh       r0,[r4,#0x0]\n\
+    cmp        r0,#0x0\n\
+    beq        LAB_080171ba\n\
+    bl         fun_0800457c\n\
+    bl         fun_0803a980\n\
+    bl         fun_0803abbc\n\
+    strh       r5,[r4,#0x0]\n\
+LAB_080171ba:\n\
+    ldr        r5,PTR_DAT_080171f8\n\
+    mov        r1,#0x0\n\
+    ldrsh      r0,[r5,r1]\n\
+    mov        r4,#0x1\n\
+.syntax unified\n\
+    rsbs       r4,r4,#0\n\
+.syntax divided\n\
+    cmp        r0,r4\n\
+    beq        LAB_080171d6\n\
+    bl         fun_0800457c\n\
+    bl         fun_0803a980\n\
+    bl         fun_0803abbc\n\
+    strh       r4,[r5,#0x0]\n\
+LAB_080171d6:\n\
+    bl         fun_0800117c\n\
+    mov        r0,#0x0\n\
+    pop        {r4,r5}\n\
+    pop        {r1}\n\
+    bx         r1\n\
+.space 2\n\
+PTR_DAT_080171e4:\n\
+    .word DAT_0200252c\n\
+PTR_DAT_080171e8:\n\
+    .word DAT_02000400\n\
+PTR_DAT_080171ec:\n\
+    .word DAT_02000402\n\
+PTR_DAT_080171f0:\n\
+    .word DAT_0200dc98\n\
+PTR_DAT_080171f4:\n\
+    .word DAT_0200dca0\n\
+PTR_DAT_080171f8:\n\
+    .word DAT_02002524\n\
+    ");
+}

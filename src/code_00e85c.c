@@ -668,6 +668,28 @@ LAB_0800ed02:\n\
     pop         {r4,r5,r6,r7}\n\
     pop         {r0}\n\
     bx          r0\n\
-.space 2\n\
+    ");
+}
+__attribute__((naked)) void fun_0800ed20()
+{
+    asm("\n\
+    add        r2,r0,#0x0\n\
+    mov        r1,#0x0\n\
+    ldr        r3,DAT_0800ed3c\n\
+LAB_0800ed26:\n\
+    lsl        r0,r1,#0x5\n\
+    add        r0,r0,r3\n\
+    cmp        r0,r2\n\
+    beq        LAB_0800ed38\n\
+    add        r0,r1,#0x1\n\
+    lsl        r0,r0,#0x10\n\
+    lsr        r1,r0,#0x10\n\
+    cmp        r1,#0xf3\n\
+    bls        LAB_0800ed26\n\
+LAB_0800ed38:\n\
+    add        r0,r1,#0x0\n\
+    bx         lr\n\
+DAT_0800ed3c:\n\
+    .word 0x020006A0\n\
     ");
 }

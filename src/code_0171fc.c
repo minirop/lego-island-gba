@@ -919,6 +919,29 @@ LAB_080178ec:\n\
      pop        {r4,r5,r6,r7}\n\
      pop        {r1}\n\
      bx         r1\n\
-.space 2\n\
+    ");
+}
+__attribute__((naked)) void fun_080178f8()
+{
+    asm("\n\
+    push       {lr}\n\
+    bl         fun_0800457c\n\
+    ldr        r0,DAT_08017918\n\
+    ldrh       r0,[r0,#0x0]\n\
+    cmp        r0,#0x0\n\
+    beq        LAB_08017912\n\
+    ldr        r0,DAT_0801791c\n\
+    ldrh       r0,[r0,#0x0]\n\
+    cmp        r0,#0x0\n\
+    bne        LAB_08017912\n\
+    bl         fun_08002844\n\
+LAB_08017912:\n\
+    mov        r0,#0x0\n\
+    pop        {r1}\n\
+    bx         r1\n\
+DAT_08017918:\n\
+    .word 0x02005750\n\
+DAT_0801791c:\n\
+    .word 0x0200DCB4\n\
     ");
 }

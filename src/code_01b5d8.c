@@ -8591,3 +8591,100 @@ DAT_0801f5c8:\n\
      .word 0x0865FB7C\n\
     ");
 }
+
+__attribute__((naked)) void fun_0801f5cc()
+{
+    asm("\n\
+    push       {r4,lr}\n\
+    bl         fun_0803c1a4\n\
+    mov        r0,#0xf\n\
+    mov        r1,#0xf\n\
+    mov        r2,#0xf\n\
+    bl         fun_0803c1ec\n\
+    ldr        r1,DAT_0801f610\n\
+    ldr        r0,DAT_0801f614\n\
+    ldr        r0,[r0,#0x0]\n\
+    lsl        r0,r0,#0x2\n\
+    ldr        r2,DAT_0801f618\n\
+    add        r1,r1,r2\n\
+    add        r0,r0,r1\n\
+    ldr        r0,[r0,#0x0]\n\
+    ldr        r2,DAT_0801f61c\n\
+    mov        r1,#0xa\n\
+    bl         fun_0803c010\n\
+    ldr        r4,DAT_0801f620\n\
+    ldrh       r0,[r4,#0x0]\n\
+    cmp        r0,#0x0\n\
+    beq        LAB_0801f608\n\
+    ldr        r0,DAT_0801f624\n\
+    ldr        r0,[r0,#0x0]\n\
+    bl         fun_08001704\n\
+    mov        r0,#0x0\n\
+    strh       r0,[r4,#0x0]\n\
+LAB_0801f608:\n\
+    pop        {r4}\n\
+    pop        {r0}\n\
+    bx         r0\n\
+.space 2\n\
+DAT_0801f610:\n\
+    .word 0x08669620\n\
+DAT_0801f614:\n\
+    .word 0x020025B4\n\
+DAT_0801f618:\n\
+    .word 0x0000C124\n\
+DAT_0801f61c:\n\
+    .word 0x0865FD94\n\
+DAT_0801f620:\n\
+    .word 0x0200EE28\n\
+DAT_0801f624:\n\
+    .word 0x0200ED50\n\
+    ");
+}
+
+__attribute__((naked)) void fun_0801f628()
+{
+    asm("\n\
+    push       {r4,lr}\n\
+    sub        sp,#0x8\n\
+    bl         fun_0803c1a4\n\
+    ldr        r1,DAT_0801f66c\n\
+    ldr        r0,DAT_0801f670\n\
+    ldr        r0,[r0,#0x0]\n\
+    lsl        r0,r0,#0x2\n\
+    ldr        r2,DAT_0801f674\n\
+    add        r1,r1,r2\n\
+    add        r0,r0,r1\n\
+    ldr        r0,[r0,#0x0]\n\
+    ldr        r4,DAT_0801f678\n\
+    mov        r1,#0x19\n\
+    add        r2,r4,#0x0\n\
+    bl         fun_0803c010\n\
+    ldr        r1,DAT_0801f67c\n\
+    ldr        r0,DAT_0801f680\n\
+    mov        r3,#0x0\n\
+    ldrsh      r2,[r0,r3]\n\
+    mov        r0,sp\n\
+    bl         sprintf\n\
+    mov        r0,sp\n\
+    mov        r1,#0x25\n\
+    add        r2,r4,#0x0\n\
+    bl         fun_0803c010\n\
+    add        sp,#0x8\n\
+    pop        {r4}\n\
+    pop        {r0}\n\
+    bx         r0\n\
+.space 2\n\
+DAT_0801f66c:\n\
+    .word 0x08669620\n\
+DAT_0801f670:\n\
+    .word 0x020025B4\n\
+DAT_0801f674:\n\
+    .word 0x0000C154\n\
+DAT_0801f678:\n\
+    .word 0x0865FD94\n\
+DAT_0801f67c:\n\
+    .word 0x084C6EA4\n\
+DAT_0801f680:\n\
+    .word 0x0200ED48\n\
+    ");
+}

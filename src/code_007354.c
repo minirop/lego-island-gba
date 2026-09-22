@@ -1366,3 +1366,86 @@ LAB_08007d4a:\n\
     bx          r0\n\
     ");
 }
+
+void fun_0800457c();
+int fun_08007d50()
+{
+    fun_0800457c();
+    return 0;
+}
+
+__attribute__((naked)) void fun_08007d5c()
+{
+    asm("\n\
+    push       {lr}\n\
+    lsl        r0,r0,#0x10\n\
+    lsr        r1,r0,#0x10\n\
+    ldr        r0,DAT_08007d74\n\
+    cmp        r1,r0\n\
+    beq        LAB_08007d7e\n\
+    cmp        r1,r0\n\
+    bgt        LAB_08007d78\n\
+    sub        r0,#0xf\n\
+    cmp        r1,r0\n\
+    beq        LAB_08007d7e\n\
+    b          LAB_08007d90\n\
+DAT_08007d74:\n\
+    .word 0x000007E9\n\
+LAB_08007d78:\n\
+    ldr        r0,DAT_08007d8c\n\
+    cmp        r1,r0\n\
+    bne        LAB_08007d90\n\
+LAB_08007d7e:\n\
+    add        r0,r1,#0x0\n\
+    bl         fun_080020bc\n\
+    lsl        r0,r0,#0x10\n\
+    lsr        r0,r0,#0x10\n\
+    b          LAB_08007d92\n\
+.space 2\n\
+DAT_08007d8c:\n\
+    .word 0x000007EB\n\
+LAB_08007d90:\n\
+    mov        r0,#0x1\n\
+LAB_08007d92:\n\
+    pop        {r1}\n\
+    bx         r1\n\
+    ");
+}
+
+__attribute__((naked)) void fun_08007d98()
+{
+    asm("\n\
+    push       {r4,r5,r6,lr}\n\
+    mov        r4,#0x80\n\
+    lsl        r4,r4,#0x13\n\
+    ldr        r0,DAT_08007dd0\n\
+    add        r6,r0,#0x0\n\
+    strh       r6,[r4,#0x0]\n\
+    ldr        r5,PTR_DAT_08007dd4\n\
+    ldr        r1,PTR_DAT_08007dd8\n\
+    add        r0,r5,#0x0\n\
+    bl         fun_0803d070\n\
+    bl         fun_08002bcc\n\
+    ldr        r1,DAT_08007ddc\n\
+    add        r0,r1,#0x0\n\
+    strh       r0,[r4,#0x0]\n\
+    mov        r1,#0xc0\n\
+    lsl        r1,r1,#0x13\n\
+    add        r0,r5,#0x0\n\
+    bl         fun_0803d070\n\
+    bl         fun_08002bcc\n\
+    strh       r6,[r4,#0x0]\n\
+    pop        {r4,r5,r6}\n\
+    pop        {r0}\n\
+    bx         r0\n\
+.space 2\n\
+DAT_08007dd0:\n\
+    .word 0x00001F44\n\
+PTR_DAT_08007dd4:\n\
+    .word DAT_080aaa2c\n\
+PTR_DAT_08007dd8:\n\
+    .word DAT_0600a000\n\
+DAT_08007ddc:\n\
+    .word 0x00001F54\n\
+    ");
+}
