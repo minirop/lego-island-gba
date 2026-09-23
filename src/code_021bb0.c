@@ -3886,3 +3886,87 @@ int fun_08023870()
 {
     return 1;
 }
+__attribute__((naked)) void fun_08023874()
+{
+    asm("\n\
+    push       {lr}\n\
+    mov        r0,#0x1e\n\
+    bl         fun_080016f0\n\
+    ldr        r1,DAT_0802389c\n\
+    mov        r0,#0x1\n\
+    strb       r0,[r1,#0x0]\n\
+    ldr        r0,DAT_080238a0\n\
+    ldrh       r0,[r0,#0x0]\n\
+    cmp        r0,#0x0\n\
+    bne        LAB_08023892\n\
+    ldr        r0,DAT_080238a4\n\
+    ldr        r0,[r0,#0x0]\n\
+    bl         fun_08001704\n\
+LAB_08023892:\n\
+    mov        r0,#0x29\n\
+    bl         fun_08001088\n\
+    pop        {r0}\n\
+    bx         r0\n\
+DAT_0802389c:\n\
+    .word 0x0200254C\n\
+DAT_080238a0:\n\
+    .word 0x0200F2F8\n\
+DAT_080238a4:\n\
+    .word 0x0200ED50\n\
+    ");
+}
+__attribute__((naked)) void fun_080238a8()
+{
+    asm("\n\
+    push       {r4,lr}\n\
+    ldr        r1,PTR_DAT_080238f4\n\
+    mov        r2,#0x80\n\
+    lsl        r2,r2,#0x5\n\
+    add        r0,r2,#0x0\n\
+    strh       r0,[r1,#0x0]\n\
+    ldr        r3,PTR_DAT_080238f8\n\
+    ldr        r2,PTR_DAT_080238fc\n\
+    ldrh       r1,[r2,#0x0]\n\
+    lsl        r0,r1,#0x5\n\
+    add        r0,r0,r3\n\
+    mov        r4,#0x0\n\
+    mov        r1,#0x96\n\
+    strh       r1,[r0,#0x4]\n\
+    ldrh       r2,[r2,#0x0]\n\
+    lsl        r0,r2,#0x5\n\
+    add        r0,r0,r3\n\
+    mov        r1,#0x24\n\
+    strh       r1,[r0,#0x6]\n\
+    ldr        r0,PTR_DAT_08023900\n\
+    mov        r1,#0x90\n\
+    lsl        r1,r1,#0x5\n\
+    str        r1,[r0,#0x0]\n\
+    ldr        r2,PTR_DAT_08023904\n\
+    mov        r0,#0x96\n\
+    lsl        r0,r0,#0x7\n\
+    str        r0,[r2,#0x0]\n\
+    ldr        r3,PTR_DAT_08023908\n\
+    ldr        r2,PTR_DAT_0802390c\n\
+    str        r4,[r2,#0x0]\n\
+    str        r4,[r3,#0x0]\n\
+    bl         fun_0803a140\n\
+    bl         fun_0803a9ec\n\
+    pop        {r4}\n\
+    pop        {r0}\n\
+    bx         r0\n\
+PTR_DAT_080238f4:\n\
+    .word      DAT_0200f2b0\n\
+PTR_DAT_080238f8:\n\
+    .word      DAT_0200f320\n\
+PTR_DAT_080238fc:\n\
+    .word      DAT_0200055c\n\
+PTR_DAT_08023900:\n\
+    .word      DAT_0200f2b8\n\
+PTR_DAT_08023904:\n\
+    .word      DAT_0200f290\n\
+PTR_DAT_08023908:\n\
+    .word      DAT_0200f2fc\n\
+PTR_DAT_0802390c:\n\
+    .word      DAT_0200f298\n\
+    ");
+}

@@ -96,11 +96,9 @@ rom:
     - name: code_006180
       format: c
       address: 0x006180
-      size: 0x380
     - name: code_006900
       format: c
       address: 0x006900
-      size: 0x9b8
     - name: code_007354
       format: c
       address: 0x007354
@@ -119,7 +117,6 @@ rom:
     - name: code_00cfcc
       format: c
       address: 0x00cfcc
-      size: 0x1378
     - name: code_00e6e0
       format: c
       address: 0x00e6e0
@@ -132,7 +129,6 @@ rom:
     - name: code_00fb04
       format: c
       address: 0x00fb04
-      size: 0x8e0
     - name: code_010528
       format: c
       address: 0x010528
@@ -157,80 +153,66 @@ rom:
     - name: code_018370
       format: c
       address: 0x018370
-      size: 0x113c
     - name: code_01968c
       format: c
       address: 0x01968c
-      size: 0x234
     - name: code_0199bc
       format: c
       address: 0x0199bc
     - name: code_019b38
       format: c
       address: 0x019b38
-      size: 0xc9c
     - name: code_01b5d8
       format: c
       address: 0x01b5d8
     - name: code_01f684
       format: c
       address: 0x01f684
-      size: 0x24c8
     - name: code_021bb0
       format: c
       address: 0x021bb0
-      size: 0x1cc4
     - name: code_023910
       format: c
       address: 0x023910
-      size: 0x2c58
     - name: code_02699c
       format: c
       address: 0x02699c
-      size: 0x7b8
     - name: code_027414
       format: c
       address: 0x027414
-      size: 0xe8
     - name: code_0279a0
       format: c
       address: 0x0279a0
-      size: 0x7098
     - name: code_02f850
       format: c
       address: 0x02f850
-      size: 0x34d0
     - name: code_032d70
       format: c
       address: 0x032d70
-      size: 0x42a4
     - name: code_037490
       format: c
       address: 0x037490
-      size: 0x1090
     - name: code_038520
       format: c
       address: 0x038520
-      size: 0x30a8
     - name: code_03b5c8
       format: c
       address: 0x03b5c8
-      size: 0x834
+    - name: code_03bdfc
+      format: asm
+      address: 0x03bdfc
     - name: code_03c010
       format: c
       address: 0x03c010
-      size: 0x1bcc
     - name: code_03dbdc
       format: c
       address: 0x03dbdc
-      size: 0x2c90
     - name: code_04086c
       format: c
       address: 0x04086c
     - name: code_042a3c
       format: asm
       address: 0x042a3c
-      size: 0xa8c
     - name: _call_via_rX
       library: libgcc.a
       address: 0x0434c8

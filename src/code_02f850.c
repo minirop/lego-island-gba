@@ -7238,3 +7238,47 @@ DAT_08032d1c:\n\
      .word 0x02010A14\n\
     ");
 }
+__attribute__((naked)) void fun_08032d20()
+{
+    asm("\n\
+    push       {r4,r5,lr}\n\
+    mov        r4,#0x0\n\
+LAB_08032d24:\n\
+    lsl        r0,r4,#0x5\n\
+    ldr        r5,DAT_08032d64\n\
+    add        r0,r0,r5\n\
+    mov        r1,#0x2c\n\
+    mul        r1,r4\n\
+    ldr        r2,DAT_08032d68\n\
+    add        r1,r1,r2\n\
+    bl         fun_080004ac\n\
+    add        r0,r4,#0x1\n\
+    lsl        r0,r0,#0x18\n\
+    lsr        r4,r0,#0x18\n\
+    cmp        r4,#0x0\n\
+    beq        LAB_08032d24\n\
+    add        r1,r5,#0x0\n\
+    ldr        r0,[r1,#0xc]\n\
+    cmp        r0,#0x0\n\
+    beq        LAB_08032d50\n\
+    lsl        r0,r4,#0x5\n\
+    add        r0,r0,r1\n\
+    mov        r1,#0x1\n\
+    strh       r1,[r0,#0x10]\n\
+LAB_08032d50:\n\
+    ldr        r0,DAT_08032d6c\n\
+    bl         fun_080045f0\n\
+    add        r0,r5,#0x0\n\
+    mov        r1,#0x1\n\
+    bl         fun_0803aa14\n\
+    pop        {r4,r5}\n\
+    pop        {r0}\n\
+    bx         r0\n\
+DAT_08032d64:\n\
+    .word 0x020108F0\n\
+DAT_08032d68:\n\
+    .word 0x087C7360\n\
+DAT_08032d6c:\n\
+    .word 0x0860E5F8\n\
+    ");
+}

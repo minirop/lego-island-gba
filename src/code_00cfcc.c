@@ -2585,3 +2585,472 @@ DAT_0800e340:\n\
 \n\
     ");
 }
+__attribute__((naked)) void fun_0800e344()
+{
+    asm("\n\
+     push       {lr}\n\
+     lsl        r1,r1,#0x10\n\
+     lsr        r0,r1,#0x10\n\
+     cmp        r0,#0x7\n\
+     bhi        switchD_0800e356_caseD_3\n\
+     lsl        r0,r0,#0x2\n\
+     ldr        r1,PTR_switchdataD_0800e35c_0800e358\n\
+     add        r0,r0,r1\n\
+     ldr        r0,[r0,#0x0]\n\
+     mov        pc,r0\n\
+PTR_switchdataD_0800e35c_0800e358:\n\
+     .4byte       switchD_0800e356_switchdataD_0800e35c\n\
+switchD_0800e356_switchdataD_0800e35c:\n\
+     .4byte       switchD_0800e356_caseD_0\n\
+     .4byte       switchD_0800e356_caseD_0\n\
+     .4byte       switchD_0800e356_caseD_2\n\
+     .4byte       switchD_0800e356_caseD_3\n\
+     .4byte       switchD_0800e356_caseD_3\n\
+     .4byte       switchD_0800e356_caseD_3\n\
+     .4byte       switchD_0800e356_caseD_6\n\
+     .4byte       switchD_0800e356_caseD_0\n\
+switchD_0800e356_caseD_0:\n\
+     ldr        r0,PTR_USHORT_ARRAY_0800e388\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,PTR_DAT_0800e38c\n\
+     bl         fun_080397e0\n\
+     b          switchD_0800e356_caseD_3\n\
+PTR_USHORT_ARRAY_0800e388:\n\
+     .4byte       0x020006a0\n\
+PTR_DAT_0800e38c:\n\
+     .4byte       0x0877ce7e\n\
+switchD_0800e356_caseD_6:\n\
+     ldr        r0,DAT_0800e39c\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e3a0\n\
+     bl         fun_080397e0\n\
+     b          switchD_0800e356_caseD_3\n\
+DAT_0800e39c:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e3a0:\n\
+     .4byte 0x0877CEA2\n\
+switchD_0800e356_caseD_2:\n\
+     ldr        r0,DAT_0800e3b4\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e3b8\n\
+     bl         fun_080397e0\n\
+switchD_0800e356_caseD_3:\n\
+     pop        {r0}\n\
+     bx         r0\n\
+.space 1\n\
+.space 1\n\
+DAT_0800e3b4:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e3b8:\n\
+     .4byte 0x0877CE88\n\
+    ");
+}
+
+__attribute__((naked)) void fun_0800e3bc()
+{
+    asm("\n\
+     push       {lr}\n\
+     lsl        r1,r1,#0x10\n\
+     lsr        r0,r1,#0x10\n\
+     cmp        r0,#0x7\n\
+     bhi        switchD_0800e3ce_caseD_0\n\
+     lsl        r0,r0,#0x2\n\
+     ldr        r1,PTR_switchdataD_0800e3d4_0800e3d0\n\
+     add        r0,r0,r1\n\
+     ldr        r0,[r0,#0x0]\n\
+     mov        pc,r0\n\
+PTR_switchdataD_0800e3d4_0800e3d0:\n\
+     .4byte       switchD_0800e3ce_switchdataD_0800e3d4\n\
+switchD_0800e3ce_switchdataD_0800e3d4:\n\
+     .4byte       switchD_0800e3ce_caseD_0\n\
+     .4byte       switchD_0800e3ce_caseD_0\n\
+     .4byte       switchD_0800e3ce_caseD_2\n\
+     .4byte       switchD_0800e3ce_caseD_3\n\
+     .4byte       switchD_0800e3ce_caseD_3\n\
+     .4byte       switchD_0800e3ce_caseD_3\n\
+     .4byte       switchD_0800e3ce_caseD_6\n\
+     .4byte       switchD_0800e3ce_caseD_0\n\
+switchD_0800e3ce_caseD_3:\n\
+     ldr        r0,DAT_0800e400\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e404\n\
+     bl         fun_080397e0\n\
+     b          switchD_0800e3ce_caseD_0\n\
+DAT_0800e400:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e404:\n\
+     .4byte 0x0877CE76\n\
+switchD_0800e3ce_caseD_6:\n\
+     ldr        r0,DAT_0800e414\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e418\n\
+     bl         fun_080397e0\n\
+     b          switchD_0800e3ce_caseD_0\n\
+DAT_0800e414:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e418:\n\
+     .4byte 0x0877CEB2\n\
+switchD_0800e3ce_caseD_2:\n\
+     ldr        r0,DAT_0800e42c\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e430\n\
+     bl         fun_080397e0\n\
+switchD_0800e3ce_caseD_0:\n\
+     pop        {r0}\n\
+     bx         r0\n\
+.space 1\n\
+.space 1\n\
+DAT_0800e42c:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e430:\n\
+     .4byte 0x0877CE94\n\
+    ");
+}
+
+__attribute__((naked)) void fun_0800e434()
+{
+    asm("\n\
+     push       {lr}\n\
+     lsl        r1,r1,#0x10\n\
+     lsr        r0,r1,#0x10\n\
+     cmp        r0,#0x7\n\
+     bhi        switchD_0800e446_caseD_6\n\
+     lsl        r0,r0,#0x2\n\
+     ldr        r1,PTR_switchdataD_0800e44c_0800e448\n\
+     add        r0,r0,r1\n\
+     ldr        r0,[r0,#0x0]\n\
+     mov        pc,r0\n\
+PTR_switchdataD_0800e44c_0800e448:\n\
+     .4byte       switchD_0800e446_switchdataD_0800e44c\n\
+switchD_0800e446_switchdataD_0800e44c:\n\
+     .4byte       switchD_0800e446_caseD_0\n\
+     .4byte       switchD_0800e446_caseD_0\n\
+     .4byte       switchD_0800e446_caseD_2\n\
+     .4byte       switchD_0800e446_caseD_3\n\
+     .4byte       switchD_0800e446_caseD_3\n\
+     .4byte       switchD_0800e446_caseD_3\n\
+     .4byte       switchD_0800e446_caseD_6\n\
+     .4byte       switchD_0800e446_caseD_0\n\
+switchD_0800e446_caseD_3:\n\
+     ldr        r0,DAT_0800e478\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e47c\n\
+     bl         fun_080397e0\n\
+     b          switchD_0800e446_caseD_6\n\
+DAT_0800e478:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e47c:\n\
+     .4byte 0x0877CECE\n\
+switchD_0800e446_caseD_0:\n\
+     ldr        r0,DAT_0800e48c\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e490\n\
+     bl         fun_080397e0\n\
+     b          switchD_0800e446_caseD_6\n\
+DAT_0800e48c:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e490:\n\
+     .4byte 0x0877CEEE\n\
+switchD_0800e446_caseD_2:\n\
+     ldr        r0,DAT_0800e4a4\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e4a8\n\
+     bl         fun_080397e0\n\
+switchD_0800e446_caseD_6:\n\
+     pop        {r0}\n\
+     bx         r0\n\
+.space 1\n\
+.space 1\n\
+DAT_0800e4a4:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e4a8:\n\
+     .4byte 0x0877CE64\n\
+    ");
+}
+
+__attribute__((naked)) void fun_0800e4ac()
+{
+    asm("\n\
+     push       {lr}\n\
+     lsl        r1,r1,#0x10\n\
+     lsr        r0,r1,#0x10\n\
+     cmp        r0,#0x7\n\
+     bhi        switchD_0800e4be_caseD_2\n\
+     lsl        r0,r0,#0x2\n\
+     ldr        r1,PTR_switchdataD_0800e4c4_0800e4c0\n\
+     add        r0,r0,r1\n\
+     ldr        r0,[r0,#0x0]\n\
+     mov        pc,r0\n\
+PTR_switchdataD_0800e4c4_0800e4c0:\n\
+     .4byte       switchD_0800e4be_switchdataD_0800e4c4\n\
+switchD_0800e4be_switchdataD_0800e4c4:\n\
+     .4byte       switchD_0800e4be_caseD_0\n\
+     .4byte       switchD_0800e4be_caseD_0\n\
+     .4byte       switchD_0800e4be_caseD_2\n\
+     .4byte       switchD_0800e4be_caseD_3\n\
+     .4byte       switchD_0800e4be_caseD_3\n\
+     .4byte       switchD_0800e4be_caseD_3\n\
+     .4byte       switchD_0800e4be_caseD_6\n\
+     .4byte       switchD_0800e4be_caseD_0\n\
+switchD_0800e4be_caseD_3:\n\
+     ldr        r0,DAT_0800e4f0\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e4f4\n\
+     bl         fun_080397e0\n\
+     b          switchD_0800e4be_caseD_2\n\
+DAT_0800e4f0:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e4f4:\n\
+     .4byte 0x0877CEC2\n\
+switchD_0800e4be_caseD_0:\n\
+     ldr        r0,DAT_0800e504\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e508\n\
+     bl         fun_080397e0\n\
+     b          switchD_0800e4be_caseD_2\n\
+DAT_0800e504:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e508:\n\
+     .4byte 0x0877CEDE\n\
+switchD_0800e4be_caseD_6:\n\
+     ldr        r0,DAT_0800e51c\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e520\n\
+     bl         fun_080397e0\n\
+switchD_0800e4be_caseD_2:\n\
+     pop        {r0}\n\
+     bx         r0\n\
+.space 1\n\
+.space 1\n\
+DAT_0800e51c:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e520:\n\
+     .4byte 0x0877CE6C\n\
+    ");
+}
+
+__attribute__((naked)) void fun_0800e524()
+{
+    asm("\n\
+     push       {lr}\n\
+     lsl        r1,r1,#0x10\n\
+     lsr        r0,r1,#0x10\n\
+     cmp        r0,#0x7\n\
+     bhi        switchD_0800e536_default\n\
+     lsl        r0,r0,#0x2\n\
+     ldr        r1,PTR_switchdataD_0800e53c_0800e538\n\
+     add        r0,r0,r1\n\
+     ldr        r0,[r0,#0x0]\n\
+     mov        pc,r0\n\
+PTR_switchdataD_0800e53c_0800e538:\n\
+     .4byte       switchD_0800e536_switchdataD_0800e53c\n\
+switchD_0800e536_switchdataD_0800e53c:\n\
+     .4byte       switchD_0800e536_caseD_0\n\
+     .4byte       switchD_0800e536_caseD_0\n\
+     .4byte       switchD_0800e536_caseD_2\n\
+     .4byte       switchD_0800e536_caseD_3\n\
+     .4byte       switchD_0800e536_caseD_3\n\
+     .4byte       switchD_0800e536_caseD_3\n\
+     .4byte       switchD_0800e536_caseD_6\n\
+     .4byte       switchD_0800e536_caseD_0\n\
+switchD_0800e536_caseD_3:\n\
+     ldr        r0,DAT_0800e568\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e56c\n\
+     bl         fun_080397e0\n\
+     b          switchD_0800e536_default\n\
+DAT_0800e568:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e56c:\n\
+     .4byte 0x0877CE50\n\
+switchD_0800e536_caseD_0:\n\
+     ldr        r0,DAT_0800e57c\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e580\n\
+     bl         fun_080397e0\n\
+     b          switchD_0800e536_default\n\
+DAT_0800e57c:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e580:\n\
+     .4byte 0x0877CE5A\n\
+switchD_0800e536_caseD_6:\n\
+     ldr        r0,DAT_0800e590\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e594\n\
+     bl         fun_080397e0\n\
+     b          switchD_0800e536_default\n\
+DAT_0800e590:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e594:\n\
+     .4byte 0x0877CE46\n\
+switchD_0800e536_caseD_2:\n\
+     ldr        r0,DAT_0800e5a8\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e5ac\n\
+     bl         fun_080397e0\n\
+switchD_0800e536_default:\n\
+     pop        {r0}\n\
+     bx         r0\n\
+.space 1\n\
+.space 1\n\
+DAT_0800e5a8:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e5ac:\n\
+     .4byte 0x0877CE3C\n\
+    ");
+}
+
+__attribute__((naked)) void fun_0800e5b0()
+{
+    asm("\n\
+     push       {lr}\n\
+     add        r2,r1,#0x0\n\
+     ldr        r0,DAT_0800e5d0\n\
+     ldr        r1,[r0,#0x0]\n\
+     ldr        r0,DAT_0800e5d4\n\
+     ldrh       r1,[r1,#0x1e]\n\
+     cmp        r1,r0\n\
+     bne        switchD_0800e5cc_default\n\
+     cmp        r2,#0x7\n\
+     bhi        switchD_0800e5cc_default\n\
+     lsl        r0,r2,#0x2\n\
+     ldr        r1,PTR_switchdataD_0800e5dc_0800e5d8\n\
+     add        r0,r0,r1\n\
+     ldr        r0,[r0,#0x0]\n\
+     mov        pc,r0\n\
+.space 1\n\
+.space 1\n\
+DAT_0800e5d0:\n\
+     .4byte 0x0200D428\n\
+DAT_0800e5d4:\n\
+     .4byte 0x0000FFFF\n\
+PTR_switchdataD_0800e5dc_0800e5d8:\n\
+     .4byte       switchD_0800e5cc_switchdataD_0800e5dc\n\
+switchD_0800e5cc_switchdataD_0800e5dc:\n\
+     .4byte       switchD_0800e5cc_caseD_0\n\
+     .4byte       switchD_0800e5cc_caseD_0\n\
+     .4byte       switchD_0800e5cc_caseD_2\n\
+     .4byte       switchD_0800e5cc_caseD_3\n\
+     .4byte       switchD_0800e5cc_caseD_3\n\
+     .4byte       switchD_0800e5cc_caseD_3\n\
+     .4byte       switchD_0800e5cc_caseD_6\n\
+     .4byte       switchD_0800e5cc_caseD_0\n\
+switchD_0800e5cc_caseD_3:\n\
+     ldr        r0,DAT_0800e608\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e60c\n\
+     bl         fun_080397e0\n\
+     b          switchD_0800e5cc_default\n\
+DAT_0800e608:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e60c:\n\
+     .4byte 0x0877CE30\n\
+switchD_0800e5cc_caseD_0:\n\
+     ldr        r0,DAT_0800e61c\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e620\n\
+     bl         fun_080397e0\n\
+     b          switchD_0800e5cc_default\n\
+DAT_0800e61c:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e620:\n\
+     .4byte 0x0877CE36\n\
+switchD_0800e5cc_caseD_6:\n\
+     ldr        r0,DAT_0800e630\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e634\n\
+     bl         fun_080397e0\n\
+     b          switchD_0800e5cc_default\n\
+DAT_0800e630:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e634:\n\
+     .4byte 0x0877CE2A\n\
+switchD_0800e5cc_caseD_2:\n\
+     ldr        r0,DAT_0800e648\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e64c\n\
+     bl         fun_080397e0\n\
+switchD_0800e5cc_default:\n\
+     pop        {r0}\n\
+     bx         r0\n\
+.space 1\n\
+.space 1\n\
+DAT_0800e648:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e64c:\n\
+     .4byte 0x0877CE24\n\
+    ");
+}
+__attribute__((naked)) void fun_0800e650()
+{
+    asm("\n\
+     push       {lr}\n\
+     ldr        r0,DAT_0800e664\n\
+     ldrb       r0,[r0,#0x0]\n\
+     cmp        r0,#0x7\n\
+     bhi        switchD_0800e662_default\n\
+     lsl        r0,r0,#0x2\n\
+     ldr        r1,PTR_switchdataD_0800e66c_0800e668\n\
+     add        r0,r0,r1\n\
+     ldr        r0,[r0,#0x0]\n\
+     mov        pc,r0\n\
+DAT_0800e664:\n\
+     .4byte 0x020117E0\n\
+PTR_switchdataD_0800e66c_0800e668:\n\
+     .4byte       switchD_0800e662_switchdataD_0800e66c\n\
+switchD_0800e662_switchdataD_0800e66c:\n\
+     .4byte       switchD_0800e662_caseD_0\n\
+     .4byte       switchD_0800e662_caseD_0\n\
+     .4byte       switchD_0800e662_caseD_2\n\
+     .4byte       switchD_0800e662_caseD_3\n\
+     .4byte       switchD_0800e662_caseD_3\n\
+     .4byte       switchD_0800e662_caseD_3\n\
+     .4byte       switchD_0800e662_caseD_6\n\
+     .4byte       switchD_0800e662_caseD_0\n\
+switchD_0800e662_caseD_3:\n\
+     ldr        r0,DAT_0800e698\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e69c\n\
+     bl         fun_080397e0\n\
+     b          switchD_0800e662_default\n\
+DAT_0800e698:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e69c:\n\
+     .4byte 0x0877CE30\n\
+switchD_0800e662_caseD_0:\n\
+     ldr        r0,DAT_0800e6ac\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e6b0\n\
+     bl         fun_080397e0\n\
+     b          switchD_0800e662_default\n\
+DAT_0800e6ac:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e6b0:\n\
+     .4byte 0x0877CE36\n\
+switchD_0800e662_caseD_6:\n\
+     ldr        r0,DAT_0800e6c0\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e6c4\n\
+     bl         fun_080397e0\n\
+     b          switchD_0800e662_default\n\
+DAT_0800e6c0:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e6c4:\n\
+     .4byte 0x0877CE2A\n\
+switchD_0800e662_caseD_2:\n\
+     ldr        r0,DAT_0800e6d8\n\
+     ldr        r0,[r0,#0xc]\n\
+     ldr        r1,DAT_0800e6dc\n\
+     bl         fun_080397e0\n\
+switchD_0800e662_default:\n\
+     pop        {r0}\n\
+     bx         r0\n\
+.space 1\n\
+.space 1\n\
+DAT_0800e6d8:\n\
+     .4byte 0x020006A0\n\
+DAT_0800e6dc:\n\
+     .4byte 0x0877CE24\n\
+    ");
+}
+

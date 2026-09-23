@@ -9041,3 +9041,608 @@ __attribute__((naked)) void fun_08037008()
 .space 2\n\
     ");
 }
+__attribute__((naked)) void fun_08037014()
+{
+    asm("\n\
+     push       {lr}\n\
+     mov        r0,#0x0\n\
+     mov        r1,#0x0\n\
+     mov        r2,#0x0\n\
+     mov        r3,#0x0\n\
+     bl         fun_080372b4\n\
+     pop        {r0}\n\
+     bx         r0\n\
+.space 1\n\
+.space 1\n\
+    ");
+}
+__attribute__((naked)) void fun_08037028()
+{
+    asm("\n\
+     push       {r4,r5,r6,r7,lr}\n\
+     mov        r7,r10\n\
+     mov        r6,r9\n\
+     mov        r5,r8\n\
+     push       {r5,r6,r7}\n\
+     sub        sp,#0x34\n\
+     str        r0,[sp,#0x8]\n\
+     lsl        r4,r1,#0x10\n\
+     lsl        r5,r2,#0x10\n\
+     ldr        r0,[r0,#0xc]\n\
+     cmp        r0,#0x0\n\
+     bne        LAB_08037042\n\
+     b          LAB_0803729e\n\
+LAB_08037042:\n\
+     mov        r3,sp\n\
+     mov        r2,sp\n\
+     mov        r1,sp\n\
+     mov        r0,#0x0\n\
+     strh       r0,[r1,#0x4]\n\
+     strh       r0,[r2,#0x2]\n\
+     strh       r0,[r3,#0x0]\n\
+     ldr        r1,DAT_08037084\n\
+     ldrh       r2,[r1,#0x4]\n\
+     lsl        r0,r2,#0x10\n\
+     asr        r0,r0,#0x13\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r0,r0,#0x10\n\
+     str        r0,[sp,#0x1c]\n\
+     ldrh       r1,[r1,#0x6]\n\
+     lsl        r0,r1,#0x10\n\
+     asr        r0,r0,#0x13\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r0,r0,#0x10\n\
+     str        r0,[sp,#0x20]\n\
+     lsr        r6,r4,#0x13\n\
+     lsr        r5,r5,#0x13\n\
+     mov        r9,r5\n\
+     ldr        r1,[sp,#0x8]\n\
+     ldrh       r0,[r1,#0x10]\n\
+     cmp        r0,#0x13\n\
+     bhi        switchD_08037080_default\n\
+     lsl        r0,r0,#0x2\n\
+     ldr        r1,PTR_switchdataD_0803708c_08037088\n\
+     add        r0,r0,r1\n\
+     ldr        r0,[r0,#0x0]\n\
+     mov        pc,r0\n\
+.space 1\n\
+.space 1\n\
+DAT_08037084:\n\
+     .4byte 0x0200DD90\n\
+PTR_switchdataD_0803708c_08037088:\n\
+     .4byte       switchD_08037080_switchdataD_0803708c\n\
+switchD_08037080_switchdataD_0803708c:\n\
+     .4byte       switchD_08037080_caseD_0\n\
+     .4byte       switchD_08037080_caseD_0\n\
+     .4byte       switchD_08037080_caseD_0\n\
+     .4byte       switchD_08037080_caseD_0\n\
+     .4byte       switchD_08037080_caseD_0\n\
+     .4byte       switchD_08037080_caseD_5\n\
+     .4byte       switchD_08037080_caseD_5\n\
+     .4byte       switchD_08037080_caseD_5\n\
+     .4byte       switchD_08037080_caseD_5\n\
+     .4byte       switchD_08037080_caseD_5\n\
+     .4byte       switchD_08037080_caseD_a\n\
+     .4byte       switchD_08037080_caseD_a\n\
+     .4byte       switchD_08037080_caseD_a\n\
+     .4byte       switchD_08037080_caseD_a\n\
+     .4byte       switchD_08037080_caseD_a\n\
+     .4byte       switchD_08037080_caseD_f\n\
+     .4byte       switchD_08037080_caseD_f\n\
+     .4byte       switchD_08037080_caseD_f\n\
+     .4byte       switchD_08037080_caseD_f\n\
+     .4byte       switchD_08037080_caseD_f\n\
+switchD_08037080_caseD_0:\n\
+     mov        r2,#0x1\n\
+     str        r2,[sp,#0x14]\n\
+     mov        r0,#0x1\n\
+     str        r0,[sp,#0x18]\n\
+     sub        r0,r6,#0x1\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r6,r0,#0x10\n\
+     mov        r1,#0x3\n\
+     str        r1,[sp,#0xc]\n\
+     mov        r2,#0x9\n\
+     b          LAB_08037144\n\
+switchD_08037080_caseD_a:\n\
+     mov        r0,#0x1\n\
+     str        r0,[sp,#0x14]\n\
+     ldr        r1,DAT_0803710c\n\
+     str        r1,[sp,#0x18]\n\
+     sub        r0,r6,#0x1\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r6,r0,#0x10\n\
+     mov        r2,#0x3\n\
+     str        r2,[sp,#0xc]\n\
+     mov        r0,#0x9\n\
+     str        r0,[sp,#0x10]\n\
+     b          switchD_08037080_default\n\
+.space 1\n\
+.space 1\n\
+DAT_0803710c:\n\
+     .4byte 0x0000FFFF\n\
+switchD_08037080_caseD_f:\n\
+     mov        r1,#0x1\n\
+     str        r1,[sp,#0x14]\n\
+     mov        r2,#0x1\n\
+     str        r2,[sp,#0x18]\n\
+     mov        r0,r9\n\
+     sub        r0,#0x1\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r0,r0,#0x10\n\
+     mov        r9,r0\n\
+     mov        r0,#0x9\n\
+     str        r0,[sp,#0xc]\n\
+     mov        r1,#0x3\n\
+     str        r1,[sp,#0x10]\n\
+     b          switchD_08037080_default\n\
+switchD_08037080_caseD_5:\n\
+     ldr        r2,DAT_08037170\n\
+     str        r2,[sp,#0x14]\n\
+     mov        r0,#0x1\n\
+     str        r0,[sp,#0x18]\n\
+     mov        r0,r9\n\
+     sub        r0,#0x1\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r0,r0,#0x10\n\
+     mov        r9,r0\n\
+     mov        r1,#0x9\n\
+     str        r1,[sp,#0xc]\n\
+     mov        r2,#0x3\n\
+LAB_08037144:\n\
+     str        r2,[sp,#0x10]\n\
+switchD_08037080_default:\n\
+     mov        r0,#0x0\n\
+     mov        r10,r0\n\
+     ldr        r1,[sp,#0x10]\n\
+     cmp        r10,r1\n\
+     bcc        LAB_08037152\n\
+     b          LAB_0803729e\n\
+LAB_08037152:\n\
+     mov        r2,#0x0\n\
+     mov        r8,r2\n\
+     ldr        r1,[sp,#0xc]\n\
+     ldr        r2,[sp,#0x14]\n\
+     add        r0,r1,#0x0\n\
+     mul        r0,r2\n\
+     str        r0,[sp,#0x30]\n\
+     ldr        r0,[sp,#0x18]\n\
+     add        r0,r9\n\
+     str        r0,[sp,#0x28]\n\
+     mov        r1,r10\n\
+     add        r1,#0x1\n\
+     str        r1,[sp,#0x2c]\n\
+     b          LAB_08037276\n\
+.space 1\n\
+.space 1\n\
+DAT_08037170:\n\
+     .4byte 0x0000FFFF\n\
+LAB_08037174:\n\
+     ldr        r1,[sp,#0x8]\n\
+     ldrh       r0,[r1,#0x10]\n\
+     cmp        r0,#0x13\n\
+     bhi        switchD_08037184_default\n\
+     lsl        r0,r0,#0x2\n\
+     ldr        r1,PTR_switchdataD_0803718c_08037188\n\
+     add        r0,r0,r1\n\
+     ldr        r0,[r0,#0x0]\n\
+     mov        pc,r0\n\
+.space 1\n\
+.space 1\n\
+PTR_switchdataD_0803718c_08037188:\n\
+     .4byte       switchD_08037184_switchdataD_0803718c\n\
+switchD_08037184_switchdataD_0803718c:\n\
+     .4byte       switchD_08037184_caseD_0\n\
+     .4byte       switchD_08037184_caseD_0\n\
+     .4byte       switchD_08037184_caseD_0\n\
+     .4byte       switchD_08037184_caseD_0\n\
+     .4byte       switchD_08037184_caseD_0\n\
+     .4byte       switchD_08037184_caseD_5\n\
+     .4byte       switchD_08037184_caseD_5\n\
+     .4byte       switchD_08037184_caseD_5\n\
+     .4byte       switchD_08037184_caseD_5\n\
+     .4byte       switchD_08037184_caseD_5\n\
+     .4byte       switchD_08037184_caseD_0\n\
+     .4byte       switchD_08037184_caseD_0\n\
+     .4byte       switchD_08037184_caseD_0\n\
+     .4byte       switchD_08037184_caseD_0\n\
+     .4byte       switchD_08037184_caseD_0\n\
+     .4byte       switchD_08037184_caseD_5\n\
+     .4byte       switchD_08037184_caseD_5\n\
+     .4byte       switchD_08037184_caseD_5\n\
+     .4byte       switchD_08037184_caseD_5\n\
+     .4byte       switchD_08037184_caseD_5\n\
+switchD_08037184_caseD_0:\n\
+     mov        r2,r8\n\
+     str        r2,[sp,#0x24]\n\
+     b          switchD_08037184_default\n\
+switchD_08037184_caseD_5:\n\
+     mov        r0,r10\n\
+     str        r0,[sp,#0x24]\n\
+switchD_08037184_default:\n\
+     ldr        r1,[sp,#0x24]\n\
+     lsl        r0,r1,#0x1\n\
+     add        r0,sp\n\
+     ldrh       r0,[r0,#0x0]\n\
+     cmp        r0,#0x0\n\
+     bne        LAB_08037264\n\
+     ldr        r2,[sp,#0x1c]\n\
+     cmp        r6,r2\n\
+     bne        LAB_08037264\n\
+     ldr        r0,[sp,#0x20]\n\
+     cmp        r9,r0\n\
+     bne        LAB_08037264\n\
+     ldr        r7,DAT_08037238\n\
+     ldr        r4,DAT_0803723c\n\
+     ldr        r2,DAT_08037240\n\
+     ldr        r3,DAT_08037244\n\
+     ldrb       r0,[r3,#0x0]\n\
+     lsl        r1,r0,#0x2\n\
+     add        r1,r1,r2\n\
+     ldrh       r0,[r1,#0x0]\n\
+     strh       r0,[r4,#0x4]\n\
+     ldrh       r0,[r1,#0x0]\n\
+     strh       r0,[r7,#0x0]\n\
+     ldr        r5,DAT_08037248\n\
+     ldrb       r0,[r3,#0x0]\n\
+     lsl        r1,r0,#0x2\n\
+     add        r2,#0x2\n\
+     add        r1,r1,r2\n\
+     ldrh       r0,[r1,#0x0]\n\
+     strh       r0,[r4,#0x6]\n\
+     ldrh       r0,[r1,#0x0]\n\
+     strh       r0,[r5,#0x0]\n\
+     ldrb       r0,[r3,#0x0]\n\
+     cmp        r0,#0x0\n\
+     bne        LAB_08037250\n\
+     ldr        r1,DAT_0803724c\n\
+     mov        r0,#0x78\n\
+     bl         fun_0803a140\n\
+     b          LAB_08037258\n\
+.space 1\n\
+.space 1\n\
+DAT_08037238:\n\
+     .4byte 0x0200E030\n\
+DAT_0803723c:\n\
+     .4byte 0x0200DD90\n\
+DAT_08037240:\n\
+     .4byte 0x087D5E1E\n\
+DAT_08037244:\n\
+     .4byte 0x02010DC0\n\
+DAT_08037248:\n\
+     .4byte 0x0200DD70\n\
+DAT_0803724c:\n\
+     .4byte 0x0000036F\n\
+LAB_08037250:\n\
+     ldrh       r0,[r7,#0x0]\n\
+     ldrh       r1,[r5,#0x0]\n\
+     bl         fun_0803a140\n\
+LAB_08037258:\n\
+     ldr        r1,DAT_080372b0\n\
+     mov        r0,#0x0\n\
+     strb       r0,[r1,#0x0]\n\
+     mov        r0,#0x29\n\
+     bl         fun_08001088\n\
+LAB_08037264:\n\
+     ldr        r1,[sp,#0x14]\n\
+     add        r0,r6,r1\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r6,r0,#0x10\n\
+     mov        r0,r8\n\
+     add        r0,#0x1\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r0,r0,#0x10\n\
+     mov        r8,r0\n\
+LAB_08037276:\n\
+     ldr        r2,[sp,#0xc]\n\
+     cmp        r8,r2\n\
+     bcs        LAB_0803727e\n\
+     b          LAB_08037174\n\
+LAB_0803727e:\n\
+     ldr        r1,[sp,#0x30]\n\
+     sub        r0,r6,r1\n\
+     lsl        r0,r0,#0x10\n\
+     lsr        r6,r0,#0x10\n\
+     ldr        r2,[sp,#0x28]\n\
+     lsl        r0,r2,#0x10\n\
+     lsr        r0,r0,#0x10\n\
+     mov        r9,r0\n\
+     ldr        r1,[sp,#0x2c]\n\
+     lsl        r0,r1,#0x10\n\
+     lsr        r0,r0,#0x10\n\
+     mov        r10,r0\n\
+     ldr        r2,[sp,#0x10]\n\
+     cmp        r10,r2\n\
+     bcs        LAB_0803729e\n\
+     b          LAB_08037152\n\
+LAB_0803729e:\n\
+     mov        r0,#0x0\n\
+     add        sp,#0x34\n\
+     pop        {r3,r4,r5}\n\
+     mov        r8,r3\n\
+     mov        r9,r4\n\
+     mov        r10,r5\n\
+     pop        {r4,r5,r6,r7}\n\
+     pop        {r1}\n\
+     bx         r1\n\
+DAT_080372b0:\n\
+     .4byte 0x0200254C\n\
+    ");
+}
+__attribute__((naked)) void fun_080372b4()
+{
+    asm("\n\
+     ldr        r2,DAT_080372c0\n\
+     mov        r1,#0x78\n\
+     strh       r1,[r2,#0x0]\n\
+     mov        r1,#0x2\n\
+     strb       r1,[r0,#0x18]\n\
+     bx         lr\n\
+DAT_080372c0:\n\
+     .4byte 0x02010E04\n\
+    ");
+}
+__attribute__((naked)) void fun_080372c4()
+{
+    asm("\n\
+     push       {r4,lr}\n\
+     add        r4,r0,#0x0\n\
+     ldrh       r1,[r2,#0x0]\n\
+     ldrh       r2,[r3,#0x0]\n\
+     bl         fun_08037028\n\
+     ldr        r2,DAT_080372f4\n\
+     ldrh       r0,[r2,#0x0]\n\
+     sub        r0,#0x1\n\
+     strh       r0,[r2,#0x0]\n\
+     lsl        r0,r0,#0x10\n\
+     ldr        r1,DAT_080372f8\n\
+     cmp        r0,r1\n\
+     bne        LAB_08037316\n\
+     mov        r0,#0x78\n\
+     strh       r0,[r2,#0x0]\n\
+     ldrh       r0,[r4,#0x10]\n\
+     cmp        r0,#0x5\n\
+     beq        LAB_08037312\n\
+     cmp        r0,#0x5\n\
+     bgt        LAB_080372fc\n\
+     cmp        r0,#0x0\n\
+     beq        LAB_08037306\n\
+     b          LAB_08037316\n\
+DAT_080372f4:\n\
+     .4byte 0x02010E04\n\
+DAT_080372f8:\n\
+     .4byte 0xFFFF0000\n\
+LAB_080372fc:\n\
+     cmp        r0,#0xa\n\
+     beq        LAB_0803730a\n\
+     cmp        r0,#0xf\n\
+     beq        LAB_0803730e\n\
+     b          LAB_08037316\n\
+LAB_08037306:\n\
+     mov        r0,#0x5\n\
+     b          LAB_08037314\n\
+LAB_0803730a:\n\
+     mov        r0,#0xf\n\
+     b          LAB_08037314\n\
+LAB_0803730e:\n\
+     mov        r0,#0x0\n\
+     b          LAB_08037314\n\
+LAB_08037312:\n\
+     mov        r0,#0xa\n\
+LAB_08037314:\n\
+     strh       r0,[r4,#0x10]\n\
+LAB_08037316:\n\
+     pop        {r4}\n\
+     pop        {r0}\n\
+     bx         r0\n\
+    ");
+}
+__attribute__((naked)) void fun_0803731c()
+{
+    asm("\n\
+     push       {r4,lr}\n\
+     add        r4,r0,#0x0\n\
+     ldrh       r1,[r2,#0x0]\n\
+     ldrh       r2,[r3,#0x0]\n\
+     bl         fun_08037028\n\
+     ldr        r2,DAT_0803734c\n\
+     ldrh       r0,[r2,#0x0]\n\
+     sub        r0,#0x1\n\
+     strh       r0,[r2,#0x0]\n\
+     lsl        r0,r0,#0x10\n\
+     ldr        r1,DAT_08037350\n\
+     cmp        r0,r1\n\
+     bne        LAB_0803736e\n\
+     mov        r0,#0x78\n\
+     strh       r0,[r2,#0x0]\n\
+     ldrh       r0,[r4,#0x10]\n\
+     cmp        r0,#0x5\n\
+     beq        LAB_0803736a\n\
+     cmp        r0,#0x5\n\
+     bgt        LAB_08037354\n\
+     cmp        r0,#0x0\n\
+     beq        LAB_0803735e\n\
+     b          LAB_0803736e\n\
+DAT_0803734c:\n\
+     .4byte 0x02010E04\n\
+DAT_08037350:\n\
+     .4byte 0xFFFF0000\n\
+LAB_08037354:\n\
+     cmp        r0,#0xa\n\
+     beq        LAB_08037362\n\
+     cmp        r0,#0xf\n\
+     beq        LAB_08037366\n\
+     b          LAB_0803736e\n\
+LAB_0803735e:\n\
+     mov        r0,#0xf\n\
+     b          LAB_0803736c\n\
+LAB_08037362:\n\
+     mov        r0,#0x5\n\
+     b          LAB_0803736c\n\
+LAB_08037366:\n\
+     mov        r0,#0xa\n\
+     b          LAB_0803736c\n\
+LAB_0803736a:\n\
+     mov        r0,#0x0\n\
+LAB_0803736c:\n\
+     strh       r0,[r4,#0x10]\n\
+LAB_0803736e:\n\
+     pop        {r4}\n\
+     pop        {r0}\n\
+     bx         r0\n\
+    ");
+}
+__attribute__((naked)) void fun_08037374()
+{
+    asm("\n\
+     push       {r4,r5,r6,r7,lr}\n\
+     mov        r7,r10\n\
+     mov        r6,r9\n\
+     mov        r5,r8\n\
+     push       {r5,r6,r7}\n\
+     mov        r9,r0\n\
+     add        r6,r2,#0x0\n\
+     mov        r8,r3\n\
+     ldr        r2,DAT_080373fc\n\
+     ldr        r3,DAT_08037400\n\
+     ldrh       r1,[r0,#0x16]\n\
+     lsl        r0,r1,#0x2\n\
+     ldr        r4,DAT_08037404\n\
+     add        r0,r0,r4\n\
+     ldr        r4,DAT_08037408\n\
+     mov        r10,r4\n\
+     add        r7,r1,r4\n\
+     ldrb       r1,[r7,#0x0]\n\
+     ldrh       r0,[r0,#0x0]\n\
+     add        r0,r1,r0\n\
+     lsl        r0,r0,#0x1\n\
+     add        r0,r0,r3\n\
+     ldrh       r0,[r0,#0x0]\n\
+     lsl        r0,r0,#0x1\n\
+     add        r2,r0,r2\n\
+     ldrh       r5,[r2,#0x0]\n\
+     ldr        r1,DAT_0803740c\n\
+     add        r0,r0,r1\n\
+     ldrh       r4,[r0,#0x0]\n\
+     ldrh       r1,[r6,#0x0]\n\
+     mov        r0,r8\n\
+     ldrh       r2,[r0,#0x0]\n\
+     mov        r0,r9\n\
+     bl         fun_08037028\n\
+     add        r0,r6,#0x0\n\
+     mov        r1,r8\n\
+     add        r2,r5,#0x0\n\
+     add        r3,r4,#0x0\n\
+     bl         fun_0800eaa4\n\
+     cmp        r0,#0x0\n\
+     beq        LAB_080373d0\n\
+     ldrb       r0,[r7,#0x0]\n\
+     add        r0,#0x1\n\
+     strb       r0,[r7,#0x0]\n\
+LAB_080373d0:\n\
+     mov        r2,r9\n\
+     ldrh       r1,[r2,#0x16]\n\
+     mov        r0,r10\n\
+     add        r4,r1,r0\n\
+     ldrb       r0,[r4,#0x0]\n\
+     lsl        r1,r1,#0x1\n\
+     add        r1,#0x1\n\
+     lsl        r1,r1,#0x1\n\
+     ldr        r2,DAT_08037404\n\
+     add        r1,r1,r2\n\
+     ldrh       r1,[r1,#0x0]\n\
+     bl         __modsi3\n\
+     strb       r0,[r4,#0x0]\n\
+     pop        {r3,r4,r5}\n\
+     mov        r8,r3\n\
+     mov        r9,r4\n\
+     mov        r10,r5\n\
+     pop        {r4,r5,r6,r7}\n\
+     pop        {r0}\n\
+     bx         r0\n\
+.space 1\n\
+.space 1\n\
+DAT_080373fc:\n\
+     .4byte 0x0863A0A8\n\
+DAT_08037400:\n\
+     .4byte 0x0863A140\n\
+DAT_08037404:\n\
+     .4byte 0x087D5E3A\n\
+DAT_08037408:\n\
+     .4byte 0x02010DD0\n\
+DAT_0803740c:\n\
+     .4byte 0x0863A0F4\n\
+    ");
+}
+__attribute__((naked)) void fun_08037410()
+{
+    asm("\n\
+     push       {r4,r5,r6,r7,lr}\n\
+     add        r4,r2,#0x0\n\
+     add        r5,r3,#0x0\n\
+     ldr        r6,[sp,#0x14]\n\
+     ldr        r7,[sp,#0x18]\n\
+     ldrh       r1,[r4,#0x0]\n\
+     ldrh       r2,[r5,#0x0]\n\
+     bl         fun_08037028\n\
+     ldrb       r1,[r6,#0x0]\n\
+     lsl        r0,r1,#0x2\n\
+     add        r0,r0,r7\n\
+     ldrh       r2,[r0,#0x0]\n\
+     ldrh       r3,[r0,#0x2]\n\
+     add        r0,r4,#0x0\n\
+     add        r1,r5,#0x0\n\
+     bl         fun_0800eaa4\n\
+     cmp        r0,#0x0\n\
+     beq        LAB_0803744a\n\
+     ldrb       r0,[r6,#0x0]\n\
+     add        r0,#0x1\n\
+     strb       r0,[r6,#0x0]\n\
+     lsl        r0,r0,#0x2\n\
+     add        r0,r0,r7\n\
+     ldrh       r0,[r0,#0x0]\n\
+     cmp        r0,#0x0\n\
+     bne        LAB_0803744a\n\
+     strb       r0,[r6,#0x0]\n\
+LAB_0803744a:\n\
+     pop        {r4,r5,r6,r7}\n\
+     pop        {r0}\n\
+     bx         r0\n\
+    ");
+}
+__attribute__((naked)) void fun_08037450()
+{
+    asm("\n\
+     push       {r4,r5,r6,r7,lr}\n\
+     mov        r7,r8\n\
+     push       {r7}\n\
+     add        r6,r2,#0x0\n\
+     mov        r8,r3\n\
+     ldr        r7,[sp,#0x18]\n\
+     ldr        r4,[sp,#0x1c]\n\
+     ldr        r5,[sp,#0x20]\n\
+     lsl        r4,r4,#0x10\n\
+     lsr        r4,r4,#0x10\n\
+     lsl        r5,r5,#0x10\n\
+     lsr        r5,r5,#0x10\n\
+     ldrh       r1,[r6,#0x0]\n\
+     ldrh       r2,[r3,#0x0]\n\
+     bl         fun_08037028\n\
+     add        r0,r6,#0x0\n\
+     mov        r1,r8\n\
+     add        r2,r4,#0x0\n\
+     add        r3,r5,#0x0\n\
+     bl         fun_0800eaa4\n\
+     cmp        r0,#0x0\n\
+     beq        LAB_08037486\n\
+     ldrb       r0,[r7,#0x0]\n\
+     add        r0,#0x1\n\
+     strb       r0,[r7,#0x0]\n\
+LAB_08037486:\n\
+     pop        {r3}\n\
+     mov        r8,r3\n\
+     pop        {r4,r5,r6,r7}\n\
+     pop        {r0}\n\
+     bx         r0\n\
+    ");
+}

@@ -4960,4 +4960,55 @@ void fun_08021b40()
     fun_0803a9ec();
 }
 
-asm(".space 2");
+__attribute__((naked)) void fun_08021b4c()
+{
+    asm("\n\
+    push       {r4,lr}\n\
+    ldr        r0,DAT_08021b84\n\
+    ldr        r0,[r0,#0x0]\n\
+    bl         fun_08003b00\n\
+    ldr        r4,DAT_08021b88\n\
+    ldr        r0,[r4,#0x0]\n\
+    bl         fun_08003b00\n\
+    ldr        r0,[r4,#0x4]\n\
+    bl         fun_08003b00\n\
+    ldr        r0,[r4,#0x8]\n\
+    bl         fun_08003b00\n\
+    ldr        r0,[r4,#0xc]\n\
+    bl         fun_08003b00\n\
+    bl         fun_0800457c\n\
+    bl         fun_0803a980\n\
+    bl         fun_0803abbc\n\
+    mov        r0,#0x0\n\
+    pop        {r4}\n\
+    pop        {r1}\n\
+    bx         r1\n\
+DAT_08021b84:\n\
+    .word 0x0200F250\n\
+DAT_08021b88:\n\
+    .word 0x0200F240\n\
+    ");
+}
+
+__attribute__((naked)) void fun_08021b8c()
+{
+    asm("\n\
+    push       {lr}\n\
+    str        r0,[r2,#0x0]\n\
+    str        r1,[r2,#0x4]\n\
+    ldr        r0,DAT_08021ba8\n\
+    str        r0,[r2,#0x8]\n\
+    add        r0,r2,#0x0\n\
+    bl         fun_0803ab8c\n\
+    ldr        r1,DAT_08021bac\n\
+    mov        r0,#0x0\n\
+    strh       r0,[r1,#0x0]\n\
+    pop        {r0}\n\
+    bx         r0\n\
+.space 2\n\
+DAT_08021ba8:\n\
+    .word 0x080216D1\n\
+DAT_08021bac:\n\
+    .word 0x020117D0\n\
+    ");
+}

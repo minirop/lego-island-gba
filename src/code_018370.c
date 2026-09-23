@@ -2332,3 +2332,262 @@ LAB_080194a6:\n\
 .space 2\n\
     ");
 }
+__attribute__((naked)) void fun_080194ac()
+{
+    asm("\n\
+     push       {lr}\n\
+     ldr        r1,DAT_080194dc\n\
+     ldrh       r0,[r1,#0x0]\n\
+     cmp        r0,#0x0\n\
+     beq        LAB_080194d8\n\
+     mov        r0,#0x0\n\
+     strh       r0,[r1,#0x0]\n\
+     mov        r0,#0x2\n\
+     bl         fun_080018bc\n\
+     lsl        r0,r0,#0x10\n\
+     cmp        r0,#0x0\n\
+     bne        LAB_080194d8\n\
+     mov        r0,#0x2\n\
+     bl         fun_08001894\n\
+     lsl        r0,r0,#0x10\n\
+     cmp        r0,#0x0\n\
+     bne        LAB_080194d8\n\
+     mov        r0,#0x2\n\
+     bl         fun_080017b8\n\
+LAB_080194d8:\n\
+     pop        {r0}\n\
+     bx         r0\n\
+DAT_080194dc:\n\
+     .4byte 0x0200E4C8\n\
+    ");
+}
+__attribute__((naked)) void fun_080194e0()
+{
+    asm("\n\
+     push       {r4,r5,r6,r7,lr}\n\
+     mov        r7,r9\n\
+     mov        r6,r8\n\
+     push       {r6,r7}\n\
+     ldr        r0,DAT_0801951c\n\
+     ldrb       r6,[r0,#0x0]\n\
+     mov        r7,#0x0\n\
+     mov        r0,#0x1\n\
+.syntax unified\n\
+    rsbs        r0,r0,#0\n\
+.syntax divided\n\
+     mov        r9,r0\n\
+     ldr        r1,DAT_08019520\n\
+     mov        r8,r1\n\
+LAB_080194f8:\n\
+     ldr        r0,DAT_08019524\n\
+     lsl        r1,r6,#0x1\n\
+     add        r5,r1,r0\n\
+     mov        r2,#0x0\n\
+     ldrsh      r0,[r5,r2]\n\
+     cmp        r0,r9\n\
+     bne        LAB_08019528\n\
+     lsl        r0,r7,#0x2\n\
+     add        r0,r8\n\
+     ldr        r1,[r0,#0x0]\n\
+     mov        r3,#0x80\n\
+     lsl        r3,r3,#0x2\n\
+     add        r0,r3,#0x0\n\
+     ldrh       r2,[r1,#0x12]\n\
+     orr        r0,r2\n\
+     strh       r0,[r1,#0x12]\n\
+     b          LAB_0801954e\n\
+.space 1\n\
+.space 1\n\
+DAT_0801951c:\n\
+     .4byte 0x0200E5B4\n\
+DAT_08019520:\n\
+     .4byte 0x0200E570\n\
+DAT_08019524:\n\
+     .4byte 0x0200E4E0\n\
+LAB_08019528:\n\
+     lsl        r4,r7,#0x2\n\
+     add        r4,r8\n\
+     ldr        r1,[r4,#0x0]\n\
+     ldr        r3,DAT_08019558\n\
+     add        r0,r3,#0x0\n\
+     ldrh       r2,[r1,#0x12]\n\
+     and        r0,r2\n\
+     strh       r0,[r1,#0x12]\n\
+     bl         fun_080020a4\n\
+     ldr        r2,[r4,#0x0]\n\
+     mov        r3,#0x0\n\
+     ldrsh      r1,[r5,r3]\n\
+     lsl        r1,r1,#0x1\n\
+     ldr        r3,DAT_0801955c\n\
+     add        r0,r0,r3\n\
+     add        r0,r0,r1\n\
+     ldrh       r0,[r0,#0x0]\n\
+     strh       r0,[r2,#0x0]\n\
+LAB_0801954e:\n\
+     cmp        r7,#0x8\n\
+     bne        LAB_08019560\n\
+     add        r0,r6,#0x0\n\
+     add        r0,#0x37\n\
+     b          LAB_08019562\n\
+DAT_08019558:\n\
+     .4byte 0x0000FDFF\n\
+DAT_0801955c:\n\
+     .4byte 0x00000D2A\n\
+LAB_08019560:\n\
+     add        r0,r6,#0x1\n\
+LAB_08019562:\n\
+     mov        r1,#0x46\n\
+     bl         __modsi3\n\
+     lsl        r0,r0,#0x18\n\
+     lsr        r6,r0,#0x18\n\
+     add        r0,r7,#0x1\n\
+     lsl        r0,r0,#0x18\n\
+     lsr        r7,r0,#0x18\n\
+     cmp        r7,#0xf\n\
+     bls        LAB_080194f8\n\
+     pop        {r3,r4}\n\
+     mov        r8,r3\n\
+     mov        r9,r4\n\
+     pop        {r4,r5,r6,r7}\n\
+     pop        {r0}\n\
+     bx         r0\n\
+.space 1\n\
+.space 1\n\
+    ");
+}
+__attribute__((naked)) void fun_08019584()
+{
+    asm("\n\
+     push       {r4,r5,lr}\n\
+     sub        sp,#0x10\n\
+     ldr        r0,PTR_DAT_08019674\n\
+     mov        r2,#0x0\n\
+     ldrsh      r1,[r0,r2]\n\
+     add        r5,r0,#0x0\n\
+     cmp        r1,#0x0\n\
+     ble        LAB_080195c6\n\
+     cmp        r1,#0x8\n\
+     bne        LAB_080195ac\n\
+     ldr        r4,PTR_DAT_08019678\n\
+     mov        r1,#0x0\n\
+     ldrsh      r0,[r4,r1]\n\
+     add        r0,#0x1\n\
+     mov        r1,#0x46\n\
+     bl         __modsi3\n\
+     strh       r0,[r4,#0x0]\n\
+     bl         fun_080194e0\n\
+LAB_080195ac:\n\
+     ldr        r1,PTR_DAT_0801967c\n\
+     ldrh       r2,[r1,#0x0]\n\
+     sub        r0,r2,#0x4\n\
+     strh       r0,[r1,#0x0]\n\
+     lsl        r0,r0,#0x10\n\
+     cmp        r0,#0x0\n\
+     bge        LAB_080195c0\n\
+     add        r0,r2,#0x0\n\
+     add        r0,#0x1c\n\
+     strh       r0,[r1,#0x0]\n\
+LAB_080195c0:\n\
+     ldrh       r0,[r5,#0x0]\n\
+     sub        r0,#0x1\n\
+     strh       r0,[r5,#0x0]\n\
+LAB_080195c6:\n\
+     ldrh       r4,[r5,#0x0]\n\
+     mov        r2,#0x0\n\
+     ldrsh      r0,[r5,r2]\n\
+     cmp        r0,#0x0\n\
+     bge        LAB_0801960c\n\
+     ldr        r3,PTR_DAT_0801967c\n\
+     mov        r0,#0x0\n\
+     ldrsh      r2,[r3,r0]\n\
+     add        r1,r2,#0x4\n\
+     add        r0,r1,#0x0\n\
+     cmp        r1,#0x0\n\
+     bge        LAB_080195e2\n\
+     add        r0,r2,#0x0\n\
+     add        r0,#0x23\n\
+LAB_080195e2:\n\
+     asr        r0,r0,#0x5\n\
+     lsl        r0,r0,#0x5\n\
+     sub        r0,r1,r0\n\
+     strh       r0,[r3,#0x0]\n\
+     add        r0,r4,#0x1\n\
+     strh       r0,[r5,#0x0]\n\
+     lsl        r0,r0,#0x10\n\
+     cmp        r0,#0x0\n\
+     bne        LAB_0801960c\n\
+     ldr        r1,PTR_DAT_08019678\n\
+     ldrh       r2,[r1,#0x0]\n\
+     sub        r0,r2,#0x1\n\
+     strh       r0,[r1,#0x0]\n\
+     lsl        r0,r0,#0x10\n\
+     cmp        r0,#0x0\n\
+     bge        LAB_08019608\n\
+     add        r0,r2,#0x0\n\
+     add        r0,#0x45\n\
+     strh       r0,[r1,#0x0]\n\
+LAB_08019608:\n\
+     bl         fun_080194e0\n\
+LAB_0801960c:\n\
+     ldr        r0,PTR_DAT_08019680\n\
+     mov        r1,#0xb4\n\
+     str        r1,[sp,#0x0]\n\
+     mov        r1,#0x23\n\
+     str        r1,[sp,#0x4]\n\
+     mov        r1,#0xb0\n\
+     str        r1,[sp,#0x8]\n\
+     ldr        r1,PTR_DAT_0801967c\n\
+     ldrh       r1,[r1,#0x0]\n\
+     lsl        r1,r1,#0x10\n\
+     asr        r1,r1,#0x11\n\
+     lsl        r1,r1,#0x10\n\
+     lsr        r1,r1,#0x10\n\
+     str        r1,[sp,#0xc]\n\
+     mov        r1,#0x10\n\
+     mov        r2,#0x78\n\
+     mov        r3,#0x54\n\
+     bl         fun_08019778\n\
+     bl         fun_08002dd8\n\
+     lsl        r0,r0,#0x10\n\
+     cmp        r0,#0x0\n\
+     bne        LAB_08019640\n\
+     bl         fun_080198c0\n\
+LAB_08019640:\n\
+     bl         fun_0803c1a4\n\
+     ldr        r4,PTR_DAT_08019678\n\
+     ldrh       r0,[r4,#0x0]\n\
+     bl         fun_08019ae4\n\
+     cmp        r0,#0x0\n\
+     beq        LAB_08019668\n\
+     ldr        r1,PTR_DAT_08019684\n\
+     mov        r2,#0x0\n\
+     ldrsh      r0,[r4,r2]\n\
+     lsl        r0,r0,#0x1\n\
+     add        r0,r0,r1\n\
+     ldrh       r0,[r0,#0x0]\n\
+     bl         fun_08019ae4\n\
+     ldr        r2,DAT_08019688\n\
+     mov        r1,#0x85\n\
+     bl         fun_0803c010\n\
+LAB_08019668:\n\
+     mov        r0,#0x0\n\
+     add        sp,#0x10\n\
+     pop        {r4,r5}\n\
+     pop        {r1}\n\
+     bx         r1\n\
+.space 1\n\
+.space 1\n\
+PTR_DAT_08019674:\n\
+     .4byte       DAT_0200e5b0\n\
+PTR_DAT_08019678:\n\
+     .4byte       DAT_0200e5b4\n\
+PTR_DAT_0801967c:\n\
+     .4byte       DAT_0200e4d0\n\
+PTR_DAT_08019680:\n\
+     .4byte       DAT_0200e570\n\
+PTR_DAT_08019684:\n\
+     .4byte       DAT_0200e4e0\n\
+DAT_08019688:\n\
+     .4byte 0x0865FD94\n\
+    ");
+}
