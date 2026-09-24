@@ -1,6 +1,5 @@
-extern char DAT_02005210;
-void memset(char*, int, int);
-void strncpy();
+#include "variables.h"
+#include <string.h>
 
 __attribute__((naked)) void fun_080004ac()
 {

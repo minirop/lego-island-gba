@@ -1,9 +1,10 @@
-void fun_0803fbf8();
+#include "functions.h"
 
 void fun_080017ac()
 {
     fun_0803fbf8();
 }
+
 __attribute__((naked)) void fun_080017b8()
 {
     asm("\n\

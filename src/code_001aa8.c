@@ -1,9 +1,6 @@
-void fun_08001aa8();
-int strcmp(const char*, int*);
-void fun_08000584();
-void fun_08001b9c();
-
-extern int DAT_02005200;
+#include "variables.h"
+#include "functions.h"
+#include <string.h>
 
 __attribute__((naked)) void fun_08001aa8()
 {

@@ -1,6 +1,4 @@
-extern unsigned short DAT_02007f60;
-extern unsigned short DAT_02005cf8;
-extern unsigned short DAT_02005cfc;
+#include "variables.h"
 
 void fun_08004670(unsigned short param_1)
 {

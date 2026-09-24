@@ -1,4 +1,4 @@
-extern short DAT_02000270;
+#include "variables.h"
 
 void fun_080045d8(short param_1)
 {

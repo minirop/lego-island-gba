@@ -1,3 +1,5 @@
+#include "functions.h"
+
 __attribute__((naked)) void fun_0801f684()
 {
     asm("\n\
@@ -4954,7 +4956,7 @@ DAT_08021b3c:\n\
      .word 0x0865FD94\n\
     ");
 }
-void fun_0803a9ec();
+
 void fun_08021b40()
 {
     fun_0803a9ec();

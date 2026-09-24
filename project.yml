@@ -446,6 +446,8 @@ build:
     as: $(DEVKITARM)/bin/arm-none-eabi-as
     cc1: $(AGBCC)/bin/agbcc
     cc1flags: -mthumb-interwork -Wimplicit -Wparentheses -O2 -fhex-asm -fprologue-bugfix
+    cpp: $(DEVKITARM)/bin/arm-none-eabi-cpp
+    cppflags: -I $(AGBCC)/include -iquote include -iquote . -nostdinc -undef
     asflags: -mcpu=arm7tdmi -mthumb-interwork -I include
     symbols: symbols.txt
     ldscript: ldscript.txt
@@ -459,7 +461,7 @@ build:
     - folder: src
       extension: c
       exec:
-        - $(CC1) $(CC1FLAGS) $(NAME).c -o $(NAME).s
+        - $(CPP) $(CPPFLAGS) $(NAME).c | $(CC1) $(CC1FLAGS) -o $(NAME).s
         - $(AS) $(ASFLAGS) $(NAME).s -o $(NAME).o
     - $(LD) -T $(SYMBOLS) -T $(LDSCRIPT) -Map $(ROM).map $(OFILES) -L $(AGBCC)/lib -lc -lgcc -o $(ROM).elf
     - $(OBJCOPY) -O binary $(ROM).elf $(ROM).gba

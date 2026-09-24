@@ -1,3 +1,5 @@
+#include "functions.h"
+
 __attribute__((naked)) void fun_08007354()
 {
     asm("\n\
@@ -1367,7 +1369,6 @@ LAB_08007d4a:\n\
     ");
 }
 
-void fun_0800457c();
 int fun_08007d50()
 {
     fun_0800457c();

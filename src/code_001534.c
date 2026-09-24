@@ -1,3 +1,5 @@
+#include "functions.h"
+
 __attribute__((naked)) void fun_08001534()
 {
     asm("\n\
@@ -281,19 +283,18 @@ __attribute__((naked)) void fun_080016f0()
     bx          r1\n\
     ");
 }
-void fun_0803dd20();
+
 void fun_08001704()
 {
     fun_0803dd20();
 }
 
-void fun_0803d518();
-void fun_0803d5bc();
 void fun_08001710()
 {
     fun_0803d518();
     fun_0803d5bc();
 }
+
 __attribute__((naked)) void fun_08001720()
 {
     asm("\n\

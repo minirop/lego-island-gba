@@ -1,5 +1,4 @@
-extern short int DAT_02005830;
-extern short int DAT_02005ce0;
+#include "variables.h"
 
 int fun_08001424()
 {

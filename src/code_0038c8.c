@@ -1,3 +1,5 @@
+#include "variables.h"
+
 __attribute__((naked)) void fun_080038c8()
 {
     asm("\n\
@@ -1806,15 +1808,6 @@ DAT_08004594:\n\
 \n\
     ");
 }
-
-extern unsigned short DAT_02007f64;
-extern unsigned short DAT_02005cf4;
-extern unsigned short DAT_02005d08;
-extern unsigned short DAT_02005d04;
-extern unsigned short DAT_02005d04;
-extern unsigned short DAT_02005cf0;
-extern unsigned short DAT_02005cf4;
-extern unsigned short DAT_02005d00;
 
 void fun_08004598()
 {

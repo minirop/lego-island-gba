@@ -1,3 +1,6 @@
+#include "variables.h"
+#include "functions.h"
+
 __attribute__((naked)) void fun_0800c608()
 {
     asm("\n\
@@ -1190,27 +1193,6 @@ DAT_0800cf24:\n\
 \n\
     ");
 }
-
-extern unsigned short DAT_0200d388;
-extern unsigned short DAT_0200d404;
-extern unsigned short DAT_0200d3ac;
-extern unsigned short DAT_0200d3f8;
-extern unsigned short DAT_0200d3fc;
-extern unsigned short DAT_0200d408;
-extern unsigned short DAT_0200d38c;
-extern unsigned short DAT_0200d384;
-extern unsigned short DAT_0200d398;
-extern unsigned short DAT_0200d3a8;
-extern unsigned short DAT_0200d400;
-extern unsigned short DAT_020006a0[10];
-extern unsigned short DAT_0200d404;
-extern unsigned short DAT_0200d3ac;
-extern unsigned short DAT_0200d404;
-extern unsigned short DAT_0200d3ac;
-extern unsigned short DAT_0200d394;
-extern unsigned short DAT_0200d380;
-
-void fun_0800a108();
 
 void fun_0800cf28(unsigned short param_1, unsigned short param_2, unsigned short param_3, unsigned short param_4)
 {
