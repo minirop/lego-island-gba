@@ -1,3 +1,5 @@
+#include "functions.h"
+
 __attribute__((naked)) void fun_08005bbc()
 {
     asm("\n\
@@ -238,7 +240,7 @@ DAT_08005d4c:\n\
     .word 0x0400001C\n\
     ");
 }
-__attribute__((naked)) void fun_08005d50()
+__attribute__((naked)) int fun_08005d50()
 {
     asm("\n\
     push        {r4,r5,r6,lr}\n\
@@ -334,7 +336,7 @@ DAT_08005e08:\n\
     .word 0x02009AD0\n\
     ");
 }
-__attribute__((naked)) void fun_08005e0c()
+__attribute__((naked)) int fun_08005e0c()
 {
     asm("\n\
     push        {r4,r5,r6,lr}\n\
@@ -464,10 +466,14 @@ DAT_08005f00:\n\
     .word 0x80000100\n\
 DAT_08005f04:\n\
     .word 0x02009AD0\n\
-    mov         r0,#0x0\n\
-    bx          lr\n\
     ");
 }
+
+int fun_08005f08()
+{
+    return 0;
+}
+
 __attribute__((naked)) void fun_08005f0c()
 {
     asm("\n\
@@ -791,3 +797,57 @@ int fun_08006174()
     fun_0800457c();
     return 0;
 }
+
+#include "level_info.h"
+
+const struct LevelInfo logo_screens = {
+    0,
+    0,
+    2,
+    0,
+    NULL,
+    NULL,
+    0,
+    0,
+    0,
+    0,
+    fun_08005d50,
+    fun_08005f08,
+    fun_08005e0c,
+    NULL,
+    NULL,
+    NULL,
+    0,
+    0,
+    "Logo Screens",
+    "Blank",
+    "Blank",
+    "Blank",
+    "Blank",
+};
+
+const struct LevelInfo language_select = {
+    0,
+    0,
+    4,
+    0,
+    NULL,
+    NULL,
+    0,
+    0,
+    0,
+    0,
+    fun_08005fac,
+    fun_08006174,
+    fun_0800612c,
+    NULL,
+    NULL,
+    NULL,
+    0,
+    0,
+    "Language Select",
+    "Blank",
+    "Blank",
+    "Blank",
+    "Blank",
+};

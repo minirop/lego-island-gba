@@ -1,8 +1,6 @@
 #ifndef VARIABLES_H
 #define VARIABLES_H
 
-typedef void (*Callback)();
-
 extern char DAT_02005210;
 extern int DAT_02005200;
 extern short DAT_02000270;

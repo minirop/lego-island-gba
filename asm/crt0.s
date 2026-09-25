@@ -124,3 +124,4 @@ DAT_08000238:
 DAT_0800023c:
     .4byte 0x020057F0
 
+.incbin "baserom.gba", 0x000240, 0x0000C0
