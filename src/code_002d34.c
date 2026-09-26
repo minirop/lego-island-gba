@@ -98,22 +98,11 @@ u16 fun_08002dd8()
     return DAT_02005770;
 }
 
-__attribute__((naked)) void fun_08002de4()
+s32 fun_08002de4()
 {
-    asm("\n\
-    mov         r1,#0x0\n\
-    ldr         r0,DAT_08002df4\n\
-    ldrh        r0,[r0,#0x0]\n\
-    cmp         r0,#0x0\n\
-    bne         LAB_08002df0\n\
-    mov         r1,#0x1\n\
-LAB_08002df0:\n\
-    add         r0,r1,#0x0\n\
-    bx          lr\n\
-DAT_08002df4:\n\
-    .word 0x02005770\n\
-    ");
+    return DAT_02005770 == 0;
 }
+
 __attribute__((naked)) void fun_08002df8()
 {
     asm("\n\
@@ -176,101 +165,55 @@ DAT_08002e60:\n\
     .word 0x04000054\n\
     ");
 }
-__attribute__((naked)) void fun_08002e64()
+
+void fun_08002e64()
 {
-    asm("\n\
-    ldr         r0,DAT_08002e7c\n\
-    mov         r2,#0x0\n\
-    strh        r2,[r0,#0x0]\n\
-    ldr         r0,DAT_08002e80\n\
-    mov         r1,#0x1\n\
-    strh        r1,[r0,#0x0]\n\
-    ldr         r0,DAT_08002e84\n\
-    strh        r1,[r0,#0x0]\n\
-    ldr         r0,DAT_08002e88\n\
-    strh        r2,[r0,#0x0]\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_08002e7c:\n\
-    .word 0x02005840\n\
-DAT_08002e80:\n\
-    .word 0x0200583C\n\
-DAT_08002e84:\n\
-    .word 0x02005CD0\n\
-DAT_08002e88:\n\
-    .word 0x02005CDC\n\
-    ");
+    DAT_02005840 = 0;
+    DAT_0200583c = 1;
+    DAT_02005cd0 = 1;
+    DAT_02005cdc = 0;
 }
-__attribute__((naked)) void fun_08002e8c()
+
+void fun_08002e8c(s16 param_1, u16 param_2)
 {
-    asm("\n\
-    push        {r4,lr}\n\
-    add         r2,r0,#0x0\n\
-    ldr         r0,DAT_08002eb8\n\
-    strh        r1,[r0,#0x0]\n\
-    ldr         r0,DAT_08002ebc\n\
-    mov         r1,#0x0\n\
-    strh        r1,[r0,#0x0]\n\
-    ldr         r0,DAT_08002ec0\n\
-    strh        r1,[r0,#0x0]\n\
-    ldr         r4,DAT_08002ec4\n\
-    lsl         r2,r2,#0x10\n\
-    asr         r2,r2,#0x10\n\
-    mov         r0,#0xb8\n\
-    lsl         r0,r0,#0x5\n\
-    add         r1,r2,#0x0\n\
-    bl          __divsi3\n\
-    strh        r0,[r4,#0x0]\n\
-    pop         {r4}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_08002eb8:\n\
-    .word 0x02005838\n\
-DAT_08002ebc:\n\
-    .word 0x02005CDC\n\
-DAT_08002ec0:\n\
-    .word 0x0200583C\n\
-DAT_08002ec4:\n\
-    .word 0x02005840\n\
-    ");
+    DAT_02005838 = param_2;
+    DAT_02005cdc = 0;
+    DAT_0200583c = 0;
+    DAT_02005840 = 5888 / param_1;
 }
-__attribute__((naked)) void fun_08002ec8()
+
+void fun_08002ec8(s16 param_1)
 {
-    asm("\n\
-    push        {r4,lr}\n\
-    add         r1,r0,#0x0\n\
-    ldr         r2,DAT_08002ef0\n\
-    mov         r3,#0xb8\n\
-    lsl         r3,r3,#0x5\n\
-    add         r0,r3,#0x0\n\
-    strh        r0,[r2,#0x0]\n\
-    ldr         r2,DAT_08002ef4\n\
-    mov         r0,#0x0\n\
-    strh        r0,[r2,#0x0]\n\
-    ldr         r4,DAT_08002ef8\n\
-    lsl         r1,r1,#0x10\n\
-    asr         r1,r1,#0x10\n\
-    ldr         r0,DAT_08002efc\n\
-    bl          __divsi3\n\
-    strh        r0,[r4,#0x0]\n\
-    pop         {r4}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-DAT_08002ef0:\n\
-    .word 0x02005CDC\n\
-DAT_08002ef4:\n\
-    .word 0x02005CD0\n\
-DAT_08002ef8:\n\
-    .word 0x02005840\n\
-DAT_08002efc:\n\
-    .word 0xFFFFE900\n\
-    ");
+    DAT_02005cdc = 5888;
+    DAT_02005cd0 = 0;
+    DAT_02005840 = -5888 / param_1;
 }
+
+#ifdef NONMATCHING
+void fun_08002f00(int param_1, s8* param_2)
+{
+    s32 iVar1;
+    s32 iVar2;
+    s32 iVar3;
+
+    if (param_1 < 0)
+    {
+        param_1 = 0;
+    }
+
+    iVar1 = param_1 / 60;
+    iVar2 = iVar1 / 60;
+    iVar3 = iVar1 - iVar2 * 60;
+
+    if (iVar3 < 10)
+    {
+        sprintf(param_2, "A%d:0%d", (u16)iVar2, (u16)iVar3);
+    } else
+    {
+        sprintf(param_2, "A%d:%d", (u16)iVar2, (u16)iVar3);
+    }
+}
+#else
 __attribute__((naked)) void fun_08002f00()
 {
     asm("\n\
@@ -321,6 +264,12 @@ DAT_08002f54:\n\
     .word 0x08049C2C\n\
     ");
 }
+
+const char* dummy_08049c24 = "A%d:0%d";
+const char* dummy_08049c2c = "A%d:%d";
+
+#endif
+
 __attribute__((naked)) void fun_08002f58()
 {
     asm("\n\
@@ -875,7 +824,7 @@ __attribute__((naked)) void fun_080032a8()
 void fun_080032b0()
 {
 }
-void fun_080032b4()
+void assert(s32 condition, const char* message)
 {
 }
 void fun_080032b8()

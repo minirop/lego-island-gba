@@ -25,4 +25,11 @@ typedef volatile s64 vs64;
 typedef float  f32;
 typedef double f64;
 
+typedef struct struct_02005780_s {
+    u16 unk00;
+    u16 unk02;
+    u32 unk04;
+    u32 unk08;
+} struct_02005780;
+
 #endif

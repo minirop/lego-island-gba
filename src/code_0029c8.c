@@ -1,3 +1,5 @@
+#include "variables.h"
+
 __attribute__((naked)) void fun_080029c8()
 {
     asm("\n\
@@ -141,6 +143,33 @@ DAT_08002abc:\n\
     .word 0x00000444\n\
     ");
 }
+
+#ifdef NONMATCHING
+
+void fun_08002ac0(u16 param_1, s32 param_2)
+{
+    u16 wVar1;
+    u32 uVar2;
+
+    if (DAT_02005834 != 0)
+    {
+        uVar2 = 0;
+        wVar1 = DAT_02005780[0].unk00;
+        while (wVar1 != 0 && uVar2 < 8)
+        {
+            wVar1 = DAT_02005780[uVar2].unk00;
+            uVar2++;
+        }
+        assert(uVar2 < 8,"No sequence controllers available");
+        DAT_02005780[uVar2].unk00 = 1;
+        DAT_02005780[uVar2].unk08 = 0;
+        DAT_02005780[uVar2].unk04 = param_2;
+        DAT_02005780[uVar2].unk02 = param_1;
+    }
+}
+
+#else
+
 __attribute__((naked)) void fun_08002ac0()
 {
     asm("\n\
@@ -177,7 +206,7 @@ LAB_08002af4:\n\
      bhi        LAB_08002afc\n\
      mov        r0,#0x1\n\
 LAB_08002afc:\n\
-     bl         fun_080032b4\n\
+     bl         assert\n\
      ldr        r2,DAT_08002b2c\n\
      lsl        r1,r4,#0x1\n\
      add        r1,r1,r4\n\
@@ -208,6 +237,11 @@ DAT_08002b30:\n\
      .word 0x08049C34\n\
     ");
 }
+
+const char* dummy_08049c34 = "No sequence controllers available";
+
+#endif
+
 __attribute__((naked)) void fun_08002b34()
 {
     asm("\n\
@@ -337,15 +371,15 @@ DAT_08002bec:\n\
 __attribute__((naked)) void fun_08002bf0()
 {
     asm("\n\
-    ldr        r0,PTR_IF_08002bfc
-    mov        r1,#0x1
-    strh       r1,[r0,#0x0]
-    ldr        r0,PTR_DAT_08002c00
-    strh       r1,[r0,#0x0]
-    bx         lr
-PTR_IF_08002bfc:
-    .word      IF
-PTR_DAT_08002c00:
+    ldr        r0,PTR_IF_08002bfc\n\
+    mov        r1,#0x1\n\
+    strh       r1,[r0,#0x0]\n\
+    ldr        r0,PTR_DAT_08002c00\n\
+    strh       r1,[r0,#0x0]\n\
+    bx         lr\n\
+PTR_IF_08002bfc:\n\
+    .word      IF\n\
+PTR_DAT_08002c00:\n\
     .word      DAT_02005cd8\n\
     ");
 }

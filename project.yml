@@ -374,7 +374,17 @@ rom:
       format: c
       section: rodata
       address: 0x04978c
-      size: 0x4
+      size: 0x04
+    - name: code_002d34
+      format: c
+      section: rodata
+      address: 0x049c24
+      size: 0x0f
+    - name: code_0029c8
+      format: c
+      section: rodata
+      address: 0x049c34
+      size: 0x22
     - name: code_005bbc
       format: c
       section: rodata

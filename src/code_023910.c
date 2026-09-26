@@ -357,7 +357,7 @@ __attribute__((naked)) void fun_08023ba0()
      strb       r0,[r1,#0xb]\n\
      ldr        r1,DAT_08023c5c\n\
      mov        r0,#0x1\n\
-     bl         fun_080032b4\n\
+     bl         assert\n\
      mov        r7,#0x0\n\
      ldr        r0,DAT_08023c60\n\
      ldr        r0,[r0,#0x0]\n\

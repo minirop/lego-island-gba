@@ -1311,7 +1311,7 @@ __attribute__((naked)) void fun_08018d48()
      orr        r0,r1\n\
      lsr        r0,r0,#0x1f\n\
      ldr        r1,DAT_08018dc0\n\
-     bl         fun_080032b4\n\
+     bl         assert\n\
      strh       r4,[r5,#0x0]\n\
      cmp        r4,#0x0\n\
      beq        LAB_08018dd0\n\

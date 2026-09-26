@@ -14,7 +14,7 @@ __attribute__((naked)) void fun_0800471c()
     lsl         r0,r0,#0x10\n\
     lsr         r0,r0,#0x10\n\
     ldr         r1,DAT_08004764\n\
-    bl          fun_080032b4\n\
+    bl          assert\n\
     lsl         r4,r4,#0x3\n\
     ldr         r1,DAT_08004768\n\
     add         r0,r4,r1\n\
@@ -62,7 +62,7 @@ __attribute__((naked)) void fun_0800476c()
     lsl         r0,r0,#0x10\n\
     lsr         r0,r0,#0x10\n\
     ldr         r1,DAT_080047c4\n\
-    bl          fun_080032b4\n\
+    bl          assert\n\
     lsl         r5,r5,#0x3\n\
     ldr         r2,DAT_080047c8\n\
     add         r1,r5,r2\n\
@@ -120,7 +120,7 @@ __attribute__((naked)) void fun_080047d0()
     lsl         r0,r0,#0x10\n\
     lsr         r0,r0,#0x10\n\
     ldr         r1,DAT_08004824\n\
-    bl          fun_080032b4\n\
+    bl          assert\n\
     lsl         r6,r6,#0x10\n\
     asr         r6,r6,#0x10\n\
     add         r0,r6,#0x0\n\
@@ -172,7 +172,7 @@ __attribute__((naked)) void fun_0800482c()
     lsl         r0,r0,#0x10\n\
     lsr         r0,r0,#0x10\n\
     ldr         r1,DAT_0800488c\n\
-    bl          fun_080032b4\n\
+    bl          assert\n\
     lsl         r4,r4,#0x10\n\
     asr         r4,r4,#0x10\n\
     add         r0,r4,#0x0\n\

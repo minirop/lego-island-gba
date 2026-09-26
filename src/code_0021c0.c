@@ -688,7 +688,7 @@ LAB_08002640:\n\
 LAB_08002672:\n\
     add         r0,r1,#0x0\n\
     ldr         r1,DAT_080026e4\n\
-    bl          fun_080032b4\n\
+    bl          assert\n\
     mov         r0,#0x1\n\
     mov         r1,r10\n\
     strh        r0,[r1,#0x0]\n\
@@ -956,7 +956,7 @@ __attribute__((naked)) void fun_08002844()
     ldr         r4,DAT_08002870\n\
     ldrh        r0,[r4,#0x0]\n\
     ldr         r1,DAT_08002874\n\
-    bl          fun_080032b4\n\
+    bl          assert\n\
     ldrh        r0,[r4,#0x0]\n\
     cmp         r0,#0x0\n\
     beq         LAB_08002862\n\

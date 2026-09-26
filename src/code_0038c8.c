@@ -138,7 +138,7 @@ __attribute__((naked)) void fun_08003998()
     mov         r0,#0x1\n\
 LAB_080039ba:\n\
     ldr         r1,DAT_08003ad4\n\
-    bl          fun_080032b4\n\
+    bl          assert\n\
     ldrh        r0,[r7,#0x6]\n\
     cmp         r0,#0x1\n\
     beq         LAB_080039d2\n\
@@ -200,7 +200,7 @@ LAB_08003a2c:\n\
     orr         r0,r6\n\
     lsr         r0,r0,#0x1f\n\
     ldr         r1,DAT_08003ae0\n\
-    bl          fun_080032b4\n\
+    bl          assert\n\
     mov         r1,#0x0\n\
     strh        r1,[r5,#0x0]\n\
     strh        r1,[r5,#0x2]\n\
@@ -259,7 +259,7 @@ LAB_08003a98:\n\
 LAB_08003aa4:\n\
     ldr         r1,DAT_08003af4\n\
     add         r0,r2,#0x0\n\
-    bl          fun_080032b4\n\
+    bl          assert\n\
     mov         r2,#0x0\n\
     ldr         r1,DAT_08003af8\n\
     mov         r0,#0x80\n\
@@ -271,7 +271,7 @@ LAB_08003aa4:\n\
 LAB_08003abc:\n\
     ldr         r1,DAT_08003afc\n\
     add         r0,r2,#0x0\n\
-    bl          fun_080032b4\n\
+    bl          assert\n\
     add         r0,r5,#0x0\n\
     pop         {r4,r5,r6,r7}\n\
     pop         {r1}\n\
@@ -1027,7 +1027,7 @@ __attribute__((naked)) void fun_08003ff8()
     lsl         r0,r0,#0x10\n\
     lsr         r0,r0,#0x10\n\
     ldr         r1,DAT_080040c8\n\
-    bl          fun_080032b4\n\
+    bl          assert\n\
     ldr         r1,DAT_080040cc\n\
     mov         r8,r1\n\
     add         r0,r4,#0x0\n\
@@ -1142,7 +1142,7 @@ __attribute__((naked)) void fun_080040d4()
     lsl         r0,r0,#0x10\n\
     lsr         r0,r0,#0x10\n\
     ldr         r1,DAT_080041b8\n\
-    bl          fun_080032b4\n\
+    bl          assert\n\
     ldr         r0,DAT_080041bc\n\
     mov         r9,r0\n\
     add         r0,r5,#0x0\n\
@@ -1261,7 +1261,7 @@ __attribute__((naked)) void fun_080041c4()
     lsl         r0,r0,#0x10\n\
     lsr         r0,r0,#0x10\n\
     ldr         r1,DAT_080042b0\n\
-    bl          fun_080032b4\n\
+    bl          assert\n\
     lsl         r5,r5,#0x10\n\
 .syntax unified\n\
     rsbs        r5,r5,#0\n\
@@ -1320,7 +1320,7 @@ __attribute__((naked)) void fun_080041c4()
     lsr         r6,r6,#0x10\n\
     add         r0,r6,#0x0\n\
     ldr         r1,DAT_080042b0\n\
-    bl          fun_080032b4\n\
+    bl          assert\n\
     lsl         r4,r4,#0x3\n\
     ldr         r3,DAT_080042b8\n\
     add         r1,r4,r3\n\
