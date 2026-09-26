@@ -1,3 +1,5 @@
+#include "functions.h"
+
 __attribute__((naked)) void fun_0800122c()
 {
     asm("\n\
@@ -76,29 +78,19 @@ DAT_080012bc:\n\
     .word 0x020025C4\n\
     ");
 }
-__attribute__((naked)) void fun_080012c0()
+
+void fun_080012c0(u16 param_1)
 {
-    asm("\n\
-    push        {lr}\n\
-    add         r2,r0,#0x0\n\
-    lsl         r2,r2,#0x10\n\
-    lsr         r2,r2,#0x10\n\
-    mov         r0,#0x1\n\
-    mov         r1,#0x0\n\
-    bl          fun_08002d34\n\
-    b           LAB_080012da\n\
-LAB_080012d2:\n\
-    bl          fun_08002bcc\n\
-    bl          fun_08002df8\n\
-LAB_080012da:\n\
-    bl          fun_08002dd8\n\
-    lsl         r0,r0,#0x10\n\
-    cmp         r0,#0x0\n\
-    bne         LAB_080012d2\n\
-    pop         {r0}\n\
-    bx          r0\n\
-    ");
+    fun_08002d34(1, 0, param_1);
+    while( true )
+    {
+        u16 sVar1 = fun_08002dd8();
+        if (sVar1 == 0) break;
+        fun_08002bcc();
+        fun_08002df8();
+    }
 }
+
 __attribute__((naked)) void fun_080012e8()
 {
     asm("\n\

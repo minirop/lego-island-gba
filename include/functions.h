@@ -1,9 +1,15 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
-void fun_080003e0(int, int, int);
+#include "types.h"
+
+s32 fun_08005d50();
+s32 fun_08005e0c();
+s32 fun_08005f08();
+u16 fun_08002dd8();
+void fun_080003e0(s32, s32, s32);
 void fun_080004ac(void*, void*);
-void fun_080004dc(int, int, char*);
+void fun_080004dc(s32, s32, s8*);
 void fun_08000584();
 void fun_08001424();
 void fun_08001454();
@@ -13,15 +19,15 @@ void fun_080014d4();
 void fun_080014ec();
 void fun_08001504();
 void fun_080017ac();
-void fun_080018e4(int);
-void fun_08001a14(int, int);
+void fun_080018e4(s32);
+void fun_08001a14(s32, s32);
 void fun_08001aa8();
 void fun_08001b9c();
 void fun_080024ac();
+void fun_08002bcc();
+void fun_08002d34(u16, u16, u16);
+void fun_08002df8();
 void fun_0800457c();
-int fun_08005d50();
-int fun_08005e0c();
-int fun_08005f08();
 void fun_0800a108();
 void fun_0800a368();
 void fun_0800a600();

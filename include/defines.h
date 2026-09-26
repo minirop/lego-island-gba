@@ -6,4 +6,6 @@ typedef void (*CallbackInt)();
 
 #define NULL ((void*)0)
 
+#include "types.h"
+
 #endif

@@ -4,29 +4,29 @@
 #include "defines.h"
 
 struct LevelInfo {
-    int unk00;
-    int unk04;
-    short unk08;
-    short unk0a;
+    s32 unk00;
+    s32 unk04;
+    s16 unk08;
+    s16 unk0a;
     void* unk0c;
     void* unk10;
-    int unk14;
-    int unk18;
-    int unk1c;
-    int unk20;
+    s32 unk14;
+    s32 unk18;
+    s32 unk1c;
+    s32 unk20;
     CallbackInt unk24;
     CallbackInt unk28;
     CallbackInt unk2c;
     CallbackInt unk30;
     CallbackInt unk34;
     CallbackInt unk38;
-    short unk3c;
-    short unk3e;
-    char name[32];
-    char author1[32];
-    char date1[24];
-    char author2[32];
-    char date2[24];
+    s16 unk3c;
+    s16 unk3e;
+    s8 name[32];
+    s8 author1[32];
+    s8 date1[24];
+    s8 author2[32];
+    s8 date2[24];
 };
 
 #endif

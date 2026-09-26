@@ -1194,7 +1194,7 @@ DAT_0800cf24:\n\
     ");
 }
 
-void fun_0800cf28(unsigned short param_1, unsigned short param_2, unsigned short param_3, unsigned short param_4)
+void fun_0800cf28(u16 param_1, u16 param_2, u16 param_3, u16 param_4)
 {
     DAT_0200d400 = param_1;
     DAT_0200d384 = param_2;

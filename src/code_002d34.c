@@ -1,4 +1,7 @@
-__attribute__((naked)) void fun_08002d34()
+#include "functions.h"
+#include "variables.h"
+
+__attribute__((naked)) void fun_08002d34(u16 a, u16 b, u16 c)
 {
     asm("\n\
     push        {r4,r5,r6,r7,lr}\n\
@@ -89,19 +92,12 @@ DAT_08002dd4:\n\
     .word 0x04000050\n\
     ");
 }
-__attribute__((naked)) void fun_08002dd8()
+
+u16 fun_08002dd8()
 {
-    asm("\n\
-    ldr         r0,DAT_08002de0\n\
-    ldrh        r0,[r0,#0x0]\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_08002de0:\n\
-    .word 0x02005770\n\
-    ");
+    return DAT_02005770;
 }
+
 __attribute__((naked)) void fun_08002de4()
 {
     asm("\n\

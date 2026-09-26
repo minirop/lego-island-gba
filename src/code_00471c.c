@@ -667,11 +667,11 @@ DAT_08004b58:\n\
     ");
 }
 
-void fun_08004b5c(unsigned short param_1)
+void fun_08004b5c(u16 param_1)
 {
     DAT_02007f90 = param_1;
 }
-void fun_08004b68(unsigned short param_1)
+void fun_08004b68(u16 param_1)
 {
     DAT_02007f74 = param_1;
 }

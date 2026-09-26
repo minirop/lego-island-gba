@@ -1,16 +1,16 @@
 #include "variables.h"
 
-void fun_08004670(unsigned short param_1)
+void fun_08004670(u16 param_1)
 {
     DAT_02007f60 = param_1;
 }
 
-unsigned short int fun_0800467c()
+u16 fun_0800467c()
 {
     return DAT_02005cf8;
 }
 
-unsigned short int fun_08004688()
+u16 fun_08004688()
 {
     return DAT_02005cfc;
 }
