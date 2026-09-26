@@ -1,13 +1,10 @@
-__attribute__((naked)) void fun_08006180()
+#include "functions.h"
+
+void fun_08006180()
 {
-    asm("\n\
-    push        {lr}\n\
-    mov         r0,#0x0\n\
-    bl          fun_080036b0\n\
-    pop         {r0}\n\
-    bx          r0\n\
-    ");
+    fun_080036b0(0);
 }
+
 __attribute__((naked)) void fun_0800618c()
 {
     asm("\n\

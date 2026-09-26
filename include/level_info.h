@@ -3,11 +3,10 @@
 
 #include "defines.h"
 
-struct LevelInfo {
+typedef struct LevelInfo_s {
     s32 unk00;
     s32 unk04;
-    s16 unk08;
-    s16 unk0a;
+    s32 unk08;
     void* unk0c;
     void* unk10;
     s32 unk14;
@@ -27,6 +26,6 @@ struct LevelInfo {
     s8 date1[24];
     s8 author2[32];
     s8 date2[24];
-};
+} LevelInfo;
 
 #endif

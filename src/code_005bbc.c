@@ -800,11 +800,10 @@ int fun_08006174()
 
 #include "level_info.h"
 
-const struct LevelInfo logo_screens = {
+const LevelInfo logo_screens = {
     0,
     0,
     2,
-    0,
     NULL,
     NULL,
     0,
@@ -826,11 +825,10 @@ const struct LevelInfo logo_screens = {
     "Blank",
 };
 
-const struct LevelInfo language_select = {
+const LevelInfo language_select = {
     0,
     0,
     4,
-    0,
     NULL,
     NULL,
     0,
