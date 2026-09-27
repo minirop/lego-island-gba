@@ -331,6 +331,8 @@ DAT_08000b40:\n\
     .word 0x020025F0\n\
     ");
 }
+const char* dummy_0804975c = "   ";
+
 __attribute__((naked)) void fun_08000b44()
 {
     asm("\n\

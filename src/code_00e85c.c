@@ -1,3 +1,5 @@
+#include "types.h"
+
 __attribute__((naked)) void fun_0800e85c()
 {
     asm("\n\
@@ -465,7 +467,7 @@ LAB_0800eba6:\n\
 \n\
     ");
 }
-int fun_0800ebb0()
+s32 fun_0800ebb0()
 {
     return 0;
 }

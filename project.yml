@@ -369,12 +369,23 @@ rom:
       format: c
       section: rodata
       address: 0x049700
-      size: 0x5c
+    - name: code_0008b4
+      format: c
+      section: rodata
+      address: 0x04975c
+    - name: code_001894
+      format: c
+      section: rodata
+      address: 0x049760
     - name: code_001aa8
       format: c
       section: rodata
       address: 0x04978c
-      size: 0x04
+    - name: code_0021c0
+      format: c
+      section: rodata
+      address: 0x0497b0
+      size: 0x74
     - name: code_002d34
       format: c
       section: rodata
@@ -390,6 +401,11 @@ rom:
       section: rodata
       address: 0x064190
       size: 0x1a0
+    - name: code_006180
+      format: c
+      section: rodata
+      address: 0x066f80
+      size: 0x1c0
     - name: vfprintf
       library: libc.a
       section: rodata

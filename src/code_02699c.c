@@ -1,3 +1,5 @@
+#include "types.h"
+
 __attribute__((naked)) void fun_0802699c()
 {
     asm("\n\
@@ -1033,11 +1035,12 @@ DAT_08027150:\n\
     ");
 }
 
-int fun_08027154()
+s32 fun_08027154()
 {
     fun_0800457c();
     return 0;
 }
+
 __attribute__((naked)) void fun_08027160()
 {
     asm("\n\

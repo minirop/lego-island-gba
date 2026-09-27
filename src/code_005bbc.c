@@ -240,7 +240,7 @@ DAT_08005d4c:\n\
     .word 0x0400001C\n\
     ");
 }
-__attribute__((naked)) int fun_08005d50()
+__attribute__((naked)) s32 fun_08005d50()
 {
     asm("\n\
     push        {r4,r5,r6,lr}\n\
@@ -336,7 +336,7 @@ DAT_08005e08:\n\
     .word 0x02009AD0\n\
     ");
 }
-__attribute__((naked)) int fun_08005e0c()
+__attribute__((naked)) s32 fun_08005e0c()
 {
     asm("\n\
     push        {r4,r5,r6,lr}\n\
@@ -469,7 +469,7 @@ DAT_08005f04:\n\
     ");
 }
 
-int fun_08005f08()
+s32 fun_08005f08()
 {
     return 0;
 }
@@ -558,7 +558,7 @@ DAT_08005fa8:\n\
     .word 0x80000100\n\
     ");
 }
-__attribute__((naked)) void fun_08005fac()
+__attribute__((naked)) s32 fun_08005fac()
 {
     asm("\n\
     push        {r4,r5,r6,lr}\n\
@@ -755,7 +755,7 @@ PTR_DAT_08006128:\n\
     ");
 }
 
-__attribute__((naked)) void fun_0800612c()
+__attribute__((naked)) s32 fun_0800612c()
 {
     asm("\n\
     push       {lr}\n\
@@ -792,13 +792,11 @@ PTR_PTR_08006170:\n\
     .word DAT_0865fd94\n\
     ");
 }
-int fun_08006174()
+s32 fun_08006174()
 {
     fun_0800457c();
     return 0;
 }
-
-#include "level_info.h"
 
 const LevelInfo logo_screens = {
     0,

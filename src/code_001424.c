@@ -1,76 +1,77 @@
+#include "types.h"
 #include "variables.h"
 
-int fun_08001424()
+s32 fun_08001424()
 {
     if (DAT_02005830 & 0x8)
         return 1;
     else
         return 0;
 }
-int fun_0800143c()
+s32 fun_0800143c()
 {
     if (DAT_02005830 & 0x4)
         return 1;
     else
         return 0;
 }
-int fun_08001454()
+s32 fun_08001454()
 {
     if (DAT_02005830 & 0x20)
         return 1;
     else
         return 0;
 }
-int fun_0800146c()
+s32 fun_0800146c()
 {
     if (DAT_02005830 & 0x10)
         return 1;
     else
         return 0;
 }
-int fun_08001484()
+s32 fun_08001484()
 {
     if (DAT_02005830 & 0x200)
         return 1;
     else
         return 0;
 }
-int fun_080014a0()
+s32 fun_080014a0()
 {
     if (DAT_02005830 & 0x100)
         return 1;
     else
         return 0;
 }
-int fun_080014bc()
+s32 fun_080014bc()
 {
     if (DAT_02005830 & 0x40)
         return 1;
     else
         return 0;
 }
-int fun_080014d4()
+s32 fun_080014d4()
 {
     if (DAT_02005830 & 0x80)
         return 1;
     else
         return 0;
 }
-int fun_080014ec()
+s32 fun_080014ec()
 {
     if (DAT_02005830 & 0x1)
         return 1;
     else
         return 0;
 }
-int fun_08001504()
+s32 fun_08001504()
 {
     if (DAT_02005830 & 0x2)
         return 1;
     else
         return 0;
 }
-__attribute__((naked))void fun_0800151c()
+__attribute__((naked)) void fun_0800151c()
 {
     asm("\n\
     ldr        r2,DAT_0800152c\n\

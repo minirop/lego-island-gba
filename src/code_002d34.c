@@ -190,14 +190,13 @@ void fun_08002ec8(s16 param_1)
 }
 
 #ifdef NONMATCHING
-void fun_08002f00(int param_1, s8* param_2)
+void fun_08002f00(s32 param_1, s8* param_2)
 {
     s32 iVar1;
     s32 iVar2;
     s32 iVar3;
 
-    if (param_1 < 0)
-    {
+    if (param_1 < 0) {
         param_1 = 0;
     }
 
@@ -205,11 +204,9 @@ void fun_08002f00(int param_1, s8* param_2)
     iVar2 = iVar1 / 60;
     iVar3 = iVar1 - iVar2 * 60;
 
-    if (iVar3 < 10)
-    {
+    if (iVar3 < 10) {
         sprintf(param_2, "A%d:0%d", (u16)iVar2, (u16)iVar3);
-    } else
-    {
+    } else {
         sprintf(param_2, "A%d:%d", (u16)iVar2, (u16)iVar3);
     }
 }

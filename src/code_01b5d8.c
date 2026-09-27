@@ -1,3 +1,5 @@
+#include "types.h"
+
 __attribute__((naked)) void fun_0801b5d8()
 {
     asm("\n\
@@ -1856,11 +1858,11 @@ __attribute__((naked)) void fun_0801c3c0()
      bx         r1\n\
     ");
 }
-int fun_0801c3cc()
+s32 fun_0801c3cc()
 {
     return 1;
 }
-int fun_0801c3d0()
+s32 fun_0801c3d0()
 {
     return 1;
 }

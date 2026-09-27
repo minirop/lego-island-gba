@@ -3764,11 +3764,11 @@ DAT_08021298:\n\
      .word 0x0200F080\n\
     ");
 }
-int fun_0802129c()
+s32 fun_0802129c()
 {
     return 1;
 }
-int fun_080212a0()
+s32 fun_080212a0()
 {
     return 1;
 }

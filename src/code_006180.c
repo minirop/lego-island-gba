@@ -1,11 +1,12 @@
 #include "functions.h"
+#include "types.h"
 
 void fun_08006180()
 {
     fun_080036b0(0);
 }
 
-__attribute__((naked)) void fun_0800618c()
+__attribute__((naked)) s32 fun_0800618c()
 {
     asm("\n\
     push        {r4,r5,r6,lr}\n\
@@ -199,6 +200,32 @@ DAT_080062f8:\n\
     .word 0x02009AE8\n\
     ");
 }
+
+const LevelInfo cutscene = {
+    0,
+    0,
+    8,
+    NULL,
+    NULL,
+    0,
+    0,
+    0,
+    0,
+    fun_08006484,
+    fun_08006500,
+    fun_0800618c,
+    NULL,
+    NULL,
+    NULL,
+    0,
+    0,
+    "CutScene",
+    "Blank",
+    "Blank",
+    "Blank",
+    "Blank",
+};
+
 __attribute__((naked)) void fun_080062fc()
 {
     asm("\n\
@@ -325,6 +352,34 @@ DAT_080063e0:\n\
     .word 0x0865FD94\n\
     ");
 }
+
+const char* dummy_08067050 = "                              ";
+
+const LevelInfo start_menu = {
+    0,
+    0,
+    14,
+    NULL,
+    NULL,
+    0,
+    0,
+    0,
+    0,
+    fun_0800650c,
+    fun_080068b0,
+    fun_08006824,
+    NULL,
+    NULL,
+    NULL,
+    0,
+    0,
+    "Start Menu",
+    "Blank",
+    "Blank",
+    "Blank",
+    "Blank",
+};
+
 __attribute__((naked)) void fun_080063e4()
 {
     asm("\n\
@@ -408,7 +463,7 @@ DAT_08006480:\n\
     .word 0x00001F04\n\
     ");
 }
-__attribute__((naked)) void fun_08006484()
+__attribute__((naked)) s32 fun_08006484()
 {
     asm("\n\
     push        {r4,lr}\n\
@@ -475,12 +530,12 @@ DAT_080064fc:\n\
 \n\
     ");
 }
-int fun_08006500()
+s32 fun_08006500()
 {
     fun_0800457c();
     return 0;
 }
-__attribute__((naked)) void fun_0800650c()
+__attribute__((naked)) s32 fun_0800650c()
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\
@@ -884,7 +939,7 @@ DAT_08006820:\n\
      .4byte 0x02009AF8\n\
     ");
 }
-__attribute__((naked)) void fun_08006824()
+__attribute__((naked)) s32 fun_08006824()
 {
     asm("\n\
      push       {r4,lr}\n\
@@ -957,7 +1012,7 @@ DAT_080068ac:\n\
      .4byte 0x00001F44\n\
     ");
 }
-__attribute__((naked)) void fun_080068b0()
+__attribute__((naked)) s32 fun_080068b0()
 {
     asm("\n\
      push       {lr}\n\

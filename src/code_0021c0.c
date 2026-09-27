@@ -1,3 +1,6 @@
+#include "functions.h"
+#include "defines.h"
+
 __attribute__((naked)) void fun_080021c0()
 {
     asm("\n\
@@ -747,6 +750,8 @@ DAT_080026ec:\n\
     .word 0x02005710\n\
     ");
 }
+const char* dummy_080497b0 = "Multiplayer already initialised";
+
 __attribute__((naked)) void fun_080026f0()
 {
     asm("\n\
@@ -978,6 +983,8 @@ DAT_08002874:\n\
     .word 0x080497D0\n\
     ");
 }
+const char* dummy_080497d0 = "Multiplayer not initialised";
+
 __attribute__((naked)) void fun_08002878()
 {
     asm("\n\
@@ -1203,3 +1210,21 @@ void fun_080029bc()
 }
 
 asm(".space 2");
+
+// has to be there even if used in fun_08002b34
+const Callback dummy_080497ec[] = {
+    fun_080024ac,
+    fun_08003278,
+    fun_080017ac,
+    fun_0800329c,
+    fun_0800329c,
+    fun_0800329c,
+    fun_0800329c,
+    fun_0800329c,
+    fun_0800329c,
+    fun_0800329c,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+};

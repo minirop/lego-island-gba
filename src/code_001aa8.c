@@ -1,5 +1,5 @@
-#include "variables.h"
 #include "functions.h"
+#include "variables.h"
 #include <string.h>
 
 __attribute__((naked)) void fun_08001aa8()
@@ -256,6 +256,8 @@ DAT_08001c88:\n\
     .word 0x48FED829\n\
     ");
 }
+const char* dummy_0804978c = "SWD";
+
 __attribute__((naked)) void fun_08001c8c()
 {
     asm("\n\
@@ -469,6 +471,9 @@ DAT_08001e2c:\n\
     .word 0x000007E6\n\
     ");
 }
+const char* dummy_08049790 = "GOGOMONKEYX";
+const char* dummy_0804979c = "MultiSioSync010316";
+
 __attribute__((naked)) void fun_08001e30()
 {
     asm("\n\
@@ -919,7 +924,7 @@ DAT_0800215c:\n\
 
 void fun_08002160()
 {
-    int iVar1;
+    s32 iVar1;
 
     fun_08001aa8();
     iVar1 = strcmp("SWD", &DAT_02005200);

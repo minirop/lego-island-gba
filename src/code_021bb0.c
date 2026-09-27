@@ -1,3 +1,5 @@
+#include "types.h"
+
 __attribute__((naked)) void fun_08021bb0()
 {
     asm("\n\
@@ -3878,11 +3880,11 @@ DAT_08023868:\n\
      .word 0x0200F2D4\n\
     ");
 }
-int fun_0802386c()
+s32 fun_0802386c()
 {
     return 1;
 }
-int fun_08023870()
+s32 fun_08023870()
 {
     return 1;
 }

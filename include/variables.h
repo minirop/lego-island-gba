@@ -1,6 +1,7 @@
 #ifndef VARIABLES_H
 #define VARIABLES_H
 
+#include "level_info.h"
 #include "types.h"
 
 extern s16 DAT_02000270;
@@ -41,5 +42,8 @@ extern u16 DAT_0200d3fc;
 extern u16 DAT_0200d400;
 extern u16 DAT_0200d404;
 extern u16 DAT_0200d408;
+
+extern const LevelInfo logo_screens;
+extern const LevelInfo language_select;
 
 #endif

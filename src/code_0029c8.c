@@ -1,4 +1,6 @@
 #include "variables.h"
+#include "functions.h"
+#include "defines.h"
 
 __attribute__((naked)) void fun_080029c8()
 {
