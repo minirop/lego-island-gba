@@ -1,4 +1,7 @@
-__attribute__((naked)) void fun_08017920()
+#include "functions.h"
+#include "variables.h"
+
+__attribute__((naked)) s32 fun_08017920()
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\
@@ -474,17 +477,14 @@ LAB_08017cc8:\n\
      bx         r0\n\
     ");
 }
-__attribute__((naked)) void fun_08017cd0()
+
+s32 fun_08017cd0()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0803a980\n\
-     mov        r0,#0x0\n\
-     pop        {r1}\n\
-     bx         r1\n\
-    ");
+    fun_0803a980();
+    return 0;
 }
-__attribute__((naked)) void fun_08017cdc()
+
+__attribute__((naked)) s32 fun_08017cdc()
 {
     asm("\n\
      push       {lr}\n\
@@ -538,20 +538,17 @@ LAB_08017d40:\n\
      bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_08017d48()
+
+s32 fun_08017d48()
 {
-    asm("\n\
-     mov        r0,#0x0\n\
-     bx         lr\n\
-    ");
+    return 0;
 }
-__attribute__((naked)) void fun_08017d4c()
+
+s32 fun_08017d4c()
 {
-    asm("\n\
-     mov        r0,#0x0\n\
-     bx         lr\n\
-    ");
+    return 0;
 }
+
 __attribute__((naked)) void fun_08017d50()
 {
     asm("\n\
@@ -590,7 +587,7 @@ __attribute__((naked)) void fun_08017d74()
      bx         r0\n\
     ");
 }
-__attribute__((naked)) void fun_08017d90()
+__attribute__((naked)) s32 fun_08017d90()
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\
@@ -1383,3 +1380,28 @@ DAT_0801836c:\n\
     .word 0x0000FFFF\n\
     ");
 }
+
+const LevelInfo instruction_screen = {
+    1,
+    0,
+    34,
+    &DAT_084735c0,
+    &DAT_0200dd00,
+    0,
+    0,
+    0,
+    0,
+    fun_08017920,
+    fun_08017cd0,
+    fun_08017cdc,
+    fun_08017d48,
+    fun_08017d4c,
+    fun_08017d90,
+    1,
+    32,
+    "Instruction Screen",
+    "Andy Debus",
+    "20:39 Mon 12nd Mar 2001",
+    "Andy Debus",
+    "14:28 Mon 11st Jun 2001",
+};

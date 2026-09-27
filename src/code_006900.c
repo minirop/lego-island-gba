@@ -1,4 +1,4 @@
-#include "types.h"
+#include "functions.h"
 
 __attribute__((naked)) void fun_08006900()
 {
@@ -954,7 +954,7 @@ DAT_08006fb0:\n\
     .word 0x00001F44\n\
     ");
 }
-__attribute__((naked)) void fun_08006fb4()
+__attribute__((naked)) int fun_08006fb4()
 {
     asm("\n\
     push        {r4,r5,r6,lr}\n\
@@ -1200,6 +1200,34 @@ DAT_0800718c:\n\
     .word 0x0865FD94\n\
     ");
 }
+
+const char* dummy_08082634 = "%s";
+
+const LevelInfo multiplayer_linkup = {
+    0,
+    0,
+    39,
+    NULL,
+    NULL,
+    0,
+    0,
+    0,
+    0,
+    fun_080072c4,
+    fun_080072b8,
+    fun_08006fb4,
+    NULL,
+    NULL,
+    NULL,
+    0,
+    0,
+    "Multiplayer LinkUp",
+    "Blank",
+    "Blank",
+    "Blank",
+    "Blank",
+};
+
 __attribute__((naked)) void fun_08007190()
 {
     asm("\n\
@@ -1365,7 +1393,7 @@ s32 fun_080072b8()
     return 0;
 }
 
-__attribute__((naked)) void fun_080072c4()
+__attribute__((naked)) s32 fun_080072c4()
 {
     asm("\n\
     push       {r4,lr}\n\

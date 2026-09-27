@@ -1,3 +1,5 @@
+#include "functions.h"
+
 __attribute__((naked)) void fun_080171fc()
 {
     asm("\n\
@@ -90,7 +92,33 @@ DAT_08017298:\n\
      .word 0x0000EA60\n\
     ");
 }
-__attribute__((naked)) void fun_0801729c()
+
+const LevelInfo game_complete = {
+    0,
+    0,
+    16,
+    NULL,
+    NULL,
+    0,
+    0,
+    0,
+    0,
+    fun_0801729c,
+    fun_080178f8,
+    fun_080176bc,
+    NULL,
+    NULL,
+    NULL,
+    0,
+    0,
+    "Game Complete",
+    "Blank",
+    "Blank",
+    "Blank",
+    "Blank",
+};
+
+__attribute__((naked)) s32 fun_0801729c()
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -633,7 +661,9 @@ DAT_080176b8:\n\
      .word 0x0200DCBC\n\
     ");
 }
-__attribute__((naked)) void fun_080176bc()
+const char* dummy_0846a53c = "%d";
+
+__attribute__((naked)) s32 fun_080176bc()
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -921,7 +951,7 @@ LAB_080178ec:\n\
      bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_080178f8()
+__attribute__((naked)) s32 fun_080178f8()
 {
     asm("\n\
     push       {lr}\n\

@@ -1,3 +1,6 @@
+#include "functions.h"
+#include "variables.h"
+
 __attribute__((naked)) void fun_08009748()
 {
     asm("\n\
@@ -58,7 +61,7 @@ DAT_080097ac:\n\
     .word 0x00000E5A\n\
     ");
 }
-__attribute__((naked)) void fun_080097b0()
+__attribute__((naked)) s32 fun_080097b0()
 {
     asm("\n\
     push        {lr}\n\
@@ -254,7 +257,7 @@ DAT_080098f4:\n\
     .word 0x0200C8C0\n\
     ");
 }
-__attribute__((naked)) void fun_080098f8()
+__attribute__((naked)) s32 fun_080098f8()
 {
     asm("\n\
     push        {r4,r5,r6,lr}\n\
@@ -309,7 +312,33 @@ DAT_08009954:\n\
     .word 0x08324AB0\n\
     ");
 }
-__attribute__((naked)) void fun_08009958()
+
+const LevelInfo lego_island = {
+    1,
+    0,
+    20,
+    &DAT_08330a24,
+    &DAT_0200d368,
+    0,
+    0,
+    0,
+    0,
+    fun_08009958,
+    fun_08009c44,
+    fun_08009b0c,
+    fun_08009e84,
+    fun_08009e88,
+    fun_080098f8,
+    1,
+    1328,
+    "Lego Island",
+    "Malcolm Grant",
+    "15:33 Wed 29th Nov 2000",
+    "Malcolm Grant",
+    "13:43 Thu 21st Jun 2001",
+};
+
+__attribute__((naked)) s32 fun_08009958()
 {
     asm("\n\
     push        {r4,r5,lr}\n\
@@ -505,7 +534,7 @@ DAT_08009b08:\n\
     .word 0xFFFFDFFF\n\
     ");
 }
-__attribute__((naked)) void fun_08009b0c()
+__attribute__((naked)) s32 fun_08009b0c()
 {
     asm("\n\
     push        {r4,r5,r6,lr}\n\
@@ -655,6 +684,12 @@ DAT_08009c3c:\n\
     .word 0x00000DCA\n\
 DAT_08009c40:\n\
     .word 0x00000E84\n\
+    ");
+}
+
+__attribute__((naked)) s32 fun_08009c44()
+{
+    asm("\n\
     push        {r4,lr}\n\
     bl          fun_080020a4\n\
     ldr         r1,DAT_08009cd0\n\
@@ -922,20 +957,25 @@ DAT_08009e7c:\n\
     .word 0x00000E8C\n\
 DAT_08009e80:\n\
     .word 0x020006A0\n\
-    mov         r0,#0x1\n\
-    bx          lr\n\
-    mov         r0,#0x1\n\
-    bx          lr\n\
-    push        {lr}\n\
-    bl          fun_0803a9ec\n\
-    ldr         r0,DAT_08009e9c\n\
-    bl          fun_0800dd04\n\
-    pop         {r0}\n\
-    bx          r0\n\
-DAT_08009e9c:\n\
-    .word 0x020003B0\n\
     ");
 }
+
+s32 fun_08009e84()
+{
+    return 1;
+}
+
+s32 fun_08009e88()
+{
+    return 1;
+}
+
+void fun_08009e8c()
+{
+    fun_0803a9ec();
+    fun_0800dd04(&DAT_020003b0);
+}
+
 __attribute__((naked)) void fun_08009ea0()
 {
     asm("\n\

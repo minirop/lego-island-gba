@@ -1,4 +1,6 @@
+#include "functions.h"
 #include "types.h"
+#include "variables.h"
 
 __attribute__((naked)) void fun_08007de0()
 {
@@ -309,7 +311,7 @@ LAB_08007ff0:\n\
     bx          r0\n\
     ");
 }
-__attribute__((naked)) void fun_08007ff4()
+__attribute__((naked)) s32 fun_08007ff4()
 {
     asm("\n\
      ldr        r2,DAT_0800800c\n\
@@ -334,7 +336,7 @@ DAT_08008018:\n\
      .word 0x08107C38\n\
     ");
 }
-__attribute__((naked)) void fun_0800801c()
+__attribute__((naked)) s32 fun_0800801c()
 {
     asm("\n\
     push        {r4,r5,r6,r7,lr}\n\
@@ -1733,17 +1735,14 @@ DAT_08008a4c:\n\
     .word 0x0200C838\n\
     ");
 }
-__attribute__((naked)) void fun_08008a50()
+
+s32 fun_08008a50()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800457c\n\
-     mov        r0,#0x0\n\
-     pop        {r1}\n\
-     bx         r1\n\
-    ");
+    fun_0800457c();
+    return 0;
 }
-__attribute__((naked)) void fun_08008a5c()
+
+__attribute__((naked)) s32 fun_08008a5c()
 {
     asm("\n\
     push        {lr}\n\
@@ -1770,7 +1769,7 @@ s32 fun_08008a84()
 {
     return 1;
 }
-__attribute__((naked)) void fun_08008a88()
+__attribute__((naked)) s32 fun_08008a88()
 {
     asm("\n\
     push        {r4,r5,r6,r7,lr}\n\
@@ -1926,7 +1925,7 @@ DAT_08008bc4:\n\
     .word 0x0200C880\n\
     ");
 }
-__attribute__((naked)) void fun_08008bc8()
+__attribute__((naked)) s32 fun_08008bc8()
 {
     asm("\n\
     push        {r4,lr}\n\
@@ -2150,6 +2149,57 @@ LAB_08008d62:\n\
 \n\
     ");
 }
+
+const LevelInfo credits = {
+    1,
+    0,
+    36,
+    &DAT_08107c38,
+    &DAT_0200c630,
+    0,
+    0,
+    0,
+    0,
+    fun_0800801c,
+    fun_08008a50,
+    fun_08008a5c,
+    fun_08008a80,
+    fun_08008a84,
+    fun_08007ff4,
+    1,
+    5,
+    "Credits",
+    "Jon Phillips",
+    "15:36 Wed 07th Feb 2001",
+    "SPOERERK",
+    "11:36 Wed 11st Apr 2001",
+};
+
+const LevelInfo card_album = {
+    0,
+    0,
+    9,
+    NULL,
+    NULL,
+    0,
+    0,
+    0,
+    0,
+    fun_08008a88,
+    fun_080097b0,
+    fun_08008bc8,
+    NULL,
+    NULL,
+    NULL,
+    0,
+    0,
+    "Card Album",
+    "Blank",
+    "Blank",
+    "Blank",
+    "Blank",
+};
+
 __attribute__((naked)) void fun_08008d6c()
 {
     asm("\n\

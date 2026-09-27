@@ -1734,7 +1734,7 @@ DAT_0800dd00:\n\
     .word 0x0200D41C\n\
     ");
 }
-__attribute__((naked)) void fun_0800dd04()
+__attribute__((naked)) void fun_0800dd04(void* ptr)
 {
     asm("\n\
     ldr         r1,DAT_0800dd18\n\
@@ -3053,4 +3053,3 @@ DAT_0800e6dc:\n\
      .4byte 0x0877CE24\n\
     ");
 }
-

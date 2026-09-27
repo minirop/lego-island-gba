@@ -4,6 +4,15 @@
 #include "level_info.h"
 #include "types.h"
 
+extern const LevelInfo card_album;
+extern const LevelInfo credits;
+extern const LevelInfo cutscene;
+extern const LevelInfo language_select;
+extern const LevelInfo logo_screens;
+extern const LevelInfo multiplayer_connect;
+extern const LevelInfo multiplayer_linkup;
+extern const LevelInfo start_menu;
+extern const LevelInfo subgame_select;
 extern s16 DAT_02000270;
 extern s16 DAT_02005830;
 extern s16 DAT_02005ce0;
@@ -42,8 +51,16 @@ extern u16 DAT_0200d3fc;
 extern u16 DAT_0200d400;
 extern u16 DAT_0200d404;
 extern u16 DAT_0200d408;
-
-extern const LevelInfo logo_screens;
-extern const LevelInfo language_select;
+extern void* DAT_020003b0;
+extern void* DAT_0200c630;
+extern void* DAT_0200d368;
+extern void* DAT_0200dd00;
+extern void* DAT_0200e050;
+extern void* DAT_0200e470;
+extern void* DAT_08107c38;
+extern void* DAT_08330a24;
+extern void* DAT_084735c0;
+extern void* DAT_0847cb74;
+extern void* DAT_08487c68;
 
 #endif

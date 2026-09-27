@@ -101,6 +101,9 @@ rom:
     - name: code_007354
       format: c
       address: 0x007354
+    - name: code_007aa0
+      format: c
+      address: 0x007aa0
     - name: code_007de0
       format: c
       address: 0x007de0
@@ -152,6 +155,9 @@ rom:
     - name: code_018370
       format: c
       address: 0x018370
+    - name: code_018e28
+      format: c
+      address: 0x018e28
     - name: code_01968c
       format: c
       address: 0x01968c
@@ -406,6 +412,46 @@ rom:
       section: rodata
       address: 0x066f80
       size: 0x1c0
+    - name: code_006900
+      format: c
+      section: rodata
+      address: 0x082634
+      size: 0xd4
+    - name: code_007354
+      format: c
+      section: rodata
+      address: 0x095508
+      size: 0x16C
+    - name: code_007aa0
+      format: c
+      section: rodata
+      address: 0x09a254
+      size: 0xd0
+    - name: code_007de0
+      format: c
+      section: rodata
+      address: 0x107c9c
+      size: 0x1a0
+    - name: code_012068
+      format: c
+      section: rodata
+      address: 0x44d978
+      size: 0xe3
+    - name: code_0171fc
+      format: c
+      section: rodata
+      address: 0x46a46c
+      size: 0xd3
+    - name: code_018370
+      format: c
+      section: rodata
+      address: 0x47cbd8
+      size: 0x109
+    - name: code_018e28
+      format: c
+      section: rodata
+      address: 0x487ccc
+      size: 0xd0
     - name: vfprintf
       library: libc.a
       section: rodata

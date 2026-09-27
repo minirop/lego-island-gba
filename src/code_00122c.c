@@ -82,10 +82,9 @@ DAT_080012bc:\n\
 void fun_080012c0(u16 param_1)
 {
     fun_08002d34(1, 0, param_1);
-    while( true )
-    {
-        u16 sVar1 = fun_08002dd8();
-        if (sVar1 == 0) break;
+    while (true) {
+        if (fun_08002dd8() == 0)
+            break;
         fun_08002bcc();
         fun_08002df8();
     }

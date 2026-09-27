@@ -1,3 +1,5 @@
+#include "functions.h"
+
 __attribute__((naked)) void fun_08012068()
 {
     asm("\n\
@@ -11073,7 +11075,7 @@ DAT_08016cd0:\n\
      .word 0x087800EC\n\
     ");
 }
-__attribute__((naked)) void fun_08016cd4()
+__attribute__((naked)) s32 fun_08016cd4()
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\
@@ -11179,7 +11181,33 @@ DAT_08016da8:\n\
      .word 0x02007F78\n\
     ");
 }
-__attribute__((naked)) void fun_08016dac()
+
+const LevelInfo conversation_engine = {
+    0,
+    0,
+    26,
+    NULL,
+    NULL,
+    0,
+    0,
+    0,
+    0,
+    fun_08016cd4,
+    fun_08017180,
+    fun_08016dac,
+    NULL,
+    NULL,
+    NULL,
+    0,
+    0,
+    "Conversation Engine",
+    "Blank",
+    "Blank",
+    "Blank",
+    "Blank",
+};
+
+__attribute__((naked)) s32 fun_08016dac()
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -11428,6 +11456,8 @@ DAT_08016f90:\n\
      .word 0x0865FD94\n\
     ");
 }
+const char* dummy_0844da48 = "Conversation %d-%d";
+
 __attribute__((naked)) void fun_08016f94()
 {
     asm("\n\
@@ -11701,7 +11731,7 @@ LAB_0801716e:\n\
     ");
 }
 
-__attribute__((naked)) void fun_08017180()
+__attribute__((naked)) s32 fun_08017180()
 {
     asm("\n\
     push       {r4,r5,lr}\n\
