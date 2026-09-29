@@ -1,3 +1,5 @@
+#include "types.h"
+
 __attribute__((naked)) void fun_080035b4()
 {
     asm("\n\
@@ -111,60 +113,27 @@ LAB_08003656:\n\
 \n\
     ");
 }
-__attribute__((naked)) void fun_08003658()
+
+void fun_08003658(s32* param_1, s32 param_2, s32 param_3, s32 param_4)
 {
-    asm("\n\
-     str        r1,[r0,#0x0]\n\
-     str        r2,[r0,#0x4]\n\
-     str        r3,[r0,#0x8]\n\
-     bx         lr\n\
-    ");
+    param_1[0] = param_2;
+    param_1[1] = param_3;
+    param_1[2] = param_4;
 }
-__attribute__((naked)) void fun_08003660()
+
+void fun_08003660(f32* param_1, f32 param_2)
 {
-    asm("\n\
-    push        {r4,r5,lr}\n\
-    add         r4,r0,#0x0\n\
-    add         r5,r1,#0x0\n\
-    ldr         r0,[r4,#0x0]\n\
-    bl          __mulsf3\n\
-    str         r0,[r4,#0x0]\n\
-    ldr         r0,[r4,#0x4]\n\
-    add         r1,r5,#0x0\n\
-    bl          __mulsf3\n\
-    str         r0,[r4,#0x4]\n\
-    ldr         r0,[r4,#0x8]\n\
-    add         r1,r5,#0x0\n\
-    bl          __mulsf3\n\
-    str         r0,[r4,#0x8]\n\
-    pop         {r4,r5}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-    ");
+    param_1[0] *= param_2;
+    param_1[1] *= param_2;
+    param_1[2] *= param_2;
 }
-__attribute__((naked)) void fun_08003688()
+
+f32 fun_08003688(s32 param_1)
 {
-    asm("\n\
-    push       {lr}\n\
-    bl         __floatsisf\n\
-    ldr        r1,DAT_08003698\n\
-    bl         __mulsf3\n\
-    pop        {r1}\n\
-    bx         r1\n\
-DAT_08003698:\n\
-    .word 0x3B800000\n\
-    ");
+    return param_1 / 256.f;
 }
-__attribute__((naked)) void fun_0800369c()
+
+s32 fun_0800369c(f32 param_1)
 {
-    asm("\n\
-    push       {lr}\n\
-    ldr        r1,DAT_080036ac\n\
-    bl         __mulsf3\n\
-    bl         __fixsfsi\n\
-    pop        {r1}\n\
-    bx         r1\n\
-DAT_080036ac:\n\
-    .word 0x43800000\n\
-    ");
+    return param_1 * 256.f;
 }

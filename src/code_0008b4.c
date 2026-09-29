@@ -1,3 +1,5 @@
+#include "variables.h"
+
 __attribute__((naked)) void fun_080008b4()
 {
     asm("\n\
@@ -1189,32 +1191,17 @@ DAT_08001114:\n\
     .word 0x020025EC\n\
     ");
 }
-__attribute__((naked)) void fun_08001118()
+
+u8 fun_08001118()
 {
-    asm("\n\
-    ldr         r0,DAT_08001120\n\
-    ldrb        r0,[r0,#0x0]\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_08001120:\n\
-    .word 0x020025EC\n\
-    ");
+    return DAT_020025ec;
 }
-__attribute__((naked)) void fun_08001124()
+
+u16 fun_08001124()
 {
-    asm("\n\
-    ldr         r0,DAT_0800112c\n\
-    ldrh        r0,[r0,#0x0]\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_0800112c:\n\
-    .word 0x02002534\n\
-    ");
+    return DAT_02002534;
 }
+
 __attribute__((naked)) void fun_08001130()
 {
     asm("\n\
@@ -1253,30 +1240,17 @@ DAT_0800116c:\n\
     .word 0x020025C4\n\
     ");
 }
-__attribute__((naked)) void fun_08001170()
+
+void fun_08001170(s32 param_1)
 {
-    asm("\n\
-    ldr         r1,DAT_08001178\n\
-    str         r0,[r1,#0x0]\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_08001178:\n\
-    .word 0x020025F0\n\
-    ");
+    DAT_020025f0 = param_1;
 }
-__attribute__((naked)) void fun_0800117c()
+
+void fun_0800117c()
 {
-    asm("\n\
-    ldr         r1,DAT_08001184\n\
-    mov         r0,#0x1\n\
-    strh        r0,[r1,#0x0]\n\
-    bx          lr\n\
-DAT_08001184:\n\
-    .word 0x020025B0\n\
-    ");
+    DAT_020025b0 = 1;
 }
+
 __attribute__((naked)) void fun_08001188()
 {
     asm("\n\
