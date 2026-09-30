@@ -1,3 +1,6 @@
+#include "functions.h"
+#include "variables.h"
+
 __attribute__((naked)) void fun_0803b5c8()
 {
     asm("\n\
@@ -968,15 +971,12 @@ PTR_BG1HOFS_0803bd04:\n\
      .word       BG1HOFS\n\
     ");
 }
-__attribute__((naked)) void fun_0803bd08()
+
+s32* fun_0803bd08()
 {
-    asm("\n\
-     ldr        r0,DAT_0803bd0c\n\
-     bx         lr\n\
-DAT_0803bd0c:\n\
-     .word 0x030040EC\n\
-    ");
+    return &DAT_030040ec;
 }
+
 __attribute__((naked)) void fun_0803bd10()
 {
     asm("\n\

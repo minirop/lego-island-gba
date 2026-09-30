@@ -1590,15 +1590,12 @@ DAT_080285d8:\n\
      .word 0x0000085C\n\
     ");
 }
-__attribute__((naked)) void fun_080285dc()
+
+void fun_080285dc()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0803a9dc\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0803a9dc();
 }
+
 __attribute__((naked)) void fun_080285e8()
 {
     asm("\n\
@@ -9883,20 +9880,17 @@ __attribute__((naked)) void fun_0802c318()
      bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_0802c324()
+
+s32 fun_0802c324()
 {
-    asm("\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-    ");
+    return 1;
 }
-__attribute__((naked)) void fun_0802c328()
+
+s32 fun_0802c328()
 {
-    asm("\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-    ");
+    return 1;
 }
+
 __attribute__((naked)) void fun_0802c32c()
 {
     asm("\n\
@@ -10244,20 +10238,17 @@ DAT_0802c5d0:\n\
      .word 0x00000E84\n\
     ");
 }
-__attribute__((naked)) void fun_0802c5d4()
+
+s32 fun_0802c5d4()
 {
-    asm("\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-    ");
+    return 1;
 }
-__attribute__((naked)) void fun_0802c5d8()
+
+s32 fun_0802c5d8()
 {
-    asm("\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-    ");
+    return 1;
 }
+
 __attribute__((naked)) void fun_0802c5dc()
 {
     asm("\n\
@@ -10558,20 +10549,17 @@ __attribute__((naked)) void fun_0802c7ec()
      bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_0802c7f8()
+
+s32 fun_0802c7f8()
 {
-    asm("\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-    ");
+    return 1;
 }
-__attribute__((naked)) void fun_0802c7fc()
+
+s32 fun_0802c7fc()
 {
-    asm("\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-    ");
+    return 1;
 }
+
 __attribute__((naked)) void fun_0802c800()
 {
     asm("\n\
@@ -14272,20 +14260,17 @@ DAT_0802e3b4:\n\
      .word 0x0200ED50\n\
     ");
 }
-__attribute__((naked)) void fun_0802e3b8()
+
+s32 fun_0802e3b8()
 {
-    asm("\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-    ");
+    return 1;
 }
-__attribute__((naked)) void fun_0802e3bc()
+
+s32 fun_0802e3bc()
 {
-    asm("\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-    ");
+    return 1;
 }
+
 __attribute__((naked)) void fun_0802e3c0()
 {
     asm("\n\
@@ -15031,20 +15016,17 @@ __attribute__((naked)) void fun_0802e954()
      bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_0802e96c()
+
+s32 fun_0802e96c()
 {
-    asm("\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-    ");
+    return 1;
 }
-__attribute__((naked)) void fun_0802e970()
+
+s32 fun_0802e970()
 {
-    asm("\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-    ");
+    return 1;
 }
+
 __attribute__((naked)) void fun_0802e974()
 {
     asm("\n\
@@ -15113,12 +15095,11 @@ DAT_0802e9dc:\n\
      .word 0x02010520\n\
     ");
 }
-__attribute__((naked)) void fun_0802e9e0()
+
+void fun_0802e9e0()
 {
-    asm("\n\
-     bx         lr\n\
-    ");
 }
+
 __attribute__((naked)) void fun_0802e9e4()
 {
     asm("\n\

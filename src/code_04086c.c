@@ -1763,16 +1763,13 @@ LAB_080414b0:\n\
      bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_080414bc()
+
+s32 fun_080414bc(int param_1, int* param_2)
 {
-    asm("\n\
-     ldr        r0,[r1,#0x0]\n\
-     add        r0,#0x2\n\
-     str        r0,[r1,#0x0]\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-    ");
+    *param_2 += 2;
+    return 1;
 }
+
 __attribute__((naked)) void fun_080414c8()
 {
     asm("\n\

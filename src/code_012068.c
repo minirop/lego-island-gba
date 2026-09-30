@@ -432,15 +432,12 @@ __attribute__((naked)) void fun_0801239c()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_080123a4()
+
+void fun_080123a4()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_080123b0()
 {
     asm("\n\
@@ -449,15 +446,12 @@ __attribute__((naked)) void fun_080123b0()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_080123b8()
+
+void fun_080123b8()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_080123c4()
 {
     asm("\n\
@@ -466,15 +460,12 @@ __attribute__((naked)) void fun_080123c4()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_080123cc()
+
+void fun_080123cc()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_080123d8()
 {
     asm("\n\
@@ -670,15 +661,12 @@ __attribute__((naked)) void fun_08012550()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_08012558()
+
+void fun_08012558()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_08012564()
 {
     asm("\n\
@@ -687,15 +675,12 @@ __attribute__((naked)) void fun_08012564()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_0801256c()
+
+void fun_0801256c()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_08012578()
 {
     asm("\n\
@@ -1083,15 +1068,12 @@ __attribute__((naked)) void fun_080127c0()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_080127c8()
+
+void fun_080127c8()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_080127d4()
 {
     asm("\n\
@@ -1100,15 +1082,12 @@ __attribute__((naked)) void fun_080127d4()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_080127dc()
+
+void fun_080127dc()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_080127e8()
 {
     asm("\n\
@@ -1117,15 +1096,12 @@ __attribute__((naked)) void fun_080127e8()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_080127f0()
+
+void fun_080127f0()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_080127fc()
 {
     asm("\n\
@@ -1134,15 +1110,12 @@ __attribute__((naked)) void fun_080127fc()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_08012804()
+
+void fun_08012804()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_08012810()
 {
     asm("\n\
@@ -1151,15 +1124,12 @@ __attribute__((naked)) void fun_08012810()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_08012818()
+
+void fun_08012818()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_08012824()
 {
     asm("\n\
@@ -1450,15 +1420,12 @@ DAT_08012a20:\n\
      .word 0x0000021B\n\
     ");
 }
-__attribute__((naked)) void fun_08012a24()
+
+void fun_08012a24()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_08012a30()
 {
     asm("\n\
@@ -1832,15 +1799,12 @@ __attribute__((naked)) void fun_08012cb4()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_08012cbc()
+
+void fun_08012cbc()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_08012cc8()
 {
     asm("\n\
@@ -2676,15 +2640,12 @@ DAT_08013370:\n\
      .word 0x00000E4A\n\
     ");
 }
-__attribute__((naked)) void fun_08013374()
+
+void fun_08013374()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_08013380()
 {
     asm("\n\
@@ -2985,15 +2946,12 @@ __attribute__((naked)) void fun_08013578()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_08013580()
+
+void fun_08013580()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_0801358c()
 {
     asm("\n\
@@ -4510,15 +4468,12 @@ __attribute__((naked)) void fun_080140a0()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_080140a8()
+
+void fun_080140a8()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_080140b4()
 {
     asm("\n\
@@ -5827,15 +5782,12 @@ __attribute__((naked)) void fun_08014a28()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_08014a30()
+
+void fun_08014a30()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_08014a3c()
 {
     asm("\n\
@@ -7527,15 +7479,12 @@ __attribute__((naked)) void fun_08015570()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_08015578()
+
+void fun_08015578()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_08015584()
 {
     asm("\n\
@@ -8091,15 +8040,12 @@ __attribute__((naked)) void fun_08015904()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_0801590c()
+
+void fun_0801590c()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_08015918()
 {
     asm("\n\
@@ -8183,15 +8129,12 @@ __attribute__((naked)) void fun_080159b0()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_080159b8()
+
+void fun_080159b8()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_080159c4()
 {
     asm("\n\
@@ -8426,15 +8369,12 @@ DAT_08015b58:\n\
      .word 0x0200DCA0\n\
     ");
 }
-__attribute__((naked)) void fun_08015b5c()
+
+void fun_08015b5c()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_08015b68()
 {
     asm("\n\
@@ -9012,15 +8952,12 @@ __attribute__((naked)) void fun_08015f34()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_08015f3c()
+
+void fun_08015f3c()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_08015f48()
 {
     asm("\n\
@@ -9564,15 +9501,12 @@ __attribute__((naked)) void fun_080162fc()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_08016304()
+
+void fun_08016304()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_08016310()
 {
     asm("\n\
@@ -9941,15 +9875,12 @@ DAT_08016564:\n\
      .word 0x0200DCA0\n\
     ");
 }
-__attribute__((naked)) void fun_08016568()
+
+void fun_08016568()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_08016574()
 {
     asm("\n\
@@ -9958,15 +9889,12 @@ __attribute__((naked)) void fun_08016574()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_0801657c()
+
+void fun_0801657c()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_08016588()
 {
     asm("\n\
@@ -10129,12 +10057,11 @@ __attribute__((naked)) void fun_0801667c()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_08016684()
+
+void fun_08016684()
 {
-    asm("\n\
-     bx         lr\n\
-    ");
 }
+
 __attribute__((naked)) void fun_08016688()
 {
     asm("\n\
@@ -10675,21 +10602,16 @@ __attribute__((naked)) void fun_08016a40()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_08016a48()
+
+void fun_08016a48()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
-__attribute__((naked)) void fun_08016a54()
+
+void fun_08016a54()
 {
-    asm("\n\
-     bx         lr\n\
-    ");
 }
+
 __attribute__((naked)) void fun_08016a58()
 {
     asm("\n\
@@ -10788,15 +10710,12 @@ __attribute__((naked)) void fun_08016ae0()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_08016ae8()
+
+void fun_08016ae8()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_08016af4()
 {
     asm("\n\
@@ -10805,15 +10724,12 @@ __attribute__((naked)) void fun_08016af4()
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_08016afc()
+
+void fun_08016afc()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
+
 __attribute__((naked)) void fun_08016b08()
 {
     asm("\n\
@@ -10989,21 +10905,16 @@ DAT_08016c40:\n\
      .word 0x0000013D\n\
     ");
 }
-__attribute__((naked)) void fun_08016c44()
+
+void fun_08016c44()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800eb28\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    fun_0800eb28();
 }
-__attribute__((naked)) void fun_08016c50()
+
+void fun_08016c50()
 {
-    asm("\n\
-     bx         lr\n\
-    ");
 }
+
 __attribute__((naked)) void fun_08016c54()
 {
     asm("\n\

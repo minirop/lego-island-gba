@@ -800,20 +800,17 @@ DAT_080193e8:\n\
      .word 0x0200E4A4\n\
     ");
 }
-__attribute__((naked)) void fun_080193ec()
+
+s32 fun_080193ec()
 {
-    asm("\n\
-     mov        r0,#0x0\n\
-     bx         lr\n\
-    ");
+    return 0;
 }
-__attribute__((naked)) void fun_080193f0()
+
+s32 fun_080193f0()
 {
-    asm("\n\
-     mov        r0,#0x0\n\
-     bx         lr\n\
-    ");
+    return 0;
 }
+
 __attribute__((naked)) void fun_080193f4()
 {
     asm("\n\

@@ -1249,9 +1249,11 @@ DAT_0800d974:\n\
 \n\
     ");
 }
+
 void fun_0800d978()
 {
 }
+
 __attribute__((naked)) void fun_0800d97c()
 {
     asm("\n\

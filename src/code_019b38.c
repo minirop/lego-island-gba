@@ -1,3 +1,5 @@
+#include "functions.h"
+
 __attribute__((naked)) void fun_08019b38()
 {
     asm("\n\
@@ -245,20 +247,17 @@ DAT_08019d18:\n\
      .word 0x0200E5DC\n\
     ");
 }
-__attribute__((naked)) void fun_08019d1c()
+
+s32 fun_08019d1c()
 {
-    asm("\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-    ");
+    return 1;
 }
-__attribute__((naked)) void fun_08019d20()
+
+s32 fun_08019d20()
 {
-    asm("\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-    ");
+    return 1;
 }
+
 __attribute__((naked)) void fun_08019d24()
 {
     asm("\n\
@@ -872,16 +871,13 @@ DAT_0801a1bc:\n\
      .word 0x0200E5B4\n\
     ");
 }
-__attribute__((naked)) void fun_0801a1c0()
+
+int fun_0801a1c0()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800457c\n\
-     mov        r0,#0x0\n\
-     pop        {r1}\n\
-     bx         r1\n\
-    ");
+    fun_0800457c();
+    return 0;
 }
+
 __attribute__((naked)) void fun_0801a1cc()
 {
     asm("\n\
@@ -1464,30 +1460,23 @@ LAB_0801a5f8:\n\
      bx         r0\n\
     ");
 }
-__attribute__((naked)) void fun_0801a61c()
+
+s32 fun_0801a61c()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800457c\n\
-     mov        r0,#0x0\n\
-     pop        {r1}\n\
-     bx         r1\n\
-    ");
+    fun_0800457c();
+    return 0;
 }
-__attribute__((naked)) void fun_0801a628()
+
+s32 fun_0801a628()
 {
-    asm("\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-    ");
+    return 1;
 }
-__attribute__((naked)) void fun_0801a62c()
+
+s32 fun_0801a62c()
 {
-    asm("\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-    ");
+    return 1;
 }
+
 __attribute__((naked)) void fun_0801a630()
 {
     asm("\n\

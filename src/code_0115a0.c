@@ -20,12 +20,11 @@ DAT_080115bc:\n\
      .word 0x020006A0\n\
     ");
 }
-__attribute__((naked)) void fun_080115c0()
+
+void fun_080115c0()
 {
-    asm("\n\
-     bx         lr\n\
-    ");
 }
+
 __attribute__((naked)) void fun_080115c4()
 {
     asm("\n\

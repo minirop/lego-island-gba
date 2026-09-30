@@ -32,6 +32,12 @@ typedef struct struct_02005780_s {
     u32 unk08;
 } struct_02005780;
 
+typedef void (*Callback)();
+typedef void (*CallbackInt)();
+typedef s32 (*CallbackIntIntPtr)(s32, s32*);
+
+#define NULL ((void*)0)
+
 #include "level_info.h"
 
 #endif

@@ -2,7 +2,7 @@
 #include "functions.h"
 #include "variables.h"
 
-Callback DAT_087d6190[] = {
+CallbackIntIntPtr DAT_087d6190[] = {
     &fun_0803ff2c,
     &fun_0803ff2c,
     &fun_0803ffac,
