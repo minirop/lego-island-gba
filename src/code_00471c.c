@@ -206,17 +206,13 @@ DAT_08004890:\n\
     .word 0x03002006\n\
     ");
 }
-__attribute__((naked)) void fun_08004894()
+
+void fun_08004894(u16* param_1, u16 param_2, u16 param_3)
 {
-    asm("\n\
-    strh        r1,[r0,#0x2]\n\
-    strh        r2,[r0,#0x4]\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-    ");
+    param_1[1] = param_2;
+    param_1[2] = param_3;
 }
+
 __attribute__((naked)) void fun_0800489c()
 {
     asm("\n\
@@ -510,13 +506,12 @@ LAB_08004a5e:\n\
 \n\
     ");
 }
-__attribute__((naked)) void fun_08004a68()
+
+s32 fun_08004a68()
 {
-    asm("\n\
-    mov         r0,#0x0\n\
-    bx          lr\n\
-    ");
+    return 0;
 }
+
 __attribute__((naked)) void fun_08004a6c()
 {
     asm("\n\

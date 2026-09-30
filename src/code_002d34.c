@@ -793,9 +793,11 @@ DAT_08003298:\n\
     .word 0x02005CD8\n\
     ");
 }
+
 void fun_0800329c()
 {
 }
+
 __attribute__((naked)) void fun_080032a0()
 {
     asm("\n\
@@ -818,24 +820,31 @@ __attribute__((naked)) void fun_080032a8()
 \n\
     ");
 }
+
 void fun_080032b0()
 {
 }
+
 void assert(s32 condition, const char* message)
 {
 }
+
 void fun_080032b8()
 {
 }
+
 void fun_080032bc()
 {
 }
+
 void fun_080032c0()
 {
 }
+
 void fun_080032c4()
 {
 }
+
 __attribute__((naked)) void fun_080032c8()
 {
     asm("\n\

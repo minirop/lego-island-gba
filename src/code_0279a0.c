@@ -1,3 +1,5 @@
+#include "functions.h"
+
 __attribute__((naked)) void fun_080279a0()
 {
     asm("\n\
@@ -1550,20 +1552,17 @@ DAT_080285a0:\n\
      .word 0x020025B8\n\
     ");
 }
-__attribute__((naked)) void fun_080285a4()
+
+s32 fun_080285a4()
 {
-    asm("\n\
-     mov        r0,#0x0\n\
-     bx         lr\n\
-    ");
+    return 0;
 }
-__attribute__((naked)) void fun_080285a8()
+
+s32 fun_080285a8()
 {
-    asm("\n\
-     mov        r0,#0x0\n\
-     bx         lr\n\
-    ");
+    return 0;
 }
+
 __attribute__((naked)) void fun_080285ac()
 {
     asm("\n\

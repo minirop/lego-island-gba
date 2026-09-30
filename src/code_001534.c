@@ -269,19 +269,10 @@ DAT_080016ec:\n\
     .word 0x020025D0\n\
     ");
 }
-__attribute__((naked)) void fun_080016f0()
+
+s32 fun_080016f0(u16 param_1)
 {
-    asm("\n\
-    push        {lr}\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r0,r0,#0x10\n\
-    mov         r1,#0xff\n\
-    mov         r2,#0x7f\n\
-    mov         r3,#0x40\n\
-    bl          fun_0803d60c\n\
-    pop         {r1}\n\
-    bx          r1\n\
-    ");
+    return fun_0803d60c(param_1, 0xff, 0x7f, 0x40);
 }
 
 void fun_08001704()

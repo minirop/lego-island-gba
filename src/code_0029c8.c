@@ -1,6 +1,6 @@
-#include "variables.h"
-#include "functions.h"
 #include "defines.h"
+#include "functions.h"
+#include "variables.h"
 
 __attribute__((naked)) void fun_080029c8()
 {
@@ -153,16 +153,14 @@ void fun_08002ac0(u16 param_1, s32 param_2)
     u16 wVar1;
     u32 uVar2;
 
-    if (DAT_02005834 != 0)
-    {
+    if (DAT_02005834 != 0) {
         uVar2 = 0;
         wVar1 = DAT_02005780[0].unk00;
-        while (wVar1 != 0 && uVar2 < 8)
-        {
+        while (wVar1 != 0 && uVar2 < 8) {
             wVar1 = DAT_02005780[uVar2].unk00;
             uVar2++;
         }
-        assert(uVar2 < 8,"No sequence controllers available");
+        assert(uVar2 < 8, "No sequence controllers available");
         DAT_02005780[uVar2].unk00 = 1;
         DAT_02005780[uVar2].unk08 = 0;
         DAT_02005780[uVar2].unk04 = param_2;
@@ -299,53 +297,25 @@ DAT_08002b90:\n\
     .word 0x03007FFC\n\
     ");
 }
-__attribute__((naked)) void fun_08002b94()
+
+void fun_08002b94()
 {
-    asm("\n\
-    push        {lr}\n\
-    bl          fun_08002ba0\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-    ");
+    fun_08002ba0();
 }
-__attribute__((naked)) void fun_08002ba0()
+
+void fun_08002ba0()
 {
-    asm("\n\
-    ldr         r2,DAT_08002bac\n\
-    ldrh        r1,[r2,#0x0]\n\
-    ldr         r0,DAT_08002bb0\n\
-    and         r0,r1\n\
-    strh        r0,[r2,#0x0]\n\
-    bx          lr\n\
-DAT_08002bac:\n\
-    .word 0x02005CD8\n\
-DAT_08002bb0:\n\
-    .word 0x0000FFFE\n\
-    ");
+    DAT_02005cd8 = DAT_02005cd8 & 0xfffe;
 }
-__attribute__((naked)) void fun_08002bb4()
+
+void fun_08002bb4(s32 param_1)
 {
-    asm("\n\
-    ldr         r1,DAT_08002bc4\n\
-    str         r0,[r1,#0x0]\n\
-    cmp         r0,#0x0\n\
-    bne         LAB_08002bc0\n\
-    ldr         r0,DAT_08002bc8\n\
-    str         r0,[r1,#0x0]\n\
-LAB_08002bc0:\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_08002bc4:\n\
-    .word 0x020057E4\n\
-DAT_08002bc8:\n\
-    .word 0x0800329D\n\
-    ");
+    DAT_020057e4 = param_1;
+    if (param_1 == 0) {
+        DAT_020057e4 = 0x0800329d;
+    }
 }
+
 __attribute__((naked)) void fun_08002bcc()
 {
     asm("\n\
@@ -370,18 +340,9 @@ DAT_08002bec:\n\
     .word 0x0000FFFE\n\
     ");
 }
-__attribute__((naked)) void fun_08002bf0()
+
+void fun_08002bf0()
 {
-    asm("\n\
-    ldr        r0,PTR_IF_08002bfc\n\
-    mov        r1,#0x1\n\
-    strh       r1,[r0,#0x0]\n\
-    ldr        r0,PTR_DAT_08002c00\n\
-    strh       r1,[r0,#0x0]\n\
-    bx         lr\n\
-PTR_IF_08002bfc:\n\
-    .word      IF\n\
-PTR_DAT_08002c00:\n\
-    .word      DAT_02005cd8\n\
-    ");
+    IF = 1;
+    DAT_02005cd8 = 1;
 }

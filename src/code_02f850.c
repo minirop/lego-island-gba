@@ -1,3 +1,5 @@
+#include "functions.h"
+
 __attribute__((naked)) void fun_0802f850()
 {
     asm("\n\
@@ -256,16 +258,13 @@ DAT_0802fa18:\n\
      .word 0x0865FD94\n\
     ");
 }
-__attribute__((naked)) void fun_0802fa1c()
+
+s32 fun_0802fa1c()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800457c\n\
-     mov        r0,#0x0\n\
-     pop        {r1}\n\
-     bx         r1\n\
-    ");
+    fun_0800457c();
+    return 0;
 }
+
 __attribute__((naked)) void fun_0802fa28()
 {
     asm("\n\
@@ -4123,30 +4122,23 @@ LAB_08031686:\n\
      bx         r0\n\
     ");
 }
-__attribute__((naked)) void fun_0803168c()
+
+s32 fun_0803168c()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800457c\n\
-     mov        r0,#0x0\n\
-     pop        {r1}\n\
-     bx         r1\n\
-    ");
+    fun_0800457c();
+    return 0;
 }
-__attribute__((naked)) void fun_08031698()
+
+s32 fun_08031698()
 {
-    asm("\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-    ");
+    return 1;
 }
-__attribute__((naked)) void fun_0803169c()
+
+s32 fun_0803169c()
 {
-    asm("\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-    ");
+    return 1;
 }
+
 __attribute__((naked)) void fun_080316a0()
 {
     asm("\n\

@@ -246,7 +246,16 @@ LAB_08007f94:\n\
 \n\
     ");
 }
+
+#ifdef NONMATCHING
+void fun_08007f9c()
+{
+    fun_0800457c();
+    DAT_0200c5f0 = 0;
+}
+#else
 __attribute__((naked)) void fun_08007f9c()
+
 {
     asm("\n\
     push        {lr}\n\
@@ -260,20 +269,18 @@ DAT_08007fac:\n\
     .word 0x0200C5F0\n\
     ");
 }
-__attribute__((naked)) void fun_08007fb0()
+#endif
+
+s32 fun_08007fb0()
 {
-    asm("\n\
-    mov         r0,#0x1\n\
-    bx          lr\n\
-    ");
+    return 1;
 }
-__attribute__((naked)) void fun_08007fb4()
+
+s32 fun_08007fb4()
 {
-    asm("\n\
-    mov         r0,#0x1\n\
-    bx          lr\n\
-    ");
+    return 1;
 }
+
 __attribute__((naked)) void fun_08007fb8()
 {
     asm("\n\
@@ -1761,14 +1768,17 @@ DAT_08008a7c:\n\
     .word 0x0200C6B8\n\
     ");
 }
+
 s32 fun_08008a80()
 {
     return 1;
 }
+
 s32 fun_08008a84()
 {
     return 1;
 }
+
 __attribute__((naked)) s32 fun_08008a88()
 {
     asm("\n\

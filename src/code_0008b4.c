@@ -1271,58 +1271,27 @@ DAT_080011a4:\n\
     .word 0x020025D8\n\
     ");
 }
-__attribute__((naked)) void fun_080011a8()
+
+void fun_080011a8(s32 param_1)
 {
-    asm("\n\
-    ldr         r1,DAT_080011b0\n\
-    str         r0,[r1,#0x0]\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_080011b0:\n\
-    .word 0x020025DC\n\
-    ");
+    DAT_020025dc = param_1;
 }
-__attribute__((naked)) void fun_080011b4()
+
+void fun_080011b4(s32 param_1)
 {
-    asm("\n\
-    ldr         r1,DAT_080011bc\n\
-    str         r0,[r1,#0x0]\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_080011bc:\n\
-    .word 0x020025CC\n\
-    ");
+    DAT_020025cc = param_1;
 }
-__attribute__((naked)) void fun_080011c0()
+
+s32 fun_080011c0()
 {
-    asm("\n\
-    ldr         r0,DAT_080011c8\n\
-    ldr         r0,[r0,#0x0]\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_080011c8:\n\
-    .word 0x020025DC\n\
-    ");
+    return DAT_020025dc;
 }
-__attribute__((naked)) void fun_080011cc()
+
+s32 fun_080011cc()
 {
-    asm("\n\
-    ldr         r0,DAT_080011d4\n\
-    ldr         r0,[r0,#0x0]\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_080011d4:\n\
-    .word 0x020025CC\n\
-    ");
+    return DAT_020025cc;
 }
+
 __attribute__((naked)) void fun_080011d8()
 {
     asm("\n\

@@ -467,10 +467,12 @@ LAB_0800eba6:\n\
 \n\
     ");
 }
+
 s32 fun_0800ebb0()
 {
     return 0;
 }
+
 __attribute__((naked)) void fun_0800ebb4()
 {
     asm("\n\

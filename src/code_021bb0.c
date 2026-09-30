@@ -1105,12 +1105,11 @@ DAT_08022388:\n\
      .word 0x02005710\n\
     ");
 }
-__attribute__((naked)) void fun_0802238c()
+
+void fun_0802238c()
 {
-    asm("\n\
-     bx         lr\n\
-    ");
 }
+
 __attribute__((naked)) void fun_08022390()
 {
     asm("\n\

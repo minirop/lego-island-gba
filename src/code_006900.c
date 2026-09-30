@@ -857,14 +857,17 @@ __attribute__((naked)) void fun_08006ef8()
     bx         r1\n\
     ");
 }
+
 s32 fun_08006f04()
 {
     return 1;
 }
+
 s32 fun_08006f08()
 {
     return 1;
 }
+
 __attribute__((naked)) void fun_08006f0c()
 {
     asm("\n\

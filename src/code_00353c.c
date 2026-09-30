@@ -1,4 +1,12 @@
-__attribute__((naked)) void fun_0800353c()
+#include "functions.h"
+
+#ifdef NONMATCHING
+int fun_0800353c(int param_1, int param_2)
+{
+    return (param_1 * param_2) / 256;
+}
+#else
+__attribute__((naked)) int fun_0800353c(int param_1, int param_2)
 {
     asm("\n\
     mul         r0,r1\n\
@@ -14,23 +22,18 @@ LAB_08003546:\n\
 \n\
     ");
 }
-__attribute__((naked)) void fun_0800354c()
+#endif
+
+int fun_0800354c(int param_1, int param_2)
 {
-    asm("\n\
-    push        {lr}\n\
-    lsl         r0,r0,#0x8\n\
-    bl          __divsi3\n\
-    pop         {r1}\n\
-    bx          r1\n\
-    ");
+    return (param_1 * 256 / param_2);
 }
-__attribute__((naked)) void fun_08003558()
+
+int fun_08003558()
 {
-    asm("\n\
-    mov         r0,#0x1\n\
-    bx          lr\n\
-    ");
+    return 1;
 }
+
 __attribute__((naked)) void fun_0800355c()
 {
     asm("\n\
@@ -60,19 +63,14 @@ LAB_0800357c:\n\
 \n\
     ");
 }
-__attribute__((naked)) void fun_08003584()
+
+void fun_08003584(s32* param_1)
 {
-    asm("\n\
-    ldr         r2,[r0,#0x0]\n\
-    ldr         r1,[r0,#0x4]\n\
-.syntax unified\n\
-    rsbs        r1,r1,#0\n\
-.syntax divided\n\
-    str         r1,[r0,#0x0]\n\
-    str         r2,[r0,#0x4]\n\
-    bx          lr\n\
-    ");
+    s32 tmp = param_1[0];
+    param_1[0] = -param_1[1];
+    param_1[1] = tmp;
 }
+
 __attribute__((naked)) void fun_08003590()
 {
     asm("\n\

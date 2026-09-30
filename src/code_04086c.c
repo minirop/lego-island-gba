@@ -1,3 +1,5 @@
+#include "functions.h"
+
 __attribute__((naked)) void fun_0804086c()
 {
     asm("\n\
@@ -4337,14 +4339,12 @@ LAB_080426b2:\n\
      bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_080426b8()
+
+s32 fun_080426b8()
 {
-    asm("\n\
-     mov        r0,#0xa8\n\
-     lsl        r0,r0,#0x1\n\
-     bx         lr\n\
-    ");
+    return 0x150;
 }
+
 __attribute__((naked)) void fun_080426c0()
 {
     asm("\n\

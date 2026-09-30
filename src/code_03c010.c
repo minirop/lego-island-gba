@@ -301,81 +301,32 @@ DAT_0803c220:\n\
      .word 0x05000206\n\
     ");
 }
-__attribute__((naked)) void fun_0803c224()
+
+void fun_0803c224()
 {
-    asm("\n\
-     push       {lr}\n\
-     ldr        r0,DAT_0803c234\n\
-     mov        r1,#0x0\n\
-     bl         fun_0800460c\n\
-     pop        {r0}\n\
-     bx         r0\n\
-.space 1\n\
-.space 1\n\
-DAT_0803c234:\n\
-     .word 0x086693F4\n\
-    ");
+    fun_0800460c(0x086693F4, 0);
 }
-__attribute__((naked)) void fun_0803c238()
+
+void fun_0803c238()
 {
-    asm("\n\
-     push       {lr}\n\
-     ldr        r0,DAT_0803c248\n\
-     mov        r1,#0x0\n\
-     bl         fun_0800460c\n\
-     pop        {r0}\n\
-     bx         r0\n\
-.space 1\n\
-.space 1\n\
-DAT_0803c248:\n\
-     .word 0x08668DF4\n\
-    ");
+    fun_0800460c(0x08668DF4, 0);
 }
-__attribute__((naked)) void fun_0803c24c()
+
+void fun_0803c24c()
 {
-    asm("\n\
-     push       {lr}\n\
-     ldr        r0,DAT_0803c25c\n\
-     mov        r1,#0x0\n\
-     bl         fun_0800460c\n\
-     pop        {r0}\n\
-     bx         r0\n\
-.space 1\n\
-.space 1\n\
-DAT_0803c25c:\n\
-     .word 0x08668DF4\n\
-    ");
+    fun_0800460c(0x08668DF4, 0);
 }
-__attribute__((naked)) void fun_0803c260()
+
+void fun_0803c260()
 {
-    asm("\n\
-     push       {lr}\n\
-     ldr        r0,DAT_0803c270\n\
-     mov        r1,#0x0\n\
-     bl         fun_0800460c\n\
-     pop        {r0}\n\
-     bx         r0\n\
-.space 1\n\
-.space 1\n\
-DAT_0803c270:\n\
-     .word 0x086691F4\n\
-    ");
+    fun_0800460c(0x086691F4, 0);
 }
-__attribute__((naked)) void fun_0803c274()
+
+void fun_0803c274()
 {
-    asm("\n\
-     push       {lr}\n\
-     ldr        r0,DAT_0803c284\n\
-     mov        r1,#0x0\n\
-     bl         fun_0800460c\n\
-     pop        {r0}\n\
-     bx         r0\n\
-.space 1\n\
-.space 1\n\
-DAT_0803c284:\n\
-     .word 0x08668FF4\n\
-    ");
+    fun_0800460c(0x08668FF4, 0);
 }
+
 __attribute__((naked)) void fun_0803c288()
 {
     asm("\n\
@@ -1427,12 +1378,11 @@ DAT_0803ca1c:\n\
      .word 0x020117D0\n\
     ");
 }
-__attribute__((naked)) void fun_0803ca20()
+
+void fun_0803ca20()
 {
-    asm("\n\
-     bx         lr\n\
-    ");
 }
+
 __attribute__((naked)) void fun_0803ca24()
 {
     asm("\n\
