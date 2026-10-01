@@ -412,6 +412,11 @@ rom:
       section: rodata
       address: 0x066f80
       size: 0x1c0
+    - name: code_07c2f4
+      format: c
+      section: rodata
+      address: 0x07c2f4
+      size: 0xd0
     - name: code_006900
       format: c
       section: rodata
@@ -426,6 +431,11 @@ rom:
       format: c
       section: rodata
       address: 0x09a254
+      size: 0xd0
+    - name: code_0c5f80
+      format: c
+      section: rodata
+      address: 0x0c5f80
       size: 0xd0
     - name: code_007de0
       format: c

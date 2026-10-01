@@ -1089,6 +1089,14 @@ LAB_0800106e:\n\
     bx          lr\n\
     ");
 }
+
+#ifdef NONMATCHING
+void fun_08001070(u16 param_1)
+{
+    DAT_020025d8 = param_1;
+    fun_08002114();
+}
+#else
 __attribute__((naked)) void fun_08001070()
 {
     asm("\n\
@@ -1107,6 +1115,8 @@ DAT_08001084:\n\
     .word 0x020025D8\n\
     ");
 }
+#endif
+
 __attribute__((naked)) void fun_08001088()
 {
     asm("\n\

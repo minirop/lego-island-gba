@@ -549,28 +549,18 @@ s32 fun_08017d4c()
     return 0;
 }
 
-__attribute__((naked)) void fun_08017d50()
+void fun_08017d50()
 {
-    asm("\n\
-     push       {lr}\n\
-     ldr        r0,DAT_08017d68\n\
-     ldrh       r0,[r0,#0x0]\n\
-     bl         fun_08000ee8\n\
-     lsl        r0,r0,#0x10\n\
-     lsr        r0,r0,#0x10\n\
-     cmp        r0,#0x0\n\
-     bne        LAB_08017d6c\n\
-     bl         fun_080010d8\n\
-     b          LAB_08017d70\n\
-DAT_08017d68:\n\
-     .word 0x020025E8\n\
-LAB_08017d6c:\n\
-     bl         fun_08001070\n\
-LAB_08017d70:\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    u16 uVar1;
+
+    uVar1 = fun_08000ee8(DAT_020025e8);
+    if (uVar1 == 0) {
+        fun_080010d8();
+    } else {
+        fun_08001070(uVar1);
+    }
 }
+
 __attribute__((naked)) void fun_08017d74()
 {
     asm("\n\

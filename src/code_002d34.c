@@ -559,73 +559,26 @@ __attribute__((naked)) void fun_0800310c()
     bx          r1\n\
     ");
 }
-__attribute__((naked)) void fun_0800311c()
+
+void fun_0800311c(s32 param_1)
 {
-    asm("\n\
-    push        {r4,r5,lr}\n\
-    add         r3,r0,#0x0\n\
-    mov         r1,#0x0\n\
-    ldr         r5,DAT_08003144\n\
-    ldr         r4,DAT_08003148\n\
-    mov         r2,#0x0\n\
-LAB_08003128:\n\
-    lsl         r0,r1,#0x1\n\
-    add         r0,r0,r1\n\
-    lsl         r0,r0,#0x2\n\
-    add         r0,r0,r4\n\
-    strh        r2,[r0,#0x0]\n\
-    add         r0,r1,#0x1\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r1,r0,#0x10\n\
-    cmp         r1,#0x7\n\
-    bls         LAB_08003128\n\
-    str         r3,[r5,#0x0]\n\
-    pop         {r4,r5}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-DAT_08003144:\n\
-    .word 0x02005834\n\
-DAT_08003148:\n\
-    .word 0x02005780\n\
-    ");
+    u16 i;
+    for (i = 0; i < 8; i++) {
+        DAT_02005780[i].unk00 = 0;
+    }
+    DAT_02005834 = param_1;
 }
-__attribute__((naked)) void fun_0800314c()
+
+void fun_0800314c(u16 param_1)
 {
-    asm("\n\
-    push        {r4,r5,lr}\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r3,r0,#0x10\n\
-    mov         r2,#0x0\n\
-    ldr         r5,DAT_08003180\n\
-    mov         r4,#0x0\n\
-LAB_08003158:\n\
-    lsl         r0,r2,#0x1\n\
-    add         r0,r0,r2\n\
-    lsl         r0,r0,#0x2\n\
-    add         r1,r0,r5\n\
-    ldrh        r0,[r1,#0x0]\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_0800316e\n\
-    ldrh        r0,[r1,#0x2]\n\
-    cmp         r0,r3\n\
-    bne         LAB_0800316e\n\
-    strh        r4,[r1,#0x0]\n\
-LAB_0800316e:\n\
-    add         r0,r2,#0x1\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r2,r0,#0x10\n\
-    cmp         r2,#0x7\n\
-    bls         LAB_08003158\n\
-    pop         {r4,r5}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_08003180:\n\
-    .word 0x02005780\n\
-    ");
+    u16 i;
+    for (i = 0; i < 8; i++) {
+        if (DAT_02005780[i].unk00 != 0 && DAT_02005780[i].unk02 == param_1) {
+            DAT_02005780[i].unk00 = 0;
+        }
+    }
 }
+
 __attribute__((naked)) void fun_08003184()
 {
     asm("\n\
