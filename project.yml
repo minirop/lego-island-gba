@@ -442,6 +442,11 @@ rom:
       section: rodata
       address: 0x107c9c
       size: 0x1a0
+    - name: code_009748
+      format: c
+      section: rodata
+      address: 0x330a88
+      size: 0xd0
     - name: code_012068
       format: c
       section: rodata
@@ -452,6 +457,11 @@ rom:
       section: rodata
       address: 0x46a46c
       size: 0xd3
+    - name: code_017920
+      format: c
+      section: rodata
+      address: 0x473624
+      size: 0xd0
     - name: code_018370
       format: c
       section: rodata
@@ -461,6 +471,176 @@ rom:
       format: c
       section: rodata
       address: 0x487ccc
+      size: 0xd0
+    - name: code_48ee90
+      format: c
+      section: rodata
+      address: 0x48ee90
+      size: 0xd0
+    - name: code_48f570
+      format: c
+      section: rodata
+      address: 0x48f570
+      size: 0xd0
+    - name: code_494d60
+      format: c
+      section: rodata
+      address: 0x494d60
+      size: 0xd0
+    - name: code_498ec8
+      format: c
+      section: rodata
+      address: 0x498ec8
+      size: 0xd0
+    - name: code_49ffd0
+      format: c
+      section: rodata
+      address: 0x49ffd0
+      size: 0xd0
+    - name: code_4a3de4
+      format: c
+      section: rodata
+      address: 0x4a3de4
+      size: 0xd0
+    - name: code_4b41cc
+      format: c
+      section: rodata
+      address: 0x4b41cc
+      size: 0xd0
+    - name: code_4bca40
+      format: c
+      section: rodata
+      address: 0x4bca40
+      size: 0xd0
+    - name: code_4bcbb4
+      format: c
+      section: rodata
+      address: 0x4bcbb4
+      size: 0xd0
+    - name: code_4c1c98
+      format: c
+      section: rodata
+      address: 0x4c1c98
+      size: 0xd0
+    - name: code_4c6f0c
+      format: c
+      section: rodata
+      address: 0x4c6f0c
+      size: 0xd0
+    - name: code_4efa5c
+      format: c
+      section: rodata
+      address: 0x4efa5c
+      size: 0xd0
+    - name: code_4fc03c
+      format: c
+      section: rodata
+      address: 0x4fc03c
+      size: 0xd0
+    - name: code_514a60
+      format: c
+      section: rodata
+      address: 0x514a60
+      size: 0xd0
+    - name: code_52dadc
+      format: c
+      section: rodata
+      address: 0x52dadc
+      size: 0xd0
+    - name: code_53c01c
+      format: c
+      section: rodata
+      address: 0x53c01c
+      size: 0xd0
+    - name: code_5407d8
+      format: c
+      section: rodata
+      address: 0x5407d8
+      size: 0xd0
+    - name: code_54ce10
+      format: c
+      section: rodata
+      address: 0x54ce10
+      size: 0xd0
+    - name: code_54cee0
+      format: c
+      section: rodata
+      address: 0x54cee0
+      size: 0xd0
+    - name: code_54cfe0
+      format: c
+      section: rodata
+      address: 0x54cfe0
+      size: 0xd0
+    - name: code_57fad8
+      format: c
+      section: rodata
+      address: 0x57fad8
+      size: 0xd0
+    - name: code_58e750
+      format: c
+      section: rodata
+      address: 0x58e750
+      size: 0xd0
+    - name: code_5a493c
+      format: c
+      section: rodata
+      address: 0x5a493c
+      size: 0xd0
+    - name: code_5ab044
+      format: c
+      section: rodata
+      address: 0x5ab044
+      size: 0xd0
+    - name: code_5b6bec
+      format: c
+      section: rodata
+      address: 0x5b6bec
+      size: 0xd0
+    - name: code_5c72d0
+      format: c
+      section: rodata
+      address: 0x5c72d0
+      size: 0xd0
+    - name: code_5ea6ac
+      format: c
+      section: rodata
+      address: 0x5ea6ac
+      size: 0xd0
+    - name: code_5ea944
+      format: c
+      section: rodata
+      address: 0x5ea944
+      size: 0xd0
+    - name: code_5ff400
+      format: c
+      section: rodata
+      address: 0x5ff400
+      size: 0xd0
+    - name: code_615c68
+      format: c
+      section: rodata
+      address: 0x615c68
+      size: 0xd0
+    - name: code_61fb8c
+      format: c
+      section: rodata
+      address: 0x61fb8c
+      size: 0xd0
+    - name: code_63a204
+      format: c
+      section: rodata
+      address: 0x63a204
+      size: 0xd0
+    - name: code_63f888
+      format: c
+      section: rodata
+      address: 0x63f888
+      size: 0xd0
+    - name: code_64250c
+      format: c
+      section: rodata
+      address: 0x64250c
       size: 0xd0
     - name: vfprintf
       library: libc.a
@@ -487,6 +667,11 @@ rom:
       section: rodata
       address: 0x6cceb8
       size: 0x25
+    - name: code_756aec
+      format: c
+      section: rodata
+      address: 0x756aec
+      size: 0xd4
     - name: code_77ef7c
       format: c
       section: rodata

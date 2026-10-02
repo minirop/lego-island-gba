@@ -1,6 +1,6 @@
 #include "variables.h"
 
-const LevelInfo* levels[] = {
+const LevelInfo* const levels[] = {
     &logo_screens,
     &language_select,
     &cutscene,
@@ -18,40 +18,40 @@ const LevelInfo* levels[] = {
     &instruction_screen,
     &club_house,
     &castle_island,
-    // infocentre
-    // inventory
-    // item_found
-    // high_score_entry
-    // empty2
-    // map_screen
-    // pause_menu
-    // unknown2
-    // slot_select
-    // confirmation_scr
-    // hoop_game
-    // trex_racing
-    // player_is_it
-    // papper_lander
-    // castle_tower
-    // caught_fish
-    // adventure_island
-    // constructopedia
-    // apple_picking
-    // bongo_game
-    // unknown3
-    // cannon_fire
-    // cannon_score
-    // cannon_select
-    // unknown4
-    // launch_sequence
-    // papper_lander
-    // trex_racing
-    // match_the_mummies
-    // pizza_game
-    // runaway_train
-    // skate_park
-    // whack_a_bot
-    // ogel_sneak
-    // space_shuttle
-    // brickster_battle
+    &infocentre,
+    &inventory,
+    &item_found,
+    &high_score_entry,
+    &empty2,
+    &map_screen,
+    &pause_menu,
+    &unknown2,
+    &slot_select,
+    &confirmation_screen,
+    &hoop_game,
+    &trex_racing,
+    &player_is_it,
+    &pepper_lander,
+    &castle_tower,
+    &caught_fish,
+    &adventure_island,
+    &constructopedia,
+    &apple_picking,
+    &bongo_game,
+    &unknown3,
+    &cannon_fire,
+    &cannon_score,
+    &cannon_select,
+    &unknown4,
+    &launch_sequence,
+    &pepper_lander,
+    &trex_racing,
+    &match_the_mummies,
+    &pizza_game,
+    &runaway_train,
+    &skate_park,
+    &whack_a_bot,
+    &ogel_sneak,
+    &space_shuttle,
+    &brickster_battle,
 };
