@@ -84,6 +84,7 @@ extern u16 DAT_02005cdc;
 extern u16 DAT_02005cf0;
 extern u16 DAT_02005cf4;
 extern u16 DAT_02005cf8;
+extern u16 DAT_02006d50;
 extern u16 DAT_02005cfc;
 extern u16 DAT_02005d00;
 extern u16 DAT_02005d04;
@@ -167,5 +168,7 @@ extern void* DAT_08615c04;
 extern void* DAT_0863a1a0;
 extern void* DAT_0863f824;
 extern void* DAT_086424a8;
+
+#include "io_reg.h"
 
 #endif

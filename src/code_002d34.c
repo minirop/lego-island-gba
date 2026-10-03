@@ -786,7 +786,7 @@ void fun_080032b8()
 {
 }
 
-void fun_080032bc()
+void fun_080032bc(s32 param_1)
 {
 }
 
@@ -794,7 +794,7 @@ void fun_080032c0()
 {
 }
 
-void fun_080032c4()
+void fun_080032c4(s32 param_1, s32 param_2, s32 param_3, s32 param_4, s32 param_5)
 {
 }
 
@@ -828,7 +828,23 @@ DAT_080032f4:\n\
     .word 0x02005CE8\n\
     ");
 }
+
+#ifdef NONMATCHING
+// https://www.decomp.me/scratch/Q07tK
+u16 fun_080032f8(u16 param_1, u16 param_2, s16* param_3)
+{
+    if ((param_1 < param_3[0])
+        || (param_1 >= param_3[2])
+        || (param_2 < param_3[1])
+        || (param_2 < param_3[3])) {
+        return 0;
+    } else {
+        return 1;
+    }
+}
+#else
 __attribute__((naked)) void fun_080032f8()
+
 {
     asm("\n\
     push        {r4,lr}\n\
@@ -865,6 +881,8 @@ LAB_08003328:\n\
 \n\
     ");
 }
+#endif
+
 __attribute__((naked)) void fun_08003330()
 {
     asm("\n\

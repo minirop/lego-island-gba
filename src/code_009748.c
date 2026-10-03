@@ -61,26 +61,15 @@ DAT_080097ac:\n\
     .word 0x00000E5A\n\
     ");
 }
-__attribute__((naked)) s32 fun_080097b0()
+
+s32 fun_080097b0()
 {
-    asm("\n\
-    push        {lr}\n\
-    ldr         r0,DAT_080097c8\n\
-    mov         r1,#0x0\n\
-    strh        r1,[r0,#0x0]\n\
-    add         r0,#0x2\n\
-    strh        r1,[r0,#0x0]\n\
-    bl          fun_0800457c\n\
-    mov         r0,#0x0\n\
-    pop         {r1}\n\
-    bx          r1\n\
-\n\
-.space 2\n\
-\n\
-DAT_080097c8:\n\
-    .word 0x04000028\n\
-    ");
+    REG_BG2X_L = 0;
+    REG_BG2X_H = 0;
+    fun_0800457c();
+    return 0;
 }
+
 __attribute__((naked)) void fun_080097cc()
 {
     asm("\n\

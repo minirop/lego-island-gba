@@ -1788,25 +1788,12 @@ DAT_08004578:\n\
     .word 0xFFFFFC00\n\
     ");
 }
-__attribute__((naked)) void fun_0800457c()
+
+void fun_0800457c()
 {
-    asm("\n\
-    ldr         r0,DAT_0800458c\n\
-    mov         r1,#0x0\n\
-    strh        r1,[r0,#0x0]\n\
-    ldr         r0,DAT_08004590\n\
-    strh        r1,[r0,#0x0]\n\
-    ldr         r0,DAT_08004594\n\
-    strh        r1,[r0,#0x0]\n\
-    bx          lr\n\
-DAT_0800458c:\n\
-    .word 0x02006D50\n\
-DAT_08004590:\n\
-    .word 0x02005CF8\n\
-DAT_08004594:\n\
-    .word 0x02005CFC\n\
-\n\
-    ");
+    DAT_02006d50 = 0;
+    DAT_02005cf8 = 0;
+    DAT_02005cfc = 0;
 }
 
 void fun_08004598()
