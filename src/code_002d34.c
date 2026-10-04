@@ -883,7 +883,19 @@ LAB_08003328:\n\
 }
 #endif
 
-__attribute__((naked)) void fun_08003330()
+#ifdef NONMATCHING
+s32 fun_08003330(u16 param_1, u16 param_2)
+{
+    s32 var = fun_08003370(param_1, param_2);
+    if (var == 0) {
+        var = -1;
+    } else {
+        var = ((u32)((var - DAT_02005ce8->unk38) * -0x55550000));
+    }
+    return var;
+}
+#else
+__attribute__((naked)) s32 fun_08003330(u16 param_1, u16 param_2)
 {
     asm("\n\
     push        {lr}\n\
@@ -925,7 +937,9 @@ DAT_0800336c:\n\
     .word 0x02005CE8\n\
     ");
 }
-__attribute__((naked)) void fun_08003370()
+#endif
+
+__attribute__((naked)) s32 fun_08003370(u16 param_1, u16 param_2)
 {
     asm("\n\
     push        {r4,r5,lr}\n\

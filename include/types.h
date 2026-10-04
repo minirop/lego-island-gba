@@ -32,6 +32,11 @@ typedef struct struct_02005780_s {
     s32 unk08;
 } struct_02005780;
 
+typedef struct struct_02005ce8 {
+    s8 pad[0x38];
+    s32 unk38;
+} struct_02005ce8;
+
 typedef void (*Callback)();
 typedef void (*CallbackInt)();
 typedef s32 (*CallbackIntIntPtr)(s32, s32*);

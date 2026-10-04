@@ -1,3 +1,5 @@
+#include "variables.h"
+
 __attribute__((naked)) void fun_08004bb0()
 {
     asm("\n\
@@ -17,101 +19,43 @@ DAT_08004bc8:\n\
     .word 0x80006000\n\
     ");
 }
-__attribute__((naked)) void fun_08004bcc()
+
+void fun_08004bcc(s32 param_1, u16 param_2)
 {
-    asm("\n\
-    ldr         r2,DAT_08004bd8\n\
-    str         r0,[r2,#0x0]\n\
-    ldr         r0,DAT_08004bdc\n\
-    strh        r1,[r0,#0x0]\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_08004bd8:\n\
-    .word 0x02007FB8\n\
-DAT_08004bdc:\n\
-    .word 0x02007F7C\n\
-    ");
+    DAT_02007fb8 = param_1;
+    DAT_02007f7c = param_2;
 }
-__attribute__((naked)) void fun_08004be0()
+
+void fun_08004be0(u16 param_1)
 {
-    asm("\n\
-    ldr         r1,DAT_08004be8\n\
-    strh        r0,[r1,#0x0]\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_08004be8:\n\
-    .word 0x02007F70\n\
-    ");
+    DAT_02007f70 = param_1;
 }
-__attribute__((naked)) void fun_08004bec()
+
+void fun_08004bec(s32 param_1)
 {
-    asm("\n\
-    ldr         r1,DAT_08004bf4\n\
-    str         r0,[r1,#0x0]\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_08004bf4:\n\
-    .word 0x02007FB0\n\
-    ");
+    DAT_02007fb0 = param_1;
 }
-__attribute__((naked)) void fun_08004bf8()
+
+void fun_08004bf8(s32 param_1)
 {
-    asm("\n\
-    ldr         r1,DAT_08004c00\n\
-    str         r0,[r1,#0x0]\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_08004c00:\n\
-    .word 0x02007F94\n\
-    ");
+    DAT_02007f94 = param_1;
 }
-__attribute__((naked)) void fun_08004c04()
+
+void fun_08004c04(s32 param_1)
 {
-    asm("\n\
-    ldr         r1,DAT_08004c0c\n\
-    str         r0,[r1,#0x0]\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_08004c0c:\n\
-    .word 0x02007FB4\n\
-    ");
+    DAT_02007fb4 = param_1;
 }
-__attribute__((naked)) void fun_08004c10()
+
+u16 fun_08004c10()
 {
-    asm("\n\
-    ldr         r0,DAT_08004c18\n\
-    ldrh        r0,[r0,#0x0]\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_08004c18:\n\
-    .word 0x02007FB4\n\
-    ");
+    return DAT_02007fb4;
 }
-__attribute__((naked)) void fun_08004c1c()
+
+void fun_08004c1c(u16 param_1)
 {
-    asm("\n\
-    ldr         r1,DAT_08004c24\n\
-    strh        r0,[r1,#0x0]\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_08004c24:\n\
-    .word 0x02007F78\n\
-    ");
+    DAT_02007f78 = param_1;
 }
+
 __attribute__((naked)) void fun_08004c28()
 {
     asm("\n\
