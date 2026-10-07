@@ -1,7 +1,6 @@
 #ifndef VARIABLES_H
 #define VARIABLES_H
 
-#include "io_reg.h"
 #include "level_info.h"
 #include "types.h"
 
@@ -116,6 +115,7 @@ extern u16 DAT_0200d400;
 extern u16 DAT_0200d404;
 extern u16 DAT_0200d408;
 extern u16 IF;
+extern u32 DAT_06004000;
 extern void* DAT_020003b0;
 extern void* DAT_02009b10;
 extern void* DAT_0200c5d0;

@@ -44,7 +44,7 @@ __attribute__((naked)) void fun_080199bc()
      ldr        r0,[r4,#0x8]\n\
      ldr        r0,DAT_08019a68\n\
      ldr        r1,DAT_08019a6c\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      ldr        r1,DAT_08019a70\n\
      add        r0,r1,#0x0\n\
      mov        r1,r8\n\

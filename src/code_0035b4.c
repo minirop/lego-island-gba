@@ -11,7 +11,7 @@ __attribute__((naked)) void fun_080035b4()
     ldr         r1,[r1,#0x0]\n\
     lsl         r1,r1,#0xa\n\
     asr         r1,r1,#0x10\n\
-    bl          fun_0803d064\n\
+    bl          ArcTan2\n\
     lsl         r0,r0,#0x10\n\
     lsr         r0,r0,#0x18\n\
     pop         {r1}\n\

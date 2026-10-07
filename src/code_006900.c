@@ -880,7 +880,7 @@ __attribute__((naked)) void fun_08006f0c()
     beq         LAB_08006f64\n\
     ldr         r0,DAT_08006f4c\n\
     ldr         r1,DAT_08006f50\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     bl          fun_08002bcc\n\
     ldr         r1,DAT_08006f54\n\
     ldr         r2,DAT_08006f58\n\
@@ -919,7 +919,7 @@ LAB_08006f64:\n\
     ldr         r0,DAT_08006fa0\n\
     mov         r1,#0xc0\n\
     lsl         r1,r1,#0x13\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     bl          fun_08002bcc\n\
     ldr         r1,DAT_08006fa4\n\
     ldr         r2,DAT_08006fa8\n\

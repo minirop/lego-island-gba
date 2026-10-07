@@ -5227,7 +5227,7 @@ __attribute__((naked)) void fun_08025ef8()
      add        r5,r0,#0x0\n\
      strh       r5,[r6,#0x0]\n\
      ldr        r0,DAT_08025f98\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      bl         fun_08002bcc\n\
      ldr        r0,DAT_08025f9c\n\
      str        r0,[r4,#0x0]\n\
@@ -5419,7 +5419,7 @@ __attribute__((naked)) void fun_08026048()
      orr        r0,r2\n\
      strh       r0,[r5,#0x0]\n\
      ldr        r0,DAT_08026130\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      bl         fun_08002bcc\n\
      ldr        r0,DAT_08026134\n\
      str        r0,[r4,#0x0]\n\
@@ -5433,7 +5433,7 @@ __attribute__((naked)) void fun_08026048()
      strh       r0,[r5,#0x0]\n\
      ldr        r0,DAT_08026140\n\
      ldr        r1,DAT_08026144\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      bl         fun_08001118\n\
      lsl        r0,r0,#0x18\n\
      lsr        r0,r0,#0x18\n\
@@ -6208,7 +6208,7 @@ __attribute__((naked)) void fun_08026620()
      add        r0,r4,r0\n\
      ldr        r0,[r0,#0x0]\n\
      ldr        r1,DAT_08026664\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      bl         fun_08002bcc\n\
      ldr        r1,DAT_08026668\n\
      ldr        r0,DAT_0802666c\n\
@@ -6244,7 +6244,7 @@ LAB_08026678:\n\
      ldr        r0,[r0,#0x0]\n\
      mov        r1,#0xc0\n\
      lsl        r1,r1,#0x13\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      bl         fun_08002bcc\n\
      ldr        r1,DAT_080266b8\n\
      ldr        r0,DAT_080266bc\n\
@@ -6503,7 +6503,7 @@ LAB_080267cc:\n\
      ldr        r0,[r4,#0x8]\n\
      ldr        r0,DAT_0802697c\n\
      mov        r1,r9\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      ldr        r0,DAT_08026980\n\
      bl         fun_08003998\n\
      ldr        r1,DAT_08026984\n\

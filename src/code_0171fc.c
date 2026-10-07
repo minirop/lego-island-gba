@@ -477,7 +477,7 @@ LAB_080174fa:\n\
      ldr        r0,DAT_080175b0\n\
      mov        r1,#0xc0\n\
      lsl        r1,r1,#0x13\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      ldr        r4,DAT_080175b4\n\
      ldr        r5,DAT_080175b8\n\
      ldr        r0,[r5,#0x0]\n\
@@ -558,7 +558,7 @@ LAB_080175d0:\n\
      ldr        r0,DAT_0801768c\n\
      mov        r1,#0xc0\n\
      lsl        r1,r1,#0x13\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      ldr        r6,DAT_08017690\n\
      ldr        r4,DAT_08017694\n\
      ldr        r0,[r4,#0x0]\n\

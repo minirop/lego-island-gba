@@ -455,7 +455,7 @@ __attribute__((naked)) void fun_08007d98()
     ldr        r5,PTR_DAT_08007dd4\n\
     ldr        r1,PTR_DAT_08007dd8\n\
     add        r0,r5,#0x0\n\
-    bl         fun_0803d070\n\
+    bl         LZ77UnCompVram\n\
     bl         fun_08002bcc\n\
     ldr        r1,DAT_08007ddc\n\
     add        r0,r1,#0x0\n\
@@ -463,7 +463,7 @@ __attribute__((naked)) void fun_08007d98()
     mov        r1,#0xc0\n\
     lsl        r1,r1,#0x13\n\
     add        r0,r5,#0x0\n\
-    bl         fun_0803d070\n\
+    bl         LZ77UnCompVram\n\
     bl         fun_08002bcc\n\
     strh       r6,[r4,#0x0]\n\
     pop        {r4,r5,r6}\n\

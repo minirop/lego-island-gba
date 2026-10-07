@@ -1600,7 +1600,7 @@ __attribute__((naked)) void fun_0801c19c()
      ldr        r0,[r4,#0x8]\n\
      ldr        r0,DAT_0801c22c\n\
      ldr        r1,DAT_0801c230\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      bl         fun_08002bcc\n\
      ldr        r0,DAT_0801c234\n\
      str        r0,[r4,#0x0]\n\
@@ -2066,7 +2066,7 @@ LAB_0801c524:\n\
      ldr        r0,DAT_0801c598\n\
      mov        r1,#0xc0\n\
      lsl        r1,r1,#0x13\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      ldr        r2,DAT_0801c59c\n\
      mov        r0,#0x0\n\
      strh       r0,[r2,#0x0]\n\
@@ -2784,7 +2784,7 @@ LAB_0801ca92:\n\
      ldr        r0,[r4,#0x8]\n\
      ldr        r0,DAT_0801cc0c\n\
      ldr        r1,DAT_0801cc10\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      bl         fun_08002bcc\n\
      ldr        r0,DAT_0801cc14\n\
      str        r0,[r4,#0x0]\n\

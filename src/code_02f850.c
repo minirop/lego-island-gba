@@ -420,7 +420,7 @@ __attribute__((naked)) void fun_0802fa50()
      ldr        r0,[r4,#0x8]\n\
      ldr        r0,DAT_0802fc24\n\
      ldr        r1,DAT_0802fc28\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      bl         fun_08002bcc\n\
      ldr        r0,DAT_0802fc2c\n\
      str        r0,[r4,#0x0]\n\

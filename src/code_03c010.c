@@ -1,3 +1,5 @@
+#include "functions.h"
+
 __attribute__((naked)) void fun_0803c010()
 {
     asm("\n\
@@ -2271,7 +2273,7 @@ __attribute__((naked)) void fun_0803d040()
      add        r0,r0,r1\n\
      ldr        r0,[r0,#0x0]\n\
      ldr        r1,DAT_0803d060\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      pop        {r0}\n\
      bx         r0\n\
 DAT_0803d058:\n\
@@ -2282,35 +2284,35 @@ DAT_0803d060:\n\
      .word 0x02011850\n\
     ");
 }
-__attribute__((naked)) void fun_0803d064()
+__attribute__((naked)) u16 ArcTan2(s16 x, s16 y)
 {
     asm("\n\
      svc        0xa\n\
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_0803d068()
+__attribute__((naked)) void CpuSet(const void* src, void* dest, u32 control)
 {
     asm("\n\
      svc        0xb\n\
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_0803d06c()
+__attribute__((naked)) int Div(int over, int under)
 {
     asm("\n\
      svc        0x6\n\
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_0803d070()
+__attribute__((naked)) void LZ77UnCompVram(const void* src, void* dest)
 {
     asm("\n\
      svc        0x12\n\
      bx         lr\n\
     ");
 }
-__attribute__((naked)) void fun_0803d074()
+__attribute__((naked)) u16 Sqrt(u32 num)
 {
     asm("\n\
      svc        0x8\n\

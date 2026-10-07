@@ -489,7 +489,7 @@ LAB_0800d38e:\n\
     asr         r0,r0,#0x10\n\
     lsl         r1,r5,#0x10\n\
     asr         r1,r1,#0x10\n\
-    bl          fun_0803d064\n\
+    bl          ArcTan2\n\
     add         r1,r0,#0x0\n\
     lsl         r1,r1,#0x10\n\
     lsr         r1,r1,#0x18\n\
@@ -1167,7 +1167,7 @@ LAB_0800d8d6:\n\
     asr         r0,r0,#0x10\n\
     lsl         r1,r5,#0x10\n\
     asr         r1,r1,#0x10\n\
-    bl          fun_0803d064\n\
+    bl          ArcTan2\n\
     add         r1,r0,#0x0\n\
     lsl         r1,r1,#0x10\n\
     lsr         r1,r1,#0x18\n\

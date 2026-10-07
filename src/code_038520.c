@@ -237,7 +237,7 @@ __attribute__((naked)) void fun_08038664()
      strh       r0,[r6,#0x0]\n\
      ldr        r0,DAT_080387f4\n\
      ldr        r1,DAT_080387f8\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      ldr        r0,DAT_080387fc\n\
      str        r0,[r4,#0x0]\n\
      str        r5,[r4,#0x4]\n\

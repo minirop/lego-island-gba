@@ -3,6 +3,7 @@
 
 #include "types.h"
 
+s32 Div(s32 over, s32 under);
 s32 fun_08005d50();
 s32 fun_08005e0c();
 s32 fun_08005f08();
@@ -91,7 +92,10 @@ s32 fun_08038638();
 s32 fun_08039518();
 s32 fun_0803951c();
 s32 fun_080414bc(int param_1, int* param_2);
+u16 ArcTan2(s16 x, s16 y);
 u16 fun_08002dd8();
+u16 Sqrt(u32 num);
+void CpuSet(const void* src, void* dest, u32 control);
 void fun_080003e0(s32, s32, s32);
 void fun_080004ac(void*, void*);
 void fun_080004dc(s32, s32, s8*);
@@ -708,5 +712,6 @@ void fun_08041884();
 void fun_080418a4();
 void fun_0804191c();
 void fun_0804194c();
+void LZ77UnCompVram(const void* src, void* dest);
 
 #endif

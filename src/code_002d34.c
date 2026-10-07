@@ -464,7 +464,7 @@ __attribute__((naked)) void fun_0800306c()
     lsl         r1,r1,#0x13\n\
 LAB_08003084:\n\
     add         r0,r4,#0x0\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     ldr         r0,DAT_080030d0\n\
     ldrh        r2,[r0,#0x0]\n\
     ldr         r1,DAT_080030d4\n\
@@ -542,7 +542,7 @@ __attribute__((naked)) void fun_080030f8()
     add         r1,#0xff\n\
 LAB_08003102:\n\
     asr         r1,r1,#0x8\n\
-    bl          fun_0803d06c\n\
+    bl          Div\n\
     pop         {r1}\n\
     bx          r1\n\
     ");
@@ -552,7 +552,7 @@ __attribute__((naked)) void fun_0800310c()
     asm("\n\
     push        {lr}\n\
     lsl         r0,r0,#0x4\n\
-    bl          fun_0803d074\n\
+    bl          Sqrt\n\
     lsl         r0,r0,#0x10\n\
     lsr         r0,r0,#0xa\n\
     pop         {r1}\n\
@@ -612,7 +612,7 @@ LAB_08003190:\n\
 LAB_080031b8:\n\
     asr         r1,r0,#0x8\n\
     add         r0,r2,#0x0\n\
-    bl          fun_0803d06c\n\
+    bl          Div\n\
     b           LAB_080031d6\n\
 \n\
 .space 2\n\
@@ -829,59 +829,17 @@ DAT_080032f4:\n\
     ");
 }
 
-#ifdef NONMATCHING
-// https://www.decomp.me/scratch/Q07tK
 u16 fun_080032f8(u16 param_1, u16 param_2, s16* param_3)
 {
-    if ((param_1 < param_3[0])
-        || (param_1 >= param_3[2])
-        || (param_2 < param_3[1])
-        || (param_2 < param_3[3])) {
-        return 0;
-    } else {
+    if ((param_1 >= param_3[0])
+        && (param_1 < param_3[2])
+        && (param_2 >= param_3[1])
+        && (param_2 < param_3[3])) {
         return 1;
+    } else {
+        return 0;
     }
 }
-#else
-__attribute__((naked)) void fun_080032f8()
-
-{
-    asm("\n\
-    push        {r4,lr}\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r3,r0,#0x10\n\
-    lsl         r1,r1,#0x10\n\
-    lsr         r1,r1,#0x10\n\
-    mov         r4,#0x0\n\
-    ldrsh       r0,[r2,r4]\n\
-    cmp         r3,r0\n\
-    blt         LAB_08003326\n\
-    mov         r4,#0x4\n\
-    ldrsh       r0,[r2,r4]\n\
-    cmp         r3,r0\n\
-    bge         LAB_08003326\n\
-    mov         r3,#0x2\n\
-    ldrsh       r0,[r2,r3]\n\
-    cmp         r1,r0\n\
-    blt         LAB_08003326\n\
-    mov         r4,#0x6\n\
-    ldrsh       r0,[r2,r4]\n\
-    cmp         r1,r0\n\
-    bge         LAB_08003326\n\
-    mov         r0,#0x1\n\
-    b           LAB_08003328\n\
-LAB_08003326:\n\
-    mov         r0,#0x0\n\
-LAB_08003328:\n\
-    pop         {r4}\n\
-    pop         {r1}\n\
-    bx          r1\n\
-\n\
-.space 2\n\
-\n\
-    ");
-}
-#endif
 
 #ifdef NONMATCHING
 s32 fun_08003330(u16 param_1, u16 param_2)

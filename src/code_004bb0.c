@@ -1,23 +1,9 @@
+#include "gba.h"
 #include "variables.h"
 
-__attribute__((naked)) void fun_08004bb0()
+void fun_08004bb0(u32 param_1)
 {
-    asm("\n\
-    ldr         r1,DAT_08004bc0\n\
-    str         r0,[r1,#0x0]\n\
-    ldr         r0,DAT_08004bc4\n\
-    str         r0,[r1,#0x4]\n\
-    ldr         r0,DAT_08004bc8\n\
-    str         r0,[r1,#0x8]\n\
-    ldr         r0,[r1,#0x8]\n\
-    bx          lr\n\
-DAT_08004bc0:\n\
-    .word 0x040000D4\n\
-DAT_08004bc4:\n\
-    .word 0x06004000\n\
-DAT_08004bc8:\n\
-    .word 0x80006000\n\
-    ");
+    DmaCopy16(3, param_1, (void*)0x06004000, 0xC000);
 }
 
 void fun_08004bcc(s32 param_1, u16 param_2)

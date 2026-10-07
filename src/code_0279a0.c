@@ -6365,7 +6365,7 @@ __attribute__((naked)) void fun_0802a9b8()
      mul        r2,r1\n\
      add        r1,r2,#0x0\n\
      add        r0,r0,r1\n\
-     bl         fun_0803d074\n\
+     bl         Sqrt\n\
      lsl        r0,r0,#0x10\n\
      lsr        r0,r0,#0x10\n\
      mov        r9,r0\n\
@@ -6405,7 +6405,7 @@ LAB_0802aa40:\n\
      add        r1,r2,#0x0\n\
      mul        r1,r2\n\
      add        r0,r0,r1\n\
-     bl         fun_0803d074\n\
+     bl         Sqrt\n\
      lsl        r0,r0,#0x10\n\
      lsr        r4,r0,#0x10\n\
      cmp        r4,#0x0\n\
@@ -7901,7 +7901,7 @@ __attribute__((naked)) void fun_0802b3f0()
      ldr        r0,[r4,#0x8]\n\
      ldr        r0,DAT_0802b558\n\
      ldr        r1,DAT_0802b55c\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      bl         fun_08002bcc\n\
      ldr        r0,DAT_0802b560\n\
      str        r0,[r4,#0x0]\n\
@@ -10255,7 +10255,7 @@ __attribute__((naked)) void fun_0802c5dc()
      push       {lr}\n\
      ldr        r0,DAT_0802c610\n\
      ldr        r1,DAT_0802c614\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      bl         fun_08002bcc\n\
      ldr        r1,DAT_0802c618\n\
      ldr        r0,DAT_0802c61c\n\
@@ -10354,7 +10354,7 @@ __attribute__((naked)) void fun_0802c678()
      beq        LAB_0802c6f8\n\
      ldr        r0,DAT_0802c6dc\n\
      ldr        r1,DAT_0802c6e0\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      bl         fun_08002bcc\n\
      ldr        r1,DAT_0802c6e4\n\
      ldr        r0,DAT_0802c6e8\n\
@@ -10411,7 +10411,7 @@ LAB_0802c6f8:\n\
      ldr        r0,DAT_0802c760\n\
      mov        r1,#0xc0\n\
      lsl        r1,r1,#0x13\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      bl         fun_08002bcc\n\
      ldr        r1,DAT_0802c764\n\
      ldr        r0,DAT_0802c768\n\
@@ -14595,7 +14595,7 @@ PTR_DAT_0802e634:\n\
 PTR_DAT_0802e638:\n\
      .word       DAT_085c7258\n\
 PTR_s_i_i_0802e63c:\n\
-     .word       s_i_i_085c73cc\n\
+     .word       0x085c73cc\n\
     ");
 }
 __attribute__((naked)) void fun_0802e640()
@@ -15264,7 +15264,7 @@ __attribute__((naked)) void fun_0802ea38()
      ldr        r0,[r5,#0x8]\n\
      ldr        r0,DAT_0802edb8\n\
      add        r1,r6,#0x0\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      ldr        r0,DAT_0802edbc\n\
      bl         fun_08003998\n\
      ldr        r1,DAT_0802edc0\n\

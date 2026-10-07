@@ -290,7 +290,7 @@ __attribute__((naked)) s32 fun_08005d50()
     ldr         r0,DAT_08005dfc\n\
     ldr         r0,[r0,#0x0]\n\
     mov         r1,r10\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     bl          fun_08002bcc\n\
     mov         r2,r8\n\
     mov         r1,r9\n\
@@ -405,7 +405,7 @@ LAB_08005e64:\n\
     add         r0,r4,r0\n\
     ldr         r0,[r0,#0x0]\n\
     ldr         r1,DAT_08005eac\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     bl          fun_08002bcc\n\
     mov         r1,#0x80\n\
     lsl         r1,r1,#0x13\n\
@@ -428,7 +428,7 @@ LAB_08005eb4:\n\
     ldr         r0,[r0,#0x0]\n\
     mov         r1,#0xc0\n\
     lsl         r1,r1,#0x13\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     bl          fun_08002bcc\n\
     mov         r1,#0x80\n\
     lsl         r1,r1,#0x13\n\
@@ -502,7 +502,7 @@ __attribute__((naked)) void fun_08005f0c()
     add         r0,r4,r0\n\
     ldr         r0,[r0,#0x0]\n\
     ldr         r1,DAT_08005f5c\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     bl          fun_08002bcc\n\
     mov         r1,#0x80\n\
     lsl         r1,r1,#0x13\n\
@@ -525,7 +525,7 @@ LAB_08005f64:\n\
     ldr         r0,[r0,#0x0]\n\
     mov         r1,#0xc0\n\
     lsl         r1,r1,#0x13\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     bl          fun_08002bcc\n\
     mov         r1,#0x80\n\
     lsl         r1,r1,#0x13\n\
@@ -597,7 +597,7 @@ __attribute__((naked)) s32 fun_08005fac()
     ldr         r6,DAT_08006060\n\
     ldr         r1,DAT_08006064\n\
     add         r0,r6,#0x0\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     bl          fun_08002bcc\n\
     ldr         r0,DAT_08006068\n\
     str         r0,[r4,#0x0]\n\
@@ -611,7 +611,7 @@ __attribute__((naked)) s32 fun_08005fac()
     strh        r0,[r5,#0x0]\n\
     add         r0,r6,#0x0\n\
     mov         r1,r10\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     bl          fun_08002bcc\n\
     mov         r0,r9\n\
     strh        r0,[r5,#0x0]\n\

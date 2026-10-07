@@ -33,7 +33,7 @@ __attribute__((naked)) s32 fun_08007354()
     ldr         r0,DAT_080073fc\n\
     mov         r1,#0xc0\n\
     lsl         r1,r1,#0x13\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     bl          fun_08002bcc\n\
     ldr         r5,DAT_08007400\n\
     str         r5,[r4,#0x0]\n\
@@ -646,7 +646,7 @@ __attribute__((naked)) void fun_08007794()
     ldr         r0,DAT_080077f0\n\
     ldr         r4,DAT_080077f4\n\
     add         r1,r4,#0x0\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     mov         r1,#0xc0\n\
     lsl         r1,r1,#0x13\n\
     mov         r0,#0x60\n\
@@ -682,7 +682,7 @@ LAB_080077f8:\n\
     ldr         r0,[r0,#0x0]\n\
     ldr         r4,DAT_0800787c\n\
     add         r1,r4,#0x0\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     mov         r1,#0xc0\n\
     lsl         r1,r1,#0x13\n\
     mov         r0,#0x60\n\
@@ -711,7 +711,7 @@ LAB_08007830:\n\
     ldr         r0,[r0,#0x0]\n\
     ldr         r4,DAT_0800787c\n\
     add         r1,r4,#0x0\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     mov         r1,#0xc0\n\
     lsl         r1,r1,#0x13\n\
     mov         r2,#0x60\n\
@@ -800,7 +800,7 @@ LAB_080078d2:\n\
     ldr         r0,DAT_08007908\n\
     ldr         r4,DAT_0800790c\n\
     add         r1,r4,#0x0\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     mov         r1,#0xc0\n\
     lsl         r1,r1,#0x13\n\
     mov         r0,#0x60\n\
@@ -834,7 +834,7 @@ LAB_08007910:\n\
     ldr         r0,[r0,#0x0]\n\
     ldr         r4,DAT_0800799c\n\
     add         r1,r4,#0x0\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     mov         r1,#0xc0\n\
     lsl         r1,r1,#0x13\n\
     mov         r0,#0x60\n\
@@ -863,7 +863,7 @@ LAB_0800794c:\n\
     ldr         r0,[r0,#0x0]\n\
     ldr         r4,DAT_0800799c\n\
     add         r1,r4,#0x0\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     mov         r1,#0xc0\n\
     lsl         r1,r1,#0x13\n\
     mov         r2,#0x60\n\
@@ -938,14 +938,14 @@ __attribute__((naked)) s32 fun_080079a4()
     ldr         r6,DAT_08007a50\n\
     add         r0,r6,#0x0\n\
     ldr         r1,DAT_08007a54\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     bl          fun_08002bcc\n\
     ldr         r1,DAT_08007a58\n\
     add         r0,r1,#0x0\n\
     strh        r0,[r5,#0x0]\n\
     add         r0,r6,#0x0\n\
     add         r1,r7,#0x0\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     bl          fun_08002bcc\n\
     mov         r0,r8\n\
     strh        r0,[r5,#0x0]\n\

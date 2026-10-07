@@ -1091,10 +1091,10 @@ __attribute__((naked)) void fun_08027160()
      bl         fun_08004670\n\
      ldr        r0,DAT_08027288\n\
      add        r1,r6,#0x0\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      ldr        r0,DAT_0802728c\n\
      ldr        r1,DAT_08027290\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      bl         fun_08002bcc\n\
      ldr        r0,DAT_08027294\n\
      str        r0,[r4,#0x0]\n\

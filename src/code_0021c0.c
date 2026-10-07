@@ -1,5 +1,5 @@
-#include "functions.h"
 #include "defines.h"
+#include "functions.h"
 
 __attribute__((naked)) void fun_080021c0()
 {
@@ -37,7 +37,7 @@ __attribute__((naked)) void fun_080021c0()
     ldr         r2,DAT_0800225c\n\
     mov         r0,sp\n\
     add         r1,r7,#0x0\n\
-    bl          fun_0803d068\n\
+    bl          CpuSet\n\
     mov         r0,#0xc\n\
     str         r0,[r7,#0x14]\n\
     str         r0,[r7,#0x18]\n\
@@ -238,7 +238,7 @@ __attribute__((naked)) void fun_08002344()
     ldr         r1,[r4,#0x1c]\n\
     add         r1,#0x4\n\
     ldr         r2,DAT_0800238c\n\
-    bl          fun_0803d068\n\
+    bl          CpuSet\n\
     mov         r1,#0x0\n\
     ldr         r0,[r4,#0x1c]\n\
 LAB_0800236c:\n\
@@ -324,7 +324,7 @@ LAB_080023e0:\n\
     add         r1,r9\n\
     add         r0,r4,#0x0\n\
     ldr         r2,DAT_08002444\n\
-    bl          fun_0803d068\n\
+    bl          CpuSet\n\
     mov         r0,#0x1\n\
     lsl         r0,r5\n\
     ldrb        r1,[r7,#0x3]\n\
@@ -336,7 +336,7 @@ LAB_0800240c:\n\
     mov         r0,r8\n\
     add         r1,r4,#0x0\n\
     ldr         r2,DAT_08002448\n\
-    bl          fun_0803d068\n\
+    bl          CpuSet\n\
     add         r5,r6,#0x0\n\
     cmp         r5,#0x3\n\
     ble         LAB_080023ce\n\
@@ -1202,7 +1202,6 @@ PTR_SIOCNT_080029b8:\n\
     .word     SIOCNT\n\
     ");
 }
-
 
 void fun_080029bc()
 {

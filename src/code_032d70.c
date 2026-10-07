@@ -7085,7 +7085,7 @@ LAB_08036084:\n\
      ldr        r0,[r4,#0x8]\n\
      ldr        r0,DAT_080362ac\n\
      add        r1,r6,#0x0\n\
-     bl         fun_0803d070\n\
+     bl         LZ77UnCompVram\n\
      ldr        r0,DAT_080362b0\n\
      bl         fun_08003998\n\
      ldr        r1,DAT_080362b4\n\

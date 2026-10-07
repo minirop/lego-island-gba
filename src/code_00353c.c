@@ -1,28 +1,11 @@
 #include "functions.h"
 
-#ifdef NONMATCHING
 int fun_0800353c(int param_1, int param_2)
 {
-    return (param_1 * param_2) / 256;
+    int value = param_1 * param_2;
+    value /= 256;
+    return value;
 }
-#else
-__attribute__((naked)) int fun_0800353c(int param_1, int param_2)
-{
-    asm("\n\
-    mul         r0,r1\n\
-    add         r1,r0,#0x0\n\
-    cmp         r0,#0x0\n\
-    bge         LAB_08003546\n\
-    add         r1,#0xff\n\
-LAB_08003546:\n\
-    asr         r0,r1,#0x8\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-    ");
-}
-#endif
 
 int fun_0800354c(int param_1, int param_2)
 {

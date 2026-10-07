@@ -468,7 +468,7 @@ LAB_08008092:\n\
     ldr         r0,DAT_080081b4\n\
     mov         r1,#0xc0\n\
     lsl         r1,r1,#0x13\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     ldr         r1,DAT_08008140\n\
     ldr         r0,DAT_080081b8\n\
     str         r0,[r1,#0x0]\n\
@@ -1823,7 +1823,7 @@ LAB_08008aa6:\n\
     add         r0,r2,#0x0\n\
     strh        r0,[r4,#0x0]\n\
     ldr         r0,DAT_08008b94\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     bl          fun_08002bcc\n\
     ldr         r1,DAT_08008b98\n\
     add         r0,r1,#0x0\n\
@@ -2227,7 +2227,7 @@ __attribute__((naked)) void fun_08008d6c()
     mov         r7,#0xc0\n\
     lsl         r7,r7,#0x13\n\
     add         r1,r7,#0x0\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     lsl         r4,r6,#0x1\n\
     lsl         r0,r6,#0x19\n\
     lsr         r5,r0,#0x18\n\
@@ -2242,7 +2242,7 @@ __attribute__((naked)) void fun_08008d6c()
     ldr         r0,[r0,#0x0]\n\
     ldr         r4,DAT_08008e28\n\
     add         r1,r4,#0x0\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     mov         r0,#0x60\n\
     str         r0,[sp,#0x0]\n\
     mov         r1,#0x81\n\
@@ -2340,7 +2340,7 @@ LAB_08008e64:\n\
     ldr         r0,[r0,#0x0]\n\
     ldr         r4,DAT_08008ef8\n\
     add         r1,r4,#0x0\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     mov         r1,#0xc0\n\
     lsl         r1,r1,#0x13\n\
     mov         r0,#0x60\n\
@@ -3049,7 +3049,7 @@ LAB_08009390:\n\
     ldr         r6,DAT_08009454\n\
     add         r0,r7,#0x0\n\
     add         r1,r6,#0x0\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     mov         r1,#0xc0\n\
     lsl         r1,r1,#0x13\n\
     mov         r9,r1\n\
@@ -3077,7 +3077,7 @@ LAB_08009390:\n\
     add         r0,r0,r1\n\
     ldr         r0,[r0,#0x0]\n\
     add         r1,r6,#0x0\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     mov         r0,#0x60\n\
     str         r0,[sp,#0x0]\n\
     mov         r1,#0x81\n\
@@ -3171,7 +3171,7 @@ LAB_08009488:\n\
     ldr         r5,DAT_0800953c\n\
     add         r0,r7,#0x0\n\
     add         r1,r5,#0x0\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     mov         r7,#0xc0\n\
     lsl         r7,r7,#0x13\n\
     mov         r1,#0x78\n\
@@ -3201,7 +3201,7 @@ LAB_08009488:\n\
     add         r0,r0,r1\n\
     ldr         r0,[r0,#0x0]\n\
     add         r1,r5,#0x0\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     mov         r0,#0x60\n\
     str         r0,[sp,#0x0]\n\
     mov         r1,#0x81\n\
@@ -3299,7 +3299,7 @@ LAB_08009578:\n\
     ldr         r0,DAT_080096a0\n\
     ldr         r6,DAT_080096a4\n\
     add         r1,r6,#0x0\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     mov         r7,#0xc0\n\
     lsl         r7,r7,#0x13\n\
     mov         r1,#0x78\n\
@@ -3327,7 +3327,7 @@ LAB_08009578:\n\
     add         r0,r0,r1\n\
     ldr         r0,[r0,#0x0]\n\
     add         r1,r6,#0x0\n\
-    bl          fun_0803d070\n\
+    bl          LZ77UnCompVram\n\
     mov         r0,#0x60\n\
     str         r0,[sp,#0x0]\n\
     mov         r1,#0x81\n\
