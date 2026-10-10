@@ -403,7 +403,7 @@ rom:
       format: c
       section: rodata
       address: 0x064190
-      size: 0x1a0
+      size: 0x1b0
     - name: code_006180
       format: c
       section: rodata

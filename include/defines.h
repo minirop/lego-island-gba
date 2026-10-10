@@ -4,7 +4,7 @@
 #include "types.h"
 
 #define IS_BIT_SET(FUNC, VAR, BIT) \
-    s32 FUNC()                     \
+    s16 FUNC()                     \
     {                              \
         if (VAR & BIT) {           \
             return 1;              \

@@ -740,138 +740,35 @@ DAT_0800607c:\n\
     ");
 }
 
-__attribute__((naked)) void fun_08006080()
+void fun_08006080()
 {
-    asm("\n\
-    push       {lr}\n\
-    bl         fun_0800135c\n\
-    lsl        r0,r0,#0x10\n\
-    cmp        r0,#0x0\n\
-    bne        LAB_08006096\n\
-    bl         fun_080013dc\n\
-    lsl        r0,r0,#0x10\n\
-    cmp        r0,#0x0\n\
-    beq        LAB_080060b0\n\
-LAB_08006096:\n\
-    mov        r0,#0xf\n\
-    bl         fun_080016f0\n\
-    ldr        r1,DAT_080060a8\n\
-    ldr        r0,[r1,#0x0]\n\
-    cmp        r0,#0x0\n\
-    beq        LAB_080060ac\n\
-    sub        r0,#0x1\n\
-    b          LAB_080060ae\n\
-DAT_080060a8:\n\
-    .word 0x020025B4\n\
-LAB_080060ac:\n\
-    mov        r0,#0x1\n\
-LAB_080060ae:\n\
-    str        r0,[r1,#0x0]\n\
-LAB_080060b0:\n\
-    bl         fun_08001374\n\
-    lsl        r0,r0,#0x10\n\
-    cmp        r0,#0x0\n\
-    bne        LAB_080060c4\n\
-    bl         fun_080013c4\n\
-    lsl        r0,r0,#0x10\n\
-    cmp        r0,#0x0\n\
-    beq        LAB_080060d6\n\
-LAB_080060c4:\n\
-    mov        r0,#0xf\n\
-    bl         fun_080016f0\n\
-    ldr        r0,PTR_DAT_08006110\n\
-    ldr        r1,[r0,#0x0]\n\
-    add        r1,#0x1\n\
-    mov        r2,#0x1\n\
-    and        r1,r2\n\
-    str        r1,[r0,#0x0]\n\
-LAB_080060d6:\n\
-    bl         fun_0800132c\n\
-    lsl        r0,r0,#0x10\n\
-    cmp        r0,#0x0\n\
-    bne        LAB_080060ea\n\
-    bl         fun_080013f4\n\
-    lsl        r0,r0,#0x10\n\
-    cmp        r0,#0x0\n\
-    beq        LAB_08006124\n\
-LAB_080060ea:\n\
-    mov        r0,#0x1\n\
-    bl         fun_080016f0\n\
-    ldr        r1,PTR_DAT_08006110\n\
-    ldr        r0,[r1,#0x0]\n\
-    cmp        r0,#0x1\n\
-    bne        LAB_080060fc\n\
-    mov        r0,#0x3\n\
-    str        r0,[r1,#0x0]\n\
-LAB_080060fc:\n\
-    bl         fun_0803d040\n\
-    ldr        r0,PTR_DAT_08006114\n\
-    ldrh       r0,[r0,#0x0]\n\
-    cmp        r0,#0x0\n\
-    beq        LAB_08006118\n\
-    bl         fun_080010d8\n\
-    b          LAB_08006124\n\
-.space 2\n\
-PTR_DAT_08006110:\n\
-    .word selected_language\n\
-PTR_DAT_08006114:\n\
-    .word DAT_02009ad8\n\
-LAB_08006118:\n\
-    ldr        r1,PTR_DAT_08006128\n\
-    mov        r0,#0xd\n\
-    strb       r0,[r1,#0x0]\n\
-    mov        r0,#0x29\n\
-    bl         fun_08001070\n\
-LAB_08006124:\n\
-    pop        {r0}\n\
-    bx         r0\n\
-PTR_DAT_08006128:\n\
-    .word DAT_0200254c\n\
-    ");
-}
+    if (fun_0800135c() || fun_080013dc()) {
+        fun_080016f0(0xF);
+        if (selected_language) {
+            selected_language--;
+        } else {
+            selected_language = 1;
+        }
+    }
 
-__attribute__((naked)) s32 fun_0800612c()
-{
-    asm("\n\
-    push       {lr}\n\
-    sub        sp,#0x14\n\
-    bl         fun_0803c1a4\n\
-    ldr        r1,PTR_s_s_s_08006160\n\
-    ldr        r0,PTR_DAT_08006164\n\
-    ldr        r2,[r0,#0x0]\n\
-    lsl        r2,r2,#0x5\n\
-    ldr        r0,PTR_s_English_08006168\n\
-    add        r2,r2,r0\n\
-    ldr        r3,PTR_s__0800616c\n\
-    mov        r0,sp\n\
-    bl         sprintf\n\
-    ldr        r2,PTR_PTR_08006170\n\
-    mov        r0,sp\n\
-    mov        r1,#0x37\n\
-    bl         fun_0803c010\n\
-    bl         fun_08006080\n\
-    mov        r0,#0x0\n\
-    add        sp,#0x14\n\
-    pop        {r1}\n\
-    bx         r1\n\
-.space 2\n\
-PTR_s_s_s_08006160:\n\
-    .word DAT_08064330\n\
-PTR_DAT_08006164:\n\
-    .word selected_language\n\
-PTR_s_English_08006168:\n\
-    .word DAT_0875e864\n\
-PTR_s__0800616c:\n\
-    .word DAT_08064338\n\
-PTR_PTR_08006170:\n\
-    .word DAT_0865fd94\n\
-    ");
-}
+    if (fun_08001374() || fun_080013c4()) {
+        fun_080016f0(0xF);
+        selected_language = (selected_language + 1) & 1;
+    }
 
-s32 fun_08006174()
-{
-    fun_0800457c();
-    return 0;
+    if (fun_0800132c() || fun_080013f4()) {
+        fun_080016f0(1);
+        if (selected_language == 1) {
+            selected_language = 3;
+        }
+        fun_0803d040();
+        if (DAT_02009ad8) {
+            fun_080010d8();
+        } else {
+            DAT_0200254c = 0xd;
+            fun_08001070(0x29);
+        }
+    }
 }
 
 const LevelInfo logo_screens = {
@@ -923,3 +820,27 @@ const LevelInfo language_select = {
     "Blank",
     "Blank",
 };
+
+extern char LANG_STRINGS_0875e864[2][32];
+extern void* DAT_0865fd94;
+
+s32 fun_0800612c()
+{
+    u8 abStack_18[20];
+
+    fun_0803c1a4();
+    sprintf(abStack_18, "%s %s", LANG_STRINGS_0875e864[selected_language], "     ");
+    fun_0803c010(abStack_18, 0x37, &DAT_0865fd94);
+    fun_08006080();
+    return 0;
+}
+
+// for some reason, the alignment doesn't "work"
+// (should add those 2 NUL bytes, linkerscript issue?)
+const char bytes[2] = { 0, 0 };
+
+s32 fun_08006174()
+{
+    fun_0800457c();
+    return 0;
+}

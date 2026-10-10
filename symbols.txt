@@ -876,6 +876,7 @@ errno = 0x0202704c;
 IE = 0x04000200;
 IF = 0x04000202;
 IME = 0x04000208;
+LANG_STRINGS_0875e864 = 0x0875e864;
 levels_table = 0x08756aec;
 selected_language = 0x020025b4;
 SIOCNT = 0x04000128;
