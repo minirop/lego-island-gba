@@ -1,4 +1,6 @@
 #include "functions.h"
+#include "gba.h"
+#include "variables.h"
 
 __attribute__((naked)) void fun_08002c04()
 {
@@ -44,6 +46,16 @@ DAT_08002c40:\n\
     .word 0x02005CE0\n\
     ");
 }
+
+#ifdef NONMATCHING
+void fun_08002c44()
+{
+    u16 keys = ~REG_KEYINPUT;
+    keys &= KEYS_MASK;
+    DAT_02005ce0 = DAT_02005830 & keys;
+    DAT_02005830 = keys;
+}
+#else
 __attribute__((naked)) void fun_08002c44()
 {
     asm("\n\
@@ -81,6 +93,8 @@ DAT_08002c80:\n\
     .word 0x000003FF\n\
     ");
 }
+#endif
+
 __attribute__((naked)) void fun_08002c84()
 {
     asm("\n\

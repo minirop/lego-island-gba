@@ -1,4 +1,6 @@
 #include "functions.h"
+#include "gba.h"
+#include "variables.h"
 
 __attribute__((naked)) void fun_08005bbc()
 {
@@ -240,6 +242,30 @@ DAT_08005d4c:\n\
     .word 0x0400001C\n\
     ");
 }
+
+#ifdef NONMATCHING
+// https://www.decomp.me/scratch/dNBAK
+s32 fun_08005d50()
+{
+    s16 unk_24[2];
+    s16 unk_20[2];
+    unk_24[0] = 0;
+    DmaSet(3, unk_24, 0x06000000, 0x8100c000);
+    unk_24[0] = 0;
+    DmaSet(3, unk_24, 0x05000000, 0x81000200);
+    REG_DISPCNT = 0x1f04;
+    DAT_02009ad4 = 0;
+    fun_08002bcc();
+    unk_20[0] = 0;
+    DmaSet(3, unk_20, 0x05000000, 0x81000100);
+    LZ77UnCompVram(DAT_08756d44, (void*)0x06000000);
+    fun_08002bcc();
+    REG_DISPCNT = 0x1f04;
+    DmaSet(3, DAT_08756d50, 0x05000000, 0x80000100);
+    DAT_02009ad0 = 0xb4;
+    return 0;
+}
+#else
 __attribute__((naked)) s32 fun_08005d50()
 {
     asm("\n\
@@ -336,6 +362,54 @@ DAT_08005e08:\n\
     .word 0x02009AD0\n\
     ");
 }
+#endif
+
+#ifdef NONMATCHING
+s32 fun_08005e0c()
+{
+    s16 unk_14[2];
+    u32 index;
+    u8 lol;
+
+    DAT_02009ad0--;
+    if (DAT_02009ad0 != 0) {
+        if (fun_0800140c() == 0 && fun_080013f4() == 0 && fun_0800132c() == 0) {
+            return 0;
+        }
+
+        if (DAT_02009ad4 == 0) {
+            return 0;
+        }
+    }
+
+    index = DAT_02009ad4;
+    index++;
+    DAT_02009ad4 = index;
+    lol = index;
+
+    if (lol > 2) {
+        fun_080010d8();
+    } else {
+        u32 five;
+        fun_08002bcc();
+
+        unk_14[0] = 0;
+        DmaSet(3, 0, five = 0x05000000, 0x8100c000);
+        if ((index & 1) != 0) {
+            LZ77UnCompVram(PTR_ARRAY_08756d44[index], (void*)0x0600a000);
+            fun_08002bcc();
+            REG_DISPCNT = 0x1f14;
+        } else {
+            LZ77UnCompVram(PTR_ARRAY_08756d44[index], (void*)0x06000000);
+            fun_08002bcc();
+            REG_DISPCNT = 0x1f04;
+        }
+        DmaSet(3, PTR_ARRAY_08756d50[index], five, 0x81000100);
+        DAT_02009ad0 = 0xb4;
+    }
+    return 0;
+}
+#else
 __attribute__((naked)) s32 fun_08005e0c()
 {
     asm("\n\
@@ -468,6 +542,7 @@ DAT_08005f04:\n\
     .word 0x02009AD0\n\
     ");
 }
+#endif
 
 s32 fun_08005f08()
 {

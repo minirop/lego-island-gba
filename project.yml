@@ -26,9 +26,6 @@ rom:
     - name: code_00132c
       format: c
       address: 0x00132c
-    - name: code_001424
-      format: c
-      address: 0x001424
     - name: code_001534
       format: c
       address: 0x001534

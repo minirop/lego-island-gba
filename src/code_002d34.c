@@ -179,22 +179,20 @@ void fun_08002e8c(s16 param_1, u16 param_2)
     DAT_02005838 = param_2;
     DAT_02005cdc = 0;
     DAT_0200583c = 0;
-    DAT_02005840 = 5888 / param_1;
+    DAT_02005840 = 0x1700 / param_1;
 }
 
 void fun_08002ec8(s16 param_1)
 {
-    DAT_02005cdc = 5888;
+    DAT_02005cdc = 0x1700;
     DAT_02005cd0 = 0;
-    DAT_02005840 = -5888 / param_1;
+    DAT_02005840 = -0x1700 / param_1;
 }
 
-#ifdef NONMATCHING
 void fun_08002f00(s32 param_1, s8* param_2)
 {
     s32 iVar1;
     s32 iVar2;
-    s32 iVar3;
 
     if (param_1 < 0) {
         param_1 = 0;
@@ -202,70 +200,14 @@ void fun_08002f00(s32 param_1, s8* param_2)
 
     iVar1 = param_1 / 60;
     iVar2 = iVar1 / 60;
-    iVar3 = iVar1 - iVar2 * 60;
+    iVar1 -= iVar2 * 60;
 
-    if (iVar3 < 10) {
-        sprintf(param_2, "A%d:0%d", (u16)iVar2, (u16)iVar3);
+    if (iVar1 < 10) {
+        sprintf(param_2, "A%d:0%d", (u16)iVar2, (u16)iVar1);
     } else {
-        sprintf(param_2, "A%d:%d", (u16)iVar2, (u16)iVar3);
+        sprintf(param_2, "A%d:%d", (u16)iVar2, (u16)iVar1);
     }
 }
-#else
-__attribute__((naked)) void fun_08002f00()
-{
-    asm("\n\
-    push        {r4,r5,lr}\n\
-    add         r5,r1,#0x0\n\
-    cmp         r0,#0x0\n\
-    bge         LAB_08002f0a\n\
-    mov         r0,#0x0\n\
-LAB_08002f0a:\n\
-    mov         r1,#0x3c\n\
-    bl          __divsi3\n\
-    add         r4,r0,#0x0\n\
-    mov         r1,#0x3c\n\
-    bl          __divsi3\n\
-    add         r2,r0,#0x0\n\
-    lsl         r0,r2,#0x4\n\
-    sub         r0,r0,r2\n\
-    lsl         r0,r0,#0x2\n\
-    sub         r4,r4,r0\n\
-    cmp         r4,#0x9\n\
-    bgt         LAB_08002f3c\n\
-    ldr         r1,DAT_08002f38\n\
-    lsl         r2,r2,#0x10\n\
-    lsr         r2,r2,#0x10\n\
-    lsl         r3,r4,#0x10\n\
-    lsr         r3,r3,#0x10\n\
-    add         r0,r5,#0x0\n\
-    bl          sprintf\n\
-    b           LAB_08002f4c\n\
-DAT_08002f38:\n\
-    .word 0x08049C24\n\
-LAB_08002f3c:\n\
-    ldr         r1,DAT_08002f54\n\
-    lsl         r2,r2,#0x10\n\
-    lsr         r2,r2,#0x10\n\
-    lsl         r3,r4,#0x10\n\
-    lsr         r3,r3,#0x10\n\
-    add         r0,r5,#0x0\n\
-    bl          sprintf\n\
-LAB_08002f4c:\n\
-    pop         {r4,r5}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_08002f54:\n\
-    .word 0x08049C2C\n\
-    ");
-}
-
-const char* dummy_08049c24 = "A%d:0%d";
-const char* dummy_08049c2c = "A%d:%d";
-
-#endif
 
 __attribute__((naked)) void fun_08002f58()
 {
@@ -842,6 +784,7 @@ u16 fun_080032f8(u16 param_1, u16 param_2, s16* param_3)
 }
 
 #ifdef NONMATCHING
+// https://www.decomp.me/scratch/Pi0Bm
 s32 fun_08003330(u16 param_1, u16 param_2)
 {
     s32 var = fun_08003370(param_1, param_2);
