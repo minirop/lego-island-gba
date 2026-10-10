@@ -1,4 +1,5 @@
 #include "functions.h"
+#include "variables.h"
 
 __attribute__((naked)) void fun_0803c010()
 {
@@ -162,7 +163,7 @@ DAT_0803c134:\n\
      .word 0x08049D60\n\
     ");
 }
-__attribute__((naked)) void fun_0803c138()
+__attribute__((naked)) void fun_0803c138(u8* param_1, u16 param_2, u16 param_3, s32* param_4)
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -306,27 +307,27 @@ DAT_0803c220:\n\
 
 void fun_0803c224()
 {
-    fun_0800460c(0x086693F4, 0);
+    fun_0800460c(&DAT_086693F4, 0);
 }
 
 void fun_0803c238()
 {
-    fun_0800460c(0x08668DF4, 0);
+    fun_0800460c(&DAT_08668DF4, 0);
 }
 
 void fun_0803c24c()
 {
-    fun_0800460c(0x08668DF4, 0);
+    fun_0800460c(&DAT_08668DF4, 0);
 }
 
 void fun_0803c260()
 {
-    fun_0800460c(0x086691F4, 0);
+    fun_0800460c(&DAT_086691F4, 0);
 }
 
 void fun_0803c274()
 {
-    fun_0800460c(0x08668FF4, 0);
+    fun_0800460c(&DAT_08668FF4, 0);
 }
 
 __attribute__((naked)) void fun_0803c288()

@@ -708,7 +708,7 @@ DAT_080082d0:\n\
 DAT_080082d4:\n\
     .word DAT_0200c7b0\n\
 DAT_080082d8:\n\
-    .word DAT_020025b4\n\
+    .word selected_language\n\
 DAT_080082dc:\n\
     .word DAT_0200c64c\n\
 DAT_080082e0:\n\
@@ -756,7 +756,7 @@ DAT_0800832c:\n\
 DAT_08008330:\n\
     .word DAT_0200c7b0\n\
 DAT_08008334:\n\
-    .word DAT_020025b4\n\
+    .word selected_language\n\
 DAT_08008338:\n\
     .word DAT_0200c64c\n\
 DAT_0800833c:\n\
@@ -863,7 +863,7 @@ DAT_080083f8:\n\
 DAT_080083fc:\n\
     .word DAT_0200c644\n\
 DAT_08008400:\n\
-    .word DAT_020025b4\n\
+    .word selected_language\n\
 DAT_08008404:\n\
     .word DAT_0200c64c\n\
 DAT_08008408:\n\
@@ -1152,7 +1152,7 @@ DAT_08008618:\n\
 DAT_0800861c:\n\
     .word DAT_0200c720\n\
 DAT_08008620:\n\
-    .word DAT_020025b4\n\
+    .word selected_language\n\
 DAT_08008624:\n\
     .word DAT_0200c6c0\n\
 DAT_08008628:\n\

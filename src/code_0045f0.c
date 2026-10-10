@@ -1,3 +1,5 @@
+#include "types.h"
+
 __attribute__((naked)) void fun_080045f0()
 {
     asm("\n\
@@ -17,7 +19,7 @@ DAT_08004608:\n\
     .word 0x80000100\n\
     ");
 }
-__attribute__((naked)) void fun_0800460c()
+__attribute__((naked)) void fun_0800460c(s32* param_1, s32 param_2)
 {
     asm("\n\
     lsl         r1,r1,#0x10\n\

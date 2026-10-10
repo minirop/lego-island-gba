@@ -1,4 +1,5 @@
 #include "functions.h"
+#include "variables.h"
 
 __attribute__((naked)) void fun_0802f850()
 {
@@ -4139,35 +4140,12 @@ s32 fun_0803169c()
     return 1;
 }
 
-__attribute__((naked)) void fun_080316a0()
+void fun_080316a0()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0803c1a4\n\
-     ldr        r1,DAT_080316c4\n\
-     ldr        r0,DAT_080316c8\n\
-     ldr        r0,[r0,#0x0]\n\
-     lsl        r0,r0,#0x2\n\
-     ldr        r2,DAT_080316cc\n\
-     add        r1,r1,r2\n\
-     add        r0,r0,r1\n\
-     ldr        r0,[r0,#0x0]\n\
-     ldr        r3,DAT_080316d0\n\
-     mov        r1,#0x32\n\
-     mov        r2,#0x91\n\
-     bl         fun_0803c138\n\
-     pop        {r0}\n\
-     bx         r0\n\
-DAT_080316c4:\n\
-     .word 0x08669620\n\
-DAT_080316c8:\n\
-     .word 0x020025B4\n\
-DAT_080316cc:\n\
-     .word 0x0000C124\n\
-DAT_080316d0:\n\
-     .word 0x0865FD94\n\
-    ");
+    fun_0803c1a4();
+    fun_0803c138(DAT_08669620[0x406].strings_ptr[selected_language], 0x32, 0x91, (s32*)0x0865fd94);
 }
+
 __attribute__((naked)) void fun_080316d4()
 {
     asm("\n\

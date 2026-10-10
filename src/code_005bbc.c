@@ -813,7 +813,7 @@ LAB_080060fc:\n\
     b          LAB_08006124\n\
 .space 2\n\
 PTR_DAT_08006110:\n\
-    .word DAT_020025b4\n\
+    .word selected_language\n\
 PTR_DAT_08006114:\n\
     .word DAT_02009ad8\n\
 LAB_08006118:\n\
@@ -858,7 +858,7 @@ __attribute__((naked)) s32 fun_0800612c()
 PTR_s_s_s_08006160:\n\
     .word DAT_08064330\n\
 PTR_DAT_08006164:\n\
-    .word DAT_020025b4\n\
+    .word selected_language\n\
 PTR_s_English_08006168:\n\
     .word DAT_0875e864\n\
 PTR_s__0800616c:\n\

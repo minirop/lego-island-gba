@@ -4,6 +4,9 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+#define LANGUAGE_COUNT 8
+#define STRINGS_COUNT 1732
+
 typedef uint8_t u8;
 typedef uint16_t u16;
 typedef uint32_t u32;
@@ -37,8 +40,16 @@ typedef struct struct_02005ce8 {
     s32 unk38;
 } struct_02005ce8;
 
+typedef struct struct_08669620 {
+    u8 unk00;
+    u8 padding0[0x03];
+    // addresses pointing inside the decompressed text script
+    void* strings_ptr[LANGUAGE_COUNT];
+    u32 unk20[3];
+} struct_08669620;
+
 typedef void (*Callback)();
-typedef void (*CallbackInt)();
+typedef s32 (*CallbackInt)();
 typedef s32 (*CallbackIntIntPtr)(s32, s32*);
 
 #define NULL ((void*)0)
