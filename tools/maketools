@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+[[ -d bin ]] || mkdir bin
+
+[[ -d bagd ]] || git clone https://github.com/minirop/bagd
+cd bagd
+cargo build --release
+cd ..
+cp bagd/target/release/bagd bin
+
+[[ -d isle2-tool ]] || git clone https://github.com/minirop/isle2-tool
+cd isle2-tool
+cargo build --release
+cd ..
+cp isle2-tool/target/release/isle2-tool bin
