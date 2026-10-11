@@ -839,7 +839,7 @@ DAT_08000ee4:\n\
     .word 0xFFFF0000\n\
     ");
 }
-__attribute__((naked)) void fun_08000ee8()
+__attribute__((naked)) u16 fun_08000ee8(u16 param_1)
 {
     asm("\n\
     lsl         r0,r0,#0x10\n\
@@ -1097,7 +1097,7 @@ void fun_08001070(u16 param_1)
     fun_08002114();
 }
 #else
-__attribute__((naked)) void fun_08001070()
+__attribute__((naked)) void fun_08001070(u16 param_1)
 {
     asm("\n\
     push        {lr}\n\

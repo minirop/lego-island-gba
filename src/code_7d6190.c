@@ -1,6 +1,4 @@
-#include "defines.h"
 #include "functions.h"
-#include "variables.h"
 
 CallbackIntIntPtr DAT_087d6190[] = {
     &fun_0803ff2c,

@@ -1,6 +1,6 @@
 #include "functions.h"
 
-__attribute__((naked)) void fun_08006900()
+__attribute__((naked)) s32 fun_08006900()
 {
     asm("\n\
     ldr        r2,DAT_08006918\n\
@@ -25,7 +25,7 @@ DAT_08006924:\n\
     .word 0x0807C290\n\
     ");
 }
-__attribute__((naked)) void fun_08006928()
+__attribute__((naked)) s32 fun_08006928()
 {
     asm("\n\
     push        {r4,r5,r6,r7,lr}\n\
@@ -837,7 +837,7 @@ DAT_08006ee8:\n\
     .word 0x02009B38\n\
     ");
 }
-__attribute__((naked)) void fun_08006eec()
+__attribute__((naked)) s32 fun_08006eec()
 {
     asm("\n\
     push       {lr}\n\
@@ -847,7 +847,7 @@ __attribute__((naked)) void fun_08006eec()
     bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_08006ef8()
+__attribute__((naked)) s32 fun_08006ef8()
 {
     asm("\n\
     push       {lr}\n\

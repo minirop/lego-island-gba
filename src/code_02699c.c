@@ -1,3 +1,4 @@
+#include "functions.h"
 #include "types.h"
 
 __attribute__((naked)) void fun_0802699c()
@@ -341,7 +342,7 @@ PTR_DAT_08026c10:\n\
      .word       DAT_0200f450\n\
     ");
 }
-__attribute__((naked)) void fun_08026c14()
+__attribute__((naked)) s32 fun_08026c14()
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -1041,7 +1042,7 @@ s32 fun_08027154()
     return 0;
 }
 
-__attribute__((naked)) void fun_08027160()
+__attribute__((naked)) s32 fun_08027160()
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\
@@ -1222,7 +1223,7 @@ DAT_080272d0:\n\
      .4byte 0x00007FFF\n\
     ");
 }
-__attribute__((naked)) void fun_080272d4()
+__attribute__((naked)) s32 fun_080272d4()
 {
     asm("\n\
      push       {r4,lr}\n\

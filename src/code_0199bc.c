@@ -1,4 +1,6 @@
-__attribute__((naked)) void fun_080199bc()
+#include "functions.h"
+
+__attribute__((naked)) s32 fun_080199bc()
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\
@@ -99,7 +101,7 @@ DAT_08019a80:\n\
      .word 0x0200E5B0\n\
     ");
 }
-__attribute__((naked)) void fun_08019a84()
+__attribute__((naked)) s32 fun_08019a84()
 {
     asm("\n\
      push       {lr}\n\

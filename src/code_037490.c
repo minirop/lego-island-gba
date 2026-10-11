@@ -1,4 +1,6 @@
-__attribute__((naked)) void fun_08037490()
+#include "functions.h"
+
+__attribute__((naked)) s32 fun_08037490()
 {
     asm("\n\
      ldr        r2,DAT_080374a8\n\
@@ -23,7 +25,7 @@ DAT_080374b4:\n\
      .word 0x0863F824\n\
     ");
 }
-__attribute__((naked)) void fun_080374b8()
+__attribute__((naked)) s32 fun_080374b8()
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\
@@ -211,7 +213,7 @@ DAT_08037630:\n\
      .word 0x00007FFF\n\
     ");
 }
-__attribute__((naked)) void fun_08037634()
+__attribute__((naked)) s32 fun_08037634()
 {
     asm("\n\
      push       {r4,r5,lr}\n\

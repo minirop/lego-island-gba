@@ -927,7 +927,7 @@ void fun_08002160()
     s32 iVar1;
 
     fun_08001aa8();
-    iVar1 = strcmp("SWD", &DAT_02005200);
+    iVar1 = strcmp("SWD", (const char*)&DAT_02005200);
     if (iVar1 != 0) {
         fun_08000584();
         fun_08001b9c();

@@ -1,3 +1,5 @@
+#include "functions.h"
+
 __attribute__((naked)) void fun_0803dbdc()
 {
     asm("\n\
@@ -5191,7 +5193,7 @@ DAT_0803ff28:\n\
      .word 0x04000106\n\
     ");
 }
-__attribute__((naked)) void fun_0803ff2c()
+__attribute__((naked)) s32 fun_0803ff2c()
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\
@@ -5264,7 +5266,7 @@ LAB_0803ffa2:\n\
      bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_0803ffac()
+__attribute__((naked)) s32 fun_0803ffac()
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -5384,7 +5386,7 @@ LAB_0804006a:\n\
      bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_0804007c()
+__attribute__((naked)) s32 fun_0804007c()
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\
@@ -5470,7 +5472,7 @@ LAB_0804010e:\n\
      bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_08040114()
+__attribute__((naked)) s32 fun_08040114()
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -5663,7 +5665,7 @@ LAB_0804025e:\n\
      bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_08040264()
+__attribute__((naked)) s32 fun_08040264()
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -5855,7 +5857,7 @@ LAB_080403b0:\n\
      bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_080403bc()
+__attribute__((naked)) s32 fun_080403bc()
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\
@@ -5919,7 +5921,7 @@ DAT_08040428:\n\
      .word 0xFFFFFF00\n\
     ");
 }
-__attribute__((naked)) void fun_0804042c()
+__attribute__((naked)) s32 fun_0804042c()
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\
@@ -6145,7 +6147,7 @@ LAB_080405b0:\n\
      bx         r0\n\
     ");
 }
-__attribute__((naked)) void fun_080405c0()
+__attribute__((naked)) s32 fun_080405c0()
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -6236,7 +6238,7 @@ LAB_08040656:\n\
      bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_08040664()
+__attribute__((naked)) s32 fun_08040664()
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -6370,7 +6372,7 @@ LAB_0804073c:\n\
      bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_08040754()
+__attribute__((naked)) s32 fun_08040754()
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\

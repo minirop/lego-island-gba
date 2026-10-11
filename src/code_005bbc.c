@@ -1,6 +1,7 @@
 #include "functions.h"
 #include "gba.h"
 #include "variables.h"
+#include <stdio.h>
 
 __attribute__((naked)) void fun_08005bbc()
 {

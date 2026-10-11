@@ -245,7 +245,7 @@ void fun_08018fd4()
 {
 }
 
-__attribute__((naked)) void fun_08018fd8()
+__attribute__((naked)) s32 fun_08018fd8()
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\
@@ -326,7 +326,7 @@ const LevelInfo castle_island = {
     "17:06 Sat 02nd Jun 2001",
 };
 
-__attribute__((naked)) void fun_08019038()
+__attribute__((naked)) s32 fun_08019038()
 {
     asm("\n\
      ldr        r2,DAT_08019050\n\
@@ -351,7 +351,7 @@ DAT_0801905c:\n\
      .word 0x0848EE2C\n\
     ");
 }
-__attribute__((naked)) void fun_08019060()
+__attribute__((naked)) s32 fun_08019060()
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\
@@ -756,7 +756,7 @@ LAB_08019390:\n\
      bx         r0\n\
     ");
 }
-__attribute__((naked)) void fun_08019398()
+__attribute__((naked)) s32 fun_08019398()
 {
     asm("\n\
      push       {lr}\n\
@@ -780,7 +780,7 @@ DAT_080193c0:\n\
      .word 0x0200E4A0\n\
     ");
 }
-__attribute__((naked)) void fun_080193c4()
+__attribute__((naked)) s32 fun_080193c4()
 {
     asm("\n\
      push       {lr}\n\
@@ -1050,7 +1050,7 @@ LAB_08019562:\n\
 .space 1\n\
     ");
 }
-__attribute__((naked)) void fun_08019584()
+__attribute__((naked)) s32 fun_08019584()
 {
     asm("\n\
      push       {r4,r5,lr}\n\

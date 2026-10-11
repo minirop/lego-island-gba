@@ -1,5 +1,6 @@
 #include "functions.h"
 #include "variables.h"
+#include <stdio.h>
 
 __attribute__((naked)) void fun_08002d34(u16 a, u16 b, u16 c)
 {

@@ -1,3 +1,5 @@
+#include "functions.h"
+
 __attribute__((naked)) void fun_08027414()
 {
     asm("\n\
@@ -712,7 +714,7 @@ __attribute__((naked)) void fun_08027900()
 .space 1\n\
     ");
 }
-__attribute__((naked)) void fun_0802790c()
+__attribute__((naked)) s32 fun_0802790c()
 {
     asm("\n\
      push       {lr}\n\

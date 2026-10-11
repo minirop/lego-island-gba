@@ -1,6 +1,6 @@
 #include "functions.h"
 
-__attribute__((naked)) void fun_08019b38()
+__attribute__((naked)) s32 fun_08019b38()
 {
     asm("\n\
      ldr        r2,DAT_08019b50\n\
@@ -25,7 +25,7 @@ DAT_08019b5c:\n\
      .word 0x08494CFC\n\
     ");
 }
-__attribute__((naked)) void fun_08019b60()
+__attribute__((naked)) s32 fun_08019b60()
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\
@@ -133,7 +133,7 @@ DAT_08019c38:\n\
      .word 0x0200E5E4\n\
     ");
 }
-__attribute__((naked)) void fun_08019c3c()
+__attribute__((naked)) s32 fun_08019c3c()
 {
     asm("\n\
      push       {r4,lr}\n\
@@ -232,7 +232,7 @@ DAT_08019d00:\n\
      .word 0x0865FD94\n\
     ");
 }
-__attribute__((naked)) void fun_08019d04()
+__attribute__((naked)) s32 fun_08019d04()
 {
     asm("\n\
      push       {lr}\n\
@@ -258,7 +258,7 @@ s32 fun_08019d20()
     return 1;
 }
 
-__attribute__((naked)) void fun_08019d24()
+__attribute__((naked)) s32 fun_08019d24()
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -771,7 +771,7 @@ DAT_0801a0f8:\n\
      .word 0x02002528\n\
     ");
 }
-__attribute__((naked)) void fun_0801a0fc()
+__attribute__((naked)) s32 fun_0801a0fc()
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\
@@ -923,7 +923,7 @@ DAT_0801a21c:\n\
      .word 0x0865FD84\n\
     ");
 }
-__attribute__((naked)) void fun_0801a220()
+__attribute__((naked)) s32 fun_0801a220()
 {
     asm("\n\
      ldr        r2,DAT_0801a238\n\
@@ -948,7 +948,7 @@ DAT_0801a244:\n\
      .word 0x0849FF6C\n\
     ");
 }
-__attribute__((naked)) void fun_0801a248()
+__attribute__((naked)) s32 fun_0801a248()
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\
@@ -1129,7 +1129,7 @@ DAT_0801a3ac:\n\
      .word 0x0878053C\n\
     ");
 }
-__attribute__((naked)) void fun_0801a3b0()
+__attribute__((naked)) s32 fun_0801a3b0()
 {
     asm("\n\
      push       {lr}\n\
@@ -1477,7 +1477,7 @@ s32 fun_0801a62c()
     return 1;
 }
 
-__attribute__((naked)) void fun_0801a630()
+__attribute__((naked)) s32 fun_0801a630()
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -1677,7 +1677,7 @@ DAT_0801a7d0:\n\
      .word 0x0200E63C\n\
     ");
 }
-__attribute__((naked)) void fun_0801a7d4()
+__attribute__((naked)) s32 fun_0801a7d4()
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -2390,7 +2390,7 @@ DAT_0801ad58:\n\
      .4byte 0x0865FD94\n\
     ");
 }
-__attribute__((naked)) void fun_0801ad5c()
+__attribute__((naked)) s32 fun_0801ad5c()
 {
     asm("\n\
      push       {lr}\n\
@@ -2479,7 +2479,7 @@ DAT_0801ae04:\n\
      .4byte 0x00001F54\n\
     ");
 }
-__attribute__((naked)) void fun_0801ae08()
+__attribute__((naked)) s32 fun_0801ae08()
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -2716,7 +2716,7 @@ LAB_0801afa2:\n\
      bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_0801afb0()
+__attribute__((naked)) s32 fun_0801afb0()
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -3473,7 +3473,7 @@ LAB_0801b58e:\n\
      bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_0801b598()
+__attribute__((naked)) s32 fun_0801b598()
 {
     asm("\n\
      push       {lr}\n\

@@ -722,6 +722,10 @@ build:
     ld: $(DEVKITARM)/bin/arm-none-eabi-ld
     objcopy: $(DEVKITARM)/bin/arm-none-eabi-objcopy
   commands:
+    - folder: gfx
+      extension: gif
+      exec:
+        - $(gfx) compress $(NAME).gif $(NAME).data
     - folder: asm
       extension: s
       exec:

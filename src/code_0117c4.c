@@ -1,3 +1,5 @@
+#include "functions.h"
+
 __attribute__((naked)) void fun_080117c4()
 {
     asm("\n\

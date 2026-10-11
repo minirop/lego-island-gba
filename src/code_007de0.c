@@ -2,7 +2,7 @@
 #include "types.h"
 #include "variables.h"
 
-__attribute__((naked)) void fun_08007de0()
+__attribute__((naked)) s32 fun_08007de0()
 {
     asm("\n\
     ldr         r2,DAT_08007df8\n\
@@ -27,7 +27,7 @@ DAT_08007e04:\n\
     .word DAT_080c5f1c\n\
     ");
 }
-__attribute__((naked)) void fun_08007e08()
+__attribute__((naked)) s32 fun_08007e08()
 {
     asm("\n\
     push        {r4,r5,r6,lr}\n\
@@ -150,7 +150,7 @@ LAB_08007eee:\n\
     bx          r1\n\
     ");
 }
-__attribute__((naked)) void fun_08007ef8()
+__attribute__((naked)) s32 fun_08007ef8()
 {
     asm("\n\
     push        {lr}\n\
@@ -248,13 +248,14 @@ LAB_08007f94:\n\
 }
 
 #ifdef NONMATCHING
-void fun_08007f9c()
+s32 fun_08007f9c()
 {
     fun_0800457c();
     DAT_0200c5f0 = 0;
+    return 0;
 }
 #else
-__attribute__((naked)) void fun_08007f9c()
+__attribute__((naked)) s32 fun_08007f9c()
 
 {
     asm("\n\

@@ -1,7 +1,7 @@
 #include "functions.h"
 #include "variables.h"
 
-__attribute__((naked)) void fun_0803c010()
+__attribute__((naked)) s32 fun_0803c010(u8* param_1, u16 param_2, void* param_3)
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -3144,7 +3144,7 @@ DAT_0803d608:\n\
      .word 0x02027048\n\
     ");
 }
-__attribute__((naked)) void fun_0803d60c()
+__attribute__((naked)) u32 fun_0803d60c(u32 param_1, u32 param_2, u32 param_3, u32 param_4)
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
