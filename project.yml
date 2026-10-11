@@ -669,6 +669,28 @@ rom:
       section: rodata
       address: 0x756aec
       size: 0xd4
+    - name: gfx/logos/copyright.gfx
+      format: custom
+      section: data
+      address: 0x756d5c
+    - name: gfx/logos/copyright.pal
+      format: custom
+      section: data
+      address: 0x75894c
+    - name: gfx/logos/silicon-dream.gfx
+      format: custom
+      section: data
+      address: 0x758b4c
+      size: 0x2130
+    - name: gfx/logos/lego-software.gfx
+      format: custom
+      section: data
+      address: 0x75ae78
+    - name: gfx/logos/lego-software.pal
+      format: custom
+      section: data
+      address: 0x75e664
+      size: 0x200
     - name: code_77ef7c
       format: c
       section: rodata
@@ -712,20 +734,23 @@ build:
   constants:
     agbcc: /home/minirop/git/fireemblem8u/tools/agbcc
     as: $(DEVKITARM)/bin/arm-none-eabi-as
+    asflags: -mcpu=arm7tdmi -mthumb-interwork -I include
     cc1: $(AGBCC)/bin/agbcc
     cc1flags: -mthumb-interwork -Wimplicit -Wparentheses -O2 -fhex-asm -fprologue-bugfix
     cpp: $(DEVKITARM)/bin/arm-none-eabi-cpp
     cppflags: -I $(AGBCC)/include -iquote include -iquote . -nostdinc -undef
-    asflags: -mcpu=arm7tdmi -mthumb-interwork -I include
-    symbols: symbols.txt
-    ldscript: ldscript.txt
+    gfx: isle2-tool
     ld: $(DEVKITARM)/bin/arm-none-eabi-ld
+    ldscript: ldscript.txt
     objcopy: $(DEVKITARM)/bin/arm-none-eabi-objcopy
+    symbols: symbols.txt
   commands:
     - folder: gfx
       extension: gif
       exec:
-        - $(gfx) compress $(NAME).gif $(NAME).data
+        - $(GFX) compress $(NAME).gif $(NAME).gfx
+        - $(OBJCOPY) -I binary -O elf32-littlearm -B arm $(NAME).gfx $(NAME).gfx.o
+        - $(OBJCOPY) -I binary -O elf32-littlearm -B arm $(NAME).pal $(NAME).pal.o
     - folder: asm
       extension: s
       exec:

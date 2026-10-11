@@ -8,3 +8,9 @@ ldscript.txt
 Makefile
 src/*.o
 src/*.s
+tools/bin/
+tools/bagd/
+tools/isle2-tool/
+gfx/**/*.gfx
+gfx/**/*.pal
+gfx/**/*.o
