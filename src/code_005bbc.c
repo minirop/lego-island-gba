@@ -550,7 +550,8 @@ s32 fun_08005f08()
     return 0;
 }
 
-__attribute__((naked)) void fun_08005f0c()
+// https://www.decomp.me/scratch/B0bvv
+__attribute__((naked)) void fun_08005f0c(u8 param_1)
 {
     asm("\n\
     push        {r4,r5,r6,lr}\n\

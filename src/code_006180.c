@@ -1,5 +1,5 @@
 #include "functions.h"
-#include "types.h"
+#include "variables.h"
 
 void fun_08006180()
 {
@@ -1012,26 +1012,15 @@ DAT_080068ac:\n\
      .4byte 0x00001F44\n\
     ");
 }
-__attribute__((naked)) s32 fun_080068b0()
+
+s32 fun_080068b0()
 {
-    asm("\n\
-     push       {lr}\n\
-     ldr        r0,DAT_080068cc\n\
-     ldr        r0,[r0,#0x0]\n\
-     bl         fun_08003b00\n\
-     ldr        r0,DAT_080068d0\n\
-     ldr        r0,[r0,#0x0]\n\
-     bl         fun_08003b00\n\
-     bl         fun_0800457c\n\
-     mov        r0,#0x0\n\
-     pop        {r1}\n\
-     bx         r1\n\
-DAT_080068cc:\n\
-     .4byte 0x02009B00\n\
-DAT_080068d0:\n\
-     .4byte 0x02009AF0\n\
-    ");
+    fun_08003b00(DAT_02009b00);
+    fun_08003b00(DAT_02009af0);
+    fun_0800457c();
+    return 0;
 }
+
 __attribute__((naked)) void fun_080068d4()
 {
     asm("\n\

@@ -1,7 +1,6 @@
 #ifndef VARIABLES_H
 #define VARIABLES_H
 
-#include "level_info.h"
 #include "types.h"
 
 extern const LevelInfo adventure_island;
@@ -75,6 +74,10 @@ extern s8 DAT_02009ad4;
 extern s8 DAT_0200c5f0;
 extern struct_02005780 DAT_02005780[8];
 extern struct_02005ce8* DAT_02005ce8;
+extern struct_02009b10 DAT_02009b10;
+extern struct_02009b10 DAT_0200c5d0;
+extern struct_02009b10 DAT_0200c630;
+extern struct_02009b10 DAT_0200ee80;
 extern struct_08669620 DAT_08669620[STRINGS_COUNT];
 extern u16 DAT_020006a0[10];
 extern u16 DAT_02002534;
@@ -121,6 +124,8 @@ extern u16 DAT_0200d400;
 extern u16 DAT_0200d404;
 extern u16 DAT_0200d408;
 extern u16 IF;
+extern u16* DAT_02009af0;
+extern u16* DAT_02009b00;
 extern u32 DAT_06004000;
 extern u32 DAT_08756d5c;
 extern u32 selected_language;
@@ -130,9 +135,9 @@ extern u8 DAT_02002620[0x2be0];
 extern u8 DAT_02005200[4];
 extern u8 DAT_02005210[0x360];
 extern void* DAT_020003b0;
-extern void* DAT_02009b10;
-extern void* DAT_0200c5d0;
-extern void* DAT_0200c630;
+extern void* DAT_02009b20[3];
+extern void* DAT_0200c5e0[3];
+extern void* DAT_0200c620[3];
 extern void* DAT_0200d368;
 extern void* DAT_0200dd00;
 extern void* DAT_0200e050;
@@ -142,7 +147,7 @@ extern void* DAT_0200e5c0;
 extern void* DAT_0200e5f0;
 extern void* DAT_0200eca8;
 extern void* DAT_0200ed00;
-extern void* DAT_0200ee80;
+extern void* DAT_0200ee70[3];
 extern void* DAT_0200ee90;
 extern void* DAT_0200f280;
 extern void* DAT_0200f3b0;
@@ -192,5 +197,7 @@ extern void* DAT_0863f824;
 extern void* DAT_086424a8;
 extern void* DAT_08756d44;
 extern void* DAT_08756d50;
+extern void* decompressed_language_text_buffer;
+extern void* languages_array[LANGUAGE_COUNT];
 
 #endif

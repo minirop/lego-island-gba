@@ -2,31 +2,16 @@
 #include "types.h"
 #include "variables.h"
 
-__attribute__((naked)) s32 fun_08007de0()
+s32 fun_08007de0()
 {
-    asm("\n\
-    ldr         r2,DAT_08007df8\n\
-    ldr         r0,DAT_08007dfc\n\
-    str         r0,[r2,#0x0]\n\
-    ldr         r1,DAT_08007e00\n\
-    str         r1,[r2,#0x4]\n\
-    ldr         r0,DAT_08007e04\n\
-    str         r0,[r1,#0x0]\n\
-    mov         r0,#0x0\n\
-    str         r0,[r1,#0x4]\n\
-    str         r0,[r1,#0x8]\n\
-    mov         r0,#0x1\n\
-    bx          lr\n\
-DAT_08007df8:\n\
-    .word DAT_0200c5d0\n\
-DAT_08007dfc:\n\
-    .word DAT_080c5f80\n\
-DAT_08007e00:\n\
-    .word DAT_0200c5e0\n\
-DAT_08007e04:\n\
-    .word DAT_080c5f1c\n\
-    ");
+    DAT_0200c5d0.info = &unknown;
+    DAT_0200c5d0.ptr = &DAT_0200c5e0;
+    DAT_0200c5e0[0] = &DAT_080c5f1c;
+    DAT_0200c5e0[1] = 0;
+    DAT_0200c5e0[2] = 0;
+    return 1;
 }
+
 __attribute__((naked)) s32 fun_08007e08()
 {
     asm("\n\
@@ -319,31 +304,17 @@ LAB_08007ff0:\n\
     bx          r0\n\
     ");
 }
-__attribute__((naked)) s32 fun_08007ff4()
+
+s32 fun_08007ff4()
 {
-    asm("\n\
-     ldr        r2,DAT_0800800c\n\
-     ldr        r0,DAT_08008010\n\
-     str        r0,[r2,#0x0]\n\
-     ldr        r1,DAT_08008014\n\
-     str        r1,[r2,#0x4]\n\
-     ldr        r0,DAT_08008018\n\
-     str        r0,[r1,#0x0]\n\
-     mov        r0,#0x0\n\
-     str        r0,[r1,#0x4]\n\
-     str        r0,[r1,#0x8]\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-DAT_0800800c:\n\
-     .word 0x0200C630\n\
-DAT_08008010:\n\
-     .word 0x08107C9C\n\
-DAT_08008014:\n\
-     .word 0x0200C620\n\
-DAT_08008018:\n\
-     .word 0x08107C38\n\
-    ");
+    DAT_0200c630.info = &credits;
+    DAT_0200c630.ptr = &DAT_0200c620;
+    DAT_0200c620[0] = &DAT_08107c38;
+    DAT_0200c620[1] = 0;
+    DAT_0200c620[2] = 0;
+    return 1;
 }
+
 __attribute__((naked)) s32 fun_0800801c()
 {
     asm("\n\

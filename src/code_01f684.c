@@ -1,4 +1,5 @@
 #include "functions.h"
+#include "variables.h"
 
 __attribute__((naked)) void fun_0801f684()
 {
@@ -63,31 +64,17 @@ DAT_0801f6e8:\n\
      .word 0x0200ED4C\n\
     ");
 }
-__attribute__((naked)) s32 fun_0801f6ec()
+
+s32 fun_0801f6ec()
 {
-    asm("\n\
-     ldr        r2,DAT_0801f704\n\
-     ldr        r0,DAT_0801f708\n\
-     str        r0,[r2,#0x0]\n\
-     ldr        r1,DAT_0801f70c\n\
-     str        r1,[r2,#0x4]\n\
-     ldr        r0,DAT_0801f710\n\
-     str        r0,[r1,#0x0]\n\
-     mov        r0,#0x0\n\
-     str        r0,[r1,#0x4]\n\
-     str        r0,[r1,#0x8]\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-DAT_0801f704:\n\
-     .word 0x0200EE80\n\
-DAT_0801f708:\n\
-     .word 0x084C6F0C\n\
-DAT_0801f70c:\n\
-     .word 0x0200EE70\n\
-DAT_0801f710:\n\
-     .word 0x084C6EA8\n\
-    ");
+    DAT_0200ee80.info = &hoop_game;
+    DAT_0200ee80.ptr = &DAT_0200ee70;
+    DAT_0200ee70[0] = &DAT_084c6ea8;
+    DAT_0200ee70[1] = 0;
+    DAT_0200ee70[2] = 0;
+    return 1;
 }
+
 __attribute__((naked)) s32 fun_0801f714()
 {
     asm("\n\

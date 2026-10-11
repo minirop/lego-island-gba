@@ -1,30 +1,16 @@
 #include "functions.h"
+#include "variables.h"
 
-__attribute__((naked)) s32 fun_08006900()
+s32 fun_08006900()
 {
-    asm("\n\
-    ldr        r2,DAT_08006918\n\
-    ldr        r0,DAT_0800691c\n\
-    str        r0,[r2,#0x0]\n\
-    ldr        r1,DAT_08006920\n\
-    str        r1,[r2,#0x4]\n\
-    ldr        r0,DAT_08006924\n\
-    str        r0,[r1,#0x0]\n\
-    mov        r0,#0x0\n\
-    str        r0,[r1,#0x4]\n\
-    str        r0,[r1,#0x8]\n\
-    mov        r0,#0x1\n\
-    bx         lr\n\
-DAT_08006918:\n\
-    .word 0x02009B10\n\
-DAT_0800691c:\n\
-    .word 0x0807C2F4\n\
-DAT_08006920:\n\
-    .word 0x02009B20\n\
-DAT_08006924:\n\
-    .word 0x0807C290\n\
-    ");
+    DAT_02009b10.info = &empty;
+    DAT_02009b10.ptr = &DAT_02009b20;
+    DAT_02009b20[0] = &DAT_0807c290;
+    DAT_02009b20[1] = 0;
+    DAT_02009b20[2] = 0;
+    return 1;
 }
+
 __attribute__((naked)) s32 fun_08006928()
 {
     asm("\n\
@@ -837,25 +823,17 @@ DAT_08006ee8:\n\
     .word 0x02009B38\n\
     ");
 }
-__attribute__((naked)) s32 fun_08006eec()
+
+s32 fun_08006eec()
 {
-    asm("\n\
-    push       {lr}\n\
-    bl         fun_0800457c\n\
-    mov        r0,#0x0\n\
-    pop        {r1}\n\
-    bx         r1\n\
-    ");
+    fun_0800457c();
+    return 0;
 }
-__attribute__((naked)) s32 fun_08006ef8()
+
+s32 fun_08006ef8()
 {
-    asm("\n\
-    push       {lr}\n\
-    bl         fun_08006ba4\n\
-    mov        r0,#0x0\n\
-    pop        {r1}\n\
-    bx         r1\n\
-    ");
+    fun_08006ba4();
+    return 0;
 }
 
 s32 fun_08006f04()

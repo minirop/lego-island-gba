@@ -2263,28 +2263,12 @@ DAT_0803d03c:\n\
      .word 0x020117D0\n\
     ");
 }
-__attribute__((naked)) void fun_0803d040()
+
+void fun_0803d040()
 {
-    asm("\n\
-     push       {lr}\n\
-     ldr        r1,DAT_0803d058\n\
-     ldr        r0,DAT_0803d05c\n\
-     ldr        r0,[r0,#0x0]\n\
-     lsl        r0,r0,#0x2\n\
-     add        r0,r0,r1\n\
-     ldr        r0,[r0,#0x0]\n\
-     ldr        r1,DAT_0803d060\n\
-     bl         LZ77UnCompVram\n\
-     pop        {r0}\n\
-     bx         r0\n\
-DAT_0803d058:\n\
-     .word 0x087D5EB0\n\
-DAT_0803d05c:\n\
-     .word 0x020025B4\n\
-DAT_0803d060:\n\
-     .word 0x02011850\n\
-    ");
+    LZ77UnCompVram(languages_array[selected_language], &decompressed_language_text_buffer);
 }
+
 __attribute__((naked)) u16 ArcTan2(s16 x, s16 y)
 {
     asm("\n\
@@ -2292,6 +2276,7 @@ __attribute__((naked)) u16 ArcTan2(s16 x, s16 y)
      bx         lr\n\
     ");
 }
+
 __attribute__((naked)) void CpuSet(const void* src, void* dest, u32 control)
 {
     asm("\n\
@@ -2299,6 +2284,7 @@ __attribute__((naked)) void CpuSet(const void* src, void* dest, u32 control)
      bx         lr\n\
     ");
 }
+
 __attribute__((naked)) int Div(int over, int under)
 {
     asm("\n\
@@ -2306,6 +2292,7 @@ __attribute__((naked)) int Div(int over, int under)
      bx         lr\n\
     ");
 }
+
 __attribute__((naked)) void LZ77UnCompVram(const void* src, void* dest)
 {
     asm("\n\
@@ -2313,6 +2300,7 @@ __attribute__((naked)) void LZ77UnCompVram(const void* src, void* dest)
      bx         lr\n\
     ");
 }
+
 __attribute__((naked)) u16 Sqrt(u32 num)
 {
     asm("\n\
@@ -2320,6 +2308,7 @@ __attribute__((naked)) u16 Sqrt(u32 num)
      bx         lr\n\
     ");
 }
+
 __attribute__((naked)) void fun_0803d078()
 {
     asm("\n\

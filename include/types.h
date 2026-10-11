@@ -28,6 +28,37 @@ typedef volatile s64 vs64;
 typedef float f32;
 typedef double f64;
 
+typedef void (*Callback)();
+typedef s32 (*CallbackInt)();
+typedef s32 (*CallbackIntIntPtr)(s32, s32*);
+
+#define NULL ((void*)0)
+
+typedef struct LevelInfo_s {
+    s32 unk00;
+    s32 unk04;
+    s32 unk08;
+    void* unk0c;
+    void* unk10;
+    s32 unk14;
+    s32 unk18;
+    s32 unk1c;
+    s32 unk20;
+    CallbackInt unk24;
+    CallbackInt unk28;
+    CallbackInt unk2c;
+    CallbackInt unk30;
+    CallbackInt unk34;
+    CallbackInt unk38;
+    s16 unk3c;
+    s16 unk3e;
+    s8 name[32];
+    s8 author1[32];
+    s8 date1[24];
+    s8 author2[32];
+    s8 date2[24];
+} LevelInfo;
+
 typedef struct struct_02005780_s {
     u16 unk00;
     u16 unk02;
@@ -48,12 +79,9 @@ typedef struct struct_08669620 {
     u32 unk20[3];
 } struct_08669620;
 
-typedef void (*Callback)();
-typedef s32 (*CallbackInt)();
-typedef s32 (*CallbackIntIntPtr)(s32, s32*);
-
-#define NULL ((void*)0)
-
-#include "level_info.h"
+typedef struct struct_02009b10 {
+    const LevelInfo* info;
+    void* ptr;
+} struct_02009b10;
 
 #endif
