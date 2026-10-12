@@ -366,7 +366,7 @@ rom:
       library: libc.a
       address: 0x0496b8
     - name: code_0496e8
-      format: c
+      format: asm
       address: 0x0496e8
     - name: code_0004ac
       format: c
