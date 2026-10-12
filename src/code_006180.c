@@ -530,11 +530,13 @@ DAT_080064fc:\n\
 \n\
     ");
 }
+
 s32 fun_08006500()
 {
     fun_0800457c();
     return 0;
 }
+
 __attribute__((naked)) s32 fun_0800650c()
 {
     asm("\n\
@@ -1021,30 +1023,9 @@ s32 fun_080068b0()
     return 0;
 }
 
-__attribute__((naked)) void fun_080068d4()
+void fun_080068d4(void* param_1)
 {
-    asm("\n\
-     push       {lr}\n\
-     add        r2,r0,#0x0\n\
-     ldr        r1,DAT_080068f4\n\
-     ldr        r0,DAT_080068f8\n\
-     ldr        r0,[r0,#0x0]\n\
-     lsl        r0,r0,#0x2\n\
-     add        r0,r0,r1\n\
-     ldr        r0,[r0,#0x0]\n\
-     cmp        r0,#0x0\n\
-     beq        LAB_080068f0\n\
-     ldr        r3,DAT_080068fc\n\
-     add        r1,r2,r3\n\
-     bl         LZ77UnCompVram\n\
-LAB_080068f0:\n\
-     pop        {r0}\n\
-     bx         r0\n\
-DAT_080068f4:\n\
-     .4byte 0x0877B978\n\
-DAT_080068f8:\n\
-     .4byte 0x020025B4\n\
-DAT_080068fc:\n\
-     .4byte 0x000050A0\n\
-    ");
+    if (translated_title_images[selected_language] != NULL) {
+        LZ77UnCompVram(translated_title_images[selected_language], (param_1 + SCREEN_OFFSET_TRANSLATED_TITLE));
+    }
 }

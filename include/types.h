@@ -1,11 +1,14 @@
 #ifndef TYPES_H
 #define TYPES_H
 
+#include "gba.h"
 #include <stdbool.h>
 #include <stdint.h>
 
 #define LANGUAGE_COUNT 8
 #define STRINGS_COUNT 1732
+#define ROW_OFFSET(r) (r * SCREEN_WIDTH)
+#define SCREEN_OFFSET_TRANSLATED_TITLE ROW_OFFSET(86)
 
 typedef uint8_t u8;
 typedef uint16_t u16;

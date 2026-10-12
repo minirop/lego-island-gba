@@ -232,30 +232,12 @@ LAB_08007f94:\n\
     ");
 }
 
-#ifdef NONMATCHING
 s32 fun_08007f9c()
 {
     fun_0800457c();
-    DAT_0200c5f0 = 0;
+    DAT_0200c5f0[0] = 0;
     return 0;
 }
-#else
-__attribute__((naked)) s32 fun_08007f9c()
-
-{
-    asm("\n\
-    push        {lr}\n\
-    bl          fun_0800457c\n\
-    ldr         r1,DAT_08007fac\n\
-    mov         r0,#0x0\n\
-    strb        r0,[r1,#0x0]\n\
-    pop         {r1}\n\
-    bx          r1\n\
-DAT_08007fac:\n\
-    .word 0x0200C5F0\n\
-    ");
-}
-#endif
 
 s32 fun_08007fb0()
 {
