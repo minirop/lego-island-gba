@@ -1,8 +1,8 @@
 BG1HOFS = 0x04000014;
 BLDCNT = 0x04000050;
 BLDY = 0x04000054;
+current_level = 0x02002560;
 DAT_0200000c = 0x0200000c;
-translated_title_images = 0x0877b978;
 DAT_0200001a = 0x0200001a;
 DAT_02000270 = 0x02000270;
 DAT_020003b0 = 0x020003b0;
@@ -889,5 +889,6 @@ languages_array = 0x087d5eb0;
 levels_table = 0x08756aec;
 selected_language = 0x020025b4;
 SIOCNT = 0x04000128;
+translated_title_images = 0x0877b978;
 VCOUNT = 0x04000006;
 WAITCNT = 0x04000204;

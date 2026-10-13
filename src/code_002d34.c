@@ -784,62 +784,15 @@ u16 fun_080032f8(u16 param_1, u16 param_2, s16* param_3)
     }
 }
 
-#ifdef NONMATCHING
-// https://www.decomp.me/scratch/Pi0Bm
-s32 fun_08003330(u16 param_1, u16 param_2)
+s16 fun_08003330(u16 param_1, u16 param_2)
 {
     s32 var = fun_08003370(param_1, param_2);
-    if (var == 0) {
-        var = -1;
+    if (var != 0) {
+        return (-((var - DAT_02005ce8->unk38) * 0x55555555)) >> 2;
     } else {
-        var = ((u32)((var - DAT_02005ce8->unk38) * -0x55550000));
+        return -1;
     }
-    return var;
 }
-#else
-__attribute__((naked)) s32 fun_08003330(u16 param_1, u16 param_2)
-{
-    asm("\n\
-    push        {lr}\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r0,r0,#0x10\n\
-    lsl         r1,r1,#0x10\n\
-    lsr         r1,r1,#0x10\n\
-    bl          fun_08003370\n\
-    add         r2,r0,#0x0\n\
-    cmp         r2,#0x0\n\
-    bne         LAB_0800334a\n\
-    mov         r0,#0x1\n\
-.syntax unified\n\
-    rsbs        r0,r0,#0\n\
-.syntax divided\n\
-    b           LAB_08003368\n\
-LAB_0800334a:\n\
-    ldr         r0,DAT_0800336c\n\
-    ldr         r0,[r0,#0x0]\n\
-    ldr         r1,[r0,#0x38]\n\
-    sub         r1,r2,r1\n\
-    lsl         r0,r1,#0x2\n\
-    add         r0,r0,r1\n\
-    lsl         r1,r0,#0x4\n\
-    add         r0,r0,r1\n\
-    lsl         r1,r0,#0x8\n\
-    add         r0,r0,r1\n\
-    lsl         r1,r0,#0x10\n\
-    add         r0,r0,r1\n\
-.syntax unified\n\
-    rsbs        r0,r0,#0\n\
-.syntax divided\n\
-    lsl         r0,r0,#0xe\n\
-    asr         r0,r0,#0x10\n\
-LAB_08003368:\n\
-    pop         {r1}\n\
-    bx          r1\n\
-DAT_0800336c:\n\
-    .word 0x02005CE8\n\
-    ");
-}
-#endif
 
 __attribute__((naked)) s32 fun_08003370(u16 param_1, u16 param_2)
 {

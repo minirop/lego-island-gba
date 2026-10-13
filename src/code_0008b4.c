@@ -598,6 +598,43 @@ DAT_08000d18:\n\
     .word 0x020025C4\n\
     ");
 }
+
+#ifdef NONMATCHING
+// matches with old_agbcc
+void fun_08000d1c()
+{
+    u32 tmp;
+
+    if (DAT_02005750 != 0) {
+        FUN_0800294c();
+    }
+
+    tmp = DAT_02000000++;
+    if (!tmp) {
+        FUN_080496e8();
+        FUN_0803f0d0();
+    }
+    DAT_02000000--;
+    DAT_020025f4++;
+
+    if (levels[current_level]->unk34 != NULL) {
+        levels[current_level]->unk34();
+    }
+    DAT_02002548++;
+
+    if (DAT_020025e0.unk00 != 5) {
+        fun_080020a4();
+        DAT_020025e0.unk1c++;
+        fun_080020a4();
+        if (DAT_020025e0.unk1c == 0x3c) {
+            fun_080020a4();
+            DAT_020025e0.unk1c = 0;
+            fun_080020a4();
+            DAT_020025e0.unk18++;
+        }
+    }
+}
+#else
 __attribute__((naked)) void fun_08000d1c()
 {
     asm("\n\
@@ -679,6 +716,8 @@ DAT_08000db8:\n\
     .word 0x020025E0\n\
     ");
 }
+#endif
+
 __attribute__((naked)) void fun_08000dbc()
 {
     asm("\n\

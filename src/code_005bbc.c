@@ -262,7 +262,7 @@ s32 fun_08005d50()
     LZ77UnCompVram(DAT_08756d44, (void*)0x06000000);
     fun_08002bcc();
     REG_DISPCNT = 0x1f04;
-    DmaSet(3, DAT_08756d50, 0x05000000, 0x80000100);
+    DmaCopy16(3, DAT_08756d50, 0x05000000, 0x200);
     DAT_02009ad0 = 0xb4;
     return 0;
 }
@@ -550,91 +550,24 @@ s32 fun_08005f08()
     return 0;
 }
 
-// https://www.decomp.me/scratch/B0bvv
-__attribute__((naked)) void fun_08005f0c(u8 param_1)
+void fun_08005f0c(u8 param_1)
 {
-    asm("\n\
-    push        {r4,r5,r6,lr}\n\
-    sub         sp,#0x4\n\
-    lsl         r0,r0,#0x18\n\
-    lsr         r4,r0,#0x18\n\
-    bl          fun_08002bcc\n\
-    mov         r1,sp\n\
-    mov         r0,#0x0\n\
-    strh        r0,[r1,#0x0]\n\
-    ldr         r5,DAT_08005f50\n\
-    str         r1,[r5,#0x0]\n\
-    mov         r6,#0xa0\n\
-    lsl         r6,r6,#0x13\n\
-    str         r6,[r5,#0x4]\n\
-    ldr         r0,DAT_08005f54\n\
-    str         r0,[r5,#0x8]\n\
-    ldr         r0,[r5,#0x8]\n\
-    mov         r0,#0x1\n\
-    and         r0,r4\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08005f64\n\
-    ldr         r0,DAT_08005f58\n\
-    lsl         r4,r4,#0x2\n\
-    add         r0,r4,r0\n\
-    ldr         r0,[r0,#0x0]\n\
-    ldr         r1,DAT_08005f5c\n\
-    bl          LZ77UnCompVram\n\
-    bl          fun_08002bcc\n\
-    mov         r1,#0x80\n\
-    lsl         r1,r1,#0x13\n\
-    ldr         r2,DAT_08005f60\n\
-    b           LAB_08005f7e\n\
-DAT_08005f50:\n\
-    .word 0x040000D4\n\
-DAT_08005f54:\n\
-    .word 0x81000100\n\
-DAT_08005f58:\n\
-    .word 0x08756D44\n\
-DAT_08005f5c:\n\
-    .word 0x0600A000\n\
-DAT_08005f60:\n\
-    .word 0x00001F14\n\
-LAB_08005f64:\n\
-    ldr         r0,DAT_08005f9c\n\
-    lsl         r4,r4,#0x2\n\
-    add         r0,r4,r0\n\
-    ldr         r0,[r0,#0x0]\n\
-    mov         r1,#0xc0\n\
-    lsl         r1,r1,#0x13\n\
-    bl          LZ77UnCompVram\n\
-    bl          fun_08002bcc\n\
-    mov         r1,#0x80\n\
-    lsl         r1,r1,#0x13\n\
-    ldr         r2,DAT_08005fa0\n\
-LAB_08005f7e:\n\
-    add         r0,r2,#0x0\n\
-    strh        r0,[r1,#0x0]\n\
-    ldr         r0,DAT_08005fa4\n\
-    add         r4,r4,r0\n\
-    ldr         r0,[r4,#0x0]\n\
-    str         r0,[r5,#0x0]\n\
-    str         r6,[r5,#0x4]\n\
-    ldr         r0,DAT_08005fa8\n\
-    str         r0,[r5,#0x8]\n\
-    ldr         r0,[r5,#0x8]\n\
-    add         sp,#0x4\n\
-    pop         {r4,r5,r6}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_08005f9c:\n\
-    .word 0x08756D44\n\
-DAT_08005fa0:\n\
-    .word 0x00001F04\n\
-DAT_08005fa4:\n\
-    .word 0x08756D50\n\
-DAT_08005fa8:\n\
-    .word 0x80000100\n\
-    ");
+    fun_08002bcc();
+
+    DmaFill16(3, 0, 0x05000000, 0x200);
+    if ((param_1 & 1) != 0) {
+        LZ77UnCompVram(DAT_08756d44[param_1], (void*)0x0600a000);
+        fun_08002bcc();
+        REG_DISPCNT = 0x1f14;
+        DmaCopy16(3, DAT_08756d50[param_1], 0x05000000, 0x200);
+    } else {
+        LZ77UnCompVram(DAT_08756d44[param_1], (void*)0x06000000);
+        fun_08002bcc();
+        REG_DISPCNT = 0x1f04;
+        DmaCopy16(3, DAT_08756d50[param_1], 0x05000000, 0x200);
+    }
 }
+
 __attribute__((naked)) s32 fun_08005fac()
 {
     asm("\n\

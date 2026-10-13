@@ -3,10 +3,8 @@
 
 void fun_08000300()
 {
-    int local = 0;
-    DmaSet(3, &local, 0x02000000, 0x85010000);
-    local = 0;
-    DmaSet(3, &local, 0x03000000, 0x85001f80);
+    DmaFill32(3, 0, 0x02000000, 0x40000);
+    DmaFill32(3, 0, 0x03000000, 0x7E00);
     fun_08002b34();
     fun_08002b94();
     REG_IE = 0x2001;
