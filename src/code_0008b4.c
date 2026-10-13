@@ -1,3 +1,4 @@
+#include "functions.h"
 #include "variables.h"
 
 __attribute__((naked)) void fun_080008b4()
@@ -601,11 +602,12 @@ DAT_08000d18:\n\
 
 #ifdef NONMATCHING
 // matches with old_agbcc
+// https://www.decomp.me/scratch/xmWTA
 void fun_08000d1c()
 {
     u32 tmp;
 
-    if (DAT_02005750 != 0) {
+    if (DAT_02005750[0] != 0) {
         FUN_0800294c();
     }
 
@@ -718,96 +720,41 @@ DAT_08000db8:\n\
 }
 #endif
 
-__attribute__((naked)) void fun_08000dbc()
+inline u16 fun_080012e8(u16 param_1)
 {
-    asm("\n\
-    push        {r4,r5,r6,r7,lr}\n\
-    ldr         r4,DAT_08000de0\n\
-    mov         r1,#0x0\n\
-    ldr         r0,DAT_08000de4\n\
-    ldrh        r2,[r0,#0x0]\n\
-    add         r5,r0,#0x0\n\
-    cmp         r1,r2\n\
-    bcs         LAB_08000df6\n\
-    ldr         r3,DAT_08000de8\n\
-LAB_08000dce:\n\
-    lsl         r0,r1,#0x2\n\
-    add         r0,r0,r3\n\
-    ldr         r0,[r0,#0x0]\n\
-    ldr         r0,[r0,#0x8]\n\
-    cmp         r0,r4\n\
-    bne         LAB_08000dec\n\
-    add         r0,r1,#0x0\n\
-    b           LAB_08000dfa\n\
-\n\
-.space 2\n\
-\n\
-DAT_08000de0:\n\
-    .word 0x00000BB9\n\
-DAT_08000de4:\n\
-    .word 0x08756BC0\n\
-DAT_08000de8:\n\
-    .word 0x08756AEC\n\
-LAB_08000dec:\n\
-    add         r0,r1,#0x1\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r1,r0,#0x10\n\
-    cmp         r1,r2\n\
-    bcc         LAB_08000dce\n\
-LAB_08000df6:\n\
-    ldrh        r0,[r5,#0x0]\n\
-    add         r0,#0x1\n\
-LAB_08000dfa:\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r0,r0,#0x10\n\
-    ldrh        r5,[r5,#0x0]\n\
-    cmp         r0,r5\n\
-    bhi         LAB_08000e5a\n\
-    ldr         r4,DAT_08000e60\n\
-    lsl         r5,r0,#0x2\n\
-    add         r4,r5,r4\n\
-    ldr         r0,[r4,#0x0]\n\
-    ldr         r0,[r0,#0x24]\n\
-    bl          _call_via_r0\n\
-    add         r7,r5,#0x0\n\
-    ldr         r5,DAT_08000e64\n\
-    add         r6,r4,#0x0\n\
-LAB_08000e18:\n\
-    bl          fun_08002c44\n\
-    ldrh        r0,[r5,#0x0]\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08000e34\n\
-    bl          fun_080026f0\n\
-    strh        r0,[r5,#0x2]\n\
-    bl          fun_08002968\n\
-    strh        r0,[r5,#0xc]\n\
-    bl          fun_08002878\n\
-    strh        r0,[r5,#0x4]\n\
-LAB_08000e34:\n\
-    ldr         r0,[r6,#0x0]\n\
-    ldr         r0,[r0,#0x2c]\n\
-    bl          _call_via_r0\n\
-    add         r4,r0,#0x0\n\
-    bl          fun_08003cfc\n\
-    bl          fun_08002bcc\n\
-    bl          fun_080046a4\n\
-    cmp         r4,#0x0\n\
-    beq         LAB_08000e18\n\
-    ldr         r0,DAT_08000e60\n\
-    add         r0,r7,r0\n\
-    ldr         r0,[r0,#0x0]\n\
-    ldr         r0,[r0,#0x28]\n\
-    bl          _call_via_r0\n\
-LAB_08000e5a:\n\
-    pop         {r4,r5,r6,r7}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-DAT_08000e60:\n\
-    .word 0x08756AEC\n\
-DAT_08000e64:\n\
-    .word 0x02005750\n\
-    ");
+    u16 i;
+    for (i = 0; i < levels_count; ++i) {
+        if (levels[i]->unk08 == param_1) {
+            return i;
+        }
+    }
+    return levels_count + 1;
 }
+
+void fun_08000dbc()
+{
+    u16 level_id = fun_080012e8(0xbb9);
+
+    if (level_id <= levels_count) {
+        s32 ret;
+        levels[level_id]->unk24();
+
+        do {
+            fun_08002c44();
+            if (DAT_02005750[0] != 0) {
+                DAT_02005750[1] = fun_080026f0();
+                DAT_02005750[6] = fun_08002968();
+                DAT_02005750[2] = fun_08002878();
+            }
+            ret = levels[level_id]->unk2c();
+            fun_08003cfc();
+            fun_08002bcc();
+            fun_080046a4();
+        } while (ret == 0);
+        levels[level_id]->unk28();
+    }
+}
+
 __attribute__((naked)) void fun_08000e68()
 {
     asm("\n\
@@ -1398,4 +1345,94 @@ LAB_08001224:\n\
 DAT_08001228:\n\
     .word 0xF8300000\n\
     ");
+}
+
+__attribute__((naked)) void fun_0800122c()
+{
+    asm("\n\
+    push        {r4,r5,lr}\n\
+    add         r2,r0,#0x0\n\
+    lsl         r2,r2,#0x10\n\
+    lsr         r2,r2,#0x10\n\
+    mov         r4,#0x1\n\
+    mov         r0,#0x0\n\
+    mov         r1,#0x1\n\
+    bl          fun_08002d34\n\
+    bl          fun_08002c44\n\
+    ldr         r5,DAT_08001248\n\
+    b           LAB_0800129a\n\
+\n\
+.space 2\n\
+\n\
+DAT_08001248:\n\
+    .word 0x08756AEC\n\
+LAB_0800124c:\n\
+    bl          fun_08002bcc\n\
+    bl          fun_08002df8\n\
+    bl          fun_080046a4\n\
+    cmp         r4,#0x0\n\
+    beq         LAB_08001296\n\
+    ldr         r0,DAT_080012ac\n\
+    ldrh        r0,[r0,#0x0]\n\
+    cmp         r0,#0x0\n\
+    beq         LAB_08001296\n\
+    ldr         r0,DAT_080012b0\n\
+    ldr         r0,[r0,#0x0]\n\
+    cmp         r0,#0x0\n\
+    beq         LAB_08001270\n\
+    bl          _call_via_r0\n\
+LAB_08001270:\n\
+    ldr         r0,DAT_080012b4\n\
+    ldrh        r0,[r0,#0x0]\n\
+    lsl         r0,r0,#0x2\n\
+    add         r0,r0,r5\n\
+    ldr         r0,[r0,#0x0]\n\
+    ldr         r0,[r0,#0x2c]\n\
+    bl          _call_via_r0\n\
+    ldr         r0,DAT_080012b8\n\
+    ldrh        r0,[r0,#0x0]\n\
+    cmp         r0,#0x0\n\
+    beq         LAB_0800128c\n\
+    bl          fun_08000b44\n\
+LAB_0800128c:\n\
+    ldr         r1,DAT_080012bc\n\
+    ldrh        r0,[r1,#0x0]\n\
+    add         r0,#0x1\n\
+    strh        r0,[r1,#0x0]\n\
+    mov         r4,#0x0\n\
+LAB_08001296:\n\
+    bl          fun_08003cfc\n\
+LAB_0800129a:\n\
+    bl          fun_08002dd8\n\
+    lsl         r0,r0,#0x10\n\
+    cmp         r0,#0x0\n\
+    bne         LAB_0800124c\n\
+    pop         {r4,r5}\n\
+    pop         {r0}\n\
+    bx          r0\n\
+\n\
+.space 2\n\
+\n\
+DAT_080012ac:\n\
+    .word 0x020025E0\n\
+DAT_080012b0:\n\
+    .word 0x020025F0\n\
+DAT_080012b4:\n\
+    .word 0x02002560\n\
+DAT_080012b8:\n\
+    .word 0x020025D8\n\
+DAT_080012bc:\n\
+    .word 0x020025C4\n\
+    ");
+}
+
+void fun_080012c0(u16 param_1)
+{
+    fun_08002d34(1, 0, param_1);
+    while (true) {
+        if (fun_08002dd8() == 0)
+            break;
+        fun_08002bcc();
+        fun_08002df8();
+    }
 }

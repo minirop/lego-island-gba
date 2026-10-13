@@ -24,10 +24,15 @@ IS_BIT_SET(fun_080014ec, DAT_02005830, 1)
 IS_BIT_SET(fun_08001504, DAT_02005830, 2)
 
 #ifdef NONMATCHING
+// https://www.decomp.me/scratch/EjYUM
 void fun_0800151c()
 {
-    DAT_02005ce0 = 0;
-    DAT_02005830 = DAT_02005ce0;
+    u16 tmp;
+    u16* r2 = &DAT_02005830;
+    u16* r1 = &DAT_02005ce0;
+    *r1 = 0;
+    tmp = *r1;
+    *r2 = tmp;
 }
 #else
 __attribute__((naked)) void fun_0800151c()

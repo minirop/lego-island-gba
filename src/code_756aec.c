@@ -55,3 +55,5 @@ const LevelInfo* const levels[] = {
     &space_shuttle,
     &brickster_battle,
 };
+
+const u16 levels_count = 0x35;

@@ -20,9 +20,6 @@ rom:
     - name: code_0008b4
       format: c
       address: 0x0008b4
-    - name: code_00122c
-      format: c
-      address: 0x00122c
     - name: code_00132c
       format: c
       address: 0x00132c
@@ -668,7 +665,7 @@ rom:
       format: c
       section: rodata
       address: 0x756aec
-      size: 0xd4
+      size: 0xd6
     - name: gfx/logos/copyright.gfx
       format: custom
       section: data

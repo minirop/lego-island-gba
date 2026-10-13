@@ -365,12 +365,9 @@ DAT_08005e08:\n\
 }
 #endif
 
-#ifdef NONMATCHING
 s32 fun_08005e0c()
 {
-    s16 unk_14[2];
     u32 index;
-    u8 lol;
 
     DAT_02009ad0--;
     if (DAT_02009ad0 != 0) {
@@ -383,167 +380,29 @@ s32 fun_08005e0c()
         }
     }
 
-    index = DAT_02009ad4;
-    index++;
-    DAT_02009ad4 = index;
-    lol = index;
+    index = ++DAT_02009ad4;
 
-    if (lol > 2) {
+    if (index > 2) {
         fun_080010d8();
     } else {
-        u32 five;
         fun_08002bcc();
 
-        unk_14[0] = 0;
-        DmaSet(3, 0, five = 0x05000000, 0x8100c000);
+        DmaFill16(3, 0, 0x05000000, 0x200);
         if ((index & 1) != 0) {
-            LZ77UnCompVram(PTR_ARRAY_08756d44[index], (void*)0x0600a000);
+            LZ77UnCompVram(DAT_08756d44[index], (void*)0x0600a000);
             fun_08002bcc();
             REG_DISPCNT = 0x1f14;
+            DmaCopy16(3, DAT_08756d50[index], 0x05000000, 0x200);
         } else {
-            LZ77UnCompVram(PTR_ARRAY_08756d44[index], (void*)0x06000000);
+            LZ77UnCompVram(DAT_08756d44[index], (void*)0x06000000);
             fun_08002bcc();
             REG_DISPCNT = 0x1f04;
+            DmaCopy16(3, DAT_08756d50[index], 0x05000000, 0x200);
         }
-        DmaSet(3, PTR_ARRAY_08756d50[index], five, 0x81000100);
         DAT_02009ad0 = 0xb4;
     }
     return 0;
 }
-#else
-__attribute__((naked)) s32 fun_08005e0c()
-{
-    asm("\n\
-    push        {r4,r5,r6,lr}\n\
-    sub         sp,#0x4\n\
-    ldr         r1,DAT_08005e5c\n\
-    ldrh        r0,[r1,#0x0]\n\
-    sub         r0,#0x1\n\
-    strh        r0,[r1,#0x0]\n\
-    lsl         r0,r0,#0x10\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08005e44\n\
-    bl          fun_0800140c\n\
-    lsl         r0,r0,#0x10\n\
-    cmp         r0,#0x0\n\
-    bne         LAB_08005e3c\n\
-    bl          fun_080013f4\n\
-    lsl         r0,r0,#0x10\n\
-    cmp         r0,#0x0\n\
-    bne         LAB_08005e3c\n\
-    bl          fun_0800132c\n\
-    lsl         r0,r0,#0x10\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08005ee8\n\
-LAB_08005e3c:\n\
-    ldr         r0,DAT_08005e60\n\
-    ldrb        r0,[r0,#0x0]\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08005ee8\n\
-LAB_08005e44:\n\
-    ldr         r1,DAT_08005e60\n\
-    ldrb        r0,[r1,#0x0]\n\
-    add         r0,#0x1\n\
-    strb        r0,[r1,#0x0]\n\
-    lsl         r0,r0,#0x18\n\
-    lsr         r4,r0,#0x18\n\
-    cmp         r4,#0x2\n\
-    bls         LAB_08005e64\n\
-    bl          fun_080010d8\n\
-    b           LAB_08005ee8\n\
-\n\
-.space 2\n\
-\n\
-DAT_08005e5c:\n\
-    .word 0x02009AD0\n\
-DAT_08005e60:\n\
-    .word 0x02009AD4\n\
-LAB_08005e64:\n\
-    bl          fun_08002bcc\n\
-    mov         r1,sp\n\
-    mov         r0,#0x0\n\
-    strh        r0,[r1,#0x0]\n\
-    ldr         r5,DAT_08005ea0\n\
-    str         r1,[r5,#0x0]\n\
-    mov         r6,#0xa0\n\
-    lsl         r6,r6,#0x13\n\
-    str         r6,[r5,#0x4]\n\
-    ldr         r0,DAT_08005ea4\n\
-    str         r0,[r5,#0x8]\n\
-    ldr         r0,[r5,#0x8]\n\
-    mov         r0,#0x1\n\
-    and         r0,r4\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08005eb4\n\
-    ldr         r0,DAT_08005ea8\n\
-    lsl         r4,r4,#0x2\n\
-    add         r0,r4,r0\n\
-    ldr         r0,[r0,#0x0]\n\
-    ldr         r1,DAT_08005eac\n\
-    bl          LZ77UnCompVram\n\
-    bl          fun_08002bcc\n\
-    mov         r1,#0x80\n\
-    lsl         r1,r1,#0x13\n\
-    ldr         r2,DAT_08005eb0\n\
-    b           LAB_08005ece\n\
-DAT_08005ea0:\n\
-    .word 0x040000D4\n\
-DAT_08005ea4:\n\
-    .word 0x81000100\n\
-DAT_08005ea8:\n\
-    .word 0x08756D44\n\
-DAT_08005eac:\n\
-    .word 0x0600A000\n\
-DAT_08005eb0:\n\
-    .word 0x00001F14\n\
-LAB_08005eb4:\n\
-    ldr         r0,DAT_08005ef4\n\
-    lsl         r4,r4,#0x2\n\
-    add         r0,r4,r0\n\
-    ldr         r0,[r0,#0x0]\n\
-    mov         r1,#0xc0\n\
-    lsl         r1,r1,#0x13\n\
-    bl          LZ77UnCompVram\n\
-    bl          fun_08002bcc\n\
-    mov         r1,#0x80\n\
-    lsl         r1,r1,#0x13\n\
-    ldr         r2,DAT_08005ef8\n\
-LAB_08005ece:\n\
-    add         r0,r2,#0x0\n\
-    strh        r0,[r1,#0x0]\n\
-    ldr         r0,DAT_08005efc\n\
-    add         r4,r4,r0\n\
-    ldr         r0,[r4,#0x0]\n\
-    str         r0,[r5,#0x0]\n\
-    str         r6,[r5,#0x4]\n\
-    ldr         r0,DAT_08005f00\n\
-    str         r0,[r5,#0x8]\n\
-    ldr         r0,[r5,#0x8]\n\
-    ldr         r1,DAT_08005f04\n\
-    mov         r0,#0xb4\n\
-    strh        r0,[r1,#0x0]\n\
-LAB_08005ee8:\n\
-    mov         r0,#0x0\n\
-    add         sp,#0x4\n\
-    pop         {r4,r5,r6}\n\
-    pop         {r1}\n\
-    bx          r1\n\
-\n\
-.space 2\n\
-\n\
-DAT_08005ef4:\n\
-    .word 0x08756D44\n\
-DAT_08005ef8:\n\
-    .word 0x00001F04\n\
-DAT_08005efc:\n\
-    .word 0x08756D50\n\
-DAT_08005f00:\n\
-    .word 0x80000100\n\
-DAT_08005f04:\n\
-    .word 0x02009AD0\n\
-    ");
-}
-#endif
 
 s32 fun_08005f08()
 {

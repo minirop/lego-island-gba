@@ -48,12 +48,18 @@ DAT_08002c40:\n\
 }
 
 #ifdef NONMATCHING
+// https://www.decomp.me/scratch/sdfMX
 void fun_08002c44()
 {
+    u16 r2;
     u16 keys = ~REG_KEYINPUT;
-    keys &= KEYS_MASK;
-    DAT_02005ce0 = DAT_02005830 & keys;
+    keys &= 0xFFFF;
+    DAT_02005ce0 = ~DAT_02005830 & keys;
     DAT_02005830 = keys;
+    r2 = DAT_02005ce0;
+    DAT_02005ce0 &= 0x3ff;
+    r2 = DAT_02005830;
+    DAT_02005830 &= 0x3ff;
 }
 #else
 __attribute__((naked)) void fun_08002c44()
