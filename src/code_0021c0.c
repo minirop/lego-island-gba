@@ -1147,7 +1147,7 @@ void fun_080029bc()
 asm(".space 2");
 
 // has to be there even if used in fun_08002b34
-const Callback dummy_080497ec[] = {
+const Callback DAT_080497ec[] = {
     fun_080024ac,
     fun_08003278,
     fun_080017ac,

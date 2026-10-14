@@ -7,7 +7,7 @@
 
 #define LANGUAGE_COUNT 8
 #define STRINGS_COUNT 1732
-#define ROW_OFFSET(r) (r * SCREEN_WIDTH)
+#define ROW_OFFSET(r) (r * DISPLAY_WIDTH)
 #define SCREEN_OFFSET_TRANSLATED_TITLE ROW_OFFSET(86)
 
 typedef uint8_t u8;
@@ -35,9 +35,8 @@ typedef void (*Callback)();
 typedef s32 (*CallbackInt)();
 typedef s32 (*CallbackIntIntPtr)(s32, s32*);
 
-#define NULL ((void*)0)
-
-typedef struct LevelInfo_s {
+typedef struct LevelInfo_s
+{
     s32 unk00;
     s32 unk04;
     s32 unk08;
@@ -62,19 +61,22 @@ typedef struct LevelInfo_s {
     s8 date2[24];
 } LevelInfo;
 
-typedef struct struct_02005780_s {
+typedef struct struct_02005780_s
+{
     u16 unk00;
     u16 unk02;
     s32 unk04;
     s32 unk08;
 } struct_02005780;
 
-typedef struct struct_02005ce8 {
+typedef struct struct_02005ce8
+{
     s8 pad[0x38];
     s32 unk38;
 } struct_02005ce8;
 
-typedef struct struct_08669620 {
+typedef struct struct_08669620
+{
     u8 unk00;
     u8 padding0[0x03];
     // addresses pointing inside the decompressed text script
@@ -82,7 +84,8 @@ typedef struct struct_08669620 {
     u32 unk20[3];
 } struct_08669620;
 
-typedef struct struct_02009b10 {
+typedef struct struct_02009b10
+{
     const LevelInfo* info;
     void* ptr;
 } struct_02009b10;

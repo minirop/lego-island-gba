@@ -150,9 +150,11 @@ void fun_08002ac0(u16 param_1, s32 param_2)
 {
     u16 uVar2;
 
-    if (DAT_02005834 != 0) {
+    if (DAT_02005834 != 0)
+    {
         uVar2 = 0;
-        while (uVar2 < 8 && DAT_02005780[uVar2].unk00 != 0) {
+        while (uVar2 < 8 && DAT_02005780[uVar2].unk00 != 0)
+        {
             uVar2++;
         }
         assert(uVar2 < 8, "No sequence controllers available");
@@ -163,60 +165,17 @@ void fun_08002ac0(u16 param_1, s32 param_2)
     }
 }
 
-__attribute__((naked)) void fun_08002b34()
+void fun_08002b34()
 {
-    asm("\n\
-    push        {r4,r5,r6,r7,lr}\n\
-    mov         r2,#0x0\n\
-    ldr         r6,DAT_08002b74\n\
-    ldr         r5,DAT_08002b78\n\
-    ldr         r7,DAT_08002b7c\n\
-    ldr         r4,DAT_08002b80\n\
-    ldr         r3,DAT_08002b84\n\
-LAB_08002b42:\n\
-    lsl         r0,r2,#0x2\n\
-    add         r1,r0,r4\n\
-    add         r0,r0,r3\n\
-    ldr         r0,[r0,#0x0]\n\
-    str         r0,[r1,#0x0]\n\
-    add         r0,r2,#0x1\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r2,r0,#0x10\n\
-    cmp         r2,#0xd\n\
-    bls         LAB_08002b42\n\
-    ldr         r0,DAT_08002b88\n\
-    str         r6,[r0,#0x0]\n\
-    str         r5,[r0,#0x4]\n\
-    ldr         r1,DAT_08002b8c\n\
-    str         r1,[r0,#0x8]\n\
-    ldr         r0,[r0,#0x8]\n\
-    ldr         r0,DAT_08002b90\n\
-    str         r5,[r0,#0x0]\n\
-    add         r0,r7,#0x0\n\
-    bl          fun_08002bb4\n\
-    pop         {r4,r5,r6,r7}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_08002b74:\n\
-    .word 0x08000134\n\
-DAT_08002b78:\n\
-    .word 0x02005850\n\
-DAT_08002b7c:\n\
-    .word 0x0800329D\n\
-DAT_08002b80:\n\
-    .word 0x020057F0\n\
-DAT_08002b84:\n\
-    .word 0x080497EC\n\
-DAT_08002b88:\n\
-    .word 0x040000D4\n\
-DAT_08002b8c:\n\
-    .word 0x80000240\n\
-DAT_08002b90:\n\
-    .word 0x03007FFC\n\
-    ");
+    u16 i;
+    for (i = 0; i < 14; i++)
+    {
+        DAT_020057f0[i] = DAT_080497ec[i];
+    }
+
+    DmaCopy16(3, &GlobalIRQHandler, &DAT_02005850, 0x480);
+    INTR_VECTOR = &DAT_02005850;
+    fun_08002bb4(fun_0800329c);
 }
 
 void fun_08002b94()
@@ -226,14 +185,15 @@ void fun_08002b94()
 
 void fun_08002ba0()
 {
-    DAT_02005cd8 = DAT_02005cd8 & 0xfffe;
+    DAT_02005cd8 &= 0xfffe;
 }
 
-void fun_08002bb4(s32 param_1)
+void fun_08002bb4(Callback param_1)
 {
     DAT_020057e4 = param_1;
-    if (param_1 == 0) {
-        DAT_020057e4 = 0x0800329d;
+    if (param_1 == 0)
+    {
+        DAT_020057e4 = &fun_0800329c;
     }
 }
 

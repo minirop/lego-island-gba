@@ -251,18 +251,18 @@ s32 fun_08005d50()
     s16 unk_24[2];
     s16 unk_20[2];
     unk_24[0] = 0;
-    DmaSet(3, unk_24, 0x06000000, 0x8100c000);
+    DmaSet(3, unk_24, VRAM, 0x8100c000);
     unk_24[0] = 0;
-    DmaSet(3, unk_24, 0x05000000, 0x81000200);
+    DmaSet(3, unk_24, BG_PLTT_SIZE, 0x81000200);
     REG_DISPCNT = 0x1f04;
     DAT_02009ad4 = 0;
     fun_08002bcc();
     unk_20[0] = 0;
-    DmaSet(3, unk_20, 0x05000000, 0x81000100);
-    LZ77UnCompVram(DAT_08756d44, (void*)0x06000000);
+    DmaSet(3, unk_20, BG_PLTT_SIZE, 0x81000100);
+    LZ77UnCompVram(DAT_08756d44, (void*)VRAM);
     fun_08002bcc();
     REG_DISPCNT = 0x1f04;
-    DmaCopy16(3, DAT_08756d50, 0x05000000, 0x200);
+    DmaCopy16(3, DAT_08756d50, BG_PLTT_SIZE, 0x200);
     DAT_02009ad0 = 0xb4;
     return 0;
 }
@@ -393,20 +393,20 @@ s32 fun_08005e0c()
     {
         fun_08002bcc();
 
-        DmaFill16(3, 0, 0x05000000, 0x200);
+        DmaFill16(3, 0, BG_PLTT, BG_PLTT_SIZE);
         if ((index & 1) != 0)
         {
-            LZ77UnCompVram(DAT_08756d44[index], (void*)0x0600a000);
+            LZ77UnCompVram(DAT_08756d44[index], BG_SCREEN_ADDR(20)); // unsure if BG_SCREEN_ADDR
             fun_08002bcc();
             REG_DISPCNT = 0x1f14;
-            DmaCopy16(3, DAT_08756d50[index], 0x05000000, 0x200);
+            DmaCopy16(3, DAT_08756d50[index], BG_PLTT, BG_PLTT_SIZE);
         }
         else
         {
-            LZ77UnCompVram(DAT_08756d44[index], (void*)0x06000000);
+            LZ77UnCompVram(DAT_08756d44[index], BG_SCREEN_ADDR(0)); // unsure if BG_SCREEN_ADDR
             fun_08002bcc();
             REG_DISPCNT = 0x1f04;
-            DmaCopy16(3, DAT_08756d50[index], 0x05000000, 0x200);
+            DmaCopy16(3, DAT_08756d50[index], BG_PLTT, BG_PLTT_SIZE);
         }
         DAT_02009ad0 = 0xb4;
     }
@@ -422,20 +422,20 @@ void fun_08005f0c(u8 param_1)
 {
     fun_08002bcc();
 
-    DmaFill16(3, 0, 0x05000000, 0x200);
+    DmaFill16(3, 0, BG_PLTT, BG_PLTT_SIZE);
     if ((param_1 & 1) != 0)
     {
         LZ77UnCompVram(DAT_08756d44[param_1], (void*)0x0600a000);
         fun_08002bcc();
         REG_DISPCNT = 0x1f14;
-        DmaCopy16(3, DAT_08756d50[param_1], 0x05000000, 0x200);
+        DmaCopy16(3, DAT_08756d50[param_1], BG_PLTT, BG_PLTT_SIZE);
     }
     else
     {
         LZ77UnCompVram(DAT_08756d44[param_1], (void*)0x06000000);
         fun_08002bcc();
         REG_DISPCNT = 0x1f04;
-        DmaCopy16(3, DAT_08756d50[param_1], 0x05000000, 0x200);
+        DmaCopy16(3, DAT_08756d50[param_1], BG_PLTT, BG_PLTT_SIZE);
     }
 }
 

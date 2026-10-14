@@ -3,8 +3,8 @@
 
 void fun_08000300()
 {
-    DmaFill32(3, 0, 0x02000000, 0x40000);
-    DmaFill32(3, 0, 0x03000000, 0x7E00);
+    DmaFill32(3, 0, EWRAM_START, 0x40000);
+    DmaFill32(3, 0, IWRAM_START, 0x7E00);
     fun_08002b34();
     fun_08002b94();
     REG_IE = 0x2001;

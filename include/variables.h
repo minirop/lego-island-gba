@@ -3,7 +3,10 @@
 
 #include "types.h"
 
+extern Callback DAT_020057e4;
+extern Callback DAT_020057f0[14];
 extern char LANG_STRINGS_0875e864[2][32];
+extern const Callback DAT_080497ec[14];
 extern const LevelInfo adventure_island;
 extern const LevelInfo apple_picking;
 extern const LevelInfo bongo_game;
@@ -62,7 +65,6 @@ extern s16 DAT_020025ec;
 extern s32 DAT_020025cc;
 extern s32 DAT_020025dc;
 extern s32 DAT_020025f0;
-extern s32 DAT_020057e4;
 extern s32 DAT_02005834;
 extern s32 DAT_02007f94;
 extern s32 DAT_02007fb0;
@@ -142,6 +144,7 @@ extern u8 DAT_02005760[16];
 extern u8 DAT_02009ad4;
 extern u8 DAT_0200c5f0[4];
 extern void* DAT_020003b0;
+extern void* DAT_02005850;
 extern void* DAT_02009b20[3];
 extern void* DAT_0200c5e0[3];
 extern void* DAT_0200c620[3];
@@ -172,6 +175,7 @@ extern void* DAT_02010a20;
 extern void* DAT_02010ca0;
 extern void* DAT_02010e20;
 extern void* DAT_020112b0;
+extern void* DAT_03007ffc;
 extern void* DAT_0807c290;
 extern void* DAT_080c5f1c;
 extern void* DAT_08107c38;
