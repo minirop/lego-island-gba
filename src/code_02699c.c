@@ -319,7 +319,7 @@ PTR_DAT_08026be0:\n\
 PTR_DAT_08026be4:\n\
      .word       DAT_0200f4a0\n\
 PTR_DAT_08026be8:\n\
-     .word       DAT_02005ce0\n\
+     .word       gNewKeys\n\
 PTR_DAT_08026bec:\n\
      .word       DAT_0200f4f8\n\
 PTR_DAT_08026bf0:\n\

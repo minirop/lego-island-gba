@@ -260,7 +260,7 @@ PTR_DAT_0801b7dc:\n\
 PTR_DAT_0801b7e0:\n\
      .word       DAT_0200ece0\n\
 PTR_DAT_0801b7e4:\n\
-     .word       DAT_02005830\n\
+     .word       gHeldKeys\n\
 DAT_0801b7e8:\n\
      .word 0x0877F91C\n\
 DAT_0801b7ec:\n\
@@ -402,7 +402,7 @@ LAB_0801b89e:\n\
 PTR_DAT_0801b904:\n\
      .word       DAT_0200ecc0\n\
 PTR_DAT_0801b908:\n\
-     .word       DAT_02005830\n\
+     .word       gHeldKeys\n\
 PTR_DAT_0801b90c:\n\
      .word       DAT_0200ece0\n\
 PTR_DAT_0801b910:\n\
@@ -2908,7 +2908,7 @@ PTR_DAT_0801cbd0:\n\
 PTR_DAT_0801cbd4:\n\
      .word       DAT_0200ecc0\n\
 PTR_DAT_0801cbd8:\n\
-     .word       DAT_02005830\n\
+     .word       gHeldKeys\n\
 PTR_DAT_0801cbdc:\n\
      .word       DAT_0200ece0\n\
 PTR_DAT_0801cbe0:\n\

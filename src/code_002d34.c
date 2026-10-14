@@ -774,10 +774,7 @@ DAT_080032f4:\n\
 
 u16 fun_080032f8(u16 param_1, u16 param_2, s16* param_3)
 {
-    if ((param_1 >= param_3[0])
-        && (param_1 < param_3[2])
-        && (param_2 >= param_3[1])
-        && (param_2 < param_3[3])) {
+    if ((param_1 >= param_3[0]) && (param_1 < param_3[2]) && (param_2 >= param_3[1]) && (param_2 < param_3[3])) {
         return 1;
     } else {
         return 0;

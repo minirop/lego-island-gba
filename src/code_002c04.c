@@ -47,59 +47,14 @@ DAT_08002c40:\n\
     ");
 }
 
-#ifdef NONMATCHING
-// https://www.decomp.me/scratch/sdfMX
 void fun_08002c44()
 {
-    u16 r2;
     u16 keys = ~REG_KEYINPUT;
-    keys &= 0xFFFF;
-    DAT_02005ce0 = ~DAT_02005830 & keys;
-    DAT_02005830 = keys;
-    r2 = DAT_02005ce0;
-    DAT_02005ce0 &= 0x3ff;
-    r2 = DAT_02005830;
-    DAT_02005830 &= 0x3ff;
+    gNewKeys = keys & ~gHeldKeys;
+    gHeldKeys = keys;
+    gNewKeys &= 0x3FF;
+    gHeldKeys &= 0x3FF;
 }
-#else
-__attribute__((naked)) void fun_08002c44()
-{
-    asm("\n\
-    push        {r4,lr}\n\
-    ldr         r0,DAT_08002c74\n\
-    ldrh        r1,[r0,#0x0]\n\
-    mvn         r1,r1\n\
-    lsl         r1,r1,#0x10\n\
-    lsr         r1,r1,#0x10\n\
-    ldr         r3,DAT_08002c78\n\
-    ldr         r4,DAT_08002c7c\n\
-    ldrh        r2,[r4,#0x0]\n\
-    add         r0,r1,#0x0\n\
-    bic         r0,r2\n\
-    strh        r0,[r3,#0x0]\n\
-    strh        r1,[r4,#0x0]\n\
-    ldrh        r2,[r3,#0x0]\n\
-    ldr         r1,DAT_08002c80\n\
-    add         r0,r1,#0x0\n\
-    and         r0,r2\n\
-    strh        r0,[r3,#0x0]\n\
-    ldrh        r0,[r4,#0x0]\n\
-    and         r1,r0\n\
-    strh        r1,[r4,#0x0]\n\
-    pop         {r4}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-DAT_08002c74:\n\
-    .word 0x04000130\n\
-DAT_08002c78:\n\
-    .word 0x02005CE0\n\
-DAT_08002c7c:\n\
-    .word 0x02005830\n\
-DAT_08002c80:\n\
-    .word 0x000003FF\n\
-    ");
-}
-#endif
 
 __attribute__((naked)) void fun_08002c84()
 {

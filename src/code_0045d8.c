@@ -1,5 +1,5 @@
-#include "variables.h"
 #include "types.h"
+#include "variables.h"
 
 void fun_080045d8(u16 param_1)
 {

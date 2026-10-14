@@ -1,5 +1,5 @@
-#include "variables.h"
 #include "functions.h"
+#include "variables.h"
 
 __attribute__((naked)) void fun_0800c608()
 {
@@ -1208,8 +1208,7 @@ void fun_0800cf28(u16 param_1, u16 param_2, u16 param_3, u16 param_4)
     DAT_0200d408 = param_3 - DAT_0200d404;
     DAT_0200d38c = param_4 - DAT_0200d3ac;
 
-    if (DAT_0200d394 != 0)
-    {
+    if (DAT_0200d394 != 0) {
         fun_0800cef0();
     }
 

@@ -453,7 +453,7 @@ PTR_DAT_0802fb8c:\n\
 PTR_DAT_0802fb90:\n\
      .word       DAT_0200ece0\n\
 PTR_DAT_0802fb94:\n\
-     .word       DAT_02005830\n\
+     .word       gHeldKeys\n\
 PTR_DAT_0802fb98:\n\
      .word       DAT_020107d4\n\
 PTR_DAT_0802fb9c:\n\
@@ -1168,7 +1168,7 @@ LAB_080300da:\n\
 PTR_DAT_080300ec:\n\
      .word       DAT_0200ecc0\n\
 PTR_DAT_080300f0:\n\
-     .word       DAT_02005830\n\
+     .word       gHeldKeys\n\
 PTR_DAT_080300f4:\n\
      .word       DAT_0200ece0\n\
 PTR_DAT_080300f8:\n\
@@ -4726,7 +4726,7 @@ PTR_DAT_08031b38:\n\
 PTR_DAT_08031b3c:\n\
      .word       DAT_02010a18\n\
 PTR_DAT_08031b40:\n\
-     .word       DAT_02005830\n\
+     .word       gHeldKeys\n\
 PTR_DAT_08031b44:\n\
      .word       DAT_02010958\n\
 PTR_DAT_08031b48:\n\
@@ -4813,13 +4813,13 @@ PTR_DAT_08031bdc:\n\
 PTR_DAT_08031be0:\n\
      .word       DAT_020109ec\n\
 PTR_DAT_08031be4:\n\
-     .word       DAT_02005830\n\
+     .word       gHeldKeys\n\
 PTR_DAT_08031be8:\n\
      .word       DAT_02010964\n\
 PTR_DAT_08031bec:\n\
      .word       DAT_02010a18\n\
 PTR_DAT_08031bf0:\n\
-     .word       DAT_02005ce0\n\
+     .word       gNewKeys\n\
 PTR_DAT_08031bf4:\n\
      .word       DAT_020108e8\n\
 PTR_DAT_08031bf8:\n\
@@ -4967,7 +4967,7 @@ __attribute__((naked)) void fun_08031cc4()
 .space 1\n\
 .space 1\n\
 PTR_DAT_08031cf4:\n\
-     .word       DAT_02005830\n\
+     .word       gHeldKeys\n\
 PTR_DAT_08031cf8:\n\
      .word       DAT_020108e8\n\
 PTR_DAT_08031cfc:\n\

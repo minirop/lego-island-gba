@@ -817,7 +817,7 @@ PTR_DAT_080177e8:\n\
 PTR_DAT_080177ec:\n\
      .word       DAT_02005750\n\
 PTR_DAT_080177f0:\n\
-     .word       DAT_02005ce0\n\
+     .word       gNewKeys\n\
 PTR_DAT_080177f4:\n\
      .word       DAT_0200dcbc\n\
 PTR_DAT_080177f8:\n\

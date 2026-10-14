@@ -7956,7 +7956,7 @@ PTR_DAT_0802b514:\n\
 PTR_DAT_0802b518:\n\
      .word       DAT_0200ece0\n\
 PTR_DAT_0802b51c:\n\
-     .word       DAT_02005830\n\
+     .word       gHeldKeys\n\
 PTR_DAT_0802b520:\n\
      .word       DAT_0201027c\n\
 PTR_DAT_0802b524:\n\
@@ -8370,7 +8370,7 @@ PTR_DAT_0802b82c:\n\
 PTR_DAT_0802b830:\n\
      .word       DAT_0200ecc0\n\
 PTR_DAT_0802b834:\n\
-     .word       DAT_02005830\n\
+     .word       gHeldKeys\n\
 PTR_DAT_0802b838:\n\
      .word       DAT_0200ece0\n\
 PTR_DAT_0802b83c:\n\
@@ -10954,7 +10954,7 @@ PTR_DAT_0802caf8:\n\
 PTR_DAT_0802cafc:\n\
      .word       DAT_0200ece0\n\
 PTR_DAT_0802cb00:\n\
-     .word       DAT_02005830\n\
+     .word       gHeldKeys\n\
 PTR_DAT_0802cb04:\n\
      .word       DAT_02010404\n\
 PTR_DAT_0802cb08:\n\
@@ -11648,7 +11648,7 @@ PTR_DAT_0802d030:\n\
 PTR_DAT_0802d034:\n\
      .word       DAT_0200ecc0\n\
 PTR_DAT_0802d038:\n\
-     .word       DAT_02005830\n\
+     .word       gHeldKeys\n\
 PTR_DAT_0802d03c:\n\
      .word       DAT_0200ece0\n\
 PTR_DAT_0802d040:\n\
@@ -12823,7 +12823,7 @@ PTR_DAT_0802d8fc:\n\
 PTR_DAT_0802d900:\n\
      .word       DAT_020103cc\n\
 PTR_DAT_0802d904:\n\
-     .word       DAT_02005ce0\n\
+     .word       gNewKeys\n\
 PTR_DAT_0802d908:\n\
      .word       DAT_020104e0\n\
 PTR_DAT_0802d90c:\n\
@@ -15561,7 +15561,7 @@ PTR_DAT_0802ed80:\n\
 PTR_DAT_0802ed84:\n\
      .4byte       DAT_0200ece0\n\
 PTR_DAT_0802ed88:\n\
-     .4byte       DAT_02005830\n\
+     .4byte       gHeldKeys\n\
 PTR_DAT_0802ed8c:\n\
      .4byte       DAT_0201027c\n\
 PTR_DAT_0802ed90:\n\
@@ -16021,11 +16021,11 @@ LAB_0802f0f0:\n\
 PTR_DAT_0802f0f8:\n\
      .4byte       DAT_0200ecc0\n\
 PTR_DAT_0802f0fc:\n\
-     .4byte       DAT_02005830\n\
+     .4byte       gHeldKeys\n\
 PTR_DAT_0802f100:\n\
      .4byte       DAT_0200ece0\n\
 PTR_DAT_0802f104:\n\
-     .4byte       DAT_02005ce0\n\
+     .4byte       gNewKeys\n\
 PTR_DAT_0802f108:\n\
      .4byte       DAT_020105d4\n\
 PTR_DAT_0802f10c:\n\

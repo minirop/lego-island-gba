@@ -3140,7 +3140,7 @@ LAB_0801b2e0:\n\
 DAT_0801b300:\n\
      .4byte 0x04000050\n\
 PTR_DAT_0801b304:\n\
-     .4byte       DAT_02005ce0\n\
+     .4byte       gNewKeys\n\
 PTR_DAT_0801b308:\n\
      .4byte       DAT_02005750\n\
 PTR_DAT_0801b30c:\n\

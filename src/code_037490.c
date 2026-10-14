@@ -156,7 +156,7 @@ PTR_DAT_080375bc:\n\
 PTR_DAT_080375c0:\n\
      .word       DAT_0200ece0\n\
 PTR_DAT_080375c4:\n\
-     .word       DAT_02005830\n\
+     .word       gHeldKeys\n\
 PTR_DAT_080375c8:\n\
      .word       DAT_020111a0\n\
 PTR_DAT_080375cc:\n\
@@ -288,7 +288,7 @@ PTR_DAT_080376c0:\n\
 PTR_DAT_080376c4:\n\
      .word       DAT_02011218\n\
 PTR_DAT_080376c8:\n\
-     .word       DAT_02005830\n\
+     .word       gHeldKeys\n\
 PTR_DAT_080376cc:\n\
      .word       DAT_0200f4a0\n\
 LAB_080376d0:\n\
@@ -364,7 +364,7 @@ PTR_DAT_08037750:\n\
 PTR_DAT_08037754:\n\
      .word       DAT_02011190\n\
 PTR_DAT_08037758:\n\
-     .word       DAT_02005830\n\
+     .word       gHeldKeys\n\
 PTR_DAT_0803775c:\n\
      .word       DAT_0201119c\n\
 PTR_DAT_08037760:\n\

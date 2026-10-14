@@ -3,6 +3,7 @@
 
 #include "types.h"
 
+extern char LANG_STRINGS_0875e864[2][32];
 extern const LevelInfo adventure_island;
 extern const LevelInfo apple_picking;
 extern const LevelInfo bongo_game;
@@ -79,6 +80,8 @@ extern struct_02009b10 DAT_0200c5d0;
 extern struct_02009b10 DAT_0200c630;
 extern struct_02009b10 DAT_0200ee80;
 extern struct_08669620 DAT_08669620[STRINGS_COUNT];
+extern u16 DAT_02000008;
+extern u16 DAT_0200001c;
 extern u16 DAT_020006a0[10];
 extern u16 DAT_02002534;
 extern u16 DAT_020025b0;
@@ -86,14 +89,12 @@ extern u16 DAT_020025d8;
 extern u16 DAT_020025e8;
 extern u16 DAT_02005750[8];
 extern u16 DAT_02005770;
-extern u16 DAT_02005830;
 extern u16 DAT_02005838;
 extern u16 DAT_0200583c;
 extern u16 DAT_02005840;
 extern u16 DAT_02005cd0;
 extern u16 DAT_02005cd8;
 extern u16 DAT_02005cdc;
-extern u16 DAT_02005ce0;
 extern u16 DAT_02005cf0;
 extern u16 DAT_02005cf4;
 extern u16 DAT_02005cf8;
@@ -127,6 +128,7 @@ extern u16 DAT_0200d408;
 extern u16 IF;
 extern u16* DAT_02009af0;
 extern u16* DAT_02009b00;
+extern u32 DAT_0200000c;
 extern u32 DAT_06004000;
 extern u32 DAT_08756d5c;
 extern u32 selected_language;
@@ -135,6 +137,8 @@ extern u8 DAT_0200254c;
 extern u8 DAT_02002620[0x2be0];
 extern u8 DAT_02005200[4];
 extern u8 DAT_02005210[0x360];
+extern u8 DAT_02005710[4][16];
+extern u8 DAT_02005760[16];
 extern u8 DAT_02009ad4;
 extern u8 DAT_0200c5f0[4];
 extern void* DAT_020003b0;
@@ -198,10 +202,13 @@ extern void* DAT_08615c04;
 extern void* DAT_0863a1a0;
 extern void* DAT_0863f824;
 extern void* DAT_086424a8;
+extern void* DAT_0865fd94;
 extern void* DAT_08756d44[];
 extern void* DAT_08756d50[];
 extern void* decompressed_language_text_buffer;
 extern void* languages_array[LANGUAGE_COUNT];
 extern void* translated_title_images[LANGUAGE_COUNT];
+extern vu16 gHeldKeys;
+extern vu16 gNewKeys;
 
 #endif

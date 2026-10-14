@@ -6566,7 +6566,7 @@ PTR_DAT_08026904:\n\
 PTR_DAT_08026908:\n\
      .4byte       DAT_0200ece0\n\
 PTR_DAT_0802690c:\n\
-     .4byte       DAT_02005830\n\
+     .4byte       gHeldKeys\n\
 PTR_DAT_08026910:\n\
      .4byte       DAT_0200f4f4\n\
 PTR_DAT_08026914:\n\

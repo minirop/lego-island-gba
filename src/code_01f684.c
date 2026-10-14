@@ -1852,7 +1852,7 @@ LAB_08020418:\n\
      strh       r2,[r3,#0x0]\n\
      b          LAB_080204a2\n\
 PTR_DAT_08020464:\n\
-     .word       DAT_02005830\n\
+     .word       gHeldKeys\n\
 PTR_DAT_08020468:\n\
      .word       DAT_0200f06c\n\
 PTR_DAT_0802046c:\n\
@@ -2103,7 +2103,7 @@ PTR_DAT_08020644:\n\
 PTR_DAT_08020648:\n\
      .word       DAT_0200f064\n\
 PTR_DAT_0802064c:\n\
-     .word       DAT_02005830\n\
+     .word       gHeldKeys\n\
 PTR_DAT_08020650:\n\
      .word       DAT_0200f0ac\n\
     ");

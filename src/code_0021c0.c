@@ -1,5 +1,5 @@
-#include "defines.h"
 #include "functions.h"
+#include "variables.h"
 
 __attribute__((naked)) void fun_080021c0()
 {
@@ -951,39 +951,20 @@ DAT_08002840:\n\
     .word 0x02000014\n\
     ");
 }
-__attribute__((naked)) void fun_08002844()
+
+s32 fun_08002844()
 {
-    asm("\n\
-    push        {r4,r5,lr}\n\
-    ldr         r0,DAT_0800286c\n\
-    mov         r5,#0x0\n\
-    strh        r5,[r0,#0x0]\n\
-    ldr         r4,DAT_08002870\n\
-    ldrh        r0,[r4,#0x0]\n\
-    ldr         r1,DAT_08002874\n\
-    bl          assert\n\
-    ldrh        r0,[r4,#0x0]\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08002862\n\
-    bl          fun_080025bc\n\
-    strh        r5,[r4,#0x0]\n\
-LAB_08002862:\n\
-    mov         r0,#0x1\n\
-    pop         {r4,r5}\n\
-    pop         {r1}\n\
-    bx          r1\n\
-\n\
-.space 2\n\
-\n\
-DAT_0800286c:\n\
-    .word 0x02005750\n\
-DAT_08002870:\n\
-    .word 0x0200001C\n\
-DAT_08002874:\n\
-    .word 0x080497D0\n\
-    ");
+    DAT_02005750[0] = 0;
+    assert(DAT_0200001c, "Multiplayer not initialised");
+
+    if (DAT_0200001c != 0)
+    {
+        fun_080025bc();
+        DAT_0200001c = 0;
+    }
+
+    return 1;
 }
-const char* dummy_080497d0 = "Multiplayer not initialised";
 
 __attribute__((naked)) void fun_08002878()
 {
@@ -1083,77 +1064,32 @@ LAB_08002906:\n\
     bx          lr\n\
     ");
 }
-__attribute__((naked)) void fun_08002908()
+
+void fun_08002908()
 {
-    asm("\n\
-    push        {r4,r5,r6,r7,lr}\n\
-    mov         r1,#0x1\n\
-    ldr         r7,DAT_08002944\n\
-    mov         r2,#0x0\n\
-    ldr         r3,DAT_08002948\n\
-    add         r6,r3,#0x0\n\
-    add         r6,#0x30\n\
-    add         r5,r3,#0x0\n\
-    add         r5,#0x10\n\
-    add         r4,r3,#0x0\n\
-    add         r4,#0x20\n\
-LAB_0800291e:\n\
-    add         r0,r1,r7\n\
-    strb        r2,[r0,#0x0]\n\
-    add         r0,r1,r3\n\
-    strb        r2,[r0,#0x0]\n\
-    add         r0,r1,r5\n\
-    strb        r2,[r0,#0x0]\n\
-    add         r0,r1,r4\n\
-    strb        r2,[r0,#0x0]\n\
-    add         r0,r1,r6\n\
-    strb        r2,[r0,#0x0]\n\
-    add         r0,r1,#0x1\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r1,r0,#0x10\n\
-    cmp         r1,#0xf\n\
-    bls         LAB_0800291e\n\
-    pop         {r4,r5,r6,r7}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_08002944:\n\
-    .word 0x02005760\n\
-DAT_08002948:\n\
-    .word 0x02005710\n\
-    ");
+    u16 i;
+    for (i = 1; i < 16; i++)
+    {
+        DAT_02005760[i] = 0;
+        DAT_02005710[0][i] = 0;
+        DAT_02005710[1][i] = 0;
+        DAT_02005710[2][i] = 0;
+        DAT_02005710[3][i] = 0;
+    }
 }
-__attribute__((naked)) void fun_0800294c()
+
+s32 fun_0800294c()
 {
-    asm("\n\
-    push        {lr}\n\
-    ldr         r0,DAT_08002964\n\
-    ldr         r0,[r0,#0x0]\n\
-    mov         r1,#0x80\n\
-    and         r0,r1\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_0800295e\n\
-    bl          fun_0800244c\n\
-LAB_0800295e:\n\
-    mov         r0,#0x0\n\
-    pop         {r1}\n\
-    bx          r1\n\
-DAT_08002964:\n\
-    .word 0x0200000C\n\
-    ");
+    if ((DAT_0200000c & 0x80) != 0)
+    {
+        fun_0800244c();
+    }
+    return 0;
 }
-__attribute__((naked)) void fun_08002968()
+
+u16 fun_08002968()
 {
-    asm("\n\
-    ldr         r0,DAT_08002970\n\
-    ldrh        r0,[r0,#0x0]\n\
-    bx          lr\n\
-.space 2\n\
-DAT_08002970:\n\
-    .word 0x02000008\n\
-    ");
+    return DAT_02000008;
 }
 
 __attribute__((naked)) void fun_08002974()

@@ -1026,6 +1026,7 @@ s32 fun_080068b0()
 void fun_080068d4(void* param_1)
 {
     if (translated_title_images[selected_language] != NULL) {
-        LZ77UnCompVram(translated_title_images[selected_language], (param_1 + SCREEN_OFFSET_TRANSLATED_TITLE));
+        LZ77UnCompVram(translated_title_images[selected_language],
+            (param_1 + SCREEN_OFFSET_TRANSLATED_TITLE));
     }
 }
