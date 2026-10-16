@@ -998,7 +998,7 @@ LAB_0800106e:\n\
 void fun_08001070(u16 param_1)
 {
     DAT_020025d8 = param_1;
-    fun_08002114();
+    fun_08002114(param_1);
 }
 
 __attribute__((naked)) void fun_08001088()
@@ -1145,25 +1145,13 @@ void fun_0800117c()
     DAT_020025b0 = 1;
 }
 
-__attribute__((naked)) void fun_08001188()
+void fun_08001188()
 {
-    asm("\n\
-    push        {lr}\n\
-    ldr         r1,DAT_080011a0\n\
-    mov         r0,#0x0\n\
-    strh        r0,[r1,#0x0]\n\
-    mov         r1,#0xe\n\
-    ldr         r0,DAT_080011a4\n\
-    strh        r1,[r0,#0x0]\n\
-    mov         r0,#0xe\n\
-    bl          fun_08002114\n\
-    pop         {r0}\n\
-    bx          r0\n\
-DAT_080011a0:\n\
-    .word 0x02002544\n\
-DAT_080011a4:\n\
-    .word 0x020025D8\n\
-    ");
+    u16 tmp;
+    DAT_02002544 = 0;
+    tmp = 0xe;
+    DAT_020025d8 = tmp;
+    fun_08002114(0xe);
 }
 
 void fun_080011a8(s32 param_1)
@@ -1186,6 +1174,19 @@ s32 fun_080011cc()
     return DAT_020025cc;
 }
 
+#ifdef NONMATCHING
+void fun_080011d8()
+{
+    u16 i;
+    for (i = 0; i < levels_count; ++i)
+    {
+        if (levels[i]->unk38 != NULL)
+        {
+            levels[i]->unk38();
+        }
+    }
+}
+#else
 __attribute__((naked)) void fun_080011d8()
 {
     asm("\n\
@@ -1225,25 +1226,12 @@ DAT_08001210:\n\
     .word 0x08756AEC\n\
     ");
 }
+#endif
 
-// TODO
-__attribute__((naked)) void fun_08001214()
+s32 fun_08001214(u32 param_1)
 {
-    asm("\n\
-    lsl        r0,r0,#0x10\n\
-    mov        r1,#0x0\n\
-    ldr        r2,DAT_08001228\n\
-    add        r0,r0,r2\n\
-    lsr        r0,r0,#0x10\n\
-    cmp        r0,#0x1b\n\
-    bhi        LAB_08001224\n\
-    mov        r1,#0x1\n\
-LAB_08001224:\n\
-    add        r0,r1,#0x0\n\
-    bx         lr\n\
-DAT_08001228:\n\
-    .word 0xF8300000\n\
-    ");
+    u32 tmp = param_1 * 0x10000;
+    return ((tmp + 0xf8300000) / 0x10000) < 0x1c;
 }
 
 void fun_0800122c(u16 param_1)

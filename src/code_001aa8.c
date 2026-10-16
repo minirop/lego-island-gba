@@ -720,31 +720,14 @@ DAT_08002008:\n\
     .word 0x000007E6\n\
     ");
 }
-__attribute__((naked)) void fun_0800200c()
+
+void fun_0800200c()
 {
-    asm("\n\
-    push        {r4,lr}\n\
-    bl          fun_080020a4\n\
-    mov         r2,#0xea\n\
-    lsl         r2,r2,#0x4\n\
-    mov         r1,#0x0\n\
-    bl          memset\n\
-    bl          fun_080020a4\n\
-    add         r0,#0x8\n\
-    ldr         r1,DAT_08002034\n\
-    ldmia       r1!,{r2,r3,r4}\n\
-    stmia       r0!,{r2,r3,r4}\n\
-    bl          fun_08001b9c\n\
-    pop         {r4}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_08002034:\n\
-    .word 0x08049790\n\
-    ");
+    memset(fun_080020a4(), 0, sizeof(struct_02002620));
+    memcpy(&fun_080020a4()->unk08, "GOGOMONKEYX", 12);
+    fun_08001b9c();
 }
+
 __attribute__((naked)) void fun_08002038()
 {
     asm("\n\
@@ -865,7 +848,7 @@ DAT_08002110:\n\
     .word 0xFFFFF830\n\
     ");
 }
-__attribute__((naked)) void fun_08002114()
+__attribute__((naked)) void fun_08002114(u16 param_1)
 {
     asm("\n\
     lsl         r0,r0,#0x10\n\

@@ -97,13 +97,18 @@ typedef struct struct_02009b10
     void* ptr;
 } struct_02009b10;
 
+// size 0xEA0
 typedef struct struct_02002620
 {
     u16 unk00;
-    u8 padding[0x16];
+    u8 padding1[6];
+    u8 unk08[16];
     u32 unk18;
     u8 unk1c;
-    u8 pad[0xE83];
+    u8 pad1d[0xD0D];
+    u16 unk0d2a[0x46];
+    u8 pad0db6[0x8A];
+    u8 unk0e40[0x60];
 } struct_02002620;
 
 #endif

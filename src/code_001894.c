@@ -1,4 +1,5 @@
-#include "gba.h"
+#include "functions.h"
+#include "variables.h"
 
 __attribute__((naked)) void fun_08001894()
 {
@@ -52,7 +53,7 @@ DAT_080018e0:\n\
     .word 0x02000690\n\
     ");
 }
-__attribute__((naked)) void fun_080018e4()
+__attribute__((naked)) void fun_080018e4(s32 param_1)
 {
     asm("\n\
     push        {r4,lr}\n\
@@ -216,7 +217,7 @@ DAT_08001a10:\n\
     .word 0x08756A64\n\
     ");
 }
-__attribute__((naked)) void fun_08001a14()
+__attribute__((naked)) void fun_08001a14(s32 param_1, s32 param_2)
 {
     asm("\n\
     push        {r4,r5,lr}\n\
@@ -272,35 +273,18 @@ __attribute__((naked)) void fun_08001a5c()
     bx         r0\n\
     ");
 }
-__attribute__((naked)) void fun_08001a74()
+
+u32 fun_08001a74(u16 param_1)
 {
-    asm("\n\
-    push       {r4,r5,lr}\n\
-    lsl        r0,r0,#0x10\n\
-    lsr        r5,r0,#0x13\n\
-    mov        r1,#0xe0\n\
-    lsl        r1,r1,#0xb\n\
-    and        r1,r0\n\
-    lsr        r1,r1,#0x10\n\
-    mov        r4,#0x80\n\
-    lsl        r4,r4,#0x11\n\
-    lsl        r4,r1\n\
-    lsr        r4,r4,#0x18\n\
-    bl         fun_080020a4\n\
-    mov        r1,#0xe4\n\
-    lsl        r1,r1,#0x4\n\
-    add        r0,r0,r1\n\
-    add        r0,r0,r5\n\
-    ldrb       r1,[r0,#0x0]\n\
-    and        r1,r4\n\
-.syntax unified\n\
-    rsbs        r0,r1,#0\n\
-.syntax divided\n\
-    orr        r0,r1\n\
-    lsr        r0,r0,#0x1f\n\
-    pop        {r4,r5}\n\
-    pop        {r1}\n\
-    bx         r1\n\
-.space 2\n\
-    ");
+    u32 p8;
+    u8 r4;
+    struct_02002620* value;
+
+    p8 = param_1 / 8;
+    r4 = 1 << (param_1 & 7);
+
+    value = fun_080020a4();
+    return (value->unk0e40[p8] & r4) != 0;
 }
+
+asm(".space 2");

@@ -90,6 +90,7 @@ extern u16 DAT_02000008;
 extern u16 DAT_0200001c;
 extern u16 DAT_020006a0[10];
 extern u16 DAT_02002534;
+extern u16 DAT_02002544;
 extern u16 DAT_02002548;
 extern u16 DAT_020025b0;
 extern u16 DAT_020025c4;
