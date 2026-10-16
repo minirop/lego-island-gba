@@ -1,7 +1,7 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
-#include "types.h"
+#include "gba.h"
 
 s16 fun_0800132c();
 s16 fun_08001344();

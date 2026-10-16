@@ -365,65 +365,53 @@ DAT_08002448:\n\
     .word 0x05000004\n\
     ");
 }
-__attribute__((naked)) void fun_0800244c()
+
+// left here until used elsewhere
+#define SIO_ERROR_BIT 6
+#define SIO_SEND_VALUE 0xFEFE
+#define SERIAL_REGISTERS ((vu16*)REG_ADDR_SIOCNT)
+#define SIO_CONTROL32(registers) (*(vu32*)(registers))
+#define SIO_ERROR_FLAG(control) \
+    (((u32)(control) << (31 - SIO_ERROR_BIT)) >> 31)
+#define SIO_CONTROL_INDEX 0
+#define SIO_SEND_INDEX 1
+
+void Serial_StartTransfer()
 {
-    asm("\n\
-    ldr         r3,DAT_0800249c\n\
-    ldrb        r0,[r3,#0x1]\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08002498\n\
-    ldrb        r0,[r3,#0x6]\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08002498\n\
-    mov         r0,#0x1\n\
-.syntax unified\n\
-    rsbs        r0,r0,#0\n\
-.syntax divided\n\
-    str         r0,[r3,#0x18]\n\
-    ldr         r1,[r3,#0x28]\n\
-    ldr         r0,[r3,#0x24]\n\
-    str         r0,[r3,#0x28]\n\
-    str         r1,[r3,#0x24]\n\
-    ldrb        r0,[r3,#0x4]\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_0800247c\n\
-    ldr         r1,[r3,#0x20]\n\
-    ldr         r0,[r3,#0x1c]\n\
-    str         r0,[r3,#0x20]\n\
-    str         r1,[r3,#0x1c]\n\
-    mov         r0,#0x0\n\
-    strb        r0,[r3,#0x4]\n\
-    str         r0,[r3,#0x14]\n\
-LAB_0800247c:\n\
-    ldr         r2,DAT_080024a0\n\
-    ldr         r0,[r2,#0x0]\n\
-    lsl         r0,r0,#0x19\n\
-    lsr         r0,r0,#0x1f\n\
-    strb        r0,[r3,#0x7]\n\
-    ldr         r0,DAT_080024a4\n\
-    strh        r0,[r2,#0x2]\n\
-    ldrh        r0,[r2,#0x0]\n\
-    mov         r1,#0x80\n\
-    orr         r0,r1\n\
-    strh        r0,[r2,#0x0]\n\
-    ldr         r1,DAT_080024a8\n\
-    mov         r0,#0xc0\n\
-    strh        r0,[r1,#0x0]\n\
-LAB_08002498:\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_0800249c:\n\
-    .word 0x02005580\n\
-DAT_080024a0:\n\
-    .word 0x04000128\n\
-DAT_080024a4:\n\
-    .word 0x0000FEFE\n\
-DAT_080024a8:\n\
-    .word 0x0400010E\n\
-    ");
+    void* buffer;
+    vu16* serial;
+    u16 sendValue;
+
+    if (gSerialState.enabled && gSerialState.transferReady)
+    {
+        gSerialState.transferResult = -1;
+
+        buffer = gSerialState.nextReceiveBuffer;
+        gSerialState.nextReceiveBuffer = gSerialState.receiveBuffer;
+        gSerialState.receiveBuffer = buffer;
+
+        if (gSerialState.sendBufferPending)
+        {
+            buffer = gSerialState.nextSendBuffer;
+            gSerialState.nextSendBuffer = gSerialState.sendBuffer;
+            gSerialState.sendBuffer = buffer;
+
+            gSerialState.sendBufferPending = 0;
+            gSerialState.sendProgress = 0;
+        }
+
+        serial = SERIAL_REGISTERS;
+
+        gSerialState.serialError = SIO_ERROR_FLAG(SIO_CONTROL32(serial));
+
+        sendValue = SIO_SEND_VALUE;
+        serial[SIO_SEND_INDEX] = sendValue;
+        serial[SIO_CONTROL_INDEX] |= SIO_START;
+
+        REG_TM3CNT_H = TIMER_ENABLE | TIMER_INTR_ENABLE;
+    }
 }
+
 __attribute__((naked)) void fun_080024ac()
 {
     asm("\n\
@@ -1082,7 +1070,7 @@ s32 fun_0800294c()
 {
     if ((DAT_0200000c & 0x80) != 0)
     {
-        fun_0800244c();
+        Serial_StartTransfer();
     }
     return 0;
 }

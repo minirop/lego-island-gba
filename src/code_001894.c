@@ -1,4 +1,4 @@
-#include "types.h"
+#include "gba.h"
 
 __attribute__((naked)) void fun_08001894()
 {

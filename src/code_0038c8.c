@@ -1691,6 +1691,38 @@ DAT_080044cc:\n\
     .word 0x020000E8\n\
     ");
 }
+
+#ifdef NONMATCHING
+// matches with old_agbcc
+// https://www.decomp.me/scratch/7lW4B
+void fun_080044d0()
+{
+    u16* ptr;
+    u16 i;
+
+    if (DAT_02007f60 != 0)
+    {
+        if (DAT_02007f60 == 1)
+        {
+            for (i = 0; i < DAT_02005cf8; i++)
+            {
+                ptr = DAT_03001800[i];
+                ptr[16] = ptr[3] * 0x4000 + ptr[8];
+            }
+        }
+
+        if (DAT_02007f60 == 2)
+        {
+            for (i = 0; i < DAT_02005cf8; i++)
+            {
+                ptr = DAT_03001800[i];
+                ptr[16] = ptr[3] * 0x4000 + (-ptr[2] + 0x400);
+            }
+        }
+        fun_08045030(DAT_03001800, DAT_02005cf8, 4, fun_08004ac4);
+    }
+}
+#else
 __attribute__((naked)) void fun_080044d0()
 {
     asm("\n\
@@ -1788,6 +1820,7 @@ DAT_08004578:\n\
     .word 0xFFFFFC00\n\
     ");
 }
+#endif
 
 void fun_0800457c()
 {

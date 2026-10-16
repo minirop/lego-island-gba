@@ -607,28 +607,33 @@ void fun_08000d1c()
 {
     u32 tmp;
 
-    if (DAT_02005750[0] != 0) {
-        FUN_0800294c();
+    if (DAT_02005750[0] != 0)
+    {
+        fun_0800294c();
     }
 
     tmp = DAT_02000000++;
-    if (!tmp) {
-        FUN_080496e8();
-        FUN_0803f0d0();
+    if (!tmp)
+    {
+        fun_080496e8();
+        fun_0803f0d0();
     }
     DAT_02000000--;
     DAT_020025f4++;
 
-    if (levels[current_level]->unk34 != NULL) {
+    if (levels[current_level]->unk34 != NULL)
+    {
         levels[current_level]->unk34();
     }
     DAT_02002548++;
 
-    if (DAT_020025e0.unk00 != 5) {
+    if (DAT_020025e0.unk00 != 5)
+    {
         fun_080020a4();
         DAT_020025e0.unk1c++;
         fun_080020a4();
-        if (DAT_020025e0.unk1c == 0x3c) {
+        if (DAT_020025e0.unk1c == 0x3c)
+        {
             fun_080020a4();
             DAT_020025e0.unk1c = 0;
             fun_080020a4();
@@ -723,8 +728,10 @@ DAT_08000db8:\n\
 inline u16 fun_080012e8(u16 param_1)
 {
     u16 i;
-    for (i = 0; i < levels_count; ++i) {
-        if (levels[i]->unk08 == param_1) {
+    for (i = 0; i < levels_count; ++i)
+    {
+        if (levels[i]->unk08 == param_1)
+        {
             return i;
         }
     }
@@ -735,13 +742,16 @@ void fun_08000dbc()
 {
     u16 level_id = fun_080012e8(0xbb9);
 
-    if (level_id <= levels_count) {
+    if (level_id <= levels_count)
+    {
         s32 ret;
         levels[level_id]->unk24();
 
-        do {
+        do
+        {
             fun_08002c44();
-            if (DAT_02005750[0] != 0) {
+            if (DAT_02005750[0] != 0)
+            {
                 DAT_02005750[1] = fun_080026f0();
                 DAT_02005750[6] = fun_08002968();
                 DAT_02005750[2] = fun_08002878();
@@ -1429,7 +1439,8 @@ DAT_080012bc:\n\
 void fun_080012c0(u16 param_1)
 {
     fun_08002d34(1, 0, param_1);
-    while (true) {
+    while (true)
+    {
         if (fun_08002dd8() == 0)
             break;
         fun_08002bcc();

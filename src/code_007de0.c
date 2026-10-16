@@ -1,5 +1,5 @@
 #include "functions.h"
-#include "types.h"
+#include "gba.h"
 #include "variables.h"
 
 s32 fun_08007de0()

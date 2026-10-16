@@ -1,4 +1,5 @@
 #include "functions.h"
+#include "gba.h"
 #include "variables.h"
 
 const LevelInfo confirmation_screen = {

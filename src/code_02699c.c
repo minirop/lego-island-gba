@@ -1,5 +1,4 @@
 #include "functions.h"
-#include "types.h"
 
 __attribute__((naked)) void fun_0802699c()
 {

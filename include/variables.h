@@ -1,7 +1,7 @@
 #ifndef VARIABLES_H
 #define VARIABLES_H
 
-#include "types.h"
+#include "gba.h"
 
 extern Callback DAT_020057e4;
 extern Callback DAT_020057f0[14];

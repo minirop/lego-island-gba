@@ -541,7 +541,8 @@
 
 // BLDCNT
 
-enum {
+enum
+{
     BLEND_EFFECT_NONE = 0,
     BLEND_EFFECT_ALPHA = 1,
     BLEND_EFFECT_BRIGHTEN = 2,

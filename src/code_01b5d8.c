@@ -1,5 +1,4 @@
 #include "functions.h"
-#include "types.h"
 
 __attribute__((naked)) s32 fun_0801b5d8()
 {
