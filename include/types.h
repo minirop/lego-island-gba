@@ -83,10 +83,23 @@ typedef struct struct_08669620
     u32 unk20[3];
 } struct_08669620;
 
+typedef struct struct_020025e0
+{
+    u16 unk00;
+    u8 padding[0x16];
+    u32 unk18;
+    u8 unk1c;
+} struct_020025e0;
+
 typedef struct struct_02009b10
 {
     const LevelInfo* info;
     void* ptr;
 } struct_02009b10;
+
+typedef struct struct_02002620
+{
+    u32 pad[0x3A8];
+} struct_02002620;
 
 #endif

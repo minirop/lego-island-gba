@@ -806,7 +806,15 @@ DAT_080020a0:\n\
     .word 0x08049790\n\
     ");
 }
-__attribute__((naked)) void fun_080020a4()
+
+#ifdef OLD_AGBCC
+struct_02002620* fun_080020a4()
+{
+    return DAT_02002620[DAT_02005570];
+}
+#else
+__attribute__((naked)) struct_02002620* fun_080020a4()
+
 {
     asm("\n\
     ldr         r1,DAT_080020b4\n\
@@ -823,6 +831,8 @@ DAT_080020b8:\n\
     .word 0x02002620\n\
     ");
 }
+#endif
+
 __attribute__((naked)) void fun_080020bc()
 {
     asm("\n\
@@ -928,7 +938,8 @@ void fun_08002160()
 
     fun_08001aa8();
     iVar1 = strcmp("SWD", (const char*)&DAT_02005200);
-    if (iVar1 != 0) {
+    if (iVar1 != 0)
+    {
         fun_08000584();
         fun_08001b9c();
     }

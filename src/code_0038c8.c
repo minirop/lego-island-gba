@@ -1692,7 +1692,7 @@ DAT_080044cc:\n\
     ");
 }
 
-#ifdef NONMATCHING
+#ifdef OLD_AGBCC
 // matches with old_agbcc
 // https://www.decomp.me/scratch/7lW4B
 void fun_080044d0()

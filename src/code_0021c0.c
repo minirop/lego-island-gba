@@ -740,7 +740,7 @@ DAT_080026ec:\n\
 }
 const char* dummy_080497b0 = "Multiplayer already initialised";
 
-__attribute__((naked)) void fun_080026f0()
+__attribute__((naked)) u16 fun_080026f0()
 {
     asm("\n\
     push        {r4,r5,lr}\n\
@@ -954,7 +954,7 @@ s32 fun_08002844()
     return 1;
 }
 
-__attribute__((naked)) void fun_08002878()
+__attribute__((naked)) u16 fun_08002878()
 {
     asm("\n\
     ldr         r0,DAT_0800288c\n\

@@ -600,7 +600,7 @@ DAT_08000d18:\n\
     ");
 }
 
-#ifdef NONMATCHING
+#ifdef OLD_AGBCC
 // matches with old_agbcc
 // https://www.decomp.me/scratch/xmWTA
 void fun_08000d1c()
@@ -629,15 +629,11 @@ void fun_08000d1c()
 
     if (DAT_020025e0.unk00 != 5)
     {
-        fun_080020a4();
-        DAT_020025e0.unk1c++;
-        fun_080020a4();
-        if (DAT_020025e0.unk1c == 0x3c)
+        fun_080020a4()->unk1c++;
+        if (fun_080020a4()->unk1c == 0x3c)
         {
-            fun_080020a4();
-            DAT_020025e0.unk1c = 0;
-            fun_080020a4();
-            DAT_020025e0.unk18++;
+            fun_080020a4()->unk1c = 0;
+            fun_080020a4()->unk18++;
         }
     }
 }
@@ -1247,7 +1243,7 @@ DAT_0800116c:\n\
     ");
 }
 
-void fun_08001170(s32 param_1)
+void fun_08001170(Callback param_1)
 {
     DAT_020025f0 = param_1;
 }
@@ -1357,83 +1353,37 @@ DAT_08001228:\n\
     ");
 }
 
-__attribute__((naked)) void fun_0800122c()
+void fun_0800122c(u16 param_1)
 {
-    asm("\n\
-    push        {r4,r5,lr}\n\
-    add         r2,r0,#0x0\n\
-    lsl         r2,r2,#0x10\n\
-    lsr         r2,r2,#0x10\n\
-    mov         r4,#0x1\n\
-    mov         r0,#0x0\n\
-    mov         r1,#0x1\n\
-    bl          fun_08002d34\n\
-    bl          fun_08002c44\n\
-    ldr         r5,DAT_08001248\n\
-    b           LAB_0800129a\n\
-\n\
-.space 2\n\
-\n\
-DAT_08001248:\n\
-    .word 0x08756AEC\n\
-LAB_0800124c:\n\
-    bl          fun_08002bcc\n\
-    bl          fun_08002df8\n\
-    bl          fun_080046a4\n\
-    cmp         r4,#0x0\n\
-    beq         LAB_08001296\n\
-    ldr         r0,DAT_080012ac\n\
-    ldrh        r0,[r0,#0x0]\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08001296\n\
-    ldr         r0,DAT_080012b0\n\
-    ldr         r0,[r0,#0x0]\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08001270\n\
-    bl          _call_via_r0\n\
-LAB_08001270:\n\
-    ldr         r0,DAT_080012b4\n\
-    ldrh        r0,[r0,#0x0]\n\
-    lsl         r0,r0,#0x2\n\
-    add         r0,r0,r5\n\
-    ldr         r0,[r0,#0x0]\n\
-    ldr         r0,[r0,#0x2c]\n\
-    bl          _call_via_r0\n\
-    ldr         r0,DAT_080012b8\n\
-    ldrh        r0,[r0,#0x0]\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_0800128c\n\
-    bl          fun_08000b44\n\
-LAB_0800128c:\n\
-    ldr         r1,DAT_080012bc\n\
-    ldrh        r0,[r1,#0x0]\n\
-    add         r0,#0x1\n\
-    strh        r0,[r1,#0x0]\n\
-    mov         r4,#0x0\n\
-LAB_08001296:\n\
-    bl          fun_08003cfc\n\
-LAB_0800129a:\n\
-    bl          fun_08002dd8\n\
-    lsl         r0,r0,#0x10\n\
-    cmp         r0,#0x0\n\
-    bne         LAB_0800124c\n\
-    pop         {r4,r5}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_080012ac:\n\
-    .word 0x020025E0\n\
-DAT_080012b0:\n\
-    .word 0x020025F0\n\
-DAT_080012b4:\n\
-    .word 0x02002560\n\
-DAT_080012b8:\n\
-    .word 0x020025D8\n\
-DAT_080012bc:\n\
-    .word 0x020025C4\n\
-    ");
+    s32 cond = 1;
+    fun_08002d34(0, 1, param_1);
+    fun_08002c44();
+
+    while (fun_08002dd8())
+    {
+        fun_08002bcc();
+        fun_08002df8();
+        fun_080046a4();
+
+        if (cond && DAT_020025e0.unk00 != 0)
+        {
+            if (DAT_020025f0 != NULL)
+            {
+                DAT_020025f0();
+            }
+
+            levels[current_level]->unk2c();
+
+            if (DAT_020025d8)
+            {
+                fun_08000b44();
+            }
+            DAT_020025c4++;
+            cond = false;
+        }
+
+        fun_08003cfc();
+    }
 }
 
 void fun_080012c0(u16 param_1)
