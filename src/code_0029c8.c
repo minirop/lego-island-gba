@@ -197,29 +197,13 @@ void fun_08002bb4(Callback param_1)
     }
 }
 
-__attribute__((naked)) void fun_08002bcc()
+void fun_08002bcc()
 {
-    asm("\n\
-    ldr         r0,DAT_08002be8\n\
-    ldrh        r2,[r0,#0x0]\n\
-    ldr         r1,DAT_08002bec\n\
-    and         r1,r2\n\
-    strh        r1,[r0,#0x0]\n\
-    add         r2,r0,#0x0\n\
-    mov         r3,#0x1\n\
-LAB_08002bda:\n\
-    svc         0x2\n\
-    ldrh        r1,[r2,#0x0]\n\
-    add         r0,r3,#0x0\n\
-    and         r0,r1\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08002bda\n\
-    bx          lr\n\
-DAT_08002be8:\n\
-    .word 0x02005CD8\n\
-DAT_08002bec:\n\
-    .word 0x0000FFFE\n\
-    ");
+    DAT_02005cd8 &= 0xFFFE;
+    do
+    {
+        asm("svc 2");
+    } while ((DAT_02005cd8 & 1) == 0);
 }
 
 void fun_08002bf0()

@@ -471,8 +471,6 @@ DAT_08001e2c:\n\
     .word 0x000007E6\n\
     ");
 }
-const char* dummy_08049790 = "GOGOMONKEYX";
-const char* dummy_0804979c = "MultiSioSync010316";
 
 __attribute__((naked)) void fun_08001e30()
 {
@@ -727,6 +725,7 @@ void fun_0800200c()
     memcpy(&fun_080020a4()->unk08, "GOGOMONKEYX", 12);
     fun_08001b9c();
 }
+const char* dummy_0804979c = "MultiSioSync010316";
 
 __attribute__((naked)) void fun_08002038()
 {

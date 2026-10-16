@@ -2212,28 +2212,10 @@ DAT_08005b90:\n\
     .word 0x0000FFF3\n\
     ");
 }
-__attribute__((naked)) void fun_08005b94()
+
+u16 fun_08005b94(u16 param_1, u16 param_2, u16 param_3)
 {
-    asm("\n\
-    lsl        r0,r0,#0x10\n\
-    lsl        r1,r1,#0x10\n\
-    lsr        r1,r1,#0x10\n\
-    lsl        r2,r2,#0x10\n\
-    ldr        r3,PTR_DAT_08005bb4\n\
-    ldrh       r3,[r3,#0x0]\n\
-    mul        r1,r3\n\
-    lsr        r0,r0,#0xf\n\
-    add        r1,r1,r0\n\
-    ldr        r0,PTR_DAT_08005bb8\n\
-    lsr        r2,r2,#0xe\n\
-    add        r2,r2,r0\n\
-    ldr        r0,[r2,#0x0]\n\
-    add        r0,r0,r1\n\
-    ldrh       r0,[r0,#0x0]\n\
-    bx         lr\n\
-PTR_DAT_08005bb4:\n\
-    .word      DAT_02009040\n\
-PTR_DAT_08005bb8:\n\
-    .word      DAT_02007f80\n\
-    ");
+    u32 tmp = ((u32)(DAT_02009040 * param_2));
+    tmp += param_1 * 2;
+    return (*(u16*)&DAT_02007f80[param_3][tmp]);
 }

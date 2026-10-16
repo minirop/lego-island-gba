@@ -117,253 +117,69 @@ DAT_08005c78:\n\
     .word 0x02007FA0\n\
     ");
 }
-__attribute__((naked)) void fun_08005c7c()
+
+void fun_08005c7c(u32 param_1, u32 param_2, u16* param_3)
 {
-    asm("\n\
-    push        {r4,lr}\n\
-    add         r3,r2,#0x0\n\
-    ldr         r2,DAT_08005cd4\n\
-    ldrh        r2,[r2,#0x0]\n\
-    mul         r1,r2\n\
-    lsl         r0,r0,#0x1\n\
-    add         r2,r1,r0\n\
-    ldr         r4,DAT_08005cd8\n\
-    ldr         r1,[r4,#0x0]\n\
-    cmp         r1,#0x0\n\
-    beq         LAB_08005c9c\n\
-    add         r1,r1,r2\n\
-    ldr         r0,DAT_08005cdc\n\
-    ldrh        r1,[r1,#0x0]\n\
-    and         r0,r1\n\
-    strh        r0,[r3,#0x0]\n\
-LAB_08005c9c:\n\
-    ldr         r1,[r4,#0x4]\n\
-    cmp         r1,#0x0\n\
-    beq         LAB_08005cac\n\
-    add         r1,r1,r2\n\
-    ldr         r0,DAT_08005cdc\n\
-    ldrh        r1,[r1,#0x0]\n\
-    and         r0,r1\n\
-    strh        r0,[r3,#0x2]\n\
-LAB_08005cac:\n\
-    ldr         r1,[r4,#0x8]\n\
-    cmp         r1,#0x0\n\
-    beq         LAB_08005cbc\n\
-    add         r1,r1,r2\n\
-    ldr         r0,DAT_08005cdc\n\
-    ldrh        r1,[r1,#0x0]\n\
-    and         r0,r1\n\
-    strh        r0,[r3,#0x4]\n\
-LAB_08005cbc:\n\
-    ldr         r1,[r4,#0xc]\n\
-    cmp         r1,#0x0\n\
-    beq         LAB_08005ccc\n\
-    add         r1,r1,r2\n\
-    ldr         r0,DAT_08005cdc\n\
-    ldrh        r1,[r1,#0x0]\n\
-    and         r0,r1\n\
-    strh        r0,[r3,#0x6]\n\
-LAB_08005ccc:\n\
-    pop         {r4}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_08005cd4:\n\
-    .word 0x02009040\n\
-DAT_08005cd8:\n\
-    .word 0x02007F80\n\
-DAT_08005cdc:\n\
-    .word 0x0000F3FF\n\
-    ");
-}
-__attribute__((naked)) void fun_08005ce0()
-{
-    asm("\n\
-    push        {r4,r5,r6,lr}\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r4,r0,#0x10\n\
-    add         r6,r4,#0x0\n\
-    lsl         r1,r1,#0x10\n\
-    lsr         r3,r1,#0x10\n\
-    add         r5,r3,#0x0\n\
-    ldr         r2,DAT_08005d3c\n\
-    ldr         r0,[r2,#0x0]\n\
-    mov         r1,#0x1\n\
-    and         r0,r1\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08005d02\n\
-    ldr         r0,DAT_08005d40\n\
-    strh        r4,[r0,#0x0]\n\
-    add         r0,#0x2\n\
-    strh        r3,[r0,#0x0]\n\
-LAB_08005d02:\n\
-    ldr         r2,[r2,#0x0]\n\
-    mov         r0,#0x2\n\
-    and         r0,r2\n\
-    add         r1,r2,#0x0\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08005d16\n\
-    ldr         r0,DAT_08005d44\n\
-    strh        r4,[r0,#0x0]\n\
-    add         r0,#0x2\n\
-    strh        r3,[r0,#0x0]\n\
-LAB_08005d16:\n\
-    mov         r0,#0x4\n\
-    and         r1,r0\n\
-    cmp         r1,#0x0\n\
-    beq         LAB_08005d26\n\
-    ldr         r0,DAT_08005d48\n\
-    strh        r4,[r0,#0x0]\n\
-    add         r0,#0x2\n\
-    strh        r3,[r0,#0x0]\n\
-LAB_08005d26:\n\
-    mov         r0,#0x8\n\
-    and         r2,r0\n\
-    cmp         r2,#0x0\n\
-    beq         LAB_08005d36\n\
-    ldr         r0,DAT_08005d4c\n\
-    strh        r6,[r0,#0x0]\n\
-    add         r0,#0x2\n\
-    strh        r5,[r0,#0x0]\n\
-LAB_08005d36:\n\
-    pop         {r4,r5,r6}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-DAT_08005d3c:\n\
-    .word 0x02007FB4\n\
-DAT_08005d40:\n\
-    .word 0x04000010\n\
-DAT_08005d44:\n\
-    .word 0x04000014\n\
-DAT_08005d48:\n\
-    .word 0x04000018\n\
-DAT_08005d4c:\n\
-    .word 0x0400001C\n\
-    ");
+    u32 index = DAT_02009040 * param_2 + param_1 * 2;
+
+#define LOOP(i)                                                 \
+    if (DAT_02007f80[i])                                        \
+    {                                                           \
+        param_3[i] = (*(u16*)&DAT_02007f80[i][index]) & 0xf3ff; \
+    }
+
+    LOOP(0)
+    LOOP(1)
+    LOOP(2)
+    LOOP(3)
+
+#undef LOOP
 }
 
-#ifdef NONMATCHING
-// https://www.decomp.me/scratch/dNBAK
+void fun_08005ce0(u16 param_1, u16 param_2)
+{
+    if ((DAT_02007fb4 & 1) != 0)
+    {
+        REG_BG0HOFS = param_1;
+        REG_BG0VOFS = param_2;
+    }
+    if ((DAT_02007fb4 & 2) != 0)
+    {
+        REG_BG1HOFS = param_1;
+        REG_BG1VOFS = param_2;
+    }
+    if ((DAT_02007fb4 & 4) != 0)
+    {
+        REG_BG2HOFS = param_1;
+        REG_BG2VOFS = param_2;
+    }
+    if ((DAT_02007fb4 & 8) != 0)
+    {
+        REG_BG3HOFS = param_1;
+        REG_BG3VOFS = param_2;
+    }
+}
+
+static inline void thing(s32 val)
+{
+    fun_08002bcc();
+    DmaFill16(3, val, BG_PLTT, BG_PLTT_SIZE);
+}
+
 s32 fun_08005d50()
 {
-    s16 unk_24[2];
-    s16 unk_20[2];
-    unk_24[0] = 0;
-    DmaSet(3, unk_24, VRAM, 0x8100c000);
-    unk_24[0] = 0;
-    DmaSet(3, unk_24, BG_PLTT_SIZE, 0x81000200);
+    DmaFill16(3, 0, VRAM, VRAM_SIZE);
+    DmaFill16(3, 0, PLTT, PLTT_SIZE);
     REG_DISPCNT = 0x1f04;
     DAT_02009ad4 = 0;
-    fun_08002bcc();
-    unk_20[0] = 0;
-    DmaSet(3, unk_20, BG_PLTT_SIZE, 0x81000100);
-    LZ77UnCompVram(DAT_08756d44, (void*)VRAM);
+    thing(0);
+    LZ77UnCompVram(logo_screen_images[0], (void*)VRAM);
     fun_08002bcc();
     REG_DISPCNT = 0x1f04;
-    DmaCopy16(3, DAT_08756d50, BG_PLTT_SIZE, 0x200);
+    DmaCopy16(3, logo_screen_palettes[0], BG_PLTT, BG_PLTT_SIZE);
     DAT_02009ad0 = 0xb4;
     return 0;
 }
-#else
-__attribute__((naked)) s32 fun_08005d50()
-{
-    asm("\n\
-    push        {r4,r5,r6,lr}\n\
-    mov         r6,r10\n\
-    mov         r5,r9\n\
-    mov         r4,r8\n\
-    push        {r4,r5,r6}\n\
-    sub         sp,#0x8\n\
-    mov         r0,sp\n\
-    mov         r1,#0x0\n\
-    strh        r1,[r0,#0x0]\n\
-    ldr         r4,DAT_08005de4\n\
-    str         r0,[r4,#0x0]\n\
-    mov         r0,#0xc0\n\
-    lsl         r0,r0,#0x13\n\
-    mov         r10,r0\n\
-    str         r0,[r4,#0x4]\n\
-    ldr         r0,DAT_08005de8\n\
-    str         r0,[r4,#0x8]\n\
-    ldr         r0,[r4,#0x8]\n\
-    mov         r0,sp\n\
-    strh        r1,[r0,#0x0]\n\
-    str         r0,[r4,#0x0]\n\
-    mov         r6,#0xa0\n\
-    lsl         r6,r6,#0x13\n\
-    str         r6,[r4,#0x4]\n\
-    ldr         r0,DAT_08005dec\n\
-    str         r0,[r4,#0x8]\n\
-    ldr         r0,[r4,#0x8]\n\
-    mov         r2,#0x80\n\
-    lsl         r2,r2,#0x13\n\
-    mov         r9,r2\n\
-    ldr         r0,DAT_08005df0\n\
-    mov         r8,r0\n\
-    strh        r0,[r2,#0x0]\n\
-    ldr         r0,DAT_08005df4\n\
-    strb        r1,[r0,#0x0]\n\
-    mov         r5,#0x0\n\
-    bl          fun_08002bcc\n\
-    add         r0,sp,#0x4\n\
-    strh        r5,[r0,#0x0]\n\
-    str         r0,[r4,#0x0]\n\
-    str         r6,[r4,#0x4]\n\
-    ldr         r0,DAT_08005df8\n\
-    str         r0,[r4,#0x8]\n\
-    ldr         r0,[r4,#0x8]\n\
-    ldr         r0,DAT_08005dfc\n\
-    ldr         r0,[r0,#0x0]\n\
-    mov         r1,r10\n\
-    bl          LZ77UnCompVram\n\
-    bl          fun_08002bcc\n\
-    mov         r2,r8\n\
-    mov         r1,r9\n\
-    strh        r2,[r1,#0x0]\n\
-    ldr         r0,DAT_08005e00\n\
-    ldr         r0,[r0,#0x0]\n\
-    str         r0,[r4,#0x0]\n\
-    str         r6,[r4,#0x4]\n\
-    ldr         r0,DAT_08005e04\n\
-    str         r0,[r4,#0x8]\n\
-    ldr         r0,[r4,#0x8]\n\
-    ldr         r1,DAT_08005e08\n\
-    mov         r0,#0xb4\n\
-    strh        r0,[r1,#0x0]\n\
-    mov         r0,#0x0\n\
-    add         sp,#0x8\n\
-    pop         {r3,r4,r5}\n\
-    mov         r8,r3\n\
-    mov         r9,r4\n\
-    mov         r10,r5\n\
-    pop         {r4,r5,r6}\n\
-    pop         {r1}\n\
-    bx          r1\n\
-DAT_08005de4:\n\
-    .word 0x040000D4\n\
-DAT_08005de8:\n\
-    .word 0x8100C000\n\
-DAT_08005dec:\n\
-    .word 0x81000200\n\
-DAT_08005df0:\n\
-    .word 0x00001F04\n\
-DAT_08005df4:\n\
-    .word 0x02009AD4\n\
-DAT_08005df8:\n\
-    .word 0x81000100\n\
-DAT_08005dfc:\n\
-    .word 0x08756D44\n\
-DAT_08005e00:\n\
-    .word 0x08756D50\n\
-DAT_08005e04:\n\
-    .word 0x80000100\n\
-DAT_08005e08:\n\
-    .word 0x02009AD0\n\
-    ");
-}
-#endif
 
 s32 fun_08005e0c()
 {
@@ -396,17 +212,17 @@ s32 fun_08005e0c()
         DmaFill16(3, 0, BG_PLTT, BG_PLTT_SIZE);
         if ((index & 1) != 0)
         {
-            LZ77UnCompVram(DAT_08756d44[index], BG_SCREEN_ADDR(20)); // unsure if BG_SCREEN_ADDR
+            LZ77UnCompVram(logo_screen_images[index], BG_SCREEN_ADDR(20)); // unsure if BG_SCREEN_ADDR
             fun_08002bcc();
             REG_DISPCNT = 0x1f14;
-            DmaCopy16(3, DAT_08756d50[index], BG_PLTT, BG_PLTT_SIZE);
+            DmaCopy16(3, logo_screen_palettes[index], BG_PLTT, BG_PLTT_SIZE);
         }
         else
         {
-            LZ77UnCompVram(DAT_08756d44[index], BG_SCREEN_ADDR(0)); // unsure if BG_SCREEN_ADDR
+            LZ77UnCompVram(logo_screen_images[index], BG_SCREEN_ADDR(0)); // unsure if BG_SCREEN_ADDR
             fun_08002bcc();
             REG_DISPCNT = 0x1f04;
-            DmaCopy16(3, DAT_08756d50[index], BG_PLTT, BG_PLTT_SIZE);
+            DmaCopy16(3, logo_screen_palettes[index], BG_PLTT, BG_PLTT_SIZE);
         }
         DAT_02009ad0 = 0xb4;
     }
@@ -425,17 +241,17 @@ void fun_08005f0c(u8 param_1)
     DmaFill16(3, 0, BG_PLTT, BG_PLTT_SIZE);
     if ((param_1 & 1) != 0)
     {
-        LZ77UnCompVram(DAT_08756d44[param_1], (void*)0x0600a000);
+        LZ77UnCompVram(logo_screen_images[param_1], BG_SCREEN_ADDR(20));
         fun_08002bcc();
         REG_DISPCNT = 0x1f14;
-        DmaCopy16(3, DAT_08756d50[param_1], BG_PLTT, BG_PLTT_SIZE);
+        DmaCopy16(3, logo_screen_palettes[param_1], BG_PLTT, BG_PLTT_SIZE);
     }
     else
     {
-        LZ77UnCompVram(DAT_08756d44[param_1], (void*)0x06000000);
+        LZ77UnCompVram(logo_screen_images[param_1], BG_SCREEN_ADDR(0));
         fun_08002bcc();
         REG_DISPCNT = 0x1f04;
-        DmaCopy16(3, DAT_08756d50[param_1], BG_PLTT, BG_PLTT_SIZE);
+        DmaCopy16(3, logo_screen_palettes[param_1], BG_PLTT, BG_PLTT_SIZE);
     }
 }
 

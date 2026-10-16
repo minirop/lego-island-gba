@@ -463,6 +463,7 @@ DAT_08006480:\n\
     .word 0x00001F04\n\
     ");
 }
+
 __attribute__((naked)) s32 fun_08006484()
 {
     asm("\n\
@@ -1025,7 +1026,8 @@ s32 fun_080068b0()
 
 void fun_080068d4(void* param_1)
 {
-    if (translated_title_images[selected_language] != NULL) {
+    if (translated_title_images[selected_language] != NULL)
+    {
         LZ77UnCompVram(translated_title_images[selected_language],
             (param_1 + SCREEN_OFFSET_TRANSLATED_TITLE));
     }
