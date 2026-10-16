@@ -563,6 +563,12 @@ DAT_08004abc:\n\
     .word 0x08049CD0\n\
 DAT_08004ac0:\n\
     .word 0x02005CF4\n\
+    ");
+}
+
+__attribute__((naked)) s32 fun_08004ac4(s32* param_1, s32* param_2)
+{
+    asm("\n\
     ldr         r2,[r0,#0x0]\n\
     ldr         r0,[r1,#0x0]\n\
     ldrh        r2,[r2,#0x20]\n\
@@ -583,6 +589,7 @@ LAB_08004ad8:\n\
 \n\
     ");
 }
+
 __attribute__((naked)) void fun_08004adc()
 {
     asm("\n\

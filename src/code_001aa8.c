@@ -807,31 +807,10 @@ DAT_080020a0:\n\
     ");
 }
 
-#ifdef OLD_AGBCC
 struct_02002620* fun_080020a4()
 {
-    return DAT_02002620[DAT_02005570];
+    return &DAT_02002620[DAT_02005570];
 }
-#else
-__attribute__((naked)) struct_02002620* fun_080020a4()
-
-{
-    asm("\n\
-    ldr         r1,DAT_080020b4\n\
-    mov         r0,#0xea\n\
-    lsl         r0,r0,#0x4\n\
-    ldrb        r1,[r1,#0x0]\n\
-    mul         r0,r1\n\
-    ldr         r1,DAT_080020b8\n\
-    add         r0,r0,r1\n\
-    bx          lr\n\
-DAT_080020b4:\n\
-    .word 0x02005570\n\
-DAT_080020b8:\n\
-    .word 0x02002620\n\
-    ");
-}
-#endif
 
 __attribute__((naked)) void fun_080020bc()
 {

@@ -1,3 +1,4 @@
+#include "functions.h"
 #include "variables.h"
 
 __attribute__((naked)) void fun_080038c8()
@@ -304,7 +305,7 @@ DAT_08003afc:\n\
     .word 0x08049C98\n\
     ");
 }
-__attribute__((naked)) void fun_08003b00()
+__attribute__((naked)) void fun_08003b00(u16* param_1)
 {
     asm("\n\
     push        {r4,r5,r6,r7,lr}\n\
@@ -1692,9 +1693,6 @@ DAT_080044cc:\n\
     ");
 }
 
-#ifdef OLD_AGBCC
-// matches with old_agbcc
-// https://www.decomp.me/scratch/7lW4B
 void fun_080044d0()
 {
     u16* ptr;
@@ -1719,108 +1717,9 @@ void fun_080044d0()
                 ptr[16] = ptr[3] * 0x4000 + (-ptr[2] + 0x400);
             }
         }
-        fun_08045030(DAT_03001800, DAT_02005cf8, 4, fun_08004ac4);
+        qsort(DAT_03001800, DAT_02005cf8, 4, fun_08004ac4);
     }
 }
-#else
-__attribute__((naked)) void fun_080044d0()
-{
-    asm("\n\
-    push        {r4,r5,r6,r7,lr}\n\
-    mov         r7,r9\n\
-    mov         r6,r8\n\
-    push        {r6,r7}\n\
-    ldr         r0,DAT_08004568\n\
-    ldrh        r1,[r0,#0x0]\n\
-    add         r6,r0,#0x0\n\
-    cmp         r1,#0x0\n\
-    beq         LAB_0800455a\n\
-    ldr         r4,DAT_0800456c\n\
-    ldr         r0,DAT_08004570\n\
-    mov         r12,r0\n\
-    ldr         r7,DAT_08004574\n\
-    mov         r8,r7\n\
-    cmp         r1,#0x1\n\
-    bne         LAB_08004518\n\
-    mov         r3,#0x0\n\
-    add         r5,r4,#0x0\n\
-    ldrh        r0,[r4,#0x0]\n\
-    cmp         r3,r0\n\
-    bcs         LAB_08004518\n\
-    mov         r1,r12\n\
-LAB_080044fc:\n\
-    lsl         r0,r3,#0x2\n\
-    add         r0,r0,r1\n\
-    ldr         r2,[r0,#0x0]\n\
-    ldrh        r7,[r2,#0x6]\n\
-    lsl         r0,r7,#0xe\n\
-    ldrh        r7,[r2,#0x10]\n\
-    add         r0,r7,r0\n\
-    strh        r0,[r2,#0x20]\n\
-    add         r0,r3,#0x1\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r3,r0,#0x10\n\
-    ldrh        r0,[r5,#0x0]\n\
-    cmp         r3,r0\n\
-    bcc         LAB_080044fc\n\
-LAB_08004518:\n\
-    ldrh        r6,[r6,#0x0]\n\
-    cmp         r6,#0x2\n\
-    bne         LAB_0800454e\n\
-    mov         r3,#0x0\n\
-    mov         r9,r4\n\
-    ldrh        r1,[r4,#0x0]\n\
-    cmp         r3,r1\n\
-    bcs         LAB_0800454e\n\
-    ldr         r6,DAT_08004570\n\
-    ldr         r7,DAT_08004578\n\
-    add         r5,r7,#0x0\n\
-LAB_0800452e:\n\
-    lsl         r0,r3,#0x2\n\
-    add         r0,r0,r6\n\
-    ldr         r2,[r0,#0x0]\n\
-    ldrh        r1,[r2,#0x6]\n\
-    lsl         r0,r1,#0xe\n\
-    ldrh        r7,[r2,#0x4]\n\
-    add         r1,r5,r7\n\
-    sub         r0,r0,r1\n\
-    strh        r0,[r2,#0x20]\n\
-    add         r0,r3,#0x1\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r3,r0,#0x10\n\
-    mov         r0,r9\n\
-    ldrh        r0,[r0,#0x0]\n\
-    cmp         r3,r0\n\
-    bcc         LAB_0800452e\n\
-LAB_0800454e:\n\
-    ldrh        r1,[r4,#0x0]\n\
-    mov         r0,r12\n\
-    mov         r2,#0x4\n\
-    mov         r3,r8\n\
-    bl          qsort\n\
-LAB_0800455a:\n\
-    pop         {r3,r4}\n\
-    mov         r8,r3\n\
-    mov         r9,r4\n\
-    pop         {r4,r5,r6,r7}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_08004568:\n\
-    .word 0x02007F60\n\
-DAT_0800456c:\n\
-    .word 0x02005CF8\n\
-DAT_08004570:\n\
-    .word 0x03001800\n\
-DAT_08004574:\n\
-    .word 0x08004AC5\n\
-DAT_08004578:\n\
-    .word 0xFFFFFC00\n\
-    ");
-}
-#endif
 
 void fun_0800457c()
 {

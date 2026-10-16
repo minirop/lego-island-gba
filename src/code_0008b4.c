@@ -600,9 +600,6 @@ DAT_08000d18:\n\
     ");
 }
 
-#ifdef OLD_AGBCC
-// matches with old_agbcc
-// https://www.decomp.me/scratch/xmWTA
 void fun_08000d1c()
 {
     u32 tmp;
@@ -637,90 +634,6 @@ void fun_08000d1c()
         }
     }
 }
-#else
-__attribute__((naked)) void fun_08000d1c()
-{
-    asm("\n\
-    push        {r4,lr}\n\
-    ldr         r0,DAT_08000da0\n\
-    ldrh        r0,[r0,#0x0]\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08000d2a\n\
-    bl          fun_0800294c\n\
-LAB_08000d2a:\n\
-    ldr         r4,DAT_08000da4\n\
-    ldr         r0,[r4,#0x0]\n\
-    add         r1,r0,#0x0\n\
-    add         r0,#0x1\n\
-    str         r0,[r4,#0x0]\n\
-    cmp         r1,#0x0\n\
-    bne         LAB_08000d40\n\
-    bl          fun_080496e8\n\
-    bl          fun_0803f0d0\n\
-LAB_08000d40:\n\
-    ldr         r0,[r4,#0x0]\n\
-    sub         r0,#0x1\n\
-    str         r0,[r4,#0x0]\n\
-    ldr         r1,DAT_08000da8\n\
-    ldrb        r0,[r1,#0x0]\n\
-    add         r0,#0x1\n\
-    strb        r0,[r1,#0x0]\n\
-    ldr         r1,DAT_08000dac\n\
-    ldr         r0,DAT_08000db0\n\
-    ldrh        r0,[r0,#0x0]\n\
-    lsl         r0,r0,#0x2\n\
-    add         r0,r0,r1\n\
-    ldr         r0,[r0,#0x0]\n\
-    ldr         r0,[r0,#0x34]\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08000d64\n\
-    bl          _call_via_r0\n\
-LAB_08000d64:\n\
-    ldr         r0,DAT_08000db4\n\
-    ldrh        r1,[r0,#0x0]\n\
-    add         r1,#0x1\n\
-    strh        r1,[r0,#0x0]\n\
-    ldr         r0,DAT_08000db8\n\
-    ldrh        r0,[r0,#0x0]\n\
-    cmp         r0,#0x5\n\
-    beq         LAB_08000d9a\n\
-    bl          fun_080020a4\n\
-    ldrb        r1,[r0,#0x1c]\n\
-    add         r1,#0x1\n\
-    strb        r1,[r0,#0x1c]\n\
-    bl          fun_080020a4\n\
-    ldrb        r0,[r0,#0x1c]\n\
-    cmp         r0,#0x3c\n\
-    bne         LAB_08000d9a\n\
-    bl          fun_080020a4\n\
-    mov         r1,#0x0\n\
-    strb        r1,[r0,#0x1c]\n\
-    bl          fun_080020a4\n\
-    ldr         r1,[r0,#0x18]\n\
-    add         r1,#0x1\n\
-    str         r1,[r0,#0x18]\n\
-LAB_08000d9a:\n\
-    pop         {r4}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-DAT_08000da0:\n\
-    .word 0x02005750\n\
-DAT_08000da4:\n\
-    .word 0x02000000\n\
-DAT_08000da8:\n\
-    .word 0x020025F4\n\
-DAT_08000dac:\n\
-    .word 0x08756AEC\n\
-DAT_08000db0:\n\
-    .word 0x02002560\n\
-DAT_08000db4:\n\
-    .word 0x02002548\n\
-DAT_08000db8:\n\
-    .word 0x020025E0\n\
-    ");
-}
-#endif
-
 inline u16 fun_080012e8(u16 param_1)
 {
     u16 i;
@@ -1082,32 +995,11 @@ LAB_0800106e:\n\
     ");
 }
 
-#ifdef NONMATCHING
 void fun_08001070(u16 param_1)
 {
     DAT_020025d8 = param_1;
     fun_08002114();
 }
-#else
-__attribute__((naked)) void fun_08001070(u16 param_1)
-{
-    asm("\n\
-    push        {lr}\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r0,r0,#0x10\n\
-    ldr         r1,DAT_08001084\n\
-    strh        r0,[r1,#0x0]\n\
-    bl          fun_08002114\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_08001084:\n\
-    .word 0x020025D8\n\
-    ");
-}
-#endif
 
 __attribute__((naked)) void fun_08001088()
 {
@@ -1334,6 +1226,7 @@ DAT_08001210:\n\
     ");
 }
 
+// TODO
 __attribute__((naked)) void fun_08001214()
 {
     asm("\n\

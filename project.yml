@@ -732,8 +732,8 @@ build:
     agbcc: /home/minirop/git/fireemblem8u/tools/agbcc
     as: $(DEVKITARM)/bin/arm-none-eabi-as
     asflags: -mcpu=arm7tdmi -mthumb-interwork -I include
-    cc1: $(AGBCC)/bin/agbcc
-    cc1flags: -mthumb-interwork -Wimplicit -Wparentheses -O2 -fhex-asm -fprologue-bugfix
+    cc1: $(AGBCC)/bin/old_agbcc
+    cc1flags: -mthumb-interwork -Wimplicit -Wparentheses -O2 -fhex-asm
     cpp: $(DEVKITARM)/bin/arm-none-eabi-cpp
     cppflags: -I $(AGBCC)/include -iquote include -iquote . -nostdinc -undef
     gfx: isle2-tool

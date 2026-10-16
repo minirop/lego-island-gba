@@ -99,7 +99,11 @@ typedef struct struct_02009b10
 
 typedef struct struct_02002620
 {
-    u32 pad[0x3A8];
+    u16 unk00;
+    u8 padding[0x16];
+    u32 unk18;
+    u8 unk1c;
+    u8 pad[0xE83];
 } struct_02002620;
 
 #endif
