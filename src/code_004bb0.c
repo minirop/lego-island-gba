@@ -1,9 +1,10 @@
-#include "gba.h"
+#include "functions.h"
 #include "variables.h"
 
 void fun_08004bb0(u32 param_1)
 {
-    DmaCopy16(3, param_1, (void*)0x06004000, 0xC000);
+    // random macros that matches
+    DmaCopy16(3, param_1, BG_CHAR_ADDR(1), BG_VRAM_SIZE - 0x4000);
 }
 
 void fun_08004bcc(s32 param_1, u16 param_2)
@@ -264,182 +265,75 @@ DAT_08004da4:\n\
     .word 0x02000384\n\
     ");
 }
-__attribute__((naked)) void fun_08004da8()
+
+void fun_08004da8(struct_fun_08004da8* param_1, u16 param_2)
 {
-    asm("\n\
-    push        {r4,r5,r6,r7,lr}\n\
-    mov         r7,r8\n\
-    push        {r7}\n\
-    add         r5,r0,#0x0\n\
-    lsl         r1,r1,#0x10\n\
-    lsr         r6,r1,#0x10\n\
-    cmp         r6,#0x1\n\
-    beq         LAB_08004de4\n\
-    cmp         r6,#0x1\n\
-    bgt         LAB_08004dc2\n\
-    cmp         r6,#0x0\n\
-    beq         LAB_08004dcc\n\
-    b           LAB_08004e24\n\
-LAB_08004dc2:\n\
-    cmp         r6,#0x2\n\
-    beq         LAB_08004dfc\n\
-    cmp         r6,#0x3\n\
-    beq         LAB_08004e14\n\
-    b           LAB_08004e24\n\
-LAB_08004dcc:\n\
-    ldr         r7,DAT_08004dd8\n\
-    ldr         r4,DAT_08004ddc\n\
-    ldr         r0,DAT_08004de0\n\
-    ldr         r1,[r0,#0x0]\n\
-    mov         r2,#0x21\n\
-    b           LAB_08004e20\n\
-DAT_08004dd8:\n\
-    .word 0x04000008\n\
-DAT_08004ddc:\n\
-    .word 0x02000278\n\
-DAT_08004de0:\n\
-    .word 0x02007FB4\n\
-LAB_08004de4:\n\
-    ldr         r7,DAT_08004df0\n\
-    ldr         r4,DAT_08004df4\n\
-    ldr         r0,DAT_08004df8\n\
-    ldr         r1,[r0,#0x0]\n\
-    mov         r2,#0x42\n\
-    b           LAB_08004e20\n\
-DAT_08004df0:\n\
-    .word 0x0400000A\n\
-DAT_08004df4:\n\
-    .word 0x020002B8\n\
-DAT_08004df8:\n\
-    .word 0x02007FB4\n\
-LAB_08004dfc:\n\
-    ldr         r7,DAT_08004e08\n\
-    ldr         r4,DAT_08004e0c\n\
-    ldr         r0,DAT_08004e10\n\
-    ldr         r1,[r0,#0x0]\n\
-    mov         r2,#0x84\n\
-    b           LAB_08004e20\n\
-DAT_08004e08:\n\
-    .word 0x0400000C\n\
-DAT_08004e0c:\n\
-    .word 0x020002F8\n\
-DAT_08004e10:\n\
-    .word 0x02007FB4\n\
-LAB_08004e14:\n\
-    ldr         r7,DAT_08004ec4\n\
-    ldr         r4,DAT_08004ec8\n\
-    ldr         r0,DAT_08004ecc\n\
-    ldr         r1,[r0,#0x0]\n\
-    mov         r2,#0x84\n\
-    lsl         r2,r2,#0x1\n\
-LAB_08004e20:\n\
-    orr         r1,r2\n\
-    str         r1,[r0,#0x0]\n\
-LAB_08004e24:\n\
-    ldr         r0,[r5,#0x0]\n\
-    str         r0,[r4,#0x4]\n\
-    ldrh        r1,[r5,#0x8]\n\
-.syntax unified\n\
-    rsbs        r0,r1,#0\n\
-.syntax divided\n\
-    orr         r0,r1\n\
-    asr         r0,r0,#0x1f\n\
-    mov         r1,#0x80\n\
-    and         r0,r1\n\
-    mov         r2,#0x80\n\
-    lsl         r2,r2,#0x7\n\
-    mov         r12,r2\n\
-    ldr         r2,DAT_08004ed0\n\
-    ldrh        r1,[r2,#0x0]\n\
-    lsl         r1,r1,#0xb\n\
-    mov         r8,r1\n\
-    mov         r3,#0xc0\n\
-    lsl         r3,r3,#0x13\n\
-    add         r3,r8\n\
-    str         r3,[r4,#0x20]\n\
-    mov         r1,r12\n\
-    orr         r0,r1\n\
-    ldrh        r1,[r2,#0x0]\n\
-    lsl         r1,r1,#0x8\n\
-    orr         r0,r1\n\
-    ldr         r1,DAT_08004ed4\n\
-    ldrh        r1,[r1,#0x0]\n\
-    lsl         r1,r1,#0x2\n\
-    orr         r0,r1\n\
-    ldrh        r1,[r5,#0xa]\n\
-    orr         r0,r1\n\
-    strh        r0,[r7,#0x0]\n\
-    ldrh        r0,[r2,#0x0]\n\
-    add         r0,#0x2\n\
-    strh        r0,[r2,#0x0]\n\
-    ldr         r0,DAT_08004ed8\n\
-    lsl         r1,r6,#0x2\n\
-    add         r0,r1,r0\n\
-    str         r3,[r0,#0x0]\n\
-    ldr         r0,DAT_08004edc\n\
-    add         r1,r1,r0\n\
-    ldr         r0,[r4,#0x4]\n\
-    str         r0,[r1,#0x0]\n\
-    ldrh        r0,[r5,#0xc]\n\
-    mov         r1,#0x0\n\
-    strh        r0,[r4,#0x28]\n\
-    mov         r0,#0x1\n\
-    strh        r0,[r4,#0x0]\n\
-    ldr         r0,[r5,#0x0]\n\
-    str         r0,[r4,#0x4]\n\
-    ldrh        r0,[r5,#0x4]\n\
-    strh        r0,[r4,#0x8]\n\
-    ldrh        r0,[r5,#0x6]\n\
-    strh        r0,[r4,#0xa]\n\
-    ldrh        r2,[r4,#0x8]\n\
-    lsl         r0,r2,#0x3\n\
-    strh        r0,[r4,#0xc]\n\
-    ldrh        r2,[r4,#0xa]\n\
-    lsl         r0,r2,#0x3\n\
-    strh        r0,[r4,#0xe]\n\
-    str         r1,[r4,#0x10]\n\
-    str         r1,[r4,#0x14]\n\
-    str         r1,[r4,#0x18]\n\
-    str         r1,[r4,#0x1c]\n\
-    mov         r0,#0x1\n\
-.syntax unified\n\
-    rsbs        r0,r0,#0\n\
-.syntax divided\n\
-    str         r0,[r4,#0x2c]\n\
-    str         r0,[r4,#0x30]\n\
-    str         r1,[r4,#0x34]\n\
-    str         r1,[r4,#0x38]\n\
-    strh        r1,[r4,#0x3c]\n\
-    ldr         r1,DAT_08004ee0\n\
-    ldrh        r4,[r4,#0x8]\n\
-    lsl         r0,r4,#0x1\n\
-    strh        r0,[r1,#0x0]\n\
-    pop         {r3}\n\
-    mov         r8,r3\n\
-    pop         {r4,r5,r6,r7}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_08004ec4:\n\
-    .word 0x0400000E\n\
-DAT_08004ec8:\n\
-    .word 0x02000338\n\
-DAT_08004ecc:\n\
-    .word 0x02007FB4\n\
-DAT_08004ed0:\n\
-    .word 0x02007F90\n\
-DAT_08004ed4:\n\
-    .word 0x02007F74\n\
-DAT_08004ed8:\n\
-    .word 0x02007FA0\n\
-DAT_08004edc:\n\
-    .word 0x02007F80\n\
-DAT_08004ee0:\n\
-    .word 0x02009040\n\
-    ");
+    u16* BGXCNT;
+    struct_02000278* value;
+    void* iVar4;
+    s32 wtf;
+    s32 big;
+    u16 r2;
+    u32 uVar1;
+    s32 four;
+
+    switch (param_2)
+    {
+    case 0:
+        BGXCNT = (u16*)REG_ADDR_BG0CNT;
+        value = &DAT_02000278[0];
+        DAT_02007fb4 |= 0x21;
+        break;
+    case 1:
+        BGXCNT = (u16*)REG_ADDR_BG1CNT;
+        value = &DAT_02000278[1];
+        DAT_02007fb4 |= 0x42;
+        break;
+    case 2:
+        BGXCNT = (u16*)REG_ADDR_BG2CNT;
+        value = &DAT_02000278[2];
+        DAT_02007fb4 |= 0x84;
+        break;
+    case 3:
+        BGXCNT = (u16*)REG_ADDR_BG3CNT;
+        value = &DAT_02000278[3];
+        DAT_02007fb4 |= 0x108;
+        break;
+    }
+
+    value->unk04 = param_1->unk00;
+
+    uVar1 = param_1->unk08;
+
+    wtf = (((-param_1->unk08 | param_1->unk08) >> 0x1f) & 0x80);
+    wtf |= 0x4000;
+    value->unk20 = BG_SCREEN_ADDR(DAT_02007f90);
+    big = BGCNT_TXT512x256;
+    *BGXCNT = (wtf | big | BGCNT_SCREENBASE(DAT_02007f90) | BGCNT_CHARBASE(DAT_02007f74) | BGCNT_PRIORITY(param_1->bgcnt_priority));
+
+    DAT_02007f90 += 2;
+    DAT_02007fa0[param_2] = value->unk20;
+    (*(u32*)&DAT_02007f80[param_2]) = value->unk04;
+    value->unk28 = param_1->unk0c;
+    value->unk00 = 1;
+    value->unk04 = param_1->unk00;
+    value->unk08 = param_1->unk04;
+    value->unk0a = param_1->unk06;
+    value->unk0c = value->unk08 * 8;
+    value->unk0e = value->unk0a * 8;
+    value->unk10 = 0;
+    value->unk14 = 0;
+    value->unk18 = 0;
+    value->unk1c = 0;
+    value->unk2c = -1;
+    value->unk30 = -1;
+    value->unk34 = 0;
+    value->unk38 = 0;
+    value->unk3c = 0;
+
+    DAT_02009040 = value->unk08 * 2;
 }
+
 __attribute__((naked)) void fun_08004ee4()
 {
     asm("\n\
@@ -1563,99 +1457,52 @@ DAT_0800573c:\n\
     .word 0x0000F3FF\n\
     ");
 }
-__attribute__((naked)) void fun_08005740()
+
+void fun_08005740(struct_02000278* param_1)
 {
-    asm("\n\
-    push        {r4,lr}\n\
-    add         r2,r0,#0x0\n\
-    mov         r0,#0x0\n\
-    strh        r0,[r2,#0x3c]\n\
-    ldr         r1,[r2,#0x10]\n\
-    ldr         r0,[r2,#0x18]\n\
-    cmp         r1,r0\n\
-    ble         LAB_08005754\n\
-    mov         r0,#0x2\n\
-    strh        r0,[r2,#0x3c]\n\
-LAB_08005754:\n\
-    ldr         r1,[r2,#0x10]\n\
-    ldr         r0,[r2,#0x18]\n\
-    cmp         r1,r0\n\
-    bge         LAB_08005764\n\
-    mov         r0,#0x1\n\
-    ldrh        r1,[r2,#0x3c]\n\
-    orr         r0,r1\n\
-    strh        r0,[r2,#0x3c]\n\
-LAB_08005764:\n\
-    ldr         r3,[r2,#0x14]\n\
-    ldr         r1,[r2,#0x1c]\n\
-    cmp         r3,r1\n\
-    ble         LAB_08005774\n\
-    mov         r0,#0x8\n\
-    ldrh        r4,[r2,#0x3c]\n\
-    orr         r0,r4\n\
-    strh        r0,[r2,#0x3c]\n\
-LAB_08005774:\n\
-    cmp         r3,r1\n\
-    bge         LAB_08005780\n\
-    mov         r0,#0x4\n\
-    ldrh        r1,[r2,#0x3c]\n\
-    orr         r0,r1\n\
-    strh        r0,[r2,#0x3c]\n\
-LAB_08005780:\n\
-    ldrh        r1,[r2,#0x3c]\n\
-    mov         r0,#0x4\n\
-    and         r0,r1\n\
-    cmp         r0,#0x0\n\
-    bne         LAB_08005792\n\
-    mov         r0,#0x1\n\
-    and         r0,r1\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08005798\n\
-LAB_08005792:\n\
-    mov         r0,#0x10\n\
-    orr         r0,r1\n\
-    strh        r0,[r2,#0x3c]\n\
-LAB_08005798:\n\
-    ldrh        r1,[r2,#0x3c]\n\
-    mov         r0,#0x6\n\
-    and         r0,r1\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_080057a8\n\
-    mov         r0,#0x20\n\
-    orr         r0,r1\n\
-    strh        r0,[r2,#0x3c]\n\
-LAB_080057a8:\n\
-    ldrh        r1,[r2,#0x3c]\n\
-    mov         r0,#0x8\n\
-    and         r0,r1\n\
-    cmp         r0,#0x0\n\
-    bne         LAB_080057ba\n\
-    mov         r0,#0x1\n\
-    and         r0,r1\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_080057c0\n\
-LAB_080057ba:\n\
-    mov         r0,#0x40\n\
-    orr         r0,r1\n\
-    strh        r0,[r2,#0x3c]\n\
-LAB_080057c0:\n\
-    ldrh        r1,[r2,#0x3c]\n\
-    mov         r0,#0xa\n\
-    and         r0,r1\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_080057d0\n\
-    mov         r0,#0x80\n\
-    orr         r0,r1\n\
-    strh        r0,[r2,#0x3c]\n\
-LAB_080057d0:\n\
-    pop         {r4}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-    ");
+    param_1->unk3c = 0;
+
+    if (param_1->unk10 > param_1->unk18)
+    {
+        param_1->unk3c = 2;
+    }
+
+    if (param_1->unk10 < param_1->unk18)
+    {
+        param_1->unk3c |= 1;
+    }
+
+    if (param_1->unk14 > param_1->unk1c)
+    {
+        param_1->unk3c |= 8;
+    }
+
+    if (param_1->unk14 < param_1->unk1c)
+    {
+        param_1->unk3c |= 4;
+    }
+
+    if ((param_1->unk3c & 4) || (param_1->unk3c & 1))
+    {
+        param_1->unk3c |= 0x10;
+    }
+
+    if (param_1->unk3c & 6)
+    {
+        param_1->unk3c |= 0x20;
+    }
+
+    if ((param_1->unk3c & 8) || (param_1->unk3c & 1))
+    {
+        param_1->unk3c |= 0x40;
+    }
+
+    if (param_1->unk3c & 10)
+    {
+        param_1->unk3c |= 0x80;
+    }
 }
+
 __attribute__((naked)) void fun_080057d8()
 {
     asm("\n\
@@ -2061,156 +1908,66 @@ DAT_08005aa0:\n\
     .word 0x02000278\n\
     ");
 }
-__attribute__((naked)) void fun_08005aa4()
+
+void fun_08005aa4(u16 param_1, s32 param_2, s32 param_3)
 {
-    asm("\n\
-    push        {lr}\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r0,r0,#0xa\n\
-    ldr         r3,DAT_08005ac4\n\
-    add         r0,r0,r3\n\
-    ldr         r3,[r0,#0x10]\n\
-    str         r3,[r0,#0x18]\n\
-    ldr         r3,[r0,#0x14]\n\
-    str         r3,[r0,#0x1c]\n\
-    str         r1,[r0,#0x10]\n\
-    str         r2,[r0,#0x14]\n\
-    bl          fun_08005740\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_08005ac4:\n\
-    .word 0x02000278\n\
-    ");
+    struct_02000278* tmp = &DAT_02000278[param_1];
+    tmp->unk18 = tmp->unk10;
+    tmp->unk1c = tmp->unk14;
+    tmp->unk10 = param_2;
+    tmp->unk14 = param_3;
+    fun_08005740(tmp);
 }
-__attribute__((naked)) void fun_08005ac8()
+
+void fun_08005ac8(s32 param_1, s32 param_2)
 {
-    asm("\n\
-    push        {r4,lr}\n\
-    add         r2,r0,#0x0\n\
-    add         r3,r1,#0x0\n\
-    ldr         r0,DAT_08005b0c\n\
-    ldrh        r0,[r0,#0x0]\n\
-    lsl         r1,r0,#0x6\n\
-    ldr         r0,DAT_08005b10\n\
-    add         r1,r1,r0\n\
-    ldr         r0,[r1,#0x10]\n\
-    str         r0,[r1,#0x18]\n\
-    ldr         r0,[r1,#0x14]\n\
-    str         r0,[r1,#0x1c]\n\
-    cmp         r2,#0x0\n\
-    blt         LAB_08005af0\n\
-    add         r0,r2,#0x0\n\
-    add         r0,#0xf0\n\
-    ldrh        r4,[r1,#0xc]\n\
-    cmp         r0,r4\n\
-    bgt         LAB_08005af0\n\
-    str         r2,[r1,#0x10]\n\
-LAB_08005af0:\n\
-    cmp         r3,#0x0\n\
-    blt         LAB_08005b00\n\
-    add         r0,r3,#0x0\n\
-    add         r0,#0xa0\n\
-    ldrh        r2,[r1,#0xe]\n\
-    cmp         r0,r2\n\
-    bgt         LAB_08005b00\n\
-    str         r3,[r1,#0x14]\n\
-LAB_08005b00:\n\
-    add         r0,r1,#0x0\n\
-    bl          fun_08005740\n\
-    pop         {r4}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-DAT_08005b0c:\n\
-    .word 0x02007F78\n\
-DAT_08005b10:\n\
-    .word 0x02000278\n\
-    ");
+    struct_02000278* tmp = &DAT_02000278[DAT_02007f78];
+    tmp->unk18 = tmp->unk10;
+    tmp->unk1c = tmp->unk14;
+
+    if (param_1 >= 0 && param_1 + DISPLAY_WIDTH <= tmp->unk0c)
+    {
+        tmp->unk10 = param_1;
+    }
+
+    if (param_2 >= 0 && param_2 + DISPLAY_HEIGHT <= tmp->unk0e)
+    {
+        tmp->unk14 = param_2;
+    }
+
+    fun_08005740(tmp);
 }
-__attribute__((naked)) void fun_08005b14()
+
+void fun_08005b14(s32 param_1, s32 param_2)
 {
-    asm("\n\
-    push        {lr}\n\
-    add         r3,r0,#0x0\n\
-    ldr         r0,DAT_08005b38\n\
-    ldrh        r0,[r0,#0x0]\n\
-    lsl         r0,r0,#0x6\n\
-    ldr         r2,DAT_08005b3c\n\
-    add         r0,r0,r2\n\
-    ldr         r2,[r0,#0x10]\n\
-    str         r2,[r0,#0x18]\n\
-    ldr         r2,[r0,#0x14]\n\
-    str         r2,[r0,#0x1c]\n\
-    str         r3,[r0,#0x10]\n\
-    str         r1,[r0,#0x14]\n\
-    bl          fun_08005740\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_08005b38:\n\
-    .word 0x02007F78\n\
-DAT_08005b3c:\n\
-    .word 0x02000278\n\
-    ");
+    struct_02000278* tmp = &DAT_02000278[DAT_02007f78];
+    tmp->unk18 = tmp->unk10;
+    tmp->unk1c = tmp->unk14;
+    tmp->unk10 = param_1;
+    tmp->unk14 = param_2;
+    fun_08005740(tmp);
 }
-__attribute__((naked)) void fun_08005b40()
+
+void fun_08005b40(u16 param_1, u16 param_2)
 {
-    asm("\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r0,r0,#0x10\n\
-    add         r2,r0,#0x0\n\
-    lsl         r1,r1,#0x10\n\
-    lsr         r1,r1,#0x10\n\
-    cmp         r0,#0x1\n\
-    beq         LAB_08005b6c\n\
-    cmp         r0,#0x1\n\
-    bgt         LAB_08005b58\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08005b62\n\
-    b           LAB_08005b7e\n\
-LAB_08005b58:\n\
-    cmp         r2,#0x2\n\
-    beq         LAB_08005b74\n\
-    cmp         r2,#0x3\n\
-    beq         LAB_08005b7c\n\
-    b           LAB_08005b7e\n\
-LAB_08005b62:\n\
-    ldr         r3,DAT_08005b68\n\
-    b           LAB_08005b7e\n\
-\n\
-.space 2\n\
-\n\
-DAT_08005b68:\n\
-    .word 0x04000008\n\
-LAB_08005b6c:\n\
-    ldr         r3,DAT_08005b70\n\
-    b           LAB_08005b7e\n\
-DAT_08005b70:\n\
-    .word 0x0400000A\n\
-LAB_08005b74:\n\
-    ldr         r3,DAT_08005b78\n\
-    b           LAB_08005b7e\n\
-DAT_08005b78:\n\
-    .word 0x0400000C\n\
-LAB_08005b7c:\n\
-    ldr         r3,DAT_08005b8c\n\
-LAB_08005b7e:\n\
-    ldr         r0,DAT_08005b90\n\
-    ldrh        r2,[r3,#0x0]\n\
-    and         r0,r2\n\
-    lsl         r1,r1,#0x2\n\
-    orr         r0,r1\n\
-    strh        r0,[r3,#0x0]\n\
-    bx          lr\n\
-DAT_08005b8c:\n\
-    .word 0x0400000E\n\
-DAT_08005b90:\n\
-    .word 0x0000FFF3\n\
-    ");
+    u16* BGXCNT;
+    switch (param_1)
+    {
+    case 0:
+        BGXCNT = (u16*)REG_ADDR_BG0CNT;
+        break;
+    case 1:
+        BGXCNT = (u16*)REG_ADDR_BG1CNT;
+        break;
+    case 2:
+        BGXCNT = (u16*)REG_ADDR_BG2CNT;
+        break;
+    case 3:
+        BGXCNT = (u16*)REG_ADDR_BG3CNT;
+        break;
+    }
+
+    *BGXCNT = (*BGXCNT & 0xFFF3) | (param_2 * 4);
 }
 
 u16 fun_08005b94(u16 param_1, u16 param_2, u16 param_3)

@@ -2,7 +2,7 @@
 #include "variables.h"
 #include <string.h>
 
-__attribute__((naked)) void fun_08001aa8()
+__attribute__((naked)) u16 fun_08001aa8()
 {
     asm("\n\
     push        {r4,r5,r6,r7,lr}\n\
@@ -906,44 +906,26 @@ void fun_08002160()
     }
 }
 
-__attribute__((naked)) void fun_08002188()
+s32 fun_08002188()
 {
-    asm("\n\
-    push        {lr}\n\
-    bl          fun_08001aa8\n\
-    lsl         r0,r0,#0x10\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08002198\n\
-    mov         r0,#0x1\n\
-    b           LAB_0800219a\n\
-LAB_08002198:\n\
-    mov         r0,#0x0\n\
-LAB_0800219a:\n\
-    pop         {r1}\n\
-    bx          r1\n\
-    ");
+    if (fun_08001aa8() == 0)
+    {
+        return 0;
+    }
+    return 1;
 }
 
-__attribute__((naked)) void fun_080021a0()
+u32 SumByteArray(u8* bytes, u32 length)
 {
-    asm("\n\
-    push       {r4,lr}\n\
-    mov        r3,#0x0\n\
-    mov        r2,#0x0\n\
-    cmp        r3,r1\n\
-    bcs        LAB_080021b6\n\
-LAB_080021aa:\n\
-    ldrb       r4,[r0,#0x0]\n\
-    add        r3,r4,r3\n\
-    add        r0,#0x1\n\
-    add        r2,#0x1\n\
-    cmp        r2,r1\n\
-    bcc        LAB_080021aa\n\
-LAB_080021b6:\n\
-    add        r0,r3,#0x0\n\
-    pop        {r4}\n\
-    pop        {r1}\n\
-    bx         r1\n\
-.space 2\n\
-    ");
+    u32 i;
+    u32 sum = 0;
+
+    for (i = 0; i < length; i++)
+    {
+        sum += *(bytes++);
+    }
+
+    return sum;
 }
+
+asm(".space 2");

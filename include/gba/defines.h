@@ -27,7 +27,7 @@
 #define OBJ_PLTT (PLTT + 0x200)
 #define OBJ_PLTT_SIZE 0x200
 
-#define VRAM 0x6000000
+#define VRAM 0x06000000
 #define VRAM_SIZE 0x18000
 
 #define BG_VRAM VRAM

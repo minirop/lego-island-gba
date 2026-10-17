@@ -76,6 +76,7 @@ extern s32 DAT_08668DF4;
 extern s32 DAT_08668FF4;
 extern s32 DAT_086691F4;
 extern s32 DAT_086693F4;
+extern struct_02000278 DAT_02000278[];
 extern struct_020025e0 DAT_020025e0;
 extern struct_02002620 DAT_02002620[];
 extern struct_02005780 DAT_02005780[8];
@@ -152,6 +153,7 @@ extern u8 DAT_02005760[16];
 extern u8 DAT_02009ad4;
 extern u8 DAT_0200c5f0[4];
 extern u8* DAT_02007f80[4]; // need to find its real type
+extern s32 DAT_02007fa0[4]; // might be u16*[4]
 extern void* DAT_020003b0;
 extern void* DAT_02005850;
 extern void* DAT_02009b20[3];

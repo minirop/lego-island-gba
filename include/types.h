@@ -100,8 +100,8 @@ typedef struct struct_02009b10
 // size 0xEA0
 typedef struct struct_02002620
 {
-    u16 unk00;
-    u8 padding1[6];
+    s32 unk00;
+    s32 unk04;
     u8 unk08[16];
     u32 unk18;
     u8 unk1c;
@@ -110,5 +110,40 @@ typedef struct struct_02002620
     u8 pad0db6[0x8A];
     u8 unk0e40[0x60];
 } struct_02002620;
+
+typedef struct struct_02000278
+{
+    u16 unk00;
+    u16 unk02;
+    u32 unk04;
+    u16 unk08;
+    u16 unk0a;
+    u16 unk0c;
+    u16 unk0e;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    s32 unk1c;
+    void* unk20;
+    s32 unk24;
+    u16 unk28;
+    u16 unk2a;
+    s32 unk2c;
+    s32 unk30;
+    s32 unk34;
+    s32 unk38;
+    u16 unk3c;
+    u16 unk3e;
+} struct_02000278;
+
+typedef struct struct_fun_08004da8
+{
+    u32 unk00;
+    u16 unk04;
+    u16 unk06;
+    u16 unk08;
+    u16 bgcnt_priority;
+    u16 unk0c;
+} struct_fun_08004da8;
 
 #endif
