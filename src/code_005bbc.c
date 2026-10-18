@@ -45,87 +45,51 @@ DAT_08005bfc:\n\
     .word 0x02007FA0\n\
     ");
 }
-__attribute__((naked)) void fun_08005c00()
+
+#define SET_DAT_u8_u16(arr, idx0, idx1) (*(u16*)((u8*)arr[idx0] + idx1))
+
+void fun_08005c00(u32 param_1, s32 param_2, u16* param_3)
 {
-    asm("\n\
-    push        {r4,lr}\n\
-    add         r3,r0,#0x0\n\
-    add         r4,r2,#0x0\n\
-    mov         r2,#0x0\n\
-    cmp         r3,#0x1f\n\
-    bls         LAB_08005c12\n\
-    mov         r2,#0x80\n\
-    lsl         r2,r2,#0x3\n\
-    sub         r3,#0x20\n\
-LAB_08005c12:\n\
-    lsl         r0,r1,#0x5\n\
-    add         r0,r0,r3\n\
-    add         r2,r2,r0\n\
-    lsl         r2,r2,#0x1\n\
-    ldr         r3,DAT_08005c74\n\
-    ldr         r0,[r3,#0x0]\n\
-    mov         r1,#0x20\n\
-    and         r0,r1\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08005c30\n\
-    ldr         r0,DAT_08005c78\n\
-    ldr         r0,[r0,#0x0]\n\
-    add         r0,r0,r2\n\
-    ldrh        r1,[r4,#0x0]\n\
-    strh        r1,[r0,#0x0]\n\
-LAB_08005c30:\n\
-    ldr         r0,[r3,#0x0]\n\
-    mov         r1,#0x40\n\
-    and         r0,r1\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08005c44\n\
-    ldr         r0,DAT_08005c78\n\
-    ldr         r0,[r0,#0x4]\n\
-    add         r0,r0,r2\n\
-    ldrh        r1,[r4,#0x2]\n\
-    strh        r1,[r0,#0x0]\n\
-LAB_08005c44:\n\
-    ldr         r0,[r3,#0x0]\n\
-    mov         r1,#0x80\n\
-    and         r0,r1\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08005c58\n\
-    ldr         r0,DAT_08005c78\n\
-    ldr         r0,[r0,#0x8]\n\
-    add         r0,r0,r2\n\
-    ldrh        r1,[r4,#0x4]\n\
-    strh        r1,[r0,#0x0]\n\
-LAB_08005c58:\n\
-    ldr         r0,[r3,#0x0]\n\
-    mov         r1,#0x80\n\
-    lsl         r1,r1,#0x1\n\
-    and         r0,r1\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08005c6e\n\
-    ldr         r0,DAT_08005c78\n\
-    ldr         r0,[r0,#0xc]\n\
-    add         r0,r0,r2\n\
-    ldrh        r1,[r4,#0x6]\n\
-    strh        r1,[r0,#0x0]\n\
-LAB_08005c6e:\n\
-    pop         {r4}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-DAT_08005c74:\n\
-    .word 0x02007FB4\n\
-DAT_08005c78:\n\
-    .word 0x02007FA0\n\
-    ");
+    s32 index = 0;
+
+    if (param_1 >= 0x20)
+    {
+        index = 0x400;
+        param_1 -= 0x20;
+    }
+
+    index += param_2 * 0x20 + param_1;
+    index <<= 1;
+
+    if ((DAT_02007fb4 & 0x20) != 0)
+    {
+        SET_DAT_u8_u16(DAT_02007fa0, 0, index) = param_3[0];
+    }
+
+    if ((DAT_02007fb4 & 0x40) != 0)
+    {
+        SET_DAT_u8_u16(DAT_02007fa0, 1, index) = param_3[1];
+    }
+
+    if ((DAT_02007fb4 & 0x80) != 0)
+    {
+        SET_DAT_u8_u16(DAT_02007fa0, 2, index) = param_3[2];
+    }
+
+    if ((DAT_02007fb4 & 0x100) != 0)
+    {
+        SET_DAT_u8_u16(DAT_02007fa0, 3, index) = param_3[3];
+    }
 }
 
 void fun_08005c7c(u32 param_1, u32 param_2, u16* param_3)
 {
     u32 index = DAT_02009040 * param_2 + param_1 * 2;
 
-#define LOOP(i)                                                 \
-    if (DAT_02007f80[i])                                        \
-    {                                                           \
-        param_3[i] = (*(u16*)&DAT_02007f80[i][index]) & 0xf3ff; \
+#define LOOP(i)                                                       \
+    if (DAT_02007f80[i])                                              \
+    {                                                                 \
+        param_3[i] = SET_DAT_u8_u16(DAT_02007f80, i, index) & 0xf3ff; \
     }
 
     LOOP(0)
@@ -255,111 +219,25 @@ void fun_08005f0c(u8 param_1)
     }
 }
 
-__attribute__((naked)) s32 fun_08005fac()
+s32 fun_08005fac()
 {
-    asm("\n\
-    push        {r4,r5,r6,lr}\n\
-    mov         r6,r10\n\
-    mov         r5,r9\n\
-    mov         r4,r8\n\
-    push        {r4,r5,r6}\n\
-    sub         sp,#0x4\n\
-    mov         r0,sp\n\
-    mov         r1,#0x0\n\
-    strh        r1,[r0,#0x0]\n\
-    ldr         r4,DAT_08006050\n\
-    str         r0,[r4,#0x0]\n\
-    mov         r0,#0xc0\n\
-    lsl         r0,r0,#0x13\n\
-    mov         r10,r0\n\
-    str         r0,[r4,#0x4]\n\
-    ldr         r0,DAT_08006054\n\
-    str         r0,[r4,#0x8]\n\
-    ldr         r0,[r4,#0x8]\n\
-    mov         r0,sp\n\
-    strh        r1,[r0,#0x0]\n\
-    str         r0,[r4,#0x0]\n\
-    mov         r1,#0xa0\n\
-    lsl         r1,r1,#0x13\n\
-    mov         r8,r1\n\
-    str         r1,[r4,#0x4]\n\
-    ldr         r0,DAT_08006058\n\
-    str         r0,[r4,#0x8]\n\
-    ldr         r0,[r4,#0x8]\n\
-    mov         r5,#0x80\n\
-    lsl         r5,r5,#0x13\n\
-    ldr         r0,DAT_0800605c\n\
-    mov         r9,r0\n\
-    strh        r0,[r5,#0x0]\n\
-    ldr         r6,DAT_08006060\n\
-    ldr         r1,DAT_08006064\n\
-    add         r0,r6,#0x0\n\
-    bl          LZ77UnCompVram\n\
-    bl          fun_08002bcc\n\
-    ldr         r0,DAT_08006068\n\
-    str         r0,[r4,#0x0]\n\
-    mov         r1,r8\n\
-    str         r1,[r4,#0x4]\n\
-    ldr         r0,DAT_0800606c\n\
-    str         r0,[r4,#0x8]\n\
-    ldr         r0,[r4,#0x8]\n\
-    ldr         r1,DAT_08006070\n\
-    add         r0,r1,#0x0\n\
-    strh        r0,[r5,#0x0]\n\
-    add         r0,r6,#0x0\n\
-    mov         r1,r10\n\
-    bl          LZ77UnCompVram\n\
-    bl          fun_08002bcc\n\
-    mov         r0,r9\n\
-    strh        r0,[r5,#0x0]\n\
-    bl          fun_08006180\n\
-    ldr         r1,DAT_08006074\n\
-    mov         r0,#0x0\n\
-    mov         r2,#0x0\n\
-    bl          fun_0803c1ec\n\
-    ldr         r1,DAT_08006078\n\
-    mov         r0,#0x0\n\
-    str         r0,[r1,#0x0]\n\
-    bl          fun_08002188\n\
-    ldr         r1,DAT_0800607c\n\
-    strh        r0,[r1,#0x0]\n\
-    mov         r0,#0x0\n\
-    add         sp,#0x4\n\
-    pop         {r3,r4,r5}\n\
-    mov         r8,r3\n\
-    mov         r9,r4\n\
-    mov         r10,r5\n\
-    pop         {r4,r5,r6}\n\
-    pop         {r1}\n\
-    bx          r1\n\
-\n\
-.space 2\n\
-\n\
-DAT_08006050:\n\
-    .word 0x040000D4\n\
-DAT_08006054:\n\
-    .word 0x8100C000\n\
-DAT_08006058:\n\
-    .word 0x81000200\n\
-DAT_0800605c:\n\
-    .word 0x00001F44\n\
-DAT_08006060:\n\
-    .word 0x08064540\n\
-DAT_08006064:\n\
-    .word 0x0600A000\n\
-DAT_08006068:\n\
-    .word 0x08064340\n\
-DAT_0800606c:\n\
-    .word 0x80000100\n\
-DAT_08006070:\n\
-    .word 0x00001F14\n\
-DAT_08006074:\n\
-    .word 0x00007FFF\n\
-DAT_08006078:\n\
-    .word 0x020025B4\n\
-DAT_0800607c:\n\
-    .word 0x02009AD8\n\
-    ");
+    DmaFill16(3, 0, VRAM, VRAM_SIZE);
+    DmaFill16(3, 0, PLTT, PLTT_SIZE);
+    REG_DISPCNT = 0x1f44;
+
+    LZ77UnCompVram(&language_selection_background, (void*)0x0600a000);
+    fun_08002bcc();
+
+    DmaCopy16(3, &language_selection_pal, BG_PLTT, BG_PLTT_SIZE);
+    REG_DISPCNT = 0x1f14;
+    LZ77UnCompVram(&language_selection_background, (void*)0x06000000);
+    fun_08002bcc();
+    REG_DISPCNT = 0x1f44;
+    fun_08006180();
+    fun_0803c1ec(0, 0x7fff, 0);
+    selected_language = 0;
+    DAT_02009ad8 = fun_08002188();
+    return 0;
 }
 
 void fun_08006080()

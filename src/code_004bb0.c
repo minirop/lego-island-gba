@@ -312,7 +312,7 @@ void fun_08004da8(struct_fun_08004da8* param_1, u16 param_2)
     *BGXCNT = (wtf | big | BGCNT_SCREENBASE(DAT_02007f90) | BGCNT_CHARBASE(DAT_02007f74) | BGCNT_PRIORITY(param_1->bgcnt_priority));
 
     DAT_02007f90 += 2;
-    DAT_02007fa0[param_2] = value->unk20;
+    DAT_02007fa0[param_2] = (s32)value->unk20;
     (*(u32*)&DAT_02007f80[param_2]) = value->unk04;
     value->unk28 = param_1->unk0c;
     value->unk00 = 1;

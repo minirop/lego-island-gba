@@ -102,13 +102,14 @@ typedef struct struct_02002620
 {
     s32 unk00;
     s32 unk04;
-    u8 unk08[16];
+    char unk08[16];
     u32 unk18;
     u8 unk1c;
     u8 pad1d[0xD0D];
     u16 unk0d2a[0x46];
     u8 pad0db6[0x8A];
-    u8 unk0e40[0x60];
+    u8 unk0e40[4];
+    u32 unk0e44[0x17];
 } struct_02002620;
 
 typedef struct struct_02000278
@@ -145,5 +146,12 @@ typedef struct struct_fun_08004da8
     u16 bgcnt_priority;
     u16 unk0c;
 } struct_fun_08004da8;
+
+typedef struct struct_03001a00
+{
+    u32 unk00;
+    u32 unk04;
+    u16 unk08;
+} struct_03001a00;
 
 #endif

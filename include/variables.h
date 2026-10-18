@@ -68,6 +68,7 @@ extern s32 DAT_020025cc;
 extern s32 DAT_020025dc;
 extern s32 DAT_02005834;
 extern s32 DAT_02007f94;
+extern s32 DAT_02007fa0[4]; // might be u16*[4]
 extern s32 DAT_02007fb0;
 extern s32 DAT_02007fb4;
 extern s32 DAT_02007fb8;
@@ -85,6 +86,7 @@ extern struct_02009b10 DAT_02009b10;
 extern struct_02009b10 DAT_0200c5d0;
 extern struct_02009b10 DAT_0200c630;
 extern struct_02009b10 DAT_0200ee80;
+extern struct_03001a00 DAT_03001a00[];
 extern struct_08669620 DAT_08669620[STRINGS_COUNT];
 extern u16 current_level;
 extern u16 DAT_02000008;
@@ -105,7 +107,7 @@ extern u16 DAT_02005cd0;
 extern u16 DAT_02005cdc;
 extern u16 DAT_02005cf0;
 extern u16 DAT_02005cf4;
-extern u16 DAT_02005cf8;
+extern u16 DAT_02005cf8; // sprite count?
 extern u16 DAT_02005cfc;
 extern u16 DAT_02005d00;
 extern u16 DAT_02005d04;
@@ -137,7 +139,7 @@ extern u16 DAT_0200d408;
 extern u16 IF;
 extern u16* DAT_02009af0;
 extern u16* DAT_02009b00;
-extern u16* DAT_03001800[128];
+extern u16* DAT_03001800[128]; // stores the first field of 0x02006d60 (sprites data?)
 extern u32 DAT_0200000c;
 extern u32 DAT_06004000;
 extern u32 DAT_08756d5c;
@@ -153,7 +155,6 @@ extern u8 DAT_02005760[16];
 extern u8 DAT_02009ad4;
 extern u8 DAT_0200c5f0[4];
 extern u8* DAT_02007f80[4]; // need to find its real type
-extern s32 DAT_02007fa0[4]; // might be u16*[4]
 extern void* DAT_020003b0;
 extern void* DAT_02005850;
 extern void* DAT_02009b20[3];
@@ -219,6 +220,8 @@ extern void* DAT_0863f824;
 extern void* DAT_086424a8;
 extern void* DAT_0865fd94;
 extern void* decompressed_language_text_buffer;
+extern void* language_selection_background;
+extern void* language_selection_pal;
 extern void* languages_array[LANGUAGE_COUNT];
 extern void* logo_screen_images[];
 extern void* logo_screen_palettes[];

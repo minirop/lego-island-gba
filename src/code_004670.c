@@ -5,6 +5,7 @@ void fun_08004670(u16 param_1)
     DAT_02007f60 = param_1;
 }
 
+// get sprite count?
 u16 fun_0800467c()
 {
     return DAT_02005cf8;

@@ -727,6 +727,17 @@ void fun_0800200c()
 }
 const char* dummy_0804979c = "MultiSioSync010316";
 
+#ifdef NONMATCHING
+void fun_08002038()
+{
+    if (strcmp((const char*)&fun_080020a4()->unk08, "GOGOMONKEYX"))
+    {
+        memset(fun_080020a4(), 0, sizeof(struct_02002620));
+        memcpy(&fun_080020a4()->unk08, "GOGOMONKEYX", 12);
+        fun_08001b9c();
+    }
+}
+#else
 __attribute__((naked)) void fun_08002038()
 {
     asm("\n\
@@ -757,36 +768,16 @@ DAT_08002070:\n\
     .word 0x08049790\n\
     ");
 }
-__attribute__((naked)) void fun_08002074()
+#endif
+
+s32 fun_08002074(u8 param_1)
 {
-    asm("\n\
-    push        {r4,lr}\n\
-    lsl         r0,r0,#0x18\n\
-    lsr         r0,r0,#0x18\n\
-    mov         r4,#0x0\n\
-    mov         r1,#0xea\n\
-    lsl         r1,r1,#0x4\n\
-    mul         r0,r1\n\
-    ldr         r1,DAT_0800209c\n\
-    add         r0,r0,r1\n\
-    ldr         r1,DAT_080020a0\n\
-    bl          strcmp\n\
-    cmp         r0,#0x0\n\
-    bne         LAB_08002092\n\
-    mov         r4,#0x1\n\
-LAB_08002092:\n\
-    add         r0,r4,#0x0\n\
-    pop         {r4}\n\
-    pop         {r1}\n\
-    bx          r1\n\
-\n\
-.space 2\n\
-\n\
-DAT_0800209c:\n\
-    .word 0x02002628\n\
-DAT_080020a0:\n\
-    .word 0x08049790\n\
-    ");
+    s32 i = 0;
+    if (strcmp(DAT_02002620[param_1].unk08, "GOGOMONKEYX") == 0)
+    {
+        i = 1;
+    }
+    return i;
 }
 
 struct_02002620* fun_080020a4()
@@ -847,50 +838,18 @@ DAT_08002110:\n\
     .word 0xFFFFF830\n\
     ");
 }
-__attribute__((naked)) void fun_08002114(u16 param_1)
+
+void fun_08002114(u16 param_1)
 {
-    asm("\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r3,r0,#0x10\n\
-    cmp         r3,#0x18\n\
-    bne         LAB_08002120\n\
-    mov         r3,#0xfb\n\
-    lsl         r3,r3,#0x3\n\
-LAB_08002120:\n\
-    ldr         r1,DAT_08002150\n\
-    add         r0,r3,r1\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r0,r0,#0x10\n\
-    cmp         r0,#0x1b\n\
-    bhi         LAB_0800214e\n\
-    ldr         r1,DAT_08002154\n\
-    mov         r0,#0xea\n\
-    lsl         r0,r0,#0x4\n\
-    ldrb        r1,[r1,#0x0]\n\
-    add         r2,r1,#0x0\n\
-    mul         r2,r0\n\
-    ldr         r0,DAT_08002158\n\
-    add         r2,r2,r0\n\
-    ldr         r0,DAT_0800215c\n\
-    add         r2,r2,r0\n\
-    ldr         r1,DAT_08002150\n\
-    add         r0,r3,r1\n\
-    mov         r1,#0x1\n\
-    lsl         r1,r0\n\
-    ldr         r0,[r2,#0x0]\n\
-    orr         r0,r1\n\
-    str         r0,[r2,#0x0]\n\
-LAB_0800214e:\n\
-    bx          lr\n\
-DAT_08002150:\n\
-    .word 0xFFFFF830\n\
-DAT_08002154:\n\
-    .word 0x02005570\n\
-DAT_08002158:\n\
-    .word 0x02002620\n\
-DAT_0800215c:\n\
-    .word 0x00000E88\n\
-    ");
+    if (param_1 == 0x18)
+    {
+        param_1 = 0x7d8;
+    }
+    if ((u16)(param_1 - 2000) < 0x1c)
+    {
+        struct_02002620* ptr = &DAT_02002620[DAT_02005570];
+        ptr->unk0e44[17] |= (1 << ((param_1 - 2000)));
+    }
 }
 
 void fun_08002160()
@@ -906,7 +865,7 @@ void fun_08002160()
     }
 }
 
-s32 fun_08002188()
+u16 fun_08002188()
 {
     if (fun_08001aa8() == 0)
     {

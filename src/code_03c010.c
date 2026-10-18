@@ -224,85 +224,39 @@ DAT_0803c1a0:\n\
      .word 0x08049D60\n\
     ");
 }
-__attribute__((naked)) void fun_0803c1a4()
+
+void fun_0803c1a4()
 {
-    asm("\n\
-     push       {r4,r5,r6,lr}\n\
-     bl         fun_0800467c\n\
-     lsl        r0,r0,#0x10\n\
-     lsr        r6,r0,#0x10\n\
-     mov        r4,#0x0\n\
-     cmp        r0,#0x0\n\
-     ble        LAB_0803c1e2\n\
-LAB_0803c1b4:\n\
-     lsl        r5,r4,#0x10\n\
-     lsr        r0,r5,#0x10\n\
-     bl         fun_08004694\n\
-     ldrh       r1,[r0,#0xa]\n\
-     cmp        r1,#0x66\n\
-     bne        LAB_0803c1d2\n\
-     bl         fun_08003b00\n\
-     lsl        r0,r6,#0x10\n\
-     ldr        r1,DAT_0803c1e8\n\
-     add        r0,r0,r1\n\
-     lsr        r6,r0,#0x10\n\
-     add        r0,r5,r1\n\
-     lsr        r4,r0,#0x10\n\
-LAB_0803c1d2:\n\
-     lsl        r1,r4,#0x10\n\
-     mov        r0,#0x80\n\
-     lsl        r0,r0,#0x9\n\
-     add        r1,r1,r0\n\
-     lsr        r4,r1,#0x10\n\
-     lsl        r0,r6,#0x10\n\
-     cmp        r1,r0\n\
-     blt        LAB_0803c1b4\n\
-LAB_0803c1e2:\n\
-     pop        {r4,r5,r6}\n\
-     pop        {r0}\n\
-     bx         r0\n\
-DAT_0803c1e8:\n\
-     .word 0xFFFF0000\n\
-    ");
+    s16 i;
+    s16 count = fun_0800467c();
+
+    i = 0;
+    while (i < count)
+    {
+        u16* ptr = fun_08004694(i);
+        if (ptr[5] == 0x66)
+        {
+            fun_08003b00(ptr);
+            count--;
+            i--;
+        }
+
+        i++;
+    }
 }
-__attribute__((naked)) void fun_0803c1ec()
+
+void fun_0803c1ec(u16 param_1, u16 param_2, u16 param_3)
 {
-    asm("\n\
-     ldr        r3,DAT_0803c1fc\n\
-     strh       r0,[r3,#0x0]\n\
-     ldr        r0,DAT_0803c200\n\
-     strh       r1,[r0,#0x0]\n\
-     add        r0,#0x2\n\
-     strh       r2,[r0,#0x0]\n\
-     bx         lr\n\
-.space 1\n\
-.space 1\n\
-DAT_0803c1fc:\n\
-     .word 0x05000202\n\
-DAT_0803c200:\n\
-     .word 0x05000204\n\
-    ");
+    *((u16*)OBJ_PLTT + 1) = param_1;
+    *((u16*)OBJ_PLTT + 2) = param_2;
+    *((u16*)OBJ_PLTT + 3) = param_3;
 }
-__attribute__((naked)) void fun_0803c204()
+
+void fun_0803c204(u16* param_1, u16* param_2, u16* param_3)
 {
-    asm("\n\
-     ldr        r3,DAT_0803c218\n\
-     ldrh       r3,[r3,#0x0]\n\
-     strh       r3,[r0,#0x0]\n\
-     ldr        r0,DAT_0803c21c\n\
-     ldrh       r0,[r0,#0x0]\n\
-     strh       r0,[r1,#0x0]\n\
-     ldr        r0,DAT_0803c220\n\
-     ldrh       r0,[r0,#0x0]\n\
-     strh       r0,[r2,#0x0]\n\
-     bx         lr\n\
-DAT_0803c218:\n\
-     .word 0x05000202\n\
-DAT_0803c21c:\n\
-     .word 0x05000204\n\
-DAT_0803c220:\n\
-     .word 0x05000206\n\
-    ");
+    *param_1 = *((u16*)OBJ_PLTT + 1);
+    *param_2 = *((u16*)OBJ_PLTT + 2);
+    *param_3 = *((u16*)OBJ_PLTT + 3);
 }
 
 void fun_0803c224()
