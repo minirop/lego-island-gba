@@ -308,6 +308,7 @@ s32 fun_0804191c();
 s32 fun_0804194c();
 s32 GlobalIRQHandler();
 struct_02002620* fun_080020a4();
+struct_080034c0* fun_080034c0(u16);
 u16 ArcTan2(s16 x, s16 y);
 u16 fun_08000ee8(u16 param_1);
 u16 fun_08001aa8();

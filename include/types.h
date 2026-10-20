@@ -105,7 +105,10 @@ typedef struct struct_02002620
     char unk08[16];
     u32 unk18;
     u8 unk1c;
-    u8 pad1d[0xD0D];
+    u8 unk1d[3];
+    u8 pad20[0x7E6 - 0x20];
+    u16 unk7E6[0x151];
+    u16 unkA88[0x151];
     u16 unk0d2a[0x46];
     u8 pad0db6[0x8A];
     u8 unk0e40[4];
@@ -153,5 +156,13 @@ typedef struct struct_03001a00
     u32 unk04;
     u16 unk08;
 } struct_03001a00;
+
+typedef struct struct_080034c0
+{
+    u16 unk00;
+    u16 unk02;
+    u16 unk04;
+    u16 unk06;
+} struct_080034c0;
 
 #endif

@@ -654,69 +654,18 @@ DAT_08001f90:\n\
     .word 0x000006B4\n\
     ");
 }
-__attribute__((naked)) void fun_08001f94()
+
+void fun_08001f94()
 {
-    asm("\n\
-    push        {r4,r5,r6,r7,lr}\n\
-    mov         r7,r10\n\
-    mov         r6,r9\n\
-    mov         r5,r8\n\
-    push        {r5,r6,r7}\n\
-    mov         r5,#0x0\n\
-    ldr         r0,DAT_08001ffc\n\
-    mov         r8,r0\n\
-    ldr         r7,DAT_08002000\n\
-    mov         r6,#0xea\n\
-    lsl         r6,r6,#0x4\n\
-    ldr         r1,DAT_08002004\n\
-    add         r1,r8\n\
-    mov         r10,r1\n\
-    mov         r2,#0xa8\n\
-    lsl         r2,r2,#0x1\n\
-    mov         r9,r2\n\
-LAB_08001fb6:\n\
-    add         r0,r5,#0x0\n\
-    bl          fun_080034c0\n\
-    lsl         r4,r5,#0x1\n\
-    ldrb        r1,[r7,#0x0]\n\
-    add         r2,r1,#0x0\n\
-    mul         r2,r6\n\
-    add         r2,r4,r2\n\
-    ldr         r1,DAT_08002008\n\
-    add         r1,r8\n\
-    add         r2,r2,r1\n\
-    ldrh        r0,[r0,#0x4]\n\
-    strh        r0,[r2,#0x0]\n\
-    add         r0,r5,#0x0\n\
-    bl          fun_080034c0\n\
-    ldrb        r2,[r7,#0x0]\n\
-    add         r1,r2,#0x0\n\
-    mul         r1,r6\n\
-    add         r4,r4,r1\n\
-    add         r4,r10\n\
-    ldrh        r0,[r0,#0x6]\n\
-    strh        r0,[r4,#0x0]\n\
-    add         r0,r5,#0x1\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r5,r0,#0x10\n\
-    cmp         r5,r9\n\
-    bls         LAB_08001fb6\n\
-    pop         {r3,r4,r5}\n\
-    mov         r8,r3\n\
-    mov         r9,r4\n\
-    mov         r10,r5\n\
-    pop         {r4,r5,r6,r7}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-DAT_08001ffc:\n\
-    .word 0x02002620\n\
-DAT_08002000:\n\
-    .word 0x02005570\n\
-DAT_08002004:\n\
-    .word 0x00000A88\n\
-DAT_08002008:\n\
-    .word 0x000007E6\n\
-    ");
+    u16 i;
+
+    for (i = 0; i < 0x151; i++)
+    {
+        if (DAT_02002620[DAT_02005570].unk7E6[0])
+            ; // Required to match
+        (&DAT_02002620[DAT_02005570].unk7E6[0])[i] = fun_080034c0(i)->unk04;
+        (&DAT_02002620[DAT_02005570].unkA88[0])[i] = fun_080034c0(i)->unk06;
+    }
 }
 
 void fun_0800200c()
@@ -785,58 +734,22 @@ struct_02002620* fun_080020a4()
     return &DAT_02002620[DAT_02005570];
 }
 
-__attribute__((naked)) void fun_080020bc()
+s32 fun_080020bc(u16 param_1)
 {
-    asm("\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r2,r0,#0x10\n\
-    cmp         r2,#0x18\n\
-    bne         LAB_080020c8\n\
-    mov         r2,#0xfb\n\
-    lsl         r2,r2,#0x3\n\
-LAB_080020c8:\n\
-    ldr         r1,DAT_080020d8\n\
-    add         r0,r2,r1\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r0,r0,#0x10\n\
-    cmp         r0,#0x1b\n\
-    bls         LAB_080020dc\n\
-    mov         r0,#0x1\n\
-    b           LAB_08002102\n\
-DAT_080020d8:\n\
-    .word 0xFFFFF830\n\
-LAB_080020dc:\n\
-    ldr         r1,DAT_08002104\n\
-    mov         r0,#0xea\n\
-    lsl         r0,r0,#0x4\n\
-    ldrb        r1,[r1,#0x0]\n\
-    mul         r1,r0\n\
-    ldr         r0,DAT_08002108\n\
-    add         r1,r1,r0\n\
-    ldr         r0,DAT_0800210c\n\
-    add         r1,r1,r0\n\
-    ldr         r0,DAT_08002110\n\
-    add         r2,r2,r0\n\
-    mov         r0,#0x1\n\
-    lsl         r0,r2\n\
-    ldr         r1,[r1,#0x0]\n\
-    and         r1,r0\n\
-    cmp         r1,#0x0\n\
-    beq         LAB_08002100\n\
-    mov         r1,#0x1\n\
-LAB_08002100:\n\
-    add         r0,r1,#0x0\n\
-LAB_08002102:\n\
-    bx          lr\n\
-DAT_08002104:\n\
-    .word 0x02005570\n\
-DAT_08002108:\n\
-    .word 0x02002620\n\
-DAT_0800210c:\n\
-    .word 0x00000E88\n\
-DAT_08002110:\n\
-    .word 0xFFFFF830\n\
-    ");
+    s32 ret;
+    if (param_1 == 0x18)
+    {
+        param_1 = 0x7d8;
+    }
+    if ((u16)(param_1 - 2000) >= 0x1c)
+    {
+        return 1;
+    }
+    else
+    {
+        struct_02002620* ptr = &DAT_02002620[DAT_02005570];
+        return ((ptr->unk0e44[17] & (1 << ((param_1 - 2000)))) != 0);
+    }
 }
 
 void fun_08002114(u16 param_1)

@@ -190,12 +190,13 @@ void fun_08002ec8(s16 param_1)
     DAT_02005840 = -0x1700 / param_1;
 }
 
-void fun_08002f00(s32 param_1, s8* param_2)
+void fun_08002f00(s32 param_1, char* param_2)
 {
     s32 iVar1;
     s32 iVar2;
 
-    if (param_1 < 0) {
+    if (param_1 < 0)
+    {
         param_1 = 0;
     }
 
@@ -203,9 +204,12 @@ void fun_08002f00(s32 param_1, s8* param_2)
     iVar2 = iVar1 / 60;
     iVar1 -= iVar2 * 60;
 
-    if (iVar1 < 10) {
+    if (iVar1 < 10)
+    {
         sprintf(param_2, "A%d:0%d", (u16)iVar2, (u16)iVar1);
-    } else {
+    }
+    else
+    {
         sprintf(param_2, "A%d:%d", (u16)iVar2, (u16)iVar1);
     }
 }
@@ -506,7 +510,8 @@ __attribute__((naked)) void fun_0800310c()
 void fun_0800311c(s32 param_1)
 {
     u16 i;
-    for (i = 0; i < 8; i++) {
+    for (i = 0; i < 8; i++)
+    {
         DAT_02005780[i].unk00 = 0;
     }
     DAT_02005834 = param_1;
@@ -515,8 +520,10 @@ void fun_0800311c(s32 param_1)
 void fun_0800314c(u16 param_1)
 {
     u16 i;
-    for (i = 0; i < 8; i++) {
-        if (DAT_02005780[i].unk00 != 0 && DAT_02005780[i].unk02 == param_1) {
+    for (i = 0; i < 8; i++)
+    {
+        if (DAT_02005780[i].unk00 != 0 && DAT_02005780[i].unk02 == param_1)
+        {
             DAT_02005780[i].unk00 = 0;
         }
     }
@@ -774,9 +781,12 @@ DAT_080032f4:\n\
 
 u16 fun_080032f8(u16 param_1, u16 param_2, s16* param_3)
 {
-    if ((param_1 >= param_3[0]) && (param_1 < param_3[2]) && (param_2 >= param_3[1]) && (param_2 < param_3[3])) {
+    if ((param_1 >= param_3[0]) && (param_1 < param_3[2]) && (param_2 >= param_3[1]) && (param_2 < param_3[3]))
+    {
         return 1;
-    } else {
+    }
+    else
+    {
         return 0;
     }
 }
@@ -784,9 +794,12 @@ u16 fun_080032f8(u16 param_1, u16 param_2, s16* param_3)
 s16 fun_08003330(u16 param_1, u16 param_2)
 {
     s32 var = fun_08003370(param_1, param_2);
-    if (var != 0) {
+    if (var != 0)
+    {
         return (-((var - DAT_02005ce8->unk38) * 0x55555555)) >> 2;
-    } else {
+    }
+    else
+    {
         return -1;
     }
 }
@@ -1013,7 +1026,8 @@ DAT_080034bc:\n\
     .word 0x02005CE8\n\
     ");
 }
-__attribute__((naked)) void fun_080034c0()
+
+__attribute__((naked)) struct_080034c0* fun_080034c0(u16 param_1)
 {
     asm("\n\
     add         r1,r0,#0x0\n\
