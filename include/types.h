@@ -33,13 +33,45 @@ typedef double f64;
 typedef void (*Callback)();
 typedef s32 (*CallbackInt)();
 typedef s32 (*CallbackIntIntPtr)(s32, s32*);
+typedef s32 (*CallbackIntUShortUShort)(u16, u16);
 
-typedef struct LevelInfo_s
+typedef struct LevelInfo_0c
+{
+    u16 unk00;
+    u16 unk02;
+    u32 pad04;
+    u16 unk08;
+    u16 pad0a;
+    void* unk0c;
+    void* unk10;
+    void* unk14;
+    void* unk18;
+    s32 unk1c;
+    void* unk20;
+    void* unk24;
+    void* unk28;
+    s32 pad2c;
+    s32 pad30;
+    s32 unk34;
+    void* unk38;
+    void* unk3c;
+    s32 unk40;
+    void* unk44;
+    s32 unk48;
+    void* unk4c;
+    void* unk50;
+    s32 pad54;
+    s32 pad58;
+    s32 pad5c;
+    s32 pad60;
+} LevelInfo_0c;
+
+typedef struct LevelInfo
 {
     s32 unk00;
     s32 unk04;
     s32 unk08;
-    void* unk0c;
+    const LevelInfo_0c* unk0c;
     void* unk10;
     s32 unk14;
     s32 unk18;
@@ -72,6 +104,10 @@ typedef struct struct_02005ce8
 {
     s8 pad[0x38];
     s32 unk38;
+    s32 pad3c;
+    s32 pad40;
+    s32 pad44;
+    u16 unk48;
 } struct_02005ce8;
 
 typedef struct struct_08669620
@@ -164,5 +200,81 @@ typedef struct struct_080034c0
     u16 unk04;
     u16 unk06;
 } struct_080034c0;
+
+typedef struct struct_03002400_48
+{
+    u32 pad0;
+    u16 pad4;
+    u16 pad6;
+    u32 pad8;
+    u32 padc;
+    u32 pad10;
+    u16 pad14;
+    u16 pad16;
+    u32 pad18;
+    u32 pad1c;
+    u16 pad20;
+} struct_03002400_48;
+
+typedef struct struct_03002400
+{
+    u16 pad00;
+    u16 pad02;
+    u32 pad04;
+    u32 pad08;
+    u16 pad0c;
+    u16 pad0e;
+    u16 pad10;
+    u16 pad12;
+    u16 pad14;
+    u16 pad16;
+    u16 unk18;
+    u16 unk1a;
+    u16 unk1c;
+    u16 unk1e;
+    u16 pad20;
+    u16 pad22;
+    u16 pad24;
+    u16 pad26;
+    u16 pad28;
+    u16 pad2a;
+    u16 pad2c;
+    u16 pad2e;
+    u16 pad30;
+    u16 pad32;
+    u16 pad34;
+    u16 unk36;
+    u32 pad38;
+    u16 pad3c;
+    u16 pad3e;
+    u32 pad40;
+    u32 pad44;
+    struct_03002400_48 pad48;
+} struct_03002400;
+
+typedef struct vec3_ptr
+{
+    void* unk00;
+    void* unk04;
+    void* unk08;
+} vec3_ptr;
+
+typedef struct level_ptrs
+{
+    const LevelInfo* level;
+    vec3_ptr* unk04;
+} level_ptrs;
+
+typedef struct struct_0200ef30
+{
+    u16 unk00;
+    u16 unk02;
+    s16 unk04;
+    u16 unk06;
+    s32 unk08;
+    s32 unk0c;
+    s32 unk10;
+    u16* unk14; // or u16 unk14[xxx]???
+} struct_0200ef30;
 
 #endif

@@ -1,3 +1,4 @@
+#include "functions.h"
 #include "variables.h"
 
 __attribute__((naked)) void fun_0800471c()
@@ -230,6 +231,7 @@ DAT_080048b0:\n\
     .word 0x0000FFF0\n\
     ");
 }
+
 __attribute__((naked)) void fun_080048b4()
 {
     asm("\n\
@@ -590,52 +592,19 @@ LAB_08004ad8:\n\
     ");
 }
 
-__attribute__((naked)) void fun_08004adc()
+void fun_08004adc()
 {
-    asm("\n\
-    push        {lr}\n\
-    ldr         r0,DAT_08004b0c\n\
-    mov         r1,#0x0\n\
-    str         r1,[r0,#0x0]\n\
-    ldr         r0,DAT_08004b10\n\
-    strh        r1,[r0,#0x0]\n\
-    ldr         r2,DAT_08004b14\n\
-    mov         r0,#0x1\n\
-    strh        r0,[r2,#0x0]\n\
-    ldr         r0,DAT_08004b18\n\
-    str         r1,[r0,#0x0]\n\
-    ldr         r0,DAT_08004b1c\n\
-    str         r1,[r0,#0x0]\n\
-    ldr         r0,DAT_08004b20\n\
-    strh        r1,[r0,#0x0]\n\
-    ldr         r0,DAT_08004b24\n\
-    strh        r1,[r0,#0x0]\n\
-    ldr         r0,DAT_08004b28\n\
-    strh        r1,[r0,#0x0]\n\
-    bl          fun_08004cd0\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_08004b0c:\n\
-    .word 0x02007FB4\n\
-DAT_08004b10:\n\
-    .word 0x02007F90\n\
-DAT_08004b14:\n\
-    .word 0x02007F74\n\
-DAT_08004b18:\n\
-    .word 0x02007FB0\n\
-DAT_08004b1c:\n\
-    .word 0x02007F94\n\
-DAT_08004b20:\n\
-    .word 0x02007F7C\n\
-DAT_08004b24:\n\
-    .word 0x02007F70\n\
-DAT_08004b28:\n\
-    .word 0x02007F78\n\
-    ");
+    DAT_02007fb4 = 0;
+    DAT_02007f90 = 0;
+    DAT_02007f74 = 1;
+    DAT_02007fb0 = 0;
+    DAT_02007f94 = 0;
+    DAT_02007f7c = 0;
+    DAT_02007f70 = 0;
+    DAT_02007f78 = 0;
+    fun_08004cd0();
 }
+
 __attribute__((naked)) void fun_08004b2c()
 {
     asm("\n\

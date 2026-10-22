@@ -323,7 +323,7 @@ DAT_08002fec:\n\
     .word 0x0200582C\n\
     ");
 }
-__attribute__((naked)) void fun_08002ff0()
+__attribute__((naked)) void fun_08002ff0(s32 param_1, s32 param_2)
 {
     asm("\n\
     push        {r4,r5,lr}\n\
@@ -701,7 +701,7 @@ void fun_0800329c()
 {
 }
 
-__attribute__((naked)) void fun_080032a0()
+__attribute__((naked)) void fun_080032a0(s32 param_1, s32 param_2, const char* param_3, ...)
 {
     asm("\n\
      push       {r2,r3}\n\
@@ -1011,20 +1011,10 @@ LAB_080034a8:\n\
 \n\
     ");
 }
-__attribute__((naked)) void fun_080034b0()
+
+u16 fun_080034b0()
 {
-    asm("\n\
-    ldr         r0,DAT_080034bc\n\
-    ldr         r0,[r0,#0x0]\n\
-    add         r0,#0x48\n\
-    ldrh        r0,[r0,#0x0]\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_080034bc:\n\
-    .word 0x02005CE8\n\
-    ");
+    return DAT_02005ce8->unk48;
 }
 
 __attribute__((naked)) struct_080034c0* fun_080034c0(u16 param_1)
@@ -1042,7 +1032,7 @@ DAT_080034d0:\n\
     .word 0x02005CEC\n\
     ");
 }
-__attribute__((naked)) void fun_080034d4()
+__attribute__((naked)) void fun_080034d4(s32 param_1, s32 param_2, s32 param_3)
 {
     asm("\n\
     push        {r4,lr}\n\

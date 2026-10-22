@@ -1625,7 +1625,7 @@ DAT_080058b8:\n\
     .word 0x02007F80\n\
     ");
 }
-__attribute__((naked)) void fun_080058bc()
+__attribute__((naked)) u16 fun_080058bc(u16 param_1, u16 param_2)
 {
     asm("\n\
     push        {r4,r5,lr}\n\
@@ -1770,7 +1770,7 @@ DAT_080059c4:\n\
     .word 0x02007FB8\n\
     ");
 }
-__attribute__((naked)) void fun_080059c8()
+__attribute__((naked)) void fun_080059c8(u16 param_1, s32 param_2, s32 param_3, s32 param_4, s32 param_5, s32 param_6)
 {
     asm("\n\
     push        {r4,r5,r6,r7,lr}\n\
@@ -1889,24 +1889,12 @@ LAB_08005a88:\n\
     .word 0x0000fffc\n\
     ");
 }
-__attribute__((naked)) void fun_08005a8c()
+
+void fun_08005a8c(u16 param_1, s32* param_2, s32* param_3)
 {
-    asm("\n\
-    lsl        r0,r0,#0x10\n\
-    lsr        r0,r0,#0xa\n\
-    ldr        r3,DAT_08005aa0\n\
-    add        r0,r0,r3\n\
-    ldr        r3,[r0,#0x10]\n\
-    str        r3,[r1,#0x0]\n\
-    ldr        r0,[r0,#0x14]\n\
-    str        r0,[r2,#0x0]\n\
-    bx         lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_08005aa0:\n\
-    .word 0x02000278\n\
-    ");
+    struct_02000278* ptr = &DAT_02000278[param_1];
+    *param_2 = ptr->unk10;
+    *param_3 = ptr->unk14;
 }
 
 void fun_08005aa4(u16 param_1, s32 param_2, s32 param_3)

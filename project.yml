@@ -521,11 +521,11 @@ rom:
       section: rodata
       address: 0x4c6f0c
       size: 0xd0
-    - name: code_4efa5c
+    - name: code_01f684
       format: c
       section: rodata
-      address: 0x4efa5c
-      size: 0xd0
+      address: 0x4ef9f8
+      size: 0x1b2
     - name: code_4fc03c
       format: c
       section: rodata

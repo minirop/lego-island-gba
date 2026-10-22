@@ -1,8 +1,10 @@
 #include "functions.h"
+#include "variables.h"
 
 void fun_08038520()
 {
 }
+
 __attribute__((naked)) void fun_08038524()
 {
     asm("\n\
@@ -3510,7 +3512,7 @@ DAT_08039e60:\n\
      .word 0x0000FDFF\n\
     ");
 }
-__attribute__((naked)) void fun_08039e64()
+__attribute__((naked)) void fun_08039e64(vec3_ptr* param_1)
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -4011,7 +4013,7 @@ DAT_0803a214:\n\
      .word 0x020114A8\n\
     ");
 }
-__attribute__((naked)) void fun_0803a218()
+__attribute__((naked)) void fun_0803a218(u16* param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5)
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -5205,19 +5207,19 @@ DAT_0803aab8:\n\
      .word 0x020114A8\n\
     ");
 }
-__attribute__((naked)) void fun_0803aabc()
+
+void fun_0803aabc(CallbackIntUShortUShort callback)
 {
-    asm("\n\
-     ldr        r1,DAT_0803aac4\n\
-     str        r0,[r1,#0x0]\n\
-     bx         lr\n\
-.space 1\n\
-.space 1\n\
-DAT_0803aac4:\n\
-     .word 0x020114B8\n\
-    ");
+    DAT_020114b8 = callback;
 }
-__attribute__((naked)) void fun_0803aac8()
+
+#ifdef NONMATCHING
+void fun_0803aac8(struct_0200ef30* param_1, u16 param_2, u16 param_3)
+{
+    return fun_0803a218(param_1->unk14, param_2, param_3, param_1->unk02, param_1->unk06);
+}
+#else
+__attribute__((naked)) void fun_0803aac8(struct_0200ef30* param_1, u16 param_2, u16 param_3)
 {
     asm("\n\
      push       {r4,lr}\n\
@@ -5241,6 +5243,8 @@ __attribute__((naked)) void fun_0803aac8()
      bx         r1\n\
     ");
 }
+#endif
+
 __attribute__((naked)) void fun_0803aaf0()
 {
     asm("\n\
@@ -5265,21 +5269,12 @@ __attribute__((naked)) void fun_0803aaf0()
      bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_0803ab18()
+
+u16 fun_0803ab18(u16 param_1, u16 param_2)
 {
-    asm("\n\
-     push       {lr}\n\
-     lsl        r0,r0,#0x10\n\
-     lsr        r0,r0,#0x10\n\
-     lsl        r1,r1,#0x10\n\
-     lsr        r1,r1,#0x10\n\
-     bl         fun_080058bc\n\
-     lsl        r0,r0,#0x10\n\
-     lsr        r0,r0,#0x10\n\
-     pop        {r1}\n\
-     bx         r1\n\
-    ");
+    return fun_080058bc(param_1, param_2);
 }
+
 __attribute__((naked)) void fun_0803ab30()
 {
     asm("\n\

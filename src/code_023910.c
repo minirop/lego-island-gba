@@ -1,4 +1,5 @@
 #include "functions.h"
+#include "variables.h"
 
 __attribute__((naked)) s32 fun_08023910()
 {
@@ -4996,111 +4997,31 @@ void fun_08025d94()
     fun_08023c74();
 }
 
-__attribute__((naked)) void fun_08025da0()
+void fun_08025da0()
 {
-    asm("\n\
-     ldr        r1,DAT_08025dc4\n\
-     mov        r0,#0x80\n\
-     strh       r0,[r1,#0x18]\n\
-     ldr        r2,DAT_08025dc8\n\
-     ldrh       r3,[r2,#0x0]\n\
-     lsl        r0,r3,#0x3\n\
-     sub        r0,#0x79\n\
-     strh       r0,[r1,#0x1a]\n\
-     mov        r0,#0x58\n\
-     strh       r0,[r1,#0x1c]\n\
-     ldrh       r2,[r2,#0x2]\n\
-     lsl        r0,r2,#0x3\n\
-     sub        r0,#0x51\n\
-     strh       r0,[r1,#0x1e]\n\
-     mov        r0,#0x1\n\
-     strh       r0,[r1,#0x36]\n\
-     bx         lr\n\
-.space 1\n\
-.space 1\n\
-DAT_08025dc4:\n\
-     .word 0x03002400\n\
-DAT_08025dc8:\n\
-     .word 0x0852DA78\n\
-    ");
+    DAT_03002400.unk18 = 0x80;
+    DAT_03002400.unk1a = (DAT_0852da78.unk00 << 3) - 0x79;
+    DAT_03002400.unk1c = 0x58;
+    DAT_03002400.unk1e = (DAT_0852da78.unk02 << 3) - 0x51;
+    DAT_03002400.unk36 = 1;
 }
-__attribute__((naked)) void fun_08025dcc()
+
+void fun_08025dcc()
 {
-    asm("\n\
-     push       {r4,r5,r6,r7,lr}\n\
-     sub        sp,#0xc\n\
-     add        r0,sp,#0x8\n\
-     mov        r2,#0x0\n\
-     strh       r2,[r0,#0x0]\n\
-     ldr        r1,DAT_08025e44\n\
-     str        r0,[r1,#0x0]\n\
-     mov        r0,#0xc0\n\
-     lsl        r0,r0,#0x13\n\
-     str        r0,[r1,#0x4]\n\
-     ldr        r0,DAT_08025e48\n\
-     str        r0,[r1,#0x8]\n\
-     ldr        r0,[r1,#0x8]\n\
-     add        r0,sp,#0x8\n\
-     strh       r2,[r0,#0x0]\n\
-     str        r0,[r1,#0x0]\n\
-     mov        r0,#0xa0\n\
-     lsl        r0,r0,#0x13\n\
-     str        r0,[r1,#0x4]\n\
-     ldr        r0,DAT_08025e4c\n\
-     str        r0,[r1,#0x8]\n\
-     ldr        r0,[r1,#0x8]\n\
-     sub        r1,#0xd4\n\
-     mov        r2,#0xba\n\
-     lsl        r2,r2,#0x5\n\
-     add        r0,r2,#0x0\n\
-     strh       r0,[r1,#0x0]\n\
-     ldr        r0,DAT_08025e50\n\
-     bl         fun_08039e64\n\
-     mov        r4,#0x0\n\
-     ldr        r0,DAT_08025e54\n\
-     ldrh       r0,[r0,#0x8]\n\
-     cmp        r4,r0\n\
-     bcs        LAB_08025e34\n\
-     mov        r6,#0x1\n\
-.syntax unified\n\
-    rsbs        r6,r6,#0\n\
-.syntax divided\n\
-     mov        r5,#0x0\n\
-     add        r7,r0,#0x0\n\
-LAB_08025e1a:\n\
-     str        r5,[sp,#0x0]\n\
-     str        r5,[sp,#0x4]\n\
-     add        r0,r4,#0x0\n\
-     mov        r1,#0x1\n\
-     add        r2,r6,#0x0\n\
-     add        r3,r6,#0x0\n\
-     bl         fun_080059c8\n\
-     add        r0,r4,#0x1\n\
-     lsl        r0,r0,#0x10\n\
-     lsr        r4,r0,#0x10\n\
-     cmp        r4,r7\n\
-     bcc        LAB_08025e1a\n\
-LAB_08025e34:\n\
-     mov        r0,#0x1\n\
-     bl         fun_080036b0\n\
-     add        sp,#0xc\n\
-     pop        {r4,r5,r6,r7}\n\
-     pop        {r0}\n\
-     bx         r0\n\
-.space 1\n\
-.space 1\n\
-DAT_08025e44:\n\
-     .word 0x040000D4\n\
-DAT_08025e48:\n\
-     .word 0x8100C000\n\
-DAT_08025e4c:\n\
-     .word 0x81000200\n\
-DAT_08025e50:\n\
-     .word 0x0200F3C0\n\
-DAT_08025e54:\n\
-     .word 0x0852DA78\n\
-    ");
+    u16 i;
+
+    DmaFill16(3, 0, VRAM, VRAM_SIZE);
+    DmaFill16(3, 0, PLTT, PLTT_SIZE);
+    REG_DISPCNT = 0x1740;
+
+    fun_08039e64(&DAT_0200f3c0);
+    for (i = 0; i < DAT_0852da78.unk08; i++)
+    {
+        fun_080059c8(i, 1, -1, -1, 0, 0);
+    }
+    fun_080036b0(1);
 }
+
 __attribute__((naked)) void fun_08025e58()
 {
     asm("\n\
@@ -5168,31 +5089,17 @@ DAT_08025ecc:\n\
      .word 0x00005555\n\
     ");
 }
-__attribute__((naked)) s32 fun_08025ed0()
+
+s32 fun_08025ed0()
 {
-    asm("\n\
-     ldr        r2,DAT_08025ee8\n\
-     ldr        r0,DAT_08025eec\n\
-     str        r0,[r2,#0x0]\n\
-     ldr        r1,DAT_08025ef0\n\
-     str        r1,[r2,#0x4]\n\
-     ldr        r0,DAT_08025ef4\n\
-     str        r0,[r1,#0x0]\n\
-     mov        r0,#0x0\n\
-     str        r0,[r1,#0x4]\n\
-     str        r0,[r1,#0x8]\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-DAT_08025ee8:\n\
-     .word 0x0200F3D0\n\
-DAT_08025eec:\n\
-     .word 0x0853C01C\n\
-DAT_08025ef0:\n\
-     .word 0x0200F3E0\n\
-DAT_08025ef4:\n\
-     .word 0x0853BFB8\n\
-    ");
+    DAT_0200f3d0.level = &caught_fish;
+    DAT_0200f3d0.unk04 = &DAT_0200f3e0;
+    DAT_0200f3e0.unk00 = &DAT_0853bfb8;
+    DAT_0200f3e0.unk04 = NULL;
+    DAT_0200f3e0.unk08 = NULL;
+    return 1;
 }
+
 __attribute__((naked)) s32 fun_08025ef8()
 {
     asm("\n\
