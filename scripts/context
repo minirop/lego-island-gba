@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+gcc -E context.h | grep -v "#" | grep -v nullptr | grep . >context.txt
