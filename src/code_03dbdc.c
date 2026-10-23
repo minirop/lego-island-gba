@@ -264,7 +264,7 @@ DAT_0803dda0:\n\
      .word 0x02027048\n\
     ");
 }
-__attribute__((naked)) void fun_0803dda4()
+__attribute__((naked)) u16 fun_0803dda4()
 {
     asm("\n\
      add        r3,r0,#0x0\n\
@@ -361,7 +361,7 @@ LAB_0803de38:\n\
      bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_0803de40()
+__attribute__((naked)) u16 fun_0803de40()
 {
     asm("\n\
      push       {r4,lr}\n\

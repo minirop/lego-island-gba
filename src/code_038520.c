@@ -4013,7 +4013,7 @@ DAT_0803a214:\n\
      .word 0x020114A8\n\
     ");
 }
-__attribute__((naked)) void fun_0803a218(u16* param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5)
+__attribute__((naked)) int fun_0803a218(u16* param_1, u16 param_2, u16 param_3, s16* param_4, u16* param_5)
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -5213,37 +5213,10 @@ void fun_0803aabc(CallbackIntUShortUShort callback)
     DAT_020114b8 = callback;
 }
 
-#ifdef NONMATCHING
-void fun_0803aac8(struct_0200ef30* param_1, u16 param_2, u16 param_3)
+u16 fun_0803aac8(struct_0200ef30* param_1, u16 param_2, u16 param_3)
 {
-    return fun_0803a218(param_1->unk14, param_2, param_3, param_1->unk02, param_1->unk06);
+    return fun_0803a218(param_1->unk00->unk14, param_2, param_3, &param_1->unk04, &param_1->unk06);
 }
-#else
-__attribute__((naked)) void fun_0803aac8(struct_0200ef30* param_1, u16 param_2, u16 param_3)
-{
-    asm("\n\
-     push       {r4,lr}\n\
-     sub        sp,#0x4\n\
-     add        r4,r0,#0x0\n\
-     lsl        r1,r1,#0x10\n\
-     lsr        r1,r1,#0x10\n\
-     lsl        r2,r2,#0x10\n\
-     lsr        r2,r2,#0x10\n\
-     add        r3,r4,#0x0\n\
-     ldmia      r3!,{r0}\n\
-     add        r0,#0x14\n\
-     add        r4,#0x6\n\
-     str        r4,[sp,#0x0]\n\
-     bl         fun_0803a218\n\
-     lsl        r0,r0,#0x10\n\
-     lsr        r0,r0,#0x10\n\
-     add        sp,#0x4\n\
-     pop        {r4}\n\
-     pop        {r1}\n\
-     bx         r1\n\
-    ");
-}
-#endif
 
 __attribute__((naked)) void fun_0803aaf0()
 {

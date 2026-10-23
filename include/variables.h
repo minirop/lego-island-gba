@@ -80,6 +80,7 @@ extern s32 DAT_02007fb4;
 extern s32 DAT_02007fb8;
 extern s32 DAT_0200efbc;
 extern s32 DAT_0200efd0;
+extern struct_0875678c DAT_0875678c[76];
 extern u32 DAT_0200eff4;
 extern s32 DAT_0200f0a0;
 extern s32 DAT_0200f0a4;

@@ -265,16 +265,26 @@ typedef struct level_ptrs
     vec3_ptr* unk04;
 } level_ptrs;
 
-typedef struct struct_0200ef30
+typedef struct struct_0200ef30_00
 {
-    u16 unk00;
-    u16 unk02;
-    s16 unk04;
-    u16 unk06;
+    s32 unk00;
+    s32 unk04;
     s32 unk08;
     s32 unk0c;
     s32 unk10;
-    u16* unk14; // or u16 unk14[xxx]???
+    u16 unk14[4];
+} struct_0200ef30_00;
+typedef struct struct_0200ef30
+{
+    struct_0200ef30_00* unk00;
+    s16 unk04;
+    u16 unk06;
 } struct_0200ef30;
+
+typedef struct struct_0875678c
+{
+    u16 unk00;
+    s16 unk02;
+} struct_0875678c;
 
 #endif

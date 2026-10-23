@@ -3695,7 +3695,7 @@ LAB_0803da3e:\n\
      bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_0803da44()
+__attribute__((naked)) void fun_0803da44(s32 param_1, u16 param_2)
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\

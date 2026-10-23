@@ -1,44 +1,38 @@
-__attribute__((naked)) void fun_08001744()
+#include "functions.h"
+#include "variables.h"
+
+u16 fun_08001744()
 {
-    asm("\n\
-    push        {lr}\n\
-    bl          fun_0803dda4\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r0,r0,#0x10\n\
-    pop         {r1}\n\
-    bx          r1\n\
-\n\
-.space 2\n\
-\n\
-    ");
-}
-__attribute__((naked)) void fun_08001754()
-{
-    asm("\n\
-    push        {lr}\n\
-    lsl         r1,r1,#0x10\n\
-    lsr         r1,r1,#0x10\n\
-    bl          fun_0803da44\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-    ");
-}
-__attribute__((naked)) void fun_08001764()
-{
-    asm("\n\
-    push        {lr}\n\
-    bl          fun_0803de40\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r0,r0,#0x10\n\
-    pop         {r1}\n\
-    bx          r1\n\
-    ");
+    return fun_0803dda4();
 }
 
-__attribute__((naked)) void fun_08001774()
+void fun_08001754(s32 param_1, u16 param_2)
+{
+    fun_0803da44(param_1, param_2);
+}
+
+u16 fun_08001764()
+{
+    return fun_0803de40();
+}
+
+#ifdef NONMATCHING
+s16 fun_08001774(u16 param_1)
+{
+    u16 i;
+
+    for (i = 0; i < 76; i += 2)
+    {
+        if (param_1 == DAT_0875678c[i].unk00)
+        {
+            return DAT_0875678c[i].unk02;
+        }
+    }
+
+    return -1;
+}
+#else
+__attribute__((naked)) s16 fun_08001774(u16 param_1)
 {
     asm("\n\
     push       {r4,r5,r6,lr}\n\
@@ -76,3 +70,4 @@ LAB_080017a6:\n\
     bx         r1\n\
     ");
 }
+#endif

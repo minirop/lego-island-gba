@@ -777,6 +777,15 @@ void fun_0803dd20();
 void fun_0803f0d0();
 void fun_0803fbf8();
 void fun_080496e8();
+void fun_08003048();
+void fun_08020a74();
+void fun_08020ce0();
+void fun_08020f2c();
+u16 fun_0803dda4();
+u16 fun_08001764();
+u16 fun_0803de40();
+u16 fun_08001744();
+void fun_0803da44(s32 param_1, u16 param_2);
 void LZ77UnCompVram(const void* src, void* dest);
 
 #endif
