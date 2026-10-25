@@ -4,6 +4,7 @@ import subprocess
 
 naked_functions = []
 all_functions = []
+functions_sizes = {}
 
 src = "../src"
 for f in listdir(src):
@@ -25,7 +26,11 @@ for f in listdir(src):
                 if "FUNC    GLOBAL" in l:
                     parts = [x for x in l.split(" ") if len(x) > 0]
                     all_functions.append(parts[-1])
+                    functions_sizes[parts[-1]] = int(parts[2])
 
 print (len(naked_functions), "naked functions")
 print (len(all_functions), "functions")
-print (str(round(100.0 - len(naked_functions) * 100 / len(all_functions), 2)) + "%")
+print ("functions:", str(round(100.0 - len(naked_functions) * 100 / len(all_functions), 2)) + "%")
+size_sum = sum(functions_sizes.values())
+size_naked = sum([s for n, s in functions_sizes.items() if n in naked_functions])
+print ("bytes:", str(round(100.0 - size_naked * 100 / size_sum, 2)) + "%")
