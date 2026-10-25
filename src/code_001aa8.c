@@ -748,7 +748,7 @@ s32 fun_080020bc(u16 param_1)
     else
     {
         struct_02002620* ptr = &DAT_02002620[DAT_02005570];
-        return ((ptr->unk0e44[17] & (1 << ((param_1 - 2000)))) != 0);
+        return ((ptr->unk0e88 & (1 << ((param_1 - 2000)))) != 0);
     }
 }
 
@@ -761,7 +761,7 @@ void fun_08002114(u16 param_1)
     if ((u16)(param_1 - 2000) < 0x1c)
     {
         struct_02002620* ptr = &DAT_02002620[DAT_02005570];
-        ptr->unk0e44[17] |= (1 << ((param_1 - 2000)));
+        ptr->unk0e88 |= (1 << ((param_1 - 2000)));
     }
 }
 

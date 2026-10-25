@@ -1,5 +1,6 @@
 #include "functions.h"
 #include "variables.h"
+#include <string.h>
 
 __attribute__((naked)) void fun_08001894()
 {
@@ -258,20 +259,10 @@ LAB_08001a54:\n\
     bx          r0\n\
     ");
 }
-__attribute__((naked)) void fun_08001a5c()
+
+void fun_08001a5c()
 {
-    asm("\n\
-    push       {lr}\n\
-    bl         fun_080020a4\n\
-    mov        r1,#0xe4\n\
-    lsl        r1,r1,#0x4\n\
-    add        r0,r0,r1\n\
-    mov        r1,#0x0\n\
-    mov        r2,#0x9\n\
-    bl         memset\n\
-    pop        {r0}\n\
-    bx         r0\n\
-    ");
+    memset(&fun_080020a4()->unk0e40, 0, 9);
 }
 
 u32 fun_08001a74(u16 param_1)

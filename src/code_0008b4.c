@@ -1,39 +1,14 @@
 #include "functions.h"
 #include "variables.h"
+#include <string.h>
 
-__attribute__((naked)) void fun_080008b4()
+struct_02005210* fun_080008b4(struct_02005210* param_1, int param_2, int param_3)
 {
-    asm("\n\
-    push        {r4,r5,lr}\n\
-    sub         sp,#0x8\n\
-    add         r5,r0,#0x0\n\
-    add         r0,r1,#0x0\n\
-    ldr         r4,DAT_080008ec\n\
-    lsl         r2,r2,#0x3\n\
-    lsl         r1,r0,#0x1\n\
-    add         r1,r1,r0\n\
-    lsl         r1,r1,#0x3\n\
-    add         r0,r2,r1\n\
-    add         r3,r4,#0x4\n\
-    add         r0,r0,r3\n\
-    ldr         r0,[r0,#0x0]\n\
-    str         r0,[sp,#4]\n\
-    add         r2,r2,r4\n\
-    add         r1,r1,r2\n\
-    mov         r0,sp\n\
-    bl          strcpy\n\
-    add         r1,r5,#0x0\n\
-    mov         r0,sp\n\
-    ldmia       r0!,{r2,r3}\n\
-    stmia       r1!,{r2,r3}\n\
-    add         r0,r5,#0x0\n\
-    add         sp,#0x8\n\
-    pop         {r4,r5}\n\
-    pop         {r1}\n\
-    bx          r1\n\
-DAT_080008ec:\n\
-    .word 0x02005210\n\
-    ");
+    struct_02005210 local;
+    local.unk04 = DAT_02005210[param_2][param_3].unk04;
+    strcpy(local.unk00, DAT_02005210[param_2][param_3].unk00);
+    memcpy(param_1, &local, 8);
+    return param_1;
 }
 
 __attribute__((naked)) void fun_080008f0()
@@ -1177,8 +1152,8 @@ s32 fun_080011cc()
 #ifdef NONMATCHING
 void fun_080011d8()
 {
-    u16 i;
-    for (i = 0; i < levels_count; ++i)
+    u16 i = 0;
+    for (i = 0; i < levels_count; i++)
     {
         if (levels[i]->unk38 != NULL)
         {

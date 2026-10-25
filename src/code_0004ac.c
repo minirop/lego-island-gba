@@ -1,37 +1,48 @@
 #include "variables.h"
 #include <string.h>
 
-__attribute__((naked)) void fun_080004ac()
+void fun_080004ac(struct_020006a0* param_1, struct_0877bde8* param_2)
 {
-    asm("\n\
-    push        {r4,lr}\n\
-    str         r1,[r0,#0x0]\n\
-    ldrh        r2,[r1,#0x0]\n\
-    mov         r4,#0x0\n\
-    mov         r3,#0x0\n\
-    strh        r2,[r0,#0x4]\n\
-    ldrh        r2,[r1,#0x2]\n\
-    strh        r2,[r0,#0x6]\n\
-    ldr         r2,[r1,#0x8]\n\
-    str         r2,[r0,#0x8]\n\
-    str         r3,[r0,#0xc]\n\
-    ldrh        r2,[r1,#0x1c]\n\
-    strh        r2,[r0,#0x12]\n\
-    ldrb        r2,[r1,#0x1e]\n\
-    strb        r2,[r0,#0x14]\n\
-    ldrh        r2,[r1,#0x20]\n\
-    strh        r2,[r0,#0x16]\n\
-    ldrh        r1,[r1,#0x10]\n\
-    strh        r1,[r0,#0x10]\n\
-    strb        r4,[r0,#0x18]\n\
-    str         r3,[r0,#0x1c]\n\
-    pop         {r4}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-    ");
+    param_1->unk00 = &param_2->unk00;
+    param_1->unk04 = param_2->unk00;
+    param_1->unk06 = param_2->unk02;
+    param_1->unk08 = param_2->unk08;
+    param_1->unk0c = 0;
+    param_1->unk12 = param_2->unk1c;
+    param_1->unk14 = param_2->unk1e;
+    param_1->unk16 = param_2->unk20;
+    param_1->unk10 = param_2->unk10;
+    param_1->unk18 = 0;
+    param_1->unk1c = NULL;
 }
 
-__attribute__((naked)) void fun_080004dc(int a, int b, char* c)
+#ifdef NONMATCHING
+void fun_080004dc(u32 param_1, u32 param_2, char* param_3)
+{
+    if (param_2 >= DAT_02005210[param_1][0].unk04)
+    {
+        DAT_02005210[param_1][2].unk04 = DAT_02005210[param_1][1].unk04;
+        strncpy(DAT_02005210[param_1][2].unk00, DAT_02005210[param_1][1].unk00, 3);
+        DAT_02005210[param_1][1].unk04 = DAT_02005210[param_1][0].unk04;
+        strncpy(DAT_02005210[param_1][1].unk00, DAT_02005210[param_1][0].unk00, 3);
+        DAT_02005210[param_1][0].unk04 = param_2;
+        strncpy(DAT_02005210[param_1][0].unk00, param_3, 3);
+    }
+    else if (param_2 >= DAT_02005210[param_1][1].unk04)
+    {
+        DAT_02005210[param_1][2].unk04 = DAT_02005210[param_1][1].unk04;
+        strncpy(DAT_02005210[param_1][2].unk00, DAT_02005210[param_1][1].unk00, 3);
+        DAT_02005210[param_1][1].unk04 = param_2;
+        strncpy(DAT_02005210[param_1][1].unk00, param_3, 3);
+    }
+    else if (param_2 >= DAT_02005210[param_1][2].unk04)
+    {
+        DAT_02005210[param_1][2].unk04 = param_2;
+        strncpy(DAT_02005210[param_1][2].unk00, param_3, 3);
+    }
+}
+#else
+__attribute__((naked)) void fun_080004dc(u32 param_1, u32 param_2, char* param_3)
 {
     asm("\n\
     push       {r4,r5,r6,r7,lr}\n\
@@ -117,6 +128,7 @@ LAB_08000572:\n\
     bx         r0\n\
     ");
 }
+#endif
 
 void fun_08000584()
 {
@@ -180,48 +192,21 @@ void fun_08000584()
     fun_080004dc(0x20, 0x4b, "JTS");
 }
 
-__attribute__((naked)) void fun_08000870(int a, int b, char* c)
+int fun_08000870(int param_1, int param_2)
 {
-    asm("\n\
-    add        r2,r1,#0x0\n\
-    ldr        r3,DAT_08000888\n\
-    lsl        r1,r0,#0x1\n\
-    add        r1,r1,r0\n\
-    lsl        r1,r1,#0x3\n\
-    add        r0,r3,#0x4\n\
-    add        r0,r1,r0\n\
-    ldr        r0,[r0,#0x0]\n\
-    cmp        r0,r2\n\
-    bne        LAB_0800088c\n\
-    mov        r0,#0x0\n\
-    b          LAB_080008b0\n\
-DAT_08000888:\n\
-    .word 0x02005210\n\
-LAB_0800088c:\n\
-    add        r0,r3,#0x0\n\
-    add        r0,#0xc\n\
-    add        r0,r1,r0\n\
-    ldr        r0,[r0,#0x0]\n\
-    cmp        r0,r2\n\
-    bne        LAB_0800089c\n\
-    mov        r0,#0x1\n\
-    b          LAB_080008b0\n\
-LAB_0800089c:\n\
-    add        r0,r3,#0x0\n\
-    add        r0,#0x14\n\
-    add        r0,r1,r0\n\
-    ldr        r0,[r0,#0x0]\n\
-    cmp        r0,r2\n\
-    beq        LAB_080008ae\n\
-    mov        r0,#0x1\n\
-.syntax unified\n\
-    rsbs       r0,r0,#0\n\
-.syntax divided\n\
-    b          LAB_080008b0\n\
-LAB_080008ae:\n\
-    mov        r0,#0x2\n\
-LAB_080008b0:\n\
-    bx         lr\n\
-.space 2\n\
-    ");
+    if (DAT_02005210[param_1][0].unk04 == param_2)
+    {
+        return 0;
+    }
+    if (DAT_02005210[param_1][1].unk04 == param_2)
+    {
+        return 1;
+    }
+    if (DAT_02005210[param_1][2].unk04 == param_2)
+    {
+        return 2;
+    }
+    return -1;
 }
+
+asm(".space 2");

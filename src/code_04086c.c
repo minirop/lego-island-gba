@@ -2602,7 +2602,7 @@ DAT_08041a40:\n\
      .word 0x02027048\n\
     ");
 }
-__attribute__((naked)) void fun_08041a44()
+__attribute__((naked)) void fun_08041a44(u8 param_1)
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -2836,7 +2836,7 @@ LAB_08041bee:\n\
      bx         r1\n\
     ");
 }
-__attribute__((naked)) void fun_08041bfc()
+__attribute__((naked)) void fun_08041bfc(s32 param_1)
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\

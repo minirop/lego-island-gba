@@ -6,9 +6,9 @@ s32 fun_08007de0()
 {
     DAT_0200c5d0.info = &unknown;
     DAT_0200c5d0.ptr = &DAT_0200c5e0;
-    DAT_0200c5e0[0] = &DAT_080c5f1c;
-    DAT_0200c5e0[1] = 0;
-    DAT_0200c5e0[2] = 0;
+    DAT_0200c5e0.unk00 = &DAT_080c5f1c;
+    DAT_0200c5e0.unk04 = 0;
+    DAT_0200c5e0.unk08 = 0;
     return 1;
 }
 
@@ -249,51 +249,31 @@ s32 fun_08007fb4()
     return 1;
 }
 
-__attribute__((naked)) void fun_08007fb8()
+void fun_08007fb8()
 {
-    asm("\n\
-    push        {lr}\n\
-    ldr         r0,DAT_08007fcc\n\
-    ldrb        r0,[r0,#0x0]\n\
-    cmp         r0,#0xc\n\
-    beq         LAB_08007fe6\n\
-    cmp         r0,#0xc\n\
-    bgt         LAB_08007fd0\n\
-    cmp         r0,#0xb\n\
-    beq         LAB_08007fd6\n\
-    b           LAB_08007fec\n\
-DAT_08007fcc:\n\
-    .word 0x0200254C\n\
-LAB_08007fd0:\n\
-    cmp         r0,#0xd\n\
-    beq         LAB_08007fde\n\
-    b           LAB_08007fec\n\
-LAB_08007fd6:\n\
-    mov         r0,#0x24\n\
-    bl          fun_08001070\n\
-    b           LAB_08007ff0\n\
-LAB_08007fde:\n\
-    mov         r0,#0x8\n\
-    bl          fun_08001070\n\
-    b           LAB_08007ff0\n\
-LAB_08007fe6:\n\
-    bl          fun_08017d50\n\
-    b           LAB_08007ff0\n\
-LAB_08007fec:\n\
-    bl          fun_080010d8\n\
-LAB_08007ff0:\n\
-    pop         {r0}\n\
-    bx          r0\n\
-    ");
+    switch (DAT_0200254c)
+    {
+    case 0xb:
+        fun_08001070(0x24);
+        break;
+    case 0xd:
+        fun_08001070(8);
+        break;
+    case 0xc:
+        fun_08017d50();
+        break;
+    default:
+        fun_080010d8();
+    }
 }
 
 s32 fun_08007ff4()
 {
     DAT_0200c630.info = &credits;
     DAT_0200c630.ptr = &DAT_0200c620;
-    DAT_0200c620[0] = &DAT_08107c38;
-    DAT_0200c620[1] = 0;
-    DAT_0200c620[2] = 0;
+    DAT_0200c620.unk00 = &DAT_08107c38;
+    DAT_0200c620.unk04 = 0;
+    DAT_0200c620.unk08 = 0;
     return 1;
 }
 
@@ -3391,55 +3371,32 @@ DAT_080096a8:\n\
     ");
 }
 
-__attribute__((naked)) void fun_080096ac()
+u16 fun_080096ac()
 {
-    asm("\n\
-    push       {r4,r5,lr}\n\
-    mov        r5,#0x0\n\
-    mov        r4,#0x0\n\
-LAB_080096b2:\n\
-    bl         fun_080020a4\n\
-    ldr        r1,DAT_080096dc\n\
-    add        r0,r0,r1\n\
-    add        r0,r0,r4\n\
-    ldrb       r0,[r0,#0x0]\n\
-    cmp        r0,#0x0\n\
-    beq        LAB_080096c8\n\
-    add        r0,r5,#0x1\n\
-    lsl        r0,r0,#0x10\n\
-    lsr        r5,r0,#0x10\n\
-LAB_080096c8:\n\
-    add        r0,r4,#0x1\n\
-    lsl        r0,r0,#0x10\n\
-    lsr        r4,r0,#0x10\n\
-    cmp        r4,#0x27\n\
-    bls        LAB_080096b2\n\
-    add        r0,r5,#0x0\n\
-    pop        {r4,r5}\n\
-    pop        {r1}\n\
-    bx         r1\n\
-.space 2\n\
-DAT_080096dc:\n\
-    .word 0x00000E5A\n\
-    ");
+    u16 i, l;
+
+    l = 0;
+    for (i = 0; i < 0x28; i++)
+    {
+        if (fun_080020a4()->unk0e5a[i] != 0)
+        {
+            l++;
+        }
+    }
+
+    return l;
 }
 
-__attribute__((naked)) void fun_080096e0()
+s32 fun_080096e0()
 {
-    asm("\n\
-    push       {r4,lr}\n\
-    mov        r4,#0x0\n\
-LAB_080096e4:\n\
-    bl         fun_080020a4\n\
-    add        r0,r4,#0x1\n\
-    lsl        r0,r0,#0x10\n\
-    lsr        r4,r0,#0x10\n\
-    cmp        r4,#0x27\n\
-    bls        LAB_080096e4\n\
-    mov        r0,#0x0\n\
-    pop        {r4}\n\
-    pop        {r1}\n\
-    bx         r1\n\
-.space 2\n\
-    ");
+    u16 i;
+
+    for (i = 0; i < 0x28; i++)
+    {
+        fun_080020a4();
+    }
+
+    return 0;
 }
+
+asm(".space 2");

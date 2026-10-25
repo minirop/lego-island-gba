@@ -1,4 +1,5 @@
 #include "functions.h"
+#include "variables.h"
 
 __attribute__((naked)) void fun_08001534()
 {
@@ -226,48 +227,20 @@ DAT_080016ac:\n\
     .word 0x020025D0\n\
     ");
 }
-__attribute__((naked)) void fun_080016b0()
+
+s32 fun_080016b0(u8 param_1)
 {
-    asm("\n\
-    push        {r4,lr}\n\
-    add         r4,r0,#0x0\n\
-    lsl         r4,r4,#0x18\n\
-    lsr         r4,r4,#0x18\n\
-    add         r0,r4,#0x0\n\
-    bl          fun_08041a44\n\
-    bl          fun_08042614\n\
-    ldr         r0,DAT_080016d0\n\
-    strh        r4,[r0,#0x0]\n\
-    mov         r0,#0x0\n\
-    pop         {r4}\n\
-    pop         {r1}\n\
-    bx          r1\n\
-\n\
-.space 2\n\
-\n\
-DAT_080016d0:\n\
-    .word 0x020025D0\n\
-    ");
+    fun_08041a44(param_1);
+    fun_08042614();
+    DAT_020025d0 = param_1;
+    return 0;
 }
-__attribute__((naked)) void fun_080016d4()
+
+s32 fun_080016d4()
 {
-    asm("\n\
-    push        {lr}\n\
-    mov         r0,#0x3\n\
-    bl          fun_08041bfc\n\
-    ldr         r1,DAT_080016ec\n\
-    mov         r2,#0x1\n\
-.syntax unified\n\
-    rsbs        r2,r2,#0\n\
-.syntax divided\n\
-    add         r0,r2,#0x0\n\
-    strh        r0,[r1,#0x0]\n\
-    mov         r0,#0x0\n\
-    pop         {r1}\n\
-    bx          r1\n\
-DAT_080016ec:\n\
-    .word 0x020025D0\n\
-    ");
+    fun_08041bfc(3);
+    DAT_020025d0 = -1;
+    return 0;
 }
 
 s32 fun_080016f0(u16 param_1)
@@ -286,23 +259,13 @@ void fun_08001710()
     fun_0803d5bc();
 }
 
-__attribute__((naked)) void fun_08001720()
+void fun_08001720()
 {
-    asm("\n\
-    push       {r4,r5,lr}\n\
-    ldr        r5,DAT_08001740\n\
-    ldrh       r4,[r5,#0x0]\n\
-    bl         fun_08001534\n\
-    lsl        r4,r4,#0x18\n\
-    lsr        r4,r4,#0x18\n\
-    add        r0,r4,#0x0\n\
-    bl         fun_08041a44\n\
-    bl         fun_08042614\n\
-    strh       r4,[r5,#0x0]\n\
-    pop        {r4,r5}\n\
-    pop        {r0}\n\
-    bx         r0\n\
-DAT_08001740:\n\
-    .word     DAT_020025d0\n\
-    ");
+    u8 b;
+    u16 a = DAT_020025d0;
+    fun_08001534();
+    b = a;
+    fun_08041a44(b);
+    fun_08042614();
+    DAT_020025d0 = b;
 }

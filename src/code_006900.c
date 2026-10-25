@@ -5,9 +5,9 @@ s32 fun_08006900()
 {
     DAT_02009b10.info = &empty;
     DAT_02009b10.ptr = &DAT_02009b20;
-    DAT_02009b20[0] = &DAT_0807c290;
-    DAT_02009b20[1] = 0;
-    DAT_02009b20[2] = 0;
+    DAT_02009b20.unk00 = &DAT_0807c290;
+    DAT_02009b20.unk04 = 0;
+    DAT_02009b20.unk08 = 0;
     return 1;
 }
 
