@@ -185,7 +185,7 @@ LAB_08007bc4:\n\
 LAB_08007bc8:\n\
     lsl         r0,r0,#0x10\n\
     lsr         r4,r0,#0x10\n\
-    bl          fun_080013f4\n\
+    bl          is_a_pressed\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_08007c24\n\
@@ -229,7 +229,7 @@ LAB_08007c0e:\n\
     mov         r0,#0x22\n\
     bl          fun_08001088\n\
 LAB_08007c24:\n\
-    bl          fun_0800140c\n\
+    bl          is_b_pressed\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_08007c44\n\
@@ -270,7 +270,7 @@ __attribute__((naked)) void fun_08007c68()
 {
     asm("\n\
     push        {r4,lr}\n\
-    bl          fun_08001374\n\
+    bl          is_right_pressed\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_08007c86\n\
@@ -283,7 +283,7 @@ __attribute__((naked)) void fun_08007c68()
     bl          __modsi3\n\
     strb        r0,[r4,#0x0]\n\
 LAB_08007c86:\n\
-    bl          fun_0800135c\n\
+    bl          is_left_pressed\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_08007ca6\n\
@@ -299,7 +299,7 @@ LAB_08007c86:\n\
     sub         r0,#0x1\n\
     strb        r0,[r1,#0x0]\n\
 LAB_08007ca6:\n\
-    bl          fun_080013c4\n\
+    bl          is_up_pressed\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_08007cea\n\
@@ -337,7 +337,7 @@ LAB_08007ce4:\n\
     strb        r0,[r3,#0x0]\n\
     b           LAB_08007d4a\n\
 LAB_08007cea:\n\
-    bl          fun_080013dc\n\
+    bl          is_down_pressed\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_08007d4a\n\

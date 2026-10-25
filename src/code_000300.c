@@ -21,13 +21,13 @@ void fun_08000300()
 void fun_0800038c()
 {
     fun_080004ac(0x0, 0x0);
-    fun_08001424();
-    fun_080014bc();
-    fun_080014d4();
-    fun_08001454();
-    fun_0800146c();
-    fun_080014ec();
-    fun_08001504();
+    is_start_held();
+    is_up_held();
+    is_down_held();
+    is_left_held();
+    is_right_held();
+    is_a_held();
+    is_b_held();
     fun_080017ac();
     fun_080018e4(0);
     fun_08001a14(0, 1);

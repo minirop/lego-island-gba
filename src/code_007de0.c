@@ -2055,13 +2055,13 @@ LAB_08008d18:\n\
     cmp         r0,#0x0\n\
     beq         LAB_08008d54\n\
     bl          fun_08009078\n\
-    bl          fun_080013f4\n\
+    bl          is_a_pressed\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_08008d30\n\
     bl          fun_0800920c\n\
 LAB_08008d30:\n\
-    bl          fun_0800140c\n\
+    bl          is_b_pressed\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_08008d62\n\
@@ -2078,7 +2078,7 @@ DAT_08008d4c:\n\
 DAT_08008d50:\n\
     .word 0x02005750\n\
 LAB_08008d54:\n\
-    bl          fun_0800140c\n\
+    bl          is_b_pressed\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_08008d62\n\

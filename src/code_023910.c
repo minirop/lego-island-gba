@@ -524,7 +524,7 @@ __attribute__((naked)) void fun_08023d00()
      ldrh       r0,[r5,#0x0]\n\
      cmp        r0,#0x8\n\
      bne        LAB_08023d8c\n\
-     bl         fun_08001454\n\
+     bl         is_left_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08023d1c\n\
@@ -532,7 +532,7 @@ __attribute__((naked)) void fun_08023d00()
      sub        r0,#0x4\n\
      strh       r0,[r5,#0x22]\n\
 LAB_08023d1c:\n\
-     bl         fun_0800146c\n\
+     bl         is_right_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08023d2c\n\
@@ -540,7 +540,7 @@ LAB_08023d1c:\n\
      add        r0,#0x4\n\
      strh       r0,[r5,#0x22]\n\
 LAB_08023d2c:\n\
-     bl         fun_080014bc\n\
+     bl         is_up_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08023d3c\n\
@@ -548,7 +548,7 @@ LAB_08023d2c:\n\
      sub        r0,#0x4\n\
      strh       r0,[r5,#0x24]\n\
 LAB_08023d3c:\n\
-     bl         fun_080014d4\n\
+     bl         is_down_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08023d4c\n\
@@ -597,7 +597,7 @@ LAB_08023d8c:\n\
      beq        LAB_08023d94\n\
      b          LAB_08023f1e\n\
 LAB_08023d94:\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08023dd0\n\
@@ -626,7 +626,7 @@ LAB_08023d94:\n\
      mov        r0,#0x18\n\
      bl         fun_080016f0\n\
 LAB_08023dd0:\n\
-     bl         fun_0800140c\n\
+     bl         is_b_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08023e14\n\
@@ -676,7 +676,7 @@ LAB_08023e28:\n\
      ldrh       r0,[r0,#0x0]\n\
      cmp        r0,#0x0\n\
      bne        LAB_08023e94\n\
-     bl         fun_08001454\n\
+     bl         is_left_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08023e70\n\
@@ -707,7 +707,7 @@ DAT_08023e68:\n\
 DAT_08023e6c:\n\
      .word 0xFFFD8000\n\
 LAB_08023e70:\n\
-     bl         fun_0800146c\n\
+     bl         is_right_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08023e94\n\
@@ -726,7 +726,7 @@ LAB_08023e70:\n\
 LAB_08023e92:\n\
      strh       r0,[r1,#0x12]\n\
 LAB_08023e94:\n\
-     bl         fun_080014bc\n\
+     bl         is_up_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08023ec4\n\
@@ -752,7 +752,7 @@ DAT_08023ebc:\n\
 DAT_08023ec0:\n\
      .word 0x0000FFBA\n\
 LAB_08023ec4:\n\
-     bl         fun_080014d4\n\
+     bl         is_down_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08023ee8\n\
@@ -5199,11 +5199,11 @@ __attribute__((naked)) s32 fun_08025fa8()
      add        r0,#0x1\n\
      strb       r0,[r4,#0x0]\n\
 LAB_08025fb6:\n\
-     bl         fun_0800132c\n\
+     bl         is_start_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_08025fd0\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08026004\n\
@@ -5454,11 +5454,11 @@ __attribute__((naked)) s32 fun_08026178()
      bne        LAB_0802618e\n\
      bl         fun_08026248\n\
 LAB_0802618e:\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_080261a2\n\
-     bl         fun_0800132c\n\
+     bl         is_start_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08026236\n\
@@ -6054,7 +6054,7 @@ DAT_080265c4:\n\
 DAT_080265c8:\n\
      .4byte 0x0200F444\n\
 LAB_080265cc:\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_080265da\n\

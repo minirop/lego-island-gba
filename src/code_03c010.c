@@ -774,10 +774,10 @@ LAB_0803c61a:\n\
      ldrb       r1,[r1,#0x0]\n\
      bl         fun_0800de48\n\
 LAB_0803c638:\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      cmp        r0,#0x0\n\
      bne        LAB_0803c648\n\
-     bl         fun_0800140c\n\
+     bl         is_b_pressed\n\
      cmp        r0,#0x0\n\
      beq        LAB_0803c64c\n\
 LAB_0803c648:\n\
@@ -1438,7 +1438,7 @@ LAB_0803caa6:\n\
      ldrh       r0,[r5,#0x6]\n\
      mov        r2,r9\n\
      strh       r0,[r2,#0x0]\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      cmp        r0,#0x0\n\
      beq        LAB_0803cae4\n\
      ldrb       r3,[r5,#0x18]\n\

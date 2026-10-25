@@ -263,14 +263,14 @@ __attribute__((naked)) void fun_08010c1c()
     beq         LAB_08010c40\n\
     b           switchD_08010ccc_caseD_3\n\
 LAB_08010c40:\n\
-    bl          fun_0800140c\n\
+    bl          is_b_pressed\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_08010c50\n\
     ldr         r0,DAT_08010c98\n\
     bl          fun_08010a4c\n\
 LAB_08010c50:\n\
-    bl          fun_080014ec\n\
+    bl          is_a_held\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     bne         LAB_08010c5c\n\

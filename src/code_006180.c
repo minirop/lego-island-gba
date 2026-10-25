@@ -645,11 +645,11 @@ __attribute__((naked)) void fun_080066cc()
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\
-     bl         fun_0800132c\n\
+     bl         is_start_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_080066e2\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08006738\n\
@@ -699,7 +699,7 @@ LAB_08006732:\n\
      mov        r0,#0x5\n\
      bl         fun_08001070\n\
 LAB_08006738:\n\
-     bl         fun_080013c4\n\
+     bl         is_up_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0800674e\n\
@@ -710,7 +710,7 @@ LAB_08006738:\n\
      mov        r0,#0x0\n\
      strb       r0,[r1,#0x0]\n\
 LAB_0800674e:\n\
-     bl         fun_080013dc\n\
+     bl         is_down_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0800676c\n\
@@ -836,11 +836,11 @@ __attribute__((naked)) s32 fun_08006824()
 DAT_0800683c:\n\
      .4byte 0x02009AF4\n\
 LAB_08006840:\n\
-     bl         fun_0800132c\n\
+     bl         is_start_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_08006854\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08006890\n\

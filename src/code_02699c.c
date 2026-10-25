@@ -1303,7 +1303,7 @@ LAB_0802734a:\n\
      mov        r0,#0x10\n\
      bl         fun_08001070\n\
 LAB_0802736c:\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0802738a\n\
@@ -1317,7 +1317,7 @@ LAB_0802736c:\n\
      mov        r0,#0x5\n\
      strb       r0,[r1,#0x0]\n\
 LAB_0802738a:\n\
-     bl         fun_0800140c\n\
+     bl         is_b_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_080273a8\n\

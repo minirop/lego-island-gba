@@ -586,7 +586,7 @@ LAB_08009b7c:\n\
     and         r0,r2\n\
 LAB_08009b84:\n\
     strh        r0,[r1,#0x12]\n\
-    bl          fun_0800138c\n\
+    bl          is_l_pressed\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_08009ba4\n\
@@ -600,7 +600,7 @@ LAB_08009b84:\n\
     mov         r0,#0x1c\n\
     bl          fun_08001088\n\
 LAB_08009ba4:\n\
-    bl          fun_080013a8\n\
+    bl          is_r_pressed\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_08009bc2\n\
@@ -1699,7 +1699,7 @@ LAB_0800a3e0:\n\
     ldr         r1,DAT_0800a42c\n\
     mov         r0,#0x0\n\
     strh        r0,[r1,#0x0]\n\
-    bl          fun_0800140c\n\
+    bl          is_b_pressed\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_0800a43e\n\
@@ -1757,7 +1757,7 @@ LAB_0800a450:\n\
     mov         r1,#0x5\n\
     add         r2,r4,#0x0\n\
     bl          fun_080032a0\n\
-    bl          fun_080014d4\n\
+    bl          is_down_held\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_0800a476\n\
@@ -1766,7 +1766,7 @@ LAB_0800a450:\n\
     add         r0,r3,r1\n\
     strh        r0,[r7,#0x0]\n\
 LAB_0800a476:\n\
-    bl          fun_08001454\n\
+    bl          is_left_held\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_0800a488\n\
@@ -1775,7 +1775,7 @@ LAB_0800a476:\n\
     sub         r0,r2,r3\n\
     strh        r0,[r6,#0x0]\n\
 LAB_0800a488:\n\
-    bl          fun_080014bc\n\
+    bl          is_up_held\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_0800a49a\n\
@@ -1784,7 +1784,7 @@ LAB_0800a488:\n\
     sub         r0,r1,r2\n\
     strh        r0,[r7,#0x0]\n\
 LAB_0800a49a:\n\
-    bl          fun_0800146c\n\
+    bl          is_right_held\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_0800a4ac\n\
@@ -1842,7 +1842,7 @@ LAB_0800a4dc:\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     bne         LAB_0800a59e\n\
-    bl          fun_080013f4\n\
+    bl          is_a_pressed\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_0800a59e\n\

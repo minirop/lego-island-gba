@@ -2832,7 +2832,7 @@ __attribute__((naked)) void fun_080230ac()
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
      add        r7,r0,#0x0\n\
-     bl         fun_080014ec\n\
+     bl         is_a_held\n\
      lsl        r0,r0,#0x10\n\
      lsr        r2,r0,#0x10\n\
      cmp        r2,#0x0\n\
@@ -2853,7 +2853,7 @@ __attribute__((naked)) void fun_080230ac()
      ldr        r0,DAT_080231bc\n\
      strh       r2,[r0,#0x0]\n\
 LAB_080230da:\n\
-     bl         fun_08001454\n\
+     bl         is_left_held\n\
      lsl        r0,r0,#0x10\n\
      lsr        r2,r0,#0x10\n\
      cmp        r2,#0x0\n\
@@ -2871,7 +2871,7 @@ LAB_080230da:\n\
      ldr        r0,DAT_080231d0\n\
      strh       r2,[r0,#0x0]\n\
 LAB_080230fe:\n\
-     bl         fun_0800146c\n\
+     bl         is_right_held\n\
      lsl        r0,r0,#0x10\n\
      lsr        r2,r0,#0x10\n\
      cmp        r2,#0x0\n\
@@ -2889,15 +2889,15 @@ LAB_080230fe:\n\
      ldr        r0,DAT_080231e4\n\
      strh       r2,[r0,#0x0]\n\
 LAB_08023122:\n\
-     bl         fun_080014ec\n\
+     bl         is_a_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_0802314e\n\
-     bl         fun_08001454\n\
+     bl         is_left_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_0802314e\n\
-     bl         fun_0800146c\n\
+     bl         is_right_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_0802314e\n\
@@ -2908,7 +2908,7 @@ LAB_08023122:\n\
      mov        r0,#0x1\n\
      strh       r0,[r1,#0x0]\n\
 LAB_0802314e:\n\
-     bl         fun_080014ec\n\
+     bl         is_a_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08023202\n\
@@ -2999,7 +2999,7 @@ LAB_080231fc:\n\
 LAB_08023200:\n\
      strh       r4,[r1,#0x0]\n\
 LAB_08023202:\n\
-     bl         fun_08001454\n\
+     bl         is_left_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08023282\n\
@@ -3063,7 +3063,7 @@ LAB_0802326a:\n\
      sub        r0,#0x1\n\
      strh       r0,[r7,#0x10]\n\
 LAB_08023282:\n\
-     bl         fun_0800146c\n\
+     bl         is_right_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08023306\n\
@@ -3129,11 +3129,11 @@ LAB_080232ee:\n\
      add        r0,#0x1\n\
      strh       r0,[r7,#0x10]\n\
 LAB_08023306:\n\
-     bl         fun_0800146c\n\
+     bl         is_right_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_0802333c\n\
-     bl         fun_08001454\n\
+     bl         is_left_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_0802333c\n\

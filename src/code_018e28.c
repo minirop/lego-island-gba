@@ -648,7 +648,7 @@ __attribute__((naked)) void fun_080192a4()
      lsr        r4,r0,#0x18\n\
      add        r0,r4,#0x0\n\
      bl         fun_08019438\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08019390\n\

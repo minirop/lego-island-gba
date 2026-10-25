@@ -293,7 +293,7 @@ __attribute__((naked)) void fun_080198c0()
 {
     asm("\n\
      push       {r4,r5,lr}\n\
-     bl         fun_08001454\n\
+     bl         is_left_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08019910\n\
@@ -338,7 +338,7 @@ rsbs        r1,r1,#0\n\
      add        r0,r1,#0x0\n\
      strh       r0,[r2,#0x0]\n\
 LAB_08019910:\n\
-     bl         fun_0800146c\n\
+     bl         is_right_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801994a\n\
@@ -368,7 +368,7 @@ rsbs        r0,r0,#0\n\
      mov        r0,#0x8\n\
      strh       r0,[r4,#0x0]\n\
 LAB_0801994a:\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801998c\n\
@@ -400,11 +400,11 @@ LAB_08019972:\n\
      mov        r0,#0x9\n\
      bl         fun_08001088\n\
 LAB_0801998c:\n\
-     bl         fun_0800140c\n\
+     bl         is_b_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_080199a0\n\
-     bl         fun_080013a8\n\
+     bl         is_r_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_080199a4\n\

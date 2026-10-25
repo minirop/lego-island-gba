@@ -4189,7 +4189,7 @@ LAB_08021766:\n\
      bl         fun_0800ce7c\n\
      mov        r4,#0x1\n\
 LAB_0802177e:\n\
-     bl         fun_080014ec\n\
+     bl         is_a_held\n\
      cmp        r0,#0x0\n\
      beq        LAB_0802183c\n\
      ldr        r0,DAT_0802180c\n\

@@ -507,7 +507,7 @@ LAB_0800ca2a:\n\
     mov         r5,#0x0\n\
     mov         r0,#0x1\n\
     strh        r0,[r1,#0x0]\n\
-    bl          fun_080013f4\n\
+    bl          is_a_pressed\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_0800ca90\n\
@@ -536,7 +536,7 @@ LAB_0800ca64:\n\
     mov         r5,#0x1\n\
     mov         r0,#0x1\n\
     strh        r0,[r1,#0x0]\n\
-    bl          fun_080013f4\n\
+    bl          is_a_pressed\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_0800ca90\n\
@@ -1096,7 +1096,7 @@ __attribute__((naked)) void fun_0800ce7c()
     beq         LAB_0800ce8e\n\
     mov         r6,#0x2\n\
 LAB_0800ce8e:\n\
-    bl          fun_080014d4\n\
+    bl          is_down_held\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_0800ce9e\n\
@@ -1104,7 +1104,7 @@ LAB_0800ce8e:\n\
     add         r0,r1,r6\n\
     strh        r0,[r4,#0x0]\n\
 LAB_0800ce9e:\n\
-    bl          fun_08001454\n\
+    bl          is_left_held\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_0800ceae\n\
@@ -1112,7 +1112,7 @@ LAB_0800ce9e:\n\
     sub         r0,r1,r6\n\
     strh        r0,[r5,#0x0]\n\
 LAB_0800ceae:\n\
-    bl          fun_080014bc\n\
+    bl          is_up_held\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_0800cebe\n\
@@ -1120,7 +1120,7 @@ LAB_0800ceae:\n\
     sub         r0,r1,r6\n\
     strh        r0,[r4,#0x0]\n\
 LAB_0800cebe:\n\
-    bl          fun_0800146c\n\
+    bl          is_right_held\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_0800cece\n\
@@ -1208,7 +1208,8 @@ void fun_0800cf28(u16 param_1, u16 param_2, u16 param_3, u16 param_4)
     DAT_0200d408 = param_3 - DAT_0200d404;
     DAT_0200d38c = param_4 - DAT_0200d3ac;
 
-    if (DAT_0200d394 != 0) {
+    if (DAT_0200d394 != 0)
+    {
         fun_0800cef0();
     }
 

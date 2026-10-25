@@ -210,7 +210,7 @@ LAB_08000a74:\n\
 DAT_08000a84:\n\
     .word 0x02005710\n\
 LAB_08000a88:\n\
-    bl          fun_0800132c\n\
+    bl          is_start_pressed\n\
     lsl         r0,r0,#0x10\n\
     cmp         r0,#0x0\n\
     beq         LAB_08000aaa\n\

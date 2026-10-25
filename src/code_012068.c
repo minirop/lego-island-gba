@@ -3754,7 +3754,7 @@ LAB_08013b44:\n\
      ldr        r1,[r0,#0x0]\n\
      mov        r0,#0x10\n\
      strh       r0,[r1,#0x0]\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08013b64\n\
@@ -3833,7 +3833,7 @@ LAB_08013bce:\n\
 LAB_08013bd6:\n\
      strb       r0,[r6,#0x14]\n\
 LAB_08013bd8:\n\
-     bl         fun_080014a0\n\
+     bl         is_r_held\n\
      lsl        r0,r0,#0x10\n\
      lsr        r5,r0,#0x10\n\
      cmp        r5,#0x0\n\
@@ -4076,7 +4076,7 @@ LAB_08013dec:\n\
      mov        r0,#0x10\n\
      strh       r0,[r1,#0x0]\n\
 LAB_08013df4:\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        switchD_08013e16_caseD_31\n\
@@ -11135,7 +11135,7 @@ __attribute__((naked)) s32 fun_08016dac()
      add        r0,#0x1\n\
      strh       r0,[r1,#0x0]\n\
      bl         fun_08016c54\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_08016dd8\n\
@@ -11168,7 +11168,7 @@ LAB_08016df0:\n\
      beq        LAB_08016e28\n\
 LAB_08016e08:\n\
      str        r3,[sp,#0x38]\n\
-     bl         fun_0800138c\n\
+     bl         is_l_pressed\n\
      lsl        r0,r0,#0x10\n\
      ldr        r3,[sp,#0x38]\n\
      cmp        r0,#0x0\n\

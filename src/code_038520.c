@@ -1671,7 +1671,7 @@ __attribute__((naked)) s32 fun_08039160()
      ldr        r1,[r0,#0x0]\n\
      add        r1,#0x1\n\
      str        r1,[r0,#0x0]\n\
-     bl         fun_08001454\n\
+     bl         is_left_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08039194\n\
@@ -1689,7 +1689,7 @@ __attribute__((naked)) s32 fun_08039160()
      sub        r0,r2,#0x2\n\
      strh       r0,[r1,#0x2]\n\
 LAB_08039194:\n\
-     bl         fun_0800146c\n\
+     bl         is_right_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_080391b8\n\
@@ -1707,7 +1707,7 @@ LAB_08039194:\n\
      add        r0,r2,#0x2\n\
      strh       r0,[r1,#0x2]\n\
 LAB_080391b8:\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_080391c6\n\

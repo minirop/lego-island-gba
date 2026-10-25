@@ -141,7 +141,7 @@ __attribute__((naked)) void fun_08017a38()
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
      sub        sp,#0x4\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      cmp        r0,#0x0\n\
      beq        LAB_08017b40\n\
      ldr        r0,DAT_08017ab8\n\
@@ -505,7 +505,7 @@ DAT_08017cfc:\n\
      .word 0x0200DCE8\n\
 LAB_08017d00:\n\
      bl         fun_0801812c\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      cmp        r0,#0x0\n\
      beq        LAB_08017d30\n\
      ldr        r0,DAT_08017d24\n\
@@ -528,7 +528,7 @@ LAB_08017d2c:\n\
      bl         fun_08017d50\n\
 LAB_08017d30:\n\
      bl         fun_0803a9dc\n\
-     bl         fun_0800140c\n\
+     bl         is_b_pressed\n\
      cmp        r0,#0x0\n\
      beq        LAB_08017d40\n\
      bl         fun_080010d8\n\
@@ -554,9 +554,12 @@ void fun_08017d50()
     u16 uVar1;
 
     uVar1 = fun_08000ee8(DAT_020025e8);
-    if (uVar1 == 0) {
+    if (uVar1 == 0)
+    {
         fun_080010d8();
-    } else {
+    }
+    else
+    {
         fun_08001070(uVar1);
     }
 }

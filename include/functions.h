@@ -3,27 +3,27 @@
 
 #include "gba.h"
 
-s16 fun_0800132c();
-s16 fun_08001344();
-s16 fun_0800135c();
-s16 fun_08001374();
-s16 fun_0800138c();
-s16 fun_080013a8();
-s16 fun_080013c4();
-s16 fun_080013dc();
-s16 fun_080013f4();
-s16 fun_0800140c();
-s16 fun_08001424();
-s16 fun_0800143c();
-s16 fun_08001454();
-s16 fun_0800146c();
-s16 fun_08001484();
-s16 fun_080014a0();
-s16 fun_080014bc();
-s16 fun_080014d4();
-s16 fun_080014ec();
-s16 fun_08001504();
 s16 fun_08003330(u16 param_1, u16 param_2);
+s16 is_a_held();
+s16 is_a_pressed();
+s16 is_b_held();
+s16 is_b_pressed();
+s16 is_down_held();
+s16 is_down_pressed();
+s16 is_l_held();
+s16 is_l_pressed();
+s16 is_left_held();
+s16 is_left_pressed();
+s16 is_r_held();
+s16 is_r_pressed();
+s16 is_right_held();
+s16 is_right_pressed();
+s16 is_select_held();
+s16 is_select_pressed();
+s16 is_start_held();
+s16 is_start_pressed();
+s16 is_up_held();
+s16 is_up_pressed();
 s32 Div(s32 over, s32 under);
 s32 fun_080016f0(u16 param_1);
 s32 fun_08002844();

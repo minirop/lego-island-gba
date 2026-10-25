@@ -187,19 +187,19 @@ LAB_08019c4a:\n\
      ldr        r2,DAT_08019d00\n\
      mov        r1,#0x85\n\
      bl         fun_0803c010\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_08019cd0\n\
-     bl         fun_0800140c\n\
+     bl         is_b_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_08019cd0\n\
-     bl         fun_0800132c\n\
+     bl         is_start_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_08019cd0\n\
-     bl         fun_08001344\n\
+     bl         is_select_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08019cdc\n\
@@ -656,7 +656,7 @@ __attribute__((naked)) void fun_0801a014()
 {
     asm("\n\
      push       {r4,lr}\n\
-     bl         fun_08001454\n\
+     bl         is_left_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801a038\n\
@@ -674,7 +674,7 @@ __attribute__((naked)) void fun_0801a014()
      add        r0,r1,#0x0\n\
      strh       r0,[r4,#0x0]\n\
 LAB_0801a038:\n\
-     bl         fun_0800146c\n\
+     bl         is_right_held\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801a056\n\
@@ -688,7 +688,7 @@ LAB_0801a038:\n\
      mov        r0,#0x8\n\
      strh       r0,[r4,#0x0]\n\
 LAB_0801a056:\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801a0bc\n\
@@ -737,7 +737,7 @@ LAB_0801a0a0:\n\
      add        r0,#0x1\n\
      strb       r0,[r3,#0x0]\n\
 LAB_0801a0bc:\n\
-     bl         fun_0800140c\n\
+     bl         is_b_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801a0e4\n\
@@ -1133,7 +1133,7 @@ __attribute__((naked)) s32 fun_0801a3b0()
 {
     asm("\n\
      push       {lr}\n\
-     bl         fun_0800135c\n\
+     bl         is_left_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801a40e\n\
@@ -1184,7 +1184,7 @@ LAB_0801a404:\n\
      ldr        r0,[r0,#0x0]\n\
      bl         fun_0801a490\n\
 LAB_0801a40e:\n\
-     bl         fun_08001374\n\
+     bl         is_right_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801a472\n\
@@ -1238,7 +1238,7 @@ LAB_0801a468:\n\
      ldr        r0,[r0,#0x0]\n\
      bl         fun_0801a490\n\
 LAB_0801a472:\n\
-     bl         fun_0800140c\n\
+     bl         is_b_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801a480\n\
@@ -1685,11 +1685,11 @@ __attribute__((naked)) s32 fun_0801a7d4()
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_0801a7f8\n\
-     bl         fun_0800140c\n\
+     bl         is_b_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_0801a7f4\n\
-     bl         fun_0800138c\n\
+     bl         is_l_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801a7f8\n\
@@ -1861,7 +1861,7 @@ LAB_0801a928:\n\
      add        r0,r2,#0x0\n\
      strh       r0,[r1,#0x0]\n\
 LAB_0801a930:\n\
-     bl         fun_080013c4\n\
+     bl         is_up_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801a9a6\n\
@@ -1915,7 +1915,7 @@ LAB_0801a930:\n\
      mov        r0,#0x1\n\
      bl         fun_080016f0\n\
 LAB_0801a9a6:\n\
-     bl         fun_080013dc\n\
+     bl         is_down_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801aa1c\n\
@@ -1969,11 +1969,11 @@ LAB_0801a9a6:\n\
      mov        r0,#0x1\n\
      bl         fun_080016f0\n\
 LAB_0801aa1c:\n\
-     bl         fun_08001374\n\
+     bl         is_right_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_0801aa30\n\
-     bl         fun_0800135c\n\
+     bl         is_left_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801aa36\n\
@@ -2013,7 +2013,7 @@ LAB_0801aa6c:\n\
      beq        LAB_0801ab08\n\
      b          LAB_0801ab62\n\
 LAB_0801aa72:\n\
-     bl         fun_08001374\n\
+     bl         is_right_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801aa8c\n\
@@ -2025,7 +2025,7 @@ LAB_0801aa72:\n\
      bl         __modsi3\n\
      strb       r0,[r4,#0x0]\n\
 LAB_0801aa8c:\n\
-     bl         fun_0800135c\n\
+     bl         is_left_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801aaa8\n\
@@ -2050,7 +2050,7 @@ DAT_0801aab4:\n\
 DAT_0801aab8:\n\
      .4byte 0x08780658\n\
 LAB_0801aabc:\n\
-     bl         fun_08001374\n\
+     bl         is_right_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801aad6\n\
@@ -2062,7 +2062,7 @@ LAB_0801aabc:\n\
      bl         __modsi3\n\
      strb       r0,[r4,#0x0]\n\
 LAB_0801aad6:\n\
-     bl         fun_0800135c\n\
+     bl         is_left_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801aaf2\n\
@@ -2089,7 +2089,7 @@ DAT_0801ab00:\n\
 DAT_0801ab04:\n\
      .4byte 0x087805E0\n\
 LAB_0801ab08:\n\
-     bl         fun_08001374\n\
+     bl         is_right_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801ab22\n\
@@ -2101,7 +2101,7 @@ LAB_0801ab08:\n\
      bl         __modsi3\n\
      strb       r0,[r4,#0x0]\n\
 LAB_0801ab22:\n\
-     bl         fun_0800135c\n\
+     bl         is_left_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801ab3e\n\
@@ -3215,7 +3215,7 @@ switchD_0801b00e_caseD_3:\n\
      mov        r2,#0x64\n\
      add        r3,r6,#0x0\n\
      bl         fun_0803c138\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801b448\n\
@@ -3302,7 +3302,7 @@ LAB_0801b440:\n\
      mov        r0,#0x4\n\
      strh       r0,[r1,#0x0]\n\
 LAB_0801b448:\n\
-     bl         fun_080013c4\n\
+     bl         is_up_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801b466\n\
@@ -3316,7 +3316,7 @@ LAB_0801b448:\n\
      mov        r0,#0x0\n\
      bl         fun_080016f0\n\
 LAB_0801b466:\n\
-     bl         fun_080013dc\n\
+     bl         is_down_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_0801b484\n\

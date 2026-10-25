@@ -852,15 +852,15 @@ LAB_08017800:\n\
      bl         fun_080016f0\n\
 LAB_08017836:\n\
      mov        r4,#0x0\n\
-     bl         fun_0800132c\n\
+     bl         is_start_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_08017856\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      bne        LAB_08017856\n\
-     bl         fun_0800140c\n\
+     bl         is_b_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08017858\n\

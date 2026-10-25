@@ -315,7 +315,7 @@ __attribute__((naked)) void fun_080185d0()
      strb       r0,[r4,#0x0]\n\
      ldrb       r0,[r4,#0x0]\n\
      bl         fun_0801888c\n\
-     bl         fun_080013f4\n\
+     bl         is_a_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08018646\n\
@@ -1103,7 +1103,7 @@ LAB_08018b8a:\n\
 LAB_08018b96:\n\
      mov        r5,#0x0\n\
      strh       r5,[r4,#0x0]\n\
-     bl         fun_080013a8\n\
+     bl         is_r_pressed\n\
      lsl        r0,r0,#0x10\n\
      cmp        r0,#0x0\n\
      beq        LAB_08018baa\n\
