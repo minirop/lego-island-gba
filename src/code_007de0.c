@@ -1,6 +1,23 @@
 #include "functions.h"
-#include "gba.h"
 #include "variables.h"
+
+static inline void fun_08007fb8_inlined()
+{
+    switch (DAT_0200254c)
+    {
+    case 0xb:
+        fun_08001070(0x24);
+        break;
+    case 0xd:
+        fun_08001070(8);
+        break;
+    case 0xc:
+        fun_08017d50();
+        break;
+    default:
+        fun_080010d8();
+    }
+}
 
 s32 fun_08007de0()
 {
@@ -12,224 +29,61 @@ s32 fun_08007de0()
     return 1;
 }
 
-__attribute__((naked)) s32 fun_08007e08()
+s32 fun_08007e08()
 {
-    asm("\n\
-    push        {r4,r5,r6,lr}\n\
-    sub         sp,#0x4\n\
-    mov         r0,sp\n\
-    mov         r1,#0xff\n\
-    strh        r1,[r0,#0x0]\n\
-    ldr         r4,DAT_08007eb0\n\
-    str         r0,[r4,#0x0]\n\
-    mov         r0,#0xc0\n\
-    lsl         r0,r0,#0x13\n\
-    str         r0,[r4,#0x4]\n\
-    ldr         r0,DAT_08007eb4\n\
-    str         r0,[r4,#0x8]\n\
-    ldr         r0,[r4,#0x8]\n\
-    mov         r0,sp\n\
-    strh        r1,[r0,#0x0]\n\
-    str         r0,[r4,#0x0]\n\
-    mov         r5,#0xa0\n\
-    lsl         r5,r5,#0x13\n\
-    str         r5,[r4,#0x4]\n\
-    ldr         r0,DAT_08007eb8\n\
-    str         r0,[r4,#0x8]\n\
-    ldr         r0,[r4,#0x8]\n\
-    mov         r1,#0x80\n\
-    lsl         r1,r1,#0x13\n\
-    ldr         r2,DAT_08007ebc\n\
-    add         r0,r2,#0x0\n\
-    strh        r0,[r1,#0x0]\n\
-    add         r1,#0xc\n\
-    mov         r0,#0x3\n\
-    strh        r0,[r1,#0x0]\n\
-    bl          fun_0803c24c\n\
-    mov         r0,#0x0\n\
-    bl          fun_080036b0\n\
-    ldr         r1,PTR_PTR_08007ec0\n\
-    ldr         r6,DAT_08007ec4\n\
-    ldrb        r2,[r6,#0x0]\n\
-    lsl         r0,r2,#0x2\n\
-    add         r0,r0,r1\n\
-    ldr         r0,[r0,#0x0]\n\
-    bl          fun_0800306c\n\
-    ldr         r1,PTR_PTR_08007ec8\n\
-    ldrb        r2,[r6,#0x0]\n\
-    lsl         r0,r2,#0x2\n\
-    add         r0,r0,r1\n\
-    ldr         r0,[r0,#0x0]\n\
-    str         r0,[r4,#0x0]\n\
-    str         r5,[r4,#0x4]\n\
-    ldr         r0,DAT_08007ecc\n\
-    str         r0,[r4,#0x8]\n\
-    ldr         r0,[r4,#0x8]\n\
-    ldr         r1,DAT_08007ed0\n\
-    mov         r0,#0xb4\n\
-    strh        r0,[r1,#0x0]\n\
-    ldr         r4,DAT_08007ed4\n\
-    ldrb        r0,[r4,#0x0]\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08007e9e\n\
-    ldrb        r6,[r6,#0x0]\n\
-    cmp         r6,#0x9\n\
-    bne         LAB_08007e9e\n\
-    ldr         r2,DAT_08007ed8\n\
-    add         r0,r2,#0x0\n\
-    mov         r1,#0xf\n\
-    bl          fun_0803c1ec\n\
-    bl          fun_0803c1a4\n\
-    ldr         r2,DAT_08007edc\n\
-    add         r0,r4,#0x0\n\
-    mov         r1,#0x85\n\
-    bl          fun_0803c010\n\
-LAB_08007e9e:\n\
-    ldr         r0,DAT_08007ec4\n\
-    ldrb        r0,[r0,#0x0]\n\
-    cmp         r0,#0x1\n\
-    bhi         LAB_08007ee0\n\
-    mov         r0,#0x19\n\
-    bl          fun_080016f0\n\
-    b           LAB_08007eee\n\
-\n\
-.space 2\n\
-\n\
-DAT_08007eb0:\n\
-    .word 0x040000D4\n\
-DAT_08007eb4:\n\
-    .word 0x8100C000\n\
-DAT_08007eb8:\n\
-    .word 0x81000200\n\
-DAT_08007ebc:\n\
-    .word 0x00001F54\n\
-PTR_PTR_08007ec0:\n\
-    .word DAT_0877bb2c\n\
-DAT_08007ec4:\n\
-    .word DAT_0200254c\n\
-PTR_PTR_08007ec8:\n\
-    .word DAT_0877bb68\n\
-DAT_08007ecc:\n\
-    .word 0x80000100\n\
-DAT_08007ed0:\n\
-    .word DAT_02009ad0\n\
-DAT_08007ed4:\n\
-    .word DAT_0200c5f0\n\
-DAT_08007ed8:\n\
-    .word 0x00007FFF\n\
-DAT_08007edc:\n\
-    .word DAT_0865fd94\n\
-LAB_08007ee0:\n\
-    cmp         r0,#0x7\n\
-    beq         LAB_08007ee8\n\
-    cmp         r0,#0xb\n\
-    bne         LAB_08007eee\n\
-LAB_08007ee8:\n\
-    mov         r0,#0x6\n\
-    bl          fun_080016f0\n\
-LAB_08007eee:\n\
-    mov         r0,#0x0\n\
-    add         sp,#0x4\n\
-    pop         {r4,r5,r6}\n\
-    pop         {r1}\n\
-    bx          r1\n\
-    ");
+    DmaFill16(3, 0xff, VRAM, VRAM_SIZE);
+    DmaFill16(3, 0xff, PLTT, PLTT_SIZE);
+    REG_DISPCNT = 0x1f54;
+    REG_BG2CNT = 3;
+    fun_0803c24c();
+    fun_080036b0(0);
+    fun_0800306c(DAT_0877bb2c[DAT_0200254c]);
+    DmaCopy16(3, DAT_0877bb68[DAT_0200254c], BG_PLTT, BG_PLTT_SIZE);
+    DAT_02009ad0 = 0xb4;
+    if ((DAT_0200c5f0[0] != 0) && (DAT_0200254c == 9))
+    {
+        fun_0803c1ec(0x7fff, 0xf, 0x7fff);
+        fun_0803c1a4();
+        fun_0803c010(DAT_0200c5f0, 0x85, &DAT_0865fd94);
+    }
+    if (DAT_0200254c < 2)
+    {
+        fun_080016f0(0x19);
+    }
+    else if ((DAT_0200254c == 7) || (DAT_0200254c == 0xb))
+    {
+        fun_080016f0(6);
+    }
+    return 0;
 }
-__attribute__((naked)) s32 fun_08007ef8()
+
+s32 fun_08007ef8()
 {
-    asm("\n\
-    push        {lr}\n\
-    ldr         r0,DAT_08007f18\n\
-    ldrh        r1,[r0,#0x0]\n\
-    mov         r0,#0x1\n\
-    and         r0,r1\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08007f40\n\
-    ldr         r0,DAT_08007f1c\n\
-    ldrb        r0,[r0,#0x0]\n\
-    cmp         r0,#0xc\n\
-    beq         LAB_08007f36\n\
-    cmp         r0,#0xc\n\
-    bgt         LAB_08007f20\n\
-    cmp         r0,#0xb\n\
-    beq         LAB_08007f26\n\
-    b           LAB_08007f3c\n\
-DAT_08007f18:\n\
-    .word 0x02005CE0\n\
-DAT_08007f1c:\n\
-    .word 0x0200254C\n\
-LAB_08007f20:\n\
-    cmp         r0,#0xd\n\
-    beq         LAB_08007f2e\n\
-    b           LAB_08007f3c\n\
-LAB_08007f26:\n\
-    mov         r0,#0x24\n\
-    bl          fun_08001070\n\
-    b           LAB_08007f40\n\
-LAB_08007f2e:\n\
-    mov         r0,#0x8\n\
-    bl          fun_08001070\n\
-    b           LAB_08007f40\n\
-LAB_08007f36:\n\
-    bl          fun_08017d50\n\
-    b           LAB_08007f40\n\
-LAB_08007f3c:\n\
-    bl          fun_080010d8\n\
-LAB_08007f40:\n\
-    ldr         r2,DAT_08007f6c\n\
-    ldrb        r0,[r2,#0x0]\n\
-    cmp         r0,#0xe\n\
-    bgt         LAB_08007f4c\n\
-    cmp         r0,#0xb\n\
-    bge         LAB_08007f94\n\
-LAB_08007f4c:\n\
-    ldr         r1,DAT_08007f70\n\
-    ldrh        r0,[r1,#0x0]\n\
-    sub         r0,#0x1\n\
-    strh        r0,[r1,#0x0]\n\
-    lsl         r0,r0,#0x10\n\
-    cmp         r0,#0x0\n\
-    bgt         LAB_08007f94\n\
-    ldrb        r0,[r2,#0x0]\n\
-    cmp         r0,#0xc\n\
-    beq         LAB_08007f8a\n\
-    cmp         r0,#0xc\n\
-    bgt         LAB_08007f74\n\
-    cmp         r0,#0xb\n\
-    beq         LAB_08007f7a\n\
-    b           LAB_08007f90\n\
-\n\
-.space 2\n\
-\n\
-DAT_08007f6c:\n\
-    .word 0x0200254C\n\
-DAT_08007f70:\n\
-    .word 0x02009AD0\n\
-LAB_08007f74:\n\
-    cmp         r0,#0xd\n\
-    beq         LAB_08007f82\n\
-    b           LAB_08007f90\n\
-LAB_08007f7a:\n\
-    mov         r0,#0x24\n\
-    bl          fun_08001070\n\
-    b           LAB_08007f94\n\
-LAB_08007f82:\n\
-    mov         r0,#0x8\n\
-    bl          fun_08001070\n\
-    b           LAB_08007f94\n\
-LAB_08007f8a:\n\
-    bl          fun_08017d50\n\
-    b           LAB_08007f94\n\
-LAB_08007f90:\n\
-    bl          fun_080010d8\n\
-LAB_08007f94:\n\
-    mov         r0,#0x0\n\
-    pop         {r1}\n\
-    bx          r1\n\
-\n\
-.space 2\n\
-\n\
-    ");
+    if (gNewKeys & 1)
+    {
+        fun_08007fb8_inlined();
+    }
+
+    switch (DAT_0200254c)
+    {
+    case 0xb:
+    case 0xc:
+    case 0xd:
+    case 0xe:
+        break;
+    default:
+    {
+        DAT_02009ad0--;
+
+        if (DAT_02009ad0 < 1)
+        {
+            fun_08007fb8_inlined();
+        }
+        break;
+    }
+    }
+
+    return 0;
 }
 
 s32 fun_08007f9c()
@@ -251,20 +105,7 @@ s32 fun_08007fb4()
 
 void fun_08007fb8()
 {
-    switch (DAT_0200254c)
-    {
-    case 0xb:
-        fun_08001070(0x24);
-        break;
-    case 0xd:
-        fun_08001070(8);
-        break;
-    case 0xc:
-        fun_08017d50();
-        break;
-    default:
-        fun_080010d8();
-    }
+    fun_08007fb8_inlined();
 }
 
 s32 fun_08007ff4()

@@ -394,7 +394,7 @@ DAT_08003068:\n\
     .word 0x0200582C\n\
     ");
 }
-__attribute__((naked)) void fun_0800306c()
+__attribute__((naked)) void fun_0800306c(void* param_1)
 {
     asm("\n\
     push        {r4,lr}\n\

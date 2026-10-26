@@ -609,6 +609,8 @@ void fun_08000d1c()
         }
     }
 }
+
+// body generated at the end of the TU
 inline u16 fun_080012e8(u16 param_1)
 {
     u16 i;

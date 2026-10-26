@@ -3,6 +3,8 @@
 
 #include "gba.h"
 
+void fun_0800306c(void* param_1);
+void fun_0803c24c();
 s16 fun_08003330(u16 param_1, u16 param_2);
 s16 is_a_held();
 s16 is_a_pressed();
@@ -790,6 +792,8 @@ void fun_08041a44(u8 param_1);
 void fun_08041bfc(s32 param_1);
 void fun_08042614();
 void fun_080496e8();
+void fun_080063e4(u8 param_1);
+s32 fun_080062fc(void* param_1, u16 param_2, u16 param_3);
 void LZ77UnCompVram(const void* src, void* dest);
 
 #endif

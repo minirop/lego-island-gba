@@ -11,7 +11,7 @@ s32 fun_0800618c()
     if ((DAT_02009ae8 < 2) || (DAT_02009ae8 == 0xd))
     {
         DAT_02009ad0--;
-        if (DAT_02009ad0 > 0)
+        if (DAT_02009ad0 != 0)
         {
             return 0;
         }
@@ -103,7 +103,7 @@ const LevelInfo cutscene = {
     "Blank",
 };
 
-__attribute__((naked)) void fun_080062fc()
+__attribute__((naked)) s32 fun_080062fc(void* param_1, u16 param_2, u16 param_3)
 {
     asm("\n\
     push        {r4,r5,r6,r7,lr}\n\
@@ -257,7 +257,7 @@ const LevelInfo start_menu = {
     "Blank",
 };
 
-__attribute__((naked)) void fun_080063e4()
+__attribute__((naked)) void fun_080063e4(u8 param_1)
 {
     asm("\n\
     push        {r4,lr}\n\
