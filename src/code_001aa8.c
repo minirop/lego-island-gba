@@ -131,132 +131,45 @@ DAT_08001b98:\n\
     .word 0x48FED829\n\
     ");
 }
-__attribute__((naked)) void fun_08001b9c()
+
+static inline s32 checksum_loop(u8* ptr, u32 count)
 {
-    asm("\n\
-    push        {r4,r5,r6,lr}\n\
-    sub         sp,#0x4\n\
-    ldr         r1,DAT_08001c60\n\
-    mov         r0,sp\n\
-    mov         r2,#0x4\n\
-    bl          memcpy\n\
-    ldr         r1,DAT_08001c64\n\
-    mov         r0,#0x0\n\
-    strh        r0,[r1,#0x0]\n\
-    ldr         r0,DAT_08001c68\n\
-    mov         r1,#0xea\n\
-    lsl         r1,r1,#0x4\n\
-    add         r3,r0,r1\n\
-    mov         r2,#0xea\n\
-    lsl         r2,r2,#0x5\n\
-    add         r1,r0,r2\n\
-    mov         r2,#0x0\n\
-    str         r2,[r1,#0x0]\n\
-    str         r2,[r3,#0x0]\n\
-    str         r2,[r0,#0x0]\n\
-    ldr         r4,DAT_08001c6c\n\
-    add         r3,r0,r4\n\
-    ldr         r6,DAT_08001c70\n\
-    add         r1,r0,r6\n\
-    str         r2,[r1,#0x0]\n\
-    str         r2,[r3,#0x0]\n\
-    str         r2,[r0,#0x4]\n\
-    ldr         r3,DAT_08001c74\n\
-    mov         r1,#0x0\n\
-LAB_08001bd8:\n\
-    ldrb        r4,[r0,#0x0]\n\
-    add         r2,r4,r2\n\
-    add         r0,#0x1\n\
-    add         r1,#0x1\n\
-    cmp         r1,r3\n\
-    bcc         LAB_08001bd8\n\
-    add         r3,r2,#0x0\n\
-    mov         r0,sp\n\
-    mov         r2,#0x0\n\
-    mov         r1,#0x0\n\
-    ldr         r5,DAT_08001c68\n\
-    ldr         r4,DAT_08001c78\n\
-LAB_08001bf0:\n\
-    ldrb        r6,[r0,#0x0]\n\
-    add         r2,r6,r2\n\
-    add         r0,#0x1\n\
-    add         r1,#0x1\n\
-    cmp         r1,#0x4\n\
-    bcc         LAB_08001bf0\n\
-    add         r3,r3,r2\n\
-    add         r1,r4,#0x0\n\
-    mov         r4,#0xd8\n\
-    lsl         r4,r4,#0x2\n\
-    mov         r2,#0x0\n\
-    mov         r0,#0x0\n\
-LAB_08001c08:\n\
-    ldrb        r6,[r1,#0x0]\n\
-    add         r2,r6,r2\n\
-    add         r1,#0x1\n\
-    add         r0,#0x1\n\
-    cmp         r0,r4\n\
-    bcc         LAB_08001c08\n\
-    add         r3,r3,r2\n\
-    str         r3,[r5,#0x4]\n\
-    ldr         r0,DAT_08001c7c\n\
-    str         r0,[r5,#0x0]\n\
-    mov         r4,#0xe0\n\
-    lsl         r4,r4,#0x14\n\
-    ldr         r2,DAT_08001c74\n\
-    add         r0,r5,#0x0\n\
-    add         r1,r4,#0x0\n\
-    bl          fun_0803d100\n\
-    ldr         r1,DAT_08001c80\n\
-    mov         r0,sp\n\
-    mov         r2,#0x4\n\
-    bl          fun_0803d100\n\
-    ldr         r0,DAT_08001c78\n\
-    ldr         r1,DAT_08001c84\n\
-    mov         r2,#0xd8\n\
-    lsl         r2,r2,#0x2\n\
-    bl          fun_0803d100\n\
-    ldr         r0,DAT_08001c88\n\
-    str         r0,[r5,#0x0]\n\
-    add         r0,r5,#0x0\n\
-    add         r1,r4,#0x0\n\
-    mov         r2,#0x4\n\
-    bl          fun_0803d100\n\
-    ldr         r1,DAT_08001c64\n\
-    mov         r0,#0x1\n\
-    strh        r0,[r1,#0x0]\n\
-    mov         r0,#0x1\n\
-    add         sp,#0x4\n\
-    pop         {r4,r5,r6}\n\
-    pop         {r1}\n\
-    bx          r1\n\
-\n\
-.space 2\n\
-\n\
-DAT_08001c60:\n\
-    .word 0x0804978C\n\
-DAT_08001c64:\n\
-    .word 0x04000208\n\
-DAT_08001c68:\n\
-    .word 0x02002620\n\
-DAT_08001c6c:\n\
-    .word 0x00000EA4\n\
-DAT_08001c70:\n\
-    .word 0x00001D44\n\
-DAT_08001c74:\n\
-    .word 0x00002BE0\n\
-DAT_08001c78:\n\
-    .word 0x02005210\n\
-DAT_08001c7c:\n\
-    .word 0xFA988912\n\
-DAT_08001c80:\n\
-    .word 0x0E002BE0\n\
-DAT_08001c84:\n\
-    .word 0x0E002BE4\n\
-DAT_08001c88:\n\
-    .word 0x48FED829\n\
-    ");
+    u32 temp_sum;
+    u32 i;
+
+    temp_sum = 0;
+    for (i = 0; i < count; i++)
+    {
+        temp_sum += *ptr++;
+    }
+    return temp_sum;
 }
-const char* dummy_0804978c = "SWD";
+
+s32 fun_08001b9c()
+{
+    u32 total_sum;
+    char local_14[4] = "SWD";
+    REG_IME = 0;
+
+    DAT_02002620[0].unk00 = DAT_02002620[1].unk00 = DAT_02002620[2].unk00 = 0;
+    DAT_02002620[0].unk04 = DAT_02002620[1].unk04 = DAT_02002620[2].unk04 = 0;
+
+    total_sum = checksum_loop((u8*)DAT_02002620, sizeof(DAT_02002620));
+    total_sum += checksum_loop((u8*)local_14, sizeof(local_14));
+    total_sum += checksum_loop((u8*)DAT_02005210, sizeof(DAT_02005210));
+
+    DAT_02002620[0].unk04 = total_sum;
+    DAT_02002620[0].unk00 = 0xfa988912;
+
+    fun_0803d100((u8*)DAT_02002620, (void*)0xe000000, sizeof(DAT_02002620));
+    fun_0803d100((u8*)local_14, (void*)0xe002be0, 4);
+    fun_0803d100((u8*)DAT_02005210, (void*)0xe002be4, sizeof(DAT_02005210));
+    DAT_02002620[0].unk00 = 0x48fed829;
+    fun_0803d100((u8*)DAT_02002620, (void*)0xe000000, sizeof(local_14));
+    REG_IME = 1;
+
+    return 1;
+}
 
 __attribute__((naked)) void fun_08001c8c()
 {

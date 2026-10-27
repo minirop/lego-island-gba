@@ -143,8 +143,8 @@ typedef struct struct_02009b10
 // size 0xEA0
 typedef struct struct_02002620
 {
-    u32 vunk00;
-    s32 vunk04;
+    u32 unk00;
+    u32 unk04;
     char unk08[16];
     u32 unk18;
     u8 unk1c;

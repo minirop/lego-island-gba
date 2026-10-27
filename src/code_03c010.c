@@ -1,4 +1,5 @@
 #include "functions.h"
+#include "gba/io_reg.h"
 #include "variables.h"
 
 __attribute__((naked)) s32 fun_0803c010(u8* param_1, u16 param_2, void* param_3)
@@ -2263,32 +2264,20 @@ __attribute__((naked)) u16 Sqrt(u32 num)
     ");
 }
 
-__attribute__((naked)) void fun_0803d078()
+// memcpy?
+void fun_0803d078(u8* param_1, u8* param_2, s32 size)
 {
-    asm("\n\
-     push       {r4,lr}\n\
-     add        r4,r0,#0x0\n\
-     sub        r3,r2,#0x1\n\
-     cmp        r2,#0x0\n\
-     beq        LAB_0803d094\n\
-     mov        r2,#0x1\n\
-.syntax unified\n\
-    rsbs        r2,r2,#0\n\
-.syntax divided\n\
-LAB_0803d086:\n\
-     ldrb       r0,[r4,#0x0]\n\
-     strb       r0,[r1,#0x0]\n\
-     add        r4,#0x1\n\
-     add        r1,#0x1\n\
-     sub        r3,#0x1\n\
-     cmp        r3,r2\n\
-     bne        LAB_0803d086\n\
-LAB_0803d094:\n\
-     pop        {r4}\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    s32 s = size - 1;
+    if (size != 0)
+    {
+        do
+        {
+            *param_2++ = *param_1++;
+            s--;
+        } while (s != -1);
+    }
 }
+
 __attribute__((naked)) void fun_0803d09c()
 {
     asm("\n\
@@ -2346,7 +2335,21 @@ LAB_0803d0e4:\n\
      bx         r0\n\
     ");
 }
-__attribute__((naked)) void fun_0803d100()
+
+#ifdef NONMATCHING
+void fun_0803d100(u8* param_1, u8* param_2, s32 size)
+{
+    REG_WAITCNT = (REG_WAITCNT & 0xfffc) | 3;
+
+    size--;
+    while (size != -1)
+    {
+        *param_2++ = *param_1++;
+        size--;
+    }
+}
+#else
+__attribute__((naked)) void fun_0803d100(u8* param_1, u8* param_2, s32 size)
 {
     asm("\n\
      push       {r4,r5,lr}\n\
@@ -2388,40 +2391,26 @@ DAT_0803d13c:\n\
      .word 0x0000FFFC\n\
     ");
 }
-__attribute__((naked)) void fun_0803d140()
+#endif
+
+u8* fun_0803d140(u8* param_1, u8* param_2, s32 size)
 {
-    asm("\n\
-     push       {r4,r5,lr}\n\
-     add        r5,r0,#0x0\n\
-     add        r3,r1,#0x0\n\
-     sub        r4,r2,#0x1\n\
-     cmp        r2,#0x0\n\
-     beq        LAB_0803d166\n\
-     mov        r2,#0x1\n\
-.syntax unified\n\
-    rsbs        r2,r2,#0\n\
-.syntax divided\n\
-LAB_0803d150:\n\
-     ldrb       r1,[r3,#0x0]\n\
-     ldrb       r0,[r5,#0x0]\n\
-     add        r5,#0x1\n\
-     add        r3,#0x1\n\
-     cmp        r1,r0\n\
-     beq        LAB_0803d160\n\
-     sub        r0,r3,#0x1\n\
-     b          LAB_0803d168\n\
-LAB_0803d160:\n\
-     sub        r4,#0x1\n\
-     cmp        r4,r2\n\
-     bne        LAB_0803d150\n\
-LAB_0803d166:\n\
-     mov        r0,#0x0\n\
-LAB_0803d168:\n\
-     pop        {r4,r5}\n\
-     pop        {r1}\n\
-     bx         r1\n\
-    ");
+    s32 s = size - 1;
+    if (size != 0)
+    {
+        do
+        {
+            if (*param_2++ != *param_1++)
+            {
+                return param_2 - 1;
+            }
+
+            s--;
+        } while (s != -1);
+    }
+    return 0;
 }
+
 __attribute__((naked)) void fun_0803d170()
 {
     asm("\n\

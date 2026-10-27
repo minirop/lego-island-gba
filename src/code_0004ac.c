@@ -16,119 +16,37 @@ void fun_080004ac(struct_020006a0* param_1, struct_0877bde8* param_2)
     param_1->unk1c = NULL;
 }
 
-#ifdef NONMATCHING
 void fun_080004dc(u32 param_1, u32 param_2, char* param_3)
 {
-    if (param_2 >= DAT_02005210[param_1][0].unk04)
+    s32 var_sl = DAT_02005210[param_1][0].unk04;
+    s32 var_r4 = DAT_02005210[param_1][1].unk04;
+    s32 var_ip = DAT_02005210[param_1][2].unk04;
+    char* var_r8 = DAT_02005210[param_1][0].unk00;
+    char* var_r5 = DAT_02005210[param_1][1].unk00;
+    char* var_r0 = DAT_02005210[param_1][2].unk00;
+
+    if (param_2 >= var_sl)
     {
-        DAT_02005210[param_1][2].unk04 = DAT_02005210[param_1][1].unk04;
-        strncpy(DAT_02005210[param_1][2].unk00, DAT_02005210[param_1][1].unk00, 3);
-        DAT_02005210[param_1][1].unk04 = DAT_02005210[param_1][0].unk04;
-        strncpy(DAT_02005210[param_1][1].unk00, DAT_02005210[param_1][0].unk00, 3);
+        DAT_02005210[param_1][2].unk04 = var_r4;
+        strncpy(DAT_02005210[param_1][2].unk00, var_r5, 3);
+        DAT_02005210[param_1][1].unk04 = var_sl;
+        strncpy(DAT_02005210[param_1][1].unk00, var_r8, 3);
         DAT_02005210[param_1][0].unk04 = param_2;
         strncpy(DAT_02005210[param_1][0].unk00, param_3, 3);
     }
-    else if (param_2 >= DAT_02005210[param_1][1].unk04)
+    else if (param_2 >= var_r4)
     {
-        DAT_02005210[param_1][2].unk04 = DAT_02005210[param_1][1].unk04;
-        strncpy(DAT_02005210[param_1][2].unk00, DAT_02005210[param_1][1].unk00, 3);
+        DAT_02005210[param_1][2].unk04 = var_r4;
+        strncpy(DAT_02005210[param_1][2].unk00, var_r5, 3);
         DAT_02005210[param_1][1].unk04 = param_2;
         strncpy(DAT_02005210[param_1][1].unk00, param_3, 3);
     }
-    else if (param_2 >= DAT_02005210[param_1][2].unk04)
+    else if (param_2 >= var_ip)
     {
         DAT_02005210[param_1][2].unk04 = param_2;
         strncpy(DAT_02005210[param_1][2].unk00, param_3, 3);
     }
 }
-#else
-__attribute__((naked)) void fun_080004dc(u32 param_1, u32 param_2, char* param_3)
-{
-    asm("\n\
-    push       {r4,r5,r6,r7,lr}\n\
-    mov        r7,r10\n\
-    mov        r6,r9\n\
-    mov        r5,r8\n\
-    push       {r5,r6,r7}\n\
-    sub        sp,#0x4\n\
-    add        r6,r1,#0x0\n\
-    mov        r9,r2\n\
-    ldr        r2,DAT_08000540\n\
-    lsl        r1,r0,#0x1\n\
-    add        r1,r1,r0\n\
-    lsl        r1,r1,#0x3\n\
-    add        r0,r2,#0x4\n\
-    add        r0,r1,r0\n\
-    str        r0,[sp,#0x0]\n\
-    ldr        r0,[r0,#0x0]\n\
-    mov        r10,r0\n\
-    add        r0,r2,#0x0\n\
-    add        r0,#0xc\n\
-    add        r7,r1,r0\n\
-    ldr        r4,[r7,#0x0]\n\
-    add        r0,#0x8\n\
-    add        r3,r1,r0\n\
-    ldr        r0,[r3,#0x0]\n\
-    mov        r12,r0\n\
-    add        r0,r1,r2\n\
-    mov        r8,r0\n\
-    add        r0,r2,#0x0\n\
-    add        r0,#0x8\n\
-    add        r5,r1,r0\n\
-    add        r0,#0x8\n\
-    cmp        r6,r10\n\
-    bcc        LAB_08000544\n\
-    str        r4,[r3,#0x0]\n\
-    add        r0,r1,r0\n\
-    add        r1,r5,#0x0\n\
-    mov        r2,#0x3\n\
-    bl         strncpy\n\
-    mov        r3,r10\n\
-    str        r3,[r7,#0x0]\n\
-    add        r0,r5,#0x0\n\
-    mov        r1,r8\n\
-    mov        r2,#0x3\n\
-    bl         strncpy\n\
-    ldr        r0,[sp,#0x0]\n\
-    str        r6,[r0,#0x0]\n\
-    mov        r0,r8\n\
-    b          LAB_08000558\n\
-DAT_08000540: .word 0x02005210\n\
-LAB_08000544:\n\
-    cmp        r6,r4\n\
-    bcc        LAB_08000562\n\
-    str        r4,[r3,#0x0]\n\
-    add        r0,r1,r0\n\
-    add        r1,r5,#0x0\n\
-    mov        r2,#0x3\n\
-    bl         strncpy\n\
-    str        r6,[r7,#0x0]\n\
-    add        r0,r5,#0x0\n\
-LAB_08000558:\n\
-    mov        r1,r9\n\
-    mov        r2,#0x3\n\
-    bl         strncpy\n\
-    b          LAB_08000572\n\
-LAB_08000562:\n\
-    cmp        r6,r12\n\
-    bcc        LAB_08000572\n\
-    str        r6,[r3,#0x0]\n\
-    add        r0,r1,r0\n\
-    mov        r1,r9\n\
-    mov        r2,#0x3\n\
-    bl         strncpy\n\
-LAB_08000572:\n\
-    add        sp,#0x4\n\
-    pop        {r3,r4,r5}\n\
-    mov        r8,r3\n\
-    mov        r9,r4\n\
-    mov        r10,r5\n\
-    pop        {r4,r5,r6,r7}\n\
-    pop        {r0}\n\
-    bx         r0\n\
-    ");
-}
-#endif
 
 void fun_08000584()
 {

@@ -3,8 +3,6 @@
 
 #include "gba.h"
 
-void fun_0800306c(void* param_1);
-void fun_0803c24c();
 s16 fun_08003330(u16 param_1, u16 param_2);
 s16 is_a_held();
 s16 is_a_pressed();
@@ -28,6 +26,7 @@ s16 is_up_held();
 s16 is_up_pressed();
 s32 Div(s32 over, s32 under);
 s32 fun_080016f0(u16 param_1);
+s32 fun_08001b9c();
 s32 fun_08002844();
 s32 fun_0800294c();
 s32 fun_08003370(u16 param_1, u16 param_2);
@@ -37,6 +36,7 @@ s32 fun_08005e0c();
 s32 fun_08005f08();
 s32 fun_0800612c();
 s32 fun_08006174();
+s32 fun_080062fc(void* param_1, u16 param_2, u16 param_3);
 s32 fun_08006484();
 s32 fun_08006500();
 s32 fun_0800650c();
@@ -342,7 +342,6 @@ void fun_080010d8();
 void fun_080017ac();
 void fun_080018e4(s32 param_1);
 void fun_08001a14(s32 param_1, s32 param_2);
-void fun_08001b9c();
 void fun_08002114(u16 param_1);
 void fun_080024ac();
 void fun_0800260c();
@@ -357,6 +356,7 @@ void fun_08002d34(u16 param_1, u16 param_2, u16 param_3);
 void fun_08002df8();
 void fun_08002ff0(s32 param_1, s32 param_2);
 void fun_08003048();
+void fun_0800306c(void* param_1);
 void fun_08003278();
 void fun_0800329c();
 void fun_080032a0(s32 param_1, s32 param_2, const char* param_3, ...);
@@ -371,6 +371,7 @@ void fun_08004cd0();
 void fun_08005740(struct_02000278* param_1);
 void fun_080059c8(u16 param_1, s32 param_2, s32 param_3, s32 param_4, s32 param_5, s32 param_6);
 void fun_08006180();
+void fun_080063e4(u8 param_1);
 void fun_0800a108();
 void fun_0800a368();
 void fun_0800a600();
@@ -781,7 +782,9 @@ void fun_0803a9ec();
 void fun_0803c138(u8* param_1, u16 param_2, u16 param_3, s32* param_4);
 void fun_0803c1a4();
 void fun_0803c1ec(u16 param_1, u16 param_2, u16 param_3);
+void fun_0803c24c();
 void fun_0803d040();
+void fun_0803d100(u8* param_1, u8* param_2, s32 size);
 void fun_0803d518();
 void fun_0803d5bc();
 void fun_0803da44(s32 param_1, u16 param_2);
@@ -792,8 +795,6 @@ void fun_08041a44(u8 param_1);
 void fun_08041bfc(s32 param_1);
 void fun_08042614();
 void fun_080496e8();
-void fun_080063e4(u8 param_1);
-s32 fun_080062fc(void* param_1, u16 param_2, u16 param_3);
 void LZ77UnCompVram(const void* src, void* dest);
 
 #endif
