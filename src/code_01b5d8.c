@@ -795,6 +795,8 @@ DAT_0801bbec:\n\
      .word 0x0200ECB4\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0801bbf0()
 {
     asm("\n\
@@ -1918,6 +1920,8 @@ DAT_0801c434:\n\
      .word 0x08063700\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0801c438()
 {
     asm("\n\
@@ -4934,6 +4938,8 @@ LAB_0801dada:\n\
      ldr        r1,DAT_0801db24\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0801dafc()
 {
     asm("\n\
@@ -8580,6 +8586,7 @@ DAT_0801f5c8:\n\
     ");
 }
 
+// unused
 __attribute__((naked)) void fun_0801f5cc()
 {
     asm("\n\
@@ -8629,6 +8636,7 @@ DAT_0801f624:\n\
     ");
 }
 
+// unused
 __attribute__((naked)) void fun_0801f628()
 {
     asm("\n\

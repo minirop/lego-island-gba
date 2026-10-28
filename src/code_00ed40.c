@@ -1726,6 +1726,8 @@ DAT_0800fa2c:\n\
     .word 0x020006A0\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0800fa30()
 {
     asm("\n\
@@ -1783,6 +1785,7 @@ LAB_0800fa82:\n\
     ");
 }
 
+// unused
 __attribute__((naked)) void fun_0800fa88()
 {
     asm("\n\

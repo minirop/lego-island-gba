@@ -2410,6 +2410,8 @@ DAT_0801ad7c:\n\
      .4byte 0x0200E644\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0801ad80()
 {
     asm("\n\

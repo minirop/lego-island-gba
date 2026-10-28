@@ -927,6 +927,8 @@ LAB_080194a6:\n\
 .space 2\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_080194ac()
 {
     asm("\n\

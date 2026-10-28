@@ -54,6 +54,7 @@ void fun_08003584(s32* param_1)
     param_1[1] = tmp;
 }
 
+// unused
 __attribute__((naked)) void fun_08003590()
 {
     asm("\n\

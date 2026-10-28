@@ -2939,6 +2939,8 @@ LAB_08041caa:\n\
      bx         r1\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_08041cb4()
 {
     asm("\n\
@@ -3040,6 +3042,8 @@ LAB_08041d5e:\n\
      bx         r1\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_08041d68()
 {
     asm("\n\
@@ -3146,6 +3150,8 @@ LAB_08041e1a:\n\
      bx         r1\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_08041e20()
 {
     asm("\n\
@@ -3265,6 +3271,8 @@ LAB_08041efe:\n\
      bx         r1\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_08041f08()
 {
     asm("\n\
@@ -4264,6 +4272,8 @@ LAB_0804263c:\n\
      bx         lr\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_08042640()
 {
     asm("\n\
@@ -4297,6 +4307,8 @@ LAB_08042670:\n\
      bx         lr\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_08042674()
 {
     asm("\n\

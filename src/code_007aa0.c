@@ -405,6 +405,7 @@ s32 fun_08007d50()
     return 0;
 }
 
+// unused
 __attribute__((naked)) void fun_08007d5c()
 {
     asm("\n\
@@ -443,6 +444,7 @@ LAB_08007d92:\n\
     ");
 }
 
+// unused
 __attribute__((naked)) void fun_08007d98()
 {
     asm("\n\

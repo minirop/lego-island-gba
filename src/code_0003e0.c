@@ -64,6 +64,7 @@ DAT_08000458:\n\
     ");
 }
 
+// unused
 __attribute__((naked)) void fun_0800045c()
 {
     asm("\n\

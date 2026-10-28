@@ -16,6 +16,7 @@ u16 fun_08001764()
     return fun_0803de40();
 }
 
+// unused
 #ifdef NONMATCHING
 s16 fun_08001774(u16 param_1)
 {

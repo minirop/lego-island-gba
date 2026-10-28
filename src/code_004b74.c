@@ -19,6 +19,8 @@ DAT_08004b8c:\n\
     .word 0x80000100\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_08004b90()
 {
     asm("\n\

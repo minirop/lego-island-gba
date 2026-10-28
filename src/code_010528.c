@@ -9,6 +9,8 @@ __attribute__((naked)) void fun_0801052c()
     bx         lr\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_08010534()
 {
     asm("\n\

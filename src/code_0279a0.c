@@ -6753,6 +6753,8 @@ DAT_0802ace8:\n\
      .word 0x000001FF\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0802acec()
 {
     asm("\n\
@@ -14598,6 +14600,8 @@ PTR_s_i_i_0802e63c:\n\
      .word       0x085c73cc\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0802e640()
 {
     asm("\n\

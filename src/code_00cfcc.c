@@ -102,6 +102,8 @@ DAT_0800d08c:\n\
     .word 0x000008E8\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0800d090()
 {
     asm("\n\
@@ -173,6 +175,8 @@ DAT_0800d11c:\n\
     .word 0x00000DE2\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0800d120()
 {
     asm("\n\
@@ -2507,6 +2511,8 @@ DAT_0800e2c0:\n\
     .word 0x0877CE24\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0800e2c4()
 {
     asm("\n\
@@ -2587,6 +2593,8 @@ DAT_0800e340:\n\
 \n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0800e344()
 {
     asm("\n\
@@ -2648,6 +2656,7 @@ DAT_0800e3b8:\n\
     ");
 }
 
+// unused
 __attribute__((naked)) void fun_0800e3bc()
 {
     asm("\n\
@@ -2709,6 +2718,7 @@ DAT_0800e430:\n\
     ");
 }
 
+// unused
 __attribute__((naked)) void fun_0800e434()
 {
     asm("\n\
@@ -2770,6 +2780,7 @@ DAT_0800e4a8:\n\
     ");
 }
 
+// unused
 __attribute__((naked)) void fun_0800e4ac()
 {
     asm("\n\
@@ -2831,6 +2842,7 @@ DAT_0800e520:\n\
     ");
 }
 
+// unused
 __attribute__((naked)) void fun_0800e524()
 {
     asm("\n\
@@ -2902,6 +2914,7 @@ DAT_0800e5ac:\n\
     ");
 }
 
+// unused
 __attribute__((naked)) void fun_0800e5b0()
 {
     asm("\n\
@@ -2983,6 +2996,8 @@ DAT_0800e64c:\n\
      .4byte 0x0877CE24\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0800e650()
 {
     asm("\n\

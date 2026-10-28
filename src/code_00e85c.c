@@ -633,6 +633,8 @@ DAT_0800ecd8:\n\
     .word 0x0000FFFE\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0800ecdc()
 {
     asm("\n\
@@ -674,6 +676,8 @@ LAB_0800ed02:\n\
     bx          r0\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0800ed20()
 {
     asm("\n\

@@ -712,6 +712,8 @@ __attribute__((naked)) void fun_080032a0(s32 param_1, s32 param_2, const char* p
 \n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_080032a8()
 {
     asm("\n\
@@ -748,6 +750,7 @@ void fun_080032c4(s32 param_1, s32 param_2, s32 param_3, s32 param_4, s32 param_
 {
 }
 
+// unused
 __attribute__((naked)) void fun_080032c8()
 {
     asm("\n\
@@ -844,6 +847,8 @@ LAB_080033ae:\n\
     bx          r1\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_080033b4()
 {
     asm("\n\
@@ -872,6 +877,8 @@ DAT_080033d4:\n\
     .word 0x02005CE8\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_080033d8()
 {
     asm("\n\
@@ -1058,6 +1065,8 @@ DAT_080034fc:\n\
     .word 0x02005CEC\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_08003500()
 {
     asm("\n\

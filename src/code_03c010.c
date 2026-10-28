@@ -401,6 +401,8 @@ DAT_0803c36c:\n\
      .word 0x020117C4\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803c370()
 {
     asm("\n\
@@ -1123,6 +1125,8 @@ DAT_0803c8b0:\n\
      .word 0x020117DC\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803c8b4()
 {
     asm("\n\
@@ -1883,6 +1887,8 @@ DAT_0803cdfc:\n\
      .word 0x020117D0\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803ce00()
 {
     asm("\n\
@@ -1940,6 +1946,8 @@ LAB_0803ce46:\n\
      bx         r1\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803ce5c()
 {
     asm("\n\
@@ -2028,6 +2036,8 @@ LAB_0803cef0:\n\
      bx         r0\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803cef8()
 {
     asm("\n\
@@ -2137,6 +2147,8 @@ DAT_0803cfac:\n\
      .word 0x020117D0\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803cfb0()
 {
     asm("\n\
@@ -2468,6 +2480,8 @@ LAB_0803d1b8:\n\
      bx         r1\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803d1d4()
 {
     asm("\n\
@@ -2717,6 +2731,8 @@ LAB_0803d38a:\n\
      bx         r1\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803d390()
 {
     asm("\n\
@@ -2800,6 +2816,8 @@ DAT_0803d41c:\n\
      .word 0x02027048\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803d420()
 {
     asm("\n\
@@ -3375,6 +3393,8 @@ DAT_0803d838:\n\
      .word 0xA8351D63\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803d83c()
 {
     asm("\n\
@@ -3470,6 +3490,8 @@ LAB_0803d8d4:\n\
      bx         r1\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803d8dc()
 {
     asm("\n\
@@ -3613,6 +3635,8 @@ DAT_0803d9cc:\n\
      .word 0xFFFFFF00\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803d9d0()
 {
     asm("\n\
@@ -3755,6 +3779,8 @@ LAB_0803dab6:\n\
      bx         r1\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803dabc()
 {
     asm("\n\

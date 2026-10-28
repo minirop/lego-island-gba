@@ -4510,6 +4510,8 @@ DAT_080319a4:\n\
      .word 0x02010888\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_080319a8()
 {
     asm("\n\
@@ -7208,6 +7210,8 @@ DAT_08032d1c:\n\
      .word 0x02010A14\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_08032d20()
 {
     asm("\n\

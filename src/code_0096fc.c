@@ -22,6 +22,8 @@ DAT_0800971c:\n\
     .word 0x00000E5A\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_08009720()
 {
     asm("\n\

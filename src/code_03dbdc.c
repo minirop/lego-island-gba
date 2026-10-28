@@ -1,5 +1,6 @@
 #include "functions.h"
 
+// unused
 __attribute__((naked)) void fun_0803dbdc()
 {
     asm("\n\
@@ -145,6 +146,8 @@ LAB_0803dcd2:\n\
      bx         r0\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803dcdc()
 {
     asm("\n\
@@ -306,6 +309,8 @@ LAB_0803dde6:\n\
      bx         lr\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803dde8()
 {
     asm("\n\
@@ -417,6 +422,8 @@ DAT_0803de98:\n\
      .word 0xFFFFFF00\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803de9c()
 {
     asm("\n\
@@ -455,6 +462,8 @@ DAT_0803ded0:\n\
      .word 0x02027048\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803ded4()
 {
     asm("\n\
@@ -466,6 +475,8 @@ DAT_0803dedc:\n\
      .word 0x02027048\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803dee0()
 {
     asm("\n\
@@ -482,6 +493,8 @@ DAT_0803def0:\n\
      .word 0x02027048\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803def4()
 {
     asm("\n\
@@ -500,6 +513,8 @@ DAT_0803df08:\n\
      .word 0x02027048\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803df0c()
 {
     asm("\n\
@@ -522,6 +537,8 @@ DAT_0803df28:\n\
      .word 0x02027048\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803df2c()
 {
     asm("\n\
@@ -544,6 +561,8 @@ DAT_0803df48:\n\
      .word 0x02027048\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803df4c()
 {
     asm("\n\
@@ -562,6 +581,8 @@ DAT_0803df60:\n\
      .word 0x02027048\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803df64()
 {
     asm("\n\
@@ -580,6 +601,8 @@ DAT_0803df78:\n\
      .word 0x02027048\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803df7c()
 {
     asm("\n\
@@ -594,6 +617,8 @@ DAT_0803df88:\n\
      .word 0x04000082\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803df8c()
 {
     asm("\n\
@@ -644,6 +669,8 @@ LAB_0803dfc8:\n\
      bx         lr\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803dfcc()
 {
     asm("\n\
@@ -738,6 +765,8 @@ DAT_0803e058:\n\
      .word 0x02027048\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803e05c()
 {
     asm("\n\
@@ -771,6 +800,8 @@ DAT_0803e08c:\n\
      .word 0x02027048\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803e090()
 {
     asm("\n\
@@ -812,6 +843,8 @@ DAT_0803e0d0:\n\
      .word 0x02027048\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803e0d4()
 {
     asm("\n\
@@ -845,6 +878,8 @@ DAT_0803e104:\n\
      .word 0x02027048\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803e108()
 {
     asm("\n\
@@ -885,6 +920,8 @@ LAB_0803e140:\n\
      bx         r0\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803e148()
 {
     asm("\n\

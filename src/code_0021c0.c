@@ -1080,6 +1080,7 @@ u16 fun_08002968()
     return DAT_02000008;
 }
 
+// unused
 __attribute__((naked)) void fun_08002974()
 {
     asm("\n\

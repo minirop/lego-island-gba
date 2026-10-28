@@ -667,6 +667,8 @@ DAT_0801fbbc:\n\
      .word 0x0200F144\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0801fbc0()
 {
     asm("\n\
@@ -4093,6 +4095,8 @@ DAT_080216cc:\n\
      .word 0x084496C8\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_080216d0()
 {
     asm("\n\
@@ -4741,6 +4745,7 @@ DAT_08021b88:\n\
     ");
 }
 
+// unused
 __attribute__((naked)) void fun_08021b8c()
 {
     asm("\n\

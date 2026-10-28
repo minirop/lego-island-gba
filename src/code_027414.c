@@ -674,6 +674,8 @@ LAB_080278c4:\n\
 .space 1\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_080278cc()
 {
     asm("\n\
@@ -756,6 +758,8 @@ PTR_DAT_08027954:\n\
      .4byte       DAT_0200f5d8\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_08027958()
 {
     asm("\n\

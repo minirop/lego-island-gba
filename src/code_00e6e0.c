@@ -120,6 +120,7 @@ DAT_0800e7c4:\n\
     ");
 }
 
+// unused
 __attribute__((naked)) void fun_0800e7c8()
 {
     asm("\n\

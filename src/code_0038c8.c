@@ -2,6 +2,7 @@
 #include "variables.h"
 #include <stdlib.h>
 
+// unused
 __attribute__((naked)) void fun_080038c8()
 {
     asm("\n\

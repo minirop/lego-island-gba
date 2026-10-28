@@ -25,6 +25,7 @@ void fun_080115c0()
 {
 }
 
+// unused
 __attribute__((naked)) void fun_080115c4()
 {
     asm("\n\
@@ -147,6 +148,7 @@ DAT_080116ac:\n\
      .word 0x00000DFC\n\
     ");
 }
+
 __attribute__((naked)) void fun_080116b0()
 {
     asm("\n\
@@ -155,6 +157,7 @@ __attribute__((naked)) void fun_080116b0()
      bx         lr\n\
     ");
 }
+
 __attribute__((naked)) void fun_080116b8()
 {
     asm("\n\

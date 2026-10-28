@@ -378,6 +378,8 @@ PTR_DAT_08021e48:\n\
      .word       DAT_02005700\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_08021e4c()
 {
     asm("\n\
@@ -2827,6 +2829,8 @@ DAT_080230a8:\n\
      .word 0x0200F310\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_080230ac()
 {
     asm("\n\
@@ -3879,14 +3883,18 @@ DAT_08023868:\n\
      .word 0x0200F2D4\n\
     ");
 }
+
 s32 fun_0802386c()
 {
     return 1;
 }
+
 s32 fun_08023870()
 {
     return 1;
 }
+
+// unused
 __attribute__((naked)) void fun_08023874()
 {
     asm("\n\
@@ -3916,6 +3924,8 @@ DAT_080238a4:\n\
     .word 0x0200ED50\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_080238a8()
 {
     asm("\n\

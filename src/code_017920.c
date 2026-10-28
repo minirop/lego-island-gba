@@ -1339,6 +1339,8 @@ LAB_08018322:\n\
      bx         r0\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0801833c()
 {
     asm("\n\

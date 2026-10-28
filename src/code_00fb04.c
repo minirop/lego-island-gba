@@ -1146,6 +1146,8 @@ DAT_080103e0:\n\
 \n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_080103e4()
 {
     asm("\n\
@@ -1212,6 +1214,8 @@ DAT_08010468:\n\
      .4byte 0x00001102\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0801046c()
 {
     asm("\n\
@@ -1282,6 +1286,8 @@ DAT_080104dc:\n\
      .4byte 0x0200DC04\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_080104e0()
 {
     asm("\n\

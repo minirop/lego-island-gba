@@ -1,6 +1,7 @@
 #include "functions.h"
 #include "variables.h"
 
+// unused
 __attribute__((naked)) void fun_0803b5c8()
 {
     asm("\n\
@@ -51,6 +52,8 @@ LAB_0803b614:\n\
      bx         r0\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803b620()
 {
     asm("\n\
@@ -67,6 +70,8 @@ DAT_0803b630:\n\
      .word 0x02000594\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803b634()
 {
     asm("\n\
@@ -145,6 +150,8 @@ DAT_0803b6c0:\n\
      .word 0xFE00FF00\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803b6c4()
 {
     asm("\n\
@@ -204,6 +211,8 @@ DAT_0803b708:\n\
      .word 0x02000578\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803b70c()
 {
     asm("\n\
@@ -223,6 +232,8 @@ DAT_0803b724:\n\
      .word 0x020005A0\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803b728()
 {
     asm("\n\
@@ -351,6 +362,8 @@ __attribute__((naked)) void fun_0803b7d0()
      bx         r0\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803b808()
 {
     asm("\n\
@@ -545,6 +558,8 @@ DAT_0803b96c:\n\
      .word 0x087D5EAC\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803b970()
 {
     asm("\n\
@@ -935,6 +950,8 @@ DAT_0803bcc8:\n\
      .word 0x43700000\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0803bccc()
 {
     asm("\n\

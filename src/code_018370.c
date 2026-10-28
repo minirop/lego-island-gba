@@ -364,6 +364,8 @@ LAB_08018646:\n\
      bx         r0\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0801864c()
 {
     asm("\n\
@@ -735,6 +737,8 @@ DAT_080188f0:\n\
      .word 0x0200E010\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_080188f4()
 {
     asm("\n\
@@ -751,6 +755,8 @@ DAT_08018908:\n\
      .word 0x02005750\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0801890c()
 {
     asm("\n\

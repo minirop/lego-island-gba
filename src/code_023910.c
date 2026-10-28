@@ -2955,6 +2955,8 @@ DAT_08024f4c:\n\
      .word 0x0000066C\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_08024f50()
 {
     asm("\n\
@@ -3249,6 +3251,8 @@ DAT_08025154:\n\
      .word 0x000006C4\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_08025158()
 {
     asm("\n\
@@ -3663,6 +3667,8 @@ DAT_08025438:\n\
      .word 0x00000A6C\n\
     ");
 }
+
+// unused
 __attribute__((naked)) void fun_0802543c()
 {
     asm("\n\

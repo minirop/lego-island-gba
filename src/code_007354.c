@@ -212,6 +212,7 @@ const LevelInfo multiplayer_connect = {
     "Blank",
 };
 
+// unused
 __attribute__((naked)) void fun_080074bc()
 {
     asm("\n\
@@ -581,6 +582,7 @@ s32 fun_08007748()
     return 0;
 }
 
+// unused
 __attribute__((naked)) void fun_08007754()
 {
     asm("\n\
