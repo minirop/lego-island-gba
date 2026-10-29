@@ -330,6 +330,7 @@ u16 fun_0803de40();
 u16 Sqrt(u32 num);
 u16* fun_08004694(u16 param_1);
 u32 fun_0803d60c(u32 param_1, u32 param_2, u32 param_3, u32 param_4);
+u8* fun_0803d170(char* param_1, char* param_2, s32 param_3);
 void assert(s32 condition, const char* message);
 void CpuSet(const void* src, void* dest, u32 control);
 void fun_080003e0(s32 param_1, s32 param_2, s32 param_3);

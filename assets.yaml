@@ -1,0 +1,39 @@
+file: baserom.gba
+assets:
+  - path: gfx/logos/copyright
+    pixels: 0x756d5c
+    size: 7152
+    palette: 0x75894c
+  - path: gfx/logos/silicon_dream_logo
+    pixels: 0x758b4c
+    size: 8494
+    palette: 0x75ac7c
+    palette_size: 508
+  - path: gfx/logos/lego_software
+    pixels: 0x75ae78
+    size: 14313
+    palette: 0x75e664
+  - path: gfx/intro/1
+    pixels: 0x75e90c
+    size: 38492
+    palette: 0x767f68
+  - path: gfx/intro/2
+    pixels: 0x768168
+    size: 24352
+    palette: 0x76e088
+  - path: gfx/intro/3
+    pixels: 0x76e288
+    size: 12094
+    palette: 0x7711c8
+  - path: gfx/intro/4
+    pixels: 0x7713c8
+    size: 13225
+    palette: 0x774774
+  - path: gfx/intro/5
+    pixels: 0x778144
+    size: 13868
+    palette: 0x77b770
+  - path: gfx/intro/6
+    pixels: 0x774974
+    size: 13774
+    palette: 0x777f44

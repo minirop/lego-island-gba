@@ -2423,7 +2423,7 @@ u8* fun_0803d140(u8* param_1, u8* param_2, s32 size)
     return 0;
 }
 
-__attribute__((naked)) void fun_0803d170()
+__attribute__((naked)) u8* fun_0803d170(char* param_1, char* param_2, s32 param_3)
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\
@@ -2482,40 +2482,28 @@ LAB_0803d1b8:\n\
 }
 
 // unused
-__attribute__((naked)) void fun_0803d1d4()
+u8* fun_0803d1d4(char* param_1, char* param_2, s32 param_3, s32 param_4)
 {
-    asm("\n\
-     push       {r4,r5,r6,r7,lr}\n\
-     add        r6,r0,#0x0\n\
-     add        r5,r1,#0x0\n\
-     add        r4,r2,#0x0\n\
-     mov        r7,#0x0\n\
-     b          LAB_0803d1e6\n\
-LAB_0803d1e0:\n\
-     add        r0,r7,#0x1\n\
-     lsl        r0,r0,#0x18\n\
-     lsr        r7,r0,#0x18\n\
-LAB_0803d1e6:\n\
-     cmp        r7,#0x2\n\
-     bhi        LAB_0803d204\n\
-     add        r0,r6,#0x0\n\
-     add        r1,r5,#0x0\n\
-     add        r2,r4,#0x0\n\
-     bl         fun_0803d100\n\
-     add        r0,r6,#0x0\n\
-     add        r1,r5,#0x0\n\
-     add        r2,r4,#0x0\n\
-     bl         fun_0803d170\n\
-     add        r3,r0,#0x0\n\
-     cmp        r3,#0x0\n\
-     bne        LAB_0803d1e0\n\
-LAB_0803d204:\n\
-     add        r0,r3,#0x0\n\
-     pop        {r4,r5,r6,r7}\n\
-     pop        {r1}\n\
-     bx         r1\n\
-    ");
+    u8 i;
+    u8* ptr;
+
+    i = 0;
+    while (i < 3)
+    {
+        fun_0803d100(param_1, param_2, param_3);
+
+        ptr = fun_0803d170(param_1, param_2, param_3);
+        if (ptr == 0)
+        {
+            break;
+        }
+
+        i++;
+    }
+
+    return ptr;
 }
+
 __attribute__((naked)) void fun_0803d20c()
 {
     asm("\n\
