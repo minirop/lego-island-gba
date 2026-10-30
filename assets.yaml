@@ -4,12 +4,12 @@ assets:
     pixels: 0x756d5c
     size: 7152
     palette: 0x75894c
-  - path: gfx/logos/silicon_dream_logo
+  - path: gfx/logos/silicon-dream
     pixels: 0x758b4c
     size: 8494
     palette: 0x75ac7c
     palette_size: 508
-  - path: gfx/logos/lego_software
+  - path: gfx/logos/lego-software
     pixels: 0x75ae78
     size: 14313
     palette: 0x75e664
@@ -37,3 +37,247 @@ assets:
     pixels: 0x774974
     size: 13774
     palette: 0x777f44
+  - path: gfx/language-selection
+    pixels: 0x064540
+    size: 10813
+    palette: 0x064340
+  - path: gfx/title/title-screen
+    pixels: 0x069838
+    size: 17697
+    palette: 0x069638
+  - path: gfx/title/start-menu
+    pixels: 0x07259c
+    size: 16008
+    palette: 0x069638 # unknown palette
+  - path: gfx/title/title-screen-dk
+    pixels: 0x067590
+    size: 8358
+    palette: 0x069638 # unknown palette
+  - path: gfx/title/title-screen-de
+    pixels: 0x06df5c
+    size: 9017
+    palette: 0x069638 # unknown palette
+  - path: gfx/title/title-screen-it
+    pixels: 0x070498
+    size: 7940
+    palette: 0x069638 # unknown palette
+  - path: gfx/title/title-screen-nl
+    pixels: 0x07897c
+    size: 8468
+    palette: 0x069638 # unknown palette
+  - path: gfx/unknown/DAT_0865d974
+    pixels: 0x65d974
+    size: 8254
+    palette: 0x65d774
+  - path: gfx/unknown/DAT_087c7ea0
+    pixels: 0x7c7ea0
+    size: 11900
+    palette: 0x7cad1c
+  - path: gfx/unknown/DAT_085ee658
+    pixels: 0x5ee658
+    size: 9778
+    palette: 0x5ee458
+  - path: gfx/unknown/DAT_087b748c
+    pixels: 0x7b748c
+    size: 24093
+    palette: 0x7bd2ac
+  - path: gfx/unknown/DAT_085ac534
+    pixels: 0x5ac534
+    size: 10823
+    palette: 0x5ac134
+  - path: gfx/unknown/DAT_085ac534_v2
+    pixels: 0x5ac534
+    size: 10823
+    palette: 0x5abd34
+  - path: gfx/unknown/DAT_085a861c
+    pixels: 0x5a861c
+    size: 4546
+    palette: 0x5a841c
+  - path: gfx/unknown/DAT_0859377c
+    pixels: 0x59377c
+    size: 29820
+    palette: 0x59357c
+  - path: gfx/unknown/DAT_08550340
+    pixels: 0x550340
+    size: 22824
+    palette: 0x555c68
+  - path: gfx/unknown/DAT_08555e68
+    pixels: 0x555e68
+    size: 22129
+    palette: 0x555c68
+  - path: gfx/unknown/DAT_087a1024
+    pixels: 0x7a1024
+    size: 21492
+    palette: 0x7a6418
+  - path: gfx/unknown/DAT_08540aa8
+    pixels: 0x540aa8
+    size: 24596
+    palette: 0x546abc
+  - path: gfx/unknown/DAT_08546cbc
+    pixels: 0x546cbc
+    size: 24916
+    palette: 0x546abc
+  - path: gfx/unknown/DAT_0853c2ec
+    pixels: 0x53c2ec
+    size: 17208
+    palette: 0x53c0ec
+  - path: gfx/unknown/DAT_084cf284
+    pixels: 0x4cf284
+    size: 20964
+    palette: 0x4cf084
+  - path: gfx/unknown/DAT_084c1f68
+    pixels: 0x4c1f68
+    size: 15208
+    palette: 0x4c1d68
+  - path: gfx/unknown/DAT_084bdea8
+    pixels: 0x4bdea8
+    size: 15856
+    palette: 0x4bdca8
+  - path: gfx/unknown/DAT_084a0574
+    pixels: 0x4a0574
+    size: 14447
+    palette: 0x4a0374
+  - path: gfx/unknown/DAT_0849c3f8
+    pixels: 0x49c3f8
+    size: 15217
+    palette: 0x49c1f8
+  - path: gfx/unknown/DAT_08495030
+    pixels: 0x495030
+    size: 16024
+    palette: 0x494e30
+  - path: gfx/unknown/DAT_0848fa40
+    pixels: 0x48fa40
+    size: 15034
+    palette: 0x48f840
+  - path: gfx/unknown/DAT_0846a740
+    pixels: 0x46a740
+    size: 15208
+    palette: 0x46a540
+  - path: gfx/unknown/DAT_081476a0
+    pixels: 0x1476a0
+    size: 5369
+    palette: 0x150140
+  - path: gfx/unknown/DAT_080d6f38
+    pixels: 0x0d6f38
+    size: 8523
+    palette: 0x0d6d38
+  - path: gfx/unknown/DAT_080aaa2c
+    pixels: 0x0aaa2c
+    size: 4656
+    palette: 0x0aa82c
+  - path: gfx/unknown/DAT_080b7124
+    pixels: 0x0b7124
+    size: 1247
+    palette: 0x069638 # unknown palette
+    width: 96
+  - path: gfx/unknown/DAT_08095a84
+    pixels: 0x095a84
+    size: 18381
+    palette: 0x095884
+  - path: gfx/unknown/DAT_0807f1f0
+    pixels: 0x07f1f0
+    size: 13379
+    palette: 0x07c7f0 # seems to have many palettes
+  - path: gfx/unknown/DAT_085c75d8
+    pixels: 0x5c75d8
+    size: 25142
+    palette: 0x069638 # unknown palette
+  - path: gfx/unknown/DAT_085cda10
+    pixels: 0x5cda10
+    size: 9614
+    palette: 0x069638 # unknown palette
+  - path: gfx/unknown/DAT_085d01a0
+    pixels: 0x5d01a0
+    size: 22454
+    palette: 0x069638 # unknown palette
+  - path: gfx/unknown/DAT_085e4e80
+    pixels: 0x5e4e80
+    size: 22572
+    palette: 0x069638 # unknown palette
+  - path: gfx/unknown/DAT_085df134
+    pixels: 0x5df134
+    size: 23369
+    palette: 0x069638 # unknown palette
+  - path: gfx/unknown/DAT_085d5b58
+    pixels: 0x5d5b58
+    size: 23682
+    palette: 0x069638 # unknown palette
+  - path: gfx/unknown/DAT_085db9dc
+    pixels: 0x5db9dc
+    size: 13654
+    palette: 0x069638 # unknown palette
+  - path: gfx/map/1
+    pixels: 0x4a8054
+    size: 15621
+    palette: 0x4a7e54
+  - path: gfx/map/2
+    pixels: 0x4b03a8
+    size: 15907
+    palette: 0x4b01a8
+  - path: gfx/map/3
+    pixels: 0x4abf5c
+    size: 16972
+    palette: 0x4abd5c
+  - path: gfx/unknown/DAT_084abd5c
+    pixels: 0x0fd5d8
+    size: 17936
+    palette: 0x0fd3d8
+  - path: gfx/unknown/DAT_080fd3d8
+    pixels: 0x0f3e00
+    size: 18899
+    palette: 0x0f3c00
+  - path: gfx/unknown/DAT_080f3c00
+    pixels: 0x0d5264
+    size: 6868
+    palette: 0x0d5064
+  - path: gfx/unknown/DAT_080d5064
+    pixels: 0x0e9060
+    size: 21511
+    palette: 0x0e8e60
+  - path: gfx/unknown/DAT_080e8e60
+    pixels: 0x0cfb68
+    size: 21753
+    palette: 0x0cf968
+  - path: gfx/unknown/DAT_080cf968
+    pixels: 0x0ca4d8
+    size: 21648
+    palette: 0x0ca2d8
+  - path: gfx/unknown/DAT_080ca2d8
+    pixels: 0x0ee668
+    size: 21909
+    palette: 0x0ee468
+  - path: gfx/unknown/DAT_080ee468
+    pixels: 0x0e44c8
+    size: 18840
+    palette: 0x0e42c8
+  - path: gfx/unknown/DAT_080e42c8
+    pixels: 0x0f89d4
+    size: 18947
+    palette: 0x0f87d4
+  - path: gfx/unknown/DAT_080f87d4
+    pixels: 0x0e0e98
+    size: 13358
+    palette: 0x0e0c98
+  - path: gfx/unknown/DAT_080e0c98
+    pixels: 0x0dd58c
+    size: 14091
+    palette: 0x0dd38c
+  - path: gfx/unknown/DAT_080dd38c
+    pixels: 0x0d9284
+    size: 16646
+    palette: 0x0d9084
+  - path: gfx/unknown/DAT_080d9084
+    pixels: 0x101de8
+    size: 17998
+    palette: 0x101be8
+  - path: gfx/unknown/DAT_08101be8
+    pixels: 0x0c6250
+    size: 16517
+    palette: 0x0c6050
+# TODO
+# pepper dancing
+# characters cards
+# PTR_ARRAY_0877bb00
+# PTR_ARRAY_0877bad8
+# PTR_ARRAY_0877ba6c
+# PTR_ARRAY_0877ba00
