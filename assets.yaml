@@ -48,23 +48,27 @@ assets:
   - path: gfx/title/start-menu
     pixels: 0x07259c
     size: 16008
-    palette: 0x069638 # title screen palette
+    palette: 0x07239c
   - path: gfx/title/title-screen-dk
     pixels: 0x067590
     size: 8358
-    palette: 0x069638 # title screen palette
+    palette: 0x067390
   - path: gfx/title/title-screen-de
     pixels: 0x06df5c
     size: 9017
-    palette: 0x069638 # title screen palette
+    palette: 0x06dd5c
   - path: gfx/title/title-screen-it
     pixels: 0x070498
     size: 7940
-    palette: 0x069638 # title screen palette
+    palette: 0x070298
   - path: gfx/title/title-screen-nl
+    pixels: 0x076624
+    size: 8533
+    palette: 0x076424
+  - path: gfx/title/title-screen-fr
     pixels: 0x07897c
     size: 8468
-    palette: 0x069638 # title screen palette
+    palette: 0x07877c
   - path: gfx/unknown/DAT_0865d974
     pixels: 0x65d974
     size: 8254

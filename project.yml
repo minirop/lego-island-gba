@@ -390,7 +390,6 @@ rom:
       format: c
       section: rodata
       address: 0x049c24
-      size: 0x0f
     - name: code_0029c8
       format: c
       section: rodata
@@ -400,12 +399,76 @@ rom:
       format: c
       section: rodata
       address: 0x064190
-      size: 0x1b0
+    - name: gfx/language-selection.pal
+      format: custom
+      section: data
+      address: 0x064340
+    - name: gfx/language-selection.gfx
+      format: custom
+      section: data
+      address: 0x064540
     - name: code_006180
       format: c
       section: rodata
       address: 0x066f80
       size: 0x1c0
+    - name: gfx/title/title-screen-dk.pal
+      format: custom
+      section: data
+      address: 0x067390
+    - name: gfx/title/title-screen-dk.gfx
+      format: custom
+      section: data
+      address: 0x067590
+    - name: gfx/title/title-screen.pal
+      format: custom
+      section: data
+      address: 0x069638
+    - name: gfx/title/title-screen.gfx
+      format: custom
+      section: data
+      address: 0x069838
+    - name: gfx/title/title-screen-de.pal
+      format: custom
+      section: data
+      address: 0x06dd5c
+    - name: gfx/title/title-screen-de.gfx
+      format: custom
+      section: data
+      address: 0x06df5c
+    - name: gfx/title/title-screen-it.pal
+      format: custom
+      section: data
+      address: 0x070298
+    - name: gfx/title/title-screen-it.gfx
+      format: custom
+      section: data
+      address: 0x070498
+    - name: gfx/title/start-menu.pal
+      format: custom
+      section: data
+      address: 0x07239c
+    - name: gfx/title/start-menu.gfx
+      format: custom
+      section: data
+      address: 0x07259c
+    - name: gfx/title/title-screen-nl.pal
+      format: custom
+      section: data
+      address: 0x076424
+    - name: gfx/title/title-screen-nl.gfx
+      format: custom
+      section: data
+      address: 0x076624
+    - name: gfx/title/title-screen-fr.pal
+      format: custom
+      section: data
+      address: 0x07877c
+    - name: gfx/title/title-screen-fr.gfx
+      format: custom
+      section: data
+      address: 0x07897c
+      size: 8468
     - name: code_07c2f4
       format: c
       section: rodata
@@ -555,7 +618,6 @@ rom:
       format: c
       section: rodata
       address: 0x54ce10
-      size: 0xd0
     - name: code_54cee0
       format: c
       section: rodata
@@ -678,7 +740,10 @@ rom:
       format: custom
       section: data
       address: 0x758b4c
-      size: 0x2130
+    - name: gfx/logos/silicon-dream.pal
+      format: custom
+      section: data
+      address: 0x75ac7c
     - name: gfx/logos/lego-software.gfx
       format: custom
       section: data
@@ -692,11 +757,50 @@ rom:
       format: custom
       section: data
       address: 0x75e90c
-      size: 0x965c
     - name: gfx/intro/tv-static.pal
       format: custom
       section: data
       address: 0x767f68
+    - name: gfx/intro/infomaniac-gets-news.gfx
+      format: custom
+      section: data
+      address: 0x768168
+    - name: gfx/intro/infomaniac-gets-news.pal
+      format: custom
+      section: data
+      address: 0x76e088
+    - name: gfx/intro/infomaniac-starts-reading.gfx
+      format: custom
+      section: data
+      address: 0x76e288
+    - name: gfx/intro/infomaniac-starts-reading.pal
+      format: custom
+      section: data
+      address: 0x7711c8
+    - name: gfx/intro/brickster-on-tv.gfx
+      format: custom
+      section: data
+      address: 0x7713c8
+    - name: gfx/intro/brickster-on-tv.pal
+      format: custom
+      section: data
+      address: 0x774774
+    - name: gfx/intro/infomaniac-looking-at-tv.gfx
+      format: custom
+      section: data
+      address: 0x774974
+    - name: gfx/intro/infomaniac-looking-at-tv.pal
+      format: custom
+      section: data
+      address: 0x777f44
+    - name: gfx/intro/police-on-tv.gfx
+      format: custom
+      section: data
+      address: 0x778144
+    - name: gfx/intro/police-on-tv.pal
+      format: custom
+      section: data
+      address: 0x77b770
       size: 0x200
     - name: code_77ef7c
       format: c
