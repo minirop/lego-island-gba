@@ -589,48 +589,20 @@ void fun_0800200c()
 }
 const char* dummy_0804979c = "MultiSioSync010316";
 
-#ifdef NONMATCHING
+static inline void fun_08002038_wrapper()
+{
+    memset(fun_080020a4(), 0, sizeof(struct_02002620));
+}
+
 void fun_08002038()
 {
     if (strcmp((const char*)&fun_080020a4()->unk08, "GOGOMONKEYX"))
     {
-        memset(fun_080020a4(), 0, sizeof(struct_02002620));
+        fun_08002038_wrapper();
         memcpy(&fun_080020a4()->unk08, "GOGOMONKEYX", 12);
         fun_08001b9c();
     }
 }
-#else
-__attribute__((naked)) void fun_08002038()
-{
-    asm("\n\
-    push        {r4,lr}\n\
-    bl          fun_080020a4\n\
-    add         r0,#0x8\n\
-    ldr         r4,DAT_08002070\n\
-    add         r1,r4,#0x0\n\
-    bl          strcmp\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_0800206a\n\
-    bl          fun_080020a4\n\
-    mov         r1,#0x0\n\
-    mov         r2,#0xea\n\
-    lsl         r2,r2,#0x4\n\
-    bl          memset\n\
-    bl          fun_080020a4\n\
-    add         r0,#0x8\n\
-    add         r1,r4,#0x0\n\
-    ldmia       r1!,{r2,r3,r4}\n\
-    stmia       r0!,{r2,r3,r4}\n\
-    bl          fun_08001b9c\n\
-LAB_0800206a:\n\
-    pop         {r4}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-DAT_08002070:\n\
-    .word 0x08049790\n\
-    ");
-}
-#endif
 
 s32 fun_08002074(u8 param_1)
 {
@@ -667,14 +639,17 @@ s32 fun_080020bc(u16 param_1)
 
 void fun_08002114(u16 param_1)
 {
+    u16 tmp;
     if (param_1 == 0x18)
     {
         param_1 = 0x7d8;
     }
-    if ((u16)(param_1 - 2000) < 0x1c)
+
+    tmp = param_1 - 2000;
+    if (tmp < 0x1c)
     {
         struct_02002620* ptr = &DAT_02002620[DAT_02005570];
-        ptr->unk0e88 |= (1 << ((param_1 - 2000)));
+        ptr->unk0e88 |= (1 << (param_1 - 2000));
     }
 }
 

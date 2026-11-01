@@ -599,7 +599,7 @@ void fun_08000d1c()
     }
     DAT_02002548++;
 
-    if (DAT_020025e0.unk00 != 5)
+    if (DAT_020025e0 != 5)
     {
         fun_080020a4()->unk1c++;
         if (fun_080020a4()->unk1c == 0x3c)
@@ -978,51 +978,42 @@ void fun_08001070(u16 param_1)
     fun_08002114(param_1);
 }
 
-__attribute__((naked)) void fun_08001088()
+void fun_08001088(u16 param_1)
 {
-    asm("\n\
-    push        {r4,r5,lr}\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r4,r0,#0x10\n\
-    ldr         r5,DAT_080010c4\n\
-    ldrh        r0,[r5,#0x0]\n\
-    cmp         r0,#0x20\n\
-    beq         LAB_080010be\n\
-    add         r0,r4,#0x0\n\
-    bl          fun_08002114\n\
-    ldr         r1,DAT_080010c8\n\
-    ldrh        r2,[r5,#0x0]\n\
-    lsl         r0,r2,#0x1\n\
-    add         r0,r0,r1\n\
-    ldr         r1,DAT_080010cc\n\
-    ldrh        r1,[r1,#0x0]\n\
-    strh        r1,[r0,#0x0]\n\
-    ldrh        r0,[r5,#0x0]\n\
-    add         r0,#0x1\n\
-    strh        r0,[r5,#0x0]\n\
-    ldr         r0,DAT_080010d0\n\
-    strh        r4,[r0,#0x0]\n\
-    cmp         r4,#0x1a\n\
-    bne         LAB_080010be\n\
-    ldr         r1,DAT_080010d4\n\
-    mov         r0,#0x1\n\
-    strh        r0,[r1,#0x0]\n\
-LAB_080010be:\n\
-    pop         {r4,r5}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-DAT_080010c4:\n\
-    .word 0x02002544\n\
-DAT_080010c8:\n\
-    .word 0x02002570\n\
-DAT_080010cc:\n\
-    .word 0x020025E0\n\
-DAT_080010d0:\n\
-    .word 0x020025D8\n\
-DAT_080010d4:\n\
-    .word 0x020025B0\n\
-    ");
+    if (DAT_02002544 != 0x20)
+    {
+        fun_08002114(param_1);
+        DAT_02002570[DAT_02002544] = DAT_020025e0;
+        DAT_02002544++;
+        DAT_020025d8 = param_1;
+        if (param_1 == 0x1a)
+        {
+            DAT_020025b0 = 1;
+        }
+    }
 }
+
+#ifdef NONMATCHING
+void fun_080010d8()
+{
+    s32 ret;
+    vu16* ptr;
+
+    if (DAT_02002544 == 0)
+    {
+        ptr = &DAT_020025d8;
+        ret = 0x232a;
+    }
+    else
+    {
+        DAT_02002544--;
+        DAT_020025d8 = DAT_02002570[DAT_02002544];
+        ptr = &DAT_020025ec.s;
+        ret = 1;
+    }
+    *ptr = ret;
+}
+#else
 __attribute__((naked)) void fun_080010d8()
 {
     asm("\n\
@@ -1062,6 +1053,7 @@ DAT_08001114:\n\
     .word 0x020025EC\n\
     ");
 }
+#endif
 
 u8 fun_08001118()
 {
@@ -1151,59 +1143,21 @@ s32 fun_080011cc()
     return DAT_020025cc;
 }
 
-#ifdef NONMATCHING
 void fun_080011d8()
 {
     u16 i = 0;
-    for (i = 0; i < levels_count; i++)
+    if (i < levels_count)
     {
-        if (levels[i]->unk38 != NULL)
+        do
         {
-            levels[i]->unk38();
-        }
+            if (levels[i]->unk38 != NULL)
+            {
+                levels[i]->unk38();
+            }
+            ++i;
+        } while (i < levels_count);
     }
 }
-#else
-__attribute__((naked)) void fun_080011d8()
-{
-    asm("\n\
-    push        {r4,r5,lr}\n\
-    mov         r4,#0x0\n\
-    ldr         r0,DAT_0800120c\n\
-    ldrh        r0,[r0,#0x0]\n\
-    cmp         r4,r0\n\
-    bcs         LAB_08001204\n\
-    ldr         r5,DAT_08001210\n\
-LAB_080011e6:\n\
-    lsl         r0,r4,#0x2\n\
-    add         r0,r0,r5\n\
-    ldr         r0,[r0,#0x0]\n\
-    ldr         r0,[r0,#0x38]\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_080011f6\n\
-    bl          _call_via_r0\n\
-LAB_080011f6:\n\
-    add         r0,r4,#0x1\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r4,r0,#0x10\n\
-    ldr         r0,DAT_0800120c\n\
-    ldrh        r0,[r0,#0x0]\n\
-    cmp         r4,r0\n\
-    bcc         LAB_080011e6\n\
-LAB_08001204:\n\
-    pop         {r4,r5}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_0800120c:\n\
-    .word 0x08756BC0\n\
-DAT_08001210:\n\
-    .word 0x08756AEC\n\
-    ");
-}
-#endif
 
 s32 fun_08001214(u32 param_1)
 {
@@ -1223,7 +1177,7 @@ void fun_0800122c(u16 param_1)
         fun_08002df8();
         fun_080046a4();
 
-        if (cond && DAT_020025e0.unk00 != 0)
+        if (cond && DAT_020025e0 != 0)
         {
             if (DAT_020025f0 != NULL)
             {

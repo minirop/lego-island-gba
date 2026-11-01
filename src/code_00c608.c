@@ -1201,8 +1201,8 @@ void fun_0800cf28(u16 param_1, u16 param_2, u16 param_3, u16 param_4)
     DAT_0200d398 = param_3;
     DAT_0200d3a8 = param_4;
     DAT_0200d388 = 1;
-    DAT_0200d404 = DAT_020006a0[2] - 0x78;
-    DAT_0200d3ac = DAT_020006a0[3] - 0x50;
+    DAT_0200d404 = DAT_020006a0[0].unk04 - 0x78;
+    DAT_0200d3ac = DAT_020006a0[0].unk06 - 0x50;
     DAT_0200d3f8 = param_1 - DAT_0200d404;
     DAT_0200d3fc = param_2 - DAT_0200d3ac;
     DAT_0200d408 = param_3 - DAT_0200d404;

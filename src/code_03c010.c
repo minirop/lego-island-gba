@@ -2231,7 +2231,7 @@ DAT_0803d03c:\n\
     ");
 }
 
-void fun_0803d040()
+void decompress_selected_language()
 {
     LZ77UnCompVram(languages_array[selected_language], &decompressed_language_text_buffer);
 }

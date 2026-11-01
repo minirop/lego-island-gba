@@ -268,7 +268,7 @@ void fun_08006080()
         {
             selected_language = 3;
         }
-        fun_0803d040();
+        decompress_selected_language();
         if (DAT_02009ad8)
         {
             fun_080010d8();
