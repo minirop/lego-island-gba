@@ -13,27 +13,27 @@ assets:
     pixels: 0x75ae78
     size: 14313
     palette: 0x75e664
-  - path: gfx/intro/1
+  - path: gfx/intro/tv-static
     pixels: 0x75e90c
     size: 38492
     palette: 0x767f68
-  - path: gfx/intro/2
+  - path: gfx/intro/infomaniac-gets-news
     pixels: 0x768168
     size: 24352
     palette: 0x76e088
-  - path: gfx/intro/3
+  - path: gfx/intro/infomaniac-starts-reading
     pixels: 0x76e288
     size: 12094
     palette: 0x7711c8
-  - path: gfx/intro/4
+  - path: gfx/intro/brickster-on-tv
     pixels: 0x7713c8
     size: 13225
     palette: 0x774774
-  - path: gfx/intro/5
+  - path: gfx/intro/police-on-tv
     pixels: 0x778144
     size: 13868
     palette: 0x77b770
-  - path: gfx/intro/6
+  - path: gfx/intro/infomaniac-looking-at-tv
     pixels: 0x774974
     size: 13774
     palette: 0x777f44
@@ -48,23 +48,23 @@ assets:
   - path: gfx/title/start-menu
     pixels: 0x07259c
     size: 16008
-    palette: 0x069638 # unknown palette
+    palette: 0x069638 # title screen palette
   - path: gfx/title/title-screen-dk
     pixels: 0x067590
     size: 8358
-    palette: 0x069638 # unknown palette
+    palette: 0x069638 # title screen palette
   - path: gfx/title/title-screen-de
     pixels: 0x06df5c
     size: 9017
-    palette: 0x069638 # unknown palette
+    palette: 0x069638 # title screen palette
   - path: gfx/title/title-screen-it
     pixels: 0x070498
     size: 7940
-    palette: 0x069638 # unknown palette
+    palette: 0x069638 # title screen palette
   - path: gfx/title/title-screen-nl
     pixels: 0x07897c
     size: 8468
-    palette: 0x069638 # unknown palette
+    palette: 0x069638 # title screen palette
   - path: gfx/unknown/DAT_0865d974
     pixels: 0x65d974
     size: 8254
@@ -85,7 +85,7 @@ assets:
     pixels: 0x5ac534
     size: 10823
     palette: 0x5ac134
-  - path: gfx/unknown/DAT_085ac534_v2
+  - path: gfx/unknown/DAT_085ac534_v2 # same image, different palette
     pixels: 0x5ac534
     size: 10823
     palette: 0x5abd34
@@ -112,7 +112,7 @@ assets:
   - path: gfx/unknown/DAT_08540aa8
     pixels: 0x540aa8
     size: 24596
-    palette: 0x546abc
+    palette: 0x5408a
   - path: gfx/unknown/DAT_08546cbc
     pixels: 0x546cbc
     size: 24916
@@ -156,7 +156,7 @@ assets:
   - path: gfx/unknown/DAT_081476a0
     pixels: 0x1476a0
     size: 5369
-    palette: 0x150140
+    palette: 0x1474a0
   - path: gfx/unknown/DAT_080d6f38
     pixels: 0x0d6f38
     size: 8523
@@ -168,7 +168,7 @@ assets:
   - path: gfx/unknown/DAT_080b7124
     pixels: 0x0b7124
     size: 1247
-    palette: 0x069638 # unknown palette
+    palette: 0x0b6f24
     width: 96
   - path: gfx/unknown/DAT_08095a84
     pixels: 0x095a84
@@ -181,40 +181,40 @@ assets:
   - path: gfx/unknown/DAT_085c75d8
     pixels: 0x5c75d8
     size: 25142
-    palette: 0x069638 # unknown palette
+    palette: 0x5c73d8
   - path: gfx/unknown/DAT_085cda10
     pixels: 0x5cda10
     size: 9614
-    palette: 0x069638 # unknown palette
+    palette: 0x5cd810
   - path: gfx/unknown/DAT_085d01a0
     pixels: 0x5d01a0
     size: 22454
-    palette: 0x069638 # unknown palette
+    palette: 0x5cffa0
   - path: gfx/unknown/DAT_085e4e80
     pixels: 0x5e4e80
     size: 22572
-    palette: 0x069638 # unknown palette
+    palette: 0x5e4c80
   - path: gfx/unknown/DAT_085df134
     pixels: 0x5df134
     size: 23369
-    palette: 0x069638 # unknown palette
+    palette: 0x5def34
   - path: gfx/unknown/DAT_085d5b58
     pixels: 0x5d5b58
     size: 23682
-    palette: 0x069638 # unknown palette
+    palette: 0x5d5958
   - path: gfx/unknown/DAT_085db9dc
     pixels: 0x5db9dc
     size: 13654
-    palette: 0x069638 # unknown palette
-  - path: gfx/map/1
+    palette: 0x5db7dc
+  - path: gfx/map/north
     pixels: 0x4a8054
     size: 15621
     palette: 0x4a7e54
-  - path: gfx/map/2
+  - path: gfx/map/centre
     pixels: 0x4b03a8
     size: 15907
     palette: 0x4b01a8
-  - path: gfx/map/3
+  - path: gfx/map/south
     pixels: 0x4abf5c
     size: 16972
     palette: 0x4abd5c
@@ -274,10 +274,362 @@ assets:
     pixels: 0x0c6250
     size: 16517
     palette: 0x0c6050
-# TODO
-# pepper dancing
-# characters cards
-# PTR_ARRAY_0877bb00
-# PTR_ARRAY_0877bad8
-# PTR_ARRAY_0877ba6c
-# PTR_ARRAY_0877ba00
+  - path: gfx/unknown/DAT_080add04
+    pixels: 0x0add04
+    size: 4894
+    palette: 0x0adb04
+    width: 96
+  - path: gfx/unknown/DAT_080a5490
+    pixels: 0x0a5490
+    size: 6664
+    palette: 0x0a5290
+    width: 96
+  - path: gfx/unknown/DAT_080c4eb8
+    pixels: 0x0c4eb8
+    size: 4194
+    palette: 0x0c4cb8
+    width: 96
+  - path: gfx/unknown/DAT_080a399c
+    pixels: 0x0a399c
+    size: 6385
+    palette: 0x0a379c
+    width: 96
+  - path: gfx/unknown/DAT_0809ff7c
+    pixels: 0x09ff7c
+    size: 6921
+    palette: 0x09fd7c
+    width: 96
+  - path: gfx/unknown/DAT_080c1518
+    pixels: 0x0c1518
+    size: 7894
+    palette: 0x0c1318
+    width: 96
+  - path: gfx/unknown/DAT_080bf828
+    pixels: 0x0bf828
+    size: 6895
+    palette: 0x0bf628
+    width: 96
+  - path: gfx/unknown/DAT_080b7804
+    pixels: 0x0b7804
+    size: 6175
+    palette: 0x0b7604
+    width: 96
+  - path: gfx/unknown/DAT_080abe5c
+    pixels: 0x0abe5c
+    size: 7335
+    palette: 0x0abc5c
+    width: 96
+  - path: gfx/unknown/DAT_080b9224
+    pixels: 0x0b9224
+    size: 7779
+    palette: 0x0b9024
+    width: 96
+  - path: gfx/unknown/DAT_080a7098
+    pixels: 0x0a7098
+    size: 6631
+    palette: 0x0a6e98
+    width: 96
+  - path: gfx/unknown/DAT_080b06c4
+    pixels: 0x0b06c4
+    size: 7441
+    palette: 0x0b04c4
+    width: 96
+  - path: gfx/unknown/DAT_0809c824
+    pixels: 0x09c824
+    size: 5978
+    palette: 0x09c624
+    width: 96
+  - path: gfx/unknown/DAT_080b534c
+    pixels: 0x0b534c
+    size: 7128
+    palette: 0x0b514c
+    width: 96
+  - path: gfx/unknown/DAT_0809e180
+    pixels: 0x09e180
+    size: 7163
+    palette: 0x09df80
+    width: 96
+  - path: gfx/unknown/DAT_080a1c88
+    pixels: 0x0a1c88
+    size: 6930
+    palette: 0x0a1a88
+    width: 96
+  - path: gfx/unknown/DAT_0809a9c8
+    pixels: 0x09a9c8
+    size: 7258
+    palette: 0x09a7c8
+    width: 96
+  - path: gfx/unknown/DAT_080b39a8
+    pixels: 0x0b39a8
+    size: 6050
+    palette: 0x0b37a8
+    width: 96
+  - path: gfx/unknown/DAT_080b25d8
+    pixels: 0x0b25d8
+    size: 4558
+    palette: 0x0b23d8
+    width: 96
+  - path: gfx/unknown/DAT_080bb288
+    pixels: 0x0bb288
+    size: 6220
+    palette: 0x0bb088
+    width: 96
+  - path: gfx/unknown/DAT_080bccd4
+    pixels: 0x0bccd4
+    size: 4856
+    palette: 0x0bcad4
+    width: 96
+  - path: gfx/unknown/DAT_080be1cc
+    pixels: 0x0be1cc
+    size: 5210
+    palette: 0x0bdfcc
+    width: 96
+  - path: gfx/unknown/DAT_080a8c80
+    pixels: 0x0a8c80
+    size: 7083
+    palette: 0x0a8a80
+    width: 96
+  - path: gfx/unknown/DAT_080c35f0
+    pixels: 0x0c35f0
+    size: 5829
+    palette: 0x0c33f0
+    width: 96
+  - path: gfx/unknown/DAT_080af224
+    pixels: 0x0af224
+    size: 4768
+    palette: 0x0af024
+    width: 96
+  - path: gfx/characters/DAT_08150340
+    pixels: 0x150340
+    size: 5920
+    palette: 0x150140
+    width: 96
+  - path: gfx/characters/DAT_08109290
+    pixels: 0x109290
+    size: 5742
+    palette: 0x150140
+    width: 96
+  - path: gfx/characters/DAT_0814e9ec
+    pixels: 0x14e9ec
+    size: 5969
+    palette: 0x14e7ec
+    width: 96
+  - path: gfx/characters/DAT_08140bf8
+    pixels: 0x140bf8
+    size: 6012
+    palette: 0x14e7ec
+    width: 96
+  - path: gfx/characters/DAT_0813f5c4
+    pixels: 0x13f5c4
+    size: 5172
+    palette: 0x13f3c4
+    width: 96
+  - path: gfx/characters/DAT_08142574
+    pixels: 0x142574
+    size: 5547
+    palette: 0x13f3c4
+    width: 96
+  - path: gfx/characters/DAT_08148d9c
+    pixels: 0x148d9c
+    size: 8579
+    palette: 0x148b9c
+    width: 96
+  - path: gfx/characters/DAT_0814548c
+    pixels: 0x14548c
+    size: 8209
+    palette: 0x148b9c
+    width: 96
+  - path: gfx/characters/DAT_0812c6a4
+    pixels: 0x12c6a4
+    size: 8348
+    palette: 0x12c4a4
+    width: 96
+  - path: gfx/characters/DAT_081308f4
+    pixels: 0x1308f4
+    size: 8644
+    palette: 0x12c4a4
+    width: 96
+  - path: gfx/characters/DAT_08134504
+    pixels: 0x134504
+    size: 8645
+    palette: 0x134304
+    width: 96
+  - path: gfx/characters/DAT_08123380
+    pixels: 0x123380
+    size: 8429
+    palette: 0x134304
+    width: 96
+  - path: gfx/characters/DAT_0811cf28
+    pixels: 0x11cf28
+    size: 5825
+    palette: 0x11cd28
+    width: 96
+  - path: gfx/characters/DAT_08116408
+    pixels: 0x116408
+    size: 5651
+    palette: 0x11cd28
+    width: 96
+  - path: gfx/characters/DAT_08151c60
+    pixels: 0x151c60
+    size: 8602
+    palette: 0x151a60
+    width: 96
+  - path: gfx/characters/DAT_08112184
+    pixels: 0x112184
+    size: 8385
+    palette: 0x151a60
+    width: 96
+  - path: gfx/characters/DAT_081194bc
+    pixels: 0x1194bc
+    size: 7906
+    palette: 0x1192bc
+    width: 96
+  - path: gfx/characters/DAT_0813d60c
+    pixels: 0x13d60c
+    size: 7607
+    palette: 0x1192bc
+    width: 96
+  - path: gfx/characters/DAT_081100cc
+    pixels: 0x1100cc
+    size: 7864
+    palette: 0x10fecc
+    width: 96
+  - path: gfx/characters/DAT_0810e078
+    pixels: 0x10e078
+    size: 7763
+    palette: 0x10fecc
+    width: 96
+  - path: gfx/characters/DAT_0813be08
+    pixels: 0x13be08
+    size: 5634
+    palette: 0x13bc08
+    width: 96
+  - path: gfx/characters/DAT_0811e7ec
+    pixels: 0x11e7ec
+    size: 5708
+    palette: 0x13bc08
+    width: 96
+  - path: gfx/characters/DAT_0814b120
+    pixels: 0x14b120
+    size: 5853
+    palette: 0x14af20
+    width: 96
+  - path: gfx/characters/DAT_08117c1c
+    pixels: 0x117c1c
+    size: 5791
+    palette: 0x14af20
+    width: 96
+  - path: gfx/characters/DAT_08114448
+    pixels: 0x114448
+    size: 7616
+    palette: 0x114248
+    width: 96
+  - path: gfx/characters/DAT_081368cc
+    pixels: 0x1368cc
+    size: 8199
+    palette: 0x114248
+    width: 96
+  - path: gfx/characters/DAT_0814ca00
+    pixels: 0x14ca00
+    size: 7657
+    palette: 0x14c800
+    width: 96
+  - path: gfx/characters/DAT_08120038
+    pixels: 0x120038
+    size: 7396
+    palette: 0x14c800
+    width: 96
+  - path: gfx/characters/DAT_0812a440
+    pixels: 0x12a440
+    size: 8289
+    palette: 0x12a240
+    width: 96
+  - path: gfx/characters/DAT_0812e940
+    pixels: 0x12e940
+    size: 7601
+    palette: 0x12a240
+    width: 96
+  - path: gfx/characters/DAT_08132cb8
+    pixels: 0x132cb8
+    size: 5705
+    palette: 0x132ab8
+    width: 96
+  - path: gfx/characters/DAT_08126e2c
+    pixels: 0x126e2c
+    size: 5826
+    palette: 0x132ab8
+    width: 96
+  - path: gfx/characters/DAT_0810ab00
+    pixels: 0x10ab00
+    size: 5924
+    palette: 0x10a900
+    width: 96
+  - path: gfx/characters/DAT_08125670
+    pixels: 0x125670
+    size: 5564
+    palette: 0x10a900
+    width: 96
+  - path: gfx/characters/DAT_08153ffc
+    pixels: 0x153ffc
+    size: 5981
+    palette: 0x153dfc
+    width: 96
+  - path: gfx/characters/DAT_0811b5a0
+    pixels: 0x11b5a0
+    size: 6023
+    palette: 0x153dfc
+    width: 96
+  - path: gfx/characters/DAT_0810c424
+    pixels: 0x10c424
+    size: 6738
+    palette: 0x10c224
+    width: 96
+  - path: gfx/characters/DAT_081286f0
+    pixels: 0x1286f0
+    size: 6991
+    palette: 0x10c224
+    width: 96
+  - path: gfx/characters/DAT_08138ad4
+    pixels: 0x138ad4
+    size: 6598
+    palette: 0x1388d4
+    width: 96
+  - path: gfx/characters/DAT_0815595c
+    pixels: 0x15595c
+    size: 6667
+    palette: 0x1388d4
+    width: 96
+  - path: gfx/characters/DAT_0813a69c
+    pixels: 0x13a69c
+    size: 5484
+    palette: 0x13a49c
+    width: 96
+  - path: gfx/characters/DAT_08143d20
+    pixels: 0x143d20
+    size: 5484
+    palette: 0x13a49c
+    width: 96
+  - path: gfx/pepper/DAT_08787990
+    pixels: 0x787990
+    size: 16754
+    palette: 0x78bb04
+  - path: gfx/pepper/DAT_0878bd04
+    pixels: 0x78bd04
+    size: 16772
+    palette: 0x78fe88
+  - path: gfx/pepper/DAT_08790088
+    pixels: 0x790088
+    size: 16506
+    palette: 0x794104
+  - path: gfx/pepper/DAT_08794304
+    pixels: 0x794304
+    size: 16801
+    palette: 0x7984a8
+  - path: gfx/pepper/DAT_087986a8
+    pixels: 0x7986a8
+    size: 16990
+    palette: 0x79c908
+  - path: gfx/pepper/DAT_0879cb08
+    pixels: 0x79cb08
+    size: 17146
+    palette: 0x7a0e04

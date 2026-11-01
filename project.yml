@@ -688,6 +688,16 @@ rom:
       section: data
       address: 0x75e664
       size: 0x200
+    - name: gfx/intro/tv-static.gfx
+      format: custom
+      section: data
+      address: 0x75e90c
+      size: 0x965c
+    - name: gfx/intro/tv-static.pal
+      format: custom
+      section: data
+      address: 0x767f68
+      size: 0x200
     - name: code_77ef7c
       format: c
       section: rodata
