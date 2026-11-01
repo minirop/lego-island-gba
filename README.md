@@ -22,7 +22,7 @@ If you use bash, this script will source the folders where the built tools will 
 At the root of the folder, place the ROM named `baserom.gba` and execute:
 
 ```sh
-$ isle2-tool extract assets.yaml
+$ isle2-tool extract assets.yml
 ```
 
 ## Setup
