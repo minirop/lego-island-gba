@@ -158,7 +158,7 @@ typedef struct struct_02000278
 {
     u16 unk00;
     u16 unk02;
-    u32 unk04;
+    u16* unk04;
     u16 unk08;
     u16 unk0a;
     u16 unk0c;
@@ -167,7 +167,7 @@ typedef struct struct_02000278
     s32 unk14;
     s32 unk18;
     s32 unk1c;
-    void* unk20;
+    u16* unk20;
     s32 unk24;
     u16 unk28;
     u16 unk2a;
@@ -181,7 +181,7 @@ typedef struct struct_02000278
 
 typedef struct struct_fun_08004da8
 {
-    u32 unk00;
+    u16* unk00;
     u16 unk04;
     u16 unk06;
     u16 unk08;

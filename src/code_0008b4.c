@@ -1145,17 +1145,14 @@ s32 fun_080011cc()
 
 void fun_080011d8()
 {
-    u16 i = 0;
-    if (i < levels_count)
+    u16 i;
+
+    for (i = 0; i < levels_count; i++)
     {
-        do
+        if (levels[i]->unk38 != NULL)
         {
-            if (levels[i]->unk38 != NULL)
-            {
-                levels[i]->unk38();
-            }
-            ++i;
-        } while (i < levels_count);
+            levels[i]->unk38();
+        }
     }
 }
 

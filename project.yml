@@ -727,7 +727,11 @@ rom:
       format: c
       section: rodata
       address: 0x756aec
-      size: 0xd6
+    - name: code_756aec
+      format: c
+      section: data
+      address: 0x756bc0
+      size: 0x2
     - name: gfx/logos/copyright.gfx
       format: custom
       section: data

@@ -1,52 +1,27 @@
+#include "defines.h"
 #include "functions.h"
 #include "gba.h"
 #include "variables.h"
 #include <stdio.h>
 
-__attribute__((naked)) void fun_08005bbc()
+void fun_08005bbc(u16 arg0, u16 arg1, u16 arg2, u16 arg3)
 {
-    asm("\n\
-    push        {r4,r5,lr}\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r4,r0,#0x10\n\
-    lsl         r1,r1,#0x10\n\
-    lsr         r1,r1,#0x10\n\
-    lsl         r2,r2,#0x10\n\
-    lsr         r5,r2,#0x10\n\
-    lsl         r3,r3,#0x10\n\
-    lsr         r2,r3,#0x10\n\
-    mov         r3,#0x0\n\
-    cmp         r4,#0x1f\n\
-    bls         LAB_08005be0\n\
-    mov         r3,#0x80\n\
-    lsl         r3,r3,#0x3\n\
-    add         r0,r4,#0x0\n\
-    sub         r0,#0x20\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r4,r0,#0x10\n\
-LAB_08005be0:\n\
-    lsl         r0,r1,#0x5\n\
-    add         r0,r0,r4\n\
-    add         r3,r3,r0\n\
-    lsl         r3,r3,#0x1\n\
-    ldr         r1,DAT_08005bfc\n\
-    lsl         r0,r2,#0x2\n\
-    add         r0,r0,r1\n\
-    ldr         r0,[r0,#0x0]\n\
-    add         r0,r0,r3\n\
-    strh        r5,[r0,#0x0]\n\
-    pop         {r4,r5}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_08005bfc:\n\
-    .word 0x02007FA0\n\
-    ");
-}
+    s32 r0, r3;
 
-#define SET_DAT_u8_u16(arr, idx0, idx1) (*(u16*)((u8*)arr[idx0] + idx1))
+    r3 = 0;
+    if (arg0 > 0x1FU)
+    {
+        r3 = 0x400;
+        arg0 -= 0x20;
+    }
+
+    r0 = arg1 * 0x20;
+    r0 += arg0;
+    r3 += r0;
+    r3 *= 2;
+
+    SET_DAT_u8_u16(DAT_02007fa0, arg3, r3) = arg2;
+}
 
 void fun_08005c00(u32 param_1, s32 param_2, u16* param_3)
 {

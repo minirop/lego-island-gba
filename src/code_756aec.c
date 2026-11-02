@@ -56,4 +56,4 @@ const LevelInfo* const levels[] = {
     &brickster_battle,
 };
 
-const u16 levels_count = 0x35;
+u16 levels_count = 0x35;

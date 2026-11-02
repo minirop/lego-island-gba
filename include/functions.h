@@ -786,6 +786,7 @@ void fun_0803c138(u8* param_1, u16 param_2, u16 param_3, s32* param_4);
 void fun_0803c1a4();
 void fun_0803c1ec(u16 param_1, u16 param_2, u16 param_3);
 void fun_0803c24c();
+void fun_0803d09c(u8* param_1, u8* param_2, s32 size);
 void fun_0803d100(u8* param_1, u8* param_2, s32 size);
 void fun_0803d518();
 void fun_0803d5bc();

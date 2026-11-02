@@ -34,3 +34,18 @@ print ("functions:", str(round(100.0 - len(naked_functions) * 100 / len(all_func
 size_sum = sum(functions_sizes.values())
 size_naked = sum([s for n, s in functions_sizes.items() if n in naked_functions])
 print ("bytes:", str(round(100.0 - size_naked * 100 / size_sum, 2)) + "%")
+
+asm_bytes = 0
+src = "../asm"
+for f in listdir(src):
+    fpath = join(src, f)
+    if isfile(fpath):
+        if f.startswith("rom_") and f.endswith(".o"):
+            result = subprocess.run(['arm-none-eabi-readelf', '-S', fpath], stdout=subprocess.PIPE)
+            result = result.stdout.decode('utf-8')
+            for l in result.split('\n'):
+                if ".text" in l:
+                    parts = [x for x in l.split(" ") if len(x) > 0]
+                    asm_bytes += int(parts[6], 16)
+print(f"ASM bytes: {asm_bytes} / func bytes: {size_sum}")
+print(f"total: {asm_bytes + size_sum}")

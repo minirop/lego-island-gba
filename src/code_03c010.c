@@ -2290,7 +2290,7 @@ void fun_0803d078(u8* param_1, u8* param_2, s32 size)
     }
 }
 
-__attribute__((naked)) void fun_0803d09c()
+__attribute__((naked)) void fun_0803d09c(u8* param_1, u8* param_2, s32 size)
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\

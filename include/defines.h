@@ -16,4 +16,6 @@
         }                          \
     }
 
+#define SET_DAT_u8_u16(arr, idx0, idx1) (*(u16*)((u8*)arr[idx0] + idx1))
+
 #endif
