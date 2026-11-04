@@ -3909,7 +3909,7 @@ DAT_0803a13c:\n\
      .word 0x020114B0\n\
     ");
 }
-__attribute__((naked)) void fun_0803a140()
+__attribute__((naked)) void fun_0803a140(u16 param_1, u16 param_2)
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\

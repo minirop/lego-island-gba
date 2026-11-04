@@ -1,4 +1,5 @@
 #include "functions.h"
+#include "variables.h"
 
 __attribute__((naked)) void fun_08012068()
 {
@@ -1519,45 +1520,17 @@ LAB_08012ab6:\n\
      bx         r0\n\
     ");
 }
-__attribute__((naked)) void fun_08012abc()
+
+void fun_08012abc(unknown_callback_struct* param_1, s32 param_2, u16* param_3, u16* param_4)
 {
-    asm("\n\
-     push       {lr}\n\
-     add        r0,r2,#0x0\n\
-     add        r1,r3,#0x0\n\
-     mov        r2,#0xfa\n\
-     lsl        r2,r2,#0x2\n\
-     ldr        r3,DAT_08012af4\n\
-     bl         fun_0800eaa4\n\
-     lsl        r0,r0,#0x10\n\
-     cmp        r0,#0x0\n\
-     beq        LAB_08012af0\n\
-     ldr        r1,DAT_08012af8\n\
-     ldr        r0,DAT_08012afc\n\
-     add        r2,r1,r0\n\
-     mov        r0,#0x1\n\
-     str        r0,[r2,#0x0]\n\
-     mov        r0,#0xd4\n\
-     lsl        r0,r0,#0x1\n\
-     add        r2,r1,r0\n\
-     mov        r0,#0x2\n\
-     str        r0,[r2,#0x0]\n\
-     mov        r0,#0xdc\n\
-     lsl        r0,r0,#0x1\n\
-     add        r1,r1,r0\n\
-     mov        r0,#0x4\n\
-     strb       r0,[r1,#0x0]\n\
-LAB_08012af0:\n\
-     pop        {r0}\n\
-     bx         r0\n\
-DAT_08012af4:\n\
-     .word 0x00000DC8\n\
-DAT_08012af8:\n\
-     .word 0x020006A0\n\
-DAT_08012afc:\n\
-     .word 0x00000C68\n\
-    ");
+    if (fun_0800eaa4(param_3, param_4, 1000, 0xdc8) != 0)
+    {
+        DAT_020006a0[99].unk08 = 1;
+        DAT_020006a0[0xd].unk08 = 2;
+        DAT_020006a0[0xd].unk18 = 4;
+    }
 }
+
 __attribute__((naked)) void fun_08012b00()
 {
     asm("\n\

@@ -1631,7 +1631,7 @@ DAT_0800a364:\n\
     .word 0x0200D380\n\
     ");
 }
-__attribute__((naked)) void fun_0800a368()
+__attribute__((naked)) void fun_0800a368(unknown_callback_struct* param_1, s32 param_2, u16* param_3, u16* param_4)
 {
     asm("\n\
     push        {r4,r5,r6,r7,lr}\n\

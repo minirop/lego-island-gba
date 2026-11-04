@@ -309,89 +309,63 @@ DAT_0800eaa0:\n\
     .word 0x0200DC10\n\
     ");
 }
-__attribute__((naked)) void fun_0800eaa4()
+
+u16 fun_0800eaa4(u16* param_1, u16* param_2, u16 param_3, u16 param_4)
 {
-    asm("\n\
-    push        {r4,lr}\n\
-    add         r4,r0,#0x0\n\
-    lsl         r2,r2,#0x10\n\
-    lsr         r2,r2,#0x10\n\
-    lsl         r3,r3,#0x10\n\
-    lsr         r3,r3,#0x10\n\
-    ldrh        r0,[r4,#0x0]\n\
-    cmp         r2,r0\n\
-    bls         LAB_0800eaba\n\
-    add         r0,#0x1\n\
-    strh        r0,[r4,#0x0]\n\
-LAB_0800eaba:\n\
-    ldrh        r0,[r4,#0x0]\n\
-    cmp         r2,r0\n\
-    bcs         LAB_0800eac4\n\
-    sub         r0,#0x1\n\
-    strh        r0,[r4,#0x0]\n\
-LAB_0800eac4:\n\
-    ldrh        r0,[r1,#0x0]\n\
-    cmp         r3,r0\n\
-    bls         LAB_0800eace\n\
-    add         r0,#0x1\n\
-    strh        r0,[r1,#0x0]\n\
-LAB_0800eace:\n\
-    ldrh        r0,[r1,#0x0]\n\
-    cmp         r3,r0\n\
-    bcs         LAB_0800ead8\n\
-    sub         r0,#0x1\n\
-    strh        r0,[r1,#0x0]\n\
-LAB_0800ead8:\n\
-    ldrh        r0,[r4,#0x0]\n\
-    cmp         r2,r0\n\
-    bne         LAB_0800eae8\n\
-    ldrh        r0,[r1,#0x0]\n\
-    cmp         r3,r0\n\
-    bne         LAB_0800eae8\n\
-    mov         r0,#0x1\n\
-    b           LAB_0800eb20\n\
-LAB_0800eae8:\n\
-    ldrh        r0,[r4,#0x0]\n\
-    cmp         r2,r0\n\
-    bls         LAB_0800eaf2\n\
-    add         r0,#0x1\n\
-    strh        r0,[r4,#0x0]\n\
-LAB_0800eaf2:\n\
-    ldrh        r0,[r4,#0x0]\n\
-    cmp         r2,r0\n\
-    bcs         LAB_0800eafc\n\
-    sub         r0,#0x1\n\
-    strh        r0,[r4,#0x0]\n\
-LAB_0800eafc:\n\
-    ldrh        r0,[r1,#0x0]\n\
-    cmp         r3,r0\n\
-    bls         LAB_0800eb06\n\
-    add         r0,#0x1\n\
-    strh        r0,[r1,#0x0]\n\
-LAB_0800eb06:\n\
-    ldrh        r0,[r1,#0x0]\n\
-    cmp         r3,r0\n\
-    bcs         LAB_0800eb10\n\
-    sub         r0,#0x1\n\
-    strh        r0,[r1,#0x0]\n\
-LAB_0800eb10:\n\
-    mov         r0,#0x0\n\
-    ldrh        r4,[r4,#0x0]\n\
-    cmp         r2,r4\n\
-    bne         LAB_0800eb20\n\
-    ldrh        r1,[r1,#0x0]\n\
-    cmp         r3,r1\n\
-    bne         LAB_0800eb20\n\
-    mov         r0,#0x1\n\
-LAB_0800eb20:\n\
-    pop         {r4}\n\
-    pop         {r1}\n\
-    bx          r1\n\
-\n\
-.space 2\n\
-\n\
-    ");
+    u16 var_r0;
+
+    if (param_3 > *param_1)
+    {
+        *param_1 = *param_1 + 1;
+    }
+
+    if (param_3 < *param_1)
+    {
+        *param_1 = *param_1 - 1;
+    }
+
+    if (param_4 > *param_2)
+    {
+        *param_2 = *param_2 + 1;
+    }
+
+    if (param_4 < *param_2)
+    {
+        *param_2 = *param_2 - 1;
+    }
+    if ((param_3 == *param_1) && (param_4 == *param_2))
+    {
+        return 1;
+    }
+
+    if (param_3 > *param_1)
+    {
+        *param_1 = *param_1 + 1;
+    }
+
+    if (param_3 < *param_1)
+    {
+        *param_1 = *param_1 - 1;
+    }
+
+    if (param_4 > *param_2)
+    {
+        *param_2 = *param_2 + 1;
+    }
+
+    if (param_4 < *param_2)
+    {
+        *param_2 = *param_2 - 1;
+    }
+
+    var_r0 = 0;
+    if ((param_3 == *param_1) && (param_4 == *param_2))
+    {
+        var_r0 = 1;
+    }
+    return var_r0;
 }
+
 __attribute__((naked)) void fun_0800eb28()
 {
     asm("\n\

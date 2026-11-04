@@ -1,4 +1,7 @@
-__attribute__((naked)) void fun_080003e0()
+#include "functions.h"
+#include "variables.h"
+
+__attribute__((naked)) void fun_080003e0(s32 param_1, s32 param_2, s32 param_3)
 {
     asm("\n\
     push        {r4,r5,r6,r7,lr}\n\

@@ -2,49 +2,29 @@
 #include "gba.h"
 #include "variables.h"
 
-__attribute__((naked)) void fun_08002c04()
+u32 fun_08002c04(u32 param_1)
 {
-    asm("\n\
-    push        {r4,lr}\n\
-LAB_08002c06:\n\
-    add         r4,r0,#0x0\n\
-    cmp         r4,#0x0\n\
-    beq         LAB_08002c28\n\
-    mov         r2,#0x25\n\
-    ldr         r1,DAT_08002c24\n\
-    ldr         r0,[r1,#0x0]\n\
-    mul         r0,r2\n\
-    add         r0,#0x9\n\
-    str         r0,[r1,#0x0]\n\
-    add         r1,r4,#0x1\n\
-    bl          __umodsi3\n\
-    cmp         r0,r4\n\
-    bne         LAB_08002c2a\n\
-    b           LAB_08002c06\n\
-DAT_08002c24:\n\
-    .word 0x02005CD4\n\
-LAB_08002c28:\n\
-    mov         r0,#0x0\n\
-LAB_08002c2a:\n\
-    pop         {r4}\n\
-    pop         {r1}\n\
-    bx          r1\n\
-    ");
+    u32 value;
+    u32 r2;
+
+    if (param_1 == 0)
+        return 0;
+
+    r2 = 37;
+    DAT_02005cd4 = DAT_02005cd4 * r2 + 9;
+
+    value = DAT_02005cd4 % (param_1 + 1);
+    if (value == param_1)
+    {
+        return fun_08002c04(param_1);
+    }
+    return value;
 }
-__attribute__((naked)) void fun_08002c30()
+
+void fun_08002c30()
 {
-    asm("\n\
-    ldr         r0,DAT_08002c3c\n\
-    mov         r1,#0x0\n\
-    strh        r1,[r0,#0x0]\n\
-    ldr         r0,DAT_08002c40\n\
-    strh        r1,[r0,#0x0]\n\
-    bx          lr\n\
-DAT_08002c3c:\n\
-    .word 0x02005830\n\
-DAT_08002c40:\n\
-    .word 0x02005CE0\n\
-    ");
+    gHeldKeys = 0;
+    gNewKeys = 0;
 }
 
 void fun_08002c44()
@@ -56,114 +36,46 @@ void fun_08002c44()
     gHeldKeys &= 0x3FF;
 }
 
-__attribute__((naked)) void fun_08002c84()
+s16 fun_08002c84(s16 param_1, s16 param_2)
 {
-    asm("\n\
-    lsl         r0,r0,#0x10\n\
-    asr         r0,r0,#0x10\n\
-    lsl         r1,r1,#0x10\n\
-    asr         r1,r1,#0x10\n\
-    mul         r0,r1\n\
-    add         r1,r0,#0x0\n\
-    cmp         r0,#0x0\n\
-    bge         LAB_08002c96\n\
-    add         r1,#0xff\n\
-LAB_08002c96:\n\
-    lsl         r0,r1,#0x8\n\
-    asr         r0,r0,#0x10\n\
-    bx          lr\n\
-    ");
+    s32 r0;
+
+    r0 = param_1 * param_2;
+    r0 /= 256;
+    return r0;
 }
-__attribute__((naked)) void fun_08002c9c()
+
+s16 fun_08002c9c(s16 param_1, s16 param_2)
 {
-    asm("\n\
-    push        {lr}\n\
-    lsl         r0,r0,#0x10\n\
-    asr         r0,r0,#0x8\n\
-    lsl         r1,r1,#0x10\n\
-    asr         r1,r1,#0x10\n\
-    bl          __divsi3\n\
-    lsl         r0,r0,#0x10\n\
-    asr         r0,r0,#0x10\n\
-    pop         {r1}\n\
-    bx          r1\n\
-\n\
-.space 2\n\
-\n\
-    ");
+    return param_1 * 256 / param_2;
 }
-__attribute__((naked)) void fun_08002cb4()
+
+s16 fun_08002cb4(s16 param_1)
 {
-    asm("\n\
-    push        {lr}\n\
-    add         r1,r0,#0x0\n\
-    mov         r0,#0x80\n\
-    lsl         r0,r0,#0x9\n\
-    lsl         r1,r1,#0x10\n\
-    asr         r1,r1,#0x10\n\
-    bl          __divsi3\n\
-    lsl         r0,r0,#0x10\n\
-    asr         r0,r0,#0x10\n\
-    pop         {r1}\n\
-    bx          r1\n\
-    ");
+    s32 tmp = 0x10000;
+    tmp /= param_1;
+    return tmp;
 }
-__attribute__((naked)) void fun_08002ccc()
+
+void fun_08002ccc(u16 param_1)
 {
-    asm("\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r0,r0,#0x10\n\
-    add         r1,r0,#0x0\n\
-    cmp         r0,#0x1\n\
-    beq         LAB_08002ce6\n\
-    cmp         r0,#0x1\n\
-    bgt         LAB_08002ce0\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08002cf8\n\
-    b           LAB_08002d10\n\
-LAB_08002ce0:\n\
-    cmp         r1,#0x2\n\
-    beq         LAB_08002d04\n\
-    b           LAB_08002d10\n\
-LAB_08002ce6:\n\
-    ldr         r0,DAT_08002cf4\n\
-    mov         r1,#0x0\n\
-    strh        r1,[r0,#0x0]\n\
-    add         r0,#0x4\n\
-    strh        r1,[r0,#0x0]\n\
-    b           LAB_08002d10\n\
-\n\
-.space 2\n\
-\n\
-DAT_08002cf4:\n\
-    .word 0x04000050\n\
-LAB_08002cf8:\n\
-    ldr         r1,DAT_08002d00\n\
-    mov         r0,#0xff\n\
-    b           LAB_08002d08\n\
-\n\
-.space 2\n\
-\n\
-DAT_08002d00:\n\
-    .word 0x04000050\n\
-LAB_08002d04:\n\
-    ldr         r1,DAT_08002d18\n\
-    mov         r0,#0xbf\n\
-LAB_08002d08:\n\
-    strh        r0,[r1,#0x0]\n\
-    add         r1,#0x4\n\
-    mov         r0,#0x10\n\
-    strh        r0,[r1,#0x0]\n\
-LAB_08002d10:\n\
-    ldr         r1,DAT_08002d1c\n\
-    mov         r0,#0x0\n\
-    strh        r0,[r1,#0x0]\n\
-    bx          lr\n\
-DAT_08002d18:\n\
-    .word 0x04000050\n\
-DAT_08002d1c:\n\
-    .word 0x02005770\n\
-    ");
+    switch (param_1)
+    {
+    case 1:
+        REG_BLDCNT = 0;
+        REG_BLDY = 0;
+        break;
+    case 0:
+        REG_BLDCNT = 0xff;
+        REG_BLDY = 0x10;
+        break;
+    case 2:
+        REG_BLDCNT = 0xbf;
+        REG_BLDY = 0x10;
+        break;
+    }
+
+    DAT_02005770 = 0;
 }
 
 void fun_08002d20(u16 a, u16 b)

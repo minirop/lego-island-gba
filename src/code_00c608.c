@@ -1024,174 +1024,92 @@ DAT_0800ce0c:\n\
     .word 0x00000DDE\n\
     ");
 }
-__attribute__((naked)) void fun_0800ce10()
+
+void fun_0800ce10(unknown_callback_struct* param_1, s32 param_2, u16* param_3, u16* param_4)
 {
-    asm("\n\
-    push        {r4,lr}\n\
-    add         r4,r0,#0x0\n\
-    ldr         r0,DAT_0800ce30\n\
-    ldr         r1,[r0,#0x0]\n\
-    mov         r0,#0x5\n\
-    strh        r0,[r1,#0x0]\n\
-    ldr         r0,DAT_0800ce34\n\
-    ldrb        r0,[r0,#0x0]\n\
-    cmp         r0,#0x7\n\
-    bhi         LAB_0800ce6c\n\
-    lsl         r0,r0,#0x2\n\
-    ldr         r1,DAT_0800ce38\n\
-    add         r0,r0,r1\n\
-    ldr         r0,[r0,#0x0]\n\
-    mov         pc,r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_0800ce30:\n\
-    .word 0x0200D370\n\
-DAT_0800ce34:\n\
-    .word 0x020117E0\n\
-DAT_0800ce38:\n\
-    .word 0x0800CE3C\n\
-PTR_DAT_0800ce3c:\n\
-    .word DAT_0800ce5c\n\
-    .word DAT_0800ce5c\n\
-    .word DAT_0800ce68\n\
-    .word DAT_0800ce60\n\
-    .word DAT_0800ce60\n\
-    .word DAT_0800ce60\n\
-    .word DAT_0800ce64\n\
-    .word DAT_0800ce5c\n\
-\n\
-DAT_0800ce5c:\n\
-    .word 0xE0042038\n\
-DAT_0800ce60:\n\
-    .word 0xE002203A\n\
-DAT_0800ce64:\n\
-    .word 0xE000203B\n\
-DAT_0800ce68:\n\
-    .word 0x82202039\n\
-\n\
-\n\
-LAB_0800ce6c:\n\
-    bl          fun_080107ac\n\
-    mov         r0,#0x5\n\
-    strb        r0,[r4,#0x18]\n\
-    pop         {r4}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-    ");
+    *DAT_0200d370 = 5;
+
+    switch (DAT_020117e0)
+    {
+    case 0:
+    case 1:
+    case 7:
+        param_1->unk10 = 0x38;
+        break;
+    case 3:
+    case 4:
+    case 5:
+        param_1->unk10 = 0x3a;
+        break;
+    case 6:
+        param_1->unk10 = 0x3b;
+        break;
+    case 2:
+        param_1->unk10 = 0x39;
+        break;
+    }
+
+    fun_080107ac();
+    param_1->unk18 = 5;
 }
-__attribute__((naked)) void fun_0800ce7c()
+
+void fun_0800ce7c(unknown_callback_struct* param_1, s32 param_2, u16* param_3, u16* param_4)
 {
-    asm("\n\
-    push        {r4,r5,r6,lr}\n\
-    add         r5,r2,#0x0\n\
-    add         r4,r3,#0x0\n\
-    ldr         r0,DAT_0800ced4\n\
-    ldrh        r0,[r0,#0x0]\n\
-    mov         r6,#0x4\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_0800ce8e\n\
-    mov         r6,#0x2\n\
-LAB_0800ce8e:\n\
-    bl          is_down_held\n\
-    lsl         r0,r0,#0x10\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_0800ce9e\n\
-    ldrh        r1,[r4,#0x0]\n\
-    add         r0,r1,r6\n\
-    strh        r0,[r4,#0x0]\n\
-LAB_0800ce9e:\n\
-    bl          is_left_held\n\
-    lsl         r0,r0,#0x10\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_0800ceae\n\
-    ldrh        r1,[r5,#0x0]\n\
-    sub         r0,r1,r6\n\
-    strh        r0,[r5,#0x0]\n\
-LAB_0800ceae:\n\
-    bl          is_up_held\n\
-    lsl         r0,r0,#0x10\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_0800cebe\n\
-    ldrh        r1,[r4,#0x0]\n\
-    sub         r0,r1,r6\n\
-    strh        r0,[r4,#0x0]\n\
-LAB_0800cebe:\n\
-    bl          is_right_held\n\
-    lsl         r0,r0,#0x10\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_0800cece\n\
-    ldrh        r1,[r5,#0x0]\n\
-    add         r0,r1,r6\n\
-    strh        r0,[r5,#0x0]\n\
-LAB_0800cece:\n\
-    pop         {r4,r5,r6}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-DAT_0800ced4:\n\
-    .word 0x02005750\n\
-    ");
+    s32 var_r6;
+
+    if (DAT_02005750[0] != 0)
+    {
+        var_r6 = 2;
+    }
+    else
+    {
+        var_r6 = 4;
+    }
+
+    if (is_down_held() != 0)
+    {
+        *param_4 += var_r6;
+    }
+    if (is_left_held() != 0)
+    {
+        *param_3 -= var_r6;
+    }
+    if (is_up_held() != 0)
+    {
+        *param_4 -= var_r6;
+    }
+    if (is_right_held() != 0)
+    {
+        *param_3 += var_r6;
+    }
 }
-__attribute__((naked)) void fun_0800ced8()
+
+void fun_0800ced8()
 {
-    asm("\n\
-    push        {lr}\n\
-    bl          fun_08010c1c\n\
-    pop         {r0}\n\
-    bx          r0\n\
-    ");
+    fun_08010c1c();
 }
-__attribute__((naked)) void fun_0800cee4()
+
+void fun_0800cee4()
 {
-    asm("\n\
-    push        {lr}\n\
-    bl          fun_0800fc10\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-    ");
+    fun_0800fc10();
 }
-__attribute__((naked)) void fun_0800cef0()
+
+extern u16* DAT_0200d3d0[9];
+
+void fun_0800cef0()
 {
-    asm("\n\
-    push        {r4,r5,r6,lr}\n\
-    mov         r5,#0x0\n\
-    ldr         r6,DAT_0800cf20\n\
-LAB_0800cef6:\n\
-    lsl         r0,r5,#0x2\n\
-    add         r4,r0,r6\n\
-    ldr         r0,[r4,#0x0]\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_0800cf08\n\
-    bl          fun_08003b00\n\
-    mov         r0,#0x0\n\
-    str         r0,[r4,#0x0]\n\
-LAB_0800cf08:\n\
-    add         r0,r5,#0x1\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r5,r0,#0x10\n\
-    cmp         r5,#0x8\n\
-    bls         LAB_0800cef6\n\
-    ldr         r1,DAT_0800cf24\n\
-    mov         r0,#0x0\n\
-    strh        r0,[r1,#0x0]\n\
-    pop         {r4,r5,r6}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_0800cf20:\n\
-    .word 0x0200D3D0\n\
-DAT_0800cf24:\n\
-    .word 0x0200D394\n\
-\n\
-    ");
+    u16 i;
+
+    for (i = 0; i < 9; i++)
+    {
+        if (DAT_0200d3d0[i])
+        {
+            fun_08003b00(DAT_0200d3d0[i]);
+            DAT_0200d3d0[i] = 0;
+        }
+    }
+
+    DAT_0200d394 = 0;
 }
 
 void fun_0800cf28(u16 param_1, u16 param_2, u16 param_3, u16 param_4)

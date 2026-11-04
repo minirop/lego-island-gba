@@ -351,4 +351,14 @@ typedef struct struct_0877bde8
     u8 pad2b;
 } struct_0877bde8;
 
+typedef struct unknown_callback_struct
+{
+    u8 pad00[0x10];
+    u16 unk10;
+    u8 pad12[6];
+    u8 unk18;
+} unknown_callback_struct;
+
+typedef void (*CallbackUnkUnkU16U16)(unknown_callback_struct*, s32, u16*, u16*);
+
 #endif

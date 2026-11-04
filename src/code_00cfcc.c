@@ -1,43 +1,16 @@
-__attribute__((naked)) void fun_0800cfcc()
+#include "functions.h"
+#include "variables.h"
+
+void fun_0800cfcc()
 {
-    asm("\n\
-    push        {lr}\n\
-    ldr         r1,DAT_0800cffc\n\
-    ldr         r2,DAT_0800d000\n\
-    add         r0,r2,#0x0\n\
-    strh        r0,[r1,#0x0]\n\
-    mov         r0,#0x1a\n\
-    bl          fun_08001088\n\
-    ldr         r2,DAT_0800d004\n\
-    ldr         r0,DAT_0800d008\n\
-    add         r1,r2,r0\n\
-    mov         r0,#0x3\n\
-    strb        r0,[r1,#0x0]\n\
-    mov         r0,#0x1\n\
-    strb        r0,[r2,#0x18]\n\
-    ldr         r0,DAT_0800d00c\n\
-    ldr         r1,DAT_0800d010\n\
-    bl          fun_0803a140\n\
-    bl          fun_0803a9ec\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_0800cffc:\n\
-    .word 0x0200DC90\n\
-DAT_0800d000:\n\
-    .word 0x00000333\n\
-DAT_0800d004:\n\
-    .word 0x020006A0\n\
-DAT_0800d008:\n\
-    .word 0x00000C78\n\
-DAT_0800d00c:\n\
-    .word 0x000003E7\n\
-DAT_0800d010:\n\
-    .word 0x00000DF5\n\
-    ");
+    DAT_0200dc90 = 0x333;
+    fun_08001088(0x1a);
+    DAT_020006a0[99].unk18 = 3;
+    DAT_020006a0[0].unk18 = 1;
+    fun_0803a140(999, 0xdf5);
+    fun_0803a9ec();
 }
+
 __attribute__((naked)) void fun_0800d014()
 {
     asm("\n\
