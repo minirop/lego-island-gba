@@ -28,9 +28,11 @@ for f in listdir(src):
                     all_functions.append(parts[-1])
                     functions_sizes[parts[-1]] = int(parts[2])
 
-print (len(naked_functions), "naked functions")
-print (len(all_functions), "functions")
-print ("functions:", str(round(100.0 - len(naked_functions) * 100 / len(all_functions), 2)) + "%")
+all_count = len(all_functions)
+all_naked = len(naked_functions)
+print (all_count - all_naked, "/", all_count, "functions done")
+print ("-", str(round(100.0 - all_naked * 100 / all_count, 2)) + "%")
+
 size_sum = sum(functions_sizes.values())
 size_naked = sum([s for n, s in functions_sizes.items() if n in naked_functions])
 print ("bytes:", str(round(100.0 - size_naked * 100 / size_sum, 2)) + "%")
