@@ -4578,7 +4578,7 @@ DAT_08042834:\n\
      .word 0xFFFF7EEF\n\
     ");
 }
-__attribute__((naked)) void fun_08042838()
+__attribute__((naked)) u16 fun_08042838(struct_08001534* param_1, u8* param_2)
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\
@@ -4858,7 +4858,7 @@ DAT_08042a20:\n\
      .word 0x080432CC\n\
     ");
 }
-__attribute__((naked)) void fun_08042a24()
+__attribute__((naked)) void fun_08042a24(u8* param_1, void* param_2, u32* param_3)
 {
     asm("\n\
      str        r1,[r2,#0x4]\n\

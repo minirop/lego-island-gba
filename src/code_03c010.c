@@ -2349,6 +2349,7 @@ LAB_0803d0e4:\n\
 }
 
 #ifdef NONMATCHING
+// https://www.decomp.me/scratch/0LKjd
 void fun_0803d100(u8* param_1, u8* param_2, s32 size)
 {
     REG_WAITCNT = (REG_WAITCNT & 0xfffc) | 3;
@@ -2504,7 +2505,7 @@ u8* fun_0803d1d4(char* param_1, char* param_2, s32 param_3, s32 param_4)
     return ptr;
 }
 
-__attribute__((naked)) void fun_0803d20c()
+__attribute__((naked)) void fun_0803d20c(struct_08001534* param_1, u32* param_2)
 {
     asm("\n\
      push       {r4,r5,r6,lr}\n\
@@ -2889,7 +2890,7 @@ DAT_0803d4ac:\n\
      .word 0x02027048\n\
     ");
 }
-__attribute__((naked)) void fun_0803d4b0()
+__attribute__((naked)) void fun_0803d4b0(u16 param_1, u16 param_2, u16 param_3)
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\

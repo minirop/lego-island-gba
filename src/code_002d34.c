@@ -1099,6 +1099,6 @@ PTR_DAT_08003530:\n\
 PTR_DMA3SAD_08003534:\n\
     .word      DMA3SAD\n\
 PTR_DAT_08003538:\n\
-    .word      DAT_06004000\n\
+    .word      0x06004000\n\
     ");
 }

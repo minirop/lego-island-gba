@@ -42,11 +42,11 @@ s32 fun_0800618c()
     }
     else
     {
-        if ((gNewKeys & 8) != 0)
+        if (IS_START_PRESSED)
         {
             fun_080010d8();
         }
-        if (((gNewKeys & 1) != 0) || ((gNewKeys & 8) != 0))
+        if (IS_A_PRESSED || IS_START_PRESSED)
         {
             if (DAT_02009ae8 == 0xc)
             {
@@ -341,72 +341,23 @@ DAT_08006480:\n\
     ");
 }
 
-__attribute__((naked)) s32 fun_08006484()
+inline static void fun_08006484_inlined(s32 val)
 {
-    asm("\n\
-    push        {r4,lr}\n\
-    sub         sp,#0x4\n\
-    mov         r0,sp\n\
-    mov         r4,#0x0\n\
-    strh        r4,[r0,#0x0]\n\
-    ldr         r1,DAT_080064e4\n\
-    str         r0,[r1,#0x0]\n\
-    mov         r0,#0xc0\n\
-    lsl         r0,r0,#0x13\n\
-    str         r0,[r1,#0x4]\n\
-    ldr         r0,DAT_080064e8\n\
-    str         r0,[r1,#0x8]\n\
-    ldr         r0,[r1,#0x8]\n\
-    mov         r0,sp\n\
-    strh        r4,[r0,#0x0]\n\
-    str         r0,[r1,#0x0]\n\
-    mov         r0,#0xa0\n\
-    lsl         r0,r0,#0x13\n\
-    str         r0,[r1,#0x4]\n\
-    ldr         r0,DAT_080064ec\n\
-    str         r0,[r1,#0x8]\n\
-    ldr         r0,[r1,#0x8]\n\
-    sub         r1,#0xd4\n\
-    ldr         r2,DAT_080064f0\n\
-    add         r0,r2,#0x0\n\
-    strh        r0,[r1,#0x0]\n\
-    mov         r0,#0x0\n\
-    bl          fun_080036b0\n\
-    bl          fun_0803c24c\n\
-    ldr         r0,DAT_080064f4\n\
-    strb        r4,[r0,#0x0]\n\
-    mov         r4,#0x0\n\
-    mov         r0,#0x0\n\
-    bl          fun_080063e4\n\
-    ldr         r1,DAT_080064f8\n\
-    mov         r0,#0x3c\n\
-    strh        r0,[r1,#0x0]\n\
-    ldr         r0,DAT_080064fc\n\
-    strh        r4,[r0,#0x0]\n\
-    mov         r0,#0x0\n\
-    add         sp,#0x4\n\
-    pop         {r4}\n\
-    pop         {r1}\n\
-    bx          r1\n\
-\n\
-.space 2\n\
-\n\
-DAT_080064e4:\n\
-    .word 0x040000D4\n\
-DAT_080064e8:\n\
-    .word 0x8100C000\n\
-DAT_080064ec:\n\
-    .word 0x81000200\n\
-DAT_080064f0:\n\
-    .word 0x00001F04\n\
-DAT_080064f4:\n\
-    .word 0x02009AE8\n\
-DAT_080064f8:\n\
-    .word 0x02009AD0\n\
-DAT_080064fc:\n\
-    .word 0x02009ADC\n\
-\n\
-    ");
+    fun_080063e4(val);
+    DAT_02009ad0 = 0x3c;
+}
+
+s32 fun_08006484(void)
+{
+    DmaFill16(3, 0, VRAM, VRAM_SIZE);
+    DmaFill16(3, 0, PLTT, PLTT_SIZE);
+    REG_DISPCNT = 0x1f04;
+    fun_080036b0(0);
+    fun_0803c24c();
+    DAT_02009ae8 = 0;
+    fun_08006484_inlined(0);
+    DAT_02009adc = 0;
+    return 0;
 }
 
 s32 fun_08006500()
@@ -819,78 +770,32 @@ DAT_08006820:\n\
      .4byte 0x02009AF8\n\
     ");
 }
-__attribute__((naked)) s32 fun_08006824()
+
+s32 fun_08006824()
 {
-    asm("\n\
-     push       {r4,lr}\n\
-     sub        sp,#0x20\n\
-     bl         fun_0803c1a4\n\
-     ldr        r4,DAT_0800683c\n\
-     ldrh       r0,[r4,#0x0]\n\
-     cmp        r0,#0x0\n\
-     beq        LAB_08006840\n\
-     bl         fun_080066cc\n\
-     b          LAB_08006890\n\
-.space 1\n\
-.space 1\n\
-DAT_0800683c:\n\
-     .4byte 0x02009AF4\n\
-LAB_08006840:\n\
-     bl         is_start_pressed\n\
-     lsl        r0,r0,#0x10\n\
-     cmp        r0,#0x0\n\
-     bne        LAB_08006854\n\
-     bl         is_a_pressed\n\
-     lsl        r0,r0,#0x10\n\
-     cmp        r0,#0x0\n\
-     beq        LAB_08006890\n\
-LAB_08006854:\n\
-     mov        r0,#0x1\n\
-     strh       r0,[r4,#0x0]\n\
-     ldr        r0,DAT_0800689c\n\
-     ldr        r2,[r0,#0x0]\n\
-     ldr        r1,DAT_080068a0\n\
-     add        r0,r1,#0x0\n\
-     ldrh       r3,[r2,#0x12]\n\
-     and        r0,r3\n\
-     strh       r0,[r2,#0x12]\n\
-     ldr        r0,DAT_080068a4\n\
-     ldr        r0,[r0,#0x0]\n\
-     ldrh       r2,[r0,#0x12]\n\
-     and        r1,r2\n\
-     strh       r1,[r0,#0x12]\n\
-     ldr        r0,DAT_080068a8\n\
-     mov        r4,#0xc0\n\
-     lsl        r4,r4,#0x13\n\
-     add        r1,r4,#0x0\n\
-     bl         LZ77UnCompVram\n\
-     add        r0,r4,#0x0\n\
-     bl         fun_080068d4\n\
-     bl         fun_08002bcc\n\
-     mov        r1,#0x80\n\
-     lsl        r1,r1,#0x13\n\
-     ldr        r3,DAT_080068ac\n\
-     add        r0,r3,#0x0\n\
-     strh       r0,[r1,#0x0]\n\
-LAB_08006890:\n\
-     mov        r0,#0x0\n\
-     add        sp,#0x20\n\
-     pop        {r4}\n\
-     pop        {r1}\n\
-     bx         r1\n\
-.space 1\n\
-.space 1\n\
-DAT_0800689c:\n\
-     .4byte 0x02009B00\n\
-DAT_080068a0:\n\
-     .4byte 0x0000FDFF\n\
-DAT_080068a4:\n\
-     .4byte 0x02009AF0\n\
-DAT_080068a8:\n\
-     .4byte 0x0807259C\n\
-DAT_080068ac:\n\
-     .4byte 0x00001F44\n\
-    ");
+    char dummy[0x20];
+
+    fun_0803c1a4();
+
+    if (DAT_02009af4 != 0)
+    {
+        fun_080066cc();
+    }
+    else
+    {
+        if (is_start_pressed() || is_a_pressed())
+        {
+            DAT_02009af4 = 1;
+            DAT_02009b00[9] &= 0xfdff;
+            DAT_02009af0[9] &= 0xfdff;
+            LZ77UnCompVram(&start_menu_gfx, (void*)VRAM);
+            fun_080068d4((void*)VRAM);
+            fun_08002bcc();
+            REG_DISPCNT = 0x1f44;
+        }
+    }
+
+    return 0;
 }
 
 s32 fun_080068b0()

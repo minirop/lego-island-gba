@@ -99,7 +99,7 @@ void fun_08005ce0(u16 param_1, u16 param_2)
     }
 }
 
-static inline void thing(s32 val)
+static inline void fun_08005d50_inlined(s32 val)
 {
     fun_08002bcc();
     DmaFill16(3, val, BG_PLTT, BG_PLTT_SIZE);
@@ -111,7 +111,7 @@ s32 fun_08005d50()
     DmaFill16(3, 0, PLTT, PLTT_SIZE);
     REG_DISPCNT = 0x1f04;
     DAT_02009ad4 = 0;
-    thing(0);
+    fun_08005d50_inlined(0);
     LZ77UnCompVram(logo_screen_images[0], (void*)VRAM);
     fun_08002bcc();
     REG_DISPCNT = 0x1f04;
@@ -241,7 +241,7 @@ void fun_08006080()
         fun_080016f0(1);
         if (selected_language == 1)
         {
-            selected_language = 3;
+            selected_language = FRENCH_LANG;
         }
         decompress_selected_language();
         if (DAT_02009ad8)
@@ -311,7 +311,7 @@ s32 fun_0800612c()
     u8 abStack_18[20];
 
     fun_0803c1a4();
-    sprintf(abStack_18, "%s %s", LANG_STRINGS_0875e864[selected_language], "     ");
+    sprintf((char*)abStack_18, "%s %s", LANG_STRINGS_0875e864[selected_language], "     ");
     fun_0803c010(abStack_18, 0x37, &DAT_0865fd94);
     fun_08006080();
     return 0;

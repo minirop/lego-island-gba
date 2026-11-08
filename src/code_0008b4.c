@@ -993,7 +993,6 @@ void fun_08001088(u16 param_1)
     }
 }
 
-#ifdef NONMATCHING
 void fun_080010d8()
 {
     s32 ret;
@@ -1002,58 +1001,16 @@ void fun_080010d8()
     if (DAT_02002544 == 0)
     {
         ptr = &DAT_020025d8;
-        ret = 0x232a;
+        *ptr = 0x232a;
     }
     else
     {
         DAT_02002544--;
         DAT_020025d8 = DAT_02002570[DAT_02002544];
-        ptr = &DAT_020025ec.s;
-        ret = 1;
+        ptr = &DAT_020025ec;
+        *ptr = 1;
     }
-    *ptr = ret;
 }
-#else
-__attribute__((naked)) void fun_080010d8()
-{
-    asm("\n\
-    ldr         r3,DAT_080010e8\n\
-    ldrh        r0,[r3,#0x0]\n\
-    cmp         r0,#0x0\n\
-    bne         LAB_080010f4\n\
-    ldr         r1,DAT_080010ec\n\
-    ldr         r2,DAT_080010f0\n\
-    add         r0,r2,#0x0\n\
-    b           LAB_08001108\n\
-DAT_080010e8:\n\
-    .word 0x02002544\n\
-DAT_080010ec:\n\
-    .word 0x020025D8\n\
-DAT_080010f0:\n\
-    .word 0x0000232A\n\
-LAB_080010f4:\n\
-    sub         r0,#0x1\n\
-    strh        r0,[r3,#0x0]\n\
-    ldr         r2,DAT_0800110c\n\
-    ldr         r1,DAT_08001110\n\
-    lsl         r0,r0,#0x1\n\
-    add         r0,r0,r1\n\
-    ldrh        r0,[r0,#0x0]\n\
-    strh        r0,[r2,#0x0]\n\
-    ldr         r1,DAT_08001114\n\
-    mov         r0,#0x1\n\
-LAB_08001108:\n\
-    strh        r0,[r1,#0x0]\n\
-    bx          lr\n\
-DAT_0800110c:\n\
-    .word 0x020025D8\n\
-DAT_08001110:\n\
-    .word 0x02002570\n\
-DAT_08001114:\n\
-    .word 0x020025EC\n\
-    ");
-}
-#endif
 
 u8 fun_08001118()
 {

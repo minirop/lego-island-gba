@@ -1,81 +1,30 @@
 #include "functions.h"
 #include "variables.h"
 
-__attribute__((naked)) void fun_08001534()
+s32 fun_08001534(void)
 {
-    asm("\n\
-    push        {r4,lr}\n\
-    sub         sp,#0x2c\n\
-    mov         r1,sp\n\
-    mov         r2,#0x0\n\
-    mov         r3,#0x0\n\
-    ldr         r0,DAT_0800156c\n\
-    strh        r0,[r1,#0x0]\n\
-    mov         r0,sp\n\
-    strb        r2,[r0,#3]\n\
-    mov         r0,#0x8\n\
-    strb        r0,[r1,#2]\n\
-    mov         r0,sp\n\
-    strh        r3,[r0,#4]\n\
-    ldr         r0,DAT_08001570\n\
-    str         r0,[sp,#8]\n\
-    add         r4,sp,#0x1c\n\
-    mov         r0,sp\n\
-    add         r1,r4,#0x0\n\
-    bl          fun_08042838\n\
-    lsl         r0,r0,#0x10\n\
-    mov         r1,#0xc0\n\
-    lsl         r1,r1,#0x15\n\
-    add         r2,r4,#0x0\n\
-    cmp         r0,r1\n\
-    bls         LAB_08001574\n\
-LAB_08001568:\n\
-    b           LAB_08001568\n\
-\n\
-.space 2\n\
-\n\
-DAT_0800156c:\n\
-    .word 0x00002C85\n\
-DAT_08001570:\n\
-    .word 0x086CCFE0\n\
-LAB_08001574:\n\
-    ldr         r1,DAT_080015a8\n\
-    add         r4,sp,#0xc\n\
-    add         r0,r2,#0x0\n\
-    add         r2,r4,#0x0\n\
-    bl          fun_08042a24\n\
-    mov         r0,sp\n\
-    add         r1,r4,#0x0\n\
-    bl          fun_0803d20c\n\
-    ldr         r2,DAT_080015ac\n\
-    ldr         r1,DAT_080015b0\n\
-    add         r0,r2,#0x0\n\
-    bl          fun_0803d4b0\n\
-    ldr         r1,DAT_080015b4\n\
-    mov         r2,#0x1\n\
-.syntax unified\n\
-    rsbs        r2,r2,#0\n\
-.syntax divided\n\
-    add         r0,r2,#0x0\n\
-    strh        r0,[r1,#0x0]\n\
-    mov         r0,#0x0\n\
-    add         sp,#0x2c\n\
-    pop         {r4}\n\
-    pop         {r1}\n\
-    bx          r1\n\
-\n\
-.space 2\n\
-\n\
-DAT_080015a8:\n\
-    .word 0x03000000\n\
-DAT_080015ac:\n\
-    .word 0x00007FFF\n\
-DAT_080015b0:\n\
-    .word 0x0000FFFF\n\
-DAT_080015b4:\n\
-    .word 0x020025D0\n\
-    ");
+    struct_08001534 unk;
+
+    unk.unk00 = 0x2c85;
+    unk.unk03 = 0;
+    unk.unk02 = 8;
+    unk.unk04 = 0;
+    unk.unk08 = DAT_086ccfe0;
+    if (0x1800 < fun_08042838(&unk, unk.unk1c))
+    {
+        do
+        {
+        } while (true);
+    }
+    fun_08042a24(unk.unk1c, &DAT_03000000, &unk.unk0c);
+    fun_0803d20c(&unk, &unk.unk0c);
+    fun_0803d4b0(0x7fff, 0xffff, 0x7fff);
+    DAT_020025d0 = -1;
+
+    return 0;
 }
+
+// https://www.decomp.me/scratch/573U1
 __attribute__((naked)) void fun_080015b8()
 {
     asm("\n\

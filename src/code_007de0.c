@@ -59,7 +59,7 @@ s32 fun_08007e08()
 
 s32 fun_08007ef8()
 {
-    if (gNewKeys & 1)
+    if (IS_A_PRESSED)
     {
         fun_08007fb8_inlined();
     }

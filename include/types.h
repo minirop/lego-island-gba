@@ -122,7 +122,7 @@ typedef struct struct_08669620
     u8 unk00;
     u8 padding0[0x03];
     // addresses pointing inside the decompressed text script
-    void* strings_ptr[LANGUAGE_COUNT];
+    u8* strings_ptr[LANGUAGE_COUNT];
     u32 unk20[3];
 } struct_08669620;
 
@@ -359,6 +359,41 @@ typedef struct unknown_callback_struct
     u8 unk18;
 } unknown_callback_struct;
 
+typedef struct struct_08001534
+{
+    u16 unk00;
+    u8 unk02;
+    u8 unk03;
+    u16 unk04;
+    void* unk08;
+    u32 unk0c;
+    u8 padding[12];
+    u8 unk1c[16];
+} struct_08001534;
+
 typedef void (*CallbackUnkUnkU16U16)(unknown_callback_struct*, s32, u16*, u16*);
+
+#define IS_START_PRESSED ((gNewKeys & START_BUTTON) != 0)
+#define IS_SELECT_PRESSED ((gNewKeys & SELECT_BUTTON) != 0)
+#define IS_LEFT_PRESSED ((gNewKeys & DPAD_LEFT) != 0)
+#define IS_RIGHT_PRESSED ((gNewKeys & DPAD_RIGHT) != 0)
+#define IS_L_PRESSED ((gNewKeys & L_BUTTON) != 0)
+#define IS_R_PRESSED ((gNewKeys & R_BUTTON) != 0)
+#define IS_UP_PRESSED ((gNewKeys & DPAD_UP) != 0)
+#define IS_DOWN_PRESSED ((gNewKeys & DPAD_DOWN) != 0)
+#define IS_A_PRESSED ((gNewKeys & A_BUTTON) != 0)
+#define IS_B_PRESSED ((gNewKeys & B_BUTTON) != 0)
+
+enum
+{
+    ENGLISH_LANG,
+    SPANISH_LANG,
+    GERMAN_LANG,
+    FRENCH_LANG,
+    ITALIAN_LANG,
+    NORWEGIAN_LANG,
+    DUTCH_LANG,
+    DANISH_LANG,
+};
 
 #endif

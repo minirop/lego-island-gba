@@ -477,7 +477,7 @@ DAT_08007dd0:\n\
 PTR_DAT_08007dd4:\n\
     .word DAT_080aaa2c\n\
 PTR_DAT_08007dd8:\n\
-    .word DAT_0600a000\n\
+    .word 0x0600a000\n\
 DAT_08007ddc:\n\
     .word 0x00001F54\n\
     ");

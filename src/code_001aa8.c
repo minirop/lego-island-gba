@@ -487,6 +487,7 @@ DAT_08001f90:\n\
     ");
 }
 
+// Need to get rid of that ugly code
 void fun_08001f94()
 {
     u16 i;
@@ -508,7 +509,7 @@ void fun_0800200c()
 }
 const char* dummy_0804979c = "MultiSioSync010316";
 
-static inline void fun_08002038_wrapper()
+static inline void fun_08002038_inlined()
 {
     memset(fun_080020a4(), 0, sizeof(struct_02002620));
 }
@@ -517,15 +518,15 @@ void fun_08002038()
 {
     if (strcmp((const char*)&fun_080020a4()->unk08, "GOGOMONKEYX"))
     {
-        fun_08002038_wrapper();
+        fun_08002038_inlined();
         memcpy(&fun_080020a4()->unk08, "GOGOMONKEYX", 12);
         fun_08001b9c();
     }
 }
 
-s32 fun_08002074(u8 param_1)
+u16 fun_08002074(u8 param_1)
 {
-    s32 i = 0;
+    u16 i = 0;
     if (strcmp(DAT_02002620[param_1].unk08, "GOGOMONKEYX") == 0)
     {
         i = 1;
