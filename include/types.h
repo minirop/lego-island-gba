@@ -143,7 +143,8 @@ typedef struct struct_02002620
     u8 pad1d[3];
     u8 pad20[0x7E6 - 0x20];
     u16 unk7E6[0x151];
-    u16 unkA88[0x151];
+    u16 unkA88[0x14C];
+    u8 unk0d20[10];
     u16 unk0d2a[0x46];
     u8 pad0db6[0x8A];
     u8 unk0e40[4];

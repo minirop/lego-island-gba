@@ -119,7 +119,7 @@ DAT_08003994:\n\
     .word 0x02005CF4\n\
     ");
 }
-__attribute__((naked)) void fun_08003998()
+__attribute__((naked)) u16* fun_08003998(u16* param_1)
 {
     asm("\n\
     push        {r4,r5,r6,r7,lr}\n\
