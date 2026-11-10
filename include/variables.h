@@ -136,6 +136,9 @@ extern struct_02009b10 DAT_0200ee80;
 extern struct_0200ef30 DAT_0200ef30;
 extern struct_03001a00 DAT_03001a00[];
 extern struct_03002400 DAT_03002400;
+extern struct_08003998* DAT_02009af0;
+extern struct_08003998* DAT_02009b00;
+extern struct_08003998* DAT_03001800[128]; // stores the first field of 0x02006d60 (sprites data?)
 extern struct_08669620 DAT_08669620[STRINGS_COUNT];
 extern u16 current_level;
 extern u16 DAT_02000008;
@@ -226,10 +229,7 @@ extern u16 levels_count;
 extern u16 title_screen_pal[];
 extern u16* DAT_02007f80[4]; // need to find its real type
 extern u16* DAT_02007fa0[4];
-extern struct_08003998* DAT_02009af0;
-extern struct_08003998* DAT_02009b00;
 extern u16* DAT_0200d370;
-extern struct_08003998* DAT_03001800[128]; // stores the first field of 0x02006d60 (sprites data?)
 extern u32 DAT_0200000c;
 extern u32 DAT_02005cd4;
 extern u32 DAT_0200eff4;

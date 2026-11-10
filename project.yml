@@ -848,10 +848,11 @@ ewram:
     - name: syscalls
       address: 0x0005e0
 build:
-  files:
-    ofiles:
-      - src/*.o
-      - asm/*.o
+  clean:
+    - src/**/*.o
+    - src/**/*.s
+    - asm/*.o
+    - $(ROM).gba
   constants:
     agbcc: /home/minirop/git/fireemblem8u/tools/agbcc
     as: $(DEVKITARM)/bin/arm-none-eabi-as
@@ -885,5 +886,5 @@ build:
       exec:
         - $(CPP) $(CPPFLAGS) $(NAME).c | $(CC1) $(CC1FLAGS) -o $(NAME).s
         - $(AS) $(ASFLAGS) $(NAME).s -o $(NAME).o
-    - $(LD) -T $(SYMBOLS) -T $(LDSCRIPT) -Map $(ROM).map $(OFILES) -L $(AGBCC)/lib -lc -lgcc -o $(ROM).elf
+    - $(LD) -T $(SYMBOLS) -T $(LDSCRIPT) -Map $(ROM).map -L $(AGBCC)/lib -lc -lgcc -o $(ROM).elf
     - $(OBJCOPY) -O binary $(ROM).elf $(ROM).gba
