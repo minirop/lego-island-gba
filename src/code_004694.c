@@ -1,6 +1,6 @@
 #include "variables.h"
 
-u16* fun_08004694(u16 param_1)
+struct_08003998* fun_08004694(u16 param_1)
 {
     return DAT_03001800[param_1];
 }

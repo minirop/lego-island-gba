@@ -203,6 +203,12 @@ rom:
     - name: code_03c010
       format: c
       address: 0x03c010
+    - name: sram/sram
+      format: c
+      address: 0x03d078
+    - name: code_03d20c
+      format: c
+      address: 0x03d20c
     - name: code_03dbdc
       format: c
       address: 0x03dbdc
@@ -851,7 +857,8 @@ build:
     as: $(DEVKITARM)/bin/arm-none-eabi-as
     asflags: -mcpu=arm7tdmi -mthumb-interwork -I include
     cc1: $(AGBCC)/bin/old_agbcc
-    cc1flags: -mthumb-interwork -Wimplicit -Wparentheses -O2 -fhex-asm
+    opt: -O2
+    cc1flags: -mthumb-interwork -Wimplicit -Wparentheses $(OPT) -fhex-asm
     cpp: $(DEVKITARM)/bin/arm-none-eabi-cpp
     cppflags: -I $(AGBCC)/include -iquote include -iquote . -nostdinc -undef
     gfx: isle2-tool
@@ -859,6 +866,9 @@ build:
     ldscript: ldscript.txt
     objcopy: $(DEVKITARM)/bin/arm-none-eabi-objcopy
     symbols: symbols.txt
+  overrides:
+    src/sram/sram:
+      opt: -O1
   commands:
     - folder: gfx
       extension: gif

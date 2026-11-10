@@ -23,9 +23,9 @@ u16 fun_08001aa8()
     s32 valid = 1;
 
     REG_IME = 0;
-    fun_0803d09c((void*)0xe000000, (u8*)DAT_02002620, sizeof(DAT_02002620));
-    fun_0803d09c((void*)0xe002be0, (u8*)DAT_02005200, sizeof(DAT_02005200));
-    fun_0803d09c((void*)0xe002be4, (u8*)DAT_02005210, sizeof(DAT_02005210));
+    SramWriteUnchecked((void*)0xe000000, (u8*)DAT_02002620, sizeof(DAT_02002620));
+    SramWriteUnchecked((void*)0xe002be0, (u8*)DAT_02005200, sizeof(DAT_02005200));
+    SramWriteUnchecked((void*)0xe002be4, (u8*)DAT_02005210, sizeof(DAT_02005210));
 
     if (DAT_02002620[0].unk00 != 0x48fed829)
     {
@@ -80,11 +80,11 @@ s32 fun_08001b9c()
     DAT_02002620[0].unk04 = total_sum;
     DAT_02002620[0].unk00 = 0xfa988912;
 
-    fun_0803d100((u8*)DAT_02002620, (void*)0xe000000, sizeof(DAT_02002620));
-    fun_0803d100((u8*)local_14, (void*)0xe002be0, 4);
-    fun_0803d100((u8*)DAT_02005210, (void*)0xe002be4, sizeof(DAT_02005210));
+    SramWrite((u8*)DAT_02002620, (void*)0xe000000, sizeof(DAT_02002620));
+    SramWrite((u8*)local_14, (void*)0xe002be0, 4);
+    SramWrite((u8*)DAT_02005210, (void*)0xe002be4, sizeof(DAT_02005210));
     DAT_02002620[0].unk00 = 0x48fed829;
-    fun_0803d100((u8*)DAT_02002620, (void*)0xe000000, sizeof(local_14));
+    SramWrite((u8*)DAT_02002620, (void*)0xe000000, sizeof(local_14));
     REG_IME = 1;
 
     return 1;
@@ -487,17 +487,14 @@ DAT_08001f90:\n\
     ");
 }
 
-// Need to get rid of that ugly code
 void fun_08001f94()
 {
     u16 i;
 
     for (i = 0; i < 0x151; i++)
     {
-        if (DAT_02002620[DAT_02005570].unk7E6[0])
-            ; // Required to match
-        (&DAT_02002620[DAT_02005570].unk7E6[0])[i] = fun_080034c0(i)->unk04;
-        (&DAT_02002620[DAT_02005570].unkA88[0])[i] = fun_080034c0(i)->unk06;
+        DAT_02002620[DAT_02005570].unk07e6[i] = fun_080034c0(i)->unk04;
+        DAT_02002620[DAT_02005570].unk0a88[i] = fun_080034c0(i)->unk06;
     }
 }
 

@@ -137,13 +137,16 @@ typedef struct struct_02002620
 {
     u32 unk00;
     u32 unk04;
-    char unk08[16];
+    char unk08[12];
+    s32 unk14;
     u32 unk18;
     u8 unk1c;
     u8 pad1d[3];
     u8 pad20[0x7E6 - 0x20];
-    u16 unk7E6[0x151];
-    u16 unkA88[0x14C];
+    u16 unk07e6[0x151];
+    // fun_08001f94 & fun_08001c8c iterate 0x151 times over it
+    u16 unk0a88[0x14C];
+    // but fun_080015b8 reads unk0d20[1] as a byte
     u8 unk0d20[10];
     u16 unk0d2a[0x46];
     u8 pad0db6[0x8A];
@@ -371,6 +374,26 @@ typedef struct struct_08001534
     u8 padding[12];
     u8 unk1c[16];
 } struct_08001534;
+
+typedef struct struct_08003998
+{
+    u16 unk00;
+    u16 unk02;
+    u16 unk04;
+    u16 unk06;
+    u16 unk08;
+    u16 unk0a;
+    u16 unk0c;
+    u16 unk0e;
+    u16 unk10;
+    u16 unk12;
+    u16 unk14;
+    u16 unk16;
+    u16 unk18;
+    u16 unk1a;
+    u16 unk1c;
+    u16 unk1e;
+} struct_08003998;
 
 typedef void (*CallbackUnkUnkU16U16)(unknown_callback_struct*, s32, u16*, u16*);
 
