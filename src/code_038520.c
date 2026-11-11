@@ -3530,7 +3530,7 @@ DAT_08039e60:\n\
      .word 0x0000FDFF\n\
     ");
 }
-__attribute__((naked)) void fun_08039e64(vec3_ptr* param_1)
+__attribute__((naked)) void fun_08039e64(LevelInfoVec3* param_1)
 {
     asm("\n\
      push       {r4,r5,r6,r7,lr}\n\

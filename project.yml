@@ -565,6 +565,30 @@ rom:
       section: rodata
       address: 0x4a3de4
       size: 0xd0
+    - name: gfx/map/north.pal
+      format: custom
+      section: rodata
+      address: 0x4a7e54
+    - name: gfx/map/north.gfx
+      format: custom
+      section: rodata
+      address: 0x4a8054
+    - name: gfx/map/south.pal
+      format: custom
+      section: rodata
+      address: 0x4abd5c
+    - name: gfx/map/south.gfx
+      format: custom
+      section: rodata
+      address: 0x4abf5c
+    - name: gfx/map/centre.pal
+      format: custom
+      section: rodata
+      address: 0x4b01a8
+    - name: gfx/map/centre.gfx
+      format: custom
+      section: rodata
+      address: 0x4b03a8
     - name: code_4b41cc
       format: c
       section: rodata
@@ -738,6 +762,10 @@ rom:
       section: data
       address: 0x756bc0
       size: 0x2
+    - name: code_756d38
+      format: c
+      section: rodata
+      address: 0x756d38
     - name: gfx/logos/copyright.gfx
       format: custom
       section: rodata
@@ -765,7 +793,7 @@ rom:
       size: 0x200
     - name: intro_images
       format: c
-      section: data
+      section: rodata
       address: 0x75e8a4
     - name: gfx/intro/tv-static.gfx
       format: custom
@@ -825,6 +853,11 @@ rom:
       section: data
       address: 0x77f91c
       size: 0x29c
+    - name: map_overview
+      format: c
+      section: rodata
+      address: 0x7806c8
+      size: 24
     - name: code_7d6190
       format: c
       section: data

@@ -247,60 +247,25 @@ DAT_080098f4:\n\
     .word 0x0200C8C0\n\
     ");
 }
-__attribute__((naked)) s32 fun_080098f8()
+
+s32 fun_080098f8()
 {
-    asm("\n\
-    push        {r4,r5,r6,lr}\n\
-    mov         r2,#0x0\n\
-    ldr         r1,DAT_08009940\n\
-    ldr         r0,DAT_08009944\n\
-    str         r0,[r1,#0x0]\n\
-    ldr         r0,DAT_08009948\n\
-    str         r0,[r1,#0x4]\n\
-    ldr         r1,DAT_0800994c\n\
-    str         r1,[r0,#0x0]\n\
-    ldr         r3,DAT_08009950\n\
-    str         r3,[r0,#0x4]\n\
-    str         r2,[r0,#0x8]\n\
-    add         r1,#0x48\n\
-    ldrh        r0,[r1,#0x0]\n\
-    cmp         r2,r0\n\
-    bcs         LAB_08009938\n\
-    add         r6,r3,#0x0\n\
-    ldr         r5,DAT_08009954\n\
-    mov         r3,#0x0\n\
-    add         r4,r0,#0x0\n\
-LAB_08009920:\n\
-    lsl         r0,r2,#0x3\n\
-    add         r0,r0,r6\n\
-    lsl         r1,r2,#0x5\n\
-    add         r1,r1,r5\n\
-    str         r1,[r0,#0x0]\n\
-    strh        r3,[r0,#0x4]\n\
-    strh        r3,[r0,#0x6]\n\
-    add         r0,r2,#0x1\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r2,r0,#0x10\n\
-    cmp         r2,r4\n\
-    bcc         LAB_08009920\n\
-LAB_08009938:\n\
-    mov         r0,#0x1\n\
-    pop         {r4,r5,r6}\n\
-    pop         {r1}\n\
-    bx          r1\n\
-DAT_08009940:\n\
-    .word 0x0200D368\n\
-DAT_08009944:\n\
-    .word 0x08330A88\n\
-DAT_08009948:\n\
-    .word 0x0200C8D0\n\
-DAT_0800994c:\n\
-    .word 0x08330A24\n\
-DAT_08009950:\n\
-    .word 0x0200C8E0\n\
-DAT_08009954:\n\
-    .word 0x08324AB0\n\
-    ");
+    u16 i = 0;
+
+    DAT_0200d368.info = &lego_island;
+    DAT_0200d368.ptr = &DAT_0200c8d0;
+    DAT_0200c8d0.unk00 = &DAT_08330a24;
+    DAT_0200c8d0.unk04 = DAT_0200c8e0;
+    DAT_0200c8d0.unk08 = NULL;
+
+    for (; i < DAT_08330a24.unk48; i++)
+    {
+        DAT_0200c8e0[i].unk00 = &DAT_08324ab0[i];
+        DAT_0200c8e0[i].unk04 = 0;
+        DAT_0200c8e0[i].unk06 = 0;
+    }
+
+    return 1;
 }
 
 const LevelInfo lego_island = {

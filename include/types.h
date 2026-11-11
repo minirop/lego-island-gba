@@ -57,7 +57,8 @@ typedef struct LevelInfo_0c
     void* unk3c;
     s32 unk40;
     void* unk44;
-    s32 unk48;
+    u16 unk48;
+    u16 pad4a;
     void* unk4c;
     void* unk50;
     s32 pad54;
@@ -131,6 +132,13 @@ typedef struct struct_02009b10
     const LevelInfo* info;
     void* ptr;
 } struct_02009b10;
+
+typedef struct struct_0200c8e0
+{
+    void* unk00;
+    u16 unk04;
+    u16 unk06;
+} struct_0200c8e0;
 
 // size 0xEA0
 typedef struct struct_02002620
@@ -260,19 +268,6 @@ typedef struct struct_03002400
     u32 pad44;
     struct_03002400_48 pad48;
 } struct_03002400;
-
-typedef struct vec3_ptr
-{
-    void* unk00;
-    void* unk04;
-    void* unk08;
-} vec3_ptr;
-
-typedef struct level_ptrs
-{
-    const LevelInfo* level;
-    vec3_ptr* unk04;
-} level_ptrs;
 
 typedef struct struct_0200ef30_00
 {

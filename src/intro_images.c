@@ -1,6 +1,6 @@
 #include "gfx.h"
 
-const uint8_t* intro_images_gfx[] = {
+const uint8_t* const intro_images_gfx[] = {
     tv_static_gfx,
     infomaniac_gets_news_gfx,
     infomaniac_starts_reading_gfx,
@@ -16,7 +16,7 @@ const uint8_t* intro_images_gfx[] = {
     tv_static_gfx,
 };
 
-const uint8_t* intro_images_pal[] = {
+const uint8_t* const intro_images_pal[] = {
     tv_static_pal,
     infomaniac_gets_news_pal,
     infomaniac_starts_reading_pal,

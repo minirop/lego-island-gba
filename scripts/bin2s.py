@@ -6,6 +6,9 @@ if len(sys.argv) != 2:
 filepath = sys.argv[1]
 filename = os.path.basename(filepath)
 
+if os.path.exists(f"{filepath}.s") and os.path.getmtime(f"{filepath}.s") >= os.path.getmtime(f"{filepath}"):
+    sys.exit(0)
+
 with open(filepath, 'rb') as f:
     content = f.read()
 

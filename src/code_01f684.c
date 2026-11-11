@@ -69,9 +69,9 @@ s32 fun_0801f6ec()
 {
     DAT_0200ee80.info = &hoop_game;
     DAT_0200ee80.ptr = &DAT_0200ee70;
-    DAT_0200ee70[0] = &DAT_084c6ea8;
-    DAT_0200ee70[1] = 0;
-    DAT_0200ee70[2] = 0;
+    DAT_0200ee70.unk00 = &DAT_084c6ea8;
+    DAT_0200ee70.unk04 = 0;
+    DAT_0200ee70.unk08 = 0;
     return 1;
 }
 
@@ -2256,6 +2256,7 @@ const LevelInfo_0c DAT_084ef9f8 = {
     0x0,
     NULL,
     0x1,
+    0x0,
     &DAT_084ef924,
     &DAT_084ef944,
     0x0,

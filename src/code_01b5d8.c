@@ -1,4 +1,5 @@
 #include "functions.h"
+#include "variables.h"
 
 __attribute__((naked)) s32 fun_0801b5d8()
 {
@@ -1548,30 +1549,17 @@ DAT_0801c174:\n\
      .word 0x0200ECEC\n\
     ");
 }
-__attribute__((naked)) s32 fun_0801c178()
+
+s32 fun_0801c178()
 {
-    asm("\n\
-     ldr        r2,DAT_0801c190\n\
-     ldr        r0,DAT_0801c194\n\
-     str        r0,[r2,#0x0]\n\
-     ldr        r1,DAT_0801c198\n\
-     str        r1,[r2,#0x4]\n\
-     mov        r0,#0x0\n\
-     str        r0,[r1,#0x0]\n\
-     str        r0,[r1,#0x4]\n\
-     str        r0,[r1,#0x8]\n\
-     mov        r0,#0x1\n\
-     bx         lr\n\
-.space 1\n\
-.space 1\n\
-DAT_0801c190:\n\
-     .word 0x0200ED00\n\
-DAT_0801c194:\n\
-     .word 0x084BCBB4\n\
-DAT_0801c198:\n\
-     .word 0x0200ECF0\n\
-    ");
+    DAT_0200ed00.info = &slot_select;
+    DAT_0200ed00.ptr = &DAT_0200ecf0;
+    DAT_0200ecf0.unk00 = 0;
+    DAT_0200ecf0.unk04 = 0;
+    DAT_0200ecf0.unk08 = 0;
+    return 1;
 }
+
 __attribute__((naked)) s32 fun_0801c19c()
 {
     asm("\n\
@@ -1830,22 +1818,12 @@ DAT_0801c3a4:\n\
      .word 0x0865FD94\n\
     ");
 }
-__attribute__((naked)) s32 fun_0801c3a8()
+
+s32 fun_0801c3a8()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800457c\n\
-     ldr        r1,DAT_0801c3bc\n\
-     mov        r0,#0x0\n\
-     strh       r0,[r1,#0x0]\n\
-     mov        r0,#0x1\n\
-     pop        {r1}\n\
-     bx         r1\n\
-.space 1\n\
-.space 1\n\
-DAT_0801c3bc:\n\
-     .word 0x020025D4\n\
-    ");
+    fun_0800457c();
+    DAT_020025d4 = 0;
+    return 1;
 }
 
 s32 fun_0801c3c0()

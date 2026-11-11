@@ -5098,8 +5098,8 @@ DAT_08025ecc:\n\
 
 s32 fun_08025ed0()
 {
-    DAT_0200f3d0.level = &caught_fish;
-    DAT_0200f3d0.unk04 = &DAT_0200f3e0;
+    DAT_0200f3d0.info = &caught_fish;
+    DAT_0200f3d0.ptr = &DAT_0200f3e0;
     DAT_0200f3e0.unk00 = &DAT_0853bfb8;
     DAT_0200f3e0.unk04 = NULL;
     DAT_0200f3e0.unk08 = NULL;
