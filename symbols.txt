@@ -936,6 +936,5 @@ logo_screen_palettes = 0x08756d50;
 selected_language = 0x020025b4;
 SIOCNT = 0x04000128;
 translated_title_images = 0x0877b978;
-USHORT_ARRAY_08756a64 = 0x08756a64;
 VCOUNT = 0x04000006;
 WAITCNT = 0x04000204;

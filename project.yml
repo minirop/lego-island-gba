@@ -732,7 +732,7 @@ rom:
     - name: code_756aec
       format: c
       section: rodata
-      address: 0x756aec
+      address: 0x756a64
     - name: code_756aec
       format: c
       section: data
