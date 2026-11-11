@@ -1,4 +1,5 @@
 #include "functions.h"
+#include "gfx.h"
 #include "variables.h"
 
 void fun_08006180()

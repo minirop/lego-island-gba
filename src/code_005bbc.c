@@ -1,6 +1,7 @@
 #include "defines.h"
 #include "functions.h"
 #include "gba.h"
+#include "gfx.h"
 #include "variables.h"
 #include <stdio.h>
 
@@ -200,12 +201,12 @@ s32 fun_08005fac()
     DmaFill16(3, 0, PLTT, PLTT_SIZE);
     REG_DISPCNT = 0x1f44;
 
-    LZ77UnCompVram(&language_selection_background, (void*)0x0600a000);
+    LZ77UnCompVram(&language_selection_gfx, (void*)0x0600a000);
     fun_08002bcc();
 
     DmaCopy16(3, &language_selection_pal, BG_PLTT, BG_PLTT_SIZE);
     REG_DISPCNT = 0x1f14;
-    LZ77UnCompVram(&language_selection_background, (void*)0x06000000);
+    LZ77UnCompVram(&language_selection_gfx, (void*)0x06000000);
     fun_08002bcc();
     REG_DISPCNT = 0x1f44;
     fun_08006180();

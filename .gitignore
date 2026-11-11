@@ -12,3 +12,4 @@ tools/bin/
 tools/bagd/
 tools/isle2-tool/
 gfx/
+include/gfx.h

@@ -149,9 +149,11 @@ typedef struct struct_02002620
     // but fun_080015b8 reads unk0d20[1] as a byte
     u8 unk0d20[10];
     u16 unk0d2a[0x46];
-    u8 pad0db6[0x8A];
-    u8 unk0e40[4];
-    u8 pad0e44[0x16];
+    u8 pad0db6[0x0df8 - 0x0db6];
+    u16 unk0df8;
+    u8 pad0dfa[0x0e40 - 0x0dfa];
+    u8 unk0e40[9]; // looks like a bitfields of 0x46 bits (see fun_0800193c)
+    u8 pad0e44[0x11];
     u8 unk0e5a[20];
     u8 pad0e6e[0x1a];
     u32 unk0e88;
@@ -369,6 +371,7 @@ typedef struct struct_08001534
     u8 unk02;
     u8 unk03;
     u16 unk04;
+    u16 pad06;
     void* unk08;
     u32 unk0c;
     u8 padding[12];
