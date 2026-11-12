@@ -30,10 +30,11 @@ typedef volatile s64 vs64;
 typedef float f32;
 typedef double f64;
 
-typedef void (*Callback)();
 typedef s32 (*CallbackInt)();
 typedef s32 (*CallbackIntIntPtr)(s32, s32*);
 typedef s32 (*CallbackIntUShortUShort)(u16, u16);
+typedef void (*Callback)();
+typedef void (*CallbackUShort)(u16);
 
 typedef struct LevelInfo_0c
 {
@@ -392,6 +393,13 @@ typedef struct struct_08003998
     u16 unk1c;
     u16 unk1e;
 } struct_08003998;
+
+typedef struct struct_0200d430
+{
+    struct_020006a0* unk00;
+    struct_0877bde8* unk04;
+    void* unk08;
+} struct_0200d430;
 
 typedef void (*CallbackUnkUnkU16U16)(unknown_callback_struct*, s32, u16*, u16*);
 

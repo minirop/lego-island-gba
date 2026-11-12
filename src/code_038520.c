@@ -5318,71 +5318,32 @@ DAT_0803ab78:\n\
      .word 0x02000570\n\
     ");
 }
-__attribute__((naked)) void fun_0803ab7c()
+
+void fun_0803ab7c()
 {
-    asm("\n\
-     ldr        r1,DAT_0803ab84\n\
-     mov        r0,#0x0\n\
-     strh       r0,[r1,#0x0]\n\
-     bx         lr\n\
-DAT_0803ab84:\n\
-     .word 0x02000570\n\
-    ");
+    DAT_02000570 = 0;
 }
 
 void fun_0803ab88()
 {
 }
 
-__attribute__((naked)) void fun_0803ab8c()
+void fun_0803ab8c(struct_0200d430* param_1)
 {
-    asm("\n\
-     push       {r4,lr}\n\
-     ldr        r3,DAT_0803aba8\n\
-     ldr        r2,DAT_0803abac\n\
-     ldrh       r4,[r2,#0x0]\n\
-     lsl        r1,r4,#0x2\n\
-     add        r1,r1,r3\n\
-     str        r0,[r1,#0x0]\n\
-     ldrh       r0,[r2,#0x0]\n\
-     add        r0,#0x1\n\
-     strh       r0,[r2,#0x0]\n\
-     pop        {r4}\n\
-     pop        {r0}\n\
-     bx         r0\n\
-.space 1\n\
-.space 1\n\
-DAT_0803aba8:\n\
-     .word 0x020114C0\n\
-DAT_0803abac:\n\
-     .word 0x02000570\n\
-    ");
+    DAT_020114c0[DAT_02000570] = param_1;
+    DAT_02000570 = DAT_02000570 + 1;
 }
 
-// unused
-__attribute__((naked)) void fun_0803abb0()
+u16 fun_0803abb0()
 {
-    asm("\n\
-     ldr        r0,DAT_0803abb8\n\
-     ldrh       r0,[r0,#0x0]\n\
-     bx         lr\n\
-.space 1\n\
-.space 1\n\
-DAT_0803abb8:\n\
-     .word 0x02000570\n\
-    ");
+    return DAT_02000570;
 }
-__attribute__((naked)) void fun_0803abbc()
+
+void fun_0803abbc()
 {
-    asm("\n\
-     ldr        r1,DAT_0803abc4\n\
-     mov        r0,#0x0\n\
-     strh       r0,[r1,#0x0]\n\
-     bx         lr\n\
-DAT_0803abc4:\n\
-     .word 0x02000570\n\
-    ");
+    DAT_02000570 = 0;
 }
+
 __attribute__((naked)) void fun_0803abc8()
 {
     asm("\n\

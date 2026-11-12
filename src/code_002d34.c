@@ -583,17 +583,12 @@ LAB_080031d6:\n\
     bx          r1\n\
     ");
 }
-__attribute__((naked)) void fun_080031dc()
+
+void fun_080031dc()
 {
-    asm("\n\
-    ldr         r1,DAT_080031e4\n\
-    mov         r0,#0x0\n\
-    str         r0,[r1,#0x0]\n\
-    bx          lr\n\
-DAT_080031e4:\n\
-    .word 0x02005834\n\
-    ");
+    DAT_02005834 = NULL;
 }
+
 __attribute__((naked)) void fun_080031e8()
 {
     asm("\n\

@@ -2,155 +2,62 @@
 #include "functions.h"
 #include "variables.h"
 
-__attribute__((naked)) void fun_080029c8()
+void fun_080029c8()
 {
-    asm("\n\
-    push        {r4,r5,r6,r7,lr}\n\
-    sub         sp,#0x4\n\
-    ldr         r7,DAT_08002a44\n\
-    ldrh        r0,[r7,#0x0]\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_080029dc\n\
-    ldr         r0,DAT_08002a48\n\
-    ldrh        r0,[r0,#0x0]\n\
-    cmp         r0,#0x0\n\
-    bne         LAB_08002a3c\n\
-LAB_080029dc:\n\
-    ldr         r4,DAT_08002a4c\n\
-    mov         r1,#0x0\n\
-    ldrsh       r0,[r4,r1]\n\
-    cmp         r0,#0x0\n\
-    bge         LAB_080029e8\n\
-    add         r0,#0xff\n\
-LAB_080029e8:\n\
-    lsl         r0,r0,#0x8\n\
-    lsr         r2,r0,#0x10\n\
-    cmp         r2,#0xf\n\
-    bls         LAB_080029f2\n\
-    mov         r2,#0xf\n\
-LAB_080029f2:\n\
-    mov         r1,sp\n\
-    mov         r0,#0xff\n\
-    strh        r0,[r1,#0x0]\n\
-    ldr         r1,DAT_08002a50\n\
-    mov         r3,#0x1\n\
-    add         r0,r3,#0x0\n\
-    ldrh        r1,[r1,#0x0]\n\
-    and         r0,r1\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08002a10\n\
-    mov         r1,sp\n\
-    mov         r0,sp\n\
-    ldrh        r0,[r0,#0x0]\n\
-    sub         r0,#0x40\n\
-    strh        r0,[r1,#0x0]\n\
-LAB_08002a10:\n\
-    ldr         r6,DAT_08002a54\n\
-    mov         r0,sp\n\
-    ldrh        r0,[r0,#0x0]\n\
-    strh        r0,[r6,#0x0]\n\
-    ldr         r5,DAT_08002a58\n\
-    strh        r2,[r5,#0x0]\n\
-    ldr         r0,DAT_08002a5c\n\
-    ldrh        r1,[r4,#0x0]\n\
-    ldrh        r0,[r0,#0x0]\n\
-    add         r0,r1,r0\n\
-    strh        r0,[r4,#0x0]\n\
-    lsl         r0,r0,#0x10\n\
-    mov         r1,#0xb8\n\
-    lsl         r1,r1,#0x15\n\
-    cmp         r0,r1\n\
-    bls         LAB_08002a3c\n\
-    strh        r3,[r7,#0x0]\n\
-    ldr         r0,DAT_08002a48\n\
-    strh        r3,[r0,#0x0]\n\
-    mov         r0,#0x0\n\
-    strh        r0,[r6,#0x0]\n\
-    strh        r0,[r5,#0x0]\n\
-LAB_08002a3c:\n\
-    add         sp,#0x4\n\
-    pop         {r4,r5,r6,r7}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-DAT_08002a44:\n\
-    .word 0x0200583C\n\
-DAT_08002a48:\n\
-    .word 0x02005CD0\n\
-DAT_08002a4c:\n\
-    .word 0x02005CDC\n\
-DAT_08002a50:\n\
-    .word 0x02005838\n\
-DAT_08002a54:\n\
-    .word 0x04000050\n\
-DAT_08002a58:\n\
-    .word 0x04000054\n\
-DAT_08002a5c:\n\
-    .word 0x02005840\n\
-    ");
+    volatile u16 local_18;
+
+    if ((DAT_0200583c == 0) || (DAT_02005cd0 == 0))
+    {
+        u16 iVar1 = DAT_02005cdc / 256;
+
+        if (0xf < iVar1)
+        {
+            iVar1 = 0xf;
+        }
+        local_18 = 0xff;
+        if ((DAT_02005838 & 1) != 0)
+        {
+            local_18 -= 0x40;
+        }
+        REG_BLDCNT = local_18;
+        REG_BLDY = iVar1;
+        DAT_02005cdc += DAT_02005840;
+        if (0x1700 < (u16)DAT_02005cdc)
+        {
+            DAT_0200583c = 1;
+            DAT_02005cd0 = 1;
+            REG_BLDCNT = 0;
+            REG_BLDY = 0;
+        }
+    }
 }
-__attribute__((naked)) void fun_08002a60()
+
+void fun_08002a60()
 {
-    asm("\n\
-    push        {r4,r5,r6,r7,lr}\n\
-    ldr         r0,DAT_08002ab4\n\
-    ldr         r0,[r0,#0x0]\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08002aac\n\
-    mov         r4,#0x0\n\
-    ldr         r5,DAT_08002ab8\n\
-    add         r6,r5,#0x4\n\
-LAB_08002a70:\n\
-    lsl         r0,r4,#0x1\n\
-    add         r0,r0,r4\n\
-    lsl         r2,r0,#0x2\n\
-    add         r3,r2,r5\n\
-    ldrh        r0,[r3,#0x0]\n\
-    cmp         r0,#0x0\n\
-    beq         LAB_08002aa2\n\
-    add         r0,r5,#0x0\n\
-    add         r0,#0x8\n\
-    add         r0,r2,r0\n\
-    ldr         r1,[r0,#0x0]\n\
-    ldr         r7,DAT_08002abc\n\
-    add         r1,r1,r7\n\
-    str         r1,[r0,#0x0]\n\
-    add         r0,r2,r6\n\
-    ldr         r0,[r0,#0x0]\n\
-    cmp         r1,r0\n\
-    blt         LAB_08002aa2\n\
-    mov         r0,#0x0\n\
-    strh        r0,[r3,#0x0]\n\
-    ldr         r1,DAT_08002ab4\n\
-    ldrh        r0,[r3,#0x2]\n\
-    ldr         r1,[r1,#0x0]\n\
-    bl          _call_via_r1\n\
-LAB_08002aa2:\n\
-    add         r0,r4,#0x1\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r4,r0,#0x10\n\
-    cmp         r4,#0x7\n\
-    bls         LAB_08002a70\n\
-LAB_08002aac:\n\
-    pop         {r4,r5,r6,r7}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_08002ab4:\n\
-    .word 0x02005834\n\
-DAT_08002ab8:\n\
-    .word 0x02005780\n\
-DAT_08002abc:\n\
-    .word 0x00000444\n\
-    ");
+    if (DAT_02005834 != NULL)
+    {
+        u16 i;
+        for (i = 0; i < 8; i++)
+        {
+            if (DAT_02005780[i].unk00 != 0)
+            {
+                DAT_02005780[i].unk08 += 0x444;
+
+                if (DAT_02005780[i].unk08 >= DAT_02005780[i].unk04)
+                {
+                    DAT_02005780[i].unk00 = 0;
+                    DAT_02005834(DAT_02005780[i].unk02);
+                }
+            }
+        }
+    }
 }
 
 void fun_08002ac0(u16 param_1, s32 param_2)
 {
     u16 uVar2;
 
-    if (DAT_02005834 != 0)
+    if (DAT_02005834 != NULL)
     {
         uVar2 = 0;
         while (uVar2 < 8 && DAT_02005780[uVar2].unk00 != 0)

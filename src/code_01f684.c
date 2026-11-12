@@ -4716,56 +4716,24 @@ void fun_08021b40()
     fun_0803a9ec();
 }
 
-__attribute__((naked)) s32 fun_08021b4c()
+s32 fun_08021b4c()
 {
-    asm("\n\
-    push       {r4,lr}\n\
-    ldr        r0,DAT_08021b84\n\
-    ldr        r0,[r0,#0x0]\n\
-    bl         fun_08003b00\n\
-    ldr        r4,DAT_08021b88\n\
-    ldr        r0,[r4,#0x0]\n\
-    bl         fun_08003b00\n\
-    ldr        r0,[r4,#0x4]\n\
-    bl         fun_08003b00\n\
-    ldr        r0,[r4,#0x8]\n\
-    bl         fun_08003b00\n\
-    ldr        r0,[r4,#0xc]\n\
-    bl         fun_08003b00\n\
-    bl         fun_0800457c\n\
-    bl         fun_0803a980\n\
-    bl         fun_0803abbc\n\
-    mov        r0,#0x0\n\
-    pop        {r4}\n\
-    pop        {r1}\n\
-    bx         r1\n\
-DAT_08021b84:\n\
-    .word 0x0200F250\n\
-DAT_08021b88:\n\
-    .word 0x0200F240\n\
-    ");
+    fun_08003b00(DAT_0200f250);
+    fun_08003b00(DAT_0200f240[0]);
+    fun_08003b00(DAT_0200f240[1]);
+    fun_08003b00(DAT_0200f240[2]);
+    fun_08003b00(DAT_0200f240[3]);
+    fun_0800457c();
+    fun_0803a980();
+    fun_0803abbc();
+    return 0;
 }
 
-// unused
-__attribute__((naked)) void fun_08021b8c()
+void fun_08021b8c(struct_020006a0* param_1, struct_0877bde8* param_2, struct_0200d430* param_3)
 {
-    asm("\n\
-    push       {lr}\n\
-    str        r0,[r2,#0x0]\n\
-    str        r1,[r2,#0x4]\n\
-    ldr        r0,DAT_08021ba8\n\
-    str        r0,[r2,#0x8]\n\
-    add        r0,r2,#0x0\n\
-    bl         fun_0803ab8c\n\
-    ldr        r1,DAT_08021bac\n\
-    mov        r0,#0x0\n\
-    strh       r0,[r1,#0x0]\n\
-    pop        {r0}\n\
-    bx         r0\n\
-.space 2\n\
-DAT_08021ba8:\n\
-    .word 0x080216D1\n\
-DAT_08021bac:\n\
-    .word 0x020117D0\n\
-    ");
+    param_3->unk00 = param_1;
+    param_3->unk04 = param_2;
+    param_3->unk08 = fun_080216d0;
+    fun_0803ab8c(param_3);
+    DAT_020117d0 = 0;
 }
