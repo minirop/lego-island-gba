@@ -2226,7 +2226,7 @@ __attribute__((naked)) void CpuSet(const void* src, void* dest, u32 control)
     ");
 }
 
-__attribute__((naked)) int Div(int over, int under)
+__attribute__((naked)) s32 Div(s32 over, s32 under)
 {
     asm("\n\
      svc        0x6\n\

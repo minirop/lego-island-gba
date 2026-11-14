@@ -1,18 +1,18 @@
 #include "functions.h"
 
-int fun_0800353c(int param_1, int param_2)
+s32 fun_0800353c(s32 param_1, s32 param_2)
 {
-    int value = param_1 * param_2;
+    s32 value = param_1 * param_2;
     value /= 256;
     return value;
 }
 
-int fun_0800354c(int param_1, int param_2)
+s32 fun_0800354c(s32 param_1, s32 param_2)
 {
     return (param_1 * 256 / param_2);
 }
 
-int fun_08003558()
+s32 fun_08003558()
 {
     return 1;
 }

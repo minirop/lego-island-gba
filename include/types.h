@@ -394,6 +394,18 @@ typedef struct struct_08003998
     u16 unk1e;
 } struct_08003998;
 
+typedef struct struct_02005750
+{
+    u16 unk00;
+    u16 unk02;
+    s16 unk04;
+    u16 unk06;
+    u16 unk08;
+    u16 unk0a;
+    u16 unk0c;
+    u16 unk0e;
+} struct_02005750;
+
 typedef struct struct_0200d430
 {
     struct_020006a0* unk00;

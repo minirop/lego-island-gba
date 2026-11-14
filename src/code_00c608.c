@@ -1057,7 +1057,7 @@ void fun_0800ce7c(unknown_callback_struct* param_1, s32 param_2, u16* param_3, u
 {
     s32 var_r6;
 
-    if (DAT_02005750[0] != 0)
+    if (DAT_02005750.unk00 != 0)
     {
         var_r6 = 2;
     }

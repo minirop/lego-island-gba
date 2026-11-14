@@ -462,52 +462,23 @@ DAT_080030e0:\n\
     .word 0x80000100\n\
     ");
 }
-__attribute__((naked)) void fun_080030e4()
+
+s32 fun_080030e4(s32 param_1, s32 param_2)
 {
-    asm("\n\
-    cmp         r0,#0x0\n\
-    bge         LAB_080030ea\n\
-    add         r0,#0xff\n\
-LAB_080030ea:\n\
-    asr         r2,r0,#0x8\n\
-    cmp         r1,#0x0\n\
-    bge         LAB_080030f2\n\
-    add         r1,#0xff\n\
-LAB_080030f2:\n\
-    asr         r0,r1,#0x8\n\
-    mul         r0,r2\n\
-    bx          lr\n\
-    ");
-}
-__attribute__((naked)) void fun_080030f8()
-{
-    asm("\n\
-    push        {lr}\n\
-    lsl         r0,r0,#0x8\n\
-    cmp         r1,#0x0\n\
-    bge         LAB_08003102\n\
-    add         r1,#0xff\n\
-LAB_08003102:\n\
-    asr         r1,r1,#0x8\n\
-    bl          Div\n\
-    pop         {r1}\n\
-    bx          r1\n\
-    ");
-}
-__attribute__((naked)) void fun_0800310c()
-{
-    asm("\n\
-    push        {lr}\n\
-    lsl         r0,r0,#0x4\n\
-    bl          Sqrt\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r0,r0,#0xa\n\
-    pop         {r1}\n\
-    bx          r1\n\
-    ");
+    return (param_1 / 256) * (param_2 / 256);
 }
 
-void fun_0800311c(s32 param_1)
+s32 fun_080030f8(s32 param_1, s32 param_2)
+{
+    return Div(param_1 * 256, param_2 / 256);
+}
+
+s32 fun_0800310c(s32 param_1)
+{
+    return Sqrt(param_1 * 16) * 64;
+}
+
+void fun_0800311c(CallbackUShort param_1)
 {
     u16 i;
     for (i = 0; i < 8; i++)
@@ -669,27 +640,12 @@ DAT_08003274:\n\
      .word 0x040000D4\n\
     ");
 }
-__attribute__((naked)) void fun_08003278()
+
+void fun_08003278()
 {
-    asm("\n\
-    push        {lr}\n\
-    ldr         r0,DAT_08003290\n\
-    ldr         r0,[r0,#0x0]\n\
-    bl          _call_via_r0\n\
-    ldr         r0,DAT_08003294\n\
-    mov         r1,#0x1\n\
-    strh        r1,[r0,#0x0]\n\
-    ldr         r0,DAT_08003298\n\
-    strh        r1,[r0,#0x0]\n\
-    pop         {r0}\n\
-    bx          r0\n\
-DAT_08003290:\n\
-    .word 0x020057E4\n\
-DAT_08003294:\n\
-    .word 0x04000202\n\
-DAT_08003298:\n\
-    .word 0x02005CD8\n\
-    ");
+    DAT_020057e4();
+    REG_IF = 1;
+    DAT_02005cd8 = 1;
 }
 
 void fun_0800329c()

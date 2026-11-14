@@ -45,7 +45,7 @@ void fun_080015b8(u16 param_1)
     u8 eight;
     s16 unk = fun_080015b8_inlined(param_1);
 
-    if (DAT_02005750[0] != 0)
+    if (DAT_02005750.unk00 != 0)
     {
         fun_08041bfc(3);
         DAT_020025d0 = -1;

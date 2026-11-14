@@ -619,6 +619,7 @@ DAT_08002608:\n\
     .word 0x02005580\n\
     ");
 }
+
 __attribute__((naked)) void fun_0800260c()
 {
     asm("\n\
@@ -942,7 +943,7 @@ DAT_08002840:\n\
 
 s32 fun_08002844()
 {
-    DAT_02005750[0] = 0;
+    DAT_02005750.unk00 = 0;
     assert(DAT_0200001c, "Multiplayer not initialised");
 
     if (DAT_0200001c != 0)

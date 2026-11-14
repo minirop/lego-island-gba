@@ -2384,7 +2384,7 @@ void fun_0802073c()
         fun_080016f0(0x3a);
         DAT_0200efdc = zero;
     }
-    if (DAT_02005750[0] != 0)
+    if (DAT_02005750.unk00 != 0)
     {
         fun_08020ce0();
     }
