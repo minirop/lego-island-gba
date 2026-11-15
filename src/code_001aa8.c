@@ -90,6 +90,7 @@ s32 fun_08001b9c()
     return 1;
 }
 
+// https://www.decomp.me/scratch/9TCyS
 __attribute__((naked)) void fun_08001c8c()
 {
     asm("\n\

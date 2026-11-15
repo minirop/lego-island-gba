@@ -106,6 +106,7 @@ void fun_080008f0()
     }
 }
 
+// https://www.decomp.me/scratch/MFFkQ
 __attribute__((naked)) void fun_08000b44()
 {
     asm("\n\
@@ -875,12 +876,12 @@ void fun_08001188()
     fun_08002114(0xe);
 }
 
-void fun_080011a8(s32 param_1)
+void fun_080011a8(Callback param_1)
 {
     DAT_020025dc = param_1;
 }
 
-void fun_080011b4(s32 param_1)
+void fun_080011b4(Callback param_1)
 {
     DAT_020025cc = param_1;
 }

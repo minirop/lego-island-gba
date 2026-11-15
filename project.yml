@@ -603,7 +603,11 @@ rom:
       format: c
       section: rodata
       address: 0x4bcbb4
-      size: 0xd0
+    - name: code_01b5d8
+      format: c
+      section: rodata
+      address: 0x4bcc84
+      size: 0x12
     - name: code_4c1c98
       format: c
       section: rodata

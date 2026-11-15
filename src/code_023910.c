@@ -4907,25 +4907,12 @@ void fun_08025cec(s32* param_1)
     param_1[5] = 0x5555;
 }
 
-__attribute__((naked)) void fun_08025d04()
+void fun_08025d04(struct_08025d04* param_1)
 {
-    asm("\n\
-     ldr        r3,[r0,#0x8]\n\
-     ldr        r1,[r0,#0x10]\n\
-     add        r3,r3,r1\n\
-     str        r3,[r0,#0x8]\n\
-     ldr        r2,[r0,#0xc]\n\
-     ldr        r1,[r0,#0x14]\n\
-     add        r2,r2,r1\n\
-     str        r2,[r0,#0xc]\n\
-     ldr        r1,[r0,#0x0]\n\
-     add        r1,r1,r3\n\
-     str        r1,[r0,#0x0]\n\
-     ldr        r1,[r0,#0x4]\n\
-     add        r1,r1,r2\n\
-     str        r1,[r0,#0x4]\n\
-     bx         lr\n\
-    ");
+    param_1->unk08 = param_1->unk08 + param_1->unk10;
+    param_1->unk0c = param_1->unk0c + param_1->unk14;
+    param_1->unk00 = param_1->unk00 + param_1->unk08;
+    param_1->unk04 = param_1->unk04 + param_1->unk0c;
 }
 
 s32 fun_08025d24()
@@ -4937,45 +4924,23 @@ s32 fun_08025d24()
     return 0;
 }
 
-__attribute__((naked)) s32 fun_08025d3c()
+s32 fun_08025d3c()
 {
-    asm("\n\
-     push       {r4,lr}\n\
-     bl         fun_08001124\n\
-     lsl        r0,r0,#0x10\n\
-     lsr        r0,r0,#0x10\n\
-     cmp        r0,#0x1e\n\
-     beq        LAB_08025d7a\n\
-     bl         fun_08023d00\n\
-     bl         fun_0803ab30\n\
-     bl         fun_08023f24\n\
-     bl         fun_08024a58\n\
-     ldr        r0,DAT_08025d84\n\
-     ldrh       r0,[r0,#0x0]\n\
-     cmp        r0,#0x0\n\
-     beq        LAB_08025d66\n\
-     bl         fun_08024c74\n\
-LAB_08025d66:\n\
-     ldr        r4,DAT_08025d88\n\
-     ldrh       r0,[r4,#0x2a]\n\
-     ldrh       r1,[r4,#0x32]\n\
-     bl         fun_0803a140\n\
-     bl         fun_0803a00c\n\
-     ldr        r0,[r4,#0x4]\n\
-     add        r0,#0x1\n\
-     str        r0,[r4,#0x4]\n\
-LAB_08025d7a:\n\
-     mov        r0,#0x0\n\
-     pop        {r4}\n\
-     pop        {r1}\n\
-     bx         r1\n\
-.space 1\n\
-.space 1\n\
-DAT_08025d84:\n\
-     .word 0x02005750\n\
-DAT_08025d88:\n\
-     .word 0x03002400\n\
-    ");
+    if (fun_08001124() != 0x1e)
+    {
+        fun_08023d00();
+        fun_0803ab30();
+        fun_08023f24();
+        fun_08024a58();
+        if (DAT_02005750.unk00 != 0)
+        {
+            fun_08024c74();
+        }
+        fun_0803a140(DAT_03002400.unk2a, DAT_03002400.unk32);
+        fun_0803a00c();
+        DAT_03002400.unk04 = DAT_03002400.unk04 + 1;
+    }
+    return 0;
 }
 
 s32 fun_08025d8c()

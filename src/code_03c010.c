@@ -1049,6 +1049,8 @@ DAT_0803c82c:\n\
      .word 0x020117CC\n\
     ");
 }
+
+// https://www.decomp.me/scratch/VwUlJ
 __attribute__((naked)) void fun_0803c830()
 {
     asm("\n\

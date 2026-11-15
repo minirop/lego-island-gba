@@ -238,7 +238,7 @@ typedef struct struct_03002400
 {
     u16 pad00;
     u16 pad02;
-    u32 pad04;
+    u32 unk04;
     u32 pad08;
     u16 pad0c;
     u16 pad0e;
@@ -255,11 +255,11 @@ typedef struct struct_03002400
     u16 pad24;
     u16 pad26;
     u16 pad28;
-    u16 pad2a;
+    u16 unk2a;
     u16 pad2c;
     u16 pad2e;
     u16 pad30;
-    u16 pad32;
+    u16 unk32;
     u16 pad34;
     u16 unk36;
     u32 pad38;
@@ -412,6 +412,17 @@ typedef struct struct_0200d430
     struct_0877bde8* unk04;
     void* unk08;
 } struct_0200d430;
+
+// maybe u32[6]?
+typedef struct struct_08025d04
+{
+    u32 unk00;
+    u32 unk04;
+    u32 unk08;
+    u32 unk0c;
+    u32 unk10;
+    u32 unk14;
+} struct_08025d04;
 
 typedef void (*CallbackUnkUnkU16U16)(unknown_callback_struct*, s32, u16*, u16*);
 

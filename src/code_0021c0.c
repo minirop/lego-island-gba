@@ -620,6 +620,7 @@ DAT_08002608:\n\
     ");
 }
 
+// https://www.decomp.me/scratch/WTZBI
 __attribute__((naked)) void fun_0800260c()
 {
     asm("\n\

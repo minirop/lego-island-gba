@@ -560,6 +560,7 @@ void fun_080031dc()
     DAT_02005834 = NULL;
 }
 
+// https://www.decomp.me/scratch/VpYqw
 __attribute__((naked)) void fun_080031e8()
 {
     asm("\n\

@@ -1,6 +1,7 @@
 #include "functions.h"
 #include "variables.h"
 
+// https://www.decomp.me/scratch/2idHN
 __attribute__((naked)) void fun_0800471c()
 {
     asm("\n\
@@ -153,6 +154,8 @@ DAT_08004828:\n\
     .word 0x03002006\n\
     ");
 }
+
+// https://www.decomp.me/scratch/kIvcA
 __attribute__((naked)) void fun_0800482c(struct_08003998* param_1, u16 param_2, u16 param_3)
 {
     asm("\n\

@@ -1,5 +1,6 @@
 #include "functions.h"
 #include "variables.h"
+#include <stdio.h>
 
 __attribute__((naked)) s32 fun_0801b5d8()
 {
@@ -1560,263 +1561,91 @@ s32 fun_0801c178()
     return 1;
 }
 
-__attribute__((naked)) s32 fun_0801c19c()
+s32 fun_0801c19c()
 {
-    asm("\n\
-     push       {r4,r5,r6,lr}\n\
-     sub        sp,#0x4\n\
-     mov        r6,#0x80\n\
-     lsl        r6,r6,#0x13\n\
-     mov        r1,#0x0\n\
-     strh       r1,[r6,#0x0]\n\
-     mov        r0,sp\n\
-     strh       r1,[r0,#0x0]\n\
-     ldr        r4,DAT_0801c220\n\
-     str        r0,[r4,#0x0]\n\
-     mov        r0,#0xc0\n\
-     lsl        r0,r0,#0x13\n\
-     str        r0,[r4,#0x4]\n\
-     ldr        r0,DAT_0801c224\n\
-     str        r0,[r4,#0x8]\n\
-     ldr        r0,[r4,#0x8]\n\
-     mov        r0,sp\n\
-     strh       r1,[r0,#0x0]\n\
-     str        r0,[r4,#0x0]\n\
-     mov        r5,#0xa0\n\
-     lsl        r5,r5,#0x13\n\
-     str        r5,[r4,#0x4]\n\
-     ldr        r0,DAT_0801c228\n\
-     str        r0,[r4,#0x8]\n\
-     ldr        r0,[r4,#0x8]\n\
-     ldr        r0,DAT_0801c22c\n\
-     ldr        r1,DAT_0801c230\n\
-     bl         LZ77UnCompVram\n\
-     bl         fun_08002bcc\n\
-     ldr        r0,DAT_0801c234\n\
-     str        r0,[r4,#0x0]\n\
-     str        r5,[r4,#0x4]\n\
-     ldr        r0,DAT_0801c238\n\
-     str        r0,[r4,#0x8]\n\
-     ldr        r0,[r4,#0x8]\n\
-     ldr        r1,DAT_0801c23c\n\
-     add        r0,r1,#0x0\n\
-     strh       r0,[r6,#0x0]\n\
-     ldr        r1,DAT_0801c240\n\
-     mov        r0,#0x0\n\
-     str        r0,[r1,#0x0]\n\
-     bl         fun_08001aa8\n\
-     bl         fun_0801c3d4\n\
-     bl         fun_08001118\n\
-     lsl        r0,r0,#0x18\n\
-     lsr        r1,r0,#0x18\n\
-     cmp        r1,#0x0\n\
-     bne        LAB_0801c20a\n\
-     ldr        r0,DAT_0801c244\n\
-     strh       r1,[r0,#0x0]\n\
-LAB_0801c20a:\n\
-     ldr        r0,DAT_0801c248\n\
-     bl         fun_080011a8\n\
-     ldr        r0,DAT_0801c24c\n\
-     bl         fun_080011b4\n\
-     mov        r0,#0x1\n\
-     add        sp,#0x4\n\
-     pop        {r4,r5,r6}\n\
-     pop        {r1}\n\
-     bx         r1\n\
-DAT_0801c220:\n\
-     .word 0x040000D4\n\
-DAT_0801c224:\n\
-     .word 0x8100C000\n\
-DAT_0801c228:\n\
-     .word 0x81000200\n\
-DAT_0801c22c:\n\
-     .word 0x084BDEA8\n\
-DAT_0801c230:\n\
-     .word 0x0600A000\n\
-DAT_0801c234:\n\
-     .word 0x084BDCA8\n\
-DAT_0801c238:\n\
-     .word 0x80000100\n\
-DAT_0801c23c:\n\
-     .word 0x00001F54\n\
-DAT_0801c240:\n\
-     .word 0x0200ED0C\n\
-DAT_0801c244:\n\
-     .word 0x0200ED08\n\
-DAT_0801c248:\n\
-     .word 0x0801C439\n\
-DAT_0801c24c:\n\
-     .word 0x0801C459\n\
-    ");
+    REG_DISPCNT = 0;
+    DmaFill16(3, 0, VRAM, VRAM_SIZE);
+    DmaFill16(3, 0, PLTT, PLTT_SIZE);
+
+    LZ77UnCompVram(DAT_084bdea8, (void*)VRAM + 0xa000);
+
+    fun_08002bcc();
+    DmaCopy16(3, DAT_084bdca8, BG_PLTT, BG_PLTT_SIZE);
+
+    REG_DISPCNT = 0x1f54;
+    DAT_0200ed0c = 0;
+    fun_08001aa8();
+    fun_0801c3d4();
+
+    if (fun_08001118() == 0)
+    {
+        DAT_0200ed08 = 0;
+    }
+
+    fun_080011a8(fun_0801c438);
+    fun_080011b4(fun_0801c458);
+
+    return 1;
 }
-__attribute__((naked)) void fun_0801c250()
+
+void fun_0801c250()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         is_left_pressed\n\
-     lsl        r0,r0,#0x10\n\
-     cmp        r0,#0x0\n\
-     beq        LAB_0801c26c\n\
-     ldr        r1,DAT_0801c298\n\
-     ldrb       r0,[r1,#0x0]\n\
-     cmp        r0,#0x0\n\
-     beq        LAB_0801c26c\n\
-     sub        r0,#0x1\n\
-     strb       r0,[r1,#0x0]\n\
-     bl         fun_0801c3f0\n\
-LAB_0801c26c:\n\
-     bl         is_right_pressed\n\
-     lsl        r0,r0,#0x10\n\
-     cmp        r0,#0x0\n\
-     beq        LAB_0801c286\n\
-     ldr        r1,DAT_0801c298\n\
-     ldrb       r0,[r1,#0x0]\n\
-     cmp        r0,#0x1\n\
-     bhi        LAB_0801c286\n\
-     add        r0,#0x1\n\
-     strb       r0,[r1,#0x0]\n\
-     bl         fun_0801c3f0\n\
-LAB_0801c286:\n\
-     bl         is_b_pressed\n\
-     lsl        r0,r0,#0x10\n\
-     cmp        r0,#0x0\n\
-     beq        LAB_0801c29c\n\
-     mov        r0,#0xe\n\
-     bl         fun_08001070\n\
-     b          LAB_0801c2e2\n\
-DAT_0801c298:\n\
-     .word 0x02005570\n\
-LAB_0801c29c:\n\
-     bl         is_start_pressed\n\
-     lsl        r0,r0,#0x10\n\
-     cmp        r0,#0x0\n\
-     bne        LAB_0801c2b0\n\
-     bl         is_a_pressed\n\
-     lsl        r0,r0,#0x10\n\
-     cmp        r0,#0x0\n\
-     beq        LAB_0801c2e2\n\
-LAB_0801c2b0:\n\
-     ldr        r0,DAT_0801c2d0\n\
-     ldrh       r0,[r0,#0x0]\n\
-     cmp        r0,#0x0\n\
-     beq        LAB_0801c2d8\n\
-     ldr        r0,DAT_0801c2d4\n\
-     ldrb       r0,[r0,#0x0]\n\
-     bl         fun_08002074\n\
-     lsl        r0,r0,#0x10\n\
-     cmp        r0,#0x0\n\
-     beq        LAB_0801c2d8\n\
-     mov        r0,#0x2a\n\
-     bl         fun_08001070\n\
-     b          LAB_0801c2e2\n\
-.space 1\n\
-.space 1\n\
-DAT_0801c2d0:\n\
-     .word 0x020025D4\n\
-DAT_0801c2d4:\n\
-     .word 0x02005570\n\
-LAB_0801c2d8:\n\
-     bl         fun_08002038\n\
-     mov        r0,#0x14\n\
-     bl         fun_08001070\n\
-LAB_0801c2e2:\n\
-     pop        {r0}\n\
-     bx         r0\n\
-    ");
+    if (is_left_pressed())
+    {
+        if (DAT_02005570 != 0)
+        {
+            DAT_02005570--;
+            fun_0801c3f0();
+        }
+    }
+
+    if (is_right_pressed())
+    {
+        if (DAT_02005570 < 2)
+        {
+            DAT_02005570++;
+            fun_0801c3f0();
+        }
+    }
+
+    if (is_b_pressed())
+    {
+        fun_08001070(0xe);
+    }
+    else
+    {
+        if (is_start_pressed() || is_a_pressed())
+        {
+            if (DAT_020025d4 && fun_08002074(DAT_02005570))
+            {
+                fun_08001070(0x2a);
+            }
+            else
+            {
+                fun_08002038();
+                fun_08001070(0x14);
+            }
+        }
+    }
 }
-__attribute__((naked)) void fun_0801c2e8()
+
+void fun_0801c2e8()
 {
-    asm("\n\
-     push       {r4,r5,r6,r7,lr}\n\
-     mov        r7,r9\n\
-     mov        r6,r8\n\
-     push       {r6,r7}\n\
-     sub        sp,#0x28\n\
-     mov        r0,#0x0\n\
-     mov        r9,r0\n\
-     mov        r5,#0x0\n\
-     mov        r6,#0x0\n\
-     ldr        r1,DAT_0801c394\n\
-     mov        r8,r1\n\
-     ldrb       r0,[r1,#0x0]\n\
-     bl         fun_08002074\n\
-     lsl        r0,r0,#0x10\n\
-     cmp        r0,#0x0\n\
-     beq        LAB_0801c346\n\
-     bl         fun_080020a4\n\
-     ldr        r0,[r0,#0x18]\n\
-     mov        r1,#0xe1\n\
-     lsl        r1,r1,#0x4\n\
-     bl         __udivsi3\n\
-     add        r6,r0,#0x0\n\
-     bl         fun_080020a4\n\
-     lsl        r4,r6,#0x3\n\
-     sub        r4,r4,r6\n\
-     lsl        r4,r4,#0x5\n\
-     add        r4,r4,r6\n\
-     lsl        r4,r4,#0x4\n\
-     ldr        r0,[r0,#0x18]\n\
-     sub        r0,r0,r4\n\
-     mov        r1,#0x3c\n\
-     bl         __udivsi3\n\
-     add        r5,r0,#0x0\n\
-     bl         fun_080020a4\n\
-     ldr        r1,[r0,#0x18]\n\
-     sub        r1,r1,r4\n\
-     lsl        r0,r5,#0x4\n\
-     sub        r0,r0,r5\n\
-     lsl        r0,r0,#0x2\n\
-     sub        r1,r1,r0\n\
-     mov        r9,r1\n\
-LAB_0801c346:\n\
-     ldr        r1,DAT_0801c398\n\
-     ldr        r4,DAT_0801c39c\n\
-     ldr        r0,DAT_0801c3a0\n\
-     ldr        r2,[r0,#0x0]\n\
-     lsl        r2,r2,#0x2\n\
-     mov        r7,r8\n\
-     ldrb       r7,[r7,#0x0]\n\
-     mov        r0,#0x84\n\
-     lsl        r0,r0,#0x3\n\
-     add        r3,r7,r0\n\
-     lsl        r0,r3,#0x1\n\
-     add        r0,r0,r3\n\
-     lsl        r0,r0,#0x4\n\
-     add        r2,r2,r0\n\
-     add        r4,#0x4\n\
-     add        r2,r2,r4\n\
-     ldr        r2,[r2,#0x0]\n\
-     str        r5,[sp,#0x0]\n\
-     mov        r4,r9\n\
-     str        r4,[sp,#0x4]\n\
-     add        r0,sp,#0x8\n\
-     add        r3,r6,#0x0\n\
-     bl         sprintf\n\
-     bl         fun_0803c1a4\n\
-     ldr        r2,DAT_0801c3a4\n\
-     add        r0,sp,#0x8\n\
-     mov        r1,#0x85\n\
-     bl         fun_0803c010\n\
-     add        sp,#0x28\n\
-     pop        {r3,r4}\n\
-     mov        r8,r3\n\
-     mov        r9,r4\n\
-     pop        {r4,r5,r6,r7}\n\
-     pop        {r0}\n\
-     bx         r0\n\
-.space 1\n\
-.space 1\n\
-DAT_0801c394:\n\
-     .word 0x02005570\n\
-DAT_0801c398:\n\
-     .word 0x084BCC84\n\
-DAT_0801c39c:\n\
-     .word 0x08669620\n\
-DAT_0801c3a0:\n\
-     .word 0x020025B4\n\
-DAT_0801c3a4:\n\
-     .word 0x0865FD94\n\
-    ");
+    u8 string[32];
+    u32 seconds = 0, minutes = 0, hours = 0;
+
+    if (fun_08002074(DAT_02005570))
+    {
+        hours = fun_080020a4()->unk18 / 3600;
+        minutes = (fun_080020a4()->unk18 - hours * 3600) / 60;
+        seconds = (fun_080020a4()->unk18 - hours * 3600 - minutes * 60);
+    }
+
+    sprintf(string, "%s %02d:%02d:%02d",
+        DAT_08669620[DAT_02005570 + 0x420].strings_ptr[selected_language],
+        hours, minutes, seconds);
+    fun_0803c1a4();
+    fun_0803c010(string, 0x85, &DAT_0865fd94);
 }
 
 s32 fun_0801c3a8()
@@ -1842,82 +1671,35 @@ s32 fun_0801c3d0()
     return 1;
 }
 
-__attribute__((naked)) void fun_0801c3d4()
+void fun_0801c3d4()
 {
-    asm("\n\
-     push       {lr}\n\
-     mov        r0,#0x0\n\
-     bl         fun_080036b0\n\
-     ldr        r0,DAT_0801c3ec\n\
-     bl         fun_080045f0\n\
-     bl         fun_0801c3f0\n\
-     pop        {r0}\n\
-     bx         r0\n\
-.space 1\n\
-.space 1\n\
-DAT_0801c3ec:\n\
-     .word 0x08063990\n\
-    ");
-}
-__attribute__((naked)) void fun_0801c3f0()
-{
-    asm("\n\
-     push       {r4,lr}\n\
-     ldr        r4,DAT_0801c428\n\
-     ldr        r0,[r4,#0x0]\n\
-     cmp        r0,#0x0\n\
-     beq        LAB_0801c3fe\n\
-     bl         fun_08003b00\n\
-LAB_0801c3fe:\n\
-     ldr        r1,DAT_0801c42c\n\
-     ldr        r0,DAT_0801c430\n\
-     ldrb       r0,[r0,#0x0]\n\
-     lsl        r0,r0,#0x2\n\
-     add        r0,r0,r1\n\
-     ldr        r0,[r0,#0x0]\n\
-     lsl        r0,r0,#0x4\n\
-     ldr        r1,DAT_0801c434\n\
-     add        r0,r0,r1\n\
-     bl         fun_08003998\n\
-     str        r0,[r4,#0x0]\n\
-     mov        r1,#0x58\n\
-     strh       r1,[r0,#0x2]\n\
-     mov        r1,#0x40\n\
-     strh       r1,[r0,#0x4]\n\
-     bl         fun_0801c2e8\n\
-     pop        {r4}\n\
-     pop        {r0}\n\
-     bx         r0\n\
-DAT_0801c428:\n\
-     .word 0x0200ED0C\n\
-DAT_0801c42c:\n\
-     .word 0x08786964\n\
-DAT_0801c430:\n\
-     .word 0x02005570\n\
-DAT_0801c434:\n\
-     .word 0x08063700\n\
-    ");
+    fun_080036b0(0);
+    fun_080045f0(&DAT_08063990);
+    fun_0801c3f0();
 }
 
-// unused
-__attribute__((naked)) void fun_0801c438()
+void fun_0801c3f0()
 {
-    asm("\n\
-     push       {lr}\n\
-     bl         fun_0800200c\n\
-     ldr        r1,DAT_0801c454\n\
-     mov        r0,#0x0\n\
-     strh       r0,[r1,#0x0]\n\
-     bl         fun_08002038\n\
-     mov        r0,#0x14\n\
-     bl         fun_08001070\n\
-     pop        {r0}\n\
-     bx         r0\n\
-.space 1\n\
-.space 1\n\
-DAT_0801c454:\n\
-     .word 0x020025D4\n\
-    ");
+    struct_08003998* psVar1;
+
+    if (DAT_0200ed0c != NULL)
+    {
+        fun_08003b00(DAT_0200ed0c);
+    }
+
+    psVar1 = fun_08003998(DAT_08063700[DAT_08786964[DAT_02005570]]);
+    DAT_0200ed0c = psVar1;
+    psVar1->unk02 = 0x58;
+    psVar1->unk04 = 0x40;
+    fun_0801c2e8();
+}
+
+void fun_0801c438()
+{
+    fun_0800200c();
+    DAT_020025d4 = 0;
+    fun_08002038();
+    fun_08001070(0x14);
 }
 
 void fun_0801c458()
