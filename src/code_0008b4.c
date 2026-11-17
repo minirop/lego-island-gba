@@ -911,7 +911,7 @@ void fun_080011d8()
 
 s32 fun_08001214(u32 param_1)
 {
-    u32 tmp = param_1 * 0x10000;
+    s32 tmp = Q_16_16(param_1);
     return ((tmp + 0xf8300000) / 0x10000) < 0x1c;
 }
 

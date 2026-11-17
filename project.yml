@@ -62,21 +62,9 @@ rom:
     - name: code_0038c8
       format: c
       address: 0x0038c8
-    - name: code_0045d8
+    - name: code_003ff8
       format: c
-      address: 0x0045d8
-    - name: code_0045f0
-      format: c
-      address: 0x0045f0
-    - name: code_004670
-      format: c
-      address: 0x004670
-    - name: code_004694
-      format: c
-      address: 0x004694
-    - name: code_00471c
-      format: c
-      address: 0x00471c
+      address: 0x003ff8
     - name: code_004b74
       format: c
       address: 0x004b74
@@ -391,7 +379,11 @@ rom:
       format: c
       section: rodata
       address: 0x0497b0
-      size: 0x74
+    - name: data/trig
+      format: c
+      section: rodata
+      address: 0x049824
+      size: 0x280
     - name: code_002d34
       format: c
       section: rodata
@@ -401,6 +393,11 @@ rom:
       section: rodata
       address: 0x049c34
       size: 0x22
+    - name: code_003ff8
+      format: c
+      section: rodata
+      address: 0x049cb4
+      size: 0x1a
     - name: code_005bbc
       format: c
       section: rodata

@@ -4,6 +4,8 @@
 #include "gba.h"
 #include "types.h"
 
+#include "data/trig.h"
+
 extern Callback DAT_020025cc;
 extern Callback DAT_020025dc;
 extern Callback DAT_020025f0;
@@ -246,6 +248,7 @@ extern u16 DAT_0200f13c;
 extern u16 DAT_020117d0;
 extern u16 DAT_020117d8;
 extern u16 DAT_020117dc;
+extern u16 DAT_03002000[0x80][4];
 extern u16 DAT_08063700[8][8];
 extern u16 DAT_08063750[];
 extern u16 DAT_08063990[];

@@ -3,6 +3,8 @@
 
 #include "gba.h"
 
+s16 fun_08002c84(s16 param_1, s16 param_2);
+s16 fun_08002cb4(s16 param_1);
 s16 fun_08003330(u16 param_1, u16 param_2);
 s16 is_a_held();
 s16 is_a_pressed();
@@ -386,10 +388,11 @@ void fun_080032a0(s32 param_1, s32 param_2, const char* param_3, ...);
 void fun_080034d4(s32 param_1, s32 param_2, s32 param_3);
 void fun_080036b0(u16 param_1);
 void fun_08003b00(struct_08003998* param_1);
+void fun_08003bf8();
 void fun_08003cfc();
 void fun_0800457c();
 void fun_080045f0(void* param_1);
-void fun_0800460c(s32* param_1, s32 param_2);
+void fun_0800460c(void* param_1, u16 param_2);
 void fun_080046a4();
 void fun_0800482c(struct_08003998* param_1, u16 param_2, u16 param_3);
 void fun_08004cd0();

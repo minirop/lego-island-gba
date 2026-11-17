@@ -386,12 +386,12 @@ typedef struct struct_08003998
     u16 unk0e;
     u16 unk10;
     u16 unk12;
-    u16 unk14;
-    u16 unk16;
+    u16* unk14;
     u16 unk18;
     u16 unk1a;
     u16 unk1c;
     u16 unk1e;
+    u16 unk20;
 } struct_08003998;
 
 typedef struct struct_02005750
