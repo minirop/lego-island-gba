@@ -148,123 +148,34 @@ LAB_08004cca:\n\
     bx          r1\n\
     ");
 }
-__attribute__((naked)) void fun_08004cd0()
+
+void fun_08004cd0()
 {
-    asm("\n\
-    push        {r4,r5,r6,r7,lr}\n\
-    mov         r7,r10\n\
-    mov         r6,r9\n\
-    mov         r5,r8\n\
-    push        {r5,r6,r7}\n\
-    mov         r0,#0x0\n\
-    ldr         r1,DAT_08004d84\n\
-    mov         r10,r1\n\
-    ldr         r1,DAT_08004d88\n\
-    add         r6,r1,#0x0\n\
-    ldr         r1,DAT_08004d8c\n\
-    mov         r9,r1\n\
-LAB_08004ce8:\n\
-    mov         r3,#0x0\n\
-    lsl         r5,r0,#0x4\n\
-    add         r0,#0x1\n\
-    mov         r8,r0\n\
-    add         r4,r5,#0x0\n\
-LAB_08004cf2:\n\
-    lsl         r2,r3,#0x6\n\
-    add         r2,r4,r2\n\
-    mov         r0,r10\n\
-    add         r1,r2,r0\n\
-    ldrh        r0,[r1,#0x0]\n\
-    orr         r0,r6\n\
-    strh        r0,[r1,#0x0]\n\
-    ldrh        r0,[r1,#0x2]\n\
-    orr         r0,r6\n\
-    strh        r0,[r1,#0x2]\n\
-    add         r2,r9\n\
-    ldrh        r0,[r2,#0x0]\n\
-    orr         r0,r6\n\
-    strh        r0,[r2,#0x0]\n\
-    ldrh        r0,[r2,#0x2]\n\
-    orr         r0,r6\n\
-    strh        r0,[r2,#0x2]\n\
-    add         r0,r3,#0x1\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r3,r0,#0x10\n\
-    cmp         r3,#0x20\n\
-    bls         LAB_08004cf2\n\
-    mov         r3,#0x0\n\
-    ldr         r1,DAT_08004d90\n\
-    mov         r12,r1\n\
-    ldr         r0,DAT_08004d88\n\
-    add         r4,r0,#0x0\n\
-    ldr         r7,DAT_08004d94\n\
-LAB_08004d2a:\n\
-    lsl         r2,r3,#0x6\n\
-    add         r2,r5,r2\n\
-    mov         r0,r12\n\
-    add         r1,r2,r0\n\
-    ldrh        r0,[r1,#0x0]\n\
-    orr         r0,r4\n\
-    strh        r0,[r1,#0x0]\n\
-    ldrh        r0,[r1,#0x2]\n\
-    orr         r0,r4\n\
-    strh        r0,[r1,#0x2]\n\
-    add         r2,r2,r7\n\
-    ldrh        r0,[r2,#0x0]\n\
-    orr         r0,r4\n\
-    strh        r0,[r2,#0x0]\n\
-    ldrh        r0,[r2,#0x2]\n\
-    orr         r0,r4\n\
-    strh        r0,[r2,#0x2]\n\
-    add         r0,r3,#0x1\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r3,r0,#0x10\n\
-    cmp         r3,#0x14\n\
-    bls         LAB_08004d2a\n\
-    mov         r1,r8\n\
-    lsl         r0,r1,#0x10\n\
-    lsr         r0,r0,#0x10\n\
-    cmp         r0,#0x3\n\
-    bls         LAB_08004ce8\n\
-    mov         r0,#0x1\n\
-.syntax unified\n\
-    rsbs        r0,r0,#0\n\
-.syntax divided\n\
-    ldr         r1,DAT_08004d98\n\
-    str         r0,[r1,#0x0]\n\
-    ldr         r1,DAT_08004d9c\n\
-    str         r0,[r1,#0x0]\n\
-    mov         r0,#0x0\n\
-    ldr         r1,DAT_08004da0\n\
-    str         r0,[r1,#0x0]\n\
-    ldr         r1,DAT_08004da4\n\
-    str         r0,[r1,#0x0]\n\
-    pop         {r3,r4,r5}\n\
-    mov         r8,r3\n\
-    mov         r9,r4\n\
-    mov         r10,r5\n\
-    pop         {r4,r5,r6,r7}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-DAT_08004d84:\n\
-    .word 0x02007FC0\n\
-DAT_08004d88:\n\
-    .word 0x0000FFFF\n\
-DAT_08004d8c:\n\
-    .word 0x02008800\n\
-DAT_08004d90:\n\
-    .word 0x02009050\n\
-DAT_08004d94:\n\
-    .word 0x02009590\n\
-DAT_08004d98:\n\
-    .word 0x02000378\n\
-DAT_08004d9c:\n\
-    .word 0x0200037C\n\
-DAT_08004da0:\n\
-    .word 0x02000380\n\
-DAT_08004da4:\n\
-    .word 0x02000384\n\
-    ");
+    u16 i;
+
+    for (i = 0; i < 4; i++)
+    {
+        u16 j;
+        for (j = 0; j < 0x21; j++)
+        {
+            DAT_02007fc0[j][i].unk00 = -1;
+            DAT_02007fc0[j][i].unk02 = -1;
+            DAT_02008800[j][i].unk00 = -1;
+            DAT_02008800[j][i].unk02 = -1;
+        }
+        for (j = 0; j < 0x15; j++)
+        {
+            DAT_02009050[j][i].unk00 = -1;
+            DAT_02009050[j][i].unk02 = -1;
+            DAT_02009590[j][i].unk00 = -1;
+            DAT_02009590[j][i].unk02 = -1;
+        }
+    }
+
+    DAT_02000378 = -1;
+    DAT_0200037c = -1;
+    DAT_02000380 = 0;
+    DAT_02000384 = 0;
 }
 
 void fun_08004da8(struct_fun_08004da8* param_1, u16 param_2)

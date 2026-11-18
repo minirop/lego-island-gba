@@ -207,7 +207,7 @@ typedef struct struct_fun_08004da8
 typedef struct struct_03001a00
 {
     u32 unk00;
-    u32 unk04;
+    void* unk04;
     u16 unk08;
 } struct_03001a00;
 
@@ -374,6 +374,17 @@ typedef struct struct_08001534
     u8 unk1c[16];
 } struct_08001534;
 
+typedef struct struct_08003998_14
+{
+    u16 unk00;
+    u16 unk02;
+    u16 unk04;
+    u16 unk06;
+    u16 unk08;
+    u16 unk0a;
+    u32 unk0c;
+} struct_08003998_14;
+
 typedef struct struct_08003998
 {
     u16 unk00;
@@ -386,7 +397,7 @@ typedef struct struct_08003998
     u16 unk0e;
     u16 unk10;
     u16 unk12;
-    u16* unk14;
+    struct_08003998_14* unk14;
     u16 unk18;
     u16 unk1a;
     u16 unk1c;
@@ -423,6 +434,25 @@ typedef struct struct_08025d04
     u32 unk10;
     u32 unk14;
 } struct_08025d04;
+
+typedef struct struct_08004cd0
+{
+    u16 unk00;
+    u16 unk02;
+    u16 pad[6];
+} struct_08004cd0;
+
+typedef struct struct_08063700
+{
+    u16 unk00;
+    u16 unk02;
+    u16 unk04;
+    u16 unk06;
+    u16 unk08;
+    u16 unk0a;
+    u16 unk0c;
+    u16 unk0e;
+} struct_08063700;
 
 typedef void (*CallbackUnkUnkU16U16)(unknown_callback_struct*, s32, u16*, u16*);
 

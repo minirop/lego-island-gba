@@ -447,76 +447,49 @@ void fun_08000dbc()
     }
 }
 
-__attribute__((naked)) void fun_08000e68()
+void fun_08000e68()
 {
-    asm("\n\
-    push        {r4,r5,r6,lr}\n\
-    mov         r5,#0xb4\n\
-    mov         r6,#0x3c\n\
-    ldr         r0,DAT_08000e98\n\
-    bl          fun_08003998\n\
-    add         r4,r0,#0x0\n\
-    cmp         r4,#0x0\n\
-    beq         LAB_08000edc\n\
-    mov         r1,#0x0\n\
-    mov         r0,#0x68\n\
-    strh        r0,[r4,#0x2]\n\
-    mov         r0,#0x30\n\
-    strh        r0,[r4,#0x4]\n\
-    strh        r1,[r4,#0x6]\n\
-    mov         r0,#0x2\n\
-    strh        r0,[r4,#0x0]\n\
-LAB_08000e8a:\n\
-    lsl         r0,r5,#0x10\n\
-    asr         r1,r0,#0x10\n\
-    add         r2,r0,#0x0\n\
-    cmp         r1,#0x3c\n\
-    bne         LAB_08000e9c\n\
-    mov         r0,#0x0\n\
-    b           LAB_08000ea2\n\
-DAT_08000e98:\n\
-    .word 0x08063730\n\
-LAB_08000e9c:\n\
-    cmp         r1,#0x78\n\
-    bne         LAB_08000ea6\n\
-    mov         r0,#0x1\n\
-LAB_08000ea2:\n\
-    strh        r0,[r4,#0x0]\n\
-    mov         r6,#0x3c\n\
-LAB_08000ea6:\n\
-    ldr         r1,DAT_08000ee4\n\
-    add         r0,r2,r1\n\
-    lsr         r5,r0,#0x10\n\
-    lsl         r1,r6,#0x10\n\
-    ldr         r0,DAT_08000ee4\n\
-    add         r1,r1,r0\n\
-    lsr         r6,r1,#0x10\n\
-    lsl         r1,r1,#0x2\n\
-    mov         r0,#0x80\n\
-    lsl         r0,r0,#0x10\n\
-    add         r1,r1,r0\n\
-    lsr         r1,r1,#0x10\n\
-    add         r0,r4,#0x0\n\
-    bl          fun_080047d0\n\
-    bl          fun_08003cfc\n\
-    bl          fun_08002bcc\n\
-    bl          fun_080046a4\n\
-    lsl         r0,r5,#0x10\n\
-    cmp         r0,#0x0\n\
-    bgt         LAB_08000e8a\n\
-    add         r0,r4,#0x0\n\
-    bl          fun_08003b00\n\
-LAB_08000edc:\n\
-    pop         {r4,r5,r6}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_08000ee4:\n\
-    .word 0xFFFF0000\n\
-    ");
+    struct_08003998* ptr;
+    s16 i;
+    s16 v6;
+
+    i = 0xb4;
+    v6 = 0x3c;
+    ptr = fun_08003998(&DAT_08063700[3]);
+    if (ptr)
+    {
+        ptr->unk02 = 0x68;
+        ptr->unk04 = 0x30;
+        ptr->unk06 = 0;
+        ptr->unk00 = 2;
+
+        do
+        {
+            if (i == 0x3c)
+            {
+                ptr->unk00 = 0;
+                v6 = 0x3c;
+            }
+            else if (i == 0x78)
+            {
+                ptr->unk00 = 1;
+                v6 = 0x3c;
+            }
+
+            i--;
+            v6--;
+
+            fun_080047d0(ptr, v6 * 4 + 0x80);
+            fun_08003cfc();
+            fun_08002bcc();
+            fun_080046a4();
+
+        } while (i > 0);
+
+        fun_08003b00(ptr);
+    }
 }
+
 __attribute__((naked)) u16 fun_08000ee8(u16 param_1)
 {
     asm("\n\
@@ -818,43 +791,16 @@ u16 fun_08001124()
     return DAT_02002534;
 }
 
-__attribute__((naked)) void fun_08001130()
+u16 fun_08001130()
 {
-    asm("\n\
-    push        {r4,r5,r6,lr}\n\
-    ldr         r0,DAT_08001164\n\
-    ldrh        r1,[r0,#0x0]\n\
-    cmp         r1,#0x3b\n\
-    bls         LAB_08001158\n\
-    mov         r5,#0x0\n\
-    strh        r5,[r0,#0x0]\n\
-    ldr         r6,DAT_08001168\n\
-    ldr         r4,DAT_0800116c\n\
-    ldrh        r1,[r4,#0x0]\n\
-    lsl         r0,r1,#0x8\n\
-    mov         r1,#0xf0\n\
-    lsl         r1,r1,#0x6\n\
-    bl          fun_0800354c\n\
-    mov         r1,#0x3c\n\
-    bl          fun_0800353c\n\
-    str         r0,[r6,#0x0]\n\
-    strh        r5,[r4,#0x0]\n\
-LAB_08001158:\n\
-    ldr         r0,DAT_08001168\n\
-    ldrh        r0,[r0,#0x0]\n\
-    pop         {r4,r5,r6}\n\
-    pop         {r1}\n\
-    bx          r1\n\
-\n\
-.space 2\n\
-\n\
-DAT_08001164:\n\
-    .word 0x02002548\n\
-DAT_08001168:\n\
-    .word 0x02002540\n\
-DAT_0800116c:\n\
-    .word 0x020025C4\n\
-    ");
+    if (0x3b < DAT_02002548)
+    {
+        DAT_02002548 = 0;
+        DAT_02002540 = fun_0800353c(fun_0800354c(DAT_020025c4 * 256, 0x3c00), 0x3c);
+        DAT_020025c4 = 0;
+    }
+
+    return DAT_02002540;
 }
 
 void fun_08001170(Callback param_1)

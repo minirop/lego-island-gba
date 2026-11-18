@@ -34,11 +34,6 @@ const u16 USHORT_ARRAY_08049760[] = {
     0x03ED, 0x03EE
 };
 
-static inline u16 foo(u32 x)
-{
-    return x;
-}
-
 void fun_0800193c()
 {
     struct_02002620* ptr;
@@ -61,9 +56,8 @@ void fun_0800193c()
 
         for (i = 0; i < 0x46; i++)
         {
-            // WTF? https://www.decomp.me/scratch/ExQIt
-            // u16 x = (DAT_02002610 << 0x10) >> 0x10;
-            u16 x = foo(DAT_02002610);
+            // https://www.decomp.me/scratch/ExQIt
+            u16 x = (DAT_02002610 << 0x10) >> 0x10;
             if (x)
             {
                 u32 p8 = x / 8;

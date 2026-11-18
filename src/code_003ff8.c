@@ -806,64 +806,25 @@ void fun_08004930(u16 param_1, u16 param_2)
     *puVar2 = (uVar1 & 0xfc00) | (puVar3[3] + puVar3[5] * param_2);
 }
 
-__attribute__((naked)) void fun_08004970()
+void fun_08004970(u16 param_1, u16 param_2)
 {
-    asm("\n\
-    push        {r4,r5,lr}\n\
-    lsl         r0,r0,#0x10\n\
-    lsl         r1,r1,#0x10\n\
-    lsr         r5,r1,#0x10\n\
-    ldr         r1,DAT_080049c4\n\
-    lsr         r0,r0,#0xe\n\
-    add         r0,r0,r1\n\
-    ldr         r0,[r0,#0x0]\n\
-    ldrh        r1,[r0,#0x0]\n\
-    cmp         r1,r5\n\
-    beq         LAB_080049bc\n\
-    strh        r5,[r0,#0x0]\n\
-    ldr         r4,[r0,#0x14]\n\
-    ldrh        r2,[r4,#0x8]\n\
-    lsl         r3,r2,#0x15\n\
-    lsr         r3,r3,#0x10\n\
-    ldr         r2,DAT_080049c8\n\
-    ldrh        r0,[r2,#0x0]\n\
-    add         r1,r0,#0x1\n\
-    strh        r1,[r2,#0x0]\n\
-    lsl         r0,r0,#0x10\n\
-    lsr         r0,r0,#0x10\n\
-    lsl         r1,r0,#0x1\n\
-    add         r1,r1,r0\n\
-    lsl         r1,r1,#0x2\n\
-    ldr         r0,DAT_080049cc\n\
-    add         r1,r1,r0\n\
-    add         r2,r5,#0x0\n\
-    mul         r2,r3\n\
-    ldr         r0,[r4,#0xc]\n\
-    add         r0,r0,r2\n\
-    str         r0,[r1,#0x0]\n\
-    ldrh        r4,[r4,#0x6]\n\
-    lsl         r0,r4,#0x5\n\
-    ldr         r2,DAT_080049d0\n\
-    add         r0,r0,r2\n\
-    str         r0,[r1,#0x4]\n\
-    strh        r3,[r1,#0x8]\n\
-LAB_080049bc:\n\
-    pop         {r4,r5}\n\
-    pop         {r0}\n\
-    bx          r0\n\
-\n\
-.space 2\n\
-\n\
-DAT_080049c4:\n\
-    .word 0x03001800\n\
-DAT_080049c8:\n\
-    .word 0x02006D50\n\
-DAT_080049cc:\n\
-    .word 0x03001A00\n\
-DAT_080049d0:\n\
-    .word 0x06010000\n\
-    ");
+    struct_08003998* ptr = DAT_03001800[param_1];
+    if (ptr->unk00 != param_2)
+    {
+        struct_03001a00* target;
+        struct_08003998_14* array;
+        u16 k, i;
+        ptr->unk00 = param_2;
+        array = ptr->unk14;
+        k = array->unk08 * 0x20;
+        i = DAT_02006d50++;
+        target = &DAT_03001a00[i];
+        target->unk00 = array->unk0c + param_2 * k;
+        target->unk04 = (OBJ_VRAM0 + array->unk06 * 0x20);
+        target->unk08 = k;
+    }
 }
+
 __attribute__((naked)) void fun_080049d4()
 {
     asm("\n\
@@ -1026,28 +987,16 @@ DAT_08004ac0:\n\
     ");
 }
 
-__attribute__((naked)) s32 fun_08004ac4(s32* param_1, s32* param_2)
+s32 fun_08004ac4(struct_08003998** param_1, struct_08003998** param_2)
 {
-    asm("\n\
-    ldr         r2,[r0,#0x0]\n\
-    ldr         r0,[r1,#0x0]\n\
-    ldrh        r2,[r2,#0x20]\n\
-    ldrh        r0,[r0,#0x20]\n\
-    cmp         r2,r0\n\
-    bcs         LAB_08004ad6\n\
-    mov         r0,#0x1\n\
-.syntax unified\n\
-    rsbs        r0,r0,#0\n\
-.syntax divided\n\
-    b           LAB_08004ad8\n\
-LAB_08004ad6:\n\
-    mov         r0,#0x1\n\
-LAB_08004ad8:\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-    ");
+    if ((*param_1)->unk20 >= (*param_2)->unk20)
+    {
+        return 1;
+    }
+    else
+    {
+        return -1;
+    }
 }
 
 void fun_08004adc()
@@ -1063,43 +1012,23 @@ void fun_08004adc()
     fun_08004cd0();
 }
 
-__attribute__((naked)) void fun_08004b2c()
+void fun_08004b2c()
 {
-    asm("\n\
-    ldr         r0,DAT_08004b58\n\
-    mov         r1,#0x80\n\
-    lsl         r1,r1,#0x1\n\
-    add         r2,r1,#0x0\n\
-    strh        r2,[r0,#0x0]\n\
-    add         r0,#0x2\n\
-    mov         r1,#0x0\n\
-    strh        r1,[r0,#0x0]\n\
-    add         r0,#0x2\n\
-    strh        r1,[r0,#0x0]\n\
-    add         r0,#0x2\n\
-    strh        r2,[r0,#0x0]\n\
-    add         r0,#0x2\n\
-    strh        r1,[r0,#0x0]\n\
-    add         r0,#0x2\n\
-    strh        r1,[r0,#0x0]\n\
-    add         r0,#0x2\n\
-    strh        r1,[r0,#0x0]\n\
-    add         r0,#0x2\n\
-    strh        r1,[r0,#0x0]\n\
-    bx          lr\n\
-\n\
-.space 2\n\
-\n\
-DAT_08004b58:\n\
-    .word 0x04000020\n\
-\n\
-    ");
+    REG_BG2PA = 0x100;
+    REG_BG2PB = 0;
+    REG_BG2PC = 0;
+    REG_BG2PD = 0x100;
+    REG_BG2X_L = 0;
+    REG_BG2X_H = 0;
+    REG_BG2Y_L = 0;
+    REG_BG2Y_H = 0;
 }
 
 void fun_08004b5c(u16 param_1)
 {
     DAT_02007f90 = param_1;
 }
+
 void fun_08004b68(u16 param_1)
 {
     DAT_02007f74 = param_1;

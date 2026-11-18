@@ -1687,7 +1687,7 @@ void fun_0801c3f0()
         fun_08003b00(DAT_0200ed0c);
     }
 
-    psVar1 = fun_08003998(DAT_08063700[DAT_08786964[DAT_02005570]]);
+    psVar1 = fun_08003998(&DAT_08063700[DAT_08786964[DAT_02005570]]);
     DAT_0200ed0c = psVar1;
     psVar1->unk02 = 0x58;
     psVar1->unk04 = 0x40;
